@@ -1,0 +1,53 @@
+---
+layout: standardheadmd
+title: Documentation Centre
+header: Permission Reference
+---
+<p>
+    The following table contains all the permissions available in Nucleus, ordered by module. The "Suggested Role" column
+    is also passed to permissions plugins as the suggested roles (MOD is the same as STAFF).
+</p>
+<p>
+    If you're looking for the command reference, <a href="commands.html">you can find it here</a>.
+</p>
+
+<h2>
+    Nucleus Permission Reference
+</h2>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>
+                Module
+            </th>
+            <th>
+                Permission
+            </th>
+            <th>
+                Suggested Role
+            </th>
+            <th>
+                Description
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cmds in site.data.permissions %}
+        <tr>
+            <td>
+                {{ cmds.module }}
+            </td>
+            <td>
+                {{ cmds.permission }}
+            </td>
+            <td>
+                {{ cmds.defaultLevel }}
+            </td>
+            <td>
+                {{ cmds.description }}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

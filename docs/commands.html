@@ -1,0 +1,58 @@
+---
+layout: standardheadmd
+title: Documentation Centre
+header: Command Reference
+---
+<p>
+    The following table contains all the commands available in Nucleus, ordered by module.
+</p>
+<p>
+    If you're looking for the permissions reference, <a href="permissions.html">you can find it here</a>.
+</p>
+
+<h2>
+    Nucleus Command Reference
+</h2>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>
+                Module
+            </th>
+            <th>
+                Command
+            </th>
+            <th>
+                Base Permission
+            </th>
+            <th>
+                Description
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cmds in site.data.commands %}
+        <tr>
+            <td>
+                {{ cmds.module }}
+            </td>
+            <td>
+                /{{ cmds.commandName }}
+            </td>
+            <td>
+                {% if cmds.permissionbase == nil or cmds.permissionbase == "" %}
+                    <em>none</em>
+                {% else %}
+                    {{ cmds.permissionbase }}.base
+                {% endif %}
+            </td>
+            <td>
+                {% if cmds.oneLineDescription %}
+                    {{ cmds.oneLineDescription }}
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
