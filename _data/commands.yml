@@ -7,6 +7,7 @@
     module: admin
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Broadcasts a message to the entire server.
     warmup: false
     permissionbase: nucleus.broadcast
 -   commandName: clear
@@ -20,6 +21,7 @@
     module: admin
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Clears a player's inventory.
     warmup: false
     permissionbase: nucleus.clear
 -   commandName: exp
@@ -31,6 +33,7 @@
     module: admin
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Displays the specified player's current experience.
     warmup: false
     permissionbase: nucleus.exp
 -   commandName: exp give
@@ -42,6 +45,7 @@
     module: admin
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Gives experience to the specified player.
     warmup: false
     permissionbase: nucleus.exp.give
 -   commandName: exp set
@@ -53,6 +57,7 @@
     module: admin
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Sets the specified player's experience.
     warmup: false
     permissionbase: nucleus.exp.set
 -   commandName: exp take
@@ -64,6 +69,7 @@
     module: admin
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Removes experience from the specified player.
     warmup: false
     permissionbase: nucleus.exp.take
 -   commandName: freezeplayer
@@ -83,6 +89,7 @@
     module: admin
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Freezes a player in place.
     warmup: true
     permissionbase: nucleus.freezeplayer
 -   commandName: gamemode
@@ -96,6 +103,7 @@
     module: admin
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Sets a player's game mode.
     warmup: false
     permissionbase: nucleus.gamemode
 -   commandName: sudo
@@ -115,6 +123,7 @@
     module: admin
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Forces a player to run a command.
     warmup: true
     permissionbase: nucleus.sudo
 -   commandName: afk
@@ -126,6 +135,7 @@
     module: afk
     defaultLevel: USER
     cooldown: false
+    oneLineDescription: Toggles the player's AFK state.
     warmup: false
     permissionbase: nucleus.afk
 -   commandName: ban
@@ -139,6 +149,7 @@
     module: ban
     defaultLevel: MOD
     cooldown: false
+    oneLineDescription: Bans a player.
     warmup: false
     permissionbase: nucleus.ban
 -   commandName: checkban
@@ -150,6 +161,7 @@
     module: ban
     defaultLevel: MOD
     cooldown: false
+    oneLineDescription: Checks the ban status for a player.
     warmup: false
     permissionbase: nucleus.checkban
 -   commandName: tempban
@@ -161,6 +173,7 @@
     module: ban
     defaultLevel: MOD
     cooldown: false
+    oneLineDescription: Temporarily bans a player.
     warmup: false
     permissionbase: nucleus.tempban
 -   commandName: unban
@@ -172,6 +185,7 @@
     module: ban
     defaultLevel: MOD
     cooldown: false
+    oneLineDescription: Unbans a player.
     warmup: false
     permissionbase: nucleus.unban
 -   commandName: nucleus
@@ -183,6 +197,7 @@
     module: core
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Displays Nucleus version and module information.
     warmup: false
     permissionbase: nucleus.nucleus
 -   commandName: nucleus printperms
@@ -200,6 +215,7 @@
     module: core
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Prints all permissions registered in Nucleus.
     warmup: true
     permissionbase: nucleus.nucleus.printperms
 -   commandName: nucleus reload
@@ -211,6 +227,7 @@
     module: core
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Reloads Nucleus' configuration files.
     warmup: false
     permissionbase: nucleus.nucleus.reload
 -   commandName: nucleus resetuser
@@ -222,6 +239,7 @@
     module: core
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Deletes all data in Nucleus for a player.
     warmup: false
     permissionbase: nucleus.nucleus.resetuser
 -   commandName: nucleus save
@@ -233,6 +251,7 @@
     module: core
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Saves all files.
     warmup: false
     permissionbase: nucleus.nucleus.save
 -   commandName: lockweather
@@ -244,6 +263,7 @@
     module: environment
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Locks the weather on the specified world.
     warmup: false
     permissionbase: nucleus.lockweather
 -   commandName: time
@@ -297,6 +317,7 @@
     module: environment
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Sets the weather on the specified world.
     warmup: true
     permissionbase: nucleus.weather
 -   commandName: hat
@@ -310,6 +331,7 @@
     module: fun
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Puts the item in the player's hand on their head as a helmet.
     warmup: false
     permissionbase: nucleus.hat
 -   commandName: ignite
@@ -329,6 +351,7 @@
     module: fun
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Sets the specified player on fire.
     warmup: true
     permissionbase: nucleus.ignite
 -   commandName: lightning
@@ -348,6 +371,7 @@
     module: fun
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Strikes a position or player with a lightning bolt.
     warmup: true
     permissionbase: nucleus.lightning
 -   commandName: deletehome
@@ -359,6 +383,7 @@
     module: home
     defaultLevel: USER
     cooldown: false
+    oneLineDescription: Deletes a home.
     warmup: false
     permissionbase: nucleus.home
 -   commandName: deletehomeother
@@ -370,6 +395,7 @@
     module: home
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Deletes other player's home.
     warmup: false
     permissionbase: nucleus.home.deleteother
 -   commandName: home
@@ -387,6 +413,7 @@
     module: home
     defaultLevel: USER
     cooldown: true
+    oneLineDescription: Teleports to home.
     warmup: true
     permissionbase: nucleus.home
 -   commandName: homeother
@@ -404,6 +431,7 @@
     module: home
     defaultLevel: MOD
     cooldown: true
+    oneLineDescription: Teleports to other player's home.
     warmup: true
     permissionbase: nucleus.home.other
 -   commandName: homeset
@@ -423,6 +451,7 @@
     module: home
     defaultLevel: USER
     cooldown: true
+    oneLineDescription: Sets home.
     warmup: true
     permissionbase: nucleus.home.set
 -   commandName: listhomes
@@ -436,6 +465,7 @@
     module: home
     defaultLevel: USER
     cooldown: false
+    oneLineDescription: Lists homes.
     warmup: false
     permissionbase: nucleus.home.list
 -   commandName: ignore
@@ -449,6 +479,7 @@
     module: ignore
     defaultLevel: USER
     cooldown: false
+    oneLineDescription: Toggles ignoring of all chat messages.
     warmup: false
     permissionbase: nucleus.ignore
 -   commandName: give
@@ -466,6 +497,7 @@
     module: item
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Gives item to player.
     warmup: true
     permissionbase: nucleus.give
 -   commandName: more
@@ -483,6 +515,7 @@
     module: item
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Sets item in hand to a full stack.
     warmup: true
     permissionbase: nucleus.more
 -   commandName: repair
@@ -502,6 +535,7 @@
     module: item
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Repairs item in hand.
     warmup: true
     permissionbase: nucleus.repair
 -   commandName: checkjail
@@ -513,6 +547,7 @@
     module: jail
     defaultLevel: MOD
     cooldown: false
+    oneLineDescription: Checks if a player is jailed.
     warmup: false
     permissionbase: nucleus.jail.checkjail
 -   commandName: jail
@@ -526,6 +561,7 @@
     module: jail
     defaultLevel: MOD
     cooldown: false
+    oneLineDescription: Toggles the jailing of a player.
     warmup: false
     permissionbase: nucleus.jail
 -   commandName: jails
@@ -537,6 +573,7 @@
     module: jail
     defaultLevel: MOD
     cooldown: false
+    oneLineDescription: Lists all jails.
     warmup: false
     permissionbase: nucleus.jail.list
 -   commandName: jails delete
@@ -548,19 +585,21 @@
     module: jail
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Deletes a jail.
     warmup: false
     permissionbase: nucleus.jail.delete
--   commandName: jails jails
-    aliases: jails
+-   commandName: jails info
+    aliases: info
     cost: false
     permissions:
-    - {module: jail, defaultLevel: MOD, description: Allows the user to run the command /jails jails,
-        permission: nucleus.jail.jails.base}
+    - {module: jail, defaultLevel: MOD, description: Allows the user to run the command /jails info,
+        permission: nucleus.jail.info.base}
     module: jail
     defaultLevel: MOD
     cooldown: false
+    oneLineDescription: Returns info about the specified jail.
     warmup: false
-    permissionbase: nucleus.jail.jails
+    permissionbase: nucleus.jail.info
 -   commandName: jails set
     aliases: set
     cost: false
@@ -570,6 +609,7 @@
     module: jail
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Creates a jail.
     warmup: false
     permissionbase: nucleus.jail.set
 -   commandName: jump
@@ -587,6 +627,7 @@
     module: jump
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Perform a short range "jump" to the block they are looking at.
     warmup: true
     permissionbase: nucleus.jump
 -   commandName: thru
@@ -604,6 +645,7 @@
     module: jump
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Teleport to the other side of a wall.
     warmup: true
     permissionbase: nucleus.thru
 -   commandName: kick
@@ -617,6 +659,7 @@
     module: kick
     defaultLevel: MOD
     cooldown: false
+    oneLineDescription: Kicks a player
     warmup: false
     permissionbase: nucleus.kick
 -   commandName: kickall
@@ -630,6 +673,7 @@
     module: kick
     defaultLevel: MOD
     cooldown: false
+    oneLineDescription: Kicks all players, optionally turning the whitelist on.
     warmup: false
     permissionbase: nucleus.kickall
 -   commandName: kit
@@ -647,6 +691,7 @@
     module: kit
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Redeems a kit.
     warmup: true
     permissionbase: nucleus.kit
 -   commandName: kit add
@@ -658,6 +703,7 @@
     module: kit
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Creates a kit with the specified name and current inventory.
     warmup: false
     permissionbase: nucleus.kit.add
 -   commandName: kit cost
@@ -669,6 +715,7 @@
     module: kit
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Sets the cost for a kit.
     warmup: false
     permissionbase: nucleus.kit.cost
 -   commandName: kit list
@@ -680,6 +727,7 @@
     module: kit
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Lists the kits that are available.
     warmup: false
     permissionbase: nucleus.kit.list
 -   commandName: kit remove
@@ -691,6 +739,7 @@
     module: kit
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Deletes a kit.
     warmup: false
     permissionbase: nucleus.kit.remove
 -   commandName: kit set
@@ -702,6 +751,7 @@
     module: kit
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Sets the items in a kit to your current inventory.
     warmup: false
     permissionbase: nucleus.kit.set
 -   commandName: kit setcooldown
@@ -713,6 +763,7 @@
     module: kit
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Sets the cooldown on a kit.
     warmup: false
     permissionbase: nucleus.kit.setcooldown
 -   commandName: mail
@@ -774,6 +825,7 @@
     module: message
     defaultLevel: USER
     cooldown: true
+    oneLineDescription: Send a message to all available staff
     warmup: true
     permissionbase: nucleus.helpop
 -   commandName: message
@@ -791,6 +843,7 @@
     module: message
     defaultLevel: USER
     cooldown: true
+    oneLineDescription: Send a message to a player, or the console with "-".
     warmup: true
     permissionbase: nucleus.message
 -   commandName: reply
@@ -808,6 +861,7 @@
     module: message
     defaultLevel: USER
     cooldown: true
+    oneLineDescription: Send a message to the last player that sent you a message.
     warmup: true
     permissionbase: nucleus.message
 -   commandName: socialspy
@@ -819,6 +873,7 @@
     module: message
     defaultLevel: MOD
     cooldown: false
+    oneLineDescription: See all private messages sent to other players.
     warmup: false
     permissionbase: nucleus.socialspy
 -   commandName: blockinfo
@@ -838,6 +893,7 @@
     module: misc
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Get information about the block you are currently facing.
     warmup: true
     permissionbase: nucleus.blockinfo
 -   commandName: feed
@@ -857,6 +913,7 @@
     module: misc
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Set specified player's hunger to full.
     warmup: true
     permissionbase: nucleus.feed
 -   commandName: fly
@@ -876,6 +933,7 @@
     module: misc
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Set specified player's fly mode.
     warmup: true
     permissionbase: nucleus.fly
 -   commandName: god
@@ -889,6 +947,7 @@
     module: misc
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Set specified player's invulnerability status.
     warmup: false
     permissionbase: nucleus.god
 -   commandName: heal
@@ -908,6 +967,7 @@
     module: misc
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Fully heal the specified player.
     warmup: true
     permissionbase: nucleus.heal
 -   commandName: info
@@ -925,6 +985,7 @@
     module: misc
     defaultLevel: MOD
     cooldown: true
+    oneLineDescription: Get server information.
     warmup: true
     permissionbase: nucleus.info
 -   commandName: iteminfo
@@ -944,6 +1005,7 @@
     module: misc
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Get information about the item you are currently holding.
     warmup: true
     permissionbase: nucleus.iteminfo
 -   commandName: kill
@@ -961,6 +1023,7 @@
     module: misc
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Kill the specified player.
     warmup: true
     permissionbase: nucleus.kill
 -   commandName: motd
@@ -978,6 +1041,7 @@
     module: misc
     defaultLevel: USER
     cooldown: true
+    oneLineDescription: Get the server MOTD.
     warmup: true
     permissionbase: nucleus.motd
 -   commandName: rules
@@ -989,6 +1053,7 @@
     module: misc
     defaultLevel: USER
     cooldown: false
+    oneLineDescription: Read the server rules.
     warmup: false
     permissionbase: nucleus.rules
 -   commandName: speed
@@ -1006,6 +1071,7 @@
     module: misc
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Set the specified player's walking or flying speed, where "1" is normal walking speed.
     warmup: true
     permissionbase: nucleus.speed
 -   commandName: suicide
@@ -1023,6 +1089,7 @@
     module: misc
     defaultLevel: USER
     cooldown: true
+    oneLineDescription: Kill your player, displaying the Game Over screen.
     warmup: true
     permissionbase: nucleus.suicide
 -   commandName: spawnmob
@@ -1042,6 +1109,7 @@
     module: mob
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Spawns in mobs at the specified player's location.
     warmup: true
     permissionbase: nucleus.spawnmob
 -   commandName: checkmute
@@ -1053,6 +1121,7 @@
     module: mute
     defaultLevel: MOD
     cooldown: false
+    oneLineDescription: Checks whether the specified player is muted.
     warmup: false
     permissionbase: nucleus.checkmute
 -   commandName: mute
@@ -1066,6 +1135,7 @@
     module: mute
     defaultLevel: MOD
     cooldown: false
+    oneLineDescription: Mutes the specified player.
     warmup: false
     permissionbase: nucleus.mute
 -   commandName: delnick
@@ -1083,6 +1153,7 @@
     module: nickname
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Deletes your current nickname
     warmup: true
     permissionbase: nucleus.nick
 -   commandName: nick
@@ -1110,6 +1181,7 @@
     module: nickname
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Sets your nickname/display name
     warmup: true
     permissionbase: nucleus.nick
 -   commandName: realname
@@ -1127,6 +1199,7 @@
     module: nickname
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Gets the player's realname from the provided nickname.
     warmup: true
     permissionbase: nucleus.realname
 -   commandName: list
@@ -1146,6 +1219,7 @@
     module: playerinfo
     defaultLevel: USER
     cooldown: true
+    oneLineDescription: Lists the players on the server.
     warmup: true
     permissionbase: nucleus.list
 -   commandName: seen
@@ -1165,6 +1239,7 @@
     module: playerinfo
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Gets information about the specified player.
     warmup: true
     permissionbase: nucleus.seen
 -   commandName: powertool
@@ -1176,6 +1251,7 @@
     module: powertool
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Binds the item in hand to the specified command.
     warmup: false
     permissionbase: nucleus.powertool
 -   commandName: powertool delete
@@ -1187,6 +1263,7 @@
     module: powertool
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Removes any powertool bindings to the item in hand.
     warmup: false
     permissionbase: nucleus.powertool
 -   commandName: powertool list
@@ -1198,6 +1275,7 @@
     module: powertool
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Lists all current powertools that the user has.
     warmup: false
     permissionbase: nucleus.powertool
 -   commandName: powertool toggle
@@ -1209,6 +1287,7 @@
     module: powertool
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Toggles whether powertools activate.
     warmup: false
     permissionbase: nucleus.powertool
 -   commandName: firstspawn
@@ -1226,6 +1305,7 @@
     module: spawn
     defaultLevel: USER
     cooldown: true
+    oneLineDescription: If set, warp to the new player spawn point.
     warmup: true
     permissionbase: nucleus.firstspawn
 -   commandName: setfirstspawn
@@ -1237,6 +1317,7 @@
     module: spawn
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Sets the new player spawn point.
     warmup: false
     permissionbase: nucleus.firstspawn.set
 -   commandName: setfirstspawn del
@@ -1248,6 +1329,7 @@
     module: spawn
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Removes the new player spawn point.
     warmup: false
     permissionbase: nucleus.firstspawn.remove
 -   commandName: setspawn
@@ -1259,6 +1341,7 @@
     module: spawn
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Sets the current world spawn point.
     warmup: false
     permissionbase: nucleus.setspawn
 -   commandName: spawn
@@ -1278,6 +1361,7 @@
     module: spawn
     defaultLevel: USER
     cooldown: true
+    oneLineDescription: Warp to the world spawn point.
     warmup: true
     permissionbase: nucleus.spawn
 -   commandName: teleport
@@ -1297,11 +1381,12 @@
     module: teleport
     defaultLevel: MOD
     cooldown: true
+    oneLineDescription: Teleports one player to anothers location.
     warmup: true
     permissionbase: nucleus.teleport.teleport
 - {commandName: teleportnative, aliases: 'teleportnative, tpnative, tpn', cost: false,
-    permissions: null, module: teleport, defaultLevel: USER, cooldown: false, warmup: false,
-    permissionbase: ''}
+    permissions: null, module: teleport, defaultLevel: USER, cooldown: false, oneLineDescription: 'Alias
+        for /minecraft:tp.', warmup: false, permissionbase: ''}
 -   commandName: tpa
     aliases: tpa, teleportask
     cost: true
@@ -1317,6 +1402,7 @@
     module: teleport
     defaultLevel: USER
     cooldown: true
+    oneLineDescription: Send a request to a player to ask for you to teleport to them.
     warmup: false
     permissionbase: nucleus.teleport.tpa
 -   commandName: tpaall
@@ -1328,6 +1414,7 @@
     module: teleport
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Request all players on the server to teleport to your location.
     warmup: false
     permissionbase: nucleus.teleport.tpaall
 -   commandName: tpaccept
@@ -1339,6 +1426,7 @@
     module: teleport
     defaultLevel: USER
     cooldown: false
+    oneLineDescription: Accept a pending teleport request.
     warmup: false
     permissionbase: nucleus.teleport.tpaccept
 -   commandName: tpahere
@@ -1356,6 +1444,7 @@
     module: teleport
     defaultLevel: MOD
     cooldown: true
+    oneLineDescription: Send a request to a player to ask them to teleport to you.
     warmup: false
     permissionbase: nucleus.teleport.tpahere
 -   commandName: tpall
@@ -1367,6 +1456,7 @@
     module: teleport
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Forcefully teleport all players on the server to your location.
     warmup: false
     permissionbase: nucleus.teleport.tpall
 -   commandName: tpdeny
@@ -1378,6 +1468,7 @@
     module: teleport
     defaultLevel: USER
     cooldown: false
+    oneLineDescription: Deny a pending teleport request.
     warmup: false
     permissionbase: nucleus.teleport.tpdeny
 -   commandName: tphere
@@ -1389,6 +1480,7 @@
     module: teleport
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Teleports a player to your location.
     warmup: false
     permissionbase: nucleus.teleport.tphere
 -   commandName: tppos
@@ -1400,6 +1492,7 @@
     module: teleport
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Teleport to the specified location.
     warmup: false
     permissionbase: nucleus.teleport.tppos
 -   commandName: tptoggle
@@ -1413,6 +1506,7 @@
     module: teleport
     defaultLevel: USER
     cooldown: false
+    oneLineDescription: Toggle whether teleport requests are received.
     warmup: false
     permissionbase: nucleus.teleport.tptoggle
 -   commandName: vanish
@@ -1424,6 +1518,7 @@
     module: vanish
     defaultLevel: ADMIN
     cooldown: false
+    oneLineDescription: Toggles whether you are invisible on the server.
     warmup: false
     permissionbase: nucleus.vanish
 -   commandName: warp
@@ -1443,6 +1538,7 @@
     module: warp
     defaultLevel: USER
     cooldown: true
+    oneLineDescription: Teleport to the specified warp.
     warmup: true
     permissionbase: nucleus.warp
 -   commandName: warp delete
@@ -1460,6 +1556,7 @@
     module: warp
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Deletes the specified warp.
     warmup: true
     permissionbase: nucleus.warp.delete
 -   commandName: warp list
@@ -1477,6 +1574,7 @@
     module: warp
     defaultLevel: USER
     cooldown: true
+    oneLineDescription: Lists all warps on the server.
     warmup: true
     permissionbase: nucleus.warp.list
 -   commandName: warp set
@@ -1494,6 +1592,7 @@
     module: warp
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Sets a warp.
     warmup: true
     permissionbase: nucleus.warp.set
 -   commandName: world
@@ -1511,6 +1610,7 @@
     module: world
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Parent command for all other world commands.
     warmup: true
     permissionbase: nucleus.world
 -   commandName: world create
@@ -1528,6 +1628,7 @@
     module: world
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Creates a world.
     warmup: true
     permissionbase: nucleus.world.create
 -   commandName: world delete
@@ -1545,6 +1646,7 @@
     module: world
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Deletes a world.
     warmup: true
     permissionbase: nucleus.world.delete
 -   commandName: world list
@@ -1562,6 +1664,7 @@
     module: world
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Lists all worlds.
     warmup: true
     permissionbase: nucleus.world.list
 -   commandName: world load
@@ -1579,6 +1682,7 @@
     module: world
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Loads a world.
     warmup: true
     permissionbase: nucleus.world.load
 -   commandName: world setdifficulty
@@ -1596,6 +1700,7 @@
     module: world
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Sets the difficulty of a world.
     warmup: true
     permissionbase: nucleus.world.setdifficulty
 -   commandName: world setgamemode
@@ -1613,6 +1718,7 @@
     module: world
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Sets the gamemode of a world.
     warmup: true
     permissionbase: nucleus.world.setgamemode
 -   commandName: world setspawn
@@ -1630,6 +1736,7 @@
     module: world
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Sets the spawn point of a world.
     warmup: true
     permissionbase: nucleus.world.setspawn
 -   commandName: world spawn
@@ -1647,6 +1754,7 @@
     module: world
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Teleports to world spawn.
     warmup: true
     permissionbase: nucleus.world.spawn
 -   commandName: world teleport
@@ -1664,5 +1772,6 @@
     module: world
     defaultLevel: ADMIN
     cooldown: true
+    oneLineDescription: Teleports to a world.
     warmup: true
     permissionbase: nucleus.world.teleport

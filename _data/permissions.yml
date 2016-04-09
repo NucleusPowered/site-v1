@@ -186,8 +186,8 @@
     permission: nucleus.jail.checkjail.base}
 - {module: jail, defaultLevel: ADMIN, description: Allows the user to run the command /jails delete,
     permission: nucleus.jail.delete.base}
-- {module: jail, defaultLevel: MOD, description: Allows the user to run the command /jails jails,
-    permission: nucleus.jail.jails.base}
+- {module: jail, defaultLevel: MOD, description: Allows the user to run the command /jails info,
+    permission: nucleus.jail.info.base}
 - {module: jail, defaultLevel: MOD, description: Allows the user to run the command /jails,
     permission: nucleus.jail.list.base}
 - {module: jail, defaultLevel: MOD, description: Notifies the user about jails when they occur.,
@@ -426,7 +426,7 @@
     permission: nucleus.seen.exempt.warmup}
 - {module: playerinfo, defaultLevel: ADMIN, description: Allows the user to see entended information about a player in /seen.,
     permission: nucleus.seen.extended}
-- {module: powertool, defaultLevel: ADMIN, description: Allows the user to run the command /powertool delete,
+- {module: powertool, defaultLevel: ADMIN, description: Allows the user to run the command /powertool,
     permission: nucleus.powertool.base}
 - {module: spawn, defaultLevel: USER, description: Allows the user to run the command /firstspawn,
     permission: nucleus.firstspawn.base}
