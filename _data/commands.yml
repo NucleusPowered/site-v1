@@ -970,24 +970,6 @@
     oneLineDescription: Fully heal the specified player.
     warmup: true
     permissionbase: nucleus.heal
--   commandName: info
-    aliases: info
-    cost: true
-    permissions:
-    - {module: misc, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /info,
-        permission: nucleus.info.exempt.cooldown}
-    - {module: misc, defaultLevel: MOD, description: Allows the user to run the command /info,
-        permission: nucleus.info.base}
-    - {module: misc, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /info,
-        permission: nucleus.info.exempt.warmup}
-    - {module: misc, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /info,
-        permission: nucleus.info.exempt.cost}
-    module: misc
-    defaultLevel: MOD
-    cooldown: true
-    oneLineDescription: Get server information.
-    warmup: true
-    permissionbase: nucleus.info
 -   commandName: iteminfo
     aliases: iteminfo, itemdb
     cost: true
@@ -1026,36 +1008,6 @@
     oneLineDescription: Kill the specified player.
     warmup: true
     permissionbase: nucleus.kill
--   commandName: motd
-    aliases: motd
-    cost: true
-    permissions:
-    - {module: misc, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /motd,
-        permission: nucleus.motd.exempt.warmup}
-    - {module: misc, defaultLevel: USER, description: Allows the user to run the command /motd,
-        permission: nucleus.motd.base}
-    - {module: misc, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /motd,
-        permission: nucleus.motd.exempt.cost}
-    - {module: misc, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /motd,
-        permission: nucleus.motd.exempt.cooldown}
-    module: misc
-    defaultLevel: USER
-    cooldown: true
-    oneLineDescription: Get the server MOTD.
-    warmup: true
-    permissionbase: nucleus.motd
--   commandName: rules
-    aliases: rules
-    cost: false
-    permissions:
-    - {module: misc, defaultLevel: USER, description: Allows the user to run the command /rules,
-        permission: nucleus.rules.base}
-    module: misc
-    defaultLevel: USER
-    cooldown: false
-    oneLineDescription: Read the server rules.
-    warmup: false
-    permissionbase: nucleus.rules
 -   commandName: speed
     aliases: speed
     cost: true
@@ -1184,24 +1136,6 @@
     oneLineDescription: Sets your nickname/display name
     warmup: true
     permissionbase: nucleus.nick
--   commandName: realname
-    aliases: realname
-    cost: true
-    permissions:
-    - {module: nickname, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /realname,
-        permission: nucleus.realname.exempt.cost}
-    - {module: nickname, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /realname,
-        permission: nucleus.realname.exempt.cooldown}
-    - {module: nickname, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /realname,
-        permission: nucleus.realname.exempt.warmup}
-    - {module: nickname, defaultLevel: ADMIN, description: Allows the user to run the command /realname,
-        permission: nucleus.realname.base}
-    module: nickname
-    defaultLevel: ADMIN
-    cooldown: true
-    oneLineDescription: Gets the player's realname from the provided nickname.
-    warmup: true
-    permissionbase: nucleus.realname
 -   commandName: list
     aliases: list, listplayers
     cost: true
