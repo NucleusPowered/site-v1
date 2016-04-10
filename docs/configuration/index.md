@@ -10,9 +10,9 @@ but they aren't for everyone.
 ### Enabling and Disabling Modules
 
 One of Nucleus' core strengths is the ability to enable and disable modules. By default, all modules are enabled, but both users
-and plugins can both request to disable modules.
+and plugins can request to disable modules.
 
-To set the status of a module, in the `config/nucleus/main.conf` file, in the `modules` section, each module can be set to one of the
+As the server owner, you have the final say. To set the status of a module, in the `config/nucleus/main.conf` file, in the `modules` section, each module can be set to one of the
 following statuses:
 
 * `ENABLED` - The default, use the module unless a plugin requests for it to be disabled.
@@ -48,4 +48,4 @@ removed.
 
 ### Module specific configuration
 
-Each configuration option should be generated with a comment explaining it's function.
+Each configuration option should be generated with a comment explaining its function.
