@@ -7,6 +7,10 @@ header: Documentation Centre
 
 * [Configuring Nucleus](configuration/)
 
+## Module Reference
+
+* [Home](modules/home.html)
+
 ## Reference
 
 * [Command Reference](commands.html)

@@ -1,0 +1,31 @@
+<table class="table table-striped table-hover">
+    <thead>
+    <tr>
+        <th>
+            Permission
+        </th>
+        <th>
+            Suggested Role
+        </th>
+        <th>
+            Description
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    {% assign permissions = site.data.permissions | where: "module", page.moduleid %}
+    {% for cmds in permissions %}
+    <tr>
+        <td>
+            {{ cmds.permission }}
+        </td>
+        <td>
+            {{ cmds.defaultLevel }}
+        </td>
+        <td>
+            {{ cmds.description }}
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
