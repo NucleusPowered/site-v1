@@ -458,8 +458,8 @@
     aliases: listhomes, homes
     cost: false
     permissions:
-    - {module: home, defaultLevel: ADMIN, description: 'Allows the user to target
-            other players using the command "{0}".', permission: nucleus.home.list.others}
+    - {module: home, defaultLevel: ADMIN, description: Allows the user to target other players using the command "listhomes".,
+        permission: nucleus.home.list.others}
     - {module: home, defaultLevel: USER, description: Allows the user to run the command /listhomes,
         permission: nucleus.home.list.base}
     module: home
@@ -482,24 +482,6 @@
     oneLineDescription: Toggles ignoring of all chat messages.
     warmup: false
     permissionbase: nucleus.ignore
--   commandName: give
-    aliases: give
-    cost: true
-    permissions:
-    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /give,
-        permission: nucleus.give.exempt.cooldown}
-    - {module: item, defaultLevel: ADMIN, description: Allows the user to run the command /give,
-        permission: nucleus.give.base}
-    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /give,
-        permission: nucleus.give.exempt.warmup}
-    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /give,
-        permission: nucleus.give.exempt.cost}
-    module: item
-    defaultLevel: ADMIN
-    cooldown: true
-    oneLineDescription: Gives item to player.
-    warmup: true
-    permissionbase: nucleus.give
 -   commandName: more
     aliases: more, stack
     cost: true
@@ -1116,7 +1098,7 @@
         permission: nucleus.nick.magic}
     - {module: nickname, defaultLevel: ADMIN, description: Allows the user to colour their nickname.,
         permission: nucleus.nick.colour}
-    - {module: nickname, defaultLevel: ADMIN, description: Allows the user to change other's nicknames.,
+    - {module: nickname, defaultLevel: ADMIN, description: Allows the user to change others nicknames.,
         permission: nucleus.nick.others}
     - {module: nickname, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /nick,
         permission: nucleus.nick.exempt.cooldown}
@@ -1284,7 +1266,7 @@
     permissions:
     - {module: spawn, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /spawn,
         permission: nucleus.spawn.exempt.cost}
-    - {module: spawn, defaultLevel: ADMIN, description: Allows the user to go to another world's spawnpoint.,
+    - {module: spawn, defaultLevel: ADMIN, description: Allows the user to go to another worlds spawnpoint.,
         permission: nucleus.spawn.otherworlds}
     - {module: spawn, defaultLevel: USER, description: Allows the user to run the command /spawn,
         permission: nucleus.spawn.base}
