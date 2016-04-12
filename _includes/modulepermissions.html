@@ -1,3 +1,5 @@
+{% assign permissions = site.data.permissions | where: "module", page.moduleid %}
+{% if permissions.size > 0 %}
 <table class="table table-striped table-hover">
     <thead>
     <tr>
@@ -13,7 +15,6 @@
     </tr>
     </thead>
     <tbody>
-    {% assign permissions = site.data.permissions | where: "module", page.moduleid %}
     {% for cmds in permissions %}
     <tr>
         <td>
@@ -29,3 +30,6 @@
     {% endfor %}
     </tbody>
 </table>
+{% else %}
+<em>There are no permissions to set for this module.</em>
+{% endif %}

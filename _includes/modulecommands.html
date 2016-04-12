@@ -1,3 +1,5 @@
+{% assign com = site.data.commands | where: "module", page.moduleid %}
+{% if com.size > 0 %}
 <table class="table table-striped table-hover">
     <thead>
     <tr>
@@ -13,7 +15,6 @@
     </tr>
     </thead>
     <tbody>
-    {% assign com = site.data.commands | where: "module", page.moduleid %}
     {% for cmds in com %}
     <tr>
         <td>
@@ -35,3 +36,6 @@
     {% endfor %}
     </tbody>
 </table>
+{% else %}
+<em>There are no commands for this module.</em>
+{% endif %}
