@@ -9,6 +9,7 @@ header: Documentation Centre
 
 ## Module Reference
 
+* [Core](modules/core.html)
 * [Home](modules/home.html)
 
 ## Reference
