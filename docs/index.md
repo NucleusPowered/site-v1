@@ -14,6 +14,7 @@ header: Documentation Centre
 * [Ban](modules/ban.html)
 * [Chat](modules/chat.html)
 * [Core](modules/core.html)
+* [Command Logger](modules/commandlogger.html)
 * [Home](modules/home.html)
 
 ## Reference
