@@ -6,6 +6,7 @@ header: Documentation Centre
 ## Installation and Configuration
 
 * [Configuring Nucleus](configuration/)
+* [Migrating from EssentialCmds](configuration/migration.html)
 
 ## Module Reference
 
