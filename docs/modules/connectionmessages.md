@@ -10,7 +10,7 @@ modulename: Connection Messages
 
 The Connection Messages module handles changing the messages sent to clients when players join and leave the server.
 
-Like the [Chat](chat.html) works best when coupled with a permission plugin that supports options.
+Like the [Chat module](chat.html), Connection Messages work best when coupled with a permission plugin that supports options.
 
 ## Configuration
 
