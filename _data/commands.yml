@@ -106,6 +106,24 @@
     oneLineDescription: Sets a player's game mode.
     warmup: false
     permissionbase: nucleus.gamemode
+-   commandName: stop
+    aliases: stop
+    cost: true
+    permissions:
+    - {module: admin, defaultLevel: ADMIN, description: Allows the user to run the command /stop,
+        permission: nucleus.stop.base}
+    - {module: admin, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /stop,
+        permission: nucleus.stop.exempt.warmup}
+    - {module: admin, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /stop,
+        permission: nucleus.stop.exempt.cooldown}
+    - {module: admin, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /stop,
+        permission: nucleus.stop.exempt.cost}
+    module: admin
+    defaultLevel: ADMIN
+    cooldown: true
+    oneLineDescription: Stops the server.
+    warmup: true
+    permissionbase: nucleus.stop
 -   commandName: sudo
     aliases: sudo
     cost: true
@@ -138,6 +156,24 @@
     oneLineDescription: Toggles the player's AFK state.
     warmup: false
     permissionbase: nucleus.afk
+-   commandName: back
+    aliases: back, return
+    cost: true
+    permissions:
+    - {module: back, defaultLevel: ADMIN, description: Allows the user to run the command /back,
+        permission: nucleus.back.base}
+    - {module: back, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /back,
+        permission: nucleus.back.exempt.warmup}
+    - {module: back, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /back,
+        permission: nucleus.back.exempt.cost}
+    - {module: back, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /back,
+        permission: nucleus.back.exempt.cooldown}
+    module: back
+    defaultLevel: ADMIN
+    cooldown: true
+    oneLineDescription: Allows a user to return to their last place before death or warp.
+    warmup: true
+    permissionbase: nucleus.back
 -   commandName: ban
     aliases: ban
     cost: false
@@ -188,6 +224,78 @@
     oneLineDescription: Unbans a player.
     warmup: false
     permissionbase: nucleus.unban
+-   commandName: blacklist
+    aliases: blacklist
+    cost: true
+    permissions:
+    - {module: blacklist, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /blacklist,
+        permission: nucleus.blacklist.exempt.warmup}
+    - {module: blacklist, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /blacklist,
+        permission: nucleus.blacklist.exempt.cost}
+    - {module: blacklist, defaultLevel: ADMIN, description: Allows the user to run the command /blacklist,
+        permission: nucleus.blacklist.base}
+    - {module: blacklist, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /blacklist,
+        permission: nucleus.blacklist.exempt.cooldown}
+    module: blacklist
+    defaultLevel: ADMIN
+    cooldown: true
+    oneLineDescription: Parent command for all other blacklist commands.
+    warmup: true
+    permissionbase: nucleus.blacklist
+-   commandName: blacklist add
+    aliases: add
+    cost: true
+    permissions:
+    - {module: blacklist, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /blacklist add,
+        permission: nucleus.blacklist.add.exempt.warmup}
+    - {module: blacklist, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /blacklist add,
+        permission: nucleus.blacklist.add.exempt.cost}
+    - {module: blacklist, defaultLevel: ADMIN, description: Allows the user to run the command /blacklist add,
+        permission: nucleus.blacklist.add.base}
+    - {module: blacklist, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /blacklist add,
+        permission: nucleus.blacklist.add.exempt.cooldown}
+    module: blacklist
+    defaultLevel: ADMIN
+    cooldown: true
+    oneLineDescription: Adds item to blacklist.
+    warmup: true
+    permissionbase: nucleus.blacklist.add
+-   commandName: blacklist list
+    aliases: list, ls
+    cost: true
+    permissions:
+    - {module: blacklist, defaultLevel: ADMIN, description: Allows the user to run the command /blacklist list,
+        permission: nucleus.blacklist.list.base}
+    - {module: blacklist, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /blacklist list,
+        permission: nucleus.blacklist.list.exempt.warmup}
+    - {module: blacklist, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /blacklist list,
+        permission: nucleus.blacklist.list.exempt.cooldown}
+    - {module: blacklist, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /blacklist list,
+        permission: nucleus.blacklist.list.exempt.cost}
+    module: blacklist
+    defaultLevel: ADMIN
+    cooldown: true
+    oneLineDescription: Lists all blacklisted items.
+    warmup: true
+    permissionbase: nucleus.blacklist.list
+-   commandName: blacklist remove
+    aliases: remove, delete, del
+    cost: true
+    permissions:
+    - {module: blacklist, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /blacklist remove,
+        permission: nucleus.blacklist.remove.exempt.cost}
+    - {module: blacklist, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /blacklist remove,
+        permission: nucleus.blacklist.remove.exempt.cooldown}
+    - {module: blacklist, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /blacklist remove,
+        permission: nucleus.blacklist.remove.exempt.warmup}
+    - {module: blacklist, defaultLevel: ADMIN, description: Allows the user to run the command /blacklist remove,
+        permission: nucleus.blacklist.remove.base}
+    module: blacklist
+    defaultLevel: ADMIN
+    cooldown: true
+    oneLineDescription: Removes item from blacklist.
+    warmup: true
+    permissionbase: nucleus.blacklist.remove
 -   commandName: nucleus
     aliases: nucleus
     cost: false
@@ -482,6 +590,132 @@
     oneLineDescription: Toggles ignoring of all chat messages.
     warmup: false
     permissionbase: nucleus.ignore
+-   commandName: itemname
+    aliases: itemname
+    cost: true
+    permissions:
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to run the command /itemname,
+        permission: nucleus.itemname.base}
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /itemname,
+        permission: nucleus.itemname.exempt.warmup}
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /itemname,
+        permission: nucleus.itemname.exempt.cost}
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /itemname,
+        permission: nucleus.itemname.exempt.cooldown}
+    module: item
+    defaultLevel: ADMIN
+    cooldown: true
+    oneLineDescription: Base command for Item Name related actions.
+    warmup: true
+    permissionbase: nucleus.itemname
+-   commandName: itemname clear
+    aliases: clear
+    cost: true
+    permissions:
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /itemname clear,
+        permission: nucleus.itemname.clear.exempt.cooldown}
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to run the command /itemname clear,
+        permission: nucleus.itemname.clear.base}
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /itemname clear,
+        permission: nucleus.itemname.clear.exempt.warmup}
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /itemname clear,
+        permission: nucleus.itemname.clear.exempt.cost}
+    module: item
+    defaultLevel: ADMIN
+    cooldown: true
+    oneLineDescription: Clears the name assigned to the item currently in the player's hand.
+    warmup: true
+    permissionbase: nucleus.itemname.clear
+-   commandName: itemname set
+    aliases: set
+    cost: true
+    permissions:
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /itemname set,
+        permission: nucleus.itemname.set.exempt.warmup}
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /itemname set,
+        permission: nucleus.itemname.set.exempt.cost}
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /itemname set,
+        permission: nucleus.itemname.set.exempt.cooldown}
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to run the command /itemname set,
+        permission: nucleus.itemname.set.base}
+    module: item
+    defaultLevel: ADMIN
+    cooldown: true
+    oneLineDescription: Sets the user facing name for the item currently in the player's hand.
+    warmup: true
+    permissionbase: nucleus.itemname.set
+-   commandName: lore
+    aliases: lore
+    cost: true
+    permissions:
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /lore,
+        permission: nucleus.lore.exempt.cooldown}
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to run the command /lore,
+        permission: nucleus.lore.base}
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /lore,
+        permission: nucleus.lore.exempt.warmup}
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /lore,
+        permission: nucleus.lore.exempt.cost}
+    module: item
+    defaultLevel: ADMIN
+    cooldown: true
+    oneLineDescription: Base command for Lore related actions.
+    warmup: true
+    permissionbase: nucleus.lore
+-   commandName: lore add
+    aliases: add
+    cost: true
+    permissions:
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /lore add,
+        permission: nucleus.lore.set.exempt.warmup}
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to run the command /lore add,
+        permission: nucleus.lore.set.base}
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /lore add,
+        permission: nucleus.lore.set.exempt.cooldown}
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /lore add,
+        permission: nucleus.lore.set.exempt.cost}
+    module: item
+    defaultLevel: ADMIN
+    cooldown: true
+    oneLineDescription: Adds a new line to the lore on the current item in the hand.
+    warmup: true
+    permissionbase: nucleus.lore.set
+-   commandName: lore clear
+    aliases: clear
+    cost: true
+    permissions:
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /lore clear,
+        permission: nucleus.lore.set.exempt.warmup}
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to run the command /lore clear,
+        permission: nucleus.lore.set.base}
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /lore clear,
+        permission: nucleus.lore.set.exempt.cooldown}
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /lore clear,
+        permission: nucleus.lore.set.exempt.cost}
+    module: item
+    defaultLevel: ADMIN
+    cooldown: true
+    oneLineDescription: Clears the lore on the current item in the hand.
+    warmup: true
+    permissionbase: nucleus.lore.set
+-   commandName: lore set
+    aliases: set
+    cost: true
+    permissions:
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /lore set,
+        permission: nucleus.lore.set.exempt.warmup}
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to run the command /lore set,
+        permission: nucleus.lore.set.base}
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /lore set,
+        permission: nucleus.lore.set.exempt.cooldown}
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /lore set,
+        permission: nucleus.lore.set.exempt.cost}
+    module: item
+    defaultLevel: ADMIN
+    cooldown: true
+    oneLineDescription: Sets the lore on the current item in the hand. The current lore is replaced.
+    warmup: true
+    permissionbase: nucleus.lore.set
 -   commandName: more
     aliases: more, stack
     cost: true
@@ -1118,6 +1352,24 @@
     oneLineDescription: Sets your nickname/display name
     warmup: true
     permissionbase: nucleus.nick
+-   commandName: realname
+    aliases: realname
+    cost: true
+    permissions:
+    - {module: nickname, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /realname,
+        permission: nucleus.realname.exempt.cost}
+    - {module: nickname, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /realname,
+        permission: nucleus.realname.exempt.cooldown}
+    - {module: nickname, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /realname,
+        permission: nucleus.realname.exempt.warmup}
+    - {module: nickname, defaultLevel: ADMIN, description: Allows the user to run the command /realname,
+        permission: nucleus.realname.base}
+    module: nickname
+    defaultLevel: ADMIN
+    cooldown: true
+    oneLineDescription: Gets the player's realname from the provided nickname.
+    warmup: true
+    permissionbase: nucleus.realname
 -   commandName: list
     aliases: list, listplayers
     cost: true
@@ -1297,7 +1549,7 @@
     module: teleport
     defaultLevel: MOD
     cooldown: true
-    oneLineDescription: Teleports one player to anothers location.
+    oneLineDescription: Teleports one player to another's location.
     warmup: true
     permissionbase: nucleus.teleport.teleport
 - {commandName: teleportnative, aliases: 'teleportnative, tpnative, tpn', cost: false,
