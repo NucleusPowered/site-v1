@@ -14,6 +14,7 @@ header: Documentation Centre
 * [AFK](modules/afk.html)
 * [Back](modules/back.html)
 * [Ban](modules/ban.html)
+* [Blacklist](modules/blacklist.html)
 * [Chat](modules/chat.html)
 * [Core](modules/core.html)
 * [Command Logger](modules/commandlogger.html)
