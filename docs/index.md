@@ -18,6 +18,7 @@ header: Documentation Centre
 * [Chat](modules/chat.html)
 * [Core](modules/core.html)
 * [Command Logger](modules/commandlogger.html)
+* [Connection Messages](modules/connectionmessages.html)
 * [Home](modules/home.html)
 
 ## Reference
