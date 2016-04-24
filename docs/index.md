@@ -12,6 +12,7 @@ header: Documentation Centre
 
 * [Admin](modules/admin.html)
 * [AFK](modules/afk.html)
+* [Back](modules/back.html)
 * [Ban](modules/ban.html)
 * [Chat](modules/chat.html)
 * [Core](modules/core.html)
