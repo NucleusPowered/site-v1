@@ -1,7 +1,7 @@
 ---
 layout: modulespec
 title: Documentation Centre
-header: Kits Module
+header: Kit Module
 moduleid: kit
 modulename: Kit
 ---
