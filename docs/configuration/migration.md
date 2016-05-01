@@ -4,6 +4,8 @@ title: Documentation Centre
 header: Migrating from EssentialCmds
 ---
 
+**This is not yet in Nucleus**
+
 Nucleus allows for users to migrate their server data from EssentialCmds to Nucleus using one command.
 
 ## Pre-requisites
@@ -26,11 +28,12 @@ Nucleus allows for users to migrate their server data from EssentialCmds to Nucl
 * Mute status
 * Jail status
 * Homes
+* Player nicknames
 
 ## What Does Nucleus Not Migrate?
 
-Nucleus is designed to not update your main user config files. In keeping with this, anything in your configuration files
-will not be transferred over to Nucleus automatically. However, this is a good opportunity to review what is available in Nucleus.
+Most things in your configuration files will not be transferred over to Nucleus automatically, including things like chat message templates.
+However, this is a good opportunity to review what is available in Nucleus.
 
 This includes:
 
