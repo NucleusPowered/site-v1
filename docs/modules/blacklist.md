@@ -1,9 +1,9 @@
 ---
 layout: modulespec
 title: Documentation Centre
-header: Backlist Module
-moduleid: backlist
-modulename: Backlist
+header: Blacklist Module
+moduleid: blacklist
+modulename: Blacklist
 ---
 
 ## Introduction
