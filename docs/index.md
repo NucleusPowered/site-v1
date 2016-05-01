@@ -22,6 +22,7 @@ header: Documentation Centre
 * [Environment](modules/environment.html)
 * [Fun](modules/fun.html)
 * [Home](modules/home.html)
+* [Ignore](modules/ignore.html)
 * [Kit](modules/kit.html)
 
 ## Reference
