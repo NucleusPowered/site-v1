@@ -20,6 +20,7 @@ header: Documentation Centre
 * [Command Logger](modules/commandlogger.html)
 * [Connection Messages](modules/connectionmessages.html)
 * [Environment](modules/environment.html)
+* [Fun](modules/fun.html)
 * [Home](modules/home.html)
 * [Kit](modules/kit.html)
 
