@@ -24,6 +24,7 @@ header: Documentation Centre
 * [Home](modules/home.html)
 * [Ignore](modules/ignore.html)
 * [Kit](modules/kit.html)
+* [Spawn](modules/spawn.html)
 
 ## Reference
 
