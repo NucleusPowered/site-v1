@@ -46,8 +46,8 @@ The world time can be set through the use of the command `/time set [world] <tim
 
 It can also be a predefined keyword:
 
- * `morning`, `dawn`, `sunrise`: 0 ticks (6 am)
- * `day`, `daytime`: 1000 ticks (7 am)
+ * `dawn`, `sunrise`: 0 ticks (6 am)
+ * `day`, `daytime`, `morning`: 1000 ticks (7 am)
  * `noon`, `afternoon`: 6000 ticks (12 pm)
  * `dusk`, `evening`, `sunset`: 12000 ticks (6 pm)
  * `night`: 14000 ticks (8 pm)
