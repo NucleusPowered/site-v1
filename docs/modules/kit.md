@@ -10,13 +10,17 @@ lastupdate: 0.3
 ## Introduction
 
 Kits are sets of items that can be given out to players when a command is run. Kits can be restricted to certain players
-using permissions, and can be set to only be redeemable once per set time frame.
+using permissions, and can be set to only be redeemable once per set time frame. You can also create a kit that is given to
+every new player - what we call the "first join kit".
 
 ## Using a kit
 
 Simply run `/kit [name]`. If you have permissions, the money, and are not in a cooldown period for the kit, you will
 recieve the items in the kit. Nucleus will warn you if some items were lost, and will not redeem the kit if your inventory
 was full.
+
+You can see all kits you have access to by running `/kit list`. Kits you have permission for, but are currently in cooldown
+or are one time kits that have been used, appear struck out.
 
 ## Creating and Managing Kits
 
