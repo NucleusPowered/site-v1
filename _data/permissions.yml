@@ -218,14 +218,6 @@
     permission: nucleus.ignore.base}
 - {module: ignore, defaultLevel: MOD, description: 'Exempts the user from having their
         chat, messages and mail ignored.', permission: nucleus.ignore.exempt.chat}
-- {module: item, defaultLevel: ADMIN, description: Allows the user to run the command /give,
-    permission: nucleus.give.base}
-- {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /give,
-    permission: nucleus.give.exempt.cooldown}
-- {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /give,
-    permission: nucleus.give.exempt.cost}
-- {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /give,
-    permission: nucleus.give.exempt.warmup}
 - {module: item, defaultLevel: ADMIN, description: Allows the user to run the command /itemname,
     permission: nucleus.itemname.base}
 - {module: item, defaultLevel: ADMIN, description: Allows the user to run the command /itemname clear,
@@ -258,13 +250,13 @@
     permission: nucleus.lore.exempt.cost}
 - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /lore,
     permission: nucleus.lore.exempt.warmup}
-- {module: item, defaultLevel: ADMIN, description: Allows the user to run the command /lore clear,
+- {module: item, defaultLevel: ADMIN, description: Allows the user to run the command /lore set,
     permission: nucleus.lore.set.base}
-- {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /lore clear,
+- {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /lore set,
     permission: nucleus.lore.set.exempt.cooldown}
-- {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /lore clear,
+- {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /lore set,
     permission: nucleus.lore.set.exempt.cost}
-- {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /lore clear,
+- {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /lore set,
     permission: nucleus.lore.set.exempt.warmup}
 - {module: item, defaultLevel: ADMIN, description: Allows the user to run the command /more,
     permission: nucleus.more.base}
@@ -356,7 +348,7 @@
     permission: nucleus.redeem.base}
 - {module: kit, defaultLevel: ADMIN, description: Allows the user to run the command /firstjoinkit set,
     permission: nucleus.set.base}
-- {module: mail, defaultLevel: USER, description: Allows the user to run the command /mail clear,
+- {module: mail, defaultLevel: USER, description: Allows the user to run the command /mail,
     permission: nucleus.mail.base}
 - {module: mail, defaultLevel: ADMIN, description: Allows the user to run the command /mail other,
     permission: nucleus.mail.other.base}
@@ -528,7 +520,7 @@
     permission: nucleus.seen.exempt.warmup}
 - {module: playerinfo, defaultLevel: ADMIN, description: Allows the user to see entended information about a player in /seen.,
     permission: nucleus.seen.extended}
-- {module: powertool, defaultLevel: ADMIN, description: Allows the user to run the command /powertool,
+- {module: powertool, defaultLevel: ADMIN, description: Allows the user to run the command /powertool delete,
     permission: nucleus.powertool.base}
 - {module: rules, defaultLevel: ADMIN, description: Allows the user to run the command /rules add,
     permission: nucleus.rules.add.base}

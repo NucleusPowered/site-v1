@@ -602,24 +602,6 @@
     oneLineDescription: Toggles ignoring of all chat messages.
     warmup: false
     permissionbase: nucleus.ignore
--   commandName: give
-    aliases: give
-    cost: true
-    permissions:
-    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /give,
-        permission: nucleus.give.exempt.cooldown}
-    - {module: item, defaultLevel: ADMIN, description: Allows the user to run the command /give,
-        permission: nucleus.give.base}
-    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /give,
-        permission: nucleus.give.exempt.warmup}
-    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /give,
-        permission: nucleus.give.exempt.cost}
-    module: item
-    defaultLevel: ADMIN
-    cooldown: true
-    oneLineDescription: Gives item to player.
-    warmup: true
-    permissionbase: nucleus.give
 -   commandName: itemname
     aliases: itemname
     cost: true
@@ -1035,7 +1017,7 @@
     module: kit
     defaultLevel: ADMIN
     cooldown: false
-    oneLineDescription: description.kit.onetime.desc
+    oneLineDescription: Sets or unsets a kit as a one time use kit.
     warmup: false
     permissionbase: nucleus.kit.onetime
 -   commandName: kit remove
@@ -1059,7 +1041,7 @@
     module: kit
     defaultLevel: ADMIN
     cooldown: false
-    oneLineDescription: description.kit.resetusage.desc
+    oneLineDescription: Resets a player's usage of a kit.
     warmup: false
     permissionbase: nucleus.kit.resetusage
 -   commandName: kit set
@@ -1693,7 +1675,7 @@
     module: staff-chat
     defaultLevel: MOD
     cooldown: false
-    oneLineDescription: description.staffchat.desc
+    oneLineDescription: Allows the user to chat in the staff chat channel.
     warmup: false
     permissionbase: nucleus.staffchat
 -   commandName: teleport
