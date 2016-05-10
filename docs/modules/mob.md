@@ -10,7 +10,7 @@ modulename: Mob
 
 The mob module allows for the spawning in of mobs using the `/spawnmob` command.
 
-## Spawning in mobs.
+## Spawning in mobs
 
 The command `/spawnmob [player] <mob> <amount>` allows the user to spawn mobs around the specified player (or themselves,
 if not specified), the mob, and the number of mobs. Vanilla mobs do not require a prefix (but you may use the prefix `minecraft:`),
