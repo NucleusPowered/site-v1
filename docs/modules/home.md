@@ -23,3 +23,8 @@ to have. If you are using PermissionsEx, you can set the number of homes on a pl
 
 Consult the permissions plugin's documentation for more information on how to do this. If you wish a player to have an
 unlimted number of homes, set the permission `nucleus.home.set.unlimted`.
+
+## Setting Warmups and Cooldowns
+
+This can be achieved using the `commands.conf` file. The options are `home.warmup` and `home.cooldown`, and are specified
+in seconds. Note that if the selected home doesn't exist, then neither the warmup or the cooldown will start.
