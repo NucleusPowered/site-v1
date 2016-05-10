@@ -26,6 +26,7 @@ header: Documentation Centre
 * [Kit](modules/kit.html)
 * [Powertool](modules/powertool.html)
 * [Spawn](modules/spawn.html)
+* [Teleport](modules/teleport.html)
 * [Vanish](modules/vanish.html)
 
 ## Reference

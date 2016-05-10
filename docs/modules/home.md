@@ -28,3 +28,5 @@ unlimted number of homes, set the permission `nucleus.home.set.unlimted`.
 
 This can be achieved using the `commands.conf` file. The options are `home.warmup` and `home.cooldown`, and are specified
 in seconds. Note that if the selected home doesn't exist, then neither the warmup or the cooldown will start.
+
+If the player moves, runs a command or is attacked during the warmup, the warp home is cancelled.
