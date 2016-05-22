@@ -17,3 +17,7 @@ The module is primarily concerned with ensuring that the internal functions of t
 command set are ways to force saving the latest data, reloading the plugin configuration, and deleting user information.
 
 Note that changing module and command enabling statuses will not take effect until the server is restarted.
+
+## Migrating from EssentialCmds
+
+See [our guide here](../configuration/migration.md)

@@ -4,8 +4,6 @@ title: Documentation Centre
 header: Migrating from EssentialCmds
 ---
 
-**This is not yet in Nucleus**
-
 Nucleus allows for users to migrate their server data from EssentialCmds to Nucleus using one command.
 
 ## Pre-requisites
@@ -22,6 +20,7 @@ Nucleus allows for users to migrate their server data from EssentialCmds to Nucl
 * Warps
 * Jail Locations
 * World Spawns
+* Rules
 
 ### User Data
 
