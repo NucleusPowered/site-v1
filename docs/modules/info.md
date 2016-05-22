@@ -13,9 +13,12 @@ a series of info pages.
 
 ## Message Of The Day
 
-Nucleus creates a file at `config/nucleus/motd.txt`, that will be displayed on join to anyone with the `nucleus.motd.login`
+Nucleus creates a file at `config/nucleus/motd.txt` that will be displayed on join to anyone with the `nucleus.motd.login`
 permission, or if they run `/motd` (with the `nucleus.motd.base` permission). The text file supports Miencraft colour codes
 prefixed with an ampersand (`&`), and will convert URLs automatically where it sees them.
+
+To update the file, simply edit the file, then run `/nucleus reload`. If you want a different (or no) title for the MOTD,
+this can be changed in the `main.conf` file, see `info.motd-title`.
 
 The MOTD supports tokens, see the section "Tokens/Variables" below.
 
@@ -40,7 +43,9 @@ to that line. The title can be no longer than 50 characters.
 
 The following tokens can be used in both the `motd` and `info` files, and will be replaced at runtime.
 
+{% raw %}
 * `{{maxplayers}}` - maximum number of players that the server can hold.
 * `{{onlineplayers}}` - number of players online right now.
 * `{{currentworld}}` - the name of the current world.
 * `{{time}}` - the time on the current world.
+{% endraw %}
