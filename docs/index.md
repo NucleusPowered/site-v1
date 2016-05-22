@@ -13,18 +13,19 @@ header: Documentation Centre
 
 * [Admin](modules/admin.html) - Administrative commands, such as `/broadcast`, `/exp` and `/sudo`
 * [AFK](modules/afk.html) - Management of players that go idle
-* [Back](modules/back.html) - Provides `/back`, allowing users to return to a previous spot after warping or death.
+* [Back](modules/back.html) - Provides `/back`, allowing users to return to a previous spot after warping or death
 * [Ban](modules/ban.html) - Ban management functions
-* [Blacklist](modules/blacklist.html) - Management of items that players are not allowed to possess or use.
+* [Blacklist](modules/blacklist.html) - Management of items that players are not allowed to possess or use
 * [Chat](modules/chat.html) - Management of the server chat
-* [Core](modules/core.html) - Core Nucleus functions, such as migration and permission setup.
+* [Core](modules/core.html) - Core Nucleus functions, such as migration and permission setup
 * [Command Logger](modules/commandlogger.html) - Logs commands in the console
-* [Connection Messages](modules/connectionmessages.html) - Alters the messages when players login or out.
+* [Connection Messages](modules/connectionmessages.html) - Alters the messages when players login or out
 * [Environment](modules/environment.html) - Manages the world environment
-* [Fun](modules/fun.html) - "Fun" commands.
+* [Fun](modules/fun.html) - "Fun" commands
 * [Home](modules/home.html) - Manages personal warps for users
 * [Ignore](modules/ignore.html) - Allows users to ignore others in chat
 * [Info](modules/info.html) - Provides for an MOTD and other server info pages
+* [Item](modules/item.html) - Item manipulation related commands
 * [Kit](modules/kit.html) - Management of sets of items that players can redeem
 * [Mob](modules/mob.html) - Mobs and mob spawners
 * [Powertool](modules/powertool.html) - Personal binding of commands to items
