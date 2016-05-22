@@ -7,31 +7,32 @@ header: Documentation Centre
 
 * [Configuring Nucleus](configuration/)
 * [Migrating from EssentialCmds](configuration/migration.html)
+* [Setting up suggested permissions](configuration/permissions.html)
 
 ## Module Reference
 
-* [Admin](modules/admin.html)
-* [AFK](modules/afk.html)
-* [Back](modules/back.html)
-* [Ban](modules/ban.html)
-* [Blacklist](modules/blacklist.html)
-* [Chat](modules/chat.html)
-* [Core](modules/core.html)
-* [Command Logger](modules/commandlogger.html)
-* [Connection Messages](modules/connectionmessages.html)
-* [Environment](modules/environment.html)
-* [Fun](modules/fun.html)
-* [Home](modules/home.html)
-* [Ignore](modules/ignore.html)
-* [Info](modules/info.html)
-* [Kit](modules/kit.html)
-* [Mob](modules/mob.html)
-* [Powertool](modules/powertool.html)
-* [Rules](modules/rules.html)
-* [Spawn](modules/spawn.html)
-* [Staff Chat](modules/staff-chat.html)
-* [Teleport](modules/teleport.html)
-* [Vanish](modules/vanish.html)
+* [Admin](modules/admin.html) - Administrative commands, such as `/broadcast`, `/exp` and `/sudo`
+* [AFK](modules/afk.html) - Management of players that go idle
+* [Back](modules/back.html) - Provides `/back`, allowing users to return to a previous spot after warping or death.
+* [Ban](modules/ban.html) - Ban management functions
+* [Blacklist](modules/blacklist.html) - Management of items that players are not allowed to possess or use.
+* [Chat](modules/chat.html) - Management of the server chat
+* [Core](modules/core.html) - Core Nucleus functions, such as migration and permission setup.
+* [Command Logger](modules/commandlogger.html) - Logs commands in the console
+* [Connection Messages](modules/connectionmessages.html) - Alters the messages when players login or out.
+* [Environment](modules/environment.html) - Manages the world environment
+* [Fun](modules/fun.html) - "Fun" commands.
+* [Home](modules/home.html) - Manages personal warps for users
+* [Ignore](modules/ignore.html) - Allows users to ignore others in chat
+* [Info](modules/info.html) - Provides for an MOTD and other server info pages
+* [Kit](modules/kit.html) - Management of sets of items that players can redeem
+* [Mob](modules/mob.html) - Mobs and mob spawners
+* [Powertool](modules/powertool.html) - Personal binding of commands to items
+* [Rules](modules/rules.html) - Set and display rules
+* [Spawn](modules/spawn.html) - Set spawn and first spawn spots
+* [Staff Chat](modules/staff-chat.html) - A chat channel for staff members
+* [Teleport](modules/teleport.html) - Teleportation of players to other players and arbitary spots
+* [Vanish](modules/vanish.html) - Makes players vanish from view
 
 ## Reference
 
