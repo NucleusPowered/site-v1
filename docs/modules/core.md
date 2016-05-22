@@ -21,3 +21,7 @@ Note that changing module and command enabling statuses will not take effect unt
 ## Migrating from EssentialCmds
 
 See [our guide here](../configuration/migration.html)
+
+## Setting up default permissions
+
+See [our guide here](../configuration/permissions.html)
