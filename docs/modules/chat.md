@@ -54,3 +54,7 @@ Messages themselves can also be formatted using colour codes and formats, prefix
 "Magic" characters can also be sent using `&k`, and reset using `&r`.
 
 The message formatting can be controlled by permissions - which are listed below.
+
+## Player Messages: URLs
+
+Since 0.4, URLs are detected by Nucleus and are made clickable. This requires the `nucleus.chat.url` permission.
