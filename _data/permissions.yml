@@ -114,6 +114,8 @@
     permission: nucleus.chat.magic}
 - {module: chat, defaultLevel: ADMIN, description: Allows user to use styles in chat.,
     permission: nucleus.chat.style}
+- {module: chat, defaultLevel: ADMIN, description: Allows user to type clickable URLs in chat.,
+    permission: nucleus.chat.url}
 - {module: core, defaultLevel: ADMIN, description: Allows the user to run the command /nucleus,
     permission: nucleus.nucleus.base}
 - {module: core, defaultLevel: ADMIN, description: Allows the user to run the command /nucleus migrate,
@@ -132,6 +134,8 @@
     permission: nucleus.nucleus.resetuser.base}
 - {module: core, defaultLevel: ADMIN, description: Allows the user to run the command /nucleus save,
     permission: nucleus.nucleus.save.base}
+- {module: core, defaultLevel: NONE, description: Allows the user to run the command /nucleus setupperms,
+    permission: nucleus.setupperms.base}
 - {module: environment, defaultLevel: ADMIN, description: Allows the user to run the command /lockweather,
     permission: nucleus.lockweather.base}
 - {module: environment, defaultLevel: USER, description: Allows the user to run the command /time,
@@ -182,7 +186,7 @@
     permission: nucleus.lightning.exempt.warmup}
 - {module: fun, defaultLevel: ADMIN, description: Allows the user to target other players using the command "lightning".,
     permission: nucleus.lightning.others}
-- {module: home, defaultLevel: USER, description: Allows the user to run the command /deletehome,
+- {module: home, defaultLevel: USER, description: Allows the user to run the command /home,
     permission: nucleus.home.base}
 - {module: home, defaultLevel: ADMIN, description: Allows the user to run the command /deletehomeother,
     permission: nucleus.home.deleteother.base}
@@ -218,6 +222,22 @@
     permission: nucleus.ignore.base}
 - {module: ignore, defaultLevel: MOD, description: 'Exempts the user from having their
         chat, messages and mail ignored.', permission: nucleus.ignore.exempt.chat}
+- {module: info, defaultLevel: USER, description: Allows the user to run the command /info,
+    permission: nucleus.info.base}
+- {module: info, defaultLevel: USER, description: Allows the user to run the command /motd,
+    permission: nucleus.motd.base}
+- {module: info, defaultLevel: USER, description: 'If granted, the user will see the
+        MOTD when joining the server.', permission: nucleus.motd.login}
+- {module: item, defaultLevel: ADMIN, description: Allows the user to run the command /enchant,
+    permission: nucleus.enchant.base}
+- {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /enchant,
+    permission: nucleus.enchant.exempt.cooldown}
+- {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /enchant,
+    permission: nucleus.enchant.exempt.cost}
+- {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /enchant,
+    permission: nucleus.enchant.exempt.warmup}
+- {module: item, defaultLevel: ADMIN, description: Allows setting enchantments and levels that are not ordinarily available to the held item.,
+    permission: nucleus.enchant.unsafe}
 - {module: item, defaultLevel: ADMIN, description: Allows the user to run the command /itemname,
     permission: nucleus.itemname.base}
 - {module: item, defaultLevel: ADMIN, description: Allows the user to run the command /itemname clear,
@@ -348,7 +368,7 @@
     permission: nucleus.redeem.base}
 - {module: kit, defaultLevel: ADMIN, description: Allows the user to run the command /firstjoinkit set,
     permission: nucleus.set.base}
-- {module: mail, defaultLevel: USER, description: Allows the user to run the command /mail,
+- {module: mail, defaultLevel: USER, description: Allows the user to run the command /mail clear,
     permission: nucleus.mail.base}
 - {module: mail, defaultLevel: ADMIN, description: Allows the user to run the command /mail other,
     permission: nucleus.mail.other.base}
@@ -520,7 +540,7 @@
     permission: nucleus.seen.exempt.warmup}
 - {module: playerinfo, defaultLevel: ADMIN, description: Allows the user to see entended information about a player in /seen.,
     permission: nucleus.seen.extended}
-- {module: powertool, defaultLevel: ADMIN, description: Allows the user to run the command /powertool delete,
+- {module: powertool, defaultLevel: ADMIN, description: Allows the user to run the command /powertool,
     permission: nucleus.powertool.base}
 - {module: rules, defaultLevel: ADMIN, description: Allows the user to run the command /rules add,
     permission: nucleus.rules.add.base}
@@ -528,6 +548,8 @@
     permission: nucleus.rules.base}
 - {module: rules, defaultLevel: ADMIN, description: Allows the user to run the command /rules remove,
     permission: nucleus.rules.remove.base}
+- {module: sign, defaultLevel: ADMIN, description: Allows user to use text formatting on signs.,
+    permission: nucleus.sign.formatting}
 - {module: spawn, defaultLevel: USER, description: Allows the user to run the command /firstspawn,
     permission: nucleus.firstspawn.base}
 - {module: spawn, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /firstspawn,

@@ -374,6 +374,18 @@
     oneLineDescription: Saves all files.
     warmup: false
     permissionbase: nucleus.nucleus.save
+-   commandName: nucleus setupperms
+    aliases: setupperms
+    cost: false
+    permissions:
+    - {module: core, defaultLevel: NONE, description: Allows the user to run the command /nucleus setupperms,
+        permission: nucleus.setupperms.base}
+    module: core
+    defaultLevel: NONE
+    cooldown: false
+    oneLineDescription: Allows the user to add the recommended permissions for either USER, MOD or ADMIN roles to a specified group.
+    warmup: false
+    permissionbase: nucleus.setupperms
 -   commandName: lockweather
     aliases: lockweather, killweather
     cost: false
@@ -602,6 +614,50 @@
     oneLineDescription: Toggles ignoring of all chat messages.
     warmup: false
     permissionbase: nucleus.ignore
+-   commandName: info
+    aliases: info, einfo
+    cost: false
+    permissions:
+    - {module: info, defaultLevel: USER, description: Allows the user to run the command /info,
+        permission: nucleus.info.base}
+    module: info
+    defaultLevel: USER
+    cooldown: false
+    oneLineDescription: Get server information.
+    warmup: false
+    permissionbase: nucleus.info
+-   commandName: motd
+    aliases: motd
+    cost: false
+    permissions:
+    - {module: info, defaultLevel: USER, description: Allows the user to run the command /motd,
+        permission: nucleus.motd.base}
+    module: info
+    defaultLevel: USER
+    cooldown: false
+    oneLineDescription: Allows the user to view the server MOTD, as defined in the "motd.txt" file.
+    warmup: false
+    permissionbase: nucleus.motd
+-   commandName: enchant
+    aliases: enchant
+    cost: true
+    permissions:
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /enchant,
+        permission: nucleus.enchant.exempt.cooldown}
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /enchant,
+        permission: nucleus.enchant.exempt.cost}
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to run the command /enchant,
+        permission: nucleus.enchant.base}
+    - {module: item, defaultLevel: ADMIN, description: Allows setting enchantments and levels that are not ordinarily available to the held item.,
+        permission: nucleus.enchant.unsafe}
+    - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /enchant,
+        permission: nucleus.enchant.exempt.warmup}
+    module: item
+    defaultLevel: ADMIN
+    cooldown: true
+    oneLineDescription: Allows the user to enchant items.
+    warmup: true
+    permissionbase: nucleus.enchant
 -   commandName: itemname
     aliases: itemname
     cost: true
@@ -2000,7 +2056,7 @@
     warmup: true
     permissionbase: nucleus.world.load
 -   commandName: world setdifficulty
-    aliases: setdifficulty
+    aliases: setdifficulty, difficulty
     cost: true
     permissions:
     - {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /world setdifficulty,
@@ -2018,7 +2074,7 @@
     warmup: true
     permissionbase: nucleus.world.setdifficulty
 -   commandName: world setgamemode
-    aliases: setgamemode, setgm
+    aliases: setgamemode, setgm, gamemode, gm
     cost: true
     permissions:
     - {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /world setgamemode,
