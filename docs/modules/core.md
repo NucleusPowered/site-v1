@@ -20,4 +20,4 @@ Note that changing module and command enabling statuses will not take effect unt
 
 ## Migrating from EssentialCmds
 
-See [our guide here](../configuration/migration.md)
+See [our guide here](../configuration/migration.html)
