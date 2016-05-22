@@ -23,6 +23,7 @@ header: Documentation Centre
 * [Fun](modules/fun.html)
 * [Home](modules/home.html)
 * [Ignore](modules/ignore.html)
+* [Info](modules/info.html)
 * [Kit](modules/kit.html)
 * [Mob](modules/mob.html)
 * [Powertool](modules/powertool.html)
