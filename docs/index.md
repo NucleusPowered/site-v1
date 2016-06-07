@@ -3,6 +3,9 @@ layout: standardheadmd
 title: Documentation Centre
 header: Documentation Centre
 ---
+
+**Please note that the documentation is not yet complete.** This will be done in time for Nucleus 1.0.
+
 ## Installation and Configuration
 
 * [Configuring Nucleus](configuration/)
