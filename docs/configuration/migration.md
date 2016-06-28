@@ -10,7 +10,7 @@ Nucleus allows for users to migrate their server data from EssentialCmds to Nucl
 
 * A Sponge server
 * EssentialCmds and Nucleus installed at the same time
-* The permission node `nucleus.nucleus.migrate.base`
+* The permission node `nucleus.nucleus.migrate.esscmds.base`
 
 ## What Does Nucleus Migrate?
 
@@ -47,4 +47,4 @@ See the [Permission Reference](../permissions.html) for a list of the permission
 
 **Before you start**, it is an extremely good idea to whitelist your server.
 
-Simply run `/nucleus migrate` and follow the instructions.
+Simply run `/nucleus migrate esscmds` and follow the instructions.
