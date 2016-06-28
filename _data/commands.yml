@@ -108,21 +108,15 @@
     permissionbase: nucleus.gamemode
 -   commandName: stop
     aliases: stop
-    cost: true
+    cost: false
     permissions:
     - {module: admin, defaultLevel: ADMIN, description: Allows the user to run the command /stop,
         permission: nucleus.stop.base}
-    - {module: admin, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /stop,
-        permission: nucleus.stop.exempt.warmup}
-    - {module: admin, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /stop,
-        permission: nucleus.stop.exempt.cooldown}
-    - {module: admin, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /stop,
-        permission: nucleus.stop.exempt.cost}
     module: admin
     defaultLevel: ADMIN
-    cooldown: true
+    cooldown: false
     oneLineDescription: Stops the server.
-    warmup: true
+    warmup: false
     permissionbase: nucleus.stop
 -   commandName: sudo
     aliases: sudo
@@ -308,6 +302,18 @@
     oneLineDescription: Displays Nucleus version and module information.
     warmup: false
     permissionbase: nucleus.nucleus
+-   commandName: nucleus clearcache
+    aliases: clearcache
+    cost: false
+    permissions:
+    - {module: core, defaultLevel: ADMIN, description: Allows the user to run the command /nucleus clearcache,
+        permission: nucleus.nucleus.clearcache.base}
+    module: core
+    defaultLevel: ADMIN
+    cooldown: false
+    oneLineDescription: Clears the in-memory cache of users who have logged on in the past session, forcing Nucleus to read the data files on their next login.
+    warmup: false
+    permissionbase: nucleus.nucleus.clearcache
 -   commandName: nucleus migrate
     aliases: migrate
     cost: false
@@ -320,6 +326,18 @@
     oneLineDescription: Migrates data from EssentialCmds.
     warmup: false
     permissionbase: nucleus.nucleus.migrate
+-   commandName: nucleus migrate esscmds
+    aliases: esscmds
+    cost: false
+    permissions:
+    - {module: core, defaultLevel: ADMIN, description: Allows the user to run the command /migrate esscmds,
+        permission: nucleus.nucleus.migrate.esscmds.base}
+    module: core
+    defaultLevel: ADMIN
+    cooldown: false
+    oneLineDescription: description.nucleus.migrate.esscmds.desc
+    warmup: false
+    permissionbase: nucleus.nucleus.migrate.esscmds
 -   commandName: nucleus printperms
     aliases: printperms
     cost: true
@@ -452,6 +470,26 @@
     oneLineDescription: Sets the weather on the specified world.
     warmup: true
     permissionbase: nucleus.weather
+-   commandName: fly
+    aliases: fly
+    cost: true
+    permissions:
+    - {module: fly, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /fly,
+        permission: nucleus.fly.exempt.cost}
+    - {module: fly, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /fly,
+        permission: nucleus.fly.exempt.cooldown}
+    - {module: fly, defaultLevel: ADMIN, description: Allows the user to target other players using the command "fly".,
+        permission: nucleus.fly.others}
+    - {module: fly, defaultLevel: ADMIN, description: Allows the user to run the command /fly,
+        permission: nucleus.fly.base}
+    - {module: fly, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /fly,
+        permission: nucleus.fly.exempt.warmup}
+    module: fly
+    defaultLevel: ADMIN
+    cooldown: true
+    oneLineDescription: Set specified player's fly mode.
+    warmup: true
+    permissionbase: nucleus.fly
 -   commandName: hat
     aliases: hat
     cost: false
@@ -1286,26 +1324,6 @@
     oneLineDescription: Set specified player's hunger to full.
     warmup: true
     permissionbase: nucleus.feed
--   commandName: fly
-    aliases: fly
-    cost: true
-    permissions:
-    - {module: misc, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /fly,
-        permission: nucleus.fly.exempt.cost}
-    - {module: misc, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /fly,
-        permission: nucleus.fly.exempt.cooldown}
-    - {module: misc, defaultLevel: ADMIN, description: Allows the user to target other players using the command "fly".,
-        permission: nucleus.fly.others}
-    - {module: misc, defaultLevel: ADMIN, description: Allows the user to run the command /fly,
-        permission: nucleus.fly.base}
-    - {module: misc, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /fly,
-        permission: nucleus.fly.exempt.warmup}
-    module: misc
-    defaultLevel: ADMIN
-    cooldown: true
-    oneLineDescription: Set specified player's fly mode.
-    warmup: true
-    permissionbase: nucleus.fly
 -   commandName: god
     aliases: god, invuln, invulnerability
     cost: false
@@ -1746,6 +1764,8 @@
         permission: nucleus.teleport.teleport.exempt.cooldown}
     - {module: teleport, defaultLevel: ADMIN, description: permission.teleport.others,
         permission: nucleus.teleport.teleport.others}
+    - {module: teleport, defaultLevel: ADMIN, description: permission.teleport.quiet,
+        permission: nucleus.teleport.teleport.quiet}
     - {module: teleport, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /teleport,
         permission: nucleus.teleport.teleport.exempt.cost}
     module: teleport
