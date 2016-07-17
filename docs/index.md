@@ -24,6 +24,7 @@ header: Documentation Centre
 * [Command Logger](modules/commandlogger.html) - Logs commands in the console
 * [Connection Messages](modules/connectionmessages.html) - Alters the messages when players login or out
 * [Environment](modules/environment.html) - Manages the world environment
+* [Fly](modules/fly.html) - Manages allowing players to fly
 * [Fun](modules/fun.html) - "Fun" commands
 * [Home](modules/home.html) - Manages personal warps for users
 * [Ignore](modules/ignore.html) - Allows users to ignore others in chat
