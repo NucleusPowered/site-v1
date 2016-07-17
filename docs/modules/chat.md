@@ -79,3 +79,13 @@ The message formatting can be controlled by permissions - which are listed below
 ## Player Messages: URLs
 
 Since 0.4, URLs are detected by Nucleus and are made clickable. This requires the `nucleus.chat.url` permission.
+
+## Default Name Colours
+
+If you have a compatible permissions plugin installed, setting a player's (or their group's) `namecolor`/`namecolour` permission option will colour their
+display name that colour be default. This can be overriden by players who can use colour codes in their nicknames.
+
+## Default Chat Colours
+
+If you have a compatible permissions plugin installed, setting a player's (or their group's) `chatcolor`/`chatcolour` permission option will colour their
+chat that colour by default. This can be overriden by players who can use colour codes in their chat.
