@@ -16,10 +16,12 @@ certain items on the server. Consider disabling the blacklist module if you have
 
 ## Configuration
 
-There are two entries in the `main.conf` file in the `blacklist` section:
+There are four entries in the `main.conf` file in the `blacklist` section:
 
 * `environment`: if `true`, prevent interactions with blacklisted blocks in the game world.
 * `inventory`: if `true`, prevent players from possessing blacklisted blocks.
+* `replacement`: if useReplacement is set to `true`, this ItemType will replace any blacklisted item taken from a player. Defaults to `minecraft:dirt`.
+* `useReplacement`: if true, confiscated items will be replaced by the item specified in `replacement`.
 
 ## Adding blocks and items to the blacklist
 
