@@ -323,7 +323,7 @@
     module: core
     defaultLevel: ADMIN
     cooldown: false
-    oneLineDescription: Migrates data from EssentialCmds.
+    oneLineDescription: Migrates data from other plugins.
     warmup: false
     permissionbase: nucleus.nucleus.migrate
 -   commandName: nucleus migrate esscmds
@@ -335,7 +335,7 @@
     module: core
     defaultLevel: ADMIN
     cooldown: false
-    oneLineDescription: description.nucleus.migrate.esscmds.desc
+    oneLineDescription: Migrates data from EssentialCmds.
     warmup: false
     permissionbase: nucleus.nucleus.migrate.esscmds
 -   commandName: nucleus printperms
@@ -393,17 +393,17 @@
     warmup: false
     permissionbase: nucleus.nucleus.save
 -   commandName: nucleus setupperms
-    aliases: setupperms
+    aliases: setupperms, setperms
     cost: false
     permissions:
     - {module: core, defaultLevel: NONE, description: Allows the user to run the command /nucleus setupperms,
-        permission: nucleus.setupperms.base}
+        permission: nucleus.nucleus.setupperms.base}
     module: core
     defaultLevel: NONE
     cooldown: false
     oneLineDescription: Allows the user to add the recommended permissions for either USER, MOD or ADMIN roles to a specified group.
     warmup: false
-    permissionbase: nucleus.setupperms
+    permissionbase: nucleus.nucleus.setupperms
 -   commandName: lockweather
     aliases: lockweather, killweather
     cost: false
@@ -1244,8 +1244,18 @@
         permission: nucleus.message.exempt.warmup}
     - {module: message, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /message,
         permission: nucleus.message.exempt.cost}
+    - {module: message, defaultLevel: ADMIN, description: Allows user to use styles into messages.,
+        permission: nucleus.message.style}
+    - {module: message, defaultLevel: ADMIN, description: Allows user to use magic characters into messages.,
+        permission: nucleus.message.magic}
+    - {module: message, defaultLevel: ADMIN, description: Allows user to type colors into messages.,
+        permission: nucleus.message.color}
     - {module: message, defaultLevel: USER, description: Allows the user to run the command /message,
         permission: nucleus.message.base}
+    - {module: message, defaultLevel: ADMIN, description: Allows user to type colours into messages.,
+        permission: nucleus.message.colour}
+    - {module: message, defaultLevel: ADMIN, description: Allows user to type clickable URLs into messages.,
+        permission: nucleus.message.url}
     - {module: message, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /message,
         permission: nucleus.message.exempt.cooldown}
     module: message
@@ -1534,10 +1544,10 @@
         permission: nucleus.realname.exempt.cooldown}
     - {module: nickname, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /realname,
         permission: nucleus.realname.exempt.warmup}
-    - {module: nickname, defaultLevel: ADMIN, description: Allows the user to run the command /realname,
+    - {module: nickname, defaultLevel: USER, description: Allows the user to run the command /realname,
         permission: nucleus.realname.base}
     module: nickname
-    defaultLevel: ADMIN
+    defaultLevel: USER
     cooldown: true
     oneLineDescription: Gets the player's realname from the provided nickname.
     warmup: true
@@ -1630,6 +1640,24 @@
     oneLineDescription: Toggles whether powertools activate.
     warmup: false
     permissionbase: nucleus.powertool
+-   commandName: rtp
+    aliases: rtp, randomteleport, rteleport
+    cost: true
+    permissions:
+    - {module: rtp, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /rtp,
+        permission: nucleus.rtp.exempt.cost}
+    - {module: rtp, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /rtp,
+        permission: nucleus.rtp.exempt.cooldown}
+    - {module: rtp, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /rtp,
+        permission: nucleus.rtp.exempt.warmup}
+    - {module: rtp, defaultLevel: ADMIN, description: Allows the user to run the command /rtp,
+        permission: nucleus.rtp.base}
+    module: rtp
+    defaultLevel: ADMIN
+    cooldown: true
+    oneLineDescription: Allows the user to teleport to a random destination within the world border.
+    warmup: true
+    permissionbase: nucleus.rtp
 -   commandName: rules
     aliases: rules
     cost: false
@@ -1903,6 +1931,8 @@
     aliases: vanish, v
     cost: false
     permissions:
+    - {module: vanish, defaultLevel: ADMIN, description: 'If granted, grants ability
+            to vanish other players.', permission: nucleus.vanish.other}
     - {module: vanish, defaultLevel: ADMIN, description: Allows the user to run the command /vanish,
         permission: nucleus.vanish.base}
     module: vanish
@@ -2003,6 +2033,66 @@
     oneLineDescription: Parent command for all other world commands.
     warmup: true
     permissionbase: nucleus.world
+-   commandName: world border
+    aliases: border
+    cost: true
+    permissions:
+    - {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /world border,
+        permission: nucleus.world.border.base}
+    - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /world border,
+        permission: nucleus.world.border.exempt.warmup}
+    - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /world border,
+        permission: nucleus.world.border.exempt.cooldown}
+    - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /world border,
+        permission: nucleus.world.border.exempt.cost}
+    module: world
+    defaultLevel: ADMIN
+    cooldown: true
+    oneLineDescription: Parent command for world border commands.
+    warmup: true
+    permissionbase: nucleus.world.border
+-   commandName: world border cancelgen
+    aliases: cancelgen
+    cost: false
+    permissions:
+    - {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /border cancelgen,
+        permission: nucleus.world.border.gen.base}
+    module: world
+    defaultLevel: ADMIN
+    cooldown: false
+    oneLineDescription: Cancels any current world border generation.
+    warmup: false
+    permissionbase: nucleus.world.border.gen
+-   commandName: world border gen
+    aliases: gen, genchunks, generatechunks, chunkgen
+    cost: true
+    permissions:
+    - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /border gen,
+        permission: nucleus.world.border.gen.exempt.warmup}
+    - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /border gen,
+        permission: nucleus.world.border.gen.exempt.cost}
+    - {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /border gen,
+        permission: nucleus.world.border.gen.base}
+    - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /border gen,
+        permission: nucleus.world.border.gen.exempt.cooldown}
+    module: world
+    defaultLevel: ADMIN
+    cooldown: true
+    oneLineDescription: Instructs Sponge to pregenerate chunks within the world border.
+    warmup: true
+    permissionbase: nucleus.world.border.gen
+-   commandName: world border set
+    aliases: set
+    cost: false
+    permissions:
+    - {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /border set,
+        permission: nucleus.world.border.set.base}
+    module: world
+    defaultLevel: ADMIN
+    cooldown: false
+    oneLineDescription: Sets the world border.
+    warmup: false
+    permissionbase: nucleus.world.border.set
 -   commandName: world create
     aliases: create
     cost: true
