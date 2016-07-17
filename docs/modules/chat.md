@@ -36,6 +36,27 @@ The templates support various tokens.
 The templates also support Minecraft <a href="http://minecraft.gamepedia.com/Formatting_codes#Color_codes" target="_blank">colour codes</a>,
 replacing `§` with `&`.
 
+## Group Templates
+
+As of 0.6, different groups can have different chat templates to the default defined in `template`. To give a group a different template,
+ simply add the name of the group and the template like so. Note that the name of the group is case sensitive, so the "Admin" group
+ must have an entry for "Admin". Multiple entries can be added like so:
+
+{% raw %}
+```
+    group-templates {
+        Admin {
+            prefix="{{prefix}} {{displayname}}&f A>: "
+            suffix=" {{suffix}}"
+        }
+        Moderator {
+            prefix="{{prefix}} {{displayname}}&f M>: "
+            suffix=" {{suffix}}"
+        }
+    }
+```
+{% endraw %}
+
 ## Player Prefixes and Suffixes
 
 To set a player's or group's prefix or suffix tag, a permissions plugin that supports options must be installed, such as
