@@ -38,6 +38,7 @@ header: Documentation Centre
 * [Staff Chat](modules/staff-chat.html) - A chat channel for staff members
 * [Teleport](modules/teleport.html) - Teleportation of players to other players and arbitary spots
 * [Vanish](modules/vanish.html) - Makes players vanish from view
+* [World](modules/world.html) - Manages worlds and their borders on the server
 
 ## Reference
 
