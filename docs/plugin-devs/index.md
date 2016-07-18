@@ -1,7 +1,7 @@
 ---
 layout: standardheadmd
-title: Plugin Developers
-header: Plugin Developers
+title: - Plugin Integration
+header: Plugin Integration
 ---
 
 Nucleus is designed to be easy to hook into for developers wishing to use some of the features of Nucleus.
