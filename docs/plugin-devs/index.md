@@ -1,6 +1,6 @@
 ---
 layout: standardheadmd
-title: - Plugin Integration
+title: '- Plugin Integration'
 header: Plugin Integration
 ---
 

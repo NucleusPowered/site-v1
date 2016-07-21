@@ -1,6 +1,6 @@
 ---
 layout: standardheadmd
-title: - Nucleus Developers
+title: '- Nucleus Developers'
 header: Developing Nucleus
 ---
 

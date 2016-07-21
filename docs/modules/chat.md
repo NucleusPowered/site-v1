@@ -36,6 +36,9 @@ The templates support various tokens.
 The templates also support Minecraft <a href="http://minecraft.gamepedia.com/Formatting_codes#Color_codes" target="_blank">colour codes</a>,
 replacing `§` with `&`.
 
+If you want to change the colour of a player's name in general, don't add a colour code to the end of the prefix. Instead,
+<a href="#namecolours">use the `namecolor` permission option</a>, as this will tell Nucleus to use that colour all across the plugin.
+
 ## Group Templates
 
 As of 0.6, different groups can have different chat templates to the default defined in `template`. To give a group a different template,
@@ -80,12 +83,18 @@ The message formatting can be controlled by permissions - which are listed below
 
 Since 0.4, URLs are detected by Nucleus and are made clickable. This requires the `nucleus.chat.url` permission.
 
+<a name="namecolours"></a>
 ## Default Name Colours
 
 If you have a compatible permissions plugin installed, setting a player's (or their group's) `namecolor`/`namecolour` permission option will colour their
-display name that colour be default. This can be overriden by players who can use colour codes in their nicknames.
+display name that colour be default. This can be overridden by players who can use colour codes in their nicknames.
+
+This option accepts both names of colours and single character Minecraft colour codes - that is, `black` and `0` will both colour the player's name
+in black.
 
 ## Default Chat Colours
 
 If you have a compatible permissions plugin installed, setting a player's (or their group's) `chatcolor`/`chatcolour` permission option will colour their
-chat that colour by default. This can be overriden by players who can use colour codes in their chat.
+chat that colour by default. This can be overridden by players who can use colour codes in their chat.
+
+Like `namecolour`, this accepts both named colours and single character colour codes.
