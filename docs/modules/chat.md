@@ -84,6 +84,7 @@ The message formatting can be controlled by permissions - which are listed below
 Since 0.4, URLs are detected by Nucleus and are made clickable. This requires the `nucleus.chat.url` permission.
 
 <a name="namecolours"></a>
+
 ## Default Name Colours
 
 If you have a compatible permissions plugin installed, setting a player's (or their group's) `namecolor`/`namecolour` permission option will colour their
