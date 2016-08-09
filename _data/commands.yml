@@ -144,6 +144,10 @@
     permissions:
     - {module: afk, defaultLevel: USER, description: Allows the user to run the command /afk,
         permission: nucleus.afk.base}
+    - {module: afk, defaultLevel: ADMIN, description: Prevents the user from being kicked for being AFK for too long.,
+        permission: nucleus.afk.exempt.kick}
+    - {module: afk, defaultLevel: NONE, description: Prevents the user from going AFK.,
+        permission: nucleus.afk.exempt.toggle}
     module: afk
     defaultLevel: USER
     cooldown: false
@@ -176,6 +180,8 @@
         permission: nucleus.ban.notify}
     - {module: ban, defaultLevel: MOD, description: Allows the user to run the command /ban,
         permission: nucleus.ban.base}
+    - {module: ban, defaultLevel: MOD, description: Allows the user to ban offline users.,
+        permission: nucleus.ban.offline}
     module: ban
     defaultLevel: MOD
     cooldown: false
@@ -198,8 +204,14 @@
     aliases: tempban
     cost: false
     permissions:
+    - {module: ban, defaultLevel: MOD, description: Allows the user to temp ban offline users.,
+        permission: nucleus.tempban.offline}
     - {module: ban, defaultLevel: MOD, description: Allows the user to run the command /tempban,
         permission: nucleus.tempban.base}
+    - {module: ban, defaultLevel: MOD, description: Exempts the user from being a target of the /tempban command.,
+        permission: nucleus.tempban.exempt.target}
+    - {module: ban, defaultLevel: MOD, description: Allows the user to bypass the maximum tempban length.,
+        permission: nucleus.tempban.exempt.length}
     module: ban
     defaultLevel: MOD
     cooldown: false
@@ -876,6 +888,8 @@
     aliases: jail, unjail, togglejail
     cost: false
     permissions:
+    - {module: jail, defaultLevel: MOD, description: Allows the user to jail offline users.,
+        permission: nucleus.jail.offline}
     - {module: jail, defaultLevel: MOD, description: Allows the user to run the command /jail,
         permission: nucleus.jail.base}
     - {module: jail, defaultLevel: MOD, description: Notifies the user about jails when they occur.,
@@ -1480,8 +1494,12 @@
     permissions:
     - {module: mute, defaultLevel: MOD, description: Notifies the user about bans when they occur.,
         permission: nucleus.mute.notify}
+    - {module: mute, defaultLevel: MOD, description: Allows the user to bypass the maximum mute length.,
+        permission: nucleus.mute.exempt.target}
     - {module: mute, defaultLevel: MOD, description: Allows the user to run the command /mute,
         permission: nucleus.mute.base}
+    - {module: mute, defaultLevel: ADMIN, description: Exempts the user from being a target of the /mute command.,
+        permission: nucleus.mute.exempt.length}
     module: mute
     defaultLevel: MOD
     cooldown: false
@@ -1552,6 +1570,56 @@
     oneLineDescription: Gets the player's realname from the provided nickname.
     warmup: true
     permissionbase: nucleus.realname
+-   commandName: checknotes
+    aliases: checknotes, notes
+    cost: false
+    permissions:
+    - {module: note, defaultLevel: MOD, description: Allows the user to run the command /checknotes,
+        permission: nucleus.checknotes.base}
+    module: note
+    defaultLevel: MOD
+    cooldown: false
+    oneLineDescription: Allows the user to check a player's notes.
+    warmup: false
+    permissionbase: nucleus.checknotes
+-   commandName: clearnotes
+    aliases: clearnotes, removeallnotes
+    cost: false
+    permissions:
+    - {module: note, defaultLevel: MOD, description: Allows the user to run the command /clearnotes,
+        permission: nucleus.clearnotes.base}
+    module: note
+    defaultLevel: MOD
+    cooldown: false
+    oneLineDescription: Allows the user to clear a player's notes.
+    warmup: false
+    permissionbase: nucleus.clearnotes
+-   commandName: note
+    aliases: note, addnote
+    cost: false
+    permissions:
+    - {module: note, defaultLevel: MOD, description: Allows the user to run the command /note,
+        permission: nucleus.note.base}
+    - {module: note, defaultLevel: MOD, description: Notifies the user about notes when they occur.,
+        permission: nucleus.note.notify}
+    module: note
+    defaultLevel: MOD
+    cooldown: false
+    oneLineDescription: Allows the user to add a note to a player.
+    warmup: false
+    permissionbase: nucleus.note
+-   commandName: removenote
+    aliases: removenote, deletenote, delnote
+    cost: false
+    permissions:
+    - {module: note, defaultLevel: MOD, description: Allows the user to run the command /removenote,
+        permission: nucleus.removenote.base}
+    module: note
+    defaultLevel: MOD
+    cooldown: false
+    oneLineDescription: Allows the user to delete a specific note attached to a player.
+    warmup: false
+    permissionbase: nucleus.removenote
 -   commandName: list
     aliases: list, listplayers
     cost: true
@@ -1941,9 +2009,63 @@
     oneLineDescription: Toggles whether you are invisible on the server.
     warmup: false
     permissionbase: nucleus.vanish
+-   commandName: checkwarnings
+    aliases: checkwarnings, checkwarn, warnings
+    cost: false
+    permissions:
+    - {module: warn, defaultLevel: MOD, description: Allows the user to run the command /checkwarnings,
+        permission: nucleus.checkwarnings.base}
+    module: warn
+    defaultLevel: MOD
+    cooldown: false
+    oneLineDescription: Allows the user to check a player's warnings.
+    warmup: false
+    permissionbase: nucleus.checkwarnings
+-   commandName: clearwarnings
+    aliases: clearwarnings, removeallwarnings
+    cost: false
+    permissions:
+    - {module: warn, defaultLevel: MOD, description: Allows the user to run the command /clearwarnings,
+        permission: nucleus.clearwarnings.base}
+    module: warn
+    defaultLevel: MOD
+    cooldown: false
+    oneLineDescription: Allows the user to clear a player's warnings.
+    warmup: false
+    permissionbase: nucleus.clearwarnings
+-   commandName: removewarning
+    aliases: removewarning, deletewarning, delwarn
+    cost: false
+    permissions:
+    - {module: warn, defaultLevel: MOD, description: Allows the user to run the command /removewarning,
+        permission: nucleus.removewarning.base}
+    module: warn
+    defaultLevel: MOD
+    cooldown: false
+    oneLineDescription: Allows the user to delete a specific warning attached to a player.
+    warmup: false
+    permissionbase: nucleus.removewarning
+-   commandName: warn
+    aliases: warn, warning, addwarning
+    cost: false
+    permissions:
+    - {module: warn, defaultLevel: MOD, description: Notifies the user about warnings when they occur.,
+        permission: nucleus.warn.notify}
+    - {module: warn, defaultLevel: MOD, description: Allows the user to run the command /warn,
+        permission: nucleus.warn.base}
+    - {module: warn, defaultLevel: MOD, description: Exempts the user from being a target of the /warn command.,
+        permission: nucleus.warn.exempt.target}
+    - {module: warn, defaultLevel: MOD, description: Allows the user to bypass the maximum and minimum warning lengths.,
+        permission: nucleus.warn.exempt.length}
+    module: warn
+    defaultLevel: MOD
+    cooldown: false
+    oneLineDescription: Allows the user to add a warning to a player.
+    warmup: false
+    permissionbase: nucleus.warn
 -   commandName: warp
     aliases: warp
-    cost: true
+    cost: false
     permissions:
     - {module: warp, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /warp,
         permission: nucleus.warp.exempt.cooldown}
@@ -1951,8 +2073,6 @@
         permission: nucleus.warp.exempt.warmup}
     - {module: warp, defaultLevel: ADMIN, description: Allows the user to access all warps if per-warp permissions is turned on.,
         permission: nucleus.warps}
-    - {module: warp, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /warp,
-        permission: nucleus.warp.exempt.cost}
     - {module: warp, defaultLevel: USER, description: Allows the user to run the command /warp,
         permission: nucleus.warp.base}
     module: warp
@@ -1961,6 +2081,18 @@
     oneLineDescription: Teleport to the specified warp.
     warmup: true
     permissionbase: nucleus.warp
+-   commandName: warp cost
+    aliases: cost, setcost
+    cost: false
+    permissions:
+    - {module: warp, defaultLevel: ADMIN, description: Allows the user to run the command /warp cost,
+        permission: nucleus.warp.cost.base}
+    module: warp
+    defaultLevel: ADMIN
+    cooldown: false
+    oneLineDescription: Set the cost of the specified warp.
+    warmup: false
+    permissionbase: nucleus.warp.cost
 -   commandName: warp delete
     aliases: delete, del
     cost: true

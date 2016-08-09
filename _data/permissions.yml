@@ -62,10 +62,18 @@
     permission: nucleus.ban.base}
 - {module: ban, defaultLevel: MOD, description: Notifies the user about mutes when they occur.,
     permission: nucleus.ban.notify}
+- {module: ban, defaultLevel: MOD, description: Allows the user to ban offline users.,
+    permission: nucleus.ban.offline}
 - {module: ban, defaultLevel: MOD, description: Allows the user to run the command /checkban,
     permission: nucleus.checkban.base}
 - {module: ban, defaultLevel: MOD, description: Allows the user to run the command /tempban,
     permission: nucleus.tempban.base}
+- {module: ban, defaultLevel: MOD, description: Allows the user to bypass the maximum tempban length.,
+    permission: nucleus.tempban.exempt.length}
+- {module: ban, defaultLevel: MOD, description: Exempts the user from being a target of the /tempban command.,
+    permission: nucleus.tempban.exempt.target}
+- {module: ban, defaultLevel: MOD, description: Allows the user to temp ban offline users.,
+    permission: nucleus.tempban.offline}
 - {module: ban, defaultLevel: MOD, description: Allows the user to run the command /unban,
     permission: nucleus.unban.base}
 - {module: blacklist, defaultLevel: ADMIN, description: Allows the user to run the command /blacklist add,
@@ -112,6 +120,8 @@
     permission: nucleus.chat.style}
 - {module: chat, defaultLevel: ADMIN, description: Allows user to type clickable URLs in chat.,
     permission: nucleus.chat.url}
+- {module: connection, defaultLevel: MOD, description: Allows the user to join the server even if full.,
+    permission: nucleus.connection.joinfullserver}
 - {module: core, defaultLevel: ADMIN, description: Allows the user to run the command /nucleus,
     permission: nucleus.nucleus.base}
 - {module: core, defaultLevel: ADMIN, description: Allows the user to run the command /nucleus clearcache,
@@ -318,6 +328,8 @@
     permission: nucleus.jail.list.base}
 - {module: jail, defaultLevel: MOD, description: Notifies the user about jails when they occur.,
     permission: nucleus.jail.notify}
+- {module: jail, defaultLevel: MOD, description: Allows the user to jail offline users.,
+    permission: nucleus.jail.offline}
 - {module: jail, defaultLevel: ADMIN, description: Allows the user to run the command /jails set,
     permission: nucleus.jail.set.base}
 - {module: jump, defaultLevel: ADMIN, description: Allows the user to run the command /jump,
@@ -378,7 +390,7 @@
     permission: nucleus.redeem.base}
 - {module: kit, defaultLevel: ADMIN, description: Allows the user to run the command /firstjoinkit set,
     permission: nucleus.set.base}
-- {module: mail, defaultLevel: USER, description: Allows the user to run the command /mail clear,
+- {module: mail, defaultLevel: USER, description: Allows the user to run the command /mail,
     permission: nucleus.mail.base}
 - {module: mail, defaultLevel: ADMIN, description: Allows the user to run the command /mail other,
     permission: nucleus.mail.other.base}
@@ -400,17 +412,17 @@
     permission: nucleus.helpop.exempt.warmup}
 - {module: message, defaultLevel: MOD, description: Allows the user to receive message via /helpop,
     permission: nucleus.helpop.receive}
-- {module: message, defaultLevel: USER, description: Allows the user to run the command /message,
+- {module: message, defaultLevel: USER, description: Allows the user to run the command /reply,
     permission: nucleus.message.base}
 - {module: message, defaultLevel: ADMIN, description: Allows user to type colors into messages.,
     permission: nucleus.message.color}
 - {module: message, defaultLevel: ADMIN, description: Allows user to type colours into messages.,
     permission: nucleus.message.colour}
-- {module: message, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /message,
+- {module: message, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /reply,
     permission: nucleus.message.exempt.cooldown}
-- {module: message, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /message,
+- {module: message, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /reply,
     permission: nucleus.message.exempt.cost}
-- {module: message, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /message,
+- {module: message, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /reply,
     permission: nucleus.message.exempt.warmup}
 - {module: message, defaultLevel: ADMIN, description: Allows user to use magic characters into messages.,
     permission: nucleus.message.magic}
@@ -502,19 +514,23 @@
     permission: nucleus.checkmute.base}
 - {module: mute, defaultLevel: MOD, description: Allows the user to run the command /mute,
     permission: nucleus.mute.base}
+- {module: mute, defaultLevel: ADMIN, description: Exempts the user from being a target of the /mute command.,
+    permission: nucleus.mute.exempt.length}
+- {module: mute, defaultLevel: MOD, description: Allows the user to bypass the maximum mute length.,
+    permission: nucleus.mute.exempt.target}
 - {module: mute, defaultLevel: MOD, description: Notifies the user about bans when they occur.,
     permission: nucleus.mute.notify}
-- {module: nickname, defaultLevel: ADMIN, description: Allows the user to run the command /delnick,
+- {module: nickname, defaultLevel: ADMIN, description: Allows the user to run the command /nick,
     permission: nucleus.nick.base}
 - {module: nickname, defaultLevel: ADMIN, description: Allows the user to colour their nickname.,
     permission: nucleus.nick.color}
 - {module: nickname, defaultLevel: ADMIN, description: Allows the user to colour their nickname.,
     permission: nucleus.nick.colour}
-- {module: nickname, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /delnick,
+- {module: nickname, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /nick,
     permission: nucleus.nick.exempt.cooldown}
-- {module: nickname, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /delnick,
+- {module: nickname, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /nick,
     permission: nucleus.nick.exempt.cost}
-- {module: nickname, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /delnick,
+- {module: nickname, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /nick,
     permission: nucleus.nick.exempt.warmup}
 - {module: nickname, defaultLevel: ADMIN, description: Allows the user to use "magic" characters in their nickname.,
     permission: nucleus.nick.magic}
@@ -530,6 +546,18 @@
     permission: nucleus.realname.exempt.cost}
 - {module: nickname, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /realname,
     permission: nucleus.realname.exempt.warmup}
+- {module: note, defaultLevel: MOD, description: Allows the user to run the command /checknotes,
+    permission: nucleus.checknotes.base}
+- {module: note, defaultLevel: MOD, description: Allows the user to run the command /clearnotes,
+    permission: nucleus.clearnotes.base}
+- {module: note, defaultLevel: MOD, description: Allows the user to run the command /note,
+    permission: nucleus.note.base}
+- {module: note, defaultLevel: MOD, description: Notifies the user about notes when they occur.,
+    permission: nucleus.note.notify}
+- {module: note, defaultLevel: MOD, description: Allows user to see other users notes when they login.,
+    permission: nucleus.note.showonlogin}
+- {module: note, defaultLevel: MOD, description: Allows the user to run the command /removenote,
+    permission: nucleus.removenote.base}
 - {module: playerinfo, defaultLevel: USER, description: Allows the user to run the command /list,
     permission: nucleus.list.base}
 - {module: playerinfo, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /list,
@@ -550,7 +578,7 @@
     permission: nucleus.seen.exempt.warmup}
 - {module: playerinfo, defaultLevel: ADMIN, description: Allows the user to see entended information about a player in /seen.,
     permission: nucleus.seen.extended}
-- {module: powertool, defaultLevel: ADMIN, description: Allows the user to run the command /powertool delete,
+- {module: powertool, defaultLevel: ADMIN, description: Allows the user to run the command /powertool,
     permission: nucleus.powertool.base}
 - {module: rtp, defaultLevel: ADMIN, description: Allows the user to run the command /rtp,
     permission: nucleus.rtp.base}
@@ -645,8 +673,26 @@
     permission: nucleus.vanish.base}
 - {module: vanish, defaultLevel: ADMIN, description: 'If granted, grants ability to
         vanish other players.', permission: nucleus.vanish.other}
+- {module: warn, defaultLevel: MOD, description: Allows the user to run the command /checkwarnings,
+    permission: nucleus.checkwarnings.base}
+- {module: warn, defaultLevel: MOD, description: Allows the user to run the command /clearwarnings,
+    permission: nucleus.clearwarnings.base}
+- {module: warn, defaultLevel: MOD, description: Allows user to see other users warnings when they login.,
+    permission: nucleus.note.showonlogin}
+- {module: warn, defaultLevel: MOD, description: Allows the user to run the command /removewarning,
+    permission: nucleus.removewarning.base}
+- {module: warn, defaultLevel: MOD, description: Allows the user to run the command /warn,
+    permission: nucleus.warn.base}
+- {module: warn, defaultLevel: MOD, description: Allows the user to bypass the maximum and minimum warning lengths.,
+    permission: nucleus.warn.exempt.length}
+- {module: warn, defaultLevel: MOD, description: Exempts the user from being a target of the /warn command.,
+    permission: nucleus.warn.exempt.target}
+- {module: warn, defaultLevel: MOD, description: Notifies the user about warnings when they occur.,
+    permission: nucleus.warn.notify}
 - {module: warp, defaultLevel: USER, description: Allows the user to run the command /warp,
     permission: nucleus.warp.base}
+- {module: warp, defaultLevel: ADMIN, description: Allows the user to run the command /warp cost,
+    permission: nucleus.warp.cost.base}
 - {module: warp, defaultLevel: ADMIN, description: Allows the user to run the command /warp delete,
     permission: nucleus.warp.delete.base}
 - {module: warp, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /warp delete,
@@ -657,8 +703,6 @@
     permission: nucleus.warp.delete.exempt.warmup}
 - {module: warp, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /warp,
     permission: nucleus.warp.exempt.cooldown}
-- {module: warp, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /warp,
-    permission: nucleus.warp.exempt.cost}
 - {module: warp, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /warp,
     permission: nucleus.warp.exempt.warmup}
 - {module: warp, defaultLevel: USER, description: Allows the user to run the command /warp list,
@@ -689,7 +733,7 @@
     permission: nucleus.world.border.exempt.cost}
 - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /world border,
     permission: nucleus.world.border.exempt.warmup}
-- {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /border gen,
+- {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /border cancelgen,
     permission: nucleus.world.border.gen.base}
 - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /border gen,
     permission: nucleus.world.border.gen.exempt.cooldown}
