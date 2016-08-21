@@ -26,6 +26,8 @@
     permission: nucleus.gamemode.base}
 - {module: admin, defaultLevel: ADMIN, description: Allows the user to change the gamemode for any user.,
     permission: nucleus.gamemode.others}
+- {module: admin, defaultLevel: NONE, description: Allows the user to run the command /plainbroadcast,
+    permission: nucleus.plainbroadcast.base}
 - {module: admin, defaultLevel: ADMIN, description: Allows the user to run the command /stop,
     permission: nucleus.stop.base}
 - {module: admin, defaultLevel: ADMIN, description: Allows the user to run the command /sudo,
@@ -186,6 +188,8 @@
     permission: nucleus.hat.base}
 - {module: fun, defaultLevel: ADMIN, description: Allows the user to target other players using the command "hat".,
     permission: nucleus.hat.others}
+- {module: fun, defaultLevel: ADMIN, description: Allows the user to use selectors for the command /hat,
+    permission: nucleus.hat.selectors}
 - {module: fun, defaultLevel: ADMIN, description: Allows the user to run the command /ignite,
     permission: nucleus.ignite.base}
 - {module: fun, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /ignite,
@@ -196,6 +200,8 @@
     permission: nucleus.ignite.exempt.warmup}
 - {module: fun, defaultLevel: ADMIN, description: Allows the user to target other players using the command "ignite".,
     permission: nucleus.ignite.others}
+- {module: fun, defaultLevel: ADMIN, description: Allows the user to use selectors for the command /ignite,
+    permission: nucleus.ignite.selectors}
 - {module: fun, defaultLevel: ADMIN, description: Allows the user to run the command /lightning,
     permission: nucleus.lightning.base}
 - {module: fun, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /lightning,
@@ -206,7 +212,9 @@
     permission: nucleus.lightning.exempt.warmup}
 - {module: fun, defaultLevel: ADMIN, description: Allows the user to target other players using the command "lightning".,
     permission: nucleus.lightning.others}
-- {module: home, defaultLevel: USER, description: Allows the user to run the command /home,
+- {module: fun, defaultLevel: ADMIN, description: Allows the user to use selectors for the command /lightning,
+    permission: nucleus.lightning.selectors}
+- {module: home, defaultLevel: USER, description: Allows the user to run the command /deletehome,
     permission: nucleus.home.base}
 - {module: home, defaultLevel: ADMIN, description: Allows the user to run the command /deletehomeother,
     permission: nucleus.home.deleteother.base}
@@ -290,13 +298,13 @@
     permission: nucleus.lore.exempt.cost}
 - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /lore,
     permission: nucleus.lore.exempt.warmup}
-- {module: item, defaultLevel: ADMIN, description: Allows the user to run the command /lore set,
+- {module: item, defaultLevel: ADMIN, description: Allows the user to run the command /lore clear,
     permission: nucleus.lore.set.base}
-- {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /lore set,
+- {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /lore clear,
     permission: nucleus.lore.set.exempt.cooldown}
-- {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /lore set,
+- {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /lore clear,
     permission: nucleus.lore.set.exempt.cost}
-- {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /lore set,
+- {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /lore clear,
     permission: nucleus.lore.set.exempt.warmup}
 - {module: item, defaultLevel: ADMIN, description: Allows the user to run the command /more,
     permission: nucleus.more.base}
@@ -412,20 +420,22 @@
     permission: nucleus.helpop.exempt.warmup}
 - {module: message, defaultLevel: MOD, description: Allows the user to receive message via /helpop,
     permission: nucleus.helpop.receive}
-- {module: message, defaultLevel: USER, description: Allows the user to run the command /reply,
+- {module: message, defaultLevel: USER, description: Allows the user to run the command /message,
     permission: nucleus.message.base}
 - {module: message, defaultLevel: ADMIN, description: Allows user to type colors into messages.,
     permission: nucleus.message.color}
 - {module: message, defaultLevel: ADMIN, description: Allows user to type colours into messages.,
     permission: nucleus.message.colour}
-- {module: message, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /reply,
+- {module: message, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /message,
     permission: nucleus.message.exempt.cooldown}
-- {module: message, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /reply,
+- {module: message, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /message,
     permission: nucleus.message.exempt.cost}
-- {module: message, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /reply,
+- {module: message, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /message,
     permission: nucleus.message.exempt.warmup}
 - {module: message, defaultLevel: ADMIN, description: Allows user to use magic characters into messages.,
     permission: nucleus.message.magic}
+- {module: message, defaultLevel: USER, description: Allows the user to use selectors for the command /message,
+    permission: nucleus.message.selectors}
 - {module: message, defaultLevel: ADMIN, description: Allows user to use styles into messages.,
     permission: nucleus.message.style}
 - {module: message, defaultLevel: ADMIN, description: Allows user to type clickable URLs into messages.,
@@ -490,6 +500,8 @@
     permission: nucleus.speed.exempt.cooldown}
 - {module: misc, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /speed,
     permission: nucleus.speed.exempt.cost}
+- {module: misc, defaultLevel: NONE, description: Allows the user to specified a speed greater than the max speed set in the config file.,
+    permission: nucleus.speed.exempt.max}
 - {module: misc, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /speed,
     permission: nucleus.speed.exempt.warmup}
 - {module: misc, defaultLevel: USER, description: Allows the user to run the command /suicide,
@@ -510,6 +522,8 @@
     permission: nucleus.spawnmob.exempt.warmup}
 - {module: mob, defaultLevel: ADMIN, description: Allows the user to spawn a mob on another player.,
     permission: nucleus.spawnmob.others}
+- {module: mob, defaultLevel: ADMIN, description: Allows the user to use selectors for the command /spawnmob,
+    permission: nucleus.spawnmob.selectors}
 - {module: mute, defaultLevel: MOD, description: Allows the user to run the command /checkmute,
     permission: nucleus.checkmute.base}
 - {module: mute, defaultLevel: MOD, description: Allows the user to run the command /mute,
@@ -645,6 +659,8 @@
     permission: nucleus.teleport.tpa.exempt.cost}
 - {module: teleport, defaultLevel: ADMIN, description: 'Allows the user to "force"
         teleport to a point, regardless of whether it is safe to do so.', permission: nucleus.teleport.tpa.force}
+- {module: teleport, defaultLevel: USER, description: Allows the user to use selectors for the command /tpa,
+    permission: nucleus.teleport.tpa.selectors}
 - {module: teleport, defaultLevel: ADMIN, description: Allows the user to run the command /tpaall,
     permission: nucleus.teleport.tpaall.base}
 - {module: teleport, defaultLevel: USER, description: Allows the user to run the command /tpaccept,
@@ -657,14 +673,20 @@
     permission: nucleus.teleport.tpahere.exempt.cost}
 - {module: teleport, defaultLevel: ADMIN, description: 'Allows the user to "force"
         teleport to a point, regardless of whether it is safe to do so.', permission: nucleus.teleport.tpahere.force}
+- {module: teleport, defaultLevel: MOD, description: Allows the user to use selectors for the command /tpahere,
+    permission: nucleus.teleport.tpahere.selectors}
 - {module: teleport, defaultLevel: ADMIN, description: Allows the user to run the command /tpall,
     permission: nucleus.teleport.tpall.base}
 - {module: teleport, defaultLevel: USER, description: Allows the user to run the command /tpdeny,
     permission: nucleus.teleport.tpdeny.base}
 - {module: teleport, defaultLevel: ADMIN, description: Allows the user to run the command /tphere,
     permission: nucleus.teleport.tphere.base}
+- {module: teleport, defaultLevel: ADMIN, description: Allows the user to use selectors for the command /tphere,
+    permission: nucleus.teleport.tphere.selectors}
 - {module: teleport, defaultLevel: ADMIN, description: Allows the user to run the command /tppos,
     permission: nucleus.teleport.tppos.base}
+- {module: teleport, defaultLevel: ADMIN, description: Allows the user to use selectors for the command /tppos,
+    permission: nucleus.teleport.tppos.selectors}
 - {module: teleport, defaultLevel: USER, description: Allows the user to run the command /tptoggle,
     permission: nucleus.teleport.tptoggle.base}
 - {module: teleport, defaultLevel: ADMIN, description: Allows the user to bypass whether a user has disabled teleportation using /tptoggle.,
@@ -733,7 +755,7 @@
     permission: nucleus.world.border.exempt.cost}
 - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /world border,
     permission: nucleus.world.border.exempt.warmup}
-- {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /border cancelgen,
+- {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /border gen,
     permission: nucleus.world.border.gen.base}
 - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /border gen,
     permission: nucleus.world.border.gen.exempt.cooldown}
