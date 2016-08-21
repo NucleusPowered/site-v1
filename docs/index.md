@@ -45,5 +45,6 @@ header: Documentation Centre
 ## Reference
 
 * [Argument Type Reference](arguments.html)
+* [Selector Reference](selectors.html)
 * [Command Reference](commands.html)
 * [Permissions Reference](permissions.html)
