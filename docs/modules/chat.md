@@ -72,6 +72,30 @@ For example, to set the the prefix <span style="color: #AA00AA;">[Mod]</span> fo
 /pex group mod option prefix &5[Mod]
 ```
 
+## Custom Prefixes
+
+Nucleus, as of 0.9, supports custom tokens other than "prefix" and "suffix". In the chat formatting string, you can add the following
+tags:
+
+* `{{o:[option-name]}}` - replaced by the text in option "rank", if any.
+* `{{o:[option-name]:s}}` - replaced by the text in option "rank", if any. If there _is_ text in the option, adds a space afterwards. 
+
+In both cases, the option name is whatever you called the option. So, if you wanted a token called `rank` on a moderator with the
+ string `[Rank]` before the prefix using PermissionsEx, you would run the following command:
+ 
+```
+/pex group mod option rank [Rank]
+```
+
+then have the following template:
+
+```
+"{{o:rank:s}}{{prefix}} {{displayname}}&f>: "
+```
+
+If you also had a default group with the tag "[Default]", this would display "[Rank] <span style="color: #AA00AA;">[Mod]</span> name&gt; chat"
+ for moderators, and "[Default] name&gt; chat" for default players.
+
 ## Player Messages: Colours, Formats and Magic
 
 Messages themselves can also be formatted using colour codes and formats, prefixing the codes with `&` characters.
