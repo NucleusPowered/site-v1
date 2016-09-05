@@ -154,6 +154,9 @@
     aliases: afk
     cost: false
     permissions:
+    - {module: afk, defaultLevel: ADMIN, description: 'If kick notifications are not
+            sent to the server, players with this permission will still get these
+            notifications.', permission: nucleus.afk.notify}
     - {module: afk, defaultLevel: USER, description: Allows the user to run the command /afk,
         permission: nucleus.afk.base}
     - {module: afk, defaultLevel: ADMIN, description: Prevents the user from being kicked for being AFK for too long.,
@@ -338,6 +341,60 @@
     oneLineDescription: Clears the in-memory cache of users who have logged on in the past session, forcing Nucleus to read the data files on their next login.
     warmup: false
     permissionbase: nucleus.nucleus.clearcache
+-   commandName: nucleus itemalias
+    aliases: itemalias, item
+    cost: true
+    permissions:
+    - {module: core, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /nucleus itemalias,
+        permission: nucleus.nucleus.itemalias.exempt.warmup}
+    - {module: core, defaultLevel: ADMIN, description: Allows the user to run the command /nucleus itemalias,
+        permission: nucleus.nucleus.itemalias.base}
+    - {module: core, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /nucleus itemalias,
+        permission: nucleus.nucleus.itemalias.exempt.cost}
+    - {module: core, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /nucleus itemalias,
+        permission: nucleus.nucleus.itemalias.exempt.cooldown}
+    module: core
+    defaultLevel: ADMIN
+    cooldown: true
+    oneLineDescription: Manages item aliases.
+    warmup: true
+    permissionbase: nucleus.nucleus.itemalias
+-   commandName: nucleus itemalias clear
+    aliases: clear
+    cost: false
+    permissions:
+    - {module: core, defaultLevel: ADMIN, description: Allows the user to run the command /itemalias clear,
+        permission: nucleus.nucleus.itemalias.clear.base}
+    module: core
+    defaultLevel: ADMIN
+    cooldown: false
+    oneLineDescription: Removes all aliases from an item.
+    warmup: false
+    permissionbase: nucleus.nucleus.itemalias.clear
+-   commandName: nucleus itemalias remove
+    aliases: remove, del
+    cost: false
+    permissions:
+    - {module: core, defaultLevel: ADMIN, description: Allows the user to run the command /itemalias remove,
+        permission: nucleus.nucleus.itemalias.remove.base}
+    module: core
+    defaultLevel: ADMIN
+    cooldown: false
+    oneLineDescription: Removes an alias from an item.
+    warmup: false
+    permissionbase: nucleus.nucleus.itemalias.remove
+-   commandName: nucleus itemalias set
+    aliases: set
+    cost: false
+    permissions:
+    - {module: core, defaultLevel: ADMIN, description: Allows the user to run the command /itemalias set,
+        permission: nucleus.nucleus.itemalias.set.base}
+    module: core
+    defaultLevel: ADMIN
+    cooldown: false
+    oneLineDescription: Sets an alias to an item.
+    warmup: false
+    permissionbase: nucleus.nucleus.itemalias.set
 -   commandName: nucleus migrate
     aliases: migrate
     cost: false
@@ -1269,7 +1326,7 @@
     warmup: true
     permissionbase: nucleus.helpop
 -   commandName: message
-    aliases: message, m, msg, whisper, w, tell, t
+    aliases: message, m, msg, whisper, w, t
     cost: true
     permissions:
     - {module: message, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /message,
@@ -1610,10 +1667,10 @@
     aliases: clearnotes, removeallnotes
     cost: false
     permissions:
-    - {module: note, defaultLevel: MOD, description: Allows the user to run the command /clearnotes,
+    - {module: note, defaultLevel: ADMIN, description: Allows the user to run the command /clearnotes,
         permission: nucleus.clearnotes.base}
     module: note
-    defaultLevel: MOD
+    defaultLevel: ADMIN
     cooldown: false
     oneLineDescription: Allows the user to clear a player's notes.
     warmup: false
@@ -1636,10 +1693,10 @@
     aliases: removenote, deletenote, delnote
     cost: false
     permissions:
-    - {module: note, defaultLevel: MOD, description: Allows the user to run the command /removenote,
+    - {module: note, defaultLevel: ADMIN, description: Allows the user to run the command /removenote,
         permission: nucleus.removenote.base}
     module: note
-    defaultLevel: MOD
+    defaultLevel: ADMIN
     cooldown: false
     oneLineDescription: Allows the user to delete a specific note attached to a player.
     warmup: false
@@ -1665,7 +1722,7 @@
     warmup: true
     permissionbase: nucleus.list
 -   commandName: seen
-    aliases: seen, seenplayer
+    aliases: seen, seenplayer, lookup
     cost: true
     permissions:
     - {module: playerinfo, defaultLevel: ADMIN, description: Allows the user to run the command /seen,
@@ -1674,7 +1731,7 @@
         permission: nucleus.seen.exempt.cost}
     - {module: playerinfo, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /seen,
         permission: nucleus.seen.exempt.warmup}
-    - {module: playerinfo, defaultLevel: ADMIN, description: Allows the user to see entended information about a player in /seen.,
+    - {module: playerinfo, defaultLevel: ADMIN, description: Allows the user to see extended information about a player in /seen.,
         permission: nucleus.seen.extended}
     - {module: playerinfo, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /seen,
         permission: nucleus.seen.exempt.cooldown}
@@ -1786,6 +1843,42 @@
     oneLineDescription: Remove a server rule.
     warmup: false
     permissionbase: nucleus.rules.remove
+-   commandName: itembuy
+    aliases: itembuy, buy
+    cost: false
+    permissions:
+    - {module: server-shop, defaultLevel: USER, description: Allows the user to run the command /itembuy,
+        permission: nucleus.itembuy.base}
+    module: server-shop
+    defaultLevel: USER
+    cooldown: false
+    oneLineDescription: Allows the user to buy an item from the server for a set price.
+    warmup: false
+    permissionbase: nucleus.itembuy
+-   commandName: itemsell
+    aliases: itemsell, sell
+    cost: false
+    permissions:
+    - {module: server-shop, defaultLevel: USER, description: Allows the user to run the command /itemsell,
+        permission: nucleus.itemsell.base}
+    module: server-shop
+    defaultLevel: USER
+    cooldown: false
+    oneLineDescription: Allows the user to sell an item to the server for a set price.
+    warmup: false
+    permissionbase: nucleus.itemsell
+-   commandName: setworth
+    aliases: setworth, setitemworth
+    cost: false
+    permissions:
+    - {module: server-shop, defaultLevel: ADMIN, description: Allows the user to run the command /setworth,
+        permission: nucleus.setworth.base}
+    module: server-shop
+    defaultLevel: ADMIN
+    cooldown: false
+    oneLineDescription: Allows the user to set the buy or sell price of an item.
+    warmup: false
+    permissionbase: nucleus.setworth
 -   commandName: firstspawn
     aliases: firstspawn
     cost: true
@@ -2057,10 +2150,10 @@
     aliases: clearwarnings, removeallwarnings
     cost: false
     permissions:
-    - {module: warn, defaultLevel: MOD, description: Allows the user to run the command /clearwarnings,
+    - {module: warn, defaultLevel: ADMIN, description: Allows the user to run the command /clearwarnings,
         permission: nucleus.clearwarnings.base}
     module: warn
-    defaultLevel: MOD
+    defaultLevel: ADMIN
     cooldown: false
     oneLineDescription: Allows the user to clear a player's warnings.
     warmup: false
@@ -2069,10 +2162,10 @@
     aliases: removewarning, deletewarning, delwarn
     cost: false
     permissions:
-    - {module: warn, defaultLevel: MOD, description: Allows the user to run the command /removewarning,
+    - {module: warn, defaultLevel: ADMIN, description: Allows the user to run the command /removewarning,
         permission: nucleus.removewarning.base}
     module: warn
-    defaultLevel: MOD
+    defaultLevel: ADMIN
     cooldown: false
     oneLineDescription: Allows the user to delete a specific warning attached to a player.
     warmup: false
