@@ -77,8 +77,10 @@ For example, to set the the prefix <span style="color: #AA00AA;">[Mod]</span> fo
 Nucleus, as of 0.9, supports custom tokens other than "prefix" and "suffix". In the chat formatting string, you can add the following
 tags:
 
+{% raw %}
 * `{{o:[option-name]}}` - replaced by the text in option "rank", if any.
 * `{{o:[option-name]:s}}` - replaced by the text in option "rank", if any. If there _is_ text in the option, adds a space afterwards. 
+{% endraw %}
 
 In both cases, the option name is whatever you called the option. So, if you wanted a token called `rank` on a moderator with the
  string `[Rank]` before the prefix using PermissionsEx, you would run the following command:
@@ -89,9 +91,11 @@ In both cases, the option name is whatever you called the option. So, if you wan
 
 then have the following template:
 
+{% raw %}
 ```
 "{{o:rank:s}}{{prefix}} {{displayname}}&f>: "
 ```
+{% endraw %}
 
 If you also had a default group with the tag "[Default]", this would display "[Rank] <span style="color: #AA00AA;">[Mod]</span> name&gt; chat"
  for moderators, and "[Default] name&gt; chat" for default players.
