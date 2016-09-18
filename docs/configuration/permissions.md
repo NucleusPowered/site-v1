@@ -10,7 +10,7 @@ While Nucleus keeps a comprehensive list of [commands](../commands.html) and [pe
 that there are a lot of them. We've added a way to easily add permissions using your favourite permission plugin.
 
 **NOTE**: As of 0.10, you no longer need to configure Nucleus to add the command for adding permissions to your permission plugin.
-We've can do it for you, as long as the permissions plugin correctly implements the `PermissionService`.
+We can do it for you, as long as the permissions plugin correctly implements the `PermissionService`.
 
 ## Preparing your Permissions Plugin
 
