@@ -9,21 +9,8 @@ header: Setting up permissions
 While Nucleus keeps a comprehensive list of [commands](../commands.html) and [permissions](../permissions.html), we realise
 that there are a lot of them. We've added a way to easily add permissions using your favourite permission plugin.
 
-## Configuring Nucleus
-
-Nucleus requires you to supply the command to run to add the permissions in question. To do this, open `main.conf` and
-find the option `core.permission-command`, and add the command (without the `/`), including the following tokens:
-
-{% raw %}
-* {{group}} - where you would add the group name in the command.
-* {{perm}} - where you would add the permission in the command.
-{% endraw %}
-
-For convenience, we provide the following commands you would add here for popular permission plugins (please note we are
-not responsible for these commands, it is your responsibility to check they are correct):
-
-* PermissionsEx: {% raw %}`pex group {{group}} perm {{perm}} 1`{% endraw %}
-* Permission Manager: {% raw %}`pm group {{group}} set permission {{perm}} true`{% endraw %}
+**NOTE**: As of 0.10, you no longer need to configure Nucleus to add the command for adding permissions to your permission plugin.
+We've can do it for you, as long as the permissions plugin correctly implements the `PermissionService`.
 
 ## Preparing your Permissions Plugin
 
@@ -34,7 +21,7 @@ the groups you wish to use setup before you begin migration.
 
 To setup the permissions, ensure you are either on the console, or on a user with the following:
 
-* The permission `nucleus.setupperms.base`
+* The permission `nucleus.nucleus.setupperms.base`
 * Permissions to add permissions using your permissions plugin
 
 Simply run the command `/nucleus setupperms [USER|MOD|ADMIN|NONE] <group>`, where `USER` is our suggested permissions

@@ -19,7 +19,7 @@
         permission: nucleus.exp.base}
     module: admin
     defaultLevel: ADMIN
-    usageString: /exp give|take|set|<player>
+    usageString: /exp take|give|set|<player>
     cooldown: false
     oneLineDescription: Displays the specified player's current experience.
     warmup: false
@@ -396,19 +396,6 @@
     oneLineDescription: Removes all aliases from an item.
     warmup: false
     permissionbase: nucleus.nucleus.itemalias.clear
--   commandName: nucleus itemalias clear
-    aliases: clear
-    cost: false
-    permissions:
-    - {module: core, defaultLevel: ADMIN, description: Allows the user to run the command /itemalias clear,
-        permission: nucleus.nucleus.itemalias.clear.base}
-    module: core
-    defaultLevel: ADMIN
-    usageString: /nucleus itemalias clear <item>
-    cooldown: false
-    oneLineDescription: Removes all aliases from an item.
-    warmup: false
-    permissionbase: nucleus.nucleus.itemalias.clear
 -   commandName: nucleus itemalias remove
     aliases: remove, del
     cost: false
@@ -422,32 +409,6 @@
     oneLineDescription: Removes an alias from an item.
     warmup: false
     permissionbase: nucleus.nucleus.itemalias.remove
--   commandName: nucleus itemalias remove
-    aliases: remove, del
-    cost: false
-    permissions:
-    - {module: core, defaultLevel: ADMIN, description: Allows the user to run the command /itemalias remove,
-        permission: nucleus.nucleus.itemalias.remove.base}
-    module: core
-    defaultLevel: ADMIN
-    usageString: /nucleus itemalias remove <alias>
-    cooldown: false
-    oneLineDescription: Removes an alias from an item.
-    warmup: false
-    permissionbase: nucleus.nucleus.itemalias.remove
--   commandName: nucleus itemalias set
-    aliases: set
-    cost: false
-    permissions:
-    - {module: core, defaultLevel: ADMIN, description: Allows the user to run the command /itemalias set,
-        permission: nucleus.nucleus.itemalias.set.base}
-    module: core
-    defaultLevel: ADMIN
-    usageString: /nucleus itemalias set [<item>] <alias>
-    cooldown: false
-    oneLineDescription: Sets an alias to an item.
-    warmup: false
-    permissionbase: nucleus.nucleus.itemalias.set
 -   commandName: nucleus itemalias set
     aliases: set
     cost: false
@@ -474,19 +435,6 @@
     oneLineDescription: Migrates data from other plugins.
     warmup: false
     permissionbase: nucleus.nucleus.migrate
--   commandName: nucleus migrate esscmds
-    aliases: esscmds
-    cost: false
-    permissions:
-    - {module: core, defaultLevel: ADMIN, description: Allows the user to run the command /migrate esscmds,
-        permission: nucleus.nucleus.migrate.esscmds.base}
-    module: core
-    defaultLevel: ADMIN
-    usageString: '/nucleus migrate esscmds '
-    cooldown: false
-    oneLineDescription: Migrates data from EssentialCmds.
-    warmup: false
-    permissionbase: nucleus.nucleus.migrate.esscmds
 -   commandName: nucleus migrate esscmds
     aliases: esscmds
     cost: false
@@ -2539,19 +2487,6 @@
     oneLineDescription: Cancels any current world border generation.
     warmup: false
     permissionbase: nucleus.world.border.gen
--   commandName: world border cancelgen
-    aliases: cancelgen
-    cost: false
-    permissions:
-    - {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /border cancelgen,
-        permission: nucleus.world.border.gen.base}
-    module: world
-    defaultLevel: ADMIN
-    usageString: /world border cancelgen [<world>]
-    cooldown: false
-    oneLineDescription: Cancels any current world border generation.
-    warmup: false
-    permissionbase: nucleus.world.border.gen
 -   commandName: world border gen
     aliases: gen, genchunks, generatechunks, chunkgen
     cost: true
@@ -2571,38 +2506,6 @@
     oneLineDescription: Instructs Sponge to pregenerate chunks within the world border.
     warmup: true
     permissionbase: nucleus.world.border.gen
--   commandName: world border gen
-    aliases: gen, genchunks, generatechunks, chunkgen
-    cost: true
-    permissions:
-    - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /border gen,
-        permission: nucleus.world.border.gen.exempt.warmup}
-    - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /border gen,
-        permission: nucleus.world.border.gen.exempt.cost}
-    - {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /border gen,
-        permission: nucleus.world.border.gen.base}
-    - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /border gen,
-        permission: nucleus.world.border.gen.exempt.cooldown}
-    module: world
-    defaultLevel: ADMIN
-    usageString: /world border gen [<world>]
-    cooldown: true
-    oneLineDescription: Instructs Sponge to pregenerate chunks within the world border.
-    warmup: true
-    permissionbase: nucleus.world.border.gen
--   commandName: world border set
-    aliases: set
-    cost: false
-    permissions:
-    - {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /border set,
-        permission: nucleus.world.border.set.base}
-    module: world
-    defaultLevel: ADMIN
-    usageString: /world border set [<world>] <x> <z> <diameter> [<delay>]|<diameter> [<delay>]
-    cooldown: false
-    oneLineDescription: Sets the world border.
-    warmup: false
-    permissionbase: nucleus.world.border.set
 -   commandName: world border set
     aliases: set
     cost: false
