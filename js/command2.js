@@ -21,7 +21,8 @@ var searchObject = (function() {
                     var truth = $(e).attr("data-command").indexOf(current) !== -1
                         || $(e).attr("data-module").indexOf(current) !== -1
                         || $(e).attr("data-description").indexOf(current) !== -1
-                        || $(e).attr("data-extdescription").indexOf(current) !== -1;
+                        || $(e).attr("data-extdescription").indexOf(current) !== -1
+                        || $(e).attr("data-aliases").indexOf(current) !== -1;
                     if (!truth) {
                         // Doesn't have this word. Not interested.
                         return false;
