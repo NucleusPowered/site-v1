@@ -24,7 +24,7 @@ header: Command Reference
 {% for cmds in sorted %}
 <div class="command" data-command="{{ cmds.commandName | downcase }}" data-module="{{ cmds.module | downcase }}"
      data-description="{{ cmds.oneLineDescription | downcase }}" data-extdescription="{{ cmds.extendedDescription | downcase }}"
-     data-aliase="{{ cmds.aliases | downcase | replace: ',', '' }}">
+     data-aliases="{{ cmds.aliases | downcase | replace: ',', '' }}">
     <div class="command-head">
         /{{ cmds.commandName }}
         <div class="command-module">
