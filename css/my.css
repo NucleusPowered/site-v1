@@ -242,3 +242,34 @@ body {
 .std span {
     margin-right: 5px;
 }
+
+div.command {
+    width: 100%;
+    border: black 1pt solid;
+    margin-bottom: 5px;
+    background: white;
+}
+
+div.command > div {
+    padding: 3px 5px;
+}
+
+div.command > .command-head {
+    font-size: x-large;
+    border-bottom: black 1pt solid;
+    background: aliceblue;
+}
+
+div.command > .command-description {
+    font-size: large;
+}
+
+div.command > .command-head > .command-module {
+    font-size: medium;
+    float: right;
+    vertical-align: bottom;
+}
+
+div.command-usage > p {
+    margin-bottom: 3px;
+}

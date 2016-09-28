@@ -1,0 +1,88 @@
+---
+layout: standardheadmd
+title: Documentation Centre
+header: Command Reference
+---
+<p>
+    If you're looking for the permissions reference, <a href="permissions.html">you can find it here</a>.<br />
+    If you're looking for the tabular command reference, <a href="commands.html">you can find it here</a>.
+</p>
+
+<form id="searchForm">
+    <div class="form-group">
+        <label class="sr-only" for="searchInput">Search</label>
+        <div class="input-group">
+            <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+            <input type="text" class="form-control" id="searchInput" placeholder="Search">
+        </div>
+    </div>
+</form>
+
+<div id="sort">
+
+{% assign sorted = site.data.commands | sort: 'commandName' %}
+{% for cmds in sorted %}
+<div class="command" data-command="{{ cmds.commandName | downcase }}" data-module="{{ cmds.module | downcase }}"
+     data-description="{{ cmds.oneLineDescription | downcase }}" data-extdescription="{{ cmds.extendedDescription | downcase }}"
+     data-aliase="{{ cmds.aliases | downcase | replace: ',', '' }}">
+    <div class="command-head">
+        /{{ cmds.commandName }}
+        <div class="command-module">
+            <strong>Module:</strong> {{ cmds.module }}
+        </div>
+    </div>
+    {% if cmds.oneLineDescription %}
+    <div class="command-description">
+        {{ cmds.oneLineDescription }}
+    </div>
+    {% endif %}
+    <div class="command-ext-description">
+        {% if cmds.extendedDescription %}
+        <p>
+            {{ cmds.extendedDescription }}
+        </p>
+        {% endif %}
+    </div>
+    <div class="command-usage">
+        {% assign al = (cmds.aliases | split: ', ') %}
+        {% if al | size > 1 %}
+        {% assign sizeName = cmds.commandName | split: ' ' | size | minus: 1 %}
+        <p>
+            <strong>Aliases: </strong>
+            {% if sizeName == 0 %}
+                {% for a in al %} <code>{{ a }}</code>{% endfor %}
+            {% else %}
+                {% assign cmdBase = (cmds.commandName | truncatewords: sizeName, '') %}
+                {% for a in al %} <code>{{ cmdBase }} {{ a }}</code>{% endfor %}
+            {% endif %}
+        </p>
+        {% endif %}
+        <p>
+            <strong>Usage: </strong> <code>{{ cmds.usageString | replace: '<', '&lt;' | replace: '>', '&gt;' }}</code>
+        </p>
+    {% if cmds.permissionbase != nil and cmds.permissionbase != "" %}
+        <p>
+            <strong>Default Role: </strong> {{ cmds.defaultLevel }}
+        </p>
+        <p>
+            <strong>Basic Command Permission: </strong> <code>{{ cmds.permissionbase }}.base</code>
+        </p>
+        {% if cmds.permissions | size != 0 %}
+        <p><strong>Permissions</strong></p>
+        <ul>
+            {% for perms in cmds.permissions %}
+            <li>
+                <code>{{ perms.permission }}</code> - Default Role: {{ perms.defaultLevel }} <br />
+                {{ perms.description }}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
+
+</div>
+
+<script src="{{ base }}/js/command2.js"></script>
