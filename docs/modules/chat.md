@@ -22,7 +22,7 @@ In the `main.conf` file, `chat` section, the following options are available:
 * `template.suffix`: The suffix to all message sent, if set. Set to empty to disable.
 
 If `modifychat` is set to `true`, when someone sends a public chat message, the message will start with whatever is
-specified in `template.prefix`, and will be followed by whatever is specified in `template.suffix`.
+specified in `template.default.prefix`, and will be followed by whatever is specified in `template.default.suffix`.
 
 The templates support various tokens.
 
@@ -41,12 +41,14 @@ If you want to change the colour of a player's name in general, don't add a colo
 
 ## Group Templates
 
-As of 0.6, different groups can have different chat templates to the default defined in `template`. To give a group a different template,
+Different groups can have different chat templates to the default defined in `template.default`. To give a group a different template,
  simply add the name of the group and the template like so. Note that the name of the group is case sensitive, so the "Admin" group
  must have an entry for "Admin". Multiple entries can be added like so:
 
 {% raw %}
 ```
+templates {
+    ...
     group-templates {
         Admin {
             prefix="{{prefix}} {{displayname}}&f A>: "
@@ -57,6 +59,7 @@ As of 0.6, different groups can have different chat templates to the default def
             suffix=" {{suffix}}"
         }
     }
+}
 ```
 {% endraw %}
 
@@ -127,3 +130,11 @@ If you have a compatible permissions plugin installed, setting a player's (or th
 chat that colour by default. This can be overridden by players who can use colour codes in their chat.
 
 Like `namecolour`, this accepts both named colours and single character colour codes.
+
+## Default Chat Styles (from 0.11)
+
+If you have a compatible permissions plugin installed, setting a player's (or their group's) `chatstyle` permission option 
+will set the style of their chat automatically. This can be overridden by players who can use colour codes in their chat.
+
+`chatstyle` can accept multiple styles which are comma separated, and both single character and named styles are accepted.
+To set the style as bold and italic, set the `chatstyle` option to `l,o` or `bold,italic`. 
