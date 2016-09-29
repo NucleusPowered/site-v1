@@ -30,6 +30,7 @@ header: Documentation Centre
 * [Ignore](modules/ignore.html) - Allows users to ignore others in chat
 * [Info](modules/info.html) - Provides for an MOTD and other server info pages
 * [Item](modules/item.html) - Item manipulation related commands
+* [Jail](modules/jail.html) - Player jails for minor punishments
 * [Kit](modules/kit.html) - Management of sets of items that players can redeem
 * [Mob](modules/mob.html) - Mobs and mob spawners
 * [Note](modules/note.html) - Allows notes to be added to players for easy reference on the server.
