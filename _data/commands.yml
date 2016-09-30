@@ -229,7 +229,7 @@
         permission: nucleus.tempban.exempt.length}
     module: ban
     defaultLevel: MOD
-    usageString: /tempban <user> <duration> [<reason…>]
+    usageString: /tempban <user> <duration> [<reasonKey…>]
     cooldown: false
     oneLineDescription: Temporarily bans a player.
     warmup: false
@@ -1201,14 +1201,14 @@
     cost: false
     permissions:
     - {module: kit, defaultLevel: ADMIN, description: Allows the user to run the command /firstjoinkit clear,
-        permission: nucleus.clear.base}
+        permission: nucleus.firstjoinkit.clear.base}
     module: kit
     defaultLevel: ADMIN
     usageString: '/firstjoinkit clear '
     cooldown: false
     oneLineDescription: Stops items being given to new players on first join.
     warmup: false
-    permissionbase: nucleus.clear
+    permissionbase: nucleus.firstjoinkit.clear
 -   commandName: firstjoinkit redeem
     aliases: redeem
     cost: false
@@ -1537,6 +1537,8 @@
         permission: nucleus.feed.base}
     - {module: misc, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /feed,
         permission: nucleus.feed.exempt.warmup}
+    - {module: misc, defaultLevel: ADMIN, description: Allows the user to use selectors for the command /feed,
+        permission: nucleus.feed.selectors}
     module: misc
     defaultLevel: ADMIN
     usageString: /feed [<player>]
@@ -1565,6 +1567,8 @@
     permissions:
     - {module: misc, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /heal,
         permission: nucleus.heal.exempt.cooldown}
+    - {module: misc, defaultLevel: ADMIN, description: Allows the user to use selectors for the command /heal,
+        permission: nucleus.heal.selectors}
     - {module: misc, defaultLevel: ADMIN, description: Allows the user to target other players using the command "heal".,
         permission: nucleus.heal.others}
     - {module: misc, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /heal,
@@ -1613,6 +1617,8 @@
         permission: nucleus.kill.exempt.cost}
     - {module: misc, defaultLevel: ADMIN, description: Allows the user to run the command /kill,
         permission: nucleus.kill.base}
+    - {module: misc, defaultLevel: ADMIN, description: Allows the user to use selectors for the command /kill,
+        permission: nucleus.kill.selectors}
     module: misc
     defaultLevel: ADMIN
     usageString: /kill <player>
@@ -1620,10 +1626,26 @@
     oneLineDescription: Kill the specified player.
     warmup: true
     permissionbase: nucleus.kill
+-   commandName: serverstat
+    aliases: serverstat, gc
+    cost: false
+    permissions:
+    - {module: misc, defaultLevel: ADMIN, description: Allows the user to run the command /serverstat,
+        permission: nucleus.serverstat.base}
+    module: misc
+    defaultLevel: ADMIN
+    usageString: '/serverstat '
+    cooldown: false
+    oneLineDescription: Displays server runtime statistics.
+    extendedDescription: This command displays information about the server, the JVM, and each world.
+    warmup: false
+    permissionbase: nucleus.serverstat
 -   commandName: speed
     aliases: speed
     cost: true
     permissions:
+    - {module: misc, defaultLevel: ADMIN, description: Allows the user to use selectors for the command /speed,
+        permission: nucleus.speed.selectors}
     - {module: misc, defaultLevel: NONE, description: Allows the user to specified a speed greater than the max speed set in the config file.,
         permission: nucleus.speed.exempt.max}
     - {module: misc, defaultLevel: ADMIN, description: Allows the user to run the command /speed,
