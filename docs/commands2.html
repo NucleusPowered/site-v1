@@ -33,13 +33,13 @@ header: Command Reference
     </div>
     {% if cmds.oneLineDescription %}
     <div class="command-description">
-        {{ cmds.oneLineDescription }}
+        {{ cmds.oneLineDescription | replace: '<', '&lt;' | replace: '>', '&gt;' }}
     </div>
     {% endif %}
     <div class="command-ext-description">
         {% if cmds.extendedDescription %}
         <p>
-            {{ cmds.extendedDescription }}
+            {{ cmds.extendedDescription | replace: '<', '&lt;' | replace: '>', '&gt;' | replace: '|br|', '<br />' }}
         </p>
         {% endif %}
     </div>
