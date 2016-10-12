@@ -163,6 +163,8 @@
     permission: nucleus.nucleus.save.base}
 - {module: core, defaultLevel: NONE, description: Allows the user to run the command /nucleus setupperms,
     permission: nucleus.nucleus.setupperms.base}
+- {module: core, defaultLevel: NONE, description: Allows the user to run the command /nucleus update-messages,
+    permission: nucleus.nucleus.update-messages.base}
 - {module: environment, defaultLevel: ADMIN, description: Allows the user to run the command /lockweather,
     permission: nucleus.lockweather.base}
 - {module: environment, defaultLevel: USER, description: Allows the user to run the command /time,
@@ -229,9 +231,9 @@
     permission: nucleus.lightning.others}
 - {module: fun, defaultLevel: ADMIN, description: Allows the user to use selectors for the command /lightning,
     permission: nucleus.lightning.selectors}
-- {module: home, defaultLevel: USER, description: Allows the user to run the command /deletehome,
-    permission: nucleus.home.base}
 - {module: home, defaultLevel: USER, description: Allows the user to run the command /home,
+    permission: nucleus.home.base}
+- {module: home, defaultLevel: USER, description: Allows the user to run the command /deletehome,
     permission: nucleus.home.base}
 - {module: home, defaultLevel: ADMIN, description: Allows the user to run the command /deletehomeother,
     permission: nucleus.home.deleteother.base}
@@ -269,6 +271,8 @@
         chat, messages and mail ignored.', permission: nucleus.ignore.exempt.chat}
 - {module: info, defaultLevel: USER, description: Allows the user to run the command /info,
     permission: nucleus.info.base}
+- {module: info, defaultLevel: ADMIN, description: 'If granted, the player can run
+        /info -l to see all the available info sections.', permission: nucleus.info.list}
 - {module: info, defaultLevel: USER, description: Allows the user to run the command /motd,
     permission: nucleus.motd.base}
 - {module: info, defaultLevel: USER, description: 'If granted, the user will see the
@@ -323,27 +327,27 @@
     permission: nucleus.lore.exempt.warmup}
 - {module: item, defaultLevel: ADMIN, description: Allows the user to run the command /lore set,
     permission: nucleus.lore.set.base}
-- {module: item, defaultLevel: ADMIN, description: Allows the user to run the command /lore clear,
-    permission: nucleus.lore.set.base}
 - {module: item, defaultLevel: ADMIN, description: Allows the user to run the command /lore add,
+    permission: nucleus.lore.set.base}
+- {module: item, defaultLevel: ADMIN, description: Allows the user to run the command /lore clear,
     permission: nucleus.lore.set.base}
 - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /lore set,
     permission: nucleus.lore.set.exempt.cooldown}
-- {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /lore clear,
-    permission: nucleus.lore.set.exempt.cooldown}
 - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /lore add,
+    permission: nucleus.lore.set.exempt.cooldown}
+- {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /lore clear,
     permission: nucleus.lore.set.exempt.cooldown}
 - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /lore set,
     permission: nucleus.lore.set.exempt.cost}
-- {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /lore clear,
-    permission: nucleus.lore.set.exempt.cost}
 - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /lore add,
+    permission: nucleus.lore.set.exempt.cost}
+- {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /lore clear,
     permission: nucleus.lore.set.exempt.cost}
 - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /lore set,
     permission: nucleus.lore.set.exempt.warmup}
-- {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /lore clear,
-    permission: nucleus.lore.set.exempt.warmup}
 - {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /lore add,
+    permission: nucleus.lore.set.exempt.warmup}
+- {module: item, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /lore clear,
     permission: nucleus.lore.set.exempt.warmup}
 - {module: item, defaultLevel: ADMIN, description: Allows the user to run the command /more,
     permission: nucleus.more.base}
@@ -505,6 +509,16 @@
     permission: nucleus.blockinfo.exempt.warmup}
 - {module: misc, defaultLevel: ADMIN, description: Displays properties and traits associated with the block.,
     permission: nucleus.blockinfo.extended}
+- {module: misc, defaultLevel: ADMIN, description: Allows the user to run the command /entityinfo,
+    permission: nucleus.entityinfo.base}
+- {module: misc, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /entityinfo,
+    permission: nucleus.entityinfo.exempt.cooldown}
+- {module: misc, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /entityinfo,
+    permission: nucleus.entityinfo.exempt.cost}
+- {module: misc, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /entityinfo,
+    permission: nucleus.entityinfo.exempt.warmup}
+- {module: misc, defaultLevel: ADMIN, description: Displays data associated with the entity.,
+    permission: nucleus.entityinfo.extended}
 - {module: misc, defaultLevel: ADMIN, description: Allows the user to run the command /feed,
     permission: nucleus.feed.base}
 - {module: misc, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /feed,
@@ -607,25 +621,25 @@
     permission: nucleus.mute.notify}
 - {module: mute, defaultLevel: ADMIN, description: 'If true and enabled in the config,
         players with this permission will see chat from muted players.', permission: nucleus.mute.seemutedchat}
-- {module: nickname, defaultLevel: ADMIN, description: Allows the user to run the command /nick,
-    permission: nucleus.nick.base}
 - {module: nickname, defaultLevel: ADMIN, description: Allows the user to run the command /delnick,
+    permission: nucleus.nick.base}
+- {module: nickname, defaultLevel: ADMIN, description: Allows the user to run the command /nick,
     permission: nucleus.nick.base}
 - {module: nickname, defaultLevel: ADMIN, description: Allows the user to colour their nickname.,
     permission: nucleus.nick.color}
 - {module: nickname, defaultLevel: ADMIN, description: Allows the user to colour their nickname.,
     permission: nucleus.nick.colour}
-- {module: nickname, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /nick,
-    permission: nucleus.nick.exempt.cooldown}
 - {module: nickname, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /delnick,
     permission: nucleus.nick.exempt.cooldown}
-- {module: nickname, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /nick,
-    permission: nucleus.nick.exempt.cost}
+- {module: nickname, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /nick,
+    permission: nucleus.nick.exempt.cooldown}
 - {module: nickname, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /delnick,
     permission: nucleus.nick.exempt.cost}
-- {module: nickname, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /nick,
-    permission: nucleus.nick.exempt.warmup}
+- {module: nickname, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /nick,
+    permission: nucleus.nick.exempt.cost}
 - {module: nickname, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /delnick,
+    permission: nucleus.nick.exempt.warmup}
+- {module: nickname, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /nick,
     permission: nucleus.nick.exempt.warmup}
 - {module: nickname, defaultLevel: ADMIN, description: Allows the user to use "magic" characters in their nickname.,
     permission: nucleus.nick.magic}
@@ -673,6 +687,14 @@
     permission: nucleus.seen.exempt.warmup}
 - {module: playerinfo, defaultLevel: ADMIN, description: Allows the user to see extended information about a player in /seen.,
     permission: nucleus.seen.extended}
+- {module: powertool, defaultLevel: ADMIN, description: Allows the user to run the command /powertool delete,
+    permission: nucleus.powertool.base}
+- {module: powertool, defaultLevel: ADMIN, description: Allows the user to run the command /powertool toggle,
+    permission: nucleus.powertool.base}
+- {module: powertool, defaultLevel: ADMIN, description: Allows the user to run the command /powertool list,
+    permission: nucleus.powertool.base}
+- {module: powertool, defaultLevel: ADMIN, description: Allows the user to run the command /powertool,
+    permission: nucleus.powertool.base}
 - {module: rtp, defaultLevel: ADMIN, description: Allows the user to run the command /rtp,
     permission: nucleus.rtp.base}
 - {module: rtp, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /rtp,
@@ -724,13 +746,13 @@
     permission: nucleus.spawn.otherworlds}
 - {module: staff-chat, defaultLevel: MOD, description: Allows the user to run the command /staffchat,
     permission: nucleus.staffchat.base}
-- {module: teleport, defaultLevel: MOD, description: Allows the user to run the command /tp,
+- {module: teleport, defaultLevel: MOD, description: Allows the user to run the command /teleport,
     permission: nucleus.teleport.teleport.base}
-- {module: teleport, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /tp,
+- {module: teleport, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /teleport,
     permission: nucleus.teleport.teleport.exempt.cooldown}
-- {module: teleport, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /tp,
+- {module: teleport, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /teleport,
     permission: nucleus.teleport.teleport.exempt.cost}
-- {module: teleport, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /tp,
+- {module: teleport, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /teleport,
     permission: nucleus.teleport.teleport.exempt.warmup}
 - {module: teleport, defaultLevel: ADMIN, description: permission.teleport.others,
     permission: nucleus.teleport.teleport.others}
@@ -840,9 +862,9 @@
     permission: nucleus.world.border.exempt.cost}
 - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /world border,
     permission: nucleus.world.border.exempt.warmup}
-- {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /border gen,
-    permission: nucleus.world.border.gen.base}
 - {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /border cancelgen,
+    permission: nucleus.world.border.gen.base}
+- {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /border gen,
     permission: nucleus.world.border.gen.base}
 - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /border gen,
     permission: nucleus.world.border.gen.exempt.cooldown}
@@ -860,14 +882,12 @@
     permission: nucleus.world.create.exempt.cost}
 - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /world create,
     permission: nucleus.world.create.exempt.warmup}
-- {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /world delete,
+- {module: world, defaultLevel: NONE, description: Allows the user to run the command /world delete,
     permission: nucleus.world.delete.base}
-- {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /world delete,
-    permission: nucleus.world.delete.exempt.cooldown}
-- {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /world delete,
-    permission: nucleus.world.delete.exempt.cost}
-- {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /world delete,
-    permission: nucleus.world.delete.exempt.warmup}
+- {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /world disable,
+    permission: nucleus.world.disable.base}
+- {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /world enable,
+    permission: nucleus.world.enable.base}
 - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /world,
     permission: nucleus.world.exempt.cooldown}
 - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /world,
@@ -882,30 +902,14 @@
     permission: nucleus.world.list.exempt.cost}
 - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /world list,
     permission: nucleus.world.list.exempt.warmup}
+- {module: world, defaultLevel: ADMIN, description: Allows the user to see world seeds.,
+    permission: nucleus.world.list.seed}
 - {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /world load,
     permission: nucleus.world.load.base}
-- {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /world load,
-    permission: nucleus.world.load.exempt.cooldown}
-- {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /world load,
-    permission: nucleus.world.load.exempt.cost}
-- {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /world load,
-    permission: nucleus.world.load.exempt.warmup}
 - {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /world setdifficulty,
     permission: nucleus.world.setdifficulty.base}
-- {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /world setdifficulty,
-    permission: nucleus.world.setdifficulty.exempt.cooldown}
-- {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /world setdifficulty,
-    permission: nucleus.world.setdifficulty.exempt.cost}
-- {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /world setdifficulty,
-    permission: nucleus.world.setdifficulty.exempt.warmup}
 - {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /world setgamemode,
     permission: nucleus.world.setgamemode.base}
-- {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /world setgamemode,
-    permission: nucleus.world.setgamemode.exempt.cooldown}
-- {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /world setgamemode,
-    permission: nucleus.world.setgamemode.exempt.cost}
-- {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /world setgamemode,
-    permission: nucleus.world.setgamemode.exempt.warmup}
 - {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /world setspawn,
     permission: nucleus.world.setspawn.base}
 - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /world setspawn,
@@ -930,3 +934,7 @@
     permission: nucleus.world.teleport.exempt.cost}
 - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /world teleport,
     permission: nucleus.world.teleport.exempt.warmup}
+- {module: world, defaultLevel: ADMIN, description: Allows the user to teleport other players to other worlds.,
+    permission: nucleus.world.teleport.others}
+- {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /world unload,
+    permission: nucleus.world.unload.base}

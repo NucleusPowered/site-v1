@@ -19,7 +19,7 @@
         permission: nucleus.exp.base}
     module: admin
     defaultLevel: ADMIN
-    usageString: /exp take|give|set|<player>
+    usageString: /exp give|take|set|<player>
     cooldown: false
     oneLineDescription: Displays the specified player's current experience.
     warmup: false
@@ -331,7 +331,7 @@
         permission: nucleus.nucleus.base}
     module: core
     defaultLevel: ADMIN
-    usageString: /nucleus itemalias|save|setupperms|reload|clearcache|resetuser|docgen|printperms|migrate|
+    usageString: /nucleus itemalias|save|setupperms|reload|clearcache|resetuser|update-messages|docgen|printperms|migrate|
     cooldown: false
     oneLineDescription: Displays Nucleus version and module information.
     extendedDescription: The Nucleus command allows access to sub commands that administer the entire plugin.
@@ -522,6 +522,19 @@
     oneLineDescription: Allows the user to add the recommended permissions for either USER, MOD or ADMIN roles to a specified group.
     warmup: false
     permissionbase: nucleus.nucleus.setupperms
+-   commandName: nucleus update-messages
+    aliases: update-messages
+    cost: false
+    permissions:
+    - {module: core, defaultLevel: NONE, description: Allows the user to run the command /nucleus update-messages,
+        permission: nucleus.nucleus.update-messages.base}
+    module: core
+    defaultLevel: NONE
+    usageString: '/nucleus update-messages [-y <y>] '
+    cooldown: false
+    oneLineDescription: Scans the messages file for keys that might not include all the required tokens and replaces them with the standard translation.
+    warmup: false
+    permissionbase: nucleus.nucleus.update-messages
 -   commandName: lockweather
     aliases: lockweather, killweather
     cost: false
@@ -687,6 +700,7 @@
     usageString: /deletehome <home>
     cooldown: false
     oneLineDescription: Deletes a home.
+    extendedDescription: Removes a personal warp. The home must be specified.
     warmup: false
     permissionbase: nucleus.home
 -   commandName: deletehomeother
@@ -699,7 +713,7 @@
     defaultLevel: ADMIN
     usageString: /deletehomeother <user> <home>
     cooldown: false
-    oneLineDescription: Deletes other player's home.
+    oneLineDescription: Deletes another player's home.
     warmup: false
     permissionbase: nucleus.home.deleteother
 -   commandName: home
@@ -719,6 +733,7 @@
     usageString: /home [<home>]
     cooldown: true
     oneLineDescription: Teleports to home.
+    extendedDescription: A home is a personal warp. They can be set using the /homeset command. If no home name is specified, the default of "home" is used.
     warmup: true
     permissionbase: nucleus.home
 -   commandName: homeother
@@ -737,7 +752,7 @@
     defaultLevel: MOD
     usageString: /homeother <user> <home>
     cooldown: true
-    oneLineDescription: Teleports to other player's home.
+    oneLineDescription: Teleports to another player's home.
     warmup: true
     permissionbase: nucleus.home.other
 -   commandName: homeset
@@ -756,9 +771,13 @@
         permission: nucleus.home.set.exempt.cooldown}
     module: home
     defaultLevel: USER
-    usageString: /homeset [<home>]
+    usageString: /homeset [-o|-overwrite <o>] [<home>]
     cooldown: true
-    oneLineDescription: Sets home.
+    oneLineDescription: Sets a home with the specified name.
+    extendedDescription: |-
+        This command allows players to specify a "personal warp", which is termed a "home". By default, all players get one home, which can be controlled by assigning a number to the permission option "home-count", of being giving the permission "nucleus.home.set.unlimited" for unlimited homes.
+
+        If no home name is specified, the default of "home" is used. If you try to set a home with a name that is already in use, the command will fail, unless the "-o" flag is specified.
     warmup: true
     permissionbase: nucleus.home.set
 -   commandName: listhomes
@@ -774,6 +793,7 @@
     usageString: /listhomes [<player>]
     cooldown: false
     oneLineDescription: Lists homes.
+    extendedDescription: Lists all the homes that you currently have.
     warmup: false
     permissionbase: nucleus.home.list
 -   commandName: ignore
@@ -797,9 +817,11 @@
     permissions:
     - {module: info, defaultLevel: USER, description: Allows the user to run the command /info,
         permission: nucleus.info.base}
+    - {module: info, defaultLevel: ADMIN, description: 'If granted, the player can
+            run /info -l to see all the available info sections.', permission: nucleus.info.list}
     module: info
     defaultLevel: USER
-    usageString: /info [<section>]
+    usageString: /info [-l|-list <l>] [<section>]
     cooldown: false
     oneLineDescription: Get server information.
     warmup: false
@@ -1523,6 +1545,27 @@
     oneLineDescription: Get information about the block you are currently facing.
     warmup: true
     permissionbase: nucleus.blockinfo
+-   commandName: entityinfo
+    aliases: entityinfo
+    cost: true
+    permissions:
+    - {module: misc, defaultLevel: ADMIN, description: Displays data associated with the entity.,
+        permission: nucleus.entityinfo.extended}
+    - {module: misc, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /entityinfo,
+        permission: nucleus.entityinfo.exempt.cooldown}
+    - {module: misc, defaultLevel: ADMIN, description: Allows the user to run the command /entityinfo,
+        permission: nucleus.entityinfo.base}
+    - {module: misc, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /entityinfo,
+        permission: nucleus.entityinfo.exempt.cost}
+    - {module: misc, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /entityinfo,
+        permission: nucleus.entityinfo.exempt.warmup}
+    module: misc
+    defaultLevel: ADMIN
+    usageString: '/entityinfo [-e|-extended <e>] '
+    cooldown: true
+    oneLineDescription: Get information about the entity you are currently facing.
+    warmup: true
+    permissionbase: nucleus.entityinfo
 -   commandName: feed
     aliases: feed
     cost: true
@@ -1940,6 +1983,58 @@
     oneLineDescription: Gets information about the specified player.
     warmup: true
     permissionbase: nucleus.seen
+-   commandName: powertool
+    aliases: powertool, pt
+    cost: false
+    permissions:
+    - {module: powertool, defaultLevel: ADMIN, description: Allows the user to run the command /powertool,
+        permission: nucleus.powertool.base}
+    module: powertool
+    defaultLevel: ADMIN
+    usageString: /powertool toggle|list|delete|[<command…>]
+    cooldown: false
+    oneLineDescription: Binds the item in hand to the specified command.
+    warmup: false
+    permissionbase: nucleus.powertool
+-   commandName: powertool delete
+    aliases: delete, del, rm, remove
+    cost: false
+    permissions:
+    - {module: powertool, defaultLevel: ADMIN, description: Allows the user to run the command /powertool delete,
+        permission: nucleus.powertool.base}
+    module: powertool
+    defaultLevel: ADMIN
+    usageString: '/powertool delete '
+    cooldown: false
+    oneLineDescription: Removes any powertool bindings to the item in hand.
+    warmup: false
+    permissionbase: nucleus.powertool
+-   commandName: powertool list
+    aliases: list, ls
+    cost: false
+    permissions:
+    - {module: powertool, defaultLevel: ADMIN, description: Allows the user to run the command /powertool list,
+        permission: nucleus.powertool.base}
+    module: powertool
+    defaultLevel: ADMIN
+    usageString: '/powertool list '
+    cooldown: false
+    oneLineDescription: Lists all current powertools that the user has.
+    warmup: false
+    permissionbase: nucleus.powertool
+-   commandName: powertool toggle
+    aliases: toggle
+    cost: false
+    permissions:
+    - {module: powertool, defaultLevel: ADMIN, description: Allows the user to run the command /powertool toggle,
+        permission: nucleus.powertool.base}
+    module: powertool
+    defaultLevel: ADMIN
+    usageString: /powertool toggle [<toggle>]
+    cooldown: false
+    oneLineDescription: Toggles whether powertools activate.
+    warmup: false
+    permissionbase: nucleus.powertool
 -   commandName: rtp
     aliases: rtp, randomteleport, rteleport
     cost: true
@@ -2130,20 +2225,20 @@
     warmup: false
     permissionbase: nucleus.staffchat
 -   commandName: teleport
-    aliases: tp, teleport
+    aliases: teleport, tp
     cost: true
     permissions:
-    - {module: teleport, defaultLevel: MOD, description: Allows the user to run the command /tp,
+    - {module: teleport, defaultLevel: MOD, description: Allows the user to run the command /teleport,
         permission: nucleus.teleport.teleport.base}
-    - {module: teleport, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /tp,
+    - {module: teleport, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /teleport,
         permission: nucleus.teleport.teleport.exempt.warmup}
-    - {module: teleport, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /tp,
+    - {module: teleport, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /teleport,
         permission: nucleus.teleport.teleport.exempt.cooldown}
     - {module: teleport, defaultLevel: ADMIN, description: permission.teleport.others,
         permission: nucleus.teleport.teleport.others}
     - {module: teleport, defaultLevel: ADMIN, description: permission.teleport.quiet,
         permission: nucleus.teleport.teleport.quiet}
-    - {module: teleport, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /tp,
+    - {module: teleport, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /teleport,
         permission: nucleus.teleport.teleport.exempt.cost}
     module: teleport
     defaultLevel: MOD
@@ -2472,7 +2567,7 @@
         permission: nucleus.world.exempt.warmup}
     module: world
     defaultLevel: ADMIN
-    usageString: /world border|setdifficulty|teleport|setgamemode|list|delete|setspawn|spawn|load|create|?
+    usageString: /world border|setdifficulty|teleport|setgamemode|list|delete|setspawn|spawn|load|disable|enable|unload|create|?
     cooldown: true
     oneLineDescription: Parent command for all other world commands.
     warmup: true
@@ -2555,30 +2650,65 @@
         permission: nucleus.world.create.base}
     module: world
     defaultLevel: ADMIN
-    usageString: /world create <name> <dimension> <generator> <gamemode> <difficulty>
+    usageString: /world create [-g|-generator <generator>] [-d|-dimension <dimension>] [-gm|-gamemode <gamemode>] [-s|-seed <seed>] [-di|-difficulty <difficulty>] [-m|-modifier <modifier>] <name>
     cooldown: true
-    oneLineDescription: Creates a world.
+    oneLineDescription: Creates a world with the specified name and options.
+    extendedDescription: |-
+        Creates a game world with the provided name, required. All other options in this command are optional, and are specified by flags. Each flag requires an argument after their names. These flags are:
+
+        * -d/--dimension <dimension>: the dimension to use as a base world type. Defaults to the overworld.
+        * -g/--generator <generator>: the world generator to use. Defaults to the default generator.
+        * -m/--modifier <modifier>: a world generator modifier to use. Can be specified multiple times for multiple modifiers.
+        * --di/--difficulty <difficulty>: the initial world difficulty. Defaults to normal.
+        * --gm/--gamemode <gamemode>: the default game mode for players in the world. Defaults to survival.
+        * -s/--seed <seed>: The seed to use to generate the world. If not specified, a random seed will be used.
+
+        The difficulty and the game mode can be changed after the world is generated.
     warmup: true
     permissionbase: nucleus.world.create
 -   commandName: world delete
     aliases: delete, del
-    cost: true
+    cost: false
     permissions:
-    - {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /world delete,
+    - {module: world, defaultLevel: NONE, description: Allows the user to run the command /world delete,
         permission: nucleus.world.delete.base}
-    - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /world delete,
-        permission: nucleus.world.delete.exempt.cost}
-    - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /world delete,
-        permission: nucleus.world.delete.exempt.warmup}
-    - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /world delete,
-        permission: nucleus.world.delete.exempt.cooldown}
+    module: world
+    defaultLevel: NONE
+    usageString: /world delete <world>
+    cooldown: false
+    oneLineDescription: Deletes a world from the disc.
+    extendedDescription: |-
+        This command irreversibly removes a world that has been unloaded and disabled from the disc. Before removal, the file path will be shown to be checked before the removal is confirmed and completed.
+        It is vitally important to note that once the world is deleted, it cannot be recovered.
+    warmup: false
+    permissionbase: nucleus.world.delete
+-   commandName: world disable
+    aliases: disable, dis
+    cost: false
+    permissions:
+    - {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /world disable,
+        permission: nucleus.world.disable.base}
     module: world
     defaultLevel: ADMIN
-    usageString: /world delete <world>
-    cooldown: true
-    oneLineDescription: Deletes a world.
-    warmup: true
-    permissionbase: nucleus.world.delete
+    usageString: /world disable <world>
+    cooldown: false
+    oneLineDescription: Disables a world that is unloaded, preventing it from being loaded in future.
+    extendedDescription: Disabling a world prevents a world from being loaded, however, if a world is currently loaded, it will not be unloaded, and so will not be fully disabled until it is unloaded.
+    warmup: false
+    permissionbase: nucleus.world.disable
+-   commandName: world enable
+    aliases: enable, en
+    cost: false
+    permissions:
+    - {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /world enable,
+        permission: nucleus.world.enable.base}
+    module: world
+    defaultLevel: ADMIN
+    usageString: /world enable <world>
+    cooldown: false
+    oneLineDescription: Enables a world, allowing it to be loaded on demand.
+    warmup: false
+    permissionbase: nucleus.world.enable
 -   commandName: world list
     aliases: list, ls
     cost: true
@@ -2591,69 +2721,55 @@
         permission: nucleus.world.list.exempt.warmup}
     - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /world list,
         permission: nucleus.world.list.exempt.cost}
+    - {module: world, defaultLevel: ADMIN, description: Allows the user to see world seeds.,
+        permission: nucleus.world.list.seed}
     module: world
     defaultLevel: ADMIN
     usageString: '/world list '
     cooldown: true
     oneLineDescription: Lists all worlds.
+    extendedDescription: Displays all worlds and information about them, including their seed, if the viewer in question has the "nucleus.world.list.seed" permission.
     warmup: true
     permissionbase: nucleus.world.list
 -   commandName: world load
     aliases: load
-    cost: true
+    cost: false
     permissions:
-    - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /world load,
-        permission: nucleus.world.load.exempt.warmup}
     - {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /world load,
         permission: nucleus.world.load.base}
-    - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /world load,
-        permission: nucleus.world.load.exempt.cost}
-    - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /world load,
-        permission: nucleus.world.load.exempt.cooldown}
     module: world
     defaultLevel: ADMIN
-    usageString: /world load <name> [<dimension>] [<generator>] [<gamemode>] [<difficulty>]
-    cooldown: true
-    oneLineDescription: Loads a world.
-    warmup: true
+    usageString: /world load [-e|-enable <e>] <world>
+    cooldown: false
+    oneLineDescription: Loads a world that is currently unloaded.
+    extendedDescription: The command will refuse to load a disabled world unless the "-e" flag is specified and you have permission to run the "/world enable" command.
+    warmup: false
     permissionbase: nucleus.world.load
 -   commandName: world setdifficulty
     aliases: setdifficulty, difficulty
-    cost: true
+    cost: false
     permissions:
     - {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /world setdifficulty,
         permission: nucleus.world.setdifficulty.base}
-    - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /world setdifficulty,
-        permission: nucleus.world.setdifficulty.exempt.cost}
-    - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /world setdifficulty,
-        permission: nucleus.world.setdifficulty.exempt.warmup}
-    - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /world setdifficulty,
-        permission: nucleus.world.setdifficulty.exempt.cooldown}
     module: world
     defaultLevel: ADMIN
     usageString: /world setdifficulty <difficulty> [<world>]
-    cooldown: true
+    cooldown: false
     oneLineDescription: Sets the difficulty of a world.
-    warmup: true
+    warmup: false
     permissionbase: nucleus.world.setdifficulty
 -   commandName: world setgamemode
     aliases: setgamemode, setgm, gamemode, gm
-    cost: true
+    cost: false
     permissions:
     - {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /world setgamemode,
         permission: nucleus.world.setgamemode.base}
-    - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /world setgamemode,
-        permission: nucleus.world.setgamemode.exempt.cooldown}
-    - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cost for /world setgamemode,
-        permission: nucleus.world.setgamemode.exempt.cost}
-    - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /world setgamemode,
-        permission: nucleus.world.setgamemode.exempt.warmup}
     module: world
     defaultLevel: ADMIN
     usageString: /world setgamemode <gamemode> [<world>]
-    cooldown: true
+    cooldown: false
     oneLineDescription: Sets the gamemode of a world.
-    warmup: true
+    warmup: false
     permissionbase: nucleus.world.setgamemode
 -   commandName: world setspawn
     aliases: setspawn
@@ -2699,6 +2815,8 @@
     permissions:
     - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the cooldown for /world teleport,
         permission: nucleus.world.teleport.exempt.cooldown}
+    - {module: world, defaultLevel: ADMIN, description: Allows the user to teleport other players to other worlds.,
+        permission: nucleus.world.teleport.others}
     - {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /world teleport,
         permission: nucleus.world.teleport.base}
     - {module: world, defaultLevel: ADMIN, description: Allows the user to bypass the warmup for /world teleport,
@@ -2709,6 +2827,21 @@
     defaultLevel: ADMIN
     usageString: /world teleport <world> [<player>]
     cooldown: true
-    oneLineDescription: Teleports to a world.
+    oneLineDescription: Teleports you, or another player, to the specified world.
+    extendedDescription: This command will teleport the target player to the target world provided it is enabled. It will not enable a disabled world.
     warmup: true
     permissionbase: nucleus.world.teleport
+-   commandName: world unload
+    aliases: unload
+    cost: false
+    permissions:
+    - {module: world, defaultLevel: ADMIN, description: Allows the user to run the command /world unload,
+        permission: nucleus.world.unload.base}
+    module: world
+    defaultLevel: ADMIN
+    usageString: /world unload [-t|-transfer <transferWorld>] [-d|-disable <d>] <world>
+    cooldown: false
+    oneLineDescription: Unloads a world that is currently loaded.
+    extendedDescription: Unloads the specified world, and optionally disables it. Simply unloading a world does not make is inaccessible, as it will remain enabled, which will cause the world to load when someone tries to connect to it. To disable the world at the same time as unloading it, add the "-d" flag to the command.
+    warmup: false
+    permissionbase: nucleus.world.unload
