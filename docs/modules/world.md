@@ -12,14 +12,28 @@ The World module allows for basic World management, such as creating and deletin
 
 ## Creating Worlds
 
-To create a world, the command is:
+To create a world, use the command `/world create [-g|-generator <generator>] [-d|-dimension <dimension>] [-gm|-gamemode <gamemode>] [-s|-seed <seed>] [-di|-difficulty <difficulty>] [-m|-modifier <modifier>] <name>`. 
+The name is required. All other options in this command are optional, and are specified by flags. Each flag requires an argument after their names. These flags are:
 
-`/world create [name] [dimension] [generator] [gamemode] [difficulty]`
+* -d/--dimension <dimension>: the dimension to use as a base world type. Defaults to the overworld.
+* -g/--generator <generator>: the world generator to use. Defaults to the default generator.
+* -m/--modifier <modifier>: a world generator modifier to use. Can be specified multiple times for multiple modifiers.
+* --di/--difficulty <difficulty>: the initial world difficulty. Defaults to normal.
+* --gm/--gamemode <gamemode>: the default game mode for players in the world. Defaults to survival.
+* -s/--seed <seed>: The seed to use to generate the world. If not specified, a random seed will be used.
 
 Dimension refers to the type of world (that is, overworld, nether or the_end), and generator refers to the type of generator
  used to generate the world. This may be a custom generator provided by another plugin.
 
-Future releases may make some of the options optional.
+## Enabling, disabling, loading and unloading worlds.
+
+Nucleus provides commands that allows admins to manage whether a world is loaded or not, or whether it can even be accessed. A world can be in one of the following states:
+
+* **Loaded** - a world is loaded and accessible.
+* **Unloaded** - a world is not loaded, but will be loaded if someone tries to access it.
+* **Disabled** - a world is not loaded and is not accessible, meaning that a player trying to access it will fail.
+
+The commands `/world load`, `/world unload`, `/world disable` and `/world enable` can change between these states.
 
 ## World Borders and Pre-Generating Chunks
 
