@@ -16,16 +16,39 @@ certain items on the server. Consider disabling the blacklist module if you have
 
 ## Configuration
 
-There are four entries in the `main.conf` file in the `blacklist` section:
+There are two entries in the `main.conf` file in the `blacklist` section:
 
-* `environment`: if `true`, prevent interactions with blacklisted blocks in the game world.
-* `inventory`: if `true`, prevent players from possessing blacklisted blocks.
-* `replacement`: if useReplacement is set to `true`, this ItemType will replace any blacklisted item taken from a player. Defaults to `minecraft:dirt`.
 * `useReplacement`: if true, confiscated items will be replaced by the item specified in `replacement`.
 
-## Adding blocks and items to the blacklist
+Actions to block are now determined by item, rather than globally.
 
-In game, execute the `/blacklist add [item ID]` command, replacing the item ID with the ID of your item. If you are
-unsure as to what is the ID is, hold the item and run `/iteminfo`, checking the Item ID.
+## Blacklisting items in `items.conf`
 
-Blacklisted items are currently stored in the `nucleus/general.json` file.
+The item blacklist is stored as part of the `items.conf` file, and can be edited by hand. The blacklist section of any
+item id looks like the following:
+
+```
+"minecraft:emerald_block" {
+    # A set of aliases that Nucleus recognises for this item. They all must be lowercase, and contain only letters, numbers, hyphens or underscores.
+    ...
+    blacklist {
+        # Prevents the mining or placing of an item in the world.
+        block-environment=true
+        # Prevents the item being possesed.
+        block-possesion=true
+        # Prevents the item being used.
+        block-use=true
+    }
+    ...
+}
+```
+
+Once completed, use `/nucleus reload` to reload the file.
+
+## Updating the blacklist via commands
+
+In game, execute the `/blacklist set [-t <environment|possession|use>] [item ID] <true|false>` command. The `-t` flag is optional, if
+ omitted, will affect all types of blacklisting. If no Item ID is provided, the item in your main hand is used instead.
+ 
+As of Nucleus 0.14.0, `/blacklist add` and `/blacklist remove` have been removed, use `/blacklist set [item] true` or
+`/blacklist set [item] false` instead.
