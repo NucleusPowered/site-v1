@@ -438,8 +438,8 @@
         used in certain ways. By default, this command will globally set or unset
         the blacklist options, but by using the -t flag (potentially multiple times),
         the following types of blacklist behaviour can be set independently:|br||br|*
-        "environment": breaking or placing blocks.* "possess": whether the item is
-        allowed in a player''s inventory.* "use": whether the item can be consumed
+        "environment": breaking or placing blocks.|br|* "possess": whether the item is
+        allowed in a player''s inventory.|br|* "use": whether the item can be consumed
         by a player.|br||br|This command replaces /blacklist add and /blacklist remove
         from previous releases.'
     warmup: true
