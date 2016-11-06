@@ -29,6 +29,7 @@ header: Documentation Centre
 * [Home](modules/home.html) - Manages personal warps for users
 * [Ignore](modules/ignore.html) - Allows users to ignore others in chat
 * [Info](modules/info.html) - Provides for an MOTD and other server info pages
+* [Inventory](modules/inventory.html) - Provides the ability to look into a player's inventories.
 * [Item](modules/item.html) - Item manipulation related commands
 * [Jail](modules/jail.html) - Player jails for minor punishments
 * [Kit](modules/kit.html) - Management of sets of items that players can redeem
