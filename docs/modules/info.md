@@ -20,7 +20,7 @@ prefixed with an ampersand (`&`), and will convert URLs automatically where it s
 To update the file, simply edit the file, then run `/nucleus reload`. If you want a different (or no) title for the MOTD,
 this can be changed in the `main.conf` file, see `info.motd-title`.
 
-The MOTD supports tokens, see the section "Tokens/Variables" below.
+The MOTD supports tokens, see the section "Tokens/Variables" below, and links, see the "Links in /info and /motd" section.
 
 ## Server Info files
 
@@ -38,6 +38,15 @@ to that line. The title can be no longer than 50 characters.
 * URLs are supported.
 * The info files also support the tokens in the `Tokens/Variables` section.
 * The permission to view info files is `nucleus.info.base`.
+
+## Links in /info and /motd
+
+Links can be included in info and motd files using limited markdown syntax.
+
+* `http://nucleuspowered.org` - creates a link automatically
+* `[Hello](http://nucleuspowered.org)` - creates a link titled `Hello` to `http://nucleuspowered.org`
+* `[Rules](/rules)` - creates a link titled `Rules` that will run `/rules` when clicked.
+* `[Blah](/msg {{player}} player` - Create a link that sends the message "player" to the player who is clicking the link entitled `Blah`.
 
 ## Tokens/Variables
 
