@@ -20,6 +20,7 @@ In the `main.conf` file, `connection-messages` section, the following options ar
 * `modify-logout-message`: if `true`, the standard logout/disconnect message sent to server chat will be replaced with the contents of `logout-message`
 * `show-first-login-message`: if `true`, an extra message will be sent to chat when a player joins the server for the first time.
 This message is defined in `first-login-message`.
+* `disable-with-permission`: if `true`, players with the `nucleus.connectionmessages.disable` will not trigger a join or quit message.
 
 The messages support the tokens available to the [Chat module](chat.html).
 
@@ -32,3 +33,5 @@ The messages support the tokens available to the [Chat module](chat.html).
 
 The messages also support Minecraft <a href="http://minecraft.gamepedia.com/Formatting_codes#Color_codes" target="_blank">colour codes</a>,
 replacing `§` with `&`.
+
+## Hiding 

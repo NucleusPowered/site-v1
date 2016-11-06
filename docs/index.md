@@ -36,6 +36,7 @@ header: Documentation Centre
 * [Mob](modules/mob.html) - Mobs and mob spawners
 * [Mute](modules/mute.html) - Player and server mutes, preventing players from chatting on the server.
 * [Note](modules/note.html) - Allows notes to be added to players for easy reference on the server.
+* [Player Info](modules/playerinfo.html) - Display info about players on the server.
 * [Powertool](modules/powertool.html) - Personal binding of commands to items
 * [Rules](modules/rules.html) - Set and display rules
 * [Spawn](modules/spawn.html) - Set spawn and first spawn spots
