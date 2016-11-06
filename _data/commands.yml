@@ -18,7 +18,7 @@
     cost: false
     module: admin
     defaultLevel: ADMIN
-    usageString: /exp take|give|set|<player>
+    usageString: /exp give|take|set|<player>
     oneLineDescription: Displays the specified player's current experience.
     permissionbase: nucleus.exp
     commandName: exp
@@ -354,7 +354,7 @@
     cost: true
     module: blacklist
     defaultLevel: ADMIN
-    usageString: /blacklist add|list|remove|?
+    usageString: /blacklist set|list|?
     oneLineDescription: Parent command for all other blacklist commands.
     permissionbase: nucleus.blacklist
     commandName: blacklist
@@ -375,34 +375,6 @@
         defaultLevel: ADMIN
         description: Allows the user to bypass the cooldown for /blacklist
         permission: nucleus.blacklist.exempt.cooldown
-    cooldown: true
-    requiresMixin: false
-    warmup: true
--   aliases: add
-    cost: true
-    module: blacklist
-    defaultLevel: ADMIN
-    usageString: /blacklist add <item>
-    oneLineDescription: Adds item to blacklist.
-    permissionbase: nucleus.blacklist.add
-    commandName: blacklist add
-    permissions:
-    -   module: blacklist
-        defaultLevel: ADMIN
-        description: Allows the user to bypass the warmup for /blacklist add
-        permission: nucleus.blacklist.add.exempt.warmup
-    -   module: blacklist
-        defaultLevel: ADMIN
-        description: Allows the user to bypass the cost for /blacklist add
-        permission: nucleus.blacklist.add.exempt.cost
-    -   module: blacklist
-        defaultLevel: ADMIN
-        description: Allows the user to run the command /blacklist add
-        permission: nucleus.blacklist.add.base
-    -   module: blacklist
-        defaultLevel: ADMIN
-        description: Allows the user to bypass the cooldown for /blacklist add
-        permission: nucleus.blacklist.add.exempt.cooldown
     cooldown: true
     requiresMixin: false
     warmup: true
@@ -434,33 +406,42 @@
     cooldown: true
     requiresMixin: false
     warmup: true
--   aliases: remove, delete, del
+-   aliases: set
     cost: true
     module: blacklist
     defaultLevel: ADMIN
-    usageString: /blacklist remove <item>
-    oneLineDescription: Removes item from blacklist.
-    permissionbase: nucleus.blacklist.remove
-    commandName: blacklist remove
+    usageString: /blacklist set [-t|-type <action to block>] [<item>] <blacklist>
+    oneLineDescription: Sets an item's blacklist status.
+    permissionbase: nucleus.blacklist.set
+    commandName: blacklist set
     permissions:
     -   module: blacklist
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cost for /blacklist remove
-        permission: nucleus.blacklist.remove.exempt.cost
+        description: Allows the user to bypass the cooldown for /blacklist set
+        permission: nucleus.blacklist.set.exempt.cooldown
     -   module: blacklist
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cooldown for /blacklist remove
-        permission: nucleus.blacklist.remove.exempt.cooldown
+        description: Allows the user to bypass the warmup for /blacklist set
+        permission: nucleus.blacklist.set.exempt.warmup
     -   module: blacklist
         defaultLevel: ADMIN
-        description: Allows the user to bypass the warmup for /blacklist remove
-        permission: nucleus.blacklist.remove.exempt.warmup
+        description: Allows the user to bypass the cost for /blacklist set
+        permission: nucleus.blacklist.set.exempt.cost
     -   module: blacklist
         defaultLevel: ADMIN
-        description: Allows the user to run the command /blacklist remove
-        permission: nucleus.blacklist.remove.base
+        description: Allows the user to run the command /blacklist set
+        permission: nucleus.blacklist.set.base
     cooldown: true
     requiresMixin: false
+    extendedDescription: 'This command allows you to specify if an item should be
+        "blacklisted", and if so how. Blacklisting an item prevents items from being
+        used in certain ways. By default, this command will globally set or unset
+        the blacklist options, but by using the -t flag (potentially multiple times),
+        the following types of blacklist behaviour can be set independently:|br||br|*
+        "environment": breaking or placing blocks.* "possess": whether the item is
+        allowed in a player''s inventory.* "use": whether the item can be consumed
+        by a player.|br||br|This command replaces /blacklist add and /blacklist remove
+        from previous releases.'
     warmup: true
 -   aliases: nucleus
     cost: false
@@ -1934,6 +1915,7 @@
     warmup: false
 -   aliases: list, ls
     cost: false
+    rootAliases: kits
     module: kit
     defaultLevel: ADMIN
     usageString: '/kit list '
@@ -2139,8 +2121,9 @@
     cooldown: true
     requiresMixin: false
     warmup: true
--   aliases: message, m, msg, whisper, w, t, tell
+-   aliases: message, m, msg, whisper, w, t
     cost: true
+    rootAliases: tell
     module: message
     defaultLevel: USER
     usageString: /message <to> <message…>
@@ -2834,7 +2817,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
--   aliases: list, listplayers
+-   aliases: list, listplayers, ls
     cost: true
     module: playerinfo
     defaultLevel: USER
@@ -3210,8 +3193,9 @@
     cooldown: false
     requiresMixin: false
     warmup: false
--   aliases: teleport, tp
+-   aliases: teleport
     cost: true
+    rootAliases: tp
     module: teleport
     defaultLevel: MOD
     usageString: /teleport [-q <quiet>] [-f <f>] (<player to teleport> <target>)|<player>
@@ -3547,7 +3531,7 @@
     cost: false
     module: warp
     defaultLevel: USER
-    usageString: /warp set|cost|list|delete|[[-y|-a|-accept <y>] [-f|-force <f>] ] <Warp Name>
+    usageString: /warp set|cost|setcategory|list|delete|[[-y|-a|-accept <y>] [-f|-force <f>] ] <Warp Name>
     oneLineDescription: Teleport to the specified warp.
     permissionbase: nucleus.warp
     commandName: warp
@@ -3617,9 +3601,10 @@
     warmup: true
 -   aliases: list
     cost: true
+    rootAliases: warps
     module: warp
     defaultLevel: USER
-    usageString: '/warp list '
+    usageString: '/warp list [-u <u>] '
     oneLineDescription: Lists all warps on the server.
     permissionbase: nucleus.warp.list
     commandName: warp list
@@ -3671,6 +3656,29 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+-   aliases: setcategory
+    cost: false
+    module: warp
+    defaultLevel: ADMIN
+    usageString: /warp setcategory [-n|-new <n>] [-r|-remove|-delete <r>] <warp> [<category>]
+    oneLineDescription: Sets the category of a warp for display in /warp list.
+    permissionbase: nucleus.warp.setcategory
+    commandName: warp setcategory
+    permissions:
+    -   module: warp
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /warp setcategory
+        permission: nucleus.warp.setcategory.base
+    cooldown: false
+    requiresMixin: false
+    extendedDescription: 'Warp categories allow server owners to organise their warps
+        into categories in /warp list - which are case sensitive.|br||br|There are
+        two important flags to be aware of:|br|* -n/--new: This command will only
+        let you create a category if you specify this flag. This is to ensure that
+        if a category does exist but with a different case, this may catch it.|br|*
+        -r/--remove: Remove the category on the warp, move it back to the default
+        "Uncategorised" group.'
+    warmup: false
 -   aliases: world
     cost: true
     module: world
@@ -3916,6 +3924,7 @@
     warmup: false
 -   aliases: list, ls
     cost: true
+    rootAliases: worlds
     module: world
     defaultLevel: ADMIN
     usageString: '/world list '
