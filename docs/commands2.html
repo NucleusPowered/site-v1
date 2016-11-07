@@ -58,7 +58,8 @@ header: Command Reference
         </p>
         {% endif %}
         {% assign rootal = (cmds.rootAliases | split: ', ') %}
-        {% if rootal | size > 1 %}
+        {% assign rsize = (rootal | size) %}
+        {% if rsize > 0 %}
         <p>
             <strong>Root command aliases: </strong>
             {% for a in rootal %} <code>/{{ a }}</code>{% endfor %}
