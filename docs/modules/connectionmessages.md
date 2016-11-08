@@ -34,4 +34,4 @@ The messages support the tokens available to the [Chat module](chat.html).
 The messages also support Minecraft <a href="http://minecraft.gamepedia.com/Formatting_codes#Color_codes" target="_blank">colour codes</a>,
 replacing `§` with `&`.
 
-## Hiding 
+If you wish to hide connection messages, turn the relevant "modify" option to `true`, and set the message to a blank string. 
