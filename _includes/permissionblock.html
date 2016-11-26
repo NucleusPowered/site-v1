@@ -1,0 +1,18 @@
+<div class="permissionblock well well-sm">
+    <div class="permswitch" style="float: right;">
+        <span class="buttons btn-group btn-group-xs" role="group" aria-label="...">
+
+        </span>
+        <span class="btn-group btn-group-xs" role="group" aria-label="...">
+            <button class="about-perms btn btn-primary" type="button"
+                    data-toggle="popover" title="About Permission Commands"
+                    data-content="We provide sample permission commands as a courtesy. We do not guarantee that they will work over time, please check the
+                        permission plugin's documentation for the most up to date commands.<br /><br />A plugin's inclusion in this list does not imply endorsement.">?</button>
+        </span>
+    </div>
+
+    <code class="permissioncommand" data-cmd="{{ include.cmdtype }}" data-var-user="{{ include.user }}" data-var-group="{{ include.group }}"
+        data-var-perm="{{ include.perm }}" data-var-option="{{ include.option }}" data-var-value="{{ include.value }}">
+        <em>Loading...</em>
+    </code>
+</div>

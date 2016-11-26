@@ -69,11 +69,9 @@ To set a player's or group's prefix or suffix tag, a permissions plugin that sup
 PermissionsEx. To set the prefix tag, simply set the desired tag to the `prefix` option, similarly, with the suffix tag,
 set the `suffix` option. Both these tags support colour codes, as above.
 
-For example, to set the the prefix <span style="color: #AA00AA;">[Mod]</span> for the "mod" group in PermissionsEx, run the command
+For example, to set the the prefix <span style="color: #AA00AA;">[Mod]</span> for the "mod" group, run the command (based on your permissions plugin):
 
-```
-/pex group mod option prefix &5[Mod]
-```
+{% include permissionblock.html cmdtype="groupPrefix,groupOption" user="mod" option="prefix" value="&5[Mod]" %}
 
 ## Custom Prefixes
 
@@ -86,11 +84,9 @@ tags:
 {% endraw %}
 
 In both cases, the option name is whatever you called the option. So, if you wanted a token called `rank` on a moderator with the
- string `[Rank]` before the prefix using PermissionsEx, you would run the following command:
- 
-```
-/pex group mod option rank [Rank]
-```
+ string `[Rank]` before the prefix, you would run the following command (again, this varies based on your permissions plugin):
+
+{% include permissionblock.html cmdtype="groupOption" user="mod" option="rank" value="[Rank]" %}
 
 then have the following template:
 
