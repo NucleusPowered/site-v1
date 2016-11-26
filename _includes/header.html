@@ -12,6 +12,27 @@
     <script src="{{ base }}/js/jquery.stellar.min.js"></script>
     <script src="{{ base }}/js/bootstrap.min.js"></script>
     <script src="{{ base }}/js/main.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+    <script>
+        window.addEventListener("load", function(){
+            window.cookieconsent.initialise({
+                "palette": {
+                    "popup": {
+                        "background": "#000"
+                    },
+                    "button": {
+                        "background": "#f1d600"
+                    }
+                },
+                "theme": "edgeless",
+                "position": "bottom-right",
+                "content": {
+                    "message": "This website uses cookies to store your documentation preferences."
+                }
+            })});
+    </script>
 </head>
 <body>
 <nav class="navbar navbar-fixed-top navbar-qs">
