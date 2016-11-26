@@ -181,7 +181,7 @@ var d = (function() {
                     "<br /><br />Select a permission plugin to display the relevant command." +
                 "<br /><br />A plugin's inclusion in this list does not imply endorsement.",
                 html: true,
-                placement: 'left',
+                placement: 'auto left',
                 template: '<div class="popover" style="width: 400px;" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
             });
         }
