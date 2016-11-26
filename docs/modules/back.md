@@ -18,6 +18,7 @@ of the server.
 
 There are two entries in the `main.conf` file in the `back` section:
 
-* `onTeleport`: if `true`, allow players to return to the last location they teleported or warped _from_, if they have
+* `on-teleport`: if `true`, allow players to return to the last location they teleported or warped _from_, if they have
 permission to do so.
-* `onDeath`: if `true`, allow players to return to the place they died.
+* `on-death`: if `true`, allow players to return to the place they died, if they have permission to do so.
+* `on-portal`: if `true`, allow players to return to the place they last portal they travelled into, if they have permission to do so.
