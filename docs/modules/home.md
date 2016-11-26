@@ -17,9 +17,15 @@ By default, all users will only be able to set one home. This can be changed by 
 setting options.
 
 You can set an arbitary number of homes by setting the option `home-count` to the number of homes you wish the player/group
-to have:
+to have.
+
+<em>For users:</em>
 
 {% include permissionblock.html cmdtype="userOption" user="[user]" option="home-count" value="[number]" %}
+
+<em>For groups:</em>
+
+{% include permissionblock.html cmdtype="groupOption" user="[user]" option="home-count" value="[number]" %}
 
 Consult the permissions plugin's documentation for more information on how to do this. If you wish a player to have an
 unlimted number of homes, set the permission `nucleus.home.set.unlimted`.
