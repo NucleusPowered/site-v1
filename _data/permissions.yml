@@ -20,26 +20,6 @@
     permission: nucleus.exp.take.base
 -   module: admin
     defaultLevel: ADMIN
-    description: Allows the user to run the command /freezeplayer
-    permission: nucleus.freezeplayer.base
--   module: admin
-    defaultLevel: ADMIN
-    description: Allows the user to bypass the cooldown for /freezeplayer
-    permission: nucleus.freezeplayer.exempt.cooldown
--   module: admin
-    defaultLevel: ADMIN
-    description: Allows the user to bypass the cost for /freezeplayer
-    permission: nucleus.freezeplayer.exempt.cost
--   module: admin
-    defaultLevel: ADMIN
-    description: Allows the user to bypass the warmup for /freezeplayer
-    permission: nucleus.freezeplayer.exempt.warmup
--   module: admin
-    defaultLevel: ADMIN
-    description: Allows the user to target other players using the command "freezeplayer".
-    permission: nucleus.freezeplayer.others
--   module: admin
-    defaultLevel: ADMIN
     description: Allows the user to run the command /gamemode
     permission: nucleus.gamemode.base
 -   module: admin
@@ -263,6 +243,10 @@
     description: Allows the user to run the command /nucleus docgen
     permission: nucleus.nucleus.docgen.base
 -   module: core
+    defaultLevel: NONE
+    description: Allows the user to run the command /nucleus info
+    permission: nucleus.nucleus.info.base
+-   module: core
     defaultLevel: ADMIN
     description: Allows the user to run the command /nucleus itemalias
     permission: nucleus.nucleus.itemalias.base
@@ -406,6 +390,26 @@
     defaultLevel: ADMIN
     description: Allows the user to target other players using the command "fly".
     permission: nucleus.fly.others
+-   module: freeze-player
+    defaultLevel: ADMIN
+    description: Allows the user to run the command /freezeplayer
+    permission: nucleus.freezeplayer.base
+-   module: freeze-player
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the cooldown for /freezeplayer
+    permission: nucleus.freezeplayer.exempt.cooldown
+-   module: freeze-player
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the cost for /freezeplayer
+    permission: nucleus.freezeplayer.exempt.cost
+-   module: freeze-player
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the warmup for /freezeplayer
+    permission: nucleus.freezeplayer.exempt.warmup
+-   module: freeze-player
+    defaultLevel: ADMIN
+    description: Allows the user to target other players using the command "freezeplayer".
+    permission: nucleus.freezeplayer.others
 -   module: fun
     defaultLevel: ADMIN
     description: Allows the user to run the command /hat
@@ -468,11 +472,11 @@
     permission: nucleus.lightning.selectors
 -   module: home
     defaultLevel: USER
-    description: Allows the user to run the command /deletehome
+    description: Allows the user to run the command /home
     permission: nucleus.home.base
 -   module: home
     defaultLevel: USER
-    description: Allows the user to run the command /home
+    description: Allows the user to run the command /deletehome
     permission: nucleus.home.base
 -   module: home
     defaultLevel: ADMIN
@@ -770,6 +774,14 @@
     defaultLevel: ADMIN
     description: Allows the user to use selectors for the command /repair
     permission: nucleus.repair.selectors
+-   module: item
+    defaultLevel: ADMIN
+    description: Allows the user to run the command /skull
+    permission: nucleus.skull.base
+-   module: item
+    defaultLevel: ADMIN
+    description: Allows the user to target other players using the command "skull".
+    permission: nucleus.skull.others
 -   module: jail
     defaultLevel: MOD
     description: Allows the user to run the command /jail
@@ -838,6 +850,30 @@
     defaultLevel: ADMIN
     description: Allows the user to bypass the warmup for /thru
     permission: nucleus.thru.exempt.warmup
+-   module: jump
+    defaultLevel: ADMIN
+    description: Allows the user to run the command /top
+    permission: nucleus.top.base
+-   module: jump
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the cooldown for /top
+    permission: nucleus.top.exempt.cooldown
+-   module: jump
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the cost for /top
+    permission: nucleus.top.exempt.cost
+-   module: jump
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the warmup for /top
+    permission: nucleus.top.exempt.warmup
+-   module: jump
+    defaultLevel: ADMIN
+    description: Force other players to teleport to the topmost block.
+    permission: nucleus.top.others
+-   module: jump
+    defaultLevel: ADMIN
+    description: Allows the user to use selectors for the command /top
+    permission: nucleus.top.selectors
 -   module: kick
     defaultLevel: MOD
     description: Allows the user to run the command /kick
@@ -910,6 +946,26 @@
     defaultLevel: ADMIN
     description: Allows the user to bypass the warmup for /kit
     permission: nucleus.kit.exempt.warmup
+-   module: kit
+    defaultLevel: ADMIN
+    description: Allows the user to run the command /kit give
+    permission: nucleus.kit.give.base
+-   module: kit
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the cooldown for /kit give
+    permission: nucleus.kit.give.exempt.cooldown
+-   module: kit
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the cost for /kit give
+    permission: nucleus.kit.give.exempt.cost
+-   module: kit
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the warmup for /kit give
+    permission: nucleus.kit.give.exempt.warmup
+-   module: kit
+    defaultLevel: ADMIN
+    description: permissions.kit.give.override
+    permission: nucleus.kit.give.overridecheck
 -   module: kit
     defaultLevel: ADMIN
     description: Allows the user to run the command /kit list
@@ -1292,11 +1348,11 @@
     permission: nucleus.mute.seemutedchat
 -   module: nickname
     defaultLevel: ADMIN
-    description: Allows the user to run the command /delnick
+    description: Allows the user to run the command /nick
     permission: nucleus.nick.base
 -   module: nickname
     defaultLevel: ADMIN
-    description: Allows the user to run the command /nick
+    description: Allows the user to run the command /delnick
     permission: nucleus.nick.base
 -   module: nickname
     defaultLevel: ADMIN
@@ -1308,27 +1364,27 @@
     permission: nucleus.nick.colour
 -   module: nickname
     defaultLevel: ADMIN
-    description: Allows the user to bypass the cooldown for /delnick
-    permission: nucleus.nick.exempt.cooldown
--   module: nickname
-    defaultLevel: ADMIN
     description: Allows the user to bypass the cooldown for /nick
     permission: nucleus.nick.exempt.cooldown
 -   module: nickname
     defaultLevel: ADMIN
-    description: Allows the user to bypass the cost for /delnick
-    permission: nucleus.nick.exempt.cost
+    description: Allows the user to bypass the cooldown for /delnick
+    permission: nucleus.nick.exempt.cooldown
 -   module: nickname
     defaultLevel: ADMIN
     description: Allows the user to bypass the cost for /nick
     permission: nucleus.nick.exempt.cost
 -   module: nickname
     defaultLevel: ADMIN
-    description: Allows the user to bypass the warmup for /delnick
-    permission: nucleus.nick.exempt.warmup
+    description: Allows the user to bypass the cost for /delnick
+    permission: nucleus.nick.exempt.cost
 -   module: nickname
     defaultLevel: ADMIN
     description: Allows the user to bypass the warmup for /nick
+    permission: nucleus.nick.exempt.warmup
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the warmup for /delnick
     permission: nucleus.nick.exempt.warmup
 -   module: nickname
     defaultLevel: ADMIN
@@ -1424,15 +1480,15 @@
     permission: nucleus.seen.extended
 -   module: powertool
     defaultLevel: ADMIN
+    description: Allows the user to run the command /powertool delete
+    permission: nucleus.powertool.base
+-   module: powertool
+    defaultLevel: ADMIN
     description: Allows the user to run the command /powertool toggle
     permission: nucleus.powertool.base
 -   module: powertool
     defaultLevel: ADMIN
     description: Allows the user to run the command /powertool list
-    permission: nucleus.powertool.base
--   module: powertool
-    defaultLevel: ADMIN
-    description: Allows the user to run the command /powertool delete
     permission: nucleus.powertool.base
 -   module: powertool
     defaultLevel: ADMIN
