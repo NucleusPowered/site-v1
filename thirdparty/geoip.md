@@ -28,7 +28,7 @@ This product includes GeoLite2 data created by MaxMind, available from http://ma
 
 The databases are licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/)
 
-The Nucleus team is grateful for the free use of their databases under the 
+The Nucleus team is grateful for the free use of their databases under free licencing.
 
 #### MaxMind DB and MaxMind GeoIP2 API wrapper
 
