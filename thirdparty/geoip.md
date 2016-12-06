@@ -22,7 +22,7 @@ world can enjoy, regardless of who they are, what language they speak and where 
 
 #### MaxMind GeoLite2 IP database
 
-Downloaded directly from MaxMind. When using the GeoLite 2 databases, the following statement applies: 
+If you accept the licences for the GeoIP module, your server will automatically download this data. When using the GeoLite 2 databases, the following statement applies: 
 
 This product includes GeoLite2 data created by MaxMind, available from http://maxmind.com
 
