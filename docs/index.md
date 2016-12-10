@@ -26,6 +26,7 @@ header: Documentation Centre
 * [Environment](modules/environment.html) - Manages the world environment
 * [Fly](modules/fly.html) - Manages allowing players to fly
 * [Fun](modules/fun.html) - "Fun" commands
+* [GeoIP](modules/geo-ip.html) - Getting player country information based on their IP address.
 * [Home](modules/home.html) - Manages personal warps for users
 * [Ignore](modules/ignore.html) - Allows users to ignore others in chat
 * [Info](modules/info.html) - Provides for an MOTD and other server info pages
