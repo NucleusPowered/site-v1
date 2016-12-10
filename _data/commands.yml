@@ -1,3 +1,32 @@
+-   aliases: blockzap, zapblock
+    cost: true
+    module: admin
+    defaultLevel: ADMIN
+    usageString: /blockzap <location>
+    oneLineDescription: Sets the target block to air.
+    permissionbase: nucleus.blockzap
+    commandName: blockzap
+    permissions:
+    -   module: admin
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the warmup for /blockzap
+        permission: nucleus.blockzap.exempt.warmup
+    -   module: admin
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /blockzap
+        permission: nucleus.blockzap.base
+    -   module: admin
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cost for /blockzap
+        permission: nucleus.blockzap.exempt.cost
+    -   module: admin
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cooldown for /blockzap
+        permission: nucleus.blockzap.exempt.cooldown
+    cooldown: true
+    requiresMixin: false
+    extendedDescription: Intended as an admin command to turn a problematic block to air.
+    warmup: true
 -   aliases: broadcast, bcast, bc
     cost: false
     module: admin
@@ -954,6 +983,42 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+-   aliases: geoip
+    cost: false
+    module: geo-ip
+    defaultLevel: ADMIN
+    usageString: /geoip update|<player>
+    oneLineDescription: Get the country a player has connected via.
+    permissionbase: nucleus.geoip
+    commandName: geoip
+    permissions:
+    -   module: geo-ip
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /geoip
+        permission: nucleus.geoip.base
+    -   module: geo-ip
+        defaultLevel: ADMIN
+        description: Displays player country on login, if enabled in the configuration.
+        permission: nucleus.geoip.login
+    cooldown: false
+    requiresMixin: false
+    warmup: false
+-   aliases: update
+    cost: false
+    module: geo-ip
+    defaultLevel: ADMIN
+    usageString: '/geoip update '
+    oneLineDescription: Update the GeoIP database. It is recommended that you do this no more than once a month.
+    permissionbase: nucleus.geoip.update
+    commandName: geoip update
+    permissions:
+    -   module: geo-ip
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /geoip update
+        permission: nucleus.geoip.update.base
+    cooldown: false
+    requiresMixin: false
+    warmup: false
 -   aliases: deletehome, delhome
     cost: false
     module: home
@@ -2544,7 +2609,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
--   aliases: serverstat, gc
+-   aliases: serverstat, gc, uptime
     cost: false
     module: misc
     defaultLevel: ADMIN
@@ -2750,6 +2815,39 @@
     cooldown: false
     requiresMixin: false
     extendedDescription: If a server is globally muted, a player can be given the right to speak using the "/voice" command. This will allow messages being sent by the user too. This status may also be revoked if granted by running the "/voice" command again.
+    warmup: false
+-   aliases: nameban
+    cost: false
+    module: nameban
+    defaultLevel: ADMIN
+    usageString: /nameban <name> [<reason…>]
+    oneLineDescription: Bans a specific IGN (rather than specific player) from joining the server.
+    permissionbase: nucleus.nameban
+    commandName: nameban
+    permissions:
+    -   module: nameban
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /nameban
+        permission: nucleus.nameban.base
+    cooldown: false
+    requiresMixin: false
+    extendedDescription: Using /nameban, instead of /ban, prevents any player with a specific username from joining the server - allowing them to join if they subsequently change their name. This does not affect server level nicknames, this is their Mojang registered nicknames. |br||br|A reason can be given for banning a specific name. This is intended to prevent the use of offensive usernames on servers.
+    warmup: false
+-   aliases: nameunban, namepardon
+    cost: false
+    module: nameban
+    defaultLevel: ADMIN
+    usageString: /nameunban <name>
+    oneLineDescription: Allows a specific IGN (rather than specific player) to join the server again.
+    permissionbase: nucleus.nameban.unban
+    commandName: nameunban
+    permissions:
+    -   module: nameban
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /nameunban
+        permission: nucleus.nameban.unban.base
+    cooldown: false
+    requiresMixin: false
     warmup: false
 -   aliases: delnick, delnickname, deletenick
     cost: true
@@ -3255,8 +3353,8 @@
     cost: true
     module: spawn
     defaultLevel: USER
-    usageString: /spawn [<world>]
-    oneLineDescription: Warp to the world spawn point.
+    usageString: /spawn other|[<world>]
+    oneLineDescription: Warp to a world spawn point.
     permissionbase: nucleus.spawn
     commandName: spawn
     permissions:
@@ -3282,7 +3380,29 @@
         permission: nucleus.spawn.exempt.warmup
     cooldown: true
     requiresMixin: false
+    extendedDescription: If the global spawn world is set in the configuration, then calling /spawn without a world argument will send the calling player to the global spawn point, otherwise, the player will warp to the current world spawn point.
     warmup: true
+-   aliases: other
+    cost: false
+    module: spawn
+    defaultLevel: ADMIN
+    usageString: /spawn other <player> [<world>]
+    oneLineDescription: Warp another player to a world spawn point.
+    permissionbase: nucleus.spawn.other
+    commandName: spawn other
+    permissions:
+    -   module: spawn
+        defaultLevel: ADMIN
+        description: Allows the user to send a player to spawn on their next login.
+        permission: nucleus.spawn.other.offline
+    -   module: spawn
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /spawn other
+        permission: nucleus.spawn.other.base
+    cooldown: false
+    requiresMixin: false
+    extendedDescription: This works in a similar way to the /spawn command, though the command may be used against offline players if the calling entity has permission. If the player is offline, the system will warp them prior to joining the world on next login.
+    warmup: false
 -   aliases: staffchat, sc, a
     cost: false
     module: staff-chat
