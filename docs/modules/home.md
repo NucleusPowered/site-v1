@@ -28,7 +28,7 @@ to have.
 {% include permissionblock.html cmdtype="groupOption" user="[user]" option="home-count" value="[number]" %}
 
 Consult the permissions plugin's documentation for more information on how to do this. If you wish a player to have an
-unlimted number of homes, set the permission `nucleus.home.set.unlimted`.
+unlimited number of homes, set the permission `nucleus.home.set.unlimited`.
 
 ## Setting Warmups and Cooldowns
 
