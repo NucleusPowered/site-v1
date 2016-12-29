@@ -122,8 +122,24 @@
         permission: nucleus.gamemode.base
     -   module: admin
         defaultLevel: ADMIN
+        description: If "admin.separate-gamemode-permissions" is set in the config, allows the user to change a targets gamemode to spectator.
+        permission: nucleus.gamemode.modes.spectator
+    -   module: admin
+        defaultLevel: ADMIN
+        description: If "admin.separate-gamemode-permissions" is set in the config, allows the user to change a targets gamemode to survival.
+        permission: nucleus.gamemode.modes.survival
+    -   module: admin
+        defaultLevel: ADMIN
+        description: If "admin.separate-gamemode-permissions" is set in the config, allows the user to change a targets gamemode to creative.
+        permission: nucleus.gamemode.modes.creative
+    -   module: admin
+        defaultLevel: ADMIN
         description: Allows the user to change the gamemode for any user.
         permission: nucleus.gamemode.others
+    -   module: admin
+        defaultLevel: ADMIN
+        description: If "admin.separate-gamemode-permissions" is set in the config, allows the user to change a targets gamemode to adventure.
+        permission: nucleus.gamemode.modes.adventure
     cooldown: false
     requiresMixin: false
     warmup: false
@@ -439,6 +455,66 @@
         is allowed in a player''s inventory.|br|* "use": whether the item can be consumed
         by a player.|br||br|This command replaces /blacklist add and /blacklist remove
         from previous releases.'
+    warmup: true
+-   aliases: me, action
+    cost: true
+    module: chat
+    defaultLevel: USER
+    usageString: /me <message…>
+    oneLineDescription: Formats the next chat message as an action, using the format set by the server.
+    permissionbase: nucleus.me
+    commandName: me
+    permissions:
+    -   module: chat
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cost for /me
+        permission: nucleus.me.exempt.cost
+    -   module: chat
+        defaultLevel: USER
+        description: Allows the user to run the command /me
+        permission: nucleus.me.base
+    -   module: chat
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the warmup for /me
+        permission: nucleus.me.exempt.warmup
+    -   module: chat
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cooldown for /me
+        permission: nucleus.me.exempt.cooldown
+    cooldown: true
+    requiresMixin: false
+    warmup: true
+-   aliases: commandspy
+    cost: true
+    module: command-spy
+    defaultLevel: ADMIN
+    usageString: /commandspy [<true/false>]
+    oneLineDescription: Enables or disables seeing commands that others have run.
+    permissionbase: nucleus.commandspy
+    commandName: commandspy
+    permissions:
+    -   module: command-spy
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the warmup for /commandspy
+        permission: nucleus.commandspy.exempt.warmup
+    -   module: command-spy
+        defaultLevel: ADMIN
+        description: If granted, prevents commands from this player being sent to other command spies.
+        permission: nucleus.commandspy.exempt.target
+    -   module: command-spy
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /commandspy
+        permission: nucleus.commandspy.base
+    -   module: command-spy
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cooldown for /commandspy
+        permission: nucleus.commandspy.exempt.cooldown
+    -   module: command-spy
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cost for /commandspy
+        permission: nucleus.commandspy.exempt.cost
+    cooldown: true
+    requiresMixin: false
     warmup: true
 -   aliases: nucleus
     cost: false
@@ -3021,6 +3097,38 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+-   aliases: getpos
+    cost: true
+    module: playerinfo
+    defaultLevel: MOD
+    usageString: /getpos [<player>]
+    oneLineDescription: Gets the location of the executing or target player.
+    permissionbase: nucleus.getpos
+    commandName: getpos
+    permissions:
+    -   module: playerinfo
+        defaultLevel: MOD
+        description: Allows the user to view the position of other players.
+        permission: nucleus.getpos.other
+    -   module: playerinfo
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cost for /getpos
+        permission: nucleus.getpos.exempt.cost
+    -   module: playerinfo
+        defaultLevel: MOD
+        description: Allows the user to run the command /getpos
+        permission: nucleus.getpos.base
+    -   module: playerinfo
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cooldown for /getpos
+        permission: nucleus.getpos.exempt.cooldown
+    -   module: playerinfo
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the warmup for /getpos
+        permission: nucleus.getpos.exempt.warmup
+    cooldown: true
+    requiresMixin: false
+    warmup: true
 -   aliases: list, listplayers, ls
     cost: true
     module: playerinfo
@@ -3273,6 +3381,35 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+-   aliases: worth
+    cost: true
+    module: server-shop
+    defaultLevel: USER
+    usageString: /worth [<item>]
+    oneLineDescription: Allows the user to display the server buy and sell prices for an item.
+    permissionbase: nucleus.worth
+    commandName: worth
+    permissions:
+    -   module: server-shop
+        defaultLevel: USER
+        description: Allows the user to run the command /worth
+        permission: nucleus.worth.base
+    -   module: server-shop
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the warmup for /worth
+        permission: nucleus.worth.exempt.warmup
+    -   module: server-shop
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cost for /worth
+        permission: nucleus.worth.exempt.cost
+    -   module: server-shop
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cooldown for /worth
+        permission: nucleus.worth.exempt.cooldown
+    cooldown: true
+    requiresMixin: false
+    extendedDescription: If no item ID or alias is provided, this command will get the buy/sell prices for the item in the main hand.
+    warmup: true
 -   aliases: firstspawn
     cost: true
     module: spawn
@@ -3445,6 +3582,10 @@
         defaultLevel: ADMIN
         description: permission.teleport.others
         permission: nucleus.teleport.teleport.others
+    -   module: teleport
+        defaultLevel: MOD
+        description: Allows the user to use selectors for the command /teleport
+        permission: nucleus.teleport.teleport.selectors
     -   module: teleport
         defaultLevel: ADMIN
         description: permission.teleport.quiet
@@ -3907,6 +4048,7 @@
     warmup: false
 -   aliases: world
     cost: true
+    rootAliases: nworld, nucleusworld
     module: world
     defaultLevel: ADMIN
     usageString: /world setdifficulty|teleport|delete|load|enable|unload|create|border|setgamemode|list|setspawn|spawn|gamerule|disable|?

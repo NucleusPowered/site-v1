@@ -40,6 +40,22 @@
     permission: nucleus.gamemode.base
 -   module: admin
     defaultLevel: ADMIN
+    description: If "admin.separate-gamemode-permissions" is set in the config, allows the user to change a targets gamemode to adventure.
+    permission: nucleus.gamemode.modes.adventure
+-   module: admin
+    defaultLevel: ADMIN
+    description: If "admin.separate-gamemode-permissions" is set in the config, allows the user to change a targets gamemode to creative.
+    permission: nucleus.gamemode.modes.creative
+-   module: admin
+    defaultLevel: ADMIN
+    description: If "admin.separate-gamemode-permissions" is set in the config, allows the user to change a targets gamemode to spectator.
+    permission: nucleus.gamemode.modes.spectator
+-   module: admin
+    defaultLevel: ADMIN
+    description: If "admin.separate-gamemode-permissions" is set in the config, allows the user to change a targets gamemode to survival.
+    permission: nucleus.gamemode.modes.survival
+-   module: admin
+    defaultLevel: ADMIN
     description: Allows the user to change the gamemode for any user.
     permission: nucleus.gamemode.others
 -   module: admin
@@ -238,6 +254,42 @@
     defaultLevel: ADMIN
     description: Allows user to type clickable URLs in chat.
     permission: nucleus.chat.url
+-   module: chat
+    defaultLevel: USER
+    description: Allows the user to run the command /me
+    permission: nucleus.me.base
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the cooldown for /me
+    permission: nucleus.me.exempt.cooldown
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the cost for /me
+    permission: nucleus.me.exempt.cost
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the warmup for /me
+    permission: nucleus.me.exempt.warmup
+-   module: command-spy
+    defaultLevel: ADMIN
+    description: Allows the user to run the command /commandspy
+    permission: nucleus.commandspy.base
+-   module: command-spy
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the cooldown for /commandspy
+    permission: nucleus.commandspy.exempt.cooldown
+-   module: command-spy
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the cost for /commandspy
+    permission: nucleus.commandspy.exempt.cost
+-   module: command-spy
+    defaultLevel: ADMIN
+    description: If granted, prevents commands from this player being sent to other command spies.
+    permission: nucleus.commandspy.exempt.target
+-   module: command-spy
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the warmup for /commandspy
+    permission: nucleus.commandspy.exempt.warmup
 -   module: connection
     defaultLevel: MOD
     description: Allows the user to join the server even if full.
@@ -500,11 +552,11 @@
     permission: nucleus.geoip.update.base
 -   module: home
     defaultLevel: USER
-    description: Allows the user to run the command /home
+    description: Allows the user to run the command /deletehome
     permission: nucleus.home.base
 -   module: home
     defaultLevel: USER
-    description: Allows the user to run the command /deletehome
+    description: Allows the user to run the command /home
     permission: nucleus.home.base
 -   module: home
     defaultLevel: ADMIN
@@ -716,6 +768,10 @@
     permission: nucleus.lore.exempt.warmup
 -   module: item
     defaultLevel: ADMIN
+    description: Allows the user to run the command /lore clear
+    permission: nucleus.lore.set.base
+-   module: item
+    defaultLevel: ADMIN
     description: Allows the user to run the command /lore add
     permission: nucleus.lore.set.base
 -   module: item
@@ -724,8 +780,8 @@
     permission: nucleus.lore.set.base
 -   module: item
     defaultLevel: ADMIN
-    description: Allows the user to run the command /lore clear
-    permission: nucleus.lore.set.base
+    description: Allows the user to bypass the cooldown for /lore clear
+    permission: nucleus.lore.set.exempt.cooldown
 -   module: item
     defaultLevel: ADMIN
     description: Allows the user to bypass the cooldown for /lore add
@@ -736,8 +792,8 @@
     permission: nucleus.lore.set.exempt.cooldown
 -   module: item
     defaultLevel: ADMIN
-    description: Allows the user to bypass the cooldown for /lore clear
-    permission: nucleus.lore.set.exempt.cooldown
+    description: Allows the user to bypass the cost for /lore clear
+    permission: nucleus.lore.set.exempt.cost
 -   module: item
     defaultLevel: ADMIN
     description: Allows the user to bypass the cost for /lore add
@@ -748,8 +804,8 @@
     permission: nucleus.lore.set.exempt.cost
 -   module: item
     defaultLevel: ADMIN
-    description: Allows the user to bypass the cost for /lore clear
-    permission: nucleus.lore.set.exempt.cost
+    description: Allows the user to bypass the warmup for /lore clear
+    permission: nucleus.lore.set.exempt.warmup
 -   module: item
     defaultLevel: ADMIN
     description: Allows the user to bypass the warmup for /lore add
@@ -757,10 +813,6 @@
 -   module: item
     defaultLevel: ADMIN
     description: Allows the user to bypass the warmup for /lore set
-    permission: nucleus.lore.set.exempt.warmup
--   module: item
-    defaultLevel: ADMIN
-    description: Allows the user to bypass the warmup for /lore clear
     permission: nucleus.lore.set.exempt.warmup
 -   module: item
     defaultLevel: ADMIN
@@ -1072,11 +1124,11 @@
     permission: nucleus.helpop.receive
 -   module: message
     defaultLevel: USER
-    description: Allows the user to run the command /reply
+    description: Allows the user to run the command /message
     permission: nucleus.message.base
 -   module: message
     defaultLevel: USER
-    description: Allows the user to run the command /message
+    description: Allows the user to run the command /reply
     permission: nucleus.message.base
 -   module: message
     defaultLevel: ADMIN
@@ -1088,27 +1140,27 @@
     permission: nucleus.message.colour
 -   module: message
     defaultLevel: ADMIN
-    description: Allows the user to bypass the cooldown for /reply
-    permission: nucleus.message.exempt.cooldown
--   module: message
-    defaultLevel: ADMIN
     description: Allows the user to bypass the cooldown for /message
     permission: nucleus.message.exempt.cooldown
 -   module: message
     defaultLevel: ADMIN
-    description: Allows the user to bypass the cost for /reply
-    permission: nucleus.message.exempt.cost
+    description: Allows the user to bypass the cooldown for /reply
+    permission: nucleus.message.exempt.cooldown
 -   module: message
     defaultLevel: ADMIN
     description: Allows the user to bypass the cost for /message
     permission: nucleus.message.exempt.cost
 -   module: message
     defaultLevel: ADMIN
-    description: Allows the user to bypass the warmup for /reply
-    permission: nucleus.message.exempt.warmup
+    description: Allows the user to bypass the cost for /reply
+    permission: nucleus.message.exempt.cost
 -   module: message
     defaultLevel: ADMIN
     description: Allows the user to bypass the warmup for /message
+    permission: nucleus.message.exempt.warmup
+-   module: message
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the warmup for /reply
     permission: nucleus.message.exempt.warmup
 -   module: message
     defaultLevel: ADMIN
@@ -1475,6 +1527,26 @@
     description: Allows the user to run the command /removenote
     permission: nucleus.removenote.base
 -   module: playerinfo
+    defaultLevel: MOD
+    description: Allows the user to run the command /getpos
+    permission: nucleus.getpos.base
+-   module: playerinfo
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the cooldown for /getpos
+    permission: nucleus.getpos.exempt.cooldown
+-   module: playerinfo
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the cost for /getpos
+    permission: nucleus.getpos.exempt.cost
+-   module: playerinfo
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the warmup for /getpos
+    permission: nucleus.getpos.exempt.warmup
+-   module: playerinfo
+    defaultLevel: MOD
+    description: Allows the user to view the position of other players.
+    permission: nucleus.getpos.other
+-   module: playerinfo
     defaultLevel: USER
     description: Allows the user to run the command /list
     permission: nucleus.list.base
@@ -1516,11 +1588,11 @@
     permission: nucleus.seen.extended
 -   module: powertool
     defaultLevel: ADMIN
-    description: Allows the user to run the command /powertool toggle
+    description: Allows the user to run the command /powertool list
     permission: nucleus.powertool.base
 -   module: powertool
     defaultLevel: ADMIN
-    description: Allows the user to run the command /powertool list
+    description: Allows the user to run the command /powertool toggle
     permission: nucleus.powertool.base
 -   module: powertool
     defaultLevel: ADMIN
@@ -1570,6 +1642,22 @@
     defaultLevel: ADMIN
     description: Allows the user to run the command /setworth
     permission: nucleus.setworth.base
+-   module: server-shop
+    defaultLevel: USER
+    description: Allows the user to run the command /worth
+    permission: nucleus.worth.base
+-   module: server-shop
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the cooldown for /worth
+    permission: nucleus.worth.exempt.cooldown
+-   module: server-shop
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the cost for /worth
+    permission: nucleus.worth.exempt.cost
+-   module: server-shop
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the warmup for /worth
+    permission: nucleus.worth.exempt.warmup
 -   module: sign
     defaultLevel: ADMIN
     description: Allows user to use text formatting on signs.
@@ -1662,6 +1750,10 @@
     defaultLevel: ADMIN
     description: permission.teleport.quiet
     permission: nucleus.teleport.teleport.quiet
+-   module: teleport
+    defaultLevel: MOD
+    description: Allows the user to use selectors for the command /teleport
+    permission: nucleus.teleport.teleport.selectors
 -   module: teleport
     defaultLevel: USER
     description: Allows the user to run the command /tpa
