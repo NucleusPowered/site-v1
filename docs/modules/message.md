@@ -21,7 +21,7 @@ If you want to _force_ someone to have Social Spy, give them the permissions `nu
 
 ### Social Spy Levels
 
-However, for server owner who want more control, Nucleus offers a
+However, for server owners who want more control, Nucleus offers a
 finer grained control mechanism, social spy levels.
 
 To enable social spy levels, in `main.conf`, set `message.socialspy.use-levels` to `true`, and use `/nucleus reload`. Ensure you are using a permissions
