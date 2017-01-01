@@ -29,5 +29,5 @@ If enabled, players with the permission `nucleus.geoip.login` will see a player'
 to view this information at any time.
 
 The command `/geoip update` will download the latest GeoLite2 databases from MaxMind, but there is little to no need to run this command more than once a month.
-This is because the databases are only updated once a month, [please see these pages from MaxMind for more information about the databases](https://dev.maxmind.com/geoip/geoip2/geolite2/geo-ip.md). 
+This is because the databases are only updated once a month, [please see these pages from MaxMind for more information about the databases](https://dev.maxmind.com/geoip/geoip2/geolite2/). 
 The databases will be automatically downloaded for you on the first usage of the GeoIP module. 
