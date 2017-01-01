@@ -26,11 +26,7 @@ All changes will only take effect on a server restart. If the plugin does not re
 Nucleus also allows users to disable specific commands whilst leaving modules enabled. Nucleus also allows you to set warmups,
 cooldowns and costs for specific commands. The commands can be managed at `conf/nucleus/commands.conf`.
 
-Every command has the ability to be enabled or disabled.
-
-Warmups and cooldowns are specified in seconds, Cost is in units of the default currency.
-
-For all options but whether commands are enabled or not, Nucleus does not require a server restart. Simply run `/nucleus reload`.
+See [the command management page](commands.html) for more info.
 
 ### Debug Mode
 

@@ -11,6 +11,7 @@ header: Documentation Centre
 * [Configuring Nucleus](configuration/)
 * [Migrating from EssentialCmds](configuration/migration.html)
 * [Setting up suggested permissions](configuration/permissions.html)
+* [Command Management (Warmups, Cooldowns and Costs)](configuration/commands.html)
 
 ## Module Reference
 
