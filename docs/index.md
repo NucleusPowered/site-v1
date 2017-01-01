@@ -35,6 +35,7 @@ header: Documentation Centre
 * [Item](modules/item.html) - Item manipulation related commands
 * [Jail](modules/jail.html) - Player jails for minor punishments
 * [Kit](modules/kit.html) - Management of sets of items that players can redeem
+* [Message](modules/message.html) - Private messages and "social spy".
 * [Mob](modules/mob.html) - Mobs and mob spawners
 * [Mute](modules/mute.html) - Player and server mutes, preventing players from chatting on the server.
 * [Note](modules/note.html) - Allows notes to be added to players for easy reference on the server.
