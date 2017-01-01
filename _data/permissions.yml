@@ -484,10 +484,6 @@
     permission: nucleus.hat.base
 -   module: fun
     defaultLevel: ADMIN
-    description: Allows the user to target other players using the command "hat".
-    permission: nucleus.hat.others
--   module: fun
-    defaultLevel: ADMIN
     description: Allows the user to use selectors for the command /hat
     permission: nucleus.hat.selectors
 -   module: fun
@@ -516,6 +512,38 @@
     permission: nucleus.ignite.selectors
 -   module: fun
     defaultLevel: ADMIN
+    description: Allows the user to run the command /kittycannon
+    permission: nucleus.kittycannon.base
+-   module: fun
+    defaultLevel: ADMIN
+    description: If granted, the user can use the -b flag to break blocks with exploding ocelots.
+    permission: nucleus.kittycannon.break
+-   module: fun
+    defaultLevel: ADMIN
+    description: If granted, the user can use the -d flag to damage entities with exploding ocelots.
+    permission: nucleus.kittycannon.damage
+-   module: fun
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the cooldown for /kittycannon
+    permission: nucleus.kittycannon.exempt.cooldown
+-   module: fun
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the cost for /kittycannon
+    permission: nucleus.kittycannon.exempt.cost
+-   module: fun
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the warmup for /kittycannon
+    permission: nucleus.kittycannon.exempt.warmup
+-   module: fun
+    defaultLevel: ADMIN
+    description: If granted, the user can use the -f flag to cause fires with exploding ocelots.
+    permission: nucleus.kittycannon.fire
+-   module: fun
+    defaultLevel: ADMIN
+    description: Allows the user to use selectors for the command /kittycannon
+    permission: nucleus.kittycannon.selectors
+-   module: fun
+    defaultLevel: ADMIN
     description: Allows the user to run the command /lightning
     permission: nucleus.lightning.base
 -   module: fun
@@ -538,6 +566,14 @@
     defaultLevel: ADMIN
     description: Allows the user to use selectors for the command /lightning
     permission: nucleus.lightning.selectors
+-   module: fun
+    defaultLevel: ADMIN
+    description: Allows the user to target other players using the command "kittycannon".
+    permission: others
+-   module: fun
+    defaultLevel: ADMIN
+    description: Allows the user to target other players using the command "hat".
+    permission: others
 -   module: geo-ip
     defaultLevel: ADMIN
     description: Allows the user to run the command /geoip
@@ -552,11 +588,11 @@
     permission: nucleus.geoip.update.base
 -   module: home
     defaultLevel: USER
-    description: Allows the user to run the command /deletehome
+    description: Allows the user to run the command /home
     permission: nucleus.home.base
 -   module: home
     defaultLevel: USER
-    description: Allows the user to run the command /home
+    description: Allows the user to run the command /deletehome
     permission: nucleus.home.base
 -   module: home
     defaultLevel: ADMIN
@@ -768,10 +804,6 @@
     permission: nucleus.lore.exempt.warmup
 -   module: item
     defaultLevel: ADMIN
-    description: Allows the user to run the command /lore clear
-    permission: nucleus.lore.set.base
--   module: item
-    defaultLevel: ADMIN
     description: Allows the user to run the command /lore add
     permission: nucleus.lore.set.base
 -   module: item
@@ -780,8 +812,8 @@
     permission: nucleus.lore.set.base
 -   module: item
     defaultLevel: ADMIN
-    description: Allows the user to bypass the cooldown for /lore clear
-    permission: nucleus.lore.set.exempt.cooldown
+    description: Allows the user to run the command /lore clear
+    permission: nucleus.lore.set.base
 -   module: item
     defaultLevel: ADMIN
     description: Allows the user to bypass the cooldown for /lore add
@@ -792,8 +824,8 @@
     permission: nucleus.lore.set.exempt.cooldown
 -   module: item
     defaultLevel: ADMIN
-    description: Allows the user to bypass the cost for /lore clear
-    permission: nucleus.lore.set.exempt.cost
+    description: Allows the user to bypass the cooldown for /lore clear
+    permission: nucleus.lore.set.exempt.cooldown
 -   module: item
     defaultLevel: ADMIN
     description: Allows the user to bypass the cost for /lore add
@@ -804,8 +836,8 @@
     permission: nucleus.lore.set.exempt.cost
 -   module: item
     defaultLevel: ADMIN
-    description: Allows the user to bypass the warmup for /lore clear
-    permission: nucleus.lore.set.exempt.warmup
+    description: Allows the user to bypass the cost for /lore clear
+    permission: nucleus.lore.set.exempt.cost
 -   module: item
     defaultLevel: ADMIN
     description: Allows the user to bypass the warmup for /lore add
@@ -813,6 +845,10 @@
 -   module: item
     defaultLevel: ADMIN
     description: Allows the user to bypass the warmup for /lore set
+    permission: nucleus.lore.set.exempt.warmup
+-   module: item
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the warmup for /lore clear
     permission: nucleus.lore.set.exempt.warmup
 -   module: item
     defaultLevel: ADMIN
@@ -1124,11 +1160,11 @@
     permission: nucleus.helpop.receive
 -   module: message
     defaultLevel: USER
-    description: Allows the user to run the command /message
+    description: Allows the user to run the command /reply
     permission: nucleus.message.base
 -   module: message
     defaultLevel: USER
-    description: Allows the user to run the command /reply
+    description: Allows the user to run the command /message
     permission: nucleus.message.base
 -   module: message
     defaultLevel: ADMIN
@@ -1140,27 +1176,27 @@
     permission: nucleus.message.colour
 -   module: message
     defaultLevel: ADMIN
-    description: Allows the user to bypass the cooldown for /message
-    permission: nucleus.message.exempt.cooldown
--   module: message
-    defaultLevel: ADMIN
     description: Allows the user to bypass the cooldown for /reply
     permission: nucleus.message.exempt.cooldown
 -   module: message
     defaultLevel: ADMIN
-    description: Allows the user to bypass the cost for /message
-    permission: nucleus.message.exempt.cost
+    description: Allows the user to bypass the cooldown for /message
+    permission: nucleus.message.exempt.cooldown
 -   module: message
     defaultLevel: ADMIN
     description: Allows the user to bypass the cost for /reply
     permission: nucleus.message.exempt.cost
 -   module: message
     defaultLevel: ADMIN
-    description: Allows the user to bypass the warmup for /message
-    permission: nucleus.message.exempt.warmup
+    description: Allows the user to bypass the cost for /message
+    permission: nucleus.message.exempt.cost
 -   module: message
     defaultLevel: ADMIN
     description: Allows the user to bypass the warmup for /reply
+    permission: nucleus.message.exempt.warmup
+-   module: message
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the warmup for /message
     permission: nucleus.message.exempt.warmup
 -   module: message
     defaultLevel: ADMIN
@@ -1182,6 +1218,10 @@
     defaultLevel: MOD
     description: Allows the user to run the command /socialspy
     permission: nucleus.socialspy.base
+-   module: message
+    defaultLevel: NONE
+    description: If granted, along with the "nucleus.socialspy.base" permission, the target player cannot turn social spy off.
+    permission: nucleus.socialspy.force
 -   module: misc
     defaultLevel: ADMIN
     description: Allows the user to run the command /blockinfo
@@ -1592,11 +1632,11 @@
     permission: nucleus.powertool.base
 -   module: powertool
     defaultLevel: ADMIN
-    description: Allows the user to run the command /powertool toggle
+    description: Allows the user to run the command /powertool delete
     permission: nucleus.powertool.base
 -   module: powertool
     defaultLevel: ADMIN
-    description: Allows the user to run the command /powertool delete
+    description: Allows the user to run the command /powertool toggle
     permission: nucleus.powertool.base
 -   module: powertool
     defaultLevel: ADMIN
@@ -1968,11 +2008,11 @@
     permission: nucleus.world.border.exempt.warmup
 -   module: world
     defaultLevel: ADMIN
-    description: Allows the user to run the command /border cancelgen
+    description: Allows the user to run the command /border gen
     permission: nucleus.world.border.gen.base
 -   module: world
     defaultLevel: ADMIN
-    description: Allows the user to run the command /border gen
+    description: Allows the user to run the command /border cancelgen
     permission: nucleus.world.border.gen.base
 -   module: world
     defaultLevel: ADMIN

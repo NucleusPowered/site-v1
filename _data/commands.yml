@@ -47,7 +47,7 @@
     cost: false
     module: admin
     defaultLevel: ADMIN
-    usageString: /exp give|take|set|<player>
+    usageString: /exp take|give|set|<player>
     oneLineDescription: Displays the specified player's current experience.
     permissionbase: nucleus.exp
     commandName: exp
@@ -983,7 +983,7 @@
     -   module: fun
         defaultLevel: ADMIN
         description: Allows the user to target other players using the command "hat".
-        permission: nucleus.hat.others
+        permission: others
     cooldown: false
     requiresMixin: false
     warmup: false
@@ -1022,6 +1022,55 @@
         permission: nucleus.ignite.exempt.warmup
     cooldown: true
     requiresMixin: false
+    warmup: true
+-   aliases: kittycannon, kc
+    cost: true
+    module: fun
+    defaultLevel: ADMIN
+    usageString: /kittycannon [-f|-fire <f>] [-d|-damageentities <d>] [-b|-breakblocks <b>] [<player>]
+    oneLineDescription: Fire exploding cats from your person.
+    permissionbase: nucleus.kittycannon
+    commandName: kittycannon
+    permissions:
+    -   module: fun
+        defaultLevel: ADMIN
+        description: If granted, the user can use the -f flag to cause fires with exploding ocelots.
+        permission: nucleus.kittycannon.fire
+    -   module: fun
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cost for /kittycannon
+        permission: nucleus.kittycannon.exempt.cost
+    -   module: fun
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /kittycannon
+        permission: nucleus.kittycannon.base
+    -   module: fun
+        defaultLevel: ADMIN
+        description: If granted, the user can use the -b flag to break blocks with exploding ocelots.
+        permission: nucleus.kittycannon.break
+    -   module: fun
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cooldown for /kittycannon
+        permission: nucleus.kittycannon.exempt.cooldown
+    -   module: fun
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the warmup for /kittycannon
+        permission: nucleus.kittycannon.exempt.warmup
+    -   module: fun
+        defaultLevel: ADMIN
+        description: Allows the user to use selectors for the command /kittycannon
+        permission: nucleus.kittycannon.selectors
+    -   module: fun
+        defaultLevel: ADMIN
+        description: Allows the user to target other players using the command "kittycannon".
+        permission: others
+    -   module: fun
+        defaultLevel: ADMIN
+        description: If granted, the user can use the -d flag to damage entities with exploding ocelots.
+        permission: nucleus.kittycannon.damage
+    cooldown: true
+    requiresMixin: false
+    extendedDescription: Ocelots will be fired from the target person, which explode within a short amount of time. The following flags are available (subject to permission):|br||br|* -d, --damage - damage entities that get caught in the explosion.|br|* -f, --fire - potentially set fire to blocks in the area of the explosion.|br|* -b, --break - break blocks in the vicinity of the explosion.|br||br|Any break or fire that might occur due to the exploding cat will be tracked as by being caused by the calling player by protection plugins.
     warmup: true
 -   aliases: lightning, smite, thor
     cost: true
@@ -2462,6 +2511,10 @@
         defaultLevel: MOD
         description: Allows the user to run the command /socialspy
         permission: nucleus.socialspy.base
+    -   module: message
+        defaultLevel: NONE
+        description: If granted, along with the "nucleus.socialspy.base" permission, the target player cannot turn social spy off.
+        permission: nucleus.socialspy.force
     cooldown: false
     requiresMixin: false
     warmup: false
@@ -4172,7 +4225,7 @@
     cost: true
     module: world
     defaultLevel: ADMIN
-    usageString: /world create [-g|-generator <generator>] [-d|-dimension <dimension>] [-gm|-gamemode <gamemode>] [-s|-seed <seed>] [-di|-difficulty <difficulty>] [-m|-modifier <modifier>] <name>
+    usageString: /world create [-g|-generator <generator>] [-d|-dimension <dimension>] [-i <i>] [-gm|-gamemode <gamemode>] [-s|-seed <seed>] [-di|-difficulty <difficulty>] [-m|-modifier <modifier>] <name>
     oneLineDescription: Creates a world with the specified name and options.
     permissionbase: nucleus.world.create
     commandName: world create
@@ -4205,8 +4258,9 @@
         <difficulty>: the initial world difficulty. Defaults to normal.|br|* --gm/--gamemode
         <gamemode>: the default game mode for players in the world. Defaults to survival.|br|*
         -s/--seed <seed>: The seed to use to generate the world. If not specified,
-        a random seed will be used.|br||br|The difficulty and the game mode can be
-        changed after the world is generated.'
+        a random seed will be used.|br|* -i: Indicates that this world might exist
+        and can be imported.|br||br|The difficulty and the game mode can be changed
+        after the world is generated.'
     warmup: true
 -   aliases: delete, del
     cost: false
