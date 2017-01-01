@@ -38,4 +38,4 @@ To set a player's social spy level, set the option `nucleus.socialspy.level` to 
 {% include permissionblock.html cmdtype="groupOption" user="[user]" option="nucleus.socialspy.level" value="[number]" %}
 
 Players with social spy can then see the messages of those with levels _below_ theirs. 
-If `message.socialspy.same-levels-can-see-each-other` to `true`, then social spies can see messages of those at their own level too.
+If `message.socialspy.same-levels-can-see-each-other` is set to `true`, then social spies can see messages of those at their own level too.
