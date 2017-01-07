@@ -39,3 +39,9 @@ To set a player's social spy level, set the option `nucleus.socialspy.level` to 
 
 Players with social spy can then see the messages of those with levels _below_ theirs. 
 If `message.socialspy.same-levels-can-see-each-other` is set to `true`, then social spies can see messages of those at their own level too.
+
+## HelpOp
+
+`/helpop [message]` is a feature ported over from Essentials that allows players to quickly grab staff members attention. To use it,
+players must have the `nucleus.helpop.base` permission, and staff members must have the `nucleus.helpop.receive` permission to read these
+messages.
