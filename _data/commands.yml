@@ -108,7 +108,7 @@
     requiresMixin: false
     warmup: false
 -   aliases: gamemode, gm
-    cost: false
+    cost: true
     module: admin
     defaultLevel: ADMIN
     usageString: /gamemode <gamemode>|<user> <gamemode>
@@ -130,8 +130,20 @@
         permission: nucleus.gamemode.modes.survival
     -   module: admin
         defaultLevel: ADMIN
+        description: Allows the user to bypass the warmup for /gamemode
+        permission: nucleus.gamemode.exempt.warmup
+    -   module: admin
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cost for /gamemode
+        permission: nucleus.gamemode.exempt.cost
+    -   module: admin
+        defaultLevel: ADMIN
         description: If "admin.separate-gamemode-permissions" is set in the config, allows the user to change a targets gamemode to creative.
         permission: nucleus.gamemode.modes.creative
+    -   module: admin
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cooldown for /gamemode
+        permission: nucleus.gamemode.exempt.cooldown
     -   module: admin
         defaultLevel: ADMIN
         description: Allows the user to change the gamemode for any user.
@@ -140,9 +152,9 @@
         defaultLevel: ADMIN
         description: If "admin.separate-gamemode-permissions" is set in the config, allows the user to change a targets gamemode to adventure.
         permission: nucleus.gamemode.modes.adventure
-    cooldown: false
+    cooldown: true
     requiresMixin: false
-    warmup: false
+    warmup: true
 -   aliases: plainbroadcast, pbcast, pbc
     cost: false
     module: admin
@@ -235,6 +247,35 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+-   aliases: afkrefresh
+    cost: true
+    module: afk
+    defaultLevel: ADMIN
+    usageString: '/afkrefresh '
+    oneLineDescription: Invalidates the AFK permission cache.
+    permissionbase: nucleus.afkrefresh
+    commandName: afkrefresh
+    permissions:
+    -   module: afk
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /afkrefresh
+        permission: nucleus.afkrefresh.base
+    -   module: afk
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the warmup for /afkrefresh
+        permission: nucleus.afkrefresh.exempt.warmup
+    -   module: afk
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cooldown for /afkrefresh
+        permission: nucleus.afkrefresh.exempt.cooldown
+    -   module: afk
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cost for /afkrefresh
+        permission: nucleus.afkrefresh.exempt.cost
+    cooldown: true
+    requiresMixin: false
+    extendedDescription: This asks Nucleus to invalidate the AFK permission cache, use this if you alter an online player's permissions.
+    warmup: true
 -   aliases: back, return
     cost: true
     module: back
@@ -286,7 +327,7 @@
     permissions:
     -   module: ban
         defaultLevel: MOD
-        description: Notifies the user about mutes when they occur.
+        description: Notifies the user about bans when they occur.
         permission: nucleus.ban.notify
     -   module: ban
         defaultLevel: MOD
@@ -1722,7 +1763,7 @@
     requiresMixin: false
     warmup: true
 -   aliases: skull
-    cost: false
+    cost: true
     module: item
     defaultLevel: ADMIN
     usageString: /skull [<player>] [<amount>]
@@ -1732,15 +1773,27 @@
     permissions:
     -   module: item
         defaultLevel: ADMIN
+        description: Allows the user to bypass the cooldown for /skull
+        permission: nucleus.skull.exempt.cooldown
+    -   module: item
+        defaultLevel: ADMIN
         description: Allows the user to target other players using the command "skull".
         permission: nucleus.skull.others
     -   module: item
         defaultLevel: ADMIN
         description: Allows the user to run the command /skull
         permission: nucleus.skull.base
-    cooldown: false
+    -   module: item
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cost for /skull
+        permission: nucleus.skull.exempt.cost
+    -   module: item
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the warmup for /skull
+        permission: nucleus.skull.exempt.warmup
+    cooldown: true
     requiresMixin: false
-    warmup: false
+    warmup: true
 -   aliases: checkjail
     cost: false
     module: jail
@@ -2100,7 +2153,7 @@
         defaultLevel: ADMIN
         description: Allows the user to use all kits.
         permission: nucleus.kits
-    cooldown: true
+    cooldown: false
     requiresMixin: false
     warmup: true
 -   aliases: add, createFromInventory
@@ -2903,7 +2956,7 @@
         permission: nucleus.mute.exempt.target
     -   module: mute
         defaultLevel: MOD
-        description: Notifies the user about bans when they occur.
+        description: Notifies the user about mutes when they occur.
         permission: nucleus.mute.notify
     -   module: mute
         defaultLevel: MOD
@@ -3017,40 +3070,188 @@
     permissions:
     -   module: nickname
         defaultLevel: ADMIN
-        description: Allows the user to use "magic" characters in their nickname.
-        permission: nucleus.nick.magic
+        description: Allows user to use the colour "dark_blue" (&1) in nicknames.
+        permission: nucleus.nick.colour.dark_blue
     -   module: nickname
         defaultLevel: ADMIN
-        description: Allows the user to colour their nickname.
-        permission: nucleus.nick.colour
+        description: Allows user to use the color "light_purple" (&d) in nicknames.
+        permission: nucleus.nick.color.light_purple
     -   module: nickname
         defaultLevel: ADMIN
-        description: Allows the user to change others nicknames.
-        permission: nucleus.nick.others
+        description: Allows user to use the color "green" (&a) in nicknames.
+        permission: nucleus.nick.color.green
     -   module: nickname
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cooldown for /nick
-        permission: nucleus.nick.exempt.cooldown
+        description: Allows user to use the color "dark_green" (&2) in nicknames.
+        permission: nucleus.nick.color.dark_green
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the color "black" (&0) in nicknames.
+        permission: nucleus.nick.color.black
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the color "white" (&f) in nicknames.
+        permission: nucleus.nick.color.white
     -   module: nickname
         defaultLevel: ADMIN
         description: Allows the user to bypass the warmup for /nick
         permission: nucleus.nick.exempt.warmup
     -   module: nickname
         defaultLevel: ADMIN
+        description: Allows user to use the colour "dark_gray" (&8) in nicknames.
+        permission: nucleus.nick.colour.dark_gray
+    -   module: nickname
+        defaultLevel: ADMIN
         description: Allows the user to bypass the cost for /nick
         permission: nucleus.nick.exempt.cost
     -   module: nickname
         defaultLevel: ADMIN
-        description: Allows the user to colour their nickname.
-        permission: nucleus.nick.color
+        description: Allows user to use the colour "dark_red" (&4) in nicknames.
+        permission: nucleus.nick.colour.dark_red
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the color "dark_purple" (&5) in nicknames.
+        permission: nucleus.nick.color.dark_purple
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the colour "red" (&c) in nicknames.
+        permission: nucleus.nick.colour.red
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the color "dark_aqua" (&3) in nicknames.
+        permission: nucleus.nick.color.dark_aqua
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the colour "blue" (&9) in nicknames.
+        permission: nucleus.nick.colour.blue
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the "strikethrough" style (&m) in nicknames.
+        permission: nucleus.nick.style.strikethrough
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows the user to change others nicknames.
+        permission: nucleus.nick.others
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the "bold" style (&l) in nicknames.
+        permission: nucleus.nick.style.bold
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the color "dark_red" (&4) in nicknames.
+        permission: nucleus.nick.color.dark_red
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cooldown for /nick
+        permission: nucleus.nick.exempt.cooldown
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the color "aqua" (&b) in nicknames.
+        permission: nucleus.nick.color.aqua
     -   module: nickname
         defaultLevel: ADMIN
         description: Allows the user to run the command /nick
         permission: nucleus.nick.base
     -   module: nickname
         defaultLevel: ADMIN
+        description: Allows user to use the "italic" style (&o) in nicknames.
+        permission: nucleus.nick.style.italic
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the color "yellow" (&e) in nicknames.
+        permission: nucleus.nick.color.yellow
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the "reset" style (&r) in nicknames.
+        permission: nucleus.nick.style.reset
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the colour "dark_aqua" (&3) in nicknames.
+        permission: nucleus.nick.colour.dark_aqua
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the colour "dark_purple" (&5) in nicknames.
+        permission: nucleus.nick.colour.dark_purple
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the "underline" style (&n) in nicknames.
+        permission: nucleus.nick.style.underline
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the colour "white" (&f) in nicknames.
+        permission: nucleus.nick.colour.white
+    -   module: nickname
+        defaultLevel: ADMIN
         description: Allows the user to style their nickname.
         permission: nucleus.nick.style
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the color "dark_gray" (&8) in nicknames.
+        permission: nucleus.nick.color.dark_gray
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the colour "green" (&a) in nicknames.
+        permission: nucleus.nick.colour.green
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the color "gray" (&7) in nicknames.
+        permission: nucleus.nick.color.gray
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the colour "aqua" (&b) in nicknames.
+        permission: nucleus.nick.colour.aqua
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the colour "gold" (&6) in nicknames.
+        permission: nucleus.nick.colour.gold
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows the user to use "magic" characters in their nickname.
+        permission: nucleus.nick.magic
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the colour "dark_green" (&2) in nicknames.
+        permission: nucleus.nick.colour.dark_green
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the colour "light_purple" (&d) in nicknames.
+        permission: nucleus.nick.colour.light_purple
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the color "dark_blue" (&1) in nicknames.
+        permission: nucleus.nick.color.dark_blue
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows the user to colour their nickname.
+        permission: nucleus.nick.colour
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the colour "gray" (&7) in nicknames.
+        permission: nucleus.nick.colour.gray
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the color "gold" (&6) in nicknames.
+        permission: nucleus.nick.color.gold
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the color "red" (&c) in nicknames.
+        permission: nucleus.nick.color.red
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the colour "black" (&0) in nicknames.
+        permission: nucleus.nick.colour.black
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the color "blue" (&9) in nicknames.
+        permission: nucleus.nick.color.blue
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows the user to colour their nickname.
+        permission: nucleus.nick.color
+    -   module: nickname
+        defaultLevel: ADMIN
+        description: Allows user to use the colour "yellow" (&e) in nicknames.
+        permission: nucleus.nick.colour.yellow
     cooldown: true
     requiresMixin: false
     warmup: true
@@ -3866,6 +4067,10 @@
         permission: nucleus.vanish.other
     -   module: vanish
         defaultLevel: ADMIN
+        description: If granted, the player is able to retain their vanish status upon logout and login.
+        permission: nucleus.vanish.persist
+    -   module: vanish
+        defaultLevel: ADMIN
         description: Allows the user to run the command /vanish
         permission: nucleus.vanish.base
     cooldown: false
@@ -4176,7 +4381,7 @@
     cost: true
     module: world
     defaultLevel: ADMIN
-    usageString: /world border gen [-s <s>] [<world>]
+    usageString: /world border gen [-a <a>] [-s <s>] [<world>]
     oneLineDescription: Generates chunks up to the world border.
     permissionbase: nucleus.world.border.gen
     commandName: world border gen

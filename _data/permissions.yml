@@ -40,6 +40,18 @@
     permission: nucleus.gamemode.base
 -   module: admin
     defaultLevel: ADMIN
+    description: Allows the user to bypass the cooldown for /gamemode
+    permission: nucleus.gamemode.exempt.cooldown
+-   module: admin
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the cost for /gamemode
+    permission: nucleus.gamemode.exempt.cost
+-   module: admin
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the warmup for /gamemode
+    permission: nucleus.gamemode.exempt.warmup
+-   module: admin
+    defaultLevel: ADMIN
     description: If "admin.separate-gamemode-permissions" is set in the config, allows the user to change a targets gamemode to adventure.
     permission: nucleus.gamemode.modes.adventure
 -   module: admin
@@ -102,6 +114,22 @@
     defaultLevel: ADMIN
     description: If kick notifications are not sent to the server, players with this permission will still get these notifications.
     permission: nucleus.afk.notify
+-   module: afk
+    defaultLevel: ADMIN
+    description: Allows the user to run the command /afkrefresh
+    permission: nucleus.afkrefresh.base
+-   module: afk
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the cooldown for /afkrefresh
+    permission: nucleus.afkrefresh.exempt.cooldown
+-   module: afk
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the cost for /afkrefresh
+    permission: nucleus.afkrefresh.exempt.cost
+-   module: afk
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the warmup for /afkrefresh
+    permission: nucleus.afkrefresh.exempt.warmup
 -   module: back
     defaultLevel: ADMIN
     description: Allows the user to run the command /back
@@ -140,7 +168,7 @@
     permission: nucleus.ban.exempt.target
 -   module: ban
     defaultLevel: MOD
-    description: Notifies the user about mutes when they occur.
+    description: Notifies the user about bans when they occur.
     permission: nucleus.ban.notify
 -   module: ban
     defaultLevel: MOD
@@ -240,8 +268,136 @@
     permission: nucleus.chat.color
 -   module: chat
     defaultLevel: ADMIN
+    description: Allows user to use the color "aqua" (&b) in chat.
+    permission: nucleus.chat.color.aqua
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the color "black" (&0) in chat.
+    permission: nucleus.chat.color.black
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the color "blue" (&9) in chat.
+    permission: nucleus.chat.color.blue
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the color "dark_aqua" (&3) in chat.
+    permission: nucleus.chat.color.dark_aqua
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the color "dark_blue" (&1) in chat.
+    permission: nucleus.chat.color.dark_blue
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the color "dark_gray" (&8) in chat.
+    permission: nucleus.chat.color.dark_gray
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the color "dark_green" (&2) in chat.
+    permission: nucleus.chat.color.dark_green
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the color "dark_purple" (&5) in chat.
+    permission: nucleus.chat.color.dark_purple
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the color "dark_red" (&4) in chat.
+    permission: nucleus.chat.color.dark_red
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the color "gold" (&6) in chat.
+    permission: nucleus.chat.color.gold
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the color "gray" (&7) in chat.
+    permission: nucleus.chat.color.gray
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the color "green" (&a) in chat.
+    permission: nucleus.chat.color.green
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the color "light_purple" (&d) in chat.
+    permission: nucleus.chat.color.light_purple
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the color "red" (&c) in chat.
+    permission: nucleus.chat.color.red
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the color "white" (&f) in chat.
+    permission: nucleus.chat.color.white
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the color "yellow" (&e) in chat.
+    permission: nucleus.chat.color.yellow
+-   module: chat
+    defaultLevel: ADMIN
     description: Allows user to type colours in chat.
     permission: nucleus.chat.colour
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "aqua" (&b) in chat.
+    permission: nucleus.chat.colour.aqua
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "black" (&0) in chat.
+    permission: nucleus.chat.colour.black
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "blue" (&9) in chat.
+    permission: nucleus.chat.colour.blue
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "dark_aqua" (&3) in chat.
+    permission: nucleus.chat.colour.dark_aqua
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "dark_blue" (&1) in chat.
+    permission: nucleus.chat.colour.dark_blue
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "dark_gray" (&8) in chat.
+    permission: nucleus.chat.colour.dark_gray
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "dark_green" (&2) in chat.
+    permission: nucleus.chat.colour.dark_green
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "dark_purple" (&5) in chat.
+    permission: nucleus.chat.colour.dark_purple
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "dark_red" (&4) in chat.
+    permission: nucleus.chat.colour.dark_red
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "gold" (&6) in chat.
+    permission: nucleus.chat.colour.gold
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "gray" (&7) in chat.
+    permission: nucleus.chat.colour.gray
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "green" (&a) in chat.
+    permission: nucleus.chat.colour.green
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "light_purple" (&d) in chat.
+    permission: nucleus.chat.colour.light_purple
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "red" (&c) in chat.
+    permission: nucleus.chat.colour.red
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "white" (&f) in chat.
+    permission: nucleus.chat.colour.white
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "yellow" (&e) in chat.
+    permission: nucleus.chat.colour.yellow
 -   module: chat
     defaultLevel: ADMIN
     description: Allows user to use magic characters in chat.
@@ -250,6 +406,26 @@
     defaultLevel: ADMIN
     description: Allows user to use styles in chat.
     permission: nucleus.chat.style
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the "bold" style (&l) in chat.
+    permission: nucleus.chat.style.bold
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the "italic" style (&o) in chat.
+    permission: nucleus.chat.style.italic
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the "reset" style (&r) in chat.
+    permission: nucleus.chat.style.reset
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the "strikethrough" style (&m) in chat.
+    permission: nucleus.chat.style.strikethrough
+-   module: chat
+    defaultLevel: ADMIN
+    description: Allows user to use the "underline" style (&n) in chat.
+    permission: nucleus.chat.style.underline
 -   module: chat
     defaultLevel: ADMIN
     description: Allows user to type clickable URLs in chat.
@@ -568,11 +744,11 @@
     permission: nucleus.lightning.selectors
 -   module: fun
     defaultLevel: ADMIN
-    description: Allows the user to target other players using the command "kittycannon".
+    description: Allows the user to target other players using the command "hat".
     permission: others
 -   module: fun
     defaultLevel: ADMIN
-    description: Allows the user to target other players using the command "hat".
+    description: Allows the user to target other players using the command "kittycannon".
     permission: others
 -   module: geo-ip
     defaultLevel: ADMIN
@@ -804,10 +980,6 @@
     permission: nucleus.lore.exempt.warmup
 -   module: item
     defaultLevel: ADMIN
-    description: Allows the user to run the command /lore add
-    permission: nucleus.lore.set.base
--   module: item
-    defaultLevel: ADMIN
     description: Allows the user to run the command /lore set
     permission: nucleus.lore.set.base
 -   module: item
@@ -816,8 +988,8 @@
     permission: nucleus.lore.set.base
 -   module: item
     defaultLevel: ADMIN
-    description: Allows the user to bypass the cooldown for /lore add
-    permission: nucleus.lore.set.exempt.cooldown
+    description: Allows the user to run the command /lore add
+    permission: nucleus.lore.set.base
 -   module: item
     defaultLevel: ADMIN
     description: Allows the user to bypass the cooldown for /lore set
@@ -828,8 +1000,8 @@
     permission: nucleus.lore.set.exempt.cooldown
 -   module: item
     defaultLevel: ADMIN
-    description: Allows the user to bypass the cost for /lore add
-    permission: nucleus.lore.set.exempt.cost
+    description: Allows the user to bypass the cooldown for /lore add
+    permission: nucleus.lore.set.exempt.cooldown
 -   module: item
     defaultLevel: ADMIN
     description: Allows the user to bypass the cost for /lore set
@@ -840,8 +1012,8 @@
     permission: nucleus.lore.set.exempt.cost
 -   module: item
     defaultLevel: ADMIN
-    description: Allows the user to bypass the warmup for /lore add
-    permission: nucleus.lore.set.exempt.warmup
+    description: Allows the user to bypass the cost for /lore add
+    permission: nucleus.lore.set.exempt.cost
 -   module: item
     defaultLevel: ADMIN
     description: Allows the user to bypass the warmup for /lore set
@@ -849,6 +1021,10 @@
 -   module: item
     defaultLevel: ADMIN
     description: Allows the user to bypass the warmup for /lore clear
+    permission: nucleus.lore.set.exempt.warmup
+-   module: item
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the warmup for /lore add
     permission: nucleus.lore.set.exempt.warmup
 -   module: item
     defaultLevel: ADMIN
@@ -894,6 +1070,18 @@
     defaultLevel: ADMIN
     description: Allows the user to run the command /skull
     permission: nucleus.skull.base
+-   module: item
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the cooldown for /skull
+    permission: nucleus.skull.exempt.cooldown
+-   module: item
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the cost for /skull
+    permission: nucleus.skull.exempt.cost
+-   module: item
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the warmup for /skull
+    permission: nucleus.skull.exempt.warmup
 -   module: item
     defaultLevel: ADMIN
     description: Allows the user to target other players using the command "skull".
@@ -1460,7 +1648,7 @@
     permission: nucleus.mute.exempt.target
 -   module: mute
     defaultLevel: MOD
-    description: Notifies the user about bans when they occur.
+    description: Notifies the user about mutes when they occur.
     permission: nucleus.mute.notify
 -   module: mute
     defaultLevel: ADMIN
@@ -1488,8 +1676,136 @@
     permission: nucleus.nick.color
 -   module: nickname
     defaultLevel: ADMIN
+    description: Allows user to use the color "aqua" (&b) in nicknames.
+    permission: nucleus.nick.color.aqua
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the color "black" (&0) in nicknames.
+    permission: nucleus.nick.color.black
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the color "blue" (&9) in nicknames.
+    permission: nucleus.nick.color.blue
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the color "dark_aqua" (&3) in nicknames.
+    permission: nucleus.nick.color.dark_aqua
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the color "dark_blue" (&1) in nicknames.
+    permission: nucleus.nick.color.dark_blue
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the color "dark_gray" (&8) in nicknames.
+    permission: nucleus.nick.color.dark_gray
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the color "dark_green" (&2) in nicknames.
+    permission: nucleus.nick.color.dark_green
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the color "dark_purple" (&5) in nicknames.
+    permission: nucleus.nick.color.dark_purple
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the color "dark_red" (&4) in nicknames.
+    permission: nucleus.nick.color.dark_red
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the color "gold" (&6) in nicknames.
+    permission: nucleus.nick.color.gold
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the color "gray" (&7) in nicknames.
+    permission: nucleus.nick.color.gray
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the color "green" (&a) in nicknames.
+    permission: nucleus.nick.color.green
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the color "light_purple" (&d) in nicknames.
+    permission: nucleus.nick.color.light_purple
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the color "red" (&c) in nicknames.
+    permission: nucleus.nick.color.red
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the color "white" (&f) in nicknames.
+    permission: nucleus.nick.color.white
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the color "yellow" (&e) in nicknames.
+    permission: nucleus.nick.color.yellow
+-   module: nickname
+    defaultLevel: ADMIN
     description: Allows the user to colour their nickname.
     permission: nucleus.nick.colour
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "aqua" (&b) in nicknames.
+    permission: nucleus.nick.colour.aqua
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "black" (&0) in nicknames.
+    permission: nucleus.nick.colour.black
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "blue" (&9) in nicknames.
+    permission: nucleus.nick.colour.blue
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "dark_aqua" (&3) in nicknames.
+    permission: nucleus.nick.colour.dark_aqua
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "dark_blue" (&1) in nicknames.
+    permission: nucleus.nick.colour.dark_blue
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "dark_gray" (&8) in nicknames.
+    permission: nucleus.nick.colour.dark_gray
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "dark_green" (&2) in nicknames.
+    permission: nucleus.nick.colour.dark_green
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "dark_purple" (&5) in nicknames.
+    permission: nucleus.nick.colour.dark_purple
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "dark_red" (&4) in nicknames.
+    permission: nucleus.nick.colour.dark_red
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "gold" (&6) in nicknames.
+    permission: nucleus.nick.colour.gold
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "gray" (&7) in nicknames.
+    permission: nucleus.nick.colour.gray
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "green" (&a) in nicknames.
+    permission: nucleus.nick.colour.green
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "light_purple" (&d) in nicknames.
+    permission: nucleus.nick.colour.light_purple
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "red" (&c) in nicknames.
+    permission: nucleus.nick.colour.red
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "white" (&f) in nicknames.
+    permission: nucleus.nick.colour.white
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the colour "yellow" (&e) in nicknames.
+    permission: nucleus.nick.colour.yellow
 -   module: nickname
     defaultLevel: ADMIN
     description: Allows the user to bypass the cooldown for /delnick
@@ -1526,6 +1842,26 @@
     defaultLevel: ADMIN
     description: Allows the user to style their nickname.
     permission: nucleus.nick.style
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the "bold" style (&l) in nicknames.
+    permission: nucleus.nick.style.bold
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the "italic" style (&o) in nicknames.
+    permission: nucleus.nick.style.italic
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the "reset" style (&r) in nicknames.
+    permission: nucleus.nick.style.reset
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the "strikethrough" style (&m) in nicknames.
+    permission: nucleus.nick.style.strikethrough
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows user to use the "underline" style (&n) in nicknames.
+    permission: nucleus.nick.style.underline
 -   module: nickname
     defaultLevel: USER
     description: Allows the user to run the command /realname
@@ -1628,11 +1964,11 @@
     permission: nucleus.seen.extended
 -   module: powertool
     defaultLevel: ADMIN
-    description: Allows the user to run the command /powertool list
+    description: Allows the user to run the command /powertool delete
     permission: nucleus.powertool.base
 -   module: powertool
     defaultLevel: ADMIN
-    description: Allows the user to run the command /powertool delete
+    description: Allows the user to run the command /powertool list
     permission: nucleus.powertool.base
 -   module: powertool
     defaultLevel: ADMIN
@@ -1882,6 +2218,10 @@
     defaultLevel: ADMIN
     description: If granted, grants ability to vanish other players.
     permission: nucleus.vanish.other
+-   module: vanish
+    defaultLevel: ADMIN
+    description: If granted, the player is able to retain their vanish status upon logout and login.
+    permission: nucleus.vanish.persist
 -   module: warn
     defaultLevel: MOD
     description: Allows the user to run the command /checkwarnings
@@ -1890,10 +2230,6 @@
     defaultLevel: ADMIN
     description: Allows the user to run the command /clearwarnings
     permission: nucleus.clearwarnings.base
--   module: warn
-    defaultLevel: MOD
-    description: Allows user to see other users warnings when they login.
-    permission: nucleus.note.showonlogin
 -   module: warn
     defaultLevel: ADMIN
     description: Allows the user to run the command /removewarning
@@ -1914,6 +2250,10 @@
     defaultLevel: MOD
     description: Notifies the user about warnings when they occur.
     permission: nucleus.warn.notify
+-   module: warn
+    defaultLevel: MOD
+    description: Allows user to see other users warnings when they login.
+    permission: nucleus.warn.showonlogin
 -   module: warp
     defaultLevel: USER
     description: Allows the user to run the command /warp
