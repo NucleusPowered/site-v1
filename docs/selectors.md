@@ -34,7 +34,7 @@ from the specified world.
  
 ## All Players Selector (@a)
 
-When the `@r` selector is used in place of a player name on select commands (currently only `/lightning`), all players will be chosen.
+When the `@a` selector is used in place of a player name on select commands (currently only `/lightning`), all players will be chosen.
 
 Nucleus also provides an argument based version, `@a[world]`, where `world` is the name of the world. This selects all players from the
 named world
