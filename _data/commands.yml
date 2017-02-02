@@ -47,7 +47,7 @@
     cost: false
     module: admin
     defaultLevel: ADMIN
-    usageString: /exp take|give|set|<player>
+    usageString: /exp give|take|set|<subject>
     oneLineDescription: Displays the specified player's current experience.
     permissionbase: nucleus.exp
     commandName: exp
@@ -63,7 +63,7 @@
     cost: false
     module: admin
     defaultLevel: ADMIN
-    usageString: /exp give [<player>] <experience>
+    usageString: /exp give [<subject>] <experience>
     oneLineDescription: Gives experience to the specified player.
     permissionbase: nucleus.exp.give
     commandName: exp give
@@ -79,7 +79,7 @@
     cost: false
     module: admin
     defaultLevel: ADMIN
-    usageString: /exp set [<player>] <level>|<experience>
+    usageString: /exp set [<subject>] <level>|<experience>
     oneLineDescription: Sets the specified player's experience.
     permissionbase: nucleus.exp.set
     commandName: exp set
@@ -95,7 +95,7 @@
     cost: false
     module: admin
     defaultLevel: ADMIN
-    usageString: /exp take [<player>] <experience>
+    usageString: /exp take [<subject>] <experience>
     oneLineDescription: Removes experience from the specified player.
     permissionbase: nucleus.exp.take
     commandName: exp take
@@ -191,7 +191,7 @@
     cost: true
     module: admin
     defaultLevel: ADMIN
-    usageString: /sudo <player> <command…>
+    usageString: /sudo <subject> <command…>
     oneLineDescription: Forces a player to run a command.
     permissionbase: nucleus.sudo
     commandName: sudo
@@ -1000,7 +1000,7 @@
     cost: true
     module: fly
     defaultLevel: ADMIN
-    usageString: /fly [<player>] [<toggle>]
+    usageString: /fly [<subject>] [<toggle>]
     oneLineDescription: Set specified player's fly mode.
     permissionbase: nucleus.fly
     commandName: fly
@@ -1034,30 +1034,30 @@
     warmup: true
 -   aliases: freezeplayer, freeze
     cost: true
-    module: freeze-player
+    module: freeze-subject
     defaultLevel: ADMIN
-    usageString: /freezeplayer [<player>]
+    usageString: /freezeplayer [<subject>]
     oneLineDescription: Freezes a player in place.
     permissionbase: nucleus.freezeplayer
     commandName: freezeplayer
     permissions:
-    -   module: freeze-player
+    -   module: freeze-subject
         defaultLevel: ADMIN
         description: Allows the user to bypass the cooldown for /freezeplayer
         permission: nucleus.freezeplayer.exempt.cooldown
-    -   module: freeze-player
+    -   module: freeze-subject
         defaultLevel: ADMIN
         description: Allows the user to target other players using the command "freezeplayer".
         permission: nucleus.freezeplayer.others
-    -   module: freeze-player
+    -   module: freeze-subject
         defaultLevel: ADMIN
         description: Allows the user to run the command /freezeplayer
         permission: nucleus.freezeplayer.base
-    -   module: freeze-player
+    -   module: freeze-subject
         defaultLevel: ADMIN
         description: Allows the user to bypass the warmup for /freezeplayer
         permission: nucleus.freezeplayer.exempt.warmup
-    -   module: freeze-player
+    -   module: freeze-subject
         defaultLevel: ADMIN
         description: Allows the user to bypass the cost for /freezeplayer
         permission: nucleus.freezeplayer.exempt.cost
@@ -1068,7 +1068,7 @@
     cost: false
     module: fun
     defaultLevel: ADMIN
-    usageString: /hat [<player>]
+    usageString: /hat [<subject>]
     oneLineDescription: Puts the item in the player's hand on their head as a helmet.
     permissionbase: nucleus.hat
     commandName: hat
@@ -1092,7 +1092,7 @@
     cost: true
     module: fun
     defaultLevel: ADMIN
-    usageString: /ignite [<player>] <ticks>
+    usageString: /ignite [<subject>] <ticks>
     oneLineDescription: Sets the specified player on fire.
     permissionbase: nucleus.ignite
     commandName: ignite
@@ -1128,7 +1128,7 @@
     cost: true
     module: fun
     defaultLevel: ADMIN
-    usageString: /kittycannon [-f|-fire <f>] [-d|-damageentities <d>] [-b|-breakblocks <b>] [<player>]
+    usageString: /kittycannon [-f|-fire <f>] [-d|-damageentities <d>] [-b|-breakblocks <b>] [<subject>]
     oneLineDescription: Fire exploding cats from your person.
     permissionbase: nucleus.kittycannon
     commandName: kittycannon
@@ -1177,7 +1177,7 @@
     cost: true
     module: fun
     defaultLevel: ADMIN
-    usageString: /lightning [<player>]
+    usageString: /lightning [<subject>]
     oneLineDescription: Strikes a position or player with a lightning bolt.
     permissionbase: nucleus.lightning
     commandName: lightning
@@ -1213,7 +1213,7 @@
     cost: false
     module: geo-ip
     defaultLevel: ADMIN
-    usageString: /geoip update|<player>
+    usageString: /geoip update|<subject>
     oneLineDescription: Get the country a player has connected via.
     permissionbase: nucleus.geoip
     commandName: geoip
@@ -1376,7 +1376,7 @@
     cost: false
     module: home
     defaultLevel: USER
-    usageString: /listhomes [<player>]
+    usageString: /listhomes [<subject>]
     oneLineDescription: Lists homes.
     permissionbase: nucleus.home.list
     commandName: listhomes
@@ -1454,7 +1454,7 @@
     module: inventory
     spongeVersion: 5.0.0
     defaultLevel: ADMIN
-    usageString: /enderchest [<player>]
+    usageString: /enderchest [<subject>]
     oneLineDescription: Allows the user to inspect their (or another player's) ender chest.
     permissionbase: nucleus.enderchest
     commandName: enderchest
@@ -1494,7 +1494,7 @@
     module: inventory
     spongeVersion: 5.0.0
     defaultLevel: ADMIN
-    usageString: /invsee <player>
+    usageString: /invsee <subject>
     oneLineDescription: Allows the user to inspect a target's inventory.
     permissionbase: nucleus.invsee
     commandName: invsee
@@ -1525,7 +1525,7 @@
     cost: false
     module: item
     defaultLevel: ADMIN
-    usageString: /clear [<player>]
+    usageString: /clear [<subject>]
     oneLineDescription: Clears a player's inventory.
     permissionbase: nucleus.clear
     commandName: clear
@@ -1806,7 +1806,7 @@
     cost: true
     module: item
     defaultLevel: ADMIN
-    usageString: /repair [<player>]
+    usageString: /repair [<subject>]
     oneLineDescription: Repairs item in hand.
     permissionbase: nucleus.repair
     commandName: repair
@@ -1842,7 +1842,7 @@
     cost: true
     module: item
     defaultLevel: ADMIN
-    usageString: /skull [<player>] [<amount>]
+    usageString: /skull [<subject>] [<amount>]
     oneLineDescription: Spawns in copies of the specified player's skull (or your own, if no player is specified) into your inventory.
     permissionbase: nucleus.skull
     commandName: skull
@@ -1874,7 +1874,7 @@
     cost: false
     module: jail
     defaultLevel: MOD
-    usageString: /checkjail <player>
+    usageString: /checkjail <subject>
     oneLineDescription: Checks if a player is jailed.
     permissionbase: nucleus.jail.checkjail
     commandName: checkjail
@@ -1890,7 +1890,7 @@
     cost: false
     module: jail
     defaultLevel: MOD
-    usageString: /jail <player> [<jail>] [<duration>] [<reason…>]
+    usageString: /jail <subject> [<jail>] [<duration>] [<reason…>]
     oneLineDescription: Toggles the jailing of a player.
     permissionbase: nucleus.jail
     commandName: jail
@@ -2038,7 +2038,7 @@
     cost: true
     module: jump
     defaultLevel: ADMIN
-    usageString: /top [-f <f>] [<player>]
+    usageString: /top [-f <f>] [<subject>]
     oneLineDescription: Teleports the user (or target player) to the surface.
     permissionbase: nucleus.top
     commandName: top
@@ -2075,7 +2075,7 @@
     cost: false
     module: kick
     defaultLevel: MOD
-    usageString: /kick <player> [<reason…>]
+    usageString: /kick <subject> [<reason…>]
     oneLineDescription: Kicks a player
     permissionbase: nucleus.kick
     commandName: kick
@@ -2309,7 +2309,7 @@
     cost: true
     module: kit
     defaultLevel: ADMIN
-    usageString: /kit give [-i|-ignore <i>]  <player> <kit>
+    usageString: /kit give [-i|-ignore <i>]  <subject> <kit>
     oneLineDescription: Redeems a kit on the specified player.
     permissionbase: nucleus.kit.give
     commandName: kit give
@@ -2392,7 +2392,7 @@
     cost: false
     module: kit
     defaultLevel: ADMIN
-    usageString: /kit resetusage <player> <kit>
+    usageString: /kit resetusage <subject> <kit>
     oneLineDescription: Resets a player's usage of a kit, allowing them to redeem the kit again immediately.
     permissionbase: nucleus.kit.resetusage
     commandName: kit resetusage
@@ -2490,7 +2490,7 @@
     cost: true
     module: mail
     defaultLevel: USER
-    usageString: /mail send <player> <message…>
+    usageString: /mail send <subject> <message…>
     oneLineDescription: Sends a mail to the specified player.
     permissionbase: nucleus.mail.send
     commandName: mail send
@@ -2715,7 +2715,7 @@
     cost: true
     module: misc
     defaultLevel: ADMIN
-    usageString: /feed [<player>]
+    usageString: /feed [<subject>]
     oneLineDescription: Set specified player's hunger to full.
     permissionbase: nucleus.feed
     commandName: feed
@@ -2751,7 +2751,7 @@
     cost: false
     module: misc
     defaultLevel: ADMIN
-    usageString: /god [<player>] [<invuln>]
+    usageString: /god [<subject>] [<invuln>]
     oneLineDescription: Set specified player's invulnerability status.
     permissionbase: nucleus.god
     commandName: god
@@ -2771,7 +2771,7 @@
     cost: true
     module: misc
     defaultLevel: ADMIN
-    usageString: /heal [<player>]
+    usageString: /heal [<subject>]
     oneLineDescription: Fully heal the specified player.
     permissionbase: nucleus.heal
     commandName: heal
@@ -2839,7 +2839,7 @@
     cost: true
     module: misc
     defaultLevel: ADMIN
-    usageString: /kill <player>
+    usageString: /kill <subject>
     oneLineDescription: Kill the specified player.
     permissionbase: nucleus.kill
     commandName: kill
@@ -2867,6 +2867,26 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+-   aliases: ping
+    cost: false
+    module: misc
+    defaultLevel: ADMIN
+    usageString: /ping [<player>]
+    oneLineDescription: Displays the current latency for the target player.
+    permissionbase: nucleus.ping
+    commandName: ping
+    permissions:
+    -   module: misc
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /ping
+        permission: nucleus.ping.base
+    -   module: misc
+        defaultLevel: ADMIN
+        description: Allows the user to target other players using the command "ping".
+        permission: others
+    cooldown: false
+    requiresMixin: false
+    warmup: false
 -   aliases: serverstat, gc, uptime
     cost: false
     module: misc
@@ -2888,7 +2908,7 @@
     cost: true
     module: misc
     defaultLevel: ADMIN
-    usageString: /speed [[<player>] [<fly|f|flying|w|walk>] <speed>]
+    usageString: /speed [[<subject>] [<fly|f|flying|w|walk>] <speed>]
     oneLineDescription: Set the specified player's walking or flying speed, where "1" is normal walking speed.
     permissionbase: nucleus.speed
     commandName: speed
@@ -2952,7 +2972,7 @@
     cost: true
     module: mob
     defaultLevel: ADMIN
-    usageString: /spawnmob [<player>] <mob> [<amount>]
+    usageString: /spawnmob [<subject>] <mob> [<amount>]
     oneLineDescription: Spawns in mobs at the specified player's location.
     permissionbase: nucleus.spawnmob
     commandName: spawnmob
@@ -2997,7 +3017,7 @@
     cost: false
     module: mute
     defaultLevel: MOD
-    usageString: /checkmute <player>
+    usageString: /checkmute <subject>
     oneLineDescription: Checks whether the specified player is muted.
     permissionbase: nucleus.checkmute
     commandName: checkmute
@@ -3030,7 +3050,7 @@
     cost: false
     module: mute
     defaultLevel: MOD
-    usageString: /mute <player> [<time>] [<reason…>]
+    usageString: /mute <subject> [<time>] [<reason…>]
     oneLineDescription: Mutes the specified player.
     permissionbase: nucleus.mute
     commandName: mute
@@ -3062,7 +3082,7 @@
     cost: false
     module: mute
     defaultLevel: ADMIN
-    usageString: /voice <player> [<turn on>]
+    usageString: /voice <subject> [<turn on>]
     oneLineDescription: Allows a user to speak when a global mute is in effect.
     permissionbase: nucleus.globalmute.voice
     commandName: voice
@@ -3120,7 +3140,7 @@
     cost: true
     module: nickname
     defaultLevel: ADMIN
-    usageString: /delnick [<player>]
+    usageString: /delnick [<subject>]
     oneLineDescription: Deletes your current nickname
     permissionbase: nucleus.nick
     commandName: delnick
@@ -3148,7 +3168,7 @@
     cost: true
     module: nickname
     defaultLevel: ADMIN
-    usageString: /nick [<player>] <nickname>
+    usageString: /nick [<subject>] <nickname>
     oneLineDescription: Sets your nickname/display name
     permissionbase: nucleus.nick
     commandName: nick
@@ -3372,7 +3392,7 @@
     cost: false
     module: note
     defaultLevel: MOD
-    usageString: /checknotes <player>
+    usageString: /checknotes <subject>
     oneLineDescription: Allows the user to check a player's notes.
     permissionbase: nucleus.checknotes
     commandName: checknotes
@@ -3388,7 +3408,7 @@
     cost: false
     module: note
     defaultLevel: ADMIN
-    usageString: /clearnotes <player>
+    usageString: /clearnotes <subject>
     oneLineDescription: Allows the user to clear a player's notes.
     permissionbase: nucleus.clearnotes
     commandName: clearnotes
@@ -3404,7 +3424,7 @@
     cost: false
     module: note
     defaultLevel: MOD
-    usageString: /note <player> <note…>
+    usageString: /note <subject> <note…>
     oneLineDescription: Allows the user to add a note to a player.
     permissionbase: nucleus.note
     commandName: note
@@ -3440,7 +3460,7 @@
     cost: true
     module: playerinfo
     defaultLevel: MOD
-    usageString: /getpos [<player>]
+    usageString: /getpos [<subject>]
     oneLineDescription: Gets the location of the executing or target player.
     permissionbase: nucleus.getpos
     commandName: getpos
@@ -3504,7 +3524,7 @@
     cost: true
     module: playerinfo
     defaultLevel: ADMIN
-    usageString: /seen <player>
+    usageString: /seen <subject>
     oneLineDescription: Gets information about the specified player.
     permissionbase: nucleus.seen
     commandName: seen
@@ -3600,7 +3620,7 @@
     cost: true
     module: rtp
     defaultLevel: ADMIN
-    usageString: '/rtp '
+    usageString: /rtp [<player>]
     oneLineDescription: Allows the user to teleport to a random destination within the world border.
     permissionbase: nucleus.rtp
     commandName: rtp
@@ -3621,6 +3641,10 @@
         defaultLevel: ADMIN
         description: Allows the user to run the command /rtp
         permission: nucleus.rtp.base
+    -   module: rtp
+        defaultLevel: ADMIN
+        description: Allows the user to target other players using the command "rtp".
+        permission: others
     cooldown: true
     requiresMixin: false
     warmup: true
@@ -3882,7 +3906,7 @@
     cost: false
     module: spawn
     defaultLevel: ADMIN
-    usageString: /spawn other <player> [<world>]
+    usageString: /spawn other <subject> [<world>]
     oneLineDescription: Warp another player to a world spawn point.
     permissionbase: nucleus.spawn.other
     commandName: spawn other
@@ -3920,7 +3944,7 @@
     rootAliases: tp
     module: teleport
     defaultLevel: MOD
-    usageString: /teleport [-q <quiet>] [-f <f>]  (<player to teleport> <target>)|<player>
+    usageString: /teleport [-q <quiet>] [-f <f>]  <playerFrom>|<subject>
     oneLineDescription: Teleports one player to another's location.
     permissionbase: nucleus.teleport.teleport
     commandName: teleport
@@ -3972,7 +3996,7 @@
     cost: true
     module: teleport
     defaultLevel: USER
-    usageString: '/tpa <player> [-f <f>] '
+    usageString: '/tpa <subject> [-f <f>] '
     oneLineDescription: Send a request to a player to ask for you to teleport to them.
     permissionbase: nucleus.teleport.tpa
     commandName: tpa
@@ -4040,7 +4064,7 @@
     cost: true
     module: teleport
     defaultLevel: MOD
-    usageString: '/tpahere <player> [-f <f>] '
+    usageString: '/tpahere <subject> [-f <f>] '
     oneLineDescription: Send a request to a player to ask them to teleport to you.
     permissionbase: nucleus.teleport.tpahere
     commandName: tpahere
@@ -4108,7 +4132,7 @@
     cost: false
     module: teleport
     defaultLevel: ADMIN
-    usageString: /tphere <player>
+    usageString: /tphere <subject>
     oneLineDescription: Teleports a player to your location.
     permissionbase: nucleus.teleport.tphere
     commandName: tphere
@@ -4128,7 +4152,7 @@
     cost: false
     module: teleport
     defaultLevel: ADMIN
-    usageString: '/tppos <player> [<world>] x(-2147483648-2147483647) y(0-255) z(-2147483648-2147483647)
+    usageString: '/tppos <subject> [<world>] x(-2147483648-2147483647) y(0-255) z(-2147483648-2147483647)
         [-f <f>] '
     oneLineDescription: Teleport to the specified location.
     permissionbase: nucleus.teleport.tppos
@@ -4169,7 +4193,7 @@
     cost: false
     module: vanish
     defaultLevel: ADMIN
-    usageString: /vanish [<player>] [<toggle>]
+    usageString: /vanish [<subject>] [<toggle>]
     oneLineDescription: Toggles whether you are invisible on the server.
     permissionbase: nucleus.vanish
     commandName: vanish
@@ -4197,7 +4221,7 @@
     cost: false
     module: warn
     defaultLevel: MOD
-    usageString: /checkwarnings [-all|-a <all>] [-expired|-e <expired>] <player>
+    usageString: /checkwarnings [-all|-a <all>] [-expired|-e <expired>] <subject>
     oneLineDescription: Allows the user to check a player's warnings.
     permissionbase: nucleus.checkwarnings
     commandName: checkwarnings
@@ -4213,7 +4237,7 @@
     cost: false
     module: warn
     defaultLevel: ADMIN
-    usageString: /clearwarnings [-remove|-r <remove>] [-all|-a <all>] [-expired|-e <expired>] <player>
+    usageString: /clearwarnings [-remove|-r <remove>] [-all|-a <all>] [-expired|-e <expired>] <subject>
     oneLineDescription: Allows the user to clear a player's warnings.
     permissionbase: nucleus.clearwarnings
     commandName: clearwarnings
@@ -4245,7 +4269,7 @@
     cost: false
     module: warn
     defaultLevel: MOD
-    usageString: /warn <player> [<duration>] <reason…>
+    usageString: /warn <subject> [<duration>] <reason…>
     oneLineDescription: Allows the user to add a warning to a player.
     permissionbase: nucleus.warn
     commandName: warn
@@ -4273,7 +4297,7 @@
     cost: false
     module: warp
     defaultLevel: USER
-    usageString: /warp set|cost|setcategory|list|delete|[[-y|-a|-accept <y>] [-f|-force <f>] ] [<player>] <Warp Name>
+    usageString: /warp set|cost|setcategory|list|delete|[[-y|-a|-accept <y>] [-f|-force <f>] ] [<subject>] <Warp Name>
     oneLineDescription: Teleport to the specified warp.
     permissionbase: nucleus.warp
     commandName: warp
@@ -4555,7 +4579,7 @@
     cost: true
     module: world
     defaultLevel: ADMIN
-    usageString: /world create [-g|-generator <generator>] [-d|-dimension <dimension>] [-i <i>] [-gm|-gamemode <gamemode>] [-s|-seed <seed>] [-di|-difficulty <difficulty>] [-m|-modifier <modifier>] <name>
+    usageString: /world create [-n|-nostructures <n>] [-l|-loadonstartup <l>] [-b|-bonuschest <b>] [-g|-generator <generator>] [-d|-dimension <dimension>] [-i <i>] [-gm|-gamemode <gamemode>] [-s|-seed <seed>] [-di|-difficulty <difficulty>] [-m|-modifier <modifier>] [-k|-keepspawnloaded <k>] [-c|-allowcommands <c>] <name>
     oneLineDescription: Creates a world with the specified name and options.
     permissionbase: nucleus.world.create
     commandName: world create
@@ -4589,7 +4613,14 @@
         <gamemode>: the default game mode for players in the world. Defaults to survival.|br|*
         -s/--seed <seed>: The seed to use to generate the world. If not specified,
         a random seed will be used.|br|* -i: Indicates that this world might exist
-        and can be imported.|br||br|The difficulty and the game mode can be changed
+        and can be imported.|br|* -n/--nostructures: If specified, will not generate
+        structures in the world |br|* -l/--loadonstartup <true|false>: If false, the
+        world will not be loaded on startup. Defaults to true. |br|* -k/--keepspawnloaded
+        <true|false>: If false, the spawn will not be kept loaded. Defaults to true.|br|*
+        -c/--allowcommands <true|false>: If false, commands will not be allowed on
+        the world. Defaults to true.|br|* -b/--bonuschest <true|false>: If false,
+        the bonus chests will not be generated. Defaults to true.|br||br|The difficulty,
+        the game mode, load on startup and keep spawn loaded properties can be changed
         after the world is generated.'
     warmup: true
 -   aliases: delete, del
@@ -4958,7 +4989,7 @@
     cost: true
     module: world
     defaultLevel: ADMIN
-    usageString: /world teleport <world> [<player>]
+    usageString: /world teleport <world> [<subject>]
     oneLineDescription: Teleports you, or another player, to the specified world.
     permissionbase: nucleus.world.teleport
     commandName: world teleport
