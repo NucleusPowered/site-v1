@@ -1084,7 +1084,7 @@
     -   module: fun
         defaultLevel: ADMIN
         description: Allows the user to target other players using the command "hat".
-        permission: others
+        permission: nucleus.hat.others
     cooldown: false
     requiresMixin: false
     warmup: false
@@ -1151,6 +1151,10 @@
         permission: nucleus.kittycannon.break
     -   module: fun
         defaultLevel: ADMIN
+        description: Allows the user to target other players using the command "kittycannon".
+        permission: nucleus.kittycannon.others
+    -   module: fun
+        defaultLevel: ADMIN
         description: Allows the user to bypass the cooldown for /kittycannon
         permission: nucleus.kittycannon.exempt.cooldown
     -   module: fun
@@ -1161,10 +1165,6 @@
         defaultLevel: ADMIN
         description: Allows the user to use selectors for the command /kittycannon
         permission: nucleus.kittycannon.selectors
-    -   module: fun
-        defaultLevel: ADMIN
-        description: Allows the user to target other players using the command "kittycannon".
-        permission: others
     -   module: fun
         defaultLevel: ADMIN
         description: If granted, the user can use the -d flag to damage entities with exploding ocelots.
@@ -2883,7 +2883,7 @@
     -   module: misc
         defaultLevel: ADMIN
         description: Allows the user to target other players using the command "ping".
-        permission: others
+        permission: nucleus.ping.others
     cooldown: false
     requiresMixin: false
     warmup: false
@@ -3639,12 +3639,12 @@
         permission: nucleus.rtp.exempt.warmup
     -   module: rtp
         defaultLevel: ADMIN
-        description: Allows the user to run the command /rtp
-        permission: nucleus.rtp.base
+        description: Allows the user to target other players using the command "rtp".
+        permission: nucleus.rtp.others
     -   module: rtp
         defaultLevel: ADMIN
-        description: Allows the user to target other players using the command "rtp".
-        permission: others
+        description: Allows the user to run the command /rtp
+        permission: nucleus.rtp.base
     cooldown: true
     requiresMixin: false
     warmup: true
