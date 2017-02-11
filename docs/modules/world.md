@@ -12,7 +12,7 @@ The World module allows for basic World management, such as creating and deletin
 
 ## Creating Worlds
 
-To create a world, use the command `/world create [-g|-generator <generator>] [-d|-dimension <dimension>] [-gm|-gamemode <gamemode>] [-s|-seed <seed>] [-di|-difficulty <difficulty>] [-m|-modifier <modifier>] <name>`. 
+To create a world, use the command `/world create [-g|--generator <generator>] [-d|--dimension <dimension>] [-gm|--gamemode <gamemode>] [-s|--seed <seed>] [-di|--difficulty <difficulty>] [-m|--modifier <modifier>] <name>`. 
 The name is required. All other options in this command are optional, and are specified by flags. Each flag requires an argument after their names. These flags are:
 
 * -d/--dimension <dimension>: the dimension to use as a base world type. Defaults to the overworld.
