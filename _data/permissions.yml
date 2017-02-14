@@ -666,10 +666,6 @@
     defaultLevel: ADMIN
     description: Allows the user to target other players using the command "fly".
     permission: nucleus.fly.others
--   module: fly
-    defaultLevel: ADMIN
-    description: Allows the user to use selectors for the command /fly
-    permission: nucleus.fly.selectors
 -   module: freeze-subject
     defaultLevel: ADMIN
     description: Allows the user to run the command /freezeplayer
@@ -700,10 +696,6 @@
     permission: nucleus.hat.others
 -   module: fun
     defaultLevel: ADMIN
-    description: Allows the user to use selectors for the command /hat
-    permission: nucleus.hat.selectors
--   module: fun
-    defaultLevel: ADMIN
     description: Allows the user to run the command /ignite
     permission: nucleus.ignite.base
 -   module: fun
@@ -722,10 +714,6 @@
     defaultLevel: ADMIN
     description: Allows the user to target other players using the command "ignite".
     permission: nucleus.ignite.others
--   module: fun
-    defaultLevel: ADMIN
-    description: Allows the user to use selectors for the command /ignite
-    permission: nucleus.ignite.selectors
 -   module: fun
     defaultLevel: ADMIN
     description: Allows the user to run the command /kittycannon
@@ -760,10 +748,6 @@
     permission: nucleus.kittycannon.others
 -   module: fun
     defaultLevel: ADMIN
-    description: Allows the user to use selectors for the command /kittycannon
-    permission: nucleus.kittycannon.selectors
--   module: fun
-    defaultLevel: ADMIN
     description: Allows the user to run the command /lightning
     permission: nucleus.lightning.base
 -   module: fun
@@ -782,22 +766,6 @@
     defaultLevel: ADMIN
     description: Allows the user to target other players using the command "lightning".
     permission: nucleus.lightning.others
--   module: fun
-    defaultLevel: ADMIN
-    description: Allows the user to use selectors for the command /lightning
-    permission: nucleus.lightning.selectors
--   module: geo-ip
-    defaultLevel: ADMIN
-    description: Allows the user to run the command /geoip
-    permission: nucleus.geoip.base
--   module: geo-ip
-    defaultLevel: ADMIN
-    description: Displays player country on login, if enabled in the configuration.
-    permission: nucleus.geoip.login
--   module: geo-ip
-    defaultLevel: ADMIN
-    description: Allows the user to run the command /geoip update
-    permission: nucleus.geoip.update.base
 -   module: home
     defaultLevel: USER
     description: Allows the user to run the command /home
@@ -916,7 +884,7 @@
     permission: nucleus.enderchest.exempt.warmup
 -   module: inventory
     defaultLevel: ADMIN
-    description: Allows the user to inspect other players ender chests.
+    description: Allows the user to target other players using the command "enderchest".
     permission: nucleus.enderchest.others
 -   module: inventory
     defaultLevel: ADMIN
@@ -942,10 +910,6 @@
     defaultLevel: ADMIN
     description: Allows the user to target other players using the command "clear".
     permission: nucleus.clear.others
--   module: item
-    defaultLevel: ADMIN
-    description: Allows the user to use selectors for the command /clear
-    permission: nucleus.clear.selectors
 -   module: item
     defaultLevel: ADMIN
     description: Allows the user to run the command /enchant
@@ -1036,11 +1000,11 @@
     permission: nucleus.lore.set.base
 -   module: item
     defaultLevel: ADMIN
-    description: Allows the user to run the command /lore set
+    description: Allows the user to run the command /lore add
     permission: nucleus.lore.set.base
 -   module: item
     defaultLevel: ADMIN
-    description: Allows the user to run the command /lore add
+    description: Allows the user to run the command /lore set
     permission: nucleus.lore.set.base
 -   module: item
     defaultLevel: ADMIN
@@ -1048,11 +1012,11 @@
     permission: nucleus.lore.set.exempt.cooldown
 -   module: item
     defaultLevel: ADMIN
-    description: Allows the user to bypass the cooldown for /lore set
+    description: Allows the user to bypass the cooldown for /lore add
     permission: nucleus.lore.set.exempt.cooldown
 -   module: item
     defaultLevel: ADMIN
-    description: Allows the user to bypass the cooldown for /lore add
+    description: Allows the user to bypass the cooldown for /lore set
     permission: nucleus.lore.set.exempt.cooldown
 -   module: item
     defaultLevel: ADMIN
@@ -1060,11 +1024,11 @@
     permission: nucleus.lore.set.exempt.cost
 -   module: item
     defaultLevel: ADMIN
-    description: Allows the user to bypass the cost for /lore set
+    description: Allows the user to bypass the cost for /lore add
     permission: nucleus.lore.set.exempt.cost
 -   module: item
     defaultLevel: ADMIN
-    description: Allows the user to bypass the cost for /lore add
+    description: Allows the user to bypass the cost for /lore set
     permission: nucleus.lore.set.exempt.cost
 -   module: item
     defaultLevel: ADMIN
@@ -1072,11 +1036,11 @@
     permission: nucleus.lore.set.exempt.warmup
 -   module: item
     defaultLevel: ADMIN
-    description: Allows the user to bypass the warmup for /lore set
+    description: Allows the user to bypass the warmup for /lore add
     permission: nucleus.lore.set.exempt.warmup
 -   module: item
     defaultLevel: ADMIN
-    description: Allows the user to bypass the warmup for /lore add
+    description: Allows the user to bypass the warmup for /lore set
     permission: nucleus.lore.set.exempt.warmup
 -   module: item
     defaultLevel: ADMIN
@@ -1114,10 +1078,6 @@
     defaultLevel: ADMIN
     description: Allows the user to target other players using the command "repair".
     permission: nucleus.repair.others
--   module: item
-    defaultLevel: ADMIN
-    description: Allows the user to use selectors for the command /repair
-    permission: nucleus.repair.selectors
 -   module: item
     defaultLevel: ADMIN
     description: Allows the user to run the command /skull
@@ -1166,10 +1126,6 @@
     defaultLevel: MOD
     description: Allows the user to jail offline users.
     permission: nucleus.jail.offline
--   module: jail
-    defaultLevel: MOD
-    description: Allows the user to use selectors for the command /jail
-    permission: nucleus.jail.selectors
 -   module: jail
     defaultLevel: ADMIN
     description: Allows the user to run the command /jails set
@@ -1226,10 +1182,6 @@
     defaultLevel: ADMIN
     description: Force other players to teleport to the topmost block.
     permission: nucleus.top.others
--   module: jump
-    defaultLevel: ADMIN
-    description: Allows the user to use selectors for the command /top
-    permission: nucleus.top.selectors
 -   module: kick
     defaultLevel: MOD
     description: Allows the user to run the command /kick
@@ -1443,10 +1395,6 @@
     description: Allows user to use magic characters into messages.
     permission: nucleus.message.magic
 -   module: message
-    defaultLevel: USER
-    description: Allows the user to use selectors for the command /message
-    permission: nucleus.message.selectors
--   module: message
     defaultLevel: ADMIN
     description: Allows user to use styles into messages.
     permission: nucleus.message.style
@@ -1524,10 +1472,6 @@
     permission: nucleus.feed.others
 -   module: misc
     defaultLevel: ADMIN
-    description: Allows the user to use selectors for the command /feed
-    permission: nucleus.feed.selectors
--   module: misc
-    defaultLevel: ADMIN
     description: Allows the user to run the command /god
     permission: nucleus.god.base
 -   module: misc
@@ -1554,10 +1498,6 @@
     defaultLevel: ADMIN
     description: Allows the user to target other players using the command "heal".
     permission: nucleus.heal.others
--   module: misc
-    defaultLevel: ADMIN
-    description: Allows the user to use selectors for the command /heal
-    permission: nucleus.heal.selectors
 -   module: misc
     defaultLevel: ADMIN
     description: Allows the user to run the command /iteminfo
@@ -1596,10 +1536,6 @@
     permission: nucleus.kill.exempt.warmup
 -   module: misc
     defaultLevel: ADMIN
-    description: Allows the user to use selectors for the command /kill
-    permission: nucleus.kill.selectors
--   module: misc
-    defaultLevel: ADMIN
     description: Allows the user to run the command /ping
     permission: nucleus.ping.base
 -   module: misc
@@ -1632,8 +1568,8 @@
     permission: nucleus.speed.exempt.warmup
 -   module: misc
     defaultLevel: ADMIN
-    description: Allows the user to use selectors for the command /speed
-    permission: nucleus.speed.selectors
+    description: Allows the user to target other players using the command "speed".
+    permission: nucleus.speed.others
 -   module: misc
     defaultLevel: USER
     description: Allows the user to run the command /suicide
@@ -1677,12 +1613,8 @@
     permission: nucleus.spawnmob.mob
 -   module: mob
     defaultLevel: ADMIN
-    description: Allows the user to spawn a mob on another player.
+    description: Allows the user to target other players using the command "spawnmob".
     permission: nucleus.spawnmob.others
--   module: mob
-    defaultLevel: ADMIN
-    description: Allows the user to use selectors for the command /spawnmob
-    permission: nucleus.spawnmob.selectors
 -   module: mute
     defaultLevel: MOD
     description: Allows the user to run the command /checkmute
@@ -1990,7 +1922,7 @@
 -   module: playerinfo
     defaultLevel: MOD
     description: Allows the user to view the position of other players.
-    permission: nucleus.getpos.other
+    permission: nucleus.getpos.others
 -   module: playerinfo
     defaultLevel: USER
     description: Allows the user to run the command /list
@@ -2033,15 +1965,15 @@
     permission: nucleus.seen.extended
 -   module: powertool
     defaultLevel: ADMIN
-    description: Allows the user to run the command /powertool list
-    permission: nucleus.powertool.base
--   module: powertool
-    defaultLevel: ADMIN
     description: Allows the user to run the command /powertool toggle
     permission: nucleus.powertool.base
 -   module: powertool
     defaultLevel: ADMIN
     description: Allows the user to run the command /powertool delete
+    permission: nucleus.powertool.base
+-   module: powertool
+    defaultLevel: ADMIN
+    description: Allows the user to run the command /powertool list
     permission: nucleus.powertool.base
 -   module: powertool
     defaultLevel: ADMIN
@@ -2208,10 +2140,6 @@
     description: Allows the user to use the "-q" flag to override whether to tell the target player if a teleport is being performed.
     permission: nucleus.teleport.teleport.quiet
 -   module: teleport
-    defaultLevel: MOD
-    description: Allows the user to use selectors for the command /teleport
-    permission: nucleus.teleport.teleport.selectors
--   module: teleport
     defaultLevel: USER
     description: Allows the user to run the command /tpa
     permission: nucleus.teleport.tpa.base
@@ -2231,10 +2159,6 @@
     defaultLevel: ADMIN
     description: Allows the user to "force" teleport to a point, regardless of whether it is safe to do so.
     permission: nucleus.teleport.tpa.force
--   module: teleport
-    defaultLevel: USER
-    description: Allows the user to use selectors for the command /tpa
-    permission: nucleus.teleport.tpa.selectors
 -   module: teleport
     defaultLevel: ADMIN
     description: Allows the user to run the command /tpaall
@@ -2264,10 +2188,6 @@
     description: Allows the user to "force" teleport to a point, regardless of whether it is safe to do so.
     permission: nucleus.teleport.tpahere.force
 -   module: teleport
-    defaultLevel: MOD
-    description: Allows the user to use selectors for the command /tpahere
-    permission: nucleus.teleport.tpahere.selectors
--   module: teleport
     defaultLevel: ADMIN
     description: Allows the user to run the command /tpall
     permission: nucleus.teleport.tpall.base
@@ -2281,16 +2201,12 @@
     permission: nucleus.teleport.tphere.base
 -   module: teleport
     defaultLevel: ADMIN
-    description: Allows the user to use selectors for the command /tphere
-    permission: nucleus.teleport.tphere.selectors
--   module: teleport
-    defaultLevel: ADMIN
     description: Allows the user to run the command /tppos
     permission: nucleus.teleport.tppos.base
 -   module: teleport
     defaultLevel: ADMIN
-    description: Allows the user to use selectors for the command /tppos
-    permission: nucleus.teleport.tppos.selectors
+    description: Allows the user to target other players using the command "tppos".
+    permission: nucleus.teleport.tppos.others
 -   module: teleport
     defaultLevel: USER
     description: Allows the user to run the command /tptoggle
@@ -2305,8 +2221,8 @@
     permission: nucleus.vanish.base
 -   module: vanish
     defaultLevel: ADMIN
-    description: If granted, grants ability to vanish other players.
-    permission: nucleus.vanish.other
+    description: Allows the user to target other players using the command "vanish".
+    permission: nucleus.vanish.others
 -   module: vanish
     defaultLevel: ADMIN
     description: If granted, the player is able to retain their vanish status upon logout and login.
@@ -2353,6 +2269,42 @@
     permission: nucleus.warp.base
 -   module: warp
     defaultLevel: ADMIN
+    description: Allows the user to run the command /warp category
+    permission: nucleus.warp.category.base
+-   module: warp
+    defaultLevel: ADMIN
+    description: Allows the user to run the command /category removedescription
+    permission: nucleus.warp.category.description.base
+-   module: warp
+    defaultLevel: ADMIN
+    description: Allows the user to run the command /category setdescription
+    permission: nucleus.warp.category.description.base
+-   module: warp
+    defaultLevel: ADMIN
+    description: Allows the user to run the command /category removedisplayname
+    permission: nucleus.warp.category.displayname.base
+-   module: warp
+    defaultLevel: ADMIN
+    description: Allows the user to run the command /category setdisplayname
+    permission: nucleus.warp.category.displayname.base
+-   module: warp
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the cooldown for /warp category
+    permission: nucleus.warp.category.exempt.cooldown
+-   module: warp
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the cost for /warp category
+    permission: nucleus.warp.category.exempt.cost
+-   module: warp
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the warmup for /warp category
+    permission: nucleus.warp.category.exempt.warmup
+-   module: warp
+    defaultLevel: ADMIN
+    description: Allows the user to run the command /category list
+    permission: nucleus.warp.category.list.base
+-   module: warp
+    defaultLevel: ADMIN
     description: Allows the user to run the command /warp cost
     permission: nucleus.warp.cost.base
 -   module: warp
@@ -2397,12 +2349,8 @@
     permission: nucleus.warp.list.exempt.warmup
 -   module: warp
     defaultLevel: ADMIN
-    description: Allows the user to send other players to warps they have access to.
+    description: Allows the user to target other players using the command "warp".
     permission: nucleus.warp.others
--   module: warp
-    defaultLevel: USER
-    description: Allows the user to use selectors for the command /warp
-    permission: nucleus.warp.selectors
 -   module: warp
     defaultLevel: ADMIN
     description: Allows the user to run the command /warp set
@@ -2423,6 +2371,10 @@
     defaultLevel: ADMIN
     description: Allows the user to run the command /warp setcategory
     permission: nucleus.warp.setcategory.base
+-   module: warp
+    defaultLevel: ADMIN
+    description: Allows the user to run the command /warp setdescription
+    permission: nucleus.warp.setdescription.base
 -   module: warp
     defaultLevel: ADMIN
     description: Allows the user to access all warps if per-warp permissions is turned on.
@@ -2449,11 +2401,11 @@
     permission: nucleus.world.border.exempt.warmup
 -   module: world
     defaultLevel: ADMIN
-    description: Allows the user to run the command /border cancelgen
+    description: Allows the user to run the command /border gen
     permission: nucleus.world.border.gen.base
 -   module: world
     defaultLevel: ADMIN
-    description: Allows the user to run the command /border gen
+    description: Allows the user to run the command /border cancelgen
     permission: nucleus.world.border.gen.base
 -   module: world
     defaultLevel: ADMIN

@@ -5,6 +5,7 @@
     usageString: /blockzap <location>
     oneLineDescription: Sets the target block to air.
     permissionbase: nucleus.blockzap
+    simpleUsage: /blockzap <location>
     commandName: blockzap
     permissions:
     -   module: admin
@@ -27,13 +28,15 @@
     requiresMixin: false
     extendedDescription: Intended as an admin command to turn a problematic block to air.
     warmup: true
+    subcommands: ''
 -   aliases: broadcast, bcast, bc
     cost: false
     module: admin
     defaultLevel: ADMIN
-    usageString: /broadcast <message…>
+    usageString: /broadcast <message>
     oneLineDescription: Broadcasts a message to the entire server.
     permissionbase: nucleus.broadcast
+    simpleUsage: /broadcast <message>
     commandName: broadcast
     permissions:
     -   module: admin
@@ -43,13 +46,15 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: exp, experience, xp
     cost: false
     module: admin
     defaultLevel: ADMIN
-    usageString: /exp give|take|set|<subject>
+    usageString: /exp take|give|set|<subject>
     oneLineDescription: Displays the specified player's current experience.
     permissionbase: nucleus.exp
+    simpleUsage: /exp <subject>
     commandName: exp
     permissions:
     -   module: admin
@@ -59,13 +64,15 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: take, set, give
 -   aliases: give
     cost: false
     module: admin
     defaultLevel: ADMIN
-    usageString: /exp give [<subject>] <experience>
+    usageString: /exp give [<subject>] <level>|<experience>
     oneLineDescription: Gives experience to the specified player.
     permissionbase: nucleus.exp.give
+    simpleUsage: /exp give [<subject>] <level>|<experience>
     commandName: exp give
     permissions:
     -   module: admin
@@ -74,7 +81,9 @@
         permission: nucleus.exp.give.base
     cooldown: false
     requiresMixin: false
+    extendedDescription: If you want to add raw experience, just add the number as an argument. If you want to add a specific number of levels, the argument can be of the form "L30" or "30L" (assuming you want to give 30 levels).
     warmup: false
+    subcommands: ''
 -   aliases: set
     cost: false
     module: admin
@@ -82,6 +91,7 @@
     usageString: /exp set [<subject>] <level>|<experience>
     oneLineDescription: Sets the specified player's experience.
     permissionbase: nucleus.exp.set
+    simpleUsage: /exp set [<subject>] <level>|<experience>
     commandName: exp set
     permissions:
     -   module: admin
@@ -90,14 +100,17 @@
         permission: nucleus.exp.set.base
     cooldown: false
     requiresMixin: false
+    extendedDescription: If you want to set experience points, just add the number as an argument. If you want to set a specific number of levels, the argument can be of the form "L30" or "30L" (assuming you want to set at 30 levels).
     warmup: false
+    subcommands: ''
 -   aliases: take
     cost: false
     module: admin
     defaultLevel: ADMIN
-    usageString: /exp take [<subject>] <experience>
+    usageString: /exp take [<subject>] <level>|<experience>
     oneLineDescription: Removes experience from the specified player.
     permissionbase: nucleus.exp.take
+    simpleUsage: /exp take [<subject>] <level>|<experience>
     commandName: exp take
     permissions:
     -   module: admin
@@ -106,7 +119,9 @@
         permission: nucleus.exp.take.base
     cooldown: false
     requiresMixin: false
+    extendedDescription: If you want to remove raw experience, just add the number as an argument. If you want to add a specific number of levels, the argument can be of the form "L30" or "30L" (assuming you want to take 30 levels).|br||br|Trying to take more experience than the player has will just zero their experience.
     warmup: false
+    subcommands: ''
 -   aliases: gamemode, gm
     cost: true
     module: admin
@@ -114,6 +129,7 @@
     usageString: /gamemode <gamemode>|<user> <gamemode>
     oneLineDescription: Sets a player's game mode.
     permissionbase: nucleus.gamemode
+    simpleUsage: /gamemode <gamemode>|<user> <gamemode>
     commandName: gamemode
     permissions:
     -   module: admin
@@ -155,6 +171,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: plainbroadcast, pbcast, pbc
     cost: false
     module: admin
@@ -162,6 +179,7 @@
     usageString: /plainbroadcast <message…>
     oneLineDescription: Allows the user to send a broadcast without prefixes or suffixes.
     permissionbase: nucleus.plainbroadcast
+    simpleUsage: /plainbroadcast <message…>
     commandName: plainbroadcast
     permissions:
     -   module: admin
@@ -171,6 +189,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: stop
     cost: false
     module: admin
@@ -178,6 +197,7 @@
     usageString: /stop [<message…>]
     oneLineDescription: Stops the server.
     permissionbase: nucleus.stop
+    simpleUsage: /stop [<message…>]
     commandName: stop
     permissions:
     -   module: admin
@@ -187,6 +207,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: sudo
     cost: true
     module: admin
@@ -194,6 +215,7 @@
     usageString: /sudo <subject> <command…>
     oneLineDescription: Forces a player to run a command.
     permissionbase: nucleus.sudo
+    simpleUsage: /sudo <subject> <command…>
     commandName: sudo
     permissions:
     -   module: admin
@@ -219,6 +241,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: afk
     cost: false
     module: afk
@@ -226,6 +249,7 @@
     usageString: '/afk '
     oneLineDescription: Toggles the player's AFK state.
     permissionbase: nucleus.afk
+    simpleUsage: '/afk '
     commandName: afk
     permissions:
     -   module: afk
@@ -247,6 +271,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: afkrefresh
     cost: true
     module: afk
@@ -254,6 +279,7 @@
     usageString: '/afkrefresh '
     oneLineDescription: Invalidates the AFK permission cache.
     permissionbase: nucleus.afkrefresh
+    simpleUsage: '/afkrefresh '
     commandName: afkrefresh
     permissions:
     -   module: afk
@@ -276,6 +302,7 @@
     requiresMixin: false
     extendedDescription: This asks Nucleus to invalidate the AFK permission cache, use this if you alter an online player's permissions.
     warmup: true
+    subcommands: ''
 -   aliases: back, return
     cost: true
     module: back
@@ -283,6 +310,7 @@
     usageString: '/back '
     oneLineDescription: Allows a user to return to their last place before death or warp.
     permissionbase: nucleus.back
+    simpleUsage: '/back '
     commandName: back
     permissions:
     -   module: back
@@ -316,13 +344,15 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: ban
     cost: false
     module: ban
     defaultLevel: MOD
-    usageString: /ban <user>|<name> [<reason…>]
+    usageString: /ban <uuid>|<user>|<name> [<reason…>]
     oneLineDescription: Bans a player.
     permissionbase: nucleus.ban
+    simpleUsage: /ban <uuid>|<user>|<name> [<reason…>]
     commandName: ban
     permissions:
     -   module: ban
@@ -344,13 +374,15 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: checkban
     cost: false
     module: ban
     defaultLevel: MOD
-    usageString: /checkban <user>
+    usageString: /checkban <uuid>|<user>
     oneLineDescription: Checks the ban status for a player.
     permissionbase: nucleus.checkban
+    simpleUsage: /checkban <uuid>|<user>
     commandName: checkban
     permissions:
     -   module: ban
@@ -360,6 +392,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: tempban
     cost: false
     module: ban
@@ -367,6 +400,7 @@
     usageString: /tempban <user> <duration> [<reasonKey…>]
     oneLineDescription: Temporarily bans a player.
     permissionbase: nucleus.tempban
+    simpleUsage: /tempban <user> <duration> [<reasonKey…>]
     commandName: tempban
     permissions:
     -   module: ban
@@ -388,13 +422,15 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: unban, pardon
     cost: false
     module: ban
     defaultLevel: MOD
-    usageString: /unban <user>
+    usageString: /unban <uuid>|<user>
     oneLineDescription: Unbans a player.
     permissionbase: nucleus.unban
+    simpleUsage: /unban <uuid>|<user>
     commandName: unban
     permissions:
     -   module: ban
@@ -404,13 +440,15 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: blacklist
     cost: true
     module: blacklist
     defaultLevel: ADMIN
-    usageString: /blacklist set|list|?
+    usageString: /blacklist [set|list|?]
     oneLineDescription: Parent command for all other blacklist commands.
     permissionbase: nucleus.blacklist
+    simpleUsage: '/blacklist '
     commandName: blacklist
     permissions:
     -   module: blacklist
@@ -432,6 +470,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: set, list
 -   aliases: list, ls
     cost: true
     module: blacklist
@@ -439,6 +478,7 @@
     usageString: '/blacklist list '
     oneLineDescription: Lists all blacklisted items.
     permissionbase: nucleus.blacklist.list
+    simpleUsage: '/blacklist list '
     commandName: blacklist list
     permissions:
     -   module: blacklist
@@ -460,6 +500,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: set
     cost: true
     module: blacklist
@@ -467,6 +508,7 @@
     usageString: /blacklist set [-t|-type <action to block>] [<item>] <blacklist>
     oneLineDescription: Sets an item's blacklist status.
     permissionbase: nucleus.blacklist.set
+    simpleUsage: /blacklist set [-t|-type <action to block>] [<item>] <blacklist>
     commandName: blacklist set
     permissions:
     -   module: blacklist
@@ -497,13 +539,15 @@
         by a player.|br||br|This command replaces /blacklist add and /blacklist remove
         from previous releases.'
     warmup: true
+    subcommands: ''
 -   aliases: me, action
     cost: true
     module: chat
     defaultLevel: USER
-    usageString: /me <message…>
+    usageString: /me <message>
     oneLineDescription: Formats the next chat message as an action, using the format set by the server.
     permissionbase: nucleus.me
+    simpleUsage: /me <message>
     commandName: me
     permissions:
     -   module: chat
@@ -525,6 +569,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: commandspy
     cost: true
     module: command-spy
@@ -532,6 +577,7 @@
     usageString: /commandspy [<true/false>]
     oneLineDescription: Enables or disables seeing commands that others have run.
     permissionbase: nucleus.commandspy
+    simpleUsage: /commandspy [<true/false>]
     commandName: commandspy
     permissions:
     -   module: command-spy
@@ -557,6 +603,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: nucleus
     cost: false
     module: core
@@ -564,6 +611,7 @@
     usageString: /nucleus debug|itemalias|save|setupperms|reload|clearcache|update-messages|resetuser|docgen|printperms|info|migrate|
     oneLineDescription: Displays Nucleus version and module information.
     permissionbase: nucleus.nucleus
+    simpleUsage: '/nucleus '
     commandName: nucleus
     permissions:
     -   module: core
@@ -574,13 +622,15 @@
     requiresMixin: false
     extendedDescription: The Nucleus command allows access to sub commands that administer the entire plugin.
     warmup: false
+    subcommands: docgen, debug, save, update-messages, itemalias, reload, clearcache, resetuser, printperms, setupperms, info, migrate
 -   aliases: clearcache
     cost: false
     module: core
     defaultLevel: ADMIN
-    usageString: '/nucleus clearcache '
+    usageString: '/nucleus clearcache [-f <f>] '
     oneLineDescription: Clears the in-memory cache of users who have logged on in the past session, forcing Nucleus to read the data files on their next login.
     permissionbase: nucleus.nucleus.clearcache
+    simpleUsage: '/nucleus clearcache [-f <f>] '
     commandName: nucleus clearcache
     permissions:
     -   module: core
@@ -590,13 +640,15 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: debug
     cost: true
     module: core
     defaultLevel: ADMIN
-    usageString: /nucleus debug getuuids|refreshuniquevisitors|?
+    usageString: /nucleus debug [getuuids|refreshuniquevisitors|?]
     oneLineDescription: Utilities to support debugging server issues.
     permissionbase: nucleus.nucleus.debug
+    simpleUsage: '/nucleus debug '
     commandName: nucleus debug
     permissions:
     -   module: core
@@ -618,6 +670,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: getuuids, refreshuniquevisitors
 -   aliases: getuuids
     cost: true
     module: core
@@ -625,6 +678,7 @@
     usageString: /nucleus debug getuuids <user>
     oneLineDescription: Gets all UUIDs that appear to be registered to a username.
     permissionbase: nucleus.nucleus.debug.getuuids
+    simpleUsage: /nucleus debug getuuids <user>
     commandName: nucleus debug getuuids
     permissions:
     -   module: core
@@ -646,6 +700,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: refreshuniquevisitors
     cost: false
     module: core
@@ -653,6 +708,7 @@
     usageString: '/nucleus debug refreshuniquevisitors '
     oneLineDescription: Refreshes the {{uniquecount}} token, in case it's out of sync.
     permissionbase: nucleus.nucleus.debug.refreshuniquevisitors
+    simpleUsage: '/nucleus debug refreshuniquevisitors '
     commandName: nucleus debug refreshuniquevisitors
     permissions:
     -   module: core
@@ -662,6 +718,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: info
     cost: false
     module: core
@@ -669,6 +726,7 @@
     usageString: '/nucleus info '
     oneLineDescription: Creates a file in the server root directory containing information about the server and Nucleus environment.
     permissionbase: nucleus.nucleus.info
+    simpleUsage: '/nucleus info '
     commandName: nucleus info
     permissions:
     -   module: core
@@ -678,13 +736,15 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: itemalias, item
     cost: true
     module: core
     defaultLevel: ADMIN
-    usageString: /nucleus itemalias set|clear|remove|?
+    usageString: /nucleus itemalias [set|clear|remove|?]
     oneLineDescription: Manages item aliases.
     permissionbase: nucleus.nucleus.itemalias
+    simpleUsage: '/nucleus itemalias '
     commandName: nucleus itemalias
     permissions:
     -   module: core
@@ -706,6 +766,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: set, clear, remove
 -   aliases: clear
     cost: false
     module: core
@@ -713,6 +774,7 @@
     usageString: /nucleus itemalias clear <item>
     oneLineDescription: Removes all aliases from an item.
     permissionbase: nucleus.nucleus.itemalias.clear
+    simpleUsage: /nucleus itemalias clear <item>
     commandName: nucleus itemalias clear
     permissions:
     -   module: core
@@ -722,6 +784,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: remove, del
     cost: false
     module: core
@@ -729,6 +792,7 @@
     usageString: /nucleus itemalias remove <alias>
     oneLineDescription: Removes an alias from an item.
     permissionbase: nucleus.nucleus.itemalias.remove
+    simpleUsage: /nucleus itemalias remove <alias>
     commandName: nucleus itemalias remove
     permissions:
     -   module: core
@@ -738,6 +802,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: set
     cost: false
     module: core
@@ -745,6 +810,7 @@
     usageString: /nucleus itemalias set [<item>] <alias>
     oneLineDescription: Sets an alias to an item.
     permissionbase: nucleus.nucleus.itemalias.set
+    simpleUsage: /nucleus itemalias set [<item>] <alias>
     commandName: nucleus itemalias set
     permissions:
     -   module: core
@@ -754,13 +820,15 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: migrate
     cost: false
     module: core
     defaultLevel: ADMIN
-    usageString: /nucleus migrate esscmds|?
+    usageString: /nucleus migrate [esscmds|?]
     oneLineDescription: Migrates data from other plugins.
     permissionbase: nucleus.nucleus.migrate
+    simpleUsage: '/nucleus migrate '
     commandName: nucleus migrate
     permissions:
     -   module: core
@@ -770,6 +838,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: esscmds
 -   aliases: esscmds
     cost: false
     module: core
@@ -777,6 +846,7 @@
     usageString: '/nucleus migrate esscmds '
     oneLineDescription: Migrates data from EssentialCmds.
     permissionbase: nucleus.nucleus.migrate.esscmds
+    simpleUsage: '/nucleus migrate esscmds '
     commandName: nucleus migrate esscmds
     permissions:
     -   module: core
@@ -786,6 +856,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: printperms
     cost: true
     module: core
@@ -793,6 +864,7 @@
     usageString: '/nucleus printperms '
     oneLineDescription: Prints all permissions registered in Nucleus.
     permissionbase: nucleus.nucleus.printperms
+    simpleUsage: '/nucleus printperms '
     commandName: nucleus printperms
     permissions:
     -   module: core
@@ -814,6 +886,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: reload
     cost: false
     module: core
@@ -821,6 +894,7 @@
     usageString: '/nucleus reload '
     oneLineDescription: Reloads Nucleus' configuration files.
     permissionbase: nucleus.nucleus.reload
+    simpleUsage: '/nucleus reload '
     commandName: nucleus reload
     permissions:
     -   module: core
@@ -831,6 +905,7 @@
     requiresMixin: false
     extendedDescription: This command will reload everything EXCEPT whether modules and/or commands are enabled.|br|A restart of the entire server is required for these two actions to take effect.
     warmup: false
+    subcommands: ''
 -   aliases: resetuser
     cost: false
     module: core
@@ -838,6 +913,7 @@
     usageString: /nucleus resetuser [-a|-all <a>] <user>|<UUID>
     oneLineDescription: Deletes all data in Nucleus, and optionally, Minecraft, for a player.
     permissionbase: nucleus.nucleus.resetuser
+    simpleUsage: /nucleus resetuser [-a|-all <a>] <user>|<UUID>
     commandName: nucleus resetuser
     permissions:
     -   module: core
@@ -848,6 +924,7 @@
     requiresMixin: false
     extendedDescription: This can be useful to clear out everything Nucleus knows about a player. However, if you want to delete Minecraft data, pass the "-a" flag. |br||br|This will not delete data stored by other plugins about this player.
     warmup: false
+    subcommands: ''
 -   aliases: save
     cost: false
     module: core
@@ -855,6 +932,7 @@
     usageString: '/nucleus save '
     oneLineDescription: Saves all files.
     permissionbase: nucleus.nucleus.save
+    simpleUsage: '/nucleus save '
     commandName: nucleus save
     permissions:
     -   module: core
@@ -864,6 +942,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: setupperms, setperms
     cost: false
     module: core
@@ -871,6 +950,7 @@
     usageString: /nucleus setupperms <Nucleus Role> <Permission Group>
     oneLineDescription: Allows the user to add the recommended permissions for either USER, MOD or ADMIN roles to a specified group.
     permissionbase: nucleus.nucleus.setupperms
+    simpleUsage: /nucleus setupperms <Nucleus Role> <Permission Group>
     commandName: nucleus setupperms
     permissions:
     -   module: core
@@ -880,6 +960,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: update-messages
     cost: false
     module: core
@@ -887,6 +968,7 @@
     usageString: '/nucleus update-messages [-y <y>] '
     oneLineDescription: Scans the messages file for keys that might not include all the required tokens and replaces them with the standard translation.
     permissionbase: nucleus.nucleus.update-messages
+    simpleUsage: '/nucleus update-messages [-y <y>] '
     commandName: nucleus update-messages
     permissions:
     -   module: core
@@ -896,6 +978,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: lockweather, killweather
     cost: false
     module: environment
@@ -903,6 +986,7 @@
     usageString: /lockweather [<world>] [<toggle>]
     oneLineDescription: Locks the weather on the specified world.
     permissionbase: nucleus.lockweather
+    simpleUsage: /lockweather [<world>] [<toggle>]
     commandName: lockweather
     permissions:
     -   module: environment
@@ -912,6 +996,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: time
     cost: true
     module: environment
@@ -919,6 +1004,7 @@
     usageString: /time set|[<world>]
     oneLineDescription: Gets the time for the specified world.
     permissionbase: nucleus.time
+    simpleUsage: /time [<world>]
     commandName: time
     permissions:
     -   module: environment
@@ -940,6 +1026,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: set
 -   aliases: set
     cost: true
     module: environment
@@ -947,6 +1034,7 @@
     usageString: /time set [<world>] <time>
     oneLineDescription: Sets the time for the specified world.
     permissionbase: nucleus.time.set
+    simpleUsage: /time set [<world>] <time>
     commandName: time set
     permissions:
     -   module: environment
@@ -968,6 +1056,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: weather
     cost: true
     module: environment
@@ -975,6 +1064,7 @@
     usageString: /weather [<world>] <weather> [<duration>]|[<timespan>]
     oneLineDescription: Sets the weather on the specified world.
     permissionbase: nucleus.weather
+    simpleUsage: /weather [<world>] <weather> [<duration>]|[<timespan>]
     commandName: weather
     permissions:
     -   module: environment
@@ -996,13 +1086,15 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: fly
     cost: true
     module: fly
     defaultLevel: ADMIN
-    usageString: /fly [<subject>] [<toggle>]
+    usageString: /fly [<player>] [<toggle>]
     oneLineDescription: Set specified player's fly mode.
     permissionbase: nucleus.fly
+    simpleUsage: /fly [<player>] [<toggle>]
     commandName: fly
     permissions:
     -   module: fly
@@ -1025,13 +1117,10 @@
         defaultLevel: ADMIN
         description: Allows the user to bypass the warmup for /fly
         permission: nucleus.fly.exempt.warmup
-    -   module: fly
-        defaultLevel: ADMIN
-        description: Allows the user to use selectors for the command /fly
-        permission: nucleus.fly.selectors
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: freezeplayer, freeze
     cost: true
     module: freeze-subject
@@ -1039,6 +1128,7 @@
     usageString: /freezeplayer [<subject>]
     oneLineDescription: Freezes a player in place.
     permissionbase: nucleus.freezeplayer
+    simpleUsage: /freezeplayer [<subject>]
     commandName: freezeplayer
     permissions:
     -   module: freeze-subject
@@ -1064,19 +1154,17 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: hat
     cost: false
     module: fun
     defaultLevel: ADMIN
-    usageString: /hat [<subject>]
+    usageString: /hat [<player>]
     oneLineDescription: Puts the item in the player's hand on their head as a helmet.
     permissionbase: nucleus.hat
+    simpleUsage: /hat [<player>]
     commandName: hat
     permissions:
-    -   module: fun
-        defaultLevel: ADMIN
-        description: Allows the user to use selectors for the command /hat
-        permission: nucleus.hat.selectors
     -   module: fun
         defaultLevel: ADMIN
         description: Allows the user to run the command /hat
@@ -1088,13 +1176,15 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: ignite, burn
     cost: true
     module: fun
     defaultLevel: ADMIN
-    usageString: /ignite [<subject>] <ticks>
+    usageString: /ignite [<player>] <ticks>
     oneLineDescription: Sets the specified player on fire.
     permissionbase: nucleus.ignite
+    simpleUsage: /ignite [<player>] <ticks>
     commandName: ignite
     permissions:
     -   module: fun
@@ -1115,15 +1205,12 @@
         permission: nucleus.ignite.exempt.cost
     -   module: fun
         defaultLevel: ADMIN
-        description: Allows the user to use selectors for the command /ignite
-        permission: nucleus.ignite.selectors
-    -   module: fun
-        defaultLevel: ADMIN
         description: Allows the user to bypass the warmup for /ignite
         permission: nucleus.ignite.exempt.warmup
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: kittycannon, kc
     cost: true
     module: fun
@@ -1131,6 +1218,7 @@
     usageString: /kittycannon [-f|-fire <f>] [-d|-damageentities <d>] [-b|-breakblocks <b>] [<subject>]
     oneLineDescription: Fire exploding cats from your person.
     permissionbase: nucleus.kittycannon
+    simpleUsage: /kittycannon [-f|-fire <f>] [-d|-damageentities <d>] [-b|-breakblocks <b>] [<subject>]
     commandName: kittycannon
     permissions:
     -   module: fun
@@ -1163,16 +1251,13 @@
         permission: nucleus.kittycannon.exempt.warmup
     -   module: fun
         defaultLevel: ADMIN
-        description: Allows the user to use selectors for the command /kittycannon
-        permission: nucleus.kittycannon.selectors
-    -   module: fun
-        defaultLevel: ADMIN
         description: If granted, the user can use the -d flag to damage entities with exploding ocelots.
         permission: nucleus.kittycannon.damage
     cooldown: true
     requiresMixin: false
     extendedDescription: Ocelots will be fired from the target person, which explode within a short amount of time. The following flags are available (subject to permission):|br||br|* -d, --damage - damage entities that get caught in the explosion.|br|* -f, --fire - potentially set fire to blocks in the area of the explosion.|br|* -b, --break - break blocks in the vicinity of the explosion.|br||br|Any break or fire that might occur due to the exploding cat will be tracked as by being caused by the calling player by protection plugins.
     warmup: true
+    subcommands: ''
 -   aliases: lightning, smite, thor
     cost: true
     module: fun
@@ -1180,24 +1265,21 @@
     usageString: /lightning [<subject>]
     oneLineDescription: Strikes a position or player with a lightning bolt.
     permissionbase: nucleus.lightning
+    simpleUsage: /lightning [<subject>]
     commandName: lightning
     permissions:
-    -   module: fun
-        defaultLevel: ADMIN
-        description: Allows the user to use selectors for the command /lightning
-        permission: nucleus.lightning.selectors
     -   module: fun
         defaultLevel: ADMIN
         description: Allows the user to bypass the cooldown for /lightning
         permission: nucleus.lightning.exempt.cooldown
     -   module: fun
         defaultLevel: ADMIN
-        description: Allows the user to bypass the warmup for /lightning
-        permission: nucleus.lightning.exempt.warmup
-    -   module: fun
-        defaultLevel: ADMIN
         description: Allows the user to target other players using the command "lightning".
         permission: nucleus.lightning.others
+    -   module: fun
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the warmup for /lightning
+        permission: nucleus.lightning.exempt.warmup
     -   module: fun
         defaultLevel: ADMIN
         description: Allows the user to run the command /lightning
@@ -1209,42 +1291,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
--   aliases: geoip
-    cost: false
-    module: geo-ip
-    defaultLevel: ADMIN
-    usageString: /geoip update|<subject>
-    oneLineDescription: Get the country a player has connected via.
-    permissionbase: nucleus.geoip
-    commandName: geoip
-    permissions:
-    -   module: geo-ip
-        defaultLevel: ADMIN
-        description: Allows the user to run the command /geoip
-        permission: nucleus.geoip.base
-    -   module: geo-ip
-        defaultLevel: ADMIN
-        description: Displays player country on login, if enabled in the configuration.
-        permission: nucleus.geoip.login
-    cooldown: false
-    requiresMixin: false
-    warmup: false
--   aliases: update
-    cost: false
-    module: geo-ip
-    defaultLevel: ADMIN
-    usageString: '/geoip update '
-    oneLineDescription: Update the GeoIP database. It is recommended that you do this no more than once a month.
-    permissionbase: nucleus.geoip.update
-    commandName: geoip update
-    permissions:
-    -   module: geo-ip
-        defaultLevel: ADMIN
-        description: Allows the user to run the command /geoip update
-        permission: nucleus.geoip.update.base
-    cooldown: false
-    requiresMixin: false
-    warmup: false
+    subcommands: ''
 -   aliases: deletehome, delhome
     cost: false
     module: home
@@ -1252,6 +1299,7 @@
     usageString: /deletehome <home>
     oneLineDescription: Deletes a home.
     permissionbase: nucleus.home
+    simpleUsage: /deletehome <home>
     commandName: deletehome
     permissions:
     -   module: home
@@ -1262,6 +1310,7 @@
     requiresMixin: false
     extendedDescription: Removes a personal warp. The home must be specified.
     warmup: false
+    subcommands: ''
 -   aliases: deletehomeother, delhomeother
     cost: false
     module: home
@@ -1269,6 +1318,7 @@
     usageString: /deletehomeother <user> <home>
     oneLineDescription: Deletes another player's home.
     permissionbase: nucleus.home.deleteother
+    simpleUsage: /deletehomeother <user> <home>
     commandName: deletehomeother
     permissions:
     -   module: home
@@ -1278,6 +1328,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: home
     cost: true
     module: home
@@ -1285,6 +1336,7 @@
     usageString: /home [<home>]
     oneLineDescription: Teleports to home.
     permissionbase: nucleus.home
+    simpleUsage: /home [<home>]
     commandName: home
     permissions:
     -   module: home
@@ -1307,6 +1359,7 @@
     requiresMixin: false
     extendedDescription: A home is a personal warp. They can be set using the /homeset command. If no home name is specified, the default of "home" is used.
     warmup: true
+    subcommands: ''
 -   aliases: homeother
     cost: true
     module: home
@@ -1314,6 +1367,7 @@
     usageString: /homeother <user> <home>
     oneLineDescription: Teleports to another player's home.
     permissionbase: nucleus.home.other
+    simpleUsage: /homeother <user> <home>
     commandName: homeother
     permissions:
     -   module: home
@@ -1339,6 +1393,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: homeset, sethome
     cost: true
     module: home
@@ -1346,6 +1401,7 @@
     usageString: /homeset [-o|-overwrite <o>] [<home>]
     oneLineDescription: Sets a home with the specified name.
     permissionbase: nucleus.home.set
+    simpleUsage: /homeset [-o|-overwrite <o>] [<home>]
     commandName: homeset
     permissions:
     -   module: home
@@ -1372,6 +1428,7 @@
     requiresMixin: false
     extendedDescription: This command allows players to specify a "personal warp", which is termed a "home". By default, all players get one home, which can be controlled by assigning a number to the permission option "home-count", of being giving the permission "nucleus.home.set.unlimited" for unlimited homes.|br||br|If no home name is specified, the default of "home" is used. If you try to set a home with a name that is already in use, the command will fail, unless the "-o" flag is specified.
     warmup: true
+    subcommands: ''
 -   aliases: listhomes, homes
     cost: false
     module: home
@@ -1379,6 +1436,7 @@
     usageString: /listhomes [<subject>]
     oneLineDescription: Lists homes.
     permissionbase: nucleus.home.list
+    simpleUsage: /listhomes [<subject>]
     commandName: listhomes
     permissions:
     -   module: home
@@ -1393,6 +1451,7 @@
     requiresMixin: false
     extendedDescription: Lists all the homes that you currently have.
     warmup: false
+    subcommands: ''
 -   aliases: ignore
     cost: false
     module: ignore
@@ -1400,6 +1459,7 @@
     usageString: /ignore <user> [<toggle>]
     oneLineDescription: Toggles ignoring of all chat messages.
     permissionbase: nucleus.ignore
+    simpleUsage: /ignore <user> [<toggle>]
     commandName: ignore
     permissions:
     -   module: ignore
@@ -1413,6 +1473,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: info, einfo
     cost: false
     module: info
@@ -1420,6 +1481,7 @@
     usageString: /info [-l|-list <l>] [<section>]
     oneLineDescription: Get server information.
     permissionbase: nucleus.info
+    simpleUsage: /info [-l|-list <l>] [<section>]
     commandName: info
     permissions:
     -   module: info
@@ -1433,6 +1495,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: motd
     cost: false
     module: info
@@ -1440,6 +1503,7 @@
     usageString: '/motd '
     oneLineDescription: Allows the user to view the server MOTD, as defined in the "motd.txt" file.
     permissionbase: nucleus.motd
+    simpleUsage: '/motd '
     commandName: motd
     permissions:
     -   module: info
@@ -1449,6 +1513,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: enderchest, ec, echest
     cost: true
     module: inventory
@@ -1457,6 +1522,7 @@
     usageString: /enderchest [<subject>]
     oneLineDescription: Allows the user to inspect their (or another player's) ender chest.
     permissionbase: nucleus.enderchest
+    simpleUsage: /enderchest [<subject>]
     commandName: enderchest
     permissions:
     -   module: inventory
@@ -1469,7 +1535,7 @@
         permission: nucleus.enderchest.exempt.target
     -   module: inventory
         defaultLevel: ADMIN
-        description: Allows the user to inspect other players ender chests.
+        description: Allows the user to target other players using the command "enderchest".
         permission: nucleus.enderchest.others
     -   module: inventory
         defaultLevel: ADMIN
@@ -1489,6 +1555,7 @@
     minecraftVersion: 1.10.2
     extendedDescription: Opens an Inventory GUI with the target player's ender chest displayed. Players wishing to inspect a different player's ender chest must have the "nucleus.enderchest.others" permission, and they must not have the "nucleus.enderchest.exempt.target" permission.
     warmup: true
+    subcommands: ''
 -   aliases: invsee
     cost: false
     module: inventory
@@ -1497,6 +1564,7 @@
     usageString: /invsee <subject>
     oneLineDescription: Allows the user to inspect a target's inventory.
     permissionbase: nucleus.invsee
+    simpleUsage: /invsee <subject>
     commandName: invsee
     permissions:
     -   module: inventory
@@ -1521,13 +1589,15 @@
     minecraftVersion: 1.10.2
     extendedDescription: Opens an Inventory GUI with the target player's inventory displayed, if they do not have the "nucleus.invsee.exempt.target" permission.
     warmup: false
+    subcommands: ''
 -   aliases: clear, clearinv, clearinventory, ci
     cost: false
     module: item
     defaultLevel: ADMIN
-    usageString: /clear [<subject>]
+    usageString: /clear [<player>]
     oneLineDescription: Clears a player's inventory.
     permissionbase: nucleus.clear
+    simpleUsage: /clear [<player>]
     commandName: clear
     permissions:
     -   module: item
@@ -1538,21 +1608,20 @@
         defaultLevel: ADMIN
         description: Allows the user to target other players using the command "clear".
         permission: nucleus.clear.others
-    -   module: item
-        defaultLevel: ADMIN
-        description: Allows the user to use selectors for the command /clear
-        permission: nucleus.clear.selectors
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: enchant
     cost: true
     module: item
     defaultLevel: ADMIN
-    usageString: '/enchant <enchantment> level(1-32767) [-u|-unsafe <u>] [-o|-overwrite
+    usageString: '/enchant <enchantment> level(1 to 32767) [-u|-unsafe <u>] [-o|-overwrite
         <o>] '
     oneLineDescription: Allows the user to enchant items.
     permissionbase: nucleus.enchant
+    simpleUsage: '/enchant <enchantment> level(1 to 32767) [-u|-unsafe <u>] [-o|-overwrite
+        <o>] '
     commandName: enchant
     permissions:
     -   module: item
@@ -1578,13 +1647,15 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: itemname
     cost: true
     module: item
     defaultLevel: ADMIN
-    usageString: /itemname set|clear|?
+    usageString: /itemname [set|clear|?]
     oneLineDescription: Base command for Item Name related actions.
     permissionbase: nucleus.itemname
+    simpleUsage: '/itemname '
     commandName: itemname
     permissions:
     -   module: item
@@ -1606,6 +1677,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: set, clear
 -   aliases: clear
     cost: true
     module: item
@@ -1613,6 +1685,7 @@
     usageString: '/itemname clear '
     oneLineDescription: Clears the name assigned to the item currently in the player's hand.
     permissionbase: nucleus.itemname.clear
+    simpleUsage: '/itemname clear '
     commandName: itemname clear
     permissions:
     -   module: item
@@ -1634,6 +1707,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: set
     cost: true
     module: item
@@ -1641,6 +1715,7 @@
     usageString: /itemname set <name…>
     oneLineDescription: Sets the user facing name for the item currently in the player's hand.
     permissionbase: nucleus.itemname.set
+    simpleUsage: /itemname set <name…>
     commandName: itemname set
     permissions:
     -   module: item
@@ -1662,13 +1737,15 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: lore
     cost: true
     module: item
     defaultLevel: ADMIN
-    usageString: /lore add|set|clear|?
+    usageString: /lore [add|set|clear|?]
     oneLineDescription: Base command for Lore related actions.
     permissionbase: nucleus.lore
+    simpleUsage: '/lore '
     commandName: lore
     permissions:
     -   module: item
@@ -1690,6 +1767,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: set, add, clear
 -   aliases: add
     cost: true
     module: item
@@ -1697,6 +1775,7 @@
     usageString: /lore add <lore…>
     oneLineDescription: Adds a new line to the lore on the current item in the hand.
     permissionbase: nucleus.lore.set
+    simpleUsage: /lore add <lore…>
     commandName: lore add
     permissions:
     -   module: item
@@ -1718,6 +1797,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: clear
     cost: true
     module: item
@@ -1725,6 +1805,7 @@
     usageString: '/lore clear '
     oneLineDescription: Clears the lore on the current item in the hand.
     permissionbase: nucleus.lore.set
+    simpleUsage: '/lore clear '
     commandName: lore clear
     permissions:
     -   module: item
@@ -1746,6 +1827,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: set
     cost: true
     module: item
@@ -1753,6 +1835,7 @@
     usageString: /lore set <lore…>
     oneLineDescription: Sets the lore on the current item in the hand. The current lore is replaced.
     permissionbase: nucleus.lore.set
+    simpleUsage: /lore set <lore…>
     commandName: lore set
     permissions:
     -   module: item
@@ -1774,6 +1857,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: more, stack
     cost: true
     module: item
@@ -1781,6 +1865,7 @@
     usageString: '/more '
     oneLineDescription: Sets item in hand to a full stack.
     permissionbase: nucleus.more
+    simpleUsage: '/more '
     commandName: more
     permissions:
     -   module: item
@@ -1802,19 +1887,17 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: repair, mend
     cost: true
     module: item
     defaultLevel: ADMIN
-    usageString: /repair [<subject>]
+    usageString: /repair [<player>]
     oneLineDescription: Repairs item in hand.
     permissionbase: nucleus.repair
+    simpleUsage: /repair [<player>]
     commandName: repair
     permissions:
-    -   module: item
-        defaultLevel: ADMIN
-        description: Allows the user to use selectors for the command /repair
-        permission: nucleus.repair.selectors
     -   module: item
         defaultLevel: ADMIN
         description: Allows the user to bypass the warmup for /repair
@@ -1838,6 +1921,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: skull
     cost: true
     module: item
@@ -1845,6 +1929,7 @@
     usageString: /skull [<subject>] [<amount>]
     oneLineDescription: Spawns in copies of the specified player's skull (or your own, if no player is specified) into your inventory.
     permissionbase: nucleus.skull
+    simpleUsage: /skull [<subject>] [<amount>]
     commandName: skull
     permissions:
     -   module: item
@@ -1870,6 +1955,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: checkjail
     cost: false
     module: jail
@@ -1877,6 +1963,7 @@
     usageString: /checkjail <subject>
     oneLineDescription: Checks if a player is jailed.
     permissionbase: nucleus.jail.checkjail
+    simpleUsage: /checkjail <subject>
     commandName: checkjail
     permissions:
     -   module: jail
@@ -1886,6 +1973,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: jail, unjail, togglejail
     cost: false
     module: jail
@@ -1893,6 +1981,7 @@
     usageString: /jail <subject> [<jail>] [<duration>] [<reason…>]
     oneLineDescription: Toggles the jailing of a player.
     permissionbase: nucleus.jail
+    simpleUsage: /jail <subject> [<jail>] [<duration>] [<reason…>]
     commandName: jail
     permissions:
     -   module: jail
@@ -1905,15 +1994,12 @@
         permission: nucleus.jail.base
     -   module: jail
         defaultLevel: MOD
-        description: Allows the user to use selectors for the command /jail
-        permission: nucleus.jail.selectors
-    -   module: jail
-        defaultLevel: MOD
         description: Notifies the user about jails when they occur.
         permission: nucleus.jail.notify
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: jails
     cost: false
     module: jail
@@ -1921,6 +2007,7 @@
     usageString: /jails set|delete|info|
     oneLineDescription: Lists all jails.
     permissionbase: nucleus.jail.list
+    simpleUsage: '/jails '
     commandName: jails
     permissions:
     -   module: jail
@@ -1930,6 +2017,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: set, delete, info
 -   aliases: delete, del, remove
     cost: false
     module: jail
@@ -1937,6 +2025,7 @@
     usageString: /jails delete <jail>
     oneLineDescription: Deletes a jail.
     permissionbase: nucleus.jail.delete
+    simpleUsage: /jails delete <jail>
     commandName: jails delete
     permissions:
     -   module: jail
@@ -1946,6 +2035,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: info
     cost: false
     module: jail
@@ -1953,6 +2043,7 @@
     usageString: /jails info <jail>
     oneLineDescription: Returns info about the specified jail.
     permissionbase: nucleus.jail.info
+    simpleUsage: /jails info <jail>
     commandName: jails info
     permissions:
     -   module: jail
@@ -1962,6 +2053,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: set
     cost: false
     module: jail
@@ -1969,6 +2061,7 @@
     usageString: /jails set <jail>
     oneLineDescription: Creates a jail.
     permissionbase: nucleus.jail.set
+    simpleUsage: /jails set <jail>
     commandName: jails set
     permissions:
     -   module: jail
@@ -1978,6 +2071,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: jump, j, jmp
     cost: true
     module: jump
@@ -1985,6 +2079,7 @@
     usageString: '/jump '
     oneLineDescription: Perform a short range "jump" to the block they are looking at.
     permissionbase: nucleus.jump
+    simpleUsage: '/jump '
     commandName: jump
     permissions:
     -   module: jump
@@ -2006,6 +2101,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: thru, through
     cost: true
     module: jump
@@ -2013,6 +2109,7 @@
     usageString: '/thru '
     oneLineDescription: Teleport to the other side of a wall.
     permissionbase: nucleus.thru
+    simpleUsage: '/thru '
     commandName: thru
     permissions:
     -   module: jump
@@ -2034,6 +2131,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: top, tosurface, totop
     cost: true
     module: jump
@@ -2041,6 +2139,7 @@
     usageString: /top [-f <f>] [<subject>]
     oneLineDescription: Teleports the user (or target player) to the surface.
     permissionbase: nucleus.top
+    simpleUsage: /top [-f <f>] [<subject>]
     commandName: top
     permissions:
     -   module: jump
@@ -2061,16 +2160,13 @@
         permission: nucleus.top.exempt.warmup
     -   module: jump
         defaultLevel: ADMIN
-        description: Allows the user to use selectors for the command /top
-        permission: nucleus.top.selectors
-    -   module: jump
-        defaultLevel: ADMIN
         description: Allows the user to bypass the cost for /top
         permission: nucleus.top.exempt.cost
     cooldown: true
     requiresMixin: false
     extendedDescription: By default, /top will not teleport a player into an unsafe situation. This might result in moving slightly in the x or z directions, or not teleport the player at all. To teleport without regard for player safety, add "-f" to the command.
     warmup: true
+    subcommands: ''
 -   aliases: kick
     cost: false
     module: kick
@@ -2078,6 +2174,7 @@
     usageString: /kick <subject> [<reason…>]
     oneLineDescription: Kicks a player
     permissionbase: nucleus.kick
+    simpleUsage: /kick <subject> [<reason…>]
     commandName: kick
     permissions:
     -   module: kick
@@ -2095,13 +2192,15 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: kickall
     cost: false
     module: kick
     defaultLevel: MOD
-    usageString: /kickall [-f <f>]  [<reason…>]
+    usageString: /kickall [-w|-f <w>]  [<reason…>]
     oneLineDescription: Kicks all players, optionally turning the whitelist on.
     permissionbase: nucleus.kickall
+    simpleUsage: /kickall [-w|-f <w>]  [<reason…>]
     commandName: kickall
     permissions:
     -   module: kick
@@ -2116,6 +2215,7 @@
     requiresMixin: false
     extendedDescription: If the command is executed by a player on the server, the executing player will not be kicked. To turn the whitelist on when kicking everyone, use the "-w" flag.
     warmup: false
+    subcommands: ''
 -   aliases: firstjoinkit, starterkit, joinkit, firstkit
     cost: false
     module: kit
@@ -2123,6 +2223,7 @@
     usageString: /firstjoinkit set|edit|clear|redeem|
     oneLineDescription: Displays the items given to new players when they first join the server.
     permissionbase: nucleus.firstjoinkit
+    simpleUsage: '/firstjoinkit '
     commandName: firstjoinkit
     permissions:
     -   module: kit
@@ -2132,6 +2233,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: clear, edit, set, redeem
 -   aliases: clear, remove
     cost: false
     module: kit
@@ -2139,6 +2241,7 @@
     usageString: '/firstjoinkit clear '
     oneLineDescription: Stops items being given to new players on first join.
     permissionbase: nucleus.firstjoinkit.clear
+    simpleUsage: '/firstjoinkit clear '
     commandName: firstjoinkit clear
     permissions:
     -   module: kit
@@ -2148,6 +2251,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: edit, ed
     cost: false
     module: kit
@@ -2156,6 +2260,7 @@
     usageString: '/firstjoinkit edit '
     oneLineDescription: Opens a GUI for editing the first join kit contents.
     permissionbase: nucleus.firstjoinkit.edit
+    simpleUsage: '/firstjoinkit edit '
     commandName: firstjoinkit edit
     permissions:
     -   module: kit
@@ -2168,6 +2273,7 @@
     minecraftVersion: 1.10.2
     extendedDescription: This command opens a GUI and allows you to use the standard Minecraft inventory GUI to edit the first join kit. |br||br|See /firstjoinkit set if you want to update the kit by taking a snapshot of your inventory. See /kit edit if you want edit another kit.
     warmup: false
+    subcommands: ''
 -   aliases: redeem
     cost: false
     module: kit
@@ -2175,6 +2281,7 @@
     usageString: '/firstjoinkit redeem '
     oneLineDescription: Redeems the first join kit.
     permissionbase: nucleus.firstjoinkit.redeem
+    simpleUsage: '/firstjoinkit redeem '
     commandName: firstjoinkit redeem
     permissions:
     -   module: kit
@@ -2184,6 +2291,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: set, updateFromInventory
     cost: false
     module: kit
@@ -2191,6 +2299,7 @@
     usageString: '/firstjoinkit set '
     oneLineDescription: Sets the items given to new players when they first join the server.
     permissionbase: nucleus.firstjoinkit.set
+    simpleUsage: '/firstjoinkit set '
     commandName: firstjoinkit set
     permissions:
     -   module: kit
@@ -2200,6 +2309,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: kit
     cost: false
     module: kit
@@ -2207,6 +2317,7 @@
     usageString: /kit add|give|set|cost|edit|setcooldown|list|remove|create|resetusage|onetime|<kit>
     oneLineDescription: Redeems a kit.
     permissionbase: nucleus.kit
+    simpleUsage: /kit <kit>
     commandName: kit
     permissions:
     -   module: kit
@@ -2232,6 +2343,7 @@
     cooldown: false
     requiresMixin: false
     warmup: true
+    subcommands: give, remove, edit, add, list, resetusage, set, onetime, cost, setcooldown, create
 -   aliases: add, createFromInventory
     cost: false
     module: kit
@@ -2239,6 +2351,7 @@
     usageString: /kit add <name>
     oneLineDescription: Creates a kit with the specified name and current inventory.
     permissionbase: nucleus.kit.add
+    simpleUsage: /kit add <name>
     commandName: kit add
     permissions:
     -   module: kit
@@ -2249,6 +2362,7 @@
     requiresMixin: false
     extendedDescription: This command takes a snapshot of your inventory (excluding your armor) and creates the named kit with it.|br||br|The kit can be updated using the /kit edit or /kit set commands, depending on whether you want to use a GUI to edit the kit, or replace the kit with a new copy of your inventory.|br||br|See also /kit create if you want to create a kit via a GUI.
     warmup: false
+    subcommands: ''
 -   aliases: cost, setcost
     cost: false
     module: kit
@@ -2256,6 +2370,7 @@
     usageString: /kit cost <kit> <cost>
     oneLineDescription: Sets the cost for a kit.
     permissionbase: nucleus.kit.cost
+    simpleUsage: /kit cost <kit> <cost>
     commandName: kit cost
     permissions:
     -   module: kit
@@ -2265,6 +2380,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: create
     cost: false
     module: kit
@@ -2273,6 +2389,7 @@
     usageString: /kit create <name>
     oneLineDescription: Opens a chest window and lets you create a kit through the Minecraft inventory interface.
     permissionbase: nucleus.kit.create
+    simpleUsage: /kit create <name>
     commandName: kit create
     permissions:
     -   module: kit
@@ -2285,6 +2402,7 @@
     minecraftVersion: 1.10.2
     extendedDescription: This command opens a GUI and allows you to use the standard Minecraft inventory GUI to create the named kit. Any items placed in the kit will be returned to you when you close the GUI, and the kit will be created.|br||br|The kit can be updated using the /kit edit or /kit set commands, depending on whether you want to use a GUI to edit the kit, or replace the kit with a new copy of your inventory.|br||br|See also /kit add if you want to create a kit by taking a snapshot of your inventory.
     warmup: false
+    subcommands: ''
 -   aliases: edit, ed
     cost: false
     module: kit
@@ -2293,6 +2411,7 @@
     usageString: /kit edit <kit>
     oneLineDescription: Opens a GUI for editing kit contents.
     permissionbase: nucleus.kit.edit
+    simpleUsage: /kit edit <kit>
     commandName: kit edit
     permissions:
     -   module: kit
@@ -2305,6 +2424,7 @@
     minecraftVersion: 1.10.2
     extendedDescription: This command opens a GUI and allows you to use the standard Minecraft inventory GUI to edit the named kit. |br||br|See /kit set if you want to update the kit by taking a snapshot of your inventory. See /firstjoinkit edit if you want edit the initial inventory of new players.
     warmup: false
+    subcommands: ''
 -   aliases: give
     cost: true
     module: kit
@@ -2312,6 +2432,7 @@
     usageString: /kit give [-i|-ignore <i>]  <subject> <kit>
     oneLineDescription: Redeems a kit on the specified player.
     permissionbase: nucleus.kit.give
+    simpleUsage: /kit give [-i|-ignore <i>]  <subject> <kit>
     commandName: kit give
     permissions:
     -   module: kit
@@ -2338,6 +2459,7 @@
     requiresMixin: false
     extendedDescription: Allows you to redeem the contents of a kit on another player. By default, this command will normally NOT redeem a kit on a player would not normally be able to redeem the kit. It will also  mark the kit as redeemed on the target player - however, it will never charge them.|br||br|This behaviour can be overridden using the "-i" flag, which will ignore all cooldowns, and will not mark that the kit has been redeemed.
     warmup: true
+    subcommands: ''
 -   aliases: list, ls
     cost: false
     rootAliases: kits
@@ -2346,6 +2468,7 @@
     usageString: '/kit list '
     oneLineDescription: Lists the kits that are available.
     permissionbase: nucleus.kit.list
+    simpleUsage: '/kit list '
     commandName: kit list
     permissions:
     -   module: kit
@@ -2355,6 +2478,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: onetime
     cost: false
     module: kit
@@ -2362,6 +2486,7 @@
     usageString: /kit onetime <kit> <oneTimeToggle>
     oneLineDescription: Sets or unsets a kit as a one time use kit.
     permissionbase: nucleus.kit.onetime
+    simpleUsage: /kit onetime <kit> <oneTimeToggle>
     commandName: kit onetime
     permissions:
     -   module: kit
@@ -2372,6 +2497,7 @@
     requiresMixin: false
     extendedDescription: A one time use kit is exactly that, a kit that may be used only once. If you wish to give a kit to a player upon joining for the first time, consider using "/firstjoinkit" instead.
     warmup: false
+    subcommands: ''
 -   aliases: remove, del, delete
     cost: false
     module: kit
@@ -2379,6 +2505,7 @@
     usageString: /kit remove <kit>
     oneLineDescription: Deletes a kit.
     permissionbase: nucleus.kit.remove
+    simpleUsage: /kit remove <kit>
     commandName: kit remove
     permissions:
     -   module: kit
@@ -2388,6 +2515,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: resetusage, reset
     cost: false
     module: kit
@@ -2395,6 +2523,7 @@
     usageString: /kit resetusage <subject> <kit>
     oneLineDescription: Resets a player's usage of a kit, allowing them to redeem the kit again immediately.
     permissionbase: nucleus.kit.resetusage
+    simpleUsage: /kit resetusage <subject> <kit>
     commandName: kit resetusage
     permissions:
     -   module: kit
@@ -2404,6 +2533,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: set, update, setFromInventory
     cost: false
     module: kit
@@ -2411,6 +2541,7 @@
     usageString: /kit set <kit>
     oneLineDescription: Sets the items in a kit to your current inventory.
     permissionbase: nucleus.kit.set
+    simpleUsage: /kit set <kit>
     commandName: kit set
     permissions:
     -   module: kit
@@ -2421,6 +2552,7 @@
     requiresMixin: false
     extendedDescription: This command takes a snapshot of your inventory (excluding your armor) and updates the contents of the named kit with it.|br||br|See also /kit edit if you want to edit a kit via a GUI.
     warmup: false
+    subcommands: ''
 -   aliases: setcooldown, setinterval
     cost: false
     module: kit
@@ -2428,6 +2560,7 @@
     usageString: /kit setcooldown <kit> <duration>
     oneLineDescription: Sets the cooldown on a kit.
     permissionbase: nucleus.kit.setcooldown
+    simpleUsage: /kit setcooldown <kit> <duration>
     commandName: kit setcooldown
     permissions:
     -   module: kit
@@ -2438,6 +2571,7 @@
     requiresMixin: false
     extendedDescription: The cooldown must be specified in the form 1w1d1h1m1s, where 1 hour 5 minutes would be "1h5m".
     warmup: false
+    subcommands: ''
 -   aliases: mail
     cost: false
     module: mail
@@ -2445,6 +2579,7 @@
     usageString: /mail other|clear|send|[<filters>*]
     oneLineDescription: Retrieves mail that has been sent to you.
     permissionbase: nucleus.mail
+    simpleUsage: /mail [<filters>*]
     commandName: mail
     permissions:
     -   module: mail
@@ -2454,6 +2589,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: send, clear, other
 -   aliases: clear
     cost: false
     module: mail
@@ -2461,6 +2597,7 @@
     usageString: '/mail clear '
     oneLineDescription: Clears all mail in your inbox.
     permissionbase: nucleus.mail
+    simpleUsage: '/mail clear '
     commandName: mail clear
     permissions:
     -   module: mail
@@ -2470,6 +2607,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: other, o
     cost: false
     module: mail
@@ -2477,6 +2615,7 @@
     usageString: /mail other <user> [<filters>*]
     oneLineDescription: Read others' mail.
     permissionbase: nucleus.mail.other
+    simpleUsage: /mail other <user> [<filters>*]
     commandName: mail other
     permissions:
     -   module: mail
@@ -2486,6 +2625,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: send, s
     cost: true
     module: mail
@@ -2493,6 +2633,7 @@
     usageString: /mail send <subject> <message…>
     oneLineDescription: Sends a mail to the specified player.
     permissionbase: nucleus.mail.send
+    simpleUsage: /mail send <subject> <message…>
     commandName: mail send
     permissions:
     -   module: mail
@@ -2514,6 +2655,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: helpop
     cost: true
     module: message
@@ -2521,6 +2663,7 @@
     usageString: /helpop <message…>
     oneLineDescription: Send a message to all available staff
     permissionbase: nucleus.helpop
+    simpleUsage: /helpop <message…>
     commandName: helpop
     permissions:
     -   module: message
@@ -2546,6 +2689,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: message, m, msg, whisper, w, t
     cost: true
     rootAliases: tell
@@ -2554,16 +2698,13 @@
     usageString: /message <to> <message…>
     oneLineDescription: Send a message to a player, or the console with "-".
     permissionbase: nucleus.message
+    simpleUsage: /message <to> <message…>
     commandName: message
     permissions:
     -   module: message
         defaultLevel: ADMIN
         description: Allows the user to bypass the warmup for /message
         permission: nucleus.message.exempt.warmup
-    -   module: message
-        defaultLevel: USER
-        description: Allows the user to use selectors for the command /message
-        permission: nucleus.message.selectors
     -   module: message
         defaultLevel: ADMIN
         description: Allows the user to bypass the cost for /message
@@ -2599,6 +2740,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: reply, r
     cost: true
     module: message
@@ -2606,6 +2748,7 @@
     usageString: /reply <message…>
     oneLineDescription: Send a message to the last player that sent you a message.
     permissionbase: nucleus.message
+    simpleUsage: /reply <message…>
     commandName: reply
     permissions:
     -   module: message
@@ -2627,6 +2770,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: socialspy
     cost: false
     module: message
@@ -2634,6 +2778,7 @@
     usageString: /socialspy [<Social Spy>]
     oneLineDescription: See all private messages sent to other players.
     permissionbase: nucleus.socialspy
+    simpleUsage: /socialspy [<Social Spy>]
     commandName: socialspy
     permissions:
     -   module: message
@@ -2647,6 +2792,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: blockinfo
     cost: true
     module: misc
@@ -2654,6 +2800,7 @@
     usageString: '/blockinfo [-e|-extended <e>] '
     oneLineDescription: Get information about the block you are currently facing.
     permissionbase: nucleus.blockinfo
+    simpleUsage: '/blockinfo [-e|-extended <e>] '
     commandName: blockinfo
     permissions:
     -   module: misc
@@ -2679,6 +2826,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: entityinfo
     cost: true
     module: misc
@@ -2686,6 +2834,7 @@
     usageString: '/entityinfo [-e|-extended <e>] '
     oneLineDescription: Get information about the entity you are currently facing.
     permissionbase: nucleus.entityinfo
+    simpleUsage: '/entityinfo [-e|-extended <e>] '
     commandName: entityinfo
     permissions:
     -   module: misc
@@ -2711,13 +2860,15 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: feed
     cost: true
     module: misc
     defaultLevel: ADMIN
-    usageString: /feed [<subject>]
+    usageString: /feed [<player>]
     oneLineDescription: Set specified player's hunger to full.
     permissionbase: nucleus.feed
+    simpleUsage: /feed [<player>]
     commandName: feed
     permissions:
     -   module: misc
@@ -2740,13 +2891,10 @@
         defaultLevel: ADMIN
         description: Allows the user to bypass the warmup for /feed
         permission: nucleus.feed.exempt.warmup
-    -   module: misc
-        defaultLevel: ADMIN
-        description: Allows the user to use selectors for the command /feed
-        permission: nucleus.feed.selectors
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: god, invuln, invulnerability
     cost: false
     module: misc
@@ -2754,6 +2902,7 @@
     usageString: /god [<subject>] [<invuln>]
     oneLineDescription: Set specified player's invulnerability status.
     permissionbase: nucleus.god
+    simpleUsage: /god [<subject>] [<invuln>]
     commandName: god
     permissions:
     -   module: misc
@@ -2767,23 +2916,21 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: heal
     cost: true
     module: misc
     defaultLevel: ADMIN
-    usageString: /heal [<subject>]
+    usageString: /heal [<player>]
     oneLineDescription: Fully heal the specified player.
     permissionbase: nucleus.heal
+    simpleUsage: /heal [<player>]
     commandName: heal
     permissions:
     -   module: misc
         defaultLevel: ADMIN
         description: Allows the user to bypass the cooldown for /heal
         permission: nucleus.heal.exempt.cooldown
-    -   module: misc
-        defaultLevel: ADMIN
-        description: Allows the user to use selectors for the command /heal
-        permission: nucleus.heal.selectors
     -   module: misc
         defaultLevel: ADMIN
         description: Allows the user to target other players using the command "heal".
@@ -2803,6 +2950,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: iteminfo, itemdb
     cost: true
     module: misc
@@ -2810,6 +2958,7 @@
     usageString: /iteminfo [-e|-extended <e>] [<key>]
     oneLineDescription: Get information about the item you are currently holding.
     permissionbase: nucleus.iteminfo
+    simpleUsage: /iteminfo [-e|-extended <e>] [<key>]
     commandName: iteminfo
     permissions:
     -   module: misc
@@ -2835,6 +2984,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: kill
     cost: true
     module: misc
@@ -2842,6 +2992,7 @@
     usageString: /kill <subject>
     oneLineDescription: Kill the specified player.
     permissionbase: nucleus.kill
+    simpleUsage: /kill <subject>
     commandName: kill
     permissions:
     -   module: misc
@@ -2860,13 +3011,10 @@
         defaultLevel: ADMIN
         description: Allows the user to run the command /kill
         permission: nucleus.kill.base
-    -   module: misc
-        defaultLevel: ADMIN
-        description: Allows the user to use selectors for the command /kill
-        permission: nucleus.kill.selectors
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: ping
     cost: false
     module: misc
@@ -2874,6 +3022,7 @@
     usageString: /ping [<player>]
     oneLineDescription: Displays the current latency for the target player.
     permissionbase: nucleus.ping
+    simpleUsage: /ping [<player>]
     commandName: ping
     permissions:
     -   module: misc
@@ -2887,6 +3036,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: serverstat, gc, uptime
     cost: false
     module: misc
@@ -2894,6 +3044,7 @@
     usageString: '/serverstat '
     oneLineDescription: Displays server runtime statistics.
     permissionbase: nucleus.serverstat
+    simpleUsage: '/serverstat '
     commandName: serverstat
     permissions:
     -   module: misc
@@ -2904,19 +3055,21 @@
     requiresMixin: false
     extendedDescription: This command displays information about the server, the JVM, and each world.
     warmup: false
+    subcommands: ''
 -   aliases: speed
     cost: true
     module: misc
     defaultLevel: ADMIN
-    usageString: /speed [[<subject>] [<fly|f|flying|w|walk>] <speed>]
+    usageString: /speed [<player>] [<fly|f|flying|w|walk>] [<speed>]
     oneLineDescription: Set the specified player's walking or flying speed, where "1" is normal walking speed.
     permissionbase: nucleus.speed
+    simpleUsage: /speed [<player>] [<fly|f|flying|w|walk>] [<speed>]
     commandName: speed
     permissions:
     -   module: misc
         defaultLevel: ADMIN
-        description: Allows the user to use selectors for the command /speed
-        permission: nucleus.speed.selectors
+        description: Allows the user to target other players using the command "speed".
+        permission: nucleus.speed.others
     -   module: misc
         defaultLevel: NONE
         description: Allows the user to specified a speed greater than the max speed set in the config file.
@@ -2940,6 +3093,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: suicide
     cost: true
     module: misc
@@ -2947,6 +3101,7 @@
     usageString: '/suicide '
     oneLineDescription: Kill your player, displaying the Game Over screen.
     permissionbase: nucleus.suicide
+    simpleUsage: '/suicide '
     commandName: suicide
     permissions:
     -   module: misc
@@ -2968,13 +3123,15 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: spawnmob, spawnentity, mobspawn
     cost: true
     module: mob
     defaultLevel: ADMIN
-    usageString: /spawnmob [<subject>] <mob> [<amount>]
+    usageString: /spawnmob [<player>] <mob> [<amount>]
     oneLineDescription: Spawns in mobs at the specified player's location.
     permissionbase: nucleus.spawnmob
+    simpleUsage: /spawnmob [<player>] <mob> [<amount>]
     commandName: spawnmob
     permissions:
     -   module: mob
@@ -3004,15 +3161,12 @@
         permission: nucleus.spawnmob.base
     -   module: mob
         defaultLevel: ADMIN
-        description: Allows the user to spawn a mob on another player.
+        description: Allows the user to target other players using the command "spawnmob".
         permission: nucleus.spawnmob.others
-    -   module: mob
-        defaultLevel: ADMIN
-        description: Allows the user to use selectors for the command /spawnmob
-        permission: nucleus.spawnmob.selectors
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: checkmute
     cost: false
     module: mute
@@ -3020,6 +3174,7 @@
     usageString: /checkmute <subject>
     oneLineDescription: Checks whether the specified player is muted.
     permissionbase: nucleus.checkmute
+    simpleUsage: /checkmute <subject>
     commandName: checkmute
     permissions:
     -   module: mute
@@ -3029,6 +3184,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: globalmute
     cost: false
     module: mute
@@ -3036,6 +3192,7 @@
     usageString: /globalmute [<turn on>]
     oneLineDescription: Enable or disable a server wide mute. Anyone that has the permission "nucleus.globalmute.voice.auto" will always have voice.
     permissionbase: nucleus.globalmute
+    simpleUsage: /globalmute [<turn on>]
     commandName: globalmute
     permissions:
     -   module: mute
@@ -3046,6 +3203,7 @@
     requiresMixin: false
     extendedDescription: Global muting is useful for times where you want to have an announcement or you need to defuse a server wide solution. Global mutes do not change a user's mute status, and do not persist across server restarts. All players with voice (apart from those with permission) are de-voiced when the global mute is turned on. |br||br|If you wish to allow someone to talk during a global mute period, you can grant them "/voice".
     warmup: false
+    subcommands: ''
 -   aliases: mute, unmute
     cost: false
     module: mute
@@ -3053,6 +3211,7 @@
     usageString: /mute <subject> [<time>] [<reason…>]
     oneLineDescription: Mutes the specified player.
     permissionbase: nucleus.mute
+    simpleUsage: /mute <subject> [<time>] [<reason…>]
     commandName: mute
     permissions:
     -   module: mute
@@ -3078,6 +3237,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: voice
     cost: false
     module: mute
@@ -3085,6 +3245,7 @@
     usageString: /voice <subject> [<turn on>]
     oneLineDescription: Allows a user to speak when a global mute is in effect.
     permissionbase: nucleus.globalmute.voice
+    simpleUsage: /voice <subject> [<turn on>]
     commandName: voice
     permissions:
     -   module: mute
@@ -3103,6 +3264,7 @@
     requiresMixin: false
     extendedDescription: If a server is globally muted, a player can be given the right to speak using the "/voice" command. This will allow messages being sent by the user too. This status may also be revoked if granted by running the "/voice" command again.
     warmup: false
+    subcommands: ''
 -   aliases: nameban
     cost: false
     module: nameban
@@ -3110,6 +3272,7 @@
     usageString: /nameban <name> [<reason…>]
     oneLineDescription: Bans a specific IGN (rather than specific player) from joining the server.
     permissionbase: nucleus.nameban
+    simpleUsage: /nameban <name> [<reason…>]
     commandName: nameban
     permissions:
     -   module: nameban
@@ -3120,6 +3283,7 @@
     requiresMixin: false
     extendedDescription: Using /nameban, instead of /ban, prevents any player with a specific username from joining the server - allowing them to join if they subsequently change their name. This does not affect server level nicknames, this is their Mojang registered nicknames. |br||br|A reason can be given for banning a specific name. This is intended to prevent the use of offensive usernames on servers.
     warmup: false
+    subcommands: ''
 -   aliases: nameunban, namepardon
     cost: false
     module: nameban
@@ -3127,6 +3291,7 @@
     usageString: /nameunban <name>
     oneLineDescription: Allows a specific IGN (rather than specific player) to join the server again.
     permissionbase: nucleus.nameban.unban
+    simpleUsage: /nameunban <name>
     commandName: nameunban
     permissions:
     -   module: nameban
@@ -3136,6 +3301,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: delnick, delnickname, deletenick
     cost: true
     module: nickname
@@ -3143,6 +3309,7 @@
     usageString: /delnick [<subject>]
     oneLineDescription: Deletes your current nickname
     permissionbase: nucleus.nick
+    simpleUsage: /delnick [<subject>]
     commandName: delnick
     permissions:
     -   module: nickname
@@ -3164,6 +3331,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: nick, nickname
     cost: true
     module: nickname
@@ -3171,6 +3339,7 @@
     usageString: /nick [<subject>] <nickname>
     oneLineDescription: Sets your nickname/display name
     permissionbase: nucleus.nick
+    simpleUsage: /nick [<subject>] <nickname>
     commandName: nick
     permissions:
     -   module: nickname
@@ -3360,6 +3529,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: realname
     cost: true
     module: nickname
@@ -3367,6 +3537,7 @@
     usageString: /realname <name>
     oneLineDescription: Gets the player's realname from the provided nickname.
     permissionbase: nucleus.realname
+    simpleUsage: /realname <name>
     commandName: realname
     permissions:
     -   module: nickname
@@ -3388,6 +3559,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: checknotes, notes
     cost: false
     module: note
@@ -3395,6 +3567,7 @@
     usageString: /checknotes <subject>
     oneLineDescription: Allows the user to check a player's notes.
     permissionbase: nucleus.checknotes
+    simpleUsage: /checknotes <subject>
     commandName: checknotes
     permissions:
     -   module: note
@@ -3404,6 +3577,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: clearnotes, removeallnotes
     cost: false
     module: note
@@ -3411,6 +3585,7 @@
     usageString: /clearnotes <subject>
     oneLineDescription: Allows the user to clear a player's notes.
     permissionbase: nucleus.clearnotes
+    simpleUsage: /clearnotes <subject>
     commandName: clearnotes
     permissions:
     -   module: note
@@ -3420,6 +3595,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: note, addnote
     cost: false
     module: note
@@ -3427,6 +3603,7 @@
     usageString: /note <subject> <note…>
     oneLineDescription: Allows the user to add a note to a player.
     permissionbase: nucleus.note
+    simpleUsage: /note <subject> <note…>
     commandName: note
     permissions:
     -   module: note
@@ -3440,6 +3617,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: removenote, deletenote, delnote
     cost: false
     module: note
@@ -3447,6 +3625,7 @@
     usageString: /removenote <user> <ID>
     oneLineDescription: Allows the user to delete a specific note attached to a player.
     permissionbase: nucleus.removenote
+    simpleUsage: /removenote <user> <ID>
     commandName: removenote
     permissions:
     -   module: note
@@ -3456,19 +3635,21 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: getpos
     cost: true
     module: playerinfo
     defaultLevel: MOD
-    usageString: /getpos [<subject>]
+    usageString: /getpos [<player>]
     oneLineDescription: Gets the location of the executing or target player.
     permissionbase: nucleus.getpos
+    simpleUsage: /getpos [<player>]
     commandName: getpos
     permissions:
     -   module: playerinfo
         defaultLevel: MOD
         description: Allows the user to view the position of other players.
-        permission: nucleus.getpos.other
+        permission: nucleus.getpos.others
     -   module: playerinfo
         defaultLevel: ADMIN
         description: Allows the user to bypass the cost for /getpos
@@ -3488,6 +3669,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: list, listplayers, ls
     cost: true
     module: playerinfo
@@ -3495,6 +3677,7 @@
     usageString: '/list '
     oneLineDescription: Lists the players on the server.
     permissionbase: nucleus.list
+    simpleUsage: '/list '
     commandName: list
     permissions:
     -   module: playerinfo
@@ -3520,13 +3703,15 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: seen, seenplayer, lookup
     cost: true
     module: playerinfo
     defaultLevel: ADMIN
-    usageString: /seen <subject>
+    usageString: /seen <uuid>|<subject>
     oneLineDescription: Gets information about the specified player.
     permissionbase: nucleus.seen
+    simpleUsage: /seen <uuid>|<subject>
     commandName: seen
     permissions:
     -   module: playerinfo
@@ -3552,6 +3737,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: powertool, pt
     cost: false
     module: powertool
@@ -3559,6 +3745,7 @@
     usageString: /powertool toggle|list|delete|[<command…>]
     oneLineDescription: Binds the item in hand to the specified command.
     permissionbase: nucleus.powertool
+    simpleUsage: /powertool [<command…>]
     commandName: powertool
     permissions:
     -   module: powertool
@@ -3568,6 +3755,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: delete, list, toggle
 -   aliases: delete, del, rm, remove
     cost: false
     module: powertool
@@ -3575,6 +3763,7 @@
     usageString: '/powertool delete '
     oneLineDescription: Removes any powertool bindings to the item in hand.
     permissionbase: nucleus.powertool
+    simpleUsage: '/powertool delete '
     commandName: powertool delete
     permissions:
     -   module: powertool
@@ -3584,6 +3773,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: list, ls
     cost: false
     module: powertool
@@ -3591,6 +3781,7 @@
     usageString: '/powertool list '
     oneLineDescription: Lists all current powertools that the user has.
     permissionbase: nucleus.powertool
+    simpleUsage: '/powertool list '
     commandName: powertool list
     permissions:
     -   module: powertool
@@ -3600,6 +3791,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: toggle
     cost: false
     module: powertool
@@ -3607,6 +3799,7 @@
     usageString: /powertool toggle [<toggle>]
     oneLineDescription: Toggles whether powertools activate.
     permissionbase: nucleus.powertool
+    simpleUsage: /powertool toggle [<toggle>]
     commandName: powertool toggle
     permissions:
     -   module: powertool
@@ -3616,6 +3809,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: rtp, randomteleport, rteleport
     cost: true
     module: rtp
@@ -3623,6 +3817,7 @@
     usageString: /rtp [<player>]
     oneLineDescription: Allows the user to teleport to a random destination within the world border.
     permissionbase: nucleus.rtp
+    simpleUsage: /rtp [<player>]
     commandName: rtp
     permissions:
     -   module: rtp
@@ -3648,6 +3843,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: rules
     cost: false
     module: rules
@@ -3655,6 +3851,7 @@
     usageString: /rules add|remove|
     oneLineDescription: Read the server rules.
     permissionbase: nucleus.rules
+    simpleUsage: '/rules '
     commandName: rules
     permissions:
     -   module: rules
@@ -3664,6 +3861,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: remove, add
 -   aliases: add, a, +
     cost: false
     module: rules
@@ -3671,6 +3869,7 @@
     usageString: /rules add [<position>] <rule…>
     oneLineDescription: Add a server rule.
     permissionbase: nucleus.rules.add
+    simpleUsage: /rules add [<position>] <rule…>
     commandName: rules add
     permissions:
     -   module: rules
@@ -3680,6 +3879,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: remove, delete, del, -
     cost: false
     module: rules
@@ -3687,6 +3887,7 @@
     usageString: '/rules remove <rule> [-f <f>] '
     oneLineDescription: Remove a server rule.
     permissionbase: nucleus.rules.remove
+    simpleUsage: '/rules remove <rule> [-f <f>] '
     commandName: rules remove
     permissions:
     -   module: rules
@@ -3696,6 +3897,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: itembuy, buy
     cost: false
     module: server-shop
@@ -3703,6 +3905,7 @@
     usageString: /itembuy [-y|-f|-a|-yes|-auto <y>] <item> <amount>
     oneLineDescription: Allows the user to buy an item from the server for a set price.
     permissionbase: nucleus.itembuy
+    simpleUsage: /itembuy [-y|-f|-a|-yes|-auto <y>] <item> <amount>
     commandName: itembuy
     permissions:
     -   module: server-shop
@@ -3712,6 +3915,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: itemsell, sell
     cost: false
     module: server-shop
@@ -3719,6 +3923,7 @@
     usageString: '/itemsell '
     oneLineDescription: Allows the user to sell an item in their main hand to the server for a set price.
     permissionbase: nucleus.itemsell
+    simpleUsage: '/itemsell '
     commandName: itemsell
     permissions:
     -   module: server-shop
@@ -3728,6 +3933,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: itemsellall, sellall
     cost: false
     module: server-shop
@@ -3735,6 +3941,7 @@
     usageString: /itemsellall [-a|-accept <a>]  [<item>]
     oneLineDescription: Allows the user to sell all items of a set type in their inventory to the server for a set price.
     permissionbase: nucleus.itemsellall
+    simpleUsage: /itemsellall [-a|-accept <a>]  [<item>]
     commandName: itemsellall
     permissions:
     -   module: server-shop
@@ -3744,6 +3951,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: setworth, setitemworth
     cost: false
     module: server-shop
@@ -3751,6 +3959,7 @@
     usageString: /setworth [<item>] <buy|sell> <cost>
     oneLineDescription: Allows the user to set the buy or sell price of an item.
     permissionbase: nucleus.setworth
+    simpleUsage: /setworth [<item>] <buy|sell> <cost>
     commandName: setworth
     permissions:
     -   module: server-shop
@@ -3760,6 +3969,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: worth
     cost: true
     module: server-shop
@@ -3767,6 +3977,7 @@
     usageString: /worth [<item>]
     oneLineDescription: Allows the user to display the server buy and sell prices for an item.
     permissionbase: nucleus.worth
+    simpleUsage: /worth [<item>]
     commandName: worth
     permissions:
     -   module: server-shop
@@ -3789,6 +4000,7 @@
     requiresMixin: false
     extendedDescription: If no item ID or alias is provided, this command will get the buy/sell prices for the item in the main hand.
     warmup: true
+    subcommands: ''
 -   aliases: firstspawn
     cost: true
     module: spawn
@@ -3796,6 +4008,7 @@
     usageString: '/firstspawn '
     oneLineDescription: If set, warp to the new player spawn point.
     permissionbase: nucleus.firstspawn
+    simpleUsage: '/firstspawn '
     commandName: firstspawn
     permissions:
     -   module: spawn
@@ -3817,6 +4030,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: setfirstspawn
     cost: false
     module: spawn
@@ -3824,6 +4038,7 @@
     usageString: /setfirstspawn del|
     oneLineDescription: Sets the new player spawn point.
     permissionbase: nucleus.firstspawn.set
+    simpleUsage: '/setfirstspawn '
     commandName: setfirstspawn
     permissions:
     -   module: spawn
@@ -3833,6 +4048,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: del
 -   aliases: del, rm
     cost: false
     module: spawn
@@ -3840,6 +4056,7 @@
     usageString: '/setfirstspawn del '
     oneLineDescription: Removes the new player spawn point.
     permissionbase: nucleus.firstspawn.remove
+    simpleUsage: '/setfirstspawn del '
     commandName: setfirstspawn del
     permissions:
     -   module: spawn
@@ -3849,6 +4066,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: setspawn
     cost: false
     module: spawn
@@ -3856,6 +4074,7 @@
     usageString: '/setspawn '
     oneLineDescription: Sets the current world spawn point.
     permissionbase: nucleus.setspawn
+    simpleUsage: '/setspawn '
     commandName: setspawn
     permissions:
     -   module: spawn
@@ -3865,6 +4084,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: spawn
     cost: true
     module: spawn
@@ -3872,6 +4092,7 @@
     usageString: /spawn other|[<world>]
     oneLineDescription: Warp to a world spawn point.
     permissionbase: nucleus.spawn
+    simpleUsage: /spawn [<world>]
     commandName: spawn
     permissions:
     -   module: spawn
@@ -3902,6 +4123,7 @@
     requiresMixin: false
     extendedDescription: If the global spawn world is set in the configuration, then calling /spawn without a world argument will send the calling player to the global spawn point, otherwise, the player will warp to the current world spawn point.
     warmup: true
+    subcommands: other
 -   aliases: other
     cost: false
     module: spawn
@@ -3909,6 +4131,7 @@
     usageString: /spawn other <subject> [<world>]
     oneLineDescription: Warp another player to a world spawn point.
     permissionbase: nucleus.spawn.other
+    simpleUsage: /spawn other <subject> [<world>]
     commandName: spawn other
     permissions:
     -   module: spawn
@@ -3923,13 +4146,15 @@
     requiresMixin: false
     extendedDescription: This works in a similar way to the /spawn command, though the command may be used against offline players if the calling entity has permission. If the player is offline, the system will warp them prior to joining the world on next login.
     warmup: false
+    subcommands: ''
 -   aliases: staffchat, sc, a
     cost: false
     module: staff-chat
     defaultLevel: MOD
-    usageString: /staffchat [<message…>]
+    usageString: /staffchat [<message>]
     oneLineDescription: Allows the user to chat in the staff chat channel.
     permissionbase: nucleus.staffchat
+    simpleUsage: /staffchat [<message>]
     commandName: staffchat
     permissions:
     -   module: staff-chat
@@ -3939,6 +4164,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: teleport
     cost: true
     rootAliases: tp
@@ -3947,6 +4173,7 @@
     usageString: /teleport [-q <quiet>] [-f <f>]  <playerFrom>|<subject>
     oneLineDescription: Teleports one player to another's location.
     permissionbase: nucleus.teleport.teleport
+    simpleUsage: /teleport [-q <quiet>] [-f <f>]  <playerFrom>|<subject>
     commandName: teleport
     permissions:
     -   module: teleport
@@ -3966,10 +4193,6 @@
         description: Allows the user to teleport other players.
         permission: nucleus.teleport.teleport.others
     -   module: teleport
-        defaultLevel: MOD
-        description: Allows the user to use selectors for the command /teleport
-        permission: nucleus.teleport.teleport.selectors
-    -   module: teleport
         defaultLevel: ADMIN
         description: Allows the user to use the "-q" flag to override whether to tell the target player if a teleport is being performed.
         permission: nucleus.teleport.teleport.quiet
@@ -3980,6 +4203,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: teleportnative, tpnative, tpn
     cost: false
     module: teleport
@@ -3987,11 +4211,13 @@
     usageString: /teleportnative <args…>
     oneLineDescription: Alias for /minecraft:tp.
     permissionbase: ''
+    simpleUsage: /teleportnative <args…>
     commandName: teleportnative
     permissions: null
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: tpa, teleportask
     cost: true
     module: teleport
@@ -3999,6 +4225,7 @@
     usageString: '/tpa <subject> [-f <f>] '
     oneLineDescription: Send a request to a player to ask for you to teleport to them.
     permissionbase: nucleus.teleport.tpa
+    simpleUsage: '/tpa <subject> [-f <f>] '
     commandName: tpa
     permissions:
     -   module: teleport
@@ -4021,13 +4248,10 @@
         defaultLevel: USER
         description: Allows the user to run the command /tpa
         permission: nucleus.teleport.tpa.base
-    -   module: teleport
-        defaultLevel: USER
-        description: Allows the user to use selectors for the command /tpa
-        permission: nucleus.teleport.tpa.selectors
     cooldown: true
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: tpaall, tpaskall
     cost: false
     module: teleport
@@ -4035,6 +4259,7 @@
     usageString: '/tpaall [-f <f>] '
     oneLineDescription: Request all players on the server to teleport to your location.
     permissionbase: nucleus.teleport.tpaall
+    simpleUsage: '/tpaall [-f <f>] '
     commandName: tpaall
     permissions:
     -   module: teleport
@@ -4044,6 +4269,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: tpaccept, teleportaccept
     cost: false
     module: teleport
@@ -4051,6 +4277,7 @@
     usageString: '/tpaccept '
     oneLineDescription: Accept a pending teleport request.
     permissionbase: nucleus.teleport.tpaccept
+    simpleUsage: '/tpaccept '
     commandName: tpaccept
     permissions:
     -   module: teleport
@@ -4060,6 +4287,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: tpahere, tpaskhere, teleportaskhere
     cost: true
     module: teleport
@@ -4067,16 +4295,13 @@
     usageString: '/tpahere <subject> [-f <f>] '
     oneLineDescription: Send a request to a player to ask them to teleport to you.
     permissionbase: nucleus.teleport.tpahere
+    simpleUsage: '/tpahere <subject> [-f <f>] '
     commandName: tpahere
     permissions:
     -   module: teleport
         defaultLevel: ADMIN
         description: Allows the user to bypass the warmup for /tpahere
         permission: nucleus.teleport.tpahere.exempt.warmup
-    -   module: teleport
-        defaultLevel: MOD
-        description: Allows the user to use selectors for the command /tpahere
-        permission: nucleus.teleport.tpahere.selectors
     -   module: teleport
         defaultLevel: ADMIN
         description: Allows the user to bypass the cooldown for /tpahere
@@ -4096,6 +4321,7 @@
     cooldown: true
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: tpall, tpallhere
     cost: false
     module: teleport
@@ -4103,6 +4329,7 @@
     usageString: '/tpall [-f <f>] '
     oneLineDescription: Forcefully teleport all players on the server to your location.
     permissionbase: nucleus.teleport.tpall
+    simpleUsage: '/tpall [-f <f>] '
     commandName: tpall
     permissions:
     -   module: teleport
@@ -4112,6 +4339,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: tpdeny, teleportdeny
     cost: false
     module: teleport
@@ -4119,6 +4347,7 @@
     usageString: '/tpdeny '
     oneLineDescription: Deny a pending teleport request.
     permissionbase: nucleus.teleport.tpdeny
+    simpleUsage: '/tpdeny '
     commandName: tpdeny
     permissions:
     -   module: teleport
@@ -4128,6 +4357,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: tphere, tph
     cost: false
     module: teleport
@@ -4135,27 +4365,25 @@
     usageString: /tphere <subject>
     oneLineDescription: Teleports a player to your location.
     permissionbase: nucleus.teleport.tphere
+    simpleUsage: /tphere <subject>
     commandName: tphere
     permissions:
     -   module: teleport
         defaultLevel: ADMIN
         description: Allows the user to run the command /tphere
         permission: nucleus.teleport.tphere.base
-    -   module: teleport
-        defaultLevel: ADMIN
-        description: Allows the user to use selectors for the command /tphere
-        permission: nucleus.teleport.tphere.selectors
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: tppos
     cost: false
     module: teleport
     defaultLevel: ADMIN
-    usageString: '/tppos <subject> [<world>] x(-2147483648-2147483647) y(0-255) z(-2147483648-2147483647)
-        [-f <f>] '
+    usageString: /tppos [-f] [--force] [-c] [--chunk]   [<subject>] [<world>] x(-2147483648 to 2147483647) y(0 to 255) z(-2147483648 to 2147483647)
     oneLineDescription: Teleport to the specified location.
     permissionbase: nucleus.teleport.tppos
+    simpleUsage: /tppos [-f] [--force] [-c] [--chunk]   [<subject>] [<world>] x(-2147483648 to 2147483647) y(0 to 255) z(-2147483648 to 2147483647)
     commandName: tppos
     permissions:
     -   module: teleport
@@ -4164,11 +4392,17 @@
         permission: nucleus.teleport.tppos.base
     -   module: teleport
         defaultLevel: ADMIN
-        description: Allows the user to use selectors for the command /tppos
-        permission: nucleus.teleport.tppos.selectors
+        description: Allows the user to target other players using the command "tppos".
+        permission: nucleus.teleport.tppos.others
     cooldown: false
     requiresMixin: false
+    extendedDescription: 'The tppos command supports two flags:|br||br|* -f/--force:
+        forces the teleport to happen even if Nucleus thinks it won''t be safe for
+        you.|br|* -c/--chunk: indicates that the input co-ordinates are chunk co-ordiantes
+        rather than world co-ordinates. Nucleus tries to put you in the centre of
+        the chunk, and scans the whole chunk for a safe location.'
     warmup: false
+    subcommands: ''
 -   aliases: tptoggle
     cost: false
     module: teleport
@@ -4176,6 +4410,7 @@
     usageString: /tptoggle [<toggle>]
     oneLineDescription: Toggle whether teleport requests are received.
     permissionbase: nucleus.teleport.tptoggle
+    simpleUsage: /tptoggle [<toggle>]
     commandName: tptoggle
     permissions:
     -   module: teleport
@@ -4189,19 +4424,17 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: vanish, v
     cost: false
     module: vanish
     defaultLevel: ADMIN
-    usageString: /vanish [<subject>] [<toggle>]
+    usageString: /vanish [<player>] [<toggle>]
     oneLineDescription: Toggles whether you are invisible on the server.
     permissionbase: nucleus.vanish
+    simpleUsage: /vanish [<player>] [<toggle>]
     commandName: vanish
     permissions:
-    -   module: vanish
-        defaultLevel: ADMIN
-        description: If granted, grants ability to vanish other players.
-        permission: nucleus.vanish.other
     -   module: vanish
         defaultLevel: ADMIN
         description: If granted, the player is able to retain their vanish status upon logout and login.
@@ -4214,9 +4447,14 @@
         defaultLevel: ADMIN
         description: Allows the user to run the command /vanish
         permission: nucleus.vanish.base
+    -   module: vanish
+        defaultLevel: ADMIN
+        description: Allows the user to target other players using the command "vanish".
+        permission: nucleus.vanish.others
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: checkwarnings, checkwarn, warnings
     cost: false
     module: warn
@@ -4224,6 +4462,7 @@
     usageString: /checkwarnings [-all|-a <all>] [-expired|-e <expired>] <subject>
     oneLineDescription: Allows the user to check a player's warnings.
     permissionbase: nucleus.checkwarnings
+    simpleUsage: /checkwarnings [-all|-a <all>] [-expired|-e <expired>] <subject>
     commandName: checkwarnings
     permissions:
     -   module: warn
@@ -4233,6 +4472,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: clearwarnings, removeallwarnings
     cost: false
     module: warn
@@ -4240,6 +4480,7 @@
     usageString: /clearwarnings [-remove|-r <remove>] [-all|-a <all>] [-expired|-e <expired>] <subject>
     oneLineDescription: Allows the user to clear a player's warnings.
     permissionbase: nucleus.clearwarnings
+    simpleUsage: /clearwarnings [-remove|-r <remove>] [-all|-a <all>] [-expired|-e <expired>] <subject>
     commandName: clearwarnings
     permissions:
     -   module: warn
@@ -4249,6 +4490,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: removewarning, deletewarning, delwarn
     cost: false
     module: warn
@@ -4256,6 +4498,7 @@
     usageString: /removewarning [-remove|-r <remove>] <user> <ID>
     oneLineDescription: Allows the user to delete a specific warning attached to a player.
     permissionbase: nucleus.removewarning
+    simpleUsage: /removewarning [-remove|-r <remove>] <user> <ID>
     commandName: removewarning
     permissions:
     -   module: warn
@@ -4265,6 +4508,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: warn, warning, addwarning
     cost: false
     module: warn
@@ -4272,6 +4516,7 @@
     usageString: /warn <subject> [<duration>] <reason…>
     oneLineDescription: Allows the user to add a warning to a player.
     permissionbase: nucleus.warn
+    simpleUsage: /warn <subject> [<duration>] <reason…>
     commandName: warn
     permissions:
     -   module: warn
@@ -4293,23 +4538,21 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: warp
     cost: false
     module: warp
     defaultLevel: USER
-    usageString: /warp set|cost|setcategory|list|delete|[[-y|-a|-accept <y>] [-f|-force <f>] ] [<subject>] <Warp Name>
+    usageString: /warp set|cost|setcategory|list|category|delete|setdescription|[[-y|-a|-accept <y>] [-f|-force <f>] ] [<subject>] <Warp Name>
     oneLineDescription: Teleport to the specified warp.
     permissionbase: nucleus.warp
+    simpleUsage: /warp [[-y|-a|-accept <y>] [-f|-force <f>] ] [<subject>] <Warp Name>
     commandName: warp
     permissions:
     -   module: warp
         defaultLevel: ADMIN
-        description: Allows the user to send other players to warps they have access to.
+        description: Allows the user to target other players using the command "warp".
         permission: nucleus.warp.others
-    -   module: warp
-        defaultLevel: USER
-        description: Allows the user to use selectors for the command /warp
-        permission: nucleus.warp.selectors
     -   module: warp
         defaultLevel: ADMIN
         description: Allows the user to bypass the cooldown for /warp
@@ -4329,6 +4572,127 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: set, setcategory, delete, cost, setdescription, list, category
+-   aliases: category
+    cost: true
+    module: warp
+    defaultLevel: ADMIN
+    usageString: /warp category [removedescription|removedisplayname|setdisplayname|list|setdescription|?]
+    oneLineDescription: Base command for category management.
+    permissionbase: nucleus.warp.category
+    simpleUsage: '/warp category '
+    commandName: warp category
+    permissions:
+    -   module: warp
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the warmup for /warp category
+        permission: nucleus.warp.category.exempt.warmup
+    -   module: warp
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cost for /warp category
+        permission: nucleus.warp.category.exempt.cost
+    -   module: warp
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cooldown for /warp category
+        permission: nucleus.warp.category.exempt.cooldown
+    -   module: warp
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /warp category
+        permission: nucleus.warp.category.base
+    cooldown: true
+    requiresMixin: false
+    warmup: true
+    subcommands: removedisplayname, setdisplayname, setdescription, removedescription, list
+-   aliases: list
+    cost: false
+    module: warp
+    defaultLevel: ADMIN
+    usageString: '/warp category list '
+    oneLineDescription: Lists all the warp categories in use on the server.
+    permissionbase: nucleus.warp.category.list
+    simpleUsage: '/warp category list '
+    commandName: warp category list
+    permissions:
+    -   module: warp
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /category list
+        permission: nucleus.warp.category.list.base
+    cooldown: false
+    requiresMixin: false
+    warmup: false
+    subcommands: ''
+-   aliases: removedescription
+    cost: false
+    module: warp
+    defaultLevel: ADMIN
+    usageString: /warp category removedescription <category>
+    oneLineDescription: Removes the description for a category.
+    permissionbase: nucleus.warp.category.description
+    simpleUsage: /warp category removedescription <category>
+    commandName: warp category removedescription
+    permissions:
+    -   module: warp
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /category removedescription
+        permission: nucleus.warp.category.description.base
+    cooldown: false
+    requiresMixin: false
+    warmup: false
+    subcommands: ''
+-   aliases: removedisplayname
+    cost: false
+    module: warp
+    defaultLevel: ADMIN
+    usageString: /warp category removedisplayname <category>
+    oneLineDescription: Removes the display name for a category.
+    permissionbase: nucleus.warp.category.displayname
+    simpleUsage: /warp category removedisplayname <category>
+    commandName: warp category removedisplayname
+    permissions:
+    -   module: warp
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /category removedisplayname
+        permission: nucleus.warp.category.displayname.base
+    cooldown: false
+    requiresMixin: false
+    warmup: false
+    subcommands: ''
+-   aliases: setdescription
+    cost: false
+    module: warp
+    defaultLevel: ADMIN
+    usageString: /warp category setdescription <category> <displayname>
+    oneLineDescription: Sets the description for a category.
+    permissionbase: nucleus.warp.category.description
+    simpleUsage: /warp category setdescription <category> <displayname>
+    commandName: warp category setdescription
+    permissions:
+    -   module: warp
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /category setdescription
+        permission: nucleus.warp.category.description.base
+    cooldown: false
+    requiresMixin: false
+    warmup: false
+    subcommands: ''
+-   aliases: setdisplayname
+    cost: false
+    module: warp
+    defaultLevel: ADMIN
+    usageString: /warp category setdisplayname <category> <displayname>
+    oneLineDescription: Sets a display name for a category.
+    permissionbase: nucleus.warp.category.displayname
+    simpleUsage: /warp category setdisplayname <category> <displayname>
+    commandName: warp category setdisplayname
+    permissions:
+    -   module: warp
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /category setdisplayname
+        permission: nucleus.warp.category.displayname.base
+    cooldown: false
+    requiresMixin: false
+    warmup: false
+    subcommands: ''
 -   aliases: cost, setcost
     cost: false
     module: warp
@@ -4336,6 +4700,7 @@
     usageString: /warp cost <warp> <cost>
     oneLineDescription: Set the cost of the specified warp.
     permissionbase: nucleus.warp.cost
+    simpleUsage: /warp cost <warp> <cost>
     commandName: warp cost
     permissions:
     -   module: warp
@@ -4345,6 +4710,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: delete, del
     cost: true
     module: warp
@@ -4352,6 +4718,7 @@
     usageString: /warp delete <Warp Name>
     oneLineDescription: Deletes the specified warp.
     permissionbase: nucleus.warp.delete
+    simpleUsage: /warp delete <Warp Name>
     commandName: warp delete
     permissions:
     -   module: warp
@@ -4373,6 +4740,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: list
     cost: true
     rootAliases: warps
@@ -4381,6 +4749,7 @@
     usageString: '/warp list [-u <u>] '
     oneLineDescription: Lists all warps on the server.
     permissionbase: nucleus.warp.list
+    simpleUsage: '/warp list [-u <u>] '
     commandName: warp list
     permissions:
     -   module: warp
@@ -4402,6 +4771,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: set
     cost: true
     module: warp
@@ -4409,6 +4779,7 @@
     usageString: /warp set <Warp Name>
     oneLineDescription: Sets a warp.
     permissionbase: nucleus.warp.set
+    simpleUsage: /warp set <Warp Name>
     commandName: warp set
     permissions:
     -   module: warp
@@ -4430,6 +4801,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: setcategory
     cost: false
     module: warp
@@ -4437,6 +4809,7 @@
     usageString: /warp setcategory [-n|-new <n>] [-r|-remove|-delete <r>] <warp> [<category>]
     oneLineDescription: Sets the category of a warp for display in /warp list.
     permissionbase: nucleus.warp.setcategory
+    simpleUsage: /warp setcategory [-n|-new <n>] [-r|-remove|-delete <r>] <warp> [<category>]
     commandName: warp setcategory
     permissions:
     -   module: warp
@@ -4453,14 +4826,34 @@
         -r/--remove: Remove the category on the warp, move it back to the default
         "Uncategorised" group.'
     warmup: false
+    subcommands: ''
+-   aliases: setdescription
+    cost: false
+    module: warp
+    defaultLevel: ADMIN
+    usageString: /warp setdescription [-r|-remove|-delete <r>] <warp> [<description>]
+    oneLineDescription: Sets or removes (with -r) the description for the warp.
+    permissionbase: nucleus.warp.setdescription
+    simpleUsage: /warp setdescription [-r|-remove|-delete <r>] <warp> [<description>]
+    commandName: warp setdescription
+    permissions:
+    -   module: warp
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /warp setdescription
+        permission: nucleus.warp.setdescription.base
+    cooldown: false
+    requiresMixin: false
+    warmup: false
+    subcommands: ''
 -   aliases: world
     cost: true
     rootAliases: nworld, nucleusworld
     module: world
     defaultLevel: ADMIN
-    usageString: /world setdifficulty|setkeepspawnloaded|teleport|sethardcore|delete|load|enable|unload|create|info|border|setloadonstartup|setgamemode|setpvpenabled|list|setspawn|spawn|gamerule|disable|?
+    usageString: /world [setdifficulty|setkeepspawnloaded|teleport|sethardcore|delete|load|enable|unload|create|info|border|setloadonstartup|setgamemode|setpvpenabled|list|setspawn|spawn|gamerule|disable|?]
     oneLineDescription: Parent command for all other world commands.
     permissionbase: nucleus.world
+    simpleUsage: '/world '
     commandName: world
     permissions:
     -   module: world
@@ -4482,6 +4875,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: teleport, disable, setloadonstartup, setkeepspawnloaded, border, enable, list, delete, sethardcore, setdifficulty, setspawn, spawn, gamerule, load, unload, setgamemode, info, create, setpvpenabled
 -   aliases: border
     cost: true
     module: world
@@ -4489,6 +4883,7 @@
     usageString: /world border gen|set|cancelgen|[<world>]
     oneLineDescription: Parent command for world border commands.
     permissionbase: nucleus.world.border
+    simpleUsage: /world border [<world>]
     commandName: world border
     permissions:
     -   module: world
@@ -4510,6 +4905,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: set, gen, cancelgen
 -   aliases: cancelgen
     cost: false
     module: world
@@ -4517,6 +4913,7 @@
     usageString: /world border cancelgen [<world>]
     oneLineDescription: Cancels any current world border generation.
     permissionbase: nucleus.world.border.gen
+    simpleUsage: /world border cancelgen [<world>]
     commandName: world border cancelgen
     permissions:
     -   module: world
@@ -4526,6 +4923,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: gen, genchunks, generatechunks, chunkgen
     cost: true
     module: world
@@ -4533,6 +4931,7 @@
     usageString: /world border gen [-a <a>] [-s <s>] [-save <time between saves>] [<world>]
     oneLineDescription: Generates chunks up to the world border.
     permissionbase: nucleus.world.border.gen
+    simpleUsage: /world border gen [-a <a>] [-s <s>] [-save <time between saves>] [<world>]
     commandName: world border gen
     permissions:
     -   module: world
@@ -4559,6 +4958,7 @@
     requiresMixin: false
     extendedDescription: When invoked, Nucleus will start generating chunks up to the world border. During this time, the server will be susceptible to reduced performance.|br||br|If Nucleus Mixins are loaded on this server, Nucleus will use a custom routine that provides greater information to server admins, and will not attempt to generate any chunks that have been deemed to be loaded already, though enhancement of the Sponge routines.|br||br|If Nucleus Mixins are not available, or the -s flag is specified, Nucleus will fall back to the standard Sponge pre-gen routines.
     warmup: true
+    subcommands: ''
 -   aliases: set
     cost: false
     module: world
@@ -4566,6 +4966,7 @@
     usageString: /world border set [<world>] <x> <z> <diameter> [<delay>]|<diameter> [<delay>]
     oneLineDescription: Sets the world border.
     permissionbase: nucleus.world.border.set
+    simpleUsage: /world border set [<world>] <x> <z> <diameter> [<delay>]|<diameter> [<delay>]
     commandName: world border set
     permissions:
     -   module: world
@@ -4575,13 +4976,15 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: create
     cost: true
     module: world
     defaultLevel: ADMIN
-    usageString: /world create [-n|-nostructures <n>] [-l|-loadonstartup <l>] [-b|-bonuschest <b>] [-g|-generator <generator>] [-d|-dimension <dimension>] [-i <i>] [-gm|-gamemode <gamemode>] [-s|-seed <seed>] [-di|-difficulty <difficulty>] [-m|-modifier <modifier>] [-k|-keepspawnloaded <k>] [-c|-allowcommands <c>] <name>
+    usageString: /world create [-p|-preset <preset>] [-b|-bonuschest <b>] [-i <i>] [-gm|-gamemode <gamemode>] [-s|-seed <seed>] [-k|-keepspawnloaded <k>] [-n|-nostructures <n>] [-l|-loadonstartup <l>] [-g|-generator <generator>] [-d|-dimension <dimension>] [-di|-difficulty <difficulty>] [-m|-modifier <modifier>] [-c|-allowcommands <c>] <name>
     oneLineDescription: Creates a world with the specified name and options.
     permissionbase: nucleus.world.create
+    simpleUsage: /world create [-p|-preset <preset>] [-b|-bonuschest <b>] [-i <i>] [-gm|-gamemode <gamemode>] [-s|-seed <seed>] [-k|-keepspawnloaded <k>] [-n|-nostructures <n>] [-l|-loadonstartup <l>] [-g|-generator <generator>] [-d|-dimension <dimension>] [-di|-difficulty <difficulty>] [-m|-modifier <modifier>] [-c|-allowcommands <c>] <name>
     commandName: world create
     permissions:
     -   module: world
@@ -4623,6 +5026,7 @@
         the game mode, load on startup and keep spawn loaded properties can be changed
         after the world is generated.'
     warmup: true
+    subcommands: ''
 -   aliases: delete, del
     cost: false
     module: world
@@ -4630,6 +5034,7 @@
     usageString: /world delete <world>
     oneLineDescription: Deletes a world from the disc.
     permissionbase: nucleus.world.delete
+    simpleUsage: /world delete <world>
     commandName: world delete
     permissions:
     -   module: world
@@ -4640,6 +5045,7 @@
     requiresMixin: false
     extendedDescription: This command irreversibly removes a world that has been unloaded and disabled from the disc. Before removal, the file path will be shown to be checked before the removal is confirmed and completed.|br|It is vitally important to note that once the world is deleted, it cannot be recovered.
     warmup: false
+    subcommands: ''
 -   aliases: disable, dis
     cost: false
     module: world
@@ -4647,6 +5053,7 @@
     usageString: /world disable <world>
     oneLineDescription: Disables a world that is unloaded, preventing it from being loaded in future.
     permissionbase: nucleus.world.disable
+    simpleUsage: /world disable <world>
     commandName: world disable
     permissions:
     -   module: world
@@ -4657,6 +5064,7 @@
     requiresMixin: false
     extendedDescription: Disabling a world prevents a world from being loaded, however, if a world is currently loaded, it will not be unloaded, and so will not be fully disabled until it is unloaded.
     warmup: false
+    subcommands: ''
 -   aliases: enable, en
     cost: false
     module: world
@@ -4664,6 +5072,7 @@
     usageString: /world enable <world>
     oneLineDescription: Enables a world, allowing it to be loaded on demand.
     permissionbase: nucleus.world.enable
+    simpleUsage: /world enable <world>
     commandName: world enable
     permissions:
     -   module: world
@@ -4673,6 +5082,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: gamerule
     cost: false
     module: world
@@ -4680,6 +5090,7 @@
     usageString: /world gamerule set|[<world>]
     oneLineDescription: Displays a world's game rules.
     permissionbase: nucleus.world.gamerule
+    simpleUsage: /world gamerule [<world>]
     commandName: world gamerule
     permissions:
     -   module: world
@@ -4689,6 +5100,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: set
 -   aliases: set
     cost: false
     module: world
@@ -4696,6 +5108,7 @@
     usageString: /world gamerule set [<world>] <gamerule> <value>
     oneLineDescription: Sets the specified world's game rule.
     permissionbase: nucleus.world.gamerule.set
+    simpleUsage: /world gamerule set [<world>] <gamerule> <value>
     commandName: world gamerule set
     permissions:
     -   module: world
@@ -4705,6 +5118,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: info
     cost: true
     module: world
@@ -4712,6 +5126,7 @@
     usageString: /world info <world>
     oneLineDescription: Displays information about one world.
     permissionbase: nucleus.world.list
+    simpleUsage: /world info <world>
     commandName: world info
     permissions:
     -   module: world
@@ -4734,6 +5149,7 @@
     requiresMixin: false
     extendedDescription: This is otherwise identical to "/world list".
     warmup: true
+    subcommands: ''
 -   aliases: list, ls
     cost: true
     rootAliases: worlds
@@ -4742,6 +5158,7 @@
     usageString: '/world list '
     oneLineDescription: Lists all worlds.
     permissionbase: nucleus.world.list
+    simpleUsage: '/world list '
     commandName: world list
     permissions:
     -   module: world
@@ -4768,6 +5185,7 @@
     requiresMixin: false
     extendedDescription: Displays all worlds and information about them, including their seed, if the viewer in question has the "nucleus.world.list.seed" permission.
     warmup: true
+    subcommands: ''
 -   aliases: load
     cost: false
     module: world
@@ -4775,6 +5193,7 @@
     usageString: /world load [-e|-enable <e>] <world>
     oneLineDescription: Loads a world that is currently unloaded.
     permissionbase: nucleus.world.load
+    simpleUsage: /world load [-e|-enable <e>] <world>
     commandName: world load
     permissions:
     -   module: world
@@ -4785,6 +5204,7 @@
     requiresMixin: false
     extendedDescription: The command will refuse to load a disabled world unless the "-e" flag is specified and you have permission to run the "/world enable" command.
     warmup: false
+    subcommands: ''
 -   aliases: setdifficulty, difficulty
     cost: false
     module: world
@@ -4792,6 +5212,7 @@
     usageString: /world setdifficulty <difficulty> [<world>]
     oneLineDescription: Sets the difficulty of a world.
     permissionbase: nucleus.world.setdifficulty
+    simpleUsage: /world setdifficulty <difficulty> [<world>]
     commandName: world setdifficulty
     permissions:
     -   module: world
@@ -4801,6 +5222,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: setgamemode, setgm, gamemode, gm
     cost: false
     module: world
@@ -4808,6 +5230,7 @@
     usageString: /world setgamemode <gamemode> [<world>]
     oneLineDescription: Sets the gamemode of a world.
     permissionbase: nucleus.world.setgamemode
+    simpleUsage: /world setgamemode <gamemode> [<world>]
     commandName: world setgamemode
     permissions:
     -   module: world
@@ -4817,6 +5240,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
+    subcommands: ''
 -   aliases: sethardcore
     cost: true
     module: world
@@ -4824,6 +5248,7 @@
     usageString: /world sethardcore [<world>] <true|false>
     oneLineDescription: Sets whether a world has hardcore mode enabled.
     permissionbase: nucleus.world.sethardcore
+    simpleUsage: /world sethardcore [<world>] <true|false>
     commandName: world sethardcore
     permissions:
     -   module: world
@@ -4845,6 +5270,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: setkeepspawnloaded
     cost: true
     module: world
@@ -4852,6 +5278,7 @@
     usageString: /world setkeepspawnloaded [<world>] <true|false>
     oneLineDescription: Sets whether a world will keep the chunks around it's spawn point loaded.
     permissionbase: nucleus.world.setkeepspawnloaded
+    simpleUsage: /world setkeepspawnloaded [<world>] <true|false>
     commandName: world setkeepspawnloaded
     permissions:
     -   module: world
@@ -4873,6 +5300,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: setloadonstartup
     cost: true
     module: world
@@ -4880,6 +5308,7 @@
     usageString: /world setloadonstartup [<world>] <true|false>
     oneLineDescription: Sets whether a world will load on startup.
     permissionbase: nucleus.world.setloadonstartup
+    simpleUsage: /world setloadonstartup [<world>] <true|false>
     commandName: world setloadonstartup
     permissions:
     -   module: world
@@ -4901,6 +5330,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: setpvpenabled, setpvp
     cost: true
     module: world
@@ -4908,6 +5338,7 @@
     usageString: /world setpvpenabled [<world>] <true|false>
     oneLineDescription: Sets whether a world has PVP enabled.
     permissionbase: nucleus.world.setpvpenabled
+    simpleUsage: /world setpvpenabled [<world>] <true|false>
     commandName: world setpvpenabled
     permissions:
     -   module: world
@@ -4929,6 +5360,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: setspawn
     cost: true
     module: world
@@ -4936,6 +5368,7 @@
     usageString: '/world setspawn '
     oneLineDescription: Sets the spawn point of a world.
     permissionbase: nucleus.world.setspawn
+    simpleUsage: '/world setspawn '
     commandName: world setspawn
     permissions:
     -   module: world
@@ -4957,6 +5390,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: spawn
     cost: true
     module: world
@@ -4964,6 +5398,7 @@
     usageString: '/world spawn '
     oneLineDescription: Teleports to world spawn.
     permissionbase: nucleus.world.spawn
+    simpleUsage: '/world spawn '
     commandName: world spawn
     permissions:
     -   module: world
@@ -4985,6 +5420,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
+    subcommands: ''
 -   aliases: teleport, tp
     cost: true
     module: world
@@ -4992,6 +5428,7 @@
     usageString: /world teleport <world> [<subject>]
     oneLineDescription: Teleports you, or another player, to the specified world.
     permissionbase: nucleus.world.teleport
+    simpleUsage: /world teleport <world> [<subject>]
     commandName: world teleport
     permissions:
     -   module: world
@@ -5018,6 +5455,7 @@
     requiresMixin: false
     extendedDescription: This command will teleport the target player to the target world provided it is enabled. It will not enable a disabled world.
     warmup: true
+    subcommands: ''
 -   aliases: unload
     cost: false
     module: world
@@ -5025,6 +5463,7 @@
     usageString: /world unload [-t|-transfer <transferWorld>] [-d|-disable <d>] <world>
     oneLineDescription: Unloads a world that is currently loaded.
     permissionbase: nucleus.world.unload
+    simpleUsage: /world unload [-t|-transfer <transferWorld>] [-d|-disable <d>] <world>
     commandName: world unload
     permissions:
     -   module: world
@@ -5035,3 +5474,4 @@
     requiresMixin: false
     extendedDescription: Unloads the specified world, and optionally disables it. Simply unloading a world does not make is inaccessible, as it will remain enabled, which will cause the world to load when someone tries to connect to it. To disable the world at the same time as unloading it, add the "-d" flag to the command.
     warmup: false
+    subcommands: ''
