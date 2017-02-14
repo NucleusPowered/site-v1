@@ -53,7 +53,6 @@ header: Documentation Centre
 ## Reference
 
 * [Argument Type Reference](arguments.html)
-* [Selector Reference](selectors.html)
 * [Command Reference (Searchable)](commands2.html)
 * [Command Reference (Table)](commands.html)
 * [Permissions Reference](permissions.html)
