@@ -260,6 +260,18 @@ div.command > .command-head {
     background: aliceblue;
 }
 
+.command-head > a {
+    text-underline: none;
+    color: black;
+}
+
+a.anchor {
+    display: block;
+    position: relative;
+    top: -70px;
+    visibility: hidden;
+}
+
 div.command > .command-description {
     font-size: large;
 }

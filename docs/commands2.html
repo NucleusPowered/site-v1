@@ -25,8 +25,9 @@ header: Command Reference
 <div class="command" data-command="{{ cmds.commandName | downcase }}" data-module="{{ cmds.module | downcase }}"
      data-description="{{ cmds.oneLineDescription | downcase }}" data-extdescription="{{ cmds.extendedDescription | downcase }}"
      data-aliases="{{ cmds.aliases | downcase | replace: ',', '' }}">
+    <a class="anchor" id="{{ cmds.commandName | replace: ' ', '-' }}"></a>
     <div class="command-head">
-        /{{ cmds.commandName }}
+        <a href="#{{ cmds.commandName | replace: ' ', '-' }}" class="keepblack">/{{ cmds.commandName }}</a>
         <div class="command-module">
             <strong>Module:</strong> {{ cmds.module }}
         </div>
