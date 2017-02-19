@@ -9,8 +9,8 @@ header: Nucleus Frequently Asked Questions
 ### What is Nucleus?
  
 Nucleus is, quite simply, the Ultimate Essentials Plugin for Sponge! Nucleus was born to bring a modern, modular and feature-rich Essentials style plugin that
-makes Sponge a viable choice for all server owners to cover the basics, whether they be vanilla servers or modded servers, and let you get on
-with making your server unique, and other plugin developers develop those unique plugins that the Sponge API makes possible. 
+makes Sponge a viable choice for all server owners to cover the basics, whether they be vanilla servers or modded servers. It lets you get on
+with making your server unique with a solid base you can trust! 
 
 ### Who is behind the Nucleus Project?
 
