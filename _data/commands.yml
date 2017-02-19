@@ -608,7 +608,7 @@
     cost: false
     module: core
     defaultLevel: ADMIN
-    usageString: /nucleus debug|itemalias|save|setupperms|reload|clearcache|update-messages|resetuser|docgen|printperms|info|migrate|
+    usageString: /nucleus debug|itemalias|save|setupperms|reload|clearcache|update-messages|getuser|resetuser|docgen|printperms|info|migrate|
     oneLineDescription: Displays Nucleus version and module information.
     permissionbase: nucleus.nucleus
     simpleUsage: '/nucleus '
@@ -622,7 +622,7 @@
     requiresMixin: false
     extendedDescription: The Nucleus command allows access to sub commands that administer the entire plugin.
     warmup: false
-    subcommands: docgen, debug, save, update-messages, itemalias, reload, clearcache, resetuser, printperms, setupperms, info, migrate
+    subcommands: docgen, debug, save, update-messages, itemalias, reload, getuser, clearcache, resetuser, printperms, setupperms, info, migrate
 -   aliases: clearcache
     cost: false
     module: core
@@ -717,6 +717,25 @@
         permission: nucleus.nucleus.debug.refreshuniquevisitors.base
     cooldown: false
     requiresMixin: false
+    warmup: false
+    subcommands: ''
+-   aliases: getuser
+    cost: false
+    module: core
+    defaultLevel: NONE
+    usageString: /nucleus getuser <UUID>|<name>
+    oneLineDescription: Gets or refreshes a user's entry in the username cache.
+    permissionbase: nucleus.getuser
+    simpleUsage: /nucleus getuser <UUID>|<name>
+    commandName: nucleus getuser
+    permissions:
+    -   module: core
+        defaultLevel: NONE
+        description: Allows the user to run the command /nucleus getuser
+        permission: nucleus.getuser.base
+    cooldown: false
+    requiresMixin: false
+    extendedDescription: Occasionally, the Minecraft username cache gets out of sync with the rest of the system, and some commands that require a user fail. This command allows you to request updated information about a user from Mojangs server (via either a UUID or a current user name) and adds them to the cache.
     warmup: false
     subcommands: ''
 -   aliases: info
@@ -1583,6 +1602,10 @@
         defaultLevel: ADMIN
         description: Allows the player to look at offline players inventories.
         permission: nucleus.invsee.offline
+    -   module: inventory
+        defaultLevel: ADMIN
+        description: Allows the player to modify others inventories.
+        permission: nucleus.invsee.modify
     nucleusVersion: 0.13.0
     cooldown: false
     requiresMixin: false
@@ -1993,6 +2016,14 @@
         description: Allows the user to run the command /jail
         permission: nucleus.jail.base
     -   module: jail
+        defaultLevel: ADMIN
+        description: Allows the player to teleport jailed players.
+        permission: nucleus.jail.teleportjailed
+    -   module: jail
+        defaultLevel: ADMIN
+        description: Allows the player to teleport to jailed players.
+        permission: nucleus.jail.teleporttojailed
+    -   module: jail
         defaultLevel: MOD
         description: Notifies the user about jails when they occur.
         permission: nucleus.jail.notify
@@ -2004,7 +2035,7 @@
     cost: false
     module: jail
     defaultLevel: MOD
-    usageString: /jails set|delete|info|
+    usageString: /jails set|tp|delete|
     oneLineDescription: Lists all jails.
     permissionbase: nucleus.jail.list
     simpleUsage: '/jails '
@@ -2017,7 +2048,7 @@
     cooldown: false
     requiresMixin: false
     warmup: false
-    subcommands: set, delete, info
+    subcommands: set, delete, tp
 -   aliases: delete, del, remove
     cost: false
     module: jail
@@ -2036,24 +2067,6 @@
     requiresMixin: false
     warmup: false
     subcommands: ''
--   aliases: info
-    cost: false
-    module: jail
-    defaultLevel: MOD
-    usageString: /jails info <jail>
-    oneLineDescription: Returns info about the specified jail.
-    permissionbase: nucleus.jail.info
-    simpleUsage: /jails info <jail>
-    commandName: jails info
-    permissions:
-    -   module: jail
-        defaultLevel: MOD
-        description: Allows the user to run the command /jails info
-        permission: nucleus.jail.info.base
-    cooldown: false
-    requiresMixin: false
-    warmup: false
-    subcommands: ''
 -   aliases: set
     cost: false
     module: jail
@@ -2068,6 +2081,24 @@
         defaultLevel: ADMIN
         description: Allows the user to run the command /jails set
         permission: nucleus.jail.set.base
+    cooldown: false
+    requiresMixin: false
+    warmup: false
+    subcommands: ''
+-   aliases: tp
+    cost: false
+    module: jail
+    defaultLevel: MOD
+    usageString: /jails tp <jail>
+    oneLineDescription: ''
+    permissionbase: nucleus.jail.list
+    simpleUsage: /jails tp <jail>
+    commandName: jails tp
+    permissions:
+    -   module: jail
+        defaultLevel: MOD
+        description: Allows the user to run the command /jails tp
+        permission: nucleus.jail.list.base
     cooldown: false
     requiresMixin: false
     warmup: false
@@ -2343,7 +2374,7 @@
     cooldown: false
     requiresMixin: false
     warmup: true
-    subcommands: give, remove, edit, add, list, resetusage, set, onetime, cost, setcooldown, create
+    subcommands: give, remove, add, edit, list, resetusage, set, onetime, cost, setcooldown, create
 -   aliases: add, createFromInventory
     cost: false
     module: kit
@@ -4602,7 +4633,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
-    subcommands: removedisplayname, setdisplayname, setdescription, removedescription, list
+    subcommands: removedisplayname, setdisplayname, setdescription, list, removedescription
 -   aliases: list
     cost: false
     module: warp
@@ -4875,7 +4906,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
-    subcommands: teleport, disable, setloadonstartup, setkeepspawnloaded, border, enable, list, delete, sethardcore, setdifficulty, setspawn, spawn, gamerule, load, unload, setgamemode, info, create, setpvpenabled
+    subcommands: teleport, disable, setloadonstartup, setkeepspawnloaded, border, enable, list, delete, sethardcore, setdifficulty, setspawn, spawn, load, gamerule, setgamemode, unload, info, create, setpvpenabled
 -   aliases: border
     cost: true
     module: world

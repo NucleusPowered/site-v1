@@ -10,6 +10,10 @@
     description: The in-game name of the player.
 -   name: onlineplayers
     description: The number of players online on your server.
+-   name: player
+    description: The in-game name of the player.
+-   name: playerdisplayname
+    description: The in-game name of the player.
 -   name: prefix
     description: The player''s prefix, as defined by the "prefix" option in your permissions plugin.
 -   name: suffix
