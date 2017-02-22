@@ -154,7 +154,7 @@ isn't working, make sure you check the following:
 
 ### Why are players not spawning at the set spawn when they first log in?
 
-Minecraft has a spawn logic for new players:
+Minecraft has a special spawn logic for new players:
 
 * The location they log in will always be on the surface, and always a grass block
 * The location will be _around_ spawn, to provide a random-ish start point.
