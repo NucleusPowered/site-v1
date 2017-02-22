@@ -132,9 +132,17 @@ If you want to turn off Nucleus' command completely without turning off the whol
 A BungeeCord plugin is probably taking over the command. The only thing you can do in this case is disable the command on your proxy,
 which might involve disabling the whole plugin.
 
-In these scenarioes, you can still use `/nucleus:command`, or if it has an alias, the alias.
+In these scenarios, you can still use `/nucleus:command`, or if it has an alias, the alias.
 
 ## Problems In Game
+
+### I'm using `/invsee`, but the window keeps disappearing!
+
+This probably means you're running Minecraft 1.10.2, and you're not using Nucleus Mixins as well. This is an optional (but
+recommended) plugin that changes Minecraft's internals to allow you to use `/invsee` from further than 8 blocks away from your target. Minecraft 1.11.2
+users don't need this plugin, a better fix is in Sponge API 6 for 1.11.2.
+
+[You can download Nucleus Mixins from Ore here.](https://ore.spongepowered.org/Nucleus/Nucleus-Mixins)
 
 ### Why is `/back` telling me there is nowhere to warp to?
 
