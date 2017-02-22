@@ -74,7 +74,7 @@ but if you decide you wish to use PJW and want to get to the Nucleus world comma
 * **ProjectPortals** (PJP): Older versions of PJP takes over the home, warp, back and teleportation commands. You can turn off these modules in PJP if 
 you would rather use Nucleus' versions. Never versions of PJP have these modules disabled.
 * **SimpleChat** and **SimpleTags**: These plugins have been known to hijack Nucleus' chat formatting - if you want chat channels, other plugins with Nucleus
-integration exist, such as UltimateChat.
+integration exist.
 
 As we find more, we'll update this list.
 
