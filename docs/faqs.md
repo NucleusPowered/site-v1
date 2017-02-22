@@ -161,7 +161,7 @@ It's important to note that no minecraft command is actually turned off. To acce
 If you would rather have Minecraft use the command, but keep Nucleus' available, use Sponge's command alias feature. 
 In Sponge's `global.conf` file, find the `sponge.command.aliases` section, and add `<command>=minecraft` to the list. 
 
-So, to set `/kill` to redirect to 
+So, to set `/kill` to redirect to Minecraft, your aliases section should look like this:
 
 ```
 aliases {
