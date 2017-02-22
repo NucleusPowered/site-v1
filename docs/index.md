@@ -6,6 +6,8 @@ header: Documentation Centre
 
 **Please note that the documentation is not yet complete.** This will be done in time for Nucleus 1.0.
 
+[You might find that reading the Nucleus FAQs is a good first step!](faqs.html)
+
 ## Installation and Configuration
 
 * [Configuring Nucleus](configuration/)
