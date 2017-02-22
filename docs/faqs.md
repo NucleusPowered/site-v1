@@ -127,6 +127,13 @@ Nucleus' `kill` is then available through `/nucleus:kill`
  
 If you want to turn off Nucleus' command completely without turning off the whole module, you can turn it off in `commands.conf`.
 
+#### I'm using a BungeeCord/Waterfall/Lillypad proxy, and this still doesn't work!
+
+A BungeeCord plugin is probably taking over the command. The only thing you can do in this case is disable the command on your proxy,
+which might involve disabling the whole plugin.
+
+In these scenarioes, you can still use `/nucleus:command`, or if it has an alias, the alias.
+
 ## Problems In Game
 
 ### Why is `/back` telling me there is nowhere to warp to?
@@ -137,9 +144,22 @@ isn't working, make sure you check the following:
 * The players have the required permissions: `nucleus.back.targets.death`, `nucleus.back.targets.portal`, `nucleus.back.targets.teleport`
 * The options in `main.conf` at `back.*` are set as you expect them to be. 
 
-### Why are players not spawning at the set spawn?
+### Why are players not spawning at the set spawn when they first log in?
+
+Minecraft has a spawn logic for new players:
+
+* The location they log in will always be on the surface, and always a grass block
+* The location will be _around_ spawn, to provide a random-ish start point.
+ 
+Nucleus can employ some tricks to force players to start at your spawn point if you use the
+`spawn` module. Use the command `/setfirstspawn` at the location you want new players to spawn
+at (which can be the same as the normal spawn point), and set `spawn.force-first-spawn` to `true`.
+Then, use `/nucleus reload` if your server is running. Players will now spawn _exactly_ on the first
+spawn point that you set.
 
 ### Can we change/remove the join/leave messages?
+
+Yes, you can. This is described in the [Connection Messages module documentation](modules/connectionmessages.md).
 
 ## Troubleshooting
 
