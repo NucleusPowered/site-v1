@@ -28,7 +28,7 @@ If you want more information on Sponge, see their [website](https://spongepowere
 
 ### [Who is behind the Nucleus Project?](#who-is)
 
-The Nucleus Project is lead by `dualspiral`, and he has some support from `HassanS6000`, the lead of EssentialCmds.
+The Nucleus Project is lead by **dualspiral**, and he has some support from **HassanS6000**, the lead of EssentialCmds.
 
 <a class="anchor" id="what-do-they-publish"></a>
 
@@ -68,12 +68,12 @@ Not yet, but it's something we're looking into. But as you're coming from Bukkit
 
 Unfortunately so. Here are some plugins that are known to clash with Nucleus:
  
-* Any Essentials like plugin is likely to take over commands that Nucleus would normally use. Avoid running more than one Essentials plugin at a time.
-* ProjectWorlds (PJW): PJW takes over the `/world` command, and has a different command setup to Nucleus. Nucleus can do most things that PJW does, 
+* **Any Essentials like** plugin is likely to take over commands that Nucleus would normally use. Avoid running more than one Essentials plugin at a time.
+* **ProjectWorlds** (PJW): PJW takes over the `/world` command, and has a different command setup to Nucleus. Nucleus can do most things that PJW does, 
 but if you decide you wish to use PJW and want to get to the Nucleus world command, you can use `/nworld` instead.
-* ProjectPortals (PJP): Older versions of PJP takes over the home, warp, back and teleportation commands. You can turn off these modules in PJP if 
+* **ProjectPortals** (PJP): Older versions of PJP takes over the home, warp, back and teleportation commands. You can turn off these modules in PJP if 
 you would rather use Nucleus' versions. Never versions of PJP have these modules disabled.
-* SimpleChat and SimpleTags: These plugins have been known to hijack Nucleus' chat formatting - if you want chat channels, other plugins with Nucleus
+* **SimpleChat** and **SimpleTags**: These plugins have been known to hijack Nucleus' chat formatting - if you want chat channels, other plugins with Nucleus
 integration exist, such as UltimateChat.
 
 As we find more, we'll update this list.
@@ -88,7 +88,7 @@ If you do so, the following things will happen:
 * You will not be able to go AFK (permission: `nucleus.afk.exempt.toggle`)
 * Logging in/out of your server will never generate a connection message (permission: `nucleus.connectionmessages.disable`)
 
-Other plugins may also not function as intended, a good example is `GriefPrevention`. **So, please, don't use the wildcard.**
+Other plugins may also not function as intended, a good example is **GriefPrevention**. **So, please, don't use the wildcard.**
 
 Instead, Nucleus offers a way to setup our suggested permission sets, that should get you off the ground. [You can read more about it at this 
  documentation page](configuration/permissions.html), but the gist of it is that you should setup your user, mod and admin groups, then run the
