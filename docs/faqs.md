@@ -12,6 +12,8 @@ Nucleus is, quite simply, the Ultimate Essentials Plugin for Sponge! Nucleus was
 makes Sponge a viable choice for all server owners to cover the basics, whether they be vanilla servers or modded servers. It lets you get on
 with making your server unique with a solid base you can trust! 
 
+If you want more information on Sponge, see their [website](https://spongepowered.org) and [documentation](https://docs.spongepowered.org). 
+
 ### Who is behind the Nucleus Project?
 
 The Nucleus Project is lead by `dualspiral`, and he has some support from `HassanS6000`, the lead of EssentialCmds.
@@ -66,6 +68,7 @@ recommend you actually grant these unless you are SURE you know what you are doi
   * Warp to `/spawn` and `/firstspawn`
   * Use `/tpa`, accept and deny requests, and use `/tptoggle` to blanket deny requests.
   * Use `/warp` to teleport to any available warp point (but if enabled, only to those they are given explicit permissions for).
+  * Use `/getpos` to get their own position
 * `MOD` gives permission to:
   * Administer bans (including tempbans)
   * Administer mutes
