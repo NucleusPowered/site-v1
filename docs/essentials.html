@@ -1,0 +1,46 @@
+---
+layout: standardheadmd
+title: Documentation Centre
+header: Essentials Command Equivalence
+---
+<p>
+    This page details the equivalent Nucleus command for many Essentials commands. Not all Essentials commands are in Nucleus,
+    not all Nucleus commands are inspired by Essentials. This is intended as a quick guide - for more information about a command,
+    see its entry on the <a href="commands2.html">command page</a>.
+</p>
+<p>
+    If you're looking for the permissions reference, <a href="permissions.html">you can find it here</a>.<br />
+    If you're looking for the command reference, <a href="commands2.html">you can find it here</a>.
+</p>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>
+                Essentials
+            </th>
+            <th>
+                Nucleus equivalent
+            </th>
+            <th>
+                Notes
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    {% assign sorted = site.data.ess %}
+    {% for cmds in sorted %}
+    <tr>
+        <td>
+            {{ cmds.essentialsCommands | join: ', ' }}
+        </td>
+        <td>
+            {{ cmds.nucleusEquiv | join: ', ' }}
+        </td>
+        <td>
+            {% if cmds.notes == nil or cmds.notes == "" %}<em>None</em>{% else %}{{ cmds.notes }}{% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>

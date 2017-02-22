@@ -1,0 +1,705 @@
+-   essentialsCommands:
+    - afk, away
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - afk
+    - away
+-   essentialsCommands:
+    - back
+    - return
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - back
+    - return
+-   essentialsCommands:
+    - ban
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - ban
+-   essentialsCommands:
+    - break
+    notes: Requires co-ordinates, whereas Essentials required you to look at the block.
+    isExact: false
+    nucleusEquiv:
+    - blockzap
+    - zapblock
+-   essentialsCommands:
+    - broadcast
+    - bcast
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - broadcast
+    - bcast
+    - bc
+-   essentialsCommands:
+    - burn
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - ignite
+    - burn
+-   essentialsCommands:
+    - buy
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - itembuy
+    - buy
+-   essentialsCommands:
+    - clearinventory
+    - ci
+    - clean
+    - clearinvent
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - clear
+    - clearinv
+    - clearinventory
+    - ci
+    - clearinvent
+-   essentialsCommands:
+    - delhome
+    - remhome
+    - rmhome
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - deletehome
+    - delhome
+-   essentialsCommands:
+    - deljail
+    - remjail
+    - rmjail
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - jails delete
+    - jails del
+    - jails remove
+-   essentialsCommands:
+    - delwarp
+    - remwarp
+    - rmwarp
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - warp delete
+    - warp del
+-   essentialsCommands:
+    - enchant
+    - enchantment
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - enchant
+-   essentialsCommands:
+    - enderchest
+    - echest
+    - endersee
+    - ec
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - enderchest
+    - ec
+    - echest
+-   essentialsCommands:
+    - exp
+    - xp
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - exp
+    - experience
+    - xp
+-   essentialsCommands:
+    - feed
+    - eat
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - feed
+    - eat
+-   essentialsCommands:
+    - fly
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - fly
+-   essentialsCommands:
+    - gamemode
+    - gm
+    - creative
+    - survival
+    - adventure
+    - gmc
+    - gma
+    - gms
+    - gmt
+    notes: Currently no way to simply give '/creative' or '/gmc', for example, with no arguments, gamemode is required.
+    isExact: false
+    nucleusEquiv:
+    - gamemode
+    - gm
+-   essentialsCommands:
+    - gc
+    - lag
+    - mem
+    - memory
+    - uptime
+    - tps
+    - entities
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - serverstat
+    - gc
+    - uptime
+-   essentialsCommands:
+    - getpos
+    - coords
+    - position
+    - whereami
+    - getlocation
+    - getloc
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - getpos
+    - coords
+    - position
+    - whereami
+    - getlocation
+    - getloc
+-   essentialsCommands:
+    - god
+    - godmode
+    - tgm
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - god
+    - invuln
+    - invulnerability
+-   essentialsCommands:
+    - hat
+    - head
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - hat
+    - head
+-   essentialsCommands:
+    - heal
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - heal
+-   essentialsCommands:
+    - helpop
+    - amsg
+    - ac
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - helpop
+-   essentialsCommands:
+    - home
+    - homes
+    notes: '''/homes'' will list homes, ''/home'' will teleport like Essentials did.'
+    isExact: true
+    nucleusEquiv:
+    - home
+-   essentialsCommands:
+    - ignore
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - ignore
+-   essentialsCommands:
+    - info
+    - ifo
+    - news
+    - about
+    - inform
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - info
+    - einfo
+-   essentialsCommands:
+    - invsee
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - invsee
+-   essentialsCommands:
+    - itemdb
+    - itemno
+    - durability
+    - dura
+    notes: Nucleus tries to provide much more info!
+    isExact: false
+    nucleusEquiv:
+    - iteminfo
+    - itemdb
+-   essentialsCommands:
+    - jails
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - jails
+-   essentialsCommands:
+    - jump
+    - j
+    - jumpto
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - jump
+    - j
+    - jmp
+-   essentialsCommands:
+    - kick
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - kick
+-   essentialsCommands:
+    - kickall
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - kickall
+-   essentialsCommands:
+    - kill
+    - remove
+    - butcher
+    - killall
+    - mobkill
+    notes: Nucleus supports killing entities using the Minecraft selectors.
+    isExact: false
+    nucleusEquiv:
+    - kill
+-   essentialsCommands:
+    - kit, kits
+    notes: '''/kit'' redeems, ''/kits'' lists.'
+    isExact: false
+    nucleusEquiv:
+    - kit
+-   essentialsCommands:
+    - lightning
+    - strike
+    - smite
+    - thor
+    - shock
+    notes: Selectors can be used, entities can be struck.
+    isExact: false
+    nucleusEquiv:
+    - lightning
+    - strike
+    - smite
+    - thor
+    - shock
+-   essentialsCommands:
+    - list
+    - who
+    - playerlist
+    - online
+    - plist
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - list
+    - listplayers
+    - ls
+-   essentialsCommands:
+    - mail
+    - email
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - mail
+    - email
+-   essentialsCommands:
+    - me
+    - action
+    - describe
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - me
+    - action
+-   essentialsCommands:
+    - more
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - more
+    - stack
+-   essentialsCommands:
+    - motd
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - motd
+-   essentialsCommands:
+    - msg
+    - tell
+    - m
+    - t
+    - whisper
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - message
+    - m
+    - msg
+    - whisper
+    - w
+    - t
+    - tell
+-   essentialsCommands:
+    - mute
+    - silence
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - mute
+    - unmute
+-   essentialsCommands:
+    - nick
+    - nickname
+    notes: To remove a nickname, use '/delnick'
+    isExact: false
+    nucleusEquiv:
+    - nick
+    - nickname
+-   essentialsCommands:
+    - ping
+    - pong
+    - echo
+    notes: Returns your latency, not your message.
+    isExact: false
+    nucleusEquiv:
+    - ping
+-   essentialsCommands:
+    - powertool
+    - pt
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - powertool
+    - pt
+-   essentialsCommands:
+    - powertooltoggle
+    - ptt
+    - pttoggle
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - powertool toggle
+-   essentialsCommands:
+    - r
+    - reply
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - reply
+    - r
+-   essentialsCommands:
+    - realname
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - realname
+-   essentialsCommands:
+    - repair
+    - fix
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - repair
+    - mend
+-   essentialsCommands:
+    - rules
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - rules
+-   essentialsCommands:
+    - seen
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - seen
+    - seenplayer
+    - lookup
+-   essentialsCommands:
+    - sell
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - itemsell
+    - sell
+-   essentialsCommands:
+    - sethome
+    - createhome
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - homeset
+    - sethome
+-   essentialsCommands:
+    - setjail
+    - createjail
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - jails set
+-   essentialsCommands:
+    - setspawn
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - setspawn
+-   essentialsCommands:
+    - setwarp
+    - createwarp
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - warp set
+-   essentialsCommands:
+    - 'setworth '
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - setworth
+    - setitemworth
+-   essentialsCommands:
+    - skull
+    - playerskull
+    - head
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - skull
+-   essentialsCommands:
+    - socialspy
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - socialspy
+-   essentialsCommands:
+    - spawn
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - spawn
+-   essentialsCommands:
+    - spawnmob
+    - mob
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - spawnmob
+    - spawnentity
+    - mobspawn
+-   essentialsCommands:
+    - speed
+    - flyspeed
+    - walkspeed
+    - fspeed
+    - wspeed
+    notes: This command either uses your current state or a specified argument to determine whether to alter fly or walk speed.
+    isExact: false
+    nucleusEquiv:
+    - speed
+-   essentialsCommands:
+    - sudo
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - sudo
+-   essentialsCommands:
+    - suicide
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - suicide
+-   essentialsCommands:
+    - tempban
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - tempban
+-   essentialsCommands:
+    - thunder
+    - sun
+    - weather
+    - sky
+    - storm
+    - rain
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - weather
+-   essentialsCommands:
+    - time
+    - day
+    - night
+    notes: A time MUST be specified.
+    isExact: false
+    nucleusEquiv:
+    - time set
+-   essentialsCommands:
+    - time
+    notes: This just displays the time. Use '/time set' to set the time.
+    isExact: false
+    nucleusEquiv:
+    - time
+-   essentialsCommands:
+    - togglejail
+    - tjail
+    - unjail
+    - jail
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - jail
+    - unjail
+    - togglejail
+-   essentialsCommands:
+    - top
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - top
+    - tosurface
+    - totop
+-   essentialsCommands:
+    - tp
+    - tele
+    - tp2p
+    - teleport
+    - tpo
+    notes: If you have permission, this will override '/tptoggle' automatically.
+    isExact: false
+    nucleusEquiv:
+    - teleport
+    - tp
+-   essentialsCommands:
+    - tpa
+    - call
+    - tpask
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - tpa
+    - teleportask
+    - call
+    - tpask
+-   essentialsCommands:
+    - tpaall
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - tpaall
+    - tpaskall
+-   essentialsCommands:
+    - tpaccept
+    - tpyes
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - tpaccept
+    - teleportaccept
+    - tpyes
+-   essentialsCommands:
+    - tpahere
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - tpahere
+    - tpaskhere
+    - teleportaskhere
+-   essentialsCommands:
+    - tpall
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - tpall
+    - tpallhere
+-   essentialsCommands:
+    - tpdeny
+    - tpno
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - tpdeny
+    - teleportdeny
+    - tpno
+-   essentialsCommands:
+    - tphere
+    - s
+    - tpohere
+    notes: If you have permission, this will override '/tptoggle' automatically.
+    isExact: false
+    nucleusEquiv:
+    - tphere
+    - tph
+-   essentialsCommands:
+    - tppos
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - tppos
+-   essentialsCommands:
+    - tptoggle
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - tptoggle
+-   essentialsCommands:
+    - unban
+    - pardon
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - unban
+    - pardon
+-   essentialsCommands:
+    - vanish
+    - v
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - vanish
+    - v
+-   essentialsCommands:
+    - warp
+    - warps
+    notes: Use '/warp' for warping, '/warps' to list warps.
+    isExact: false
+    nucleusEquiv:
+    - warp
+-   essentialsCommands:
+    - world
+    notes: The world command in Essentials was just a warp command.
+    isExact: true
+    nucleusEquiv:
+    - world teleport
+    - world tp
+-   essentialsCommands:
+    - worth
+    - price
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - worth

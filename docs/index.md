@@ -9,6 +9,7 @@ header: Documentation Centre
 ## Installation and Configuration
 
 * [Configuring Nucleus](configuration/)
+* [Essentials Command Equivalence](essentials.html)
 * [Migrating from EssentialCmds](configuration/migration.html)
 * [Setting up suggested permissions](configuration/permissions.html)
 * [Command Management (Warmups, Cooldowns and Costs)](configuration/commands.html)
