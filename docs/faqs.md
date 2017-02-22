@@ -72,7 +72,7 @@ recommend you actually grant these unless you are SURE you know what you are doi
   * Send players to jail and then be able to unjail them again
   * Kick players, and kick all players when required
   * Join a full server
-  * Are exmepted from being ignored in chat and messages
+  * Are exempted from being ignored in chat and messages
   * Use Social Spy (to spy on messages)
   * Add notes and warnings to players
   * Use staff chat
