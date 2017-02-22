@@ -67,9 +67,14 @@ header: Command Reference
         </p>
         {% endif %}
         <p>
-            <strong>Usage: </strong> <code>{{ cmds.usageString | replace: '<', '&lt;' | replace: '>', '&gt;' }}</code>
+            <strong>Usage: </strong> <code>{{ cmds.simpleUsage | replace: '<', '&lt;' | replace: '>', '&gt;' }}</code>
         </p>
-    {% if cmds.permissionbase != nil and cmds.permissionbase != "" %}
+        {% if cmds.subcommands != nil and cmds.subcommands != "" %}
+        <p>
+            <strong>Available subcommands: </strong> <code>{{ cmds.subcommands | replace: '<', '&lt;' | replace: '>', '&gt;' }}</code>
+        </p>
+        {% endif %}
+        {% if cmds.permissionbase != nil and cmds.permissionbase != "" %}
         <p>
             <strong>Default Role: </strong> {{ cmds.defaultLevel }}
         </p>
@@ -87,6 +92,21 @@ header: Command Reference
             {% endfor %}
         </ul>
         {% endif %}
+        {% endif %}
+
+        {% if cmds.essentialsEquivalents != nil and cmds.essentialsEquivalents | size > 0 %}
+        <p>
+            {% if cmds.isExactEssEquiv %}
+            <strong>This command is an equivalent to the following command(s) in Essentials: </strong>
+            {% else %}
+            <strong>This command is similar to the following command(s) found in Essentials: </strong>
+            {% endif %}<code>/{{ cmds.essentialsEquivalents | join: '</code>, <code>/' }} </code>
+        </p>
+        <p>
+            {% if cmds.essNotes != nil and cmds.essNotes != "" %}
+            <strong>Essentials Migration Notes: </strong>{{ cmds.essNotes }}
+            {% endif %}
+        </p>
         {% endif %}
     </div>
 </div>

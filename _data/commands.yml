@@ -1,9 +1,12 @@
 -   aliases: blockzap, zapblock
     cost: true
+    isExactEssEquiv: false
     module: admin
     defaultLevel: ADMIN
     usageString: /blockzap <location>
     oneLineDescription: Sets the target block to air.
+    essentialsEquivalents:
+    - break
     permissionbase: nucleus.blockzap
     simpleUsage: /blockzap <location>
     commandName: blockzap
@@ -27,14 +30,19 @@
     cooldown: true
     requiresMixin: false
     extendedDescription: Intended as an admin command to turn a problematic block to air.
+    essNotes: Requires co-ordinates, whereas Essentials required you to look at the block.
     warmup: true
     subcommands: ''
 -   aliases: broadcast, bcast, bc
     cost: false
+    isExactEssEquiv: true
     module: admin
     defaultLevel: ADMIN
     usageString: /broadcast <message>
     oneLineDescription: Broadcasts a message to the entire server.
+    essentialsEquivalents:
+    - broadcast
+    - bcast
     permissionbase: nucleus.broadcast
     simpleUsage: /broadcast <message>
     commandName: broadcast
@@ -45,14 +53,19 @@
         permission: nucleus.broadcast.base
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: exp, experience, xp
     cost: false
+    isExactEssEquiv: true
     module: admin
     defaultLevel: ADMIN
     usageString: /exp take|give|set|<subject>
     oneLineDescription: Displays the specified player's current experience.
+    essentialsEquivalents:
+    - exp
+    - xp
     permissionbase: nucleus.exp
     simpleUsage: /exp <subject>
     commandName: exp
@@ -63,8 +76,9 @@
         permission: nucleus.exp.base
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
-    subcommands: take, set, give
+    subcommands: take, give, set
 -   aliases: give
     cost: false
     module: admin
@@ -124,10 +138,21 @@
     subcommands: ''
 -   aliases: gamemode, gm
     cost: true
+    isExactEssEquiv: false
     module: admin
     defaultLevel: ADMIN
     usageString: /gamemode <gamemode>|<user> <gamemode>
     oneLineDescription: Sets a player's game mode.
+    essentialsEquivalents:
+    - gamemode
+    - gm
+    - creative
+    - survival
+    - adventure
+    - gmc
+    - gma
+    - gms
+    - gmt
     permissionbase: nucleus.gamemode
     simpleUsage: /gamemode <gamemode>|<user> <gamemode>
     commandName: gamemode
@@ -170,6 +195,45 @@
         permission: nucleus.gamemode.modes.adventure
     cooldown: true
     requiresMixin: false
+    essNotes: Currently no way to simply give '/creative' or '/gmc', for example, with no arguments, gamemode is required.
+    warmup: true
+    subcommands: ''
+-   aliases: kill
+    cost: true
+    isExactEssEquiv: false
+    module: admin
+    defaultLevel: ADMIN
+    usageString: /kill <subject>
+    oneLineDescription: Kill the specified player.
+    essentialsEquivalents:
+    - kill
+    - remove
+    - butcher
+    - killall
+    - mobkill
+    permissionbase: nucleus.kill
+    simpleUsage: /kill <subject>
+    commandName: kill
+    permissions:
+    -   module: admin
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cooldown for /kill
+        permission: nucleus.kill.exempt.cooldown
+    -   module: admin
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the warmup for /kill
+        permission: nucleus.kill.exempt.warmup
+    -   module: admin
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cost for /kill
+        permission: nucleus.kill.exempt.cost
+    -   module: admin
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /kill
+        permission: nucleus.kill.base
+    cooldown: true
+    requiresMixin: false
+    essNotes: Nucleus supports killing entities using the Minecraft selectors.
     warmup: true
     subcommands: ''
 -   aliases: plainbroadcast, pbcast, pbc
@@ -210,10 +274,13 @@
     subcommands: ''
 -   aliases: sudo
     cost: true
+    isExactEssEquiv: true
     module: admin
     defaultLevel: ADMIN
     usageString: /sudo <subject> <command…>
     oneLineDescription: Forces a player to run a command.
+    essentialsEquivalents:
+    - sudo
     permissionbase: nucleus.sudo
     simpleUsage: /sudo <subject> <command…>
     commandName: sudo
@@ -240,14 +307,18 @@
         permission: nucleus.sudo.exempt.target
     cooldown: true
     requiresMixin: false
+    essNotes: ''
     warmup: true
     subcommands: ''
--   aliases: afk
+-   aliases: afk, away
     cost: false
+    isExactEssEquiv: true
     module: afk
     defaultLevel: USER
     usageString: '/afk '
     oneLineDescription: Toggles the player's AFK state.
+    essentialsEquivalents:
+    - afk, away
     permissionbase: nucleus.afk
     simpleUsage: '/afk '
     commandName: afk
@@ -270,6 +341,7 @@
         permission: nucleus.afk.exempt.toggle
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: afkrefresh
@@ -305,10 +377,14 @@
     subcommands: ''
 -   aliases: back, return
     cost: true
+    isExactEssEquiv: true
     module: back
     defaultLevel: ADMIN
     usageString: '/back '
     oneLineDescription: Allows a user to return to their last place before death or warp.
+    essentialsEquivalents:
+    - back
+    - return
     permissionbase: nucleus.back
     simpleUsage: '/back '
     commandName: back
@@ -343,14 +419,18 @@
         permission: nucleus.back.exempt.cooldown
     cooldown: true
     requiresMixin: false
+    essNotes: ''
     warmup: true
     subcommands: ''
 -   aliases: ban
     cost: false
+    isExactEssEquiv: true
     module: ban
     defaultLevel: MOD
     usageString: /ban <uuid>|<user>|<name> [<reason…>]
     oneLineDescription: Bans a player.
+    essentialsEquivalents:
+    - ban
     permissionbase: nucleus.ban
     simpleUsage: /ban <uuid>|<user>|<name> [<reason…>]
     commandName: ban
@@ -373,6 +453,7 @@
         permission: nucleus.ban.exempt.target
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: checkban
@@ -395,10 +476,13 @@
     subcommands: ''
 -   aliases: tempban
     cost: false
+    isExactEssEquiv: true
     module: ban
     defaultLevel: MOD
     usageString: /tempban <user> <duration> [<reasonKey…>]
     oneLineDescription: Temporarily bans a player.
+    essentialsEquivalents:
+    - tempban
     permissionbase: nucleus.tempban
     simpleUsage: /tempban <user> <duration> [<reasonKey…>]
     commandName: tempban
@@ -421,14 +505,19 @@
         permission: nucleus.tempban.exempt.length
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: unban, pardon
     cost: false
+    isExactEssEquiv: true
     module: ban
     defaultLevel: MOD
     usageString: /unban <uuid>|<user>
     oneLineDescription: Unbans a player.
+    essentialsEquivalents:
+    - unban
+    - pardon
     permissionbase: nucleus.unban
     simpleUsage: /unban <uuid>|<user>
     commandName: unban
@@ -439,6 +528,7 @@
         permission: nucleus.unban.base
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: blacklist
@@ -542,10 +632,15 @@
     subcommands: ''
 -   aliases: me, action
     cost: true
+    isExactEssEquiv: true
     module: chat
     defaultLevel: USER
     usageString: /me <message>
     oneLineDescription: Formats the next chat message as an action, using the format set by the server.
+    essentialsEquivalents:
+    - me
+    - action
+    - describe
     permissionbase: nucleus.me
     simpleUsage: /me <message>
     commandName: me
@@ -568,6 +663,7 @@
         permission: nucleus.me.exempt.cooldown
     cooldown: true
     requiresMixin: false
+    essNotes: ''
     warmup: true
     subcommands: ''
 -   aliases: commandspy
@@ -1018,10 +1114,13 @@
     subcommands: ''
 -   aliases: time
     cost: true
+    isExactEssEquiv: false
     module: environment
     defaultLevel: USER
     usageString: /time set|[<world>]
     oneLineDescription: Gets the time for the specified world.
+    essentialsEquivalents:
+    - time
     permissionbase: nucleus.time
     simpleUsage: /time [<world>]
     commandName: time
@@ -1044,14 +1143,20 @@
         permission: nucleus.time.exempt.cost
     cooldown: true
     requiresMixin: false
+    essNotes: This just displays the time. Use '/time set' to set the time.
     warmup: true
     subcommands: set
 -   aliases: set
     cost: true
+    isExactEssEquiv: false
     module: environment
     defaultLevel: ADMIN
     usageString: /time set [<world>] <time>
     oneLineDescription: Sets the time for the specified world.
+    essentialsEquivalents:
+    - time
+    - day
+    - night
     permissionbase: nucleus.time.set
     simpleUsage: /time set [<world>] <time>
     commandName: time set
@@ -1074,14 +1179,23 @@
         permission: nucleus.time.set.exempt.cost
     cooldown: true
     requiresMixin: false
+    essNotes: A time MUST be specified.
     warmup: true
     subcommands: ''
 -   aliases: weather
     cost: true
+    isExactEssEquiv: true
     module: environment
     defaultLevel: ADMIN
     usageString: /weather [<world>] <weather> [<duration>]|[<timespan>]
     oneLineDescription: Sets the weather on the specified world.
+    essentialsEquivalents:
+    - thunder
+    - sun
+    - weather
+    - sky
+    - storm
+    - rain
     permissionbase: nucleus.weather
     simpleUsage: /weather [<world>] <weather> [<duration>]|[<timespan>]
     commandName: weather
@@ -1104,14 +1218,18 @@
         permission: nucleus.weather.exempt.cooldown
     cooldown: true
     requiresMixin: false
+    essNotes: ''
     warmup: true
     subcommands: ''
 -   aliases: fly
     cost: true
+    isExactEssEquiv: true
     module: fly
     defaultLevel: ADMIN
     usageString: /fly [<player>] [<toggle>]
     oneLineDescription: Set specified player's fly mode.
+    essentialsEquivalents:
+    - fly
     permissionbase: nucleus.fly
     simpleUsage: /fly [<player>] [<toggle>]
     commandName: fly
@@ -1138,6 +1256,7 @@
         permission: nucleus.fly.exempt.warmup
     cooldown: true
     requiresMixin: false
+    essNotes: ''
     warmup: true
     subcommands: ''
 -   aliases: freezeplayer, freeze
@@ -1174,12 +1293,16 @@
     requiresMixin: false
     warmup: true
     subcommands: ''
--   aliases: hat
+-   aliases: hat, head
     cost: false
+    isExactEssEquiv: true
     module: fun
     defaultLevel: ADMIN
     usageString: /hat [<player>]
     oneLineDescription: Puts the item in the player's hand on their head as a helmet.
+    essentialsEquivalents:
+    - hat
+    - head
     permissionbase: nucleus.hat
     simpleUsage: /hat [<player>]
     commandName: hat
@@ -1194,14 +1317,18 @@
         permission: nucleus.hat.others
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: ignite, burn
     cost: true
+    isExactEssEquiv: true
     module: fun
     defaultLevel: ADMIN
     usageString: /ignite [<player>] <ticks>
     oneLineDescription: Sets the specified player on fire.
+    essentialsEquivalents:
+    - burn
     permissionbase: nucleus.ignite
     simpleUsage: /ignite [<player>] <ticks>
     commandName: ignite
@@ -1228,6 +1355,7 @@
         permission: nucleus.ignite.exempt.warmup
     cooldown: true
     requiresMixin: false
+    essNotes: ''
     warmup: true
     subcommands: ''
 -   aliases: kittycannon, kc
@@ -1277,12 +1405,19 @@
     extendedDescription: Ocelots will be fired from the target person, which explode within a short amount of time. The following flags are available (subject to permission):|br||br|* -d, --damage - damage entities that get caught in the explosion.|br|* -f, --fire - potentially set fire to blocks in the area of the explosion.|br|* -b, --break - break blocks in the vicinity of the explosion.|br||br|Any break or fire that might occur due to the exploding cat will be tracked as by being caused by the calling player by protection plugins.
     warmup: true
     subcommands: ''
--   aliases: lightning, smite, thor
+-   aliases: lightning, strike, smite, thor, shock
     cost: true
+    isExactEssEquiv: false
     module: fun
     defaultLevel: ADMIN
     usageString: /lightning [<subject>]
     oneLineDescription: Strikes a position or player with a lightning bolt.
+    essentialsEquivalents:
+    - lightning
+    - strike
+    - smite
+    - thor
+    - shock
     permissionbase: nucleus.lightning
     simpleUsage: /lightning [<subject>]
     commandName: lightning
@@ -1309,14 +1444,60 @@
         permission: nucleus.lightning.exempt.cost
     cooldown: true
     requiresMixin: false
+    essNotes: Selectors can be used, entities can be struck.
     warmup: true
+    subcommands: ''
+-   aliases: geoip
+    cost: false
+    module: geo-ip
+    defaultLevel: ADMIN
+    usageString: /geoip update|<subject>
+    oneLineDescription: Get the country a player has connected via.
+    permissionbase: nucleus.geoip
+    simpleUsage: /geoip <subject>
+    commandName: geoip
+    permissions:
+    -   module: geo-ip
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /geoip
+        permission: nucleus.geoip.base
+    -   module: geo-ip
+        defaultLevel: ADMIN
+        description: Displays player country on login, if enabled in the configuration.
+        permission: nucleus.geoip.login
+    cooldown: false
+    requiresMixin: false
+    warmup: false
+    subcommands: update
+-   aliases: update
+    cost: false
+    module: geo-ip
+    defaultLevel: ADMIN
+    usageString: '/geoip update '
+    oneLineDescription: Update the GeoIP database. It is recommended that you do this no more than once a month.
+    permissionbase: nucleus.geoip.update
+    simpleUsage: '/geoip update '
+    commandName: geoip update
+    permissions:
+    -   module: geo-ip
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /geoip update
+        permission: nucleus.geoip.update.base
+    cooldown: false
+    requiresMixin: false
+    warmup: false
     subcommands: ''
 -   aliases: deletehome, delhome
     cost: false
+    isExactEssEquiv: true
     module: home
     defaultLevel: USER
     usageString: /deletehome <home>
     oneLineDescription: Deletes a home.
+    essentialsEquivalents:
+    - delhome
+    - remhome
+    - rmhome
     permissionbase: nucleus.home
     simpleUsage: /deletehome <home>
     commandName: deletehome
@@ -1328,6 +1509,7 @@
     cooldown: false
     requiresMixin: false
     extendedDescription: Removes a personal warp. The home must be specified.
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: deletehomeother, delhomeother
@@ -1350,10 +1532,14 @@
     subcommands: ''
 -   aliases: home
     cost: true
+    isExactEssEquiv: true
     module: home
     defaultLevel: USER
     usageString: /home [<home>]
     oneLineDescription: Teleports to home.
+    essentialsEquivalents:
+    - home
+    - homes
     permissionbase: nucleus.home
     simpleUsage: /home [<home>]
     commandName: home
@@ -1377,6 +1563,8 @@
     cooldown: true
     requiresMixin: false
     extendedDescription: A home is a personal warp. They can be set using the /homeset command. If no home name is specified, the default of "home" is used.
+    essNotes: '''/homes'' will list homes, ''/home'' will teleport like Essentials
+        did.'
     warmup: true
     subcommands: ''
 -   aliases: homeother
@@ -1415,10 +1603,14 @@
     subcommands: ''
 -   aliases: homeset, sethome
     cost: true
+    isExactEssEquiv: true
     module: home
     defaultLevel: USER
     usageString: /homeset [-o|-overwrite <o>] [<home>]
     oneLineDescription: Sets a home with the specified name.
+    essentialsEquivalents:
+    - sethome
+    - createhome
     permissionbase: nucleus.home.set
     simpleUsage: /homeset [-o|-overwrite <o>] [<home>]
     commandName: homeset
@@ -1446,6 +1638,7 @@
     cooldown: true
     requiresMixin: false
     extendedDescription: This command allows players to specify a "personal warp", which is termed a "home". By default, all players get one home, which can be controlled by assigning a number to the permission option "home-count", of being giving the permission "nucleus.home.set.unlimited" for unlimited homes.|br||br|If no home name is specified, the default of "home" is used. If you try to set a home with a name that is already in use, the command will fail, unless the "-o" flag is specified.
+    essNotes: ''
     warmup: true
     subcommands: ''
 -   aliases: listhomes, homes
@@ -1473,10 +1666,13 @@
     subcommands: ''
 -   aliases: ignore
     cost: false
+    isExactEssEquiv: true
     module: ignore
     defaultLevel: USER
     usageString: /ignore <user> [<toggle>]
     oneLineDescription: Toggles ignoring of all chat messages.
+    essentialsEquivalents:
+    - ignore
     permissionbase: nucleus.ignore
     simpleUsage: /ignore <user> [<toggle>]
     commandName: ignore
@@ -1491,14 +1687,22 @@
         permission: nucleus.ignore.base
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: info, einfo
     cost: false
+    isExactEssEquiv: true
     module: info
     defaultLevel: USER
     usageString: /info [-l|-list <l>] [<section>]
     oneLineDescription: Get server information.
+    essentialsEquivalents:
+    - info
+    - ifo
+    - news
+    - about
+    - inform
     permissionbase: nucleus.info
     simpleUsage: /info [-l|-list <l>] [<section>]
     commandName: info
@@ -1513,14 +1717,18 @@
         permission: nucleus.info.list
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: motd
     cost: false
+    isExactEssEquiv: true
     module: info
     defaultLevel: USER
     usageString: '/motd '
     oneLineDescription: Allows the user to view the server MOTD, as defined in the "motd.txt" file.
+    essentialsEquivalents:
+    - motd
     permissionbase: nucleus.motd
     simpleUsage: '/motd '
     commandName: motd
@@ -1531,15 +1739,22 @@
         permission: nucleus.motd.base
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: enderchest, ec, echest
     cost: true
+    isExactEssEquiv: true
     module: inventory
     spongeVersion: 5.0.0
     defaultLevel: ADMIN
     usageString: /enderchest [<subject>]
     oneLineDescription: Allows the user to inspect their (or another player's) ender chest.
+    essentialsEquivalents:
+    - enderchest
+    - echest
+    - endersee
+    - ec
     permissionbase: nucleus.enderchest
     simpleUsage: /enderchest [<subject>]
     commandName: enderchest
@@ -1573,15 +1788,19 @@
     requiresMixin: false
     minecraftVersion: 1.10.2
     extendedDescription: Opens an Inventory GUI with the target player's ender chest displayed. Players wishing to inspect a different player's ender chest must have the "nucleus.enderchest.others" permission, and they must not have the "nucleus.enderchest.exempt.target" permission.
+    essNotes: ''
     warmup: true
     subcommands: ''
 -   aliases: invsee
     cost: false
+    isExactEssEquiv: true
     module: inventory
     spongeVersion: 5.0.0
     defaultLevel: ADMIN
     usageString: /invsee <subject>
     oneLineDescription: Allows the user to inspect a target's inventory.
+    essentialsEquivalents:
+    - invsee
     permissionbase: nucleus.invsee
     simpleUsage: /invsee <subject>
     commandName: invsee
@@ -1611,14 +1830,21 @@
     requiresMixin: false
     minecraftVersion: 1.10.2
     extendedDescription: Opens an Inventory GUI with the target player's inventory displayed, if they do not have the "nucleus.invsee.exempt.target" permission.
+    essNotes: ''
     warmup: false
     subcommands: ''
--   aliases: clear, clearinv, clearinventory, ci
+-   aliases: clear, clearinv, clearinventory, ci, clearinvent
     cost: false
+    isExactEssEquiv: true
     module: item
     defaultLevel: ADMIN
     usageString: /clear [<player>]
     oneLineDescription: Clears a player's inventory.
+    essentialsEquivalents:
+    - clearinventory
+    - ci
+    - clean
+    - clearinvent
     permissionbase: nucleus.clear
     simpleUsage: /clear [<player>]
     commandName: clear
@@ -1633,15 +1859,20 @@
         permission: nucleus.clear.others
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: enchant
     cost: true
+    isExactEssEquiv: true
     module: item
     defaultLevel: ADMIN
     usageString: '/enchant <enchantment> level(1 to 32767) [-u|-unsafe <u>] [-o|-overwrite
         <o>] '
     oneLineDescription: Allows the user to enchant items.
+    essentialsEquivalents:
+    - enchant
+    - enchantment
     permissionbase: nucleus.enchant
     simpleUsage: '/enchant <enchantment> level(1 to 32767) [-u|-unsafe <u>] [-o|-overwrite
         <o>] '
@@ -1669,6 +1900,7 @@
         permission: nucleus.enchant.exempt.warmup
     cooldown: true
     requiresMixin: false
+    essNotes: ''
     warmup: true
     subcommands: ''
 -   aliases: itemname
@@ -1883,10 +2115,13 @@
     subcommands: ''
 -   aliases: more, stack
     cost: true
+    isExactEssEquiv: true
     module: item
     defaultLevel: ADMIN
     usageString: '/more '
     oneLineDescription: Sets item in hand to a full stack.
+    essentialsEquivalents:
+    - more
     permissionbase: nucleus.more
     simpleUsage: '/more '
     commandName: more
@@ -1909,14 +2144,19 @@
         permission: nucleus.more.exempt.cost
     cooldown: true
     requiresMixin: false
+    essNotes: ''
     warmup: true
     subcommands: ''
 -   aliases: repair, mend
     cost: true
+    isExactEssEquiv: true
     module: item
     defaultLevel: ADMIN
     usageString: /repair [<player>]
     oneLineDescription: Repairs item in hand.
+    essentialsEquivalents:
+    - repair
+    - fix
     permissionbase: nucleus.repair
     simpleUsage: /repair [<player>]
     commandName: repair
@@ -1943,14 +2183,20 @@
         permission: nucleus.repair.exempt.cost
     cooldown: true
     requiresMixin: false
+    essNotes: ''
     warmup: true
     subcommands: ''
 -   aliases: skull
     cost: true
+    isExactEssEquiv: true
     module: item
     defaultLevel: ADMIN
     usageString: /skull [<subject>] [<amount>]
     oneLineDescription: Spawns in copies of the specified player's skull (or your own, if no player is specified) into your inventory.
+    essentialsEquivalents:
+    - skull
+    - playerskull
+    - head
     permissionbase: nucleus.skull
     simpleUsage: /skull [<subject>] [<amount>]
     commandName: skull
@@ -1977,6 +2223,7 @@
         permission: nucleus.skull.exempt.warmup
     cooldown: true
     requiresMixin: false
+    essNotes: ''
     warmup: true
     subcommands: ''
 -   aliases: checkjail
@@ -1999,10 +2246,16 @@
     subcommands: ''
 -   aliases: jail, unjail, togglejail
     cost: false
+    isExactEssEquiv: true
     module: jail
     defaultLevel: MOD
     usageString: /jail <subject> [<jail>] [<duration>] [<reason…>]
     oneLineDescription: Toggles the jailing of a player.
+    essentialsEquivalents:
+    - togglejail
+    - tjail
+    - unjail
+    - jail
     permissionbase: nucleus.jail
     simpleUsage: /jail <subject> [<jail>] [<duration>] [<reason…>]
     commandName: jail
@@ -2029,14 +2282,18 @@
         permission: nucleus.jail.notify
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: jails
     cost: false
+    isExactEssEquiv: true
     module: jail
     defaultLevel: MOD
     usageString: /jails set|tp|delete|
     oneLineDescription: Lists all jails.
+    essentialsEquivalents:
+    - jails
     permissionbase: nucleus.jail.list
     simpleUsage: '/jails '
     commandName: jails
@@ -2047,14 +2304,20 @@
         permission: nucleus.jail.list.base
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: set, delete, tp
 -   aliases: delete, del, remove
     cost: false
+    isExactEssEquiv: true
     module: jail
     defaultLevel: ADMIN
     usageString: /jails delete <jail>
     oneLineDescription: Deletes a jail.
+    essentialsEquivalents:
+    - deljail
+    - remjail
+    - rmjail
     permissionbase: nucleus.jail.delete
     simpleUsage: /jails delete <jail>
     commandName: jails delete
@@ -2065,14 +2328,19 @@
         permission: nucleus.jail.delete.base
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: set
     cost: false
+    isExactEssEquiv: true
     module: jail
     defaultLevel: ADMIN
     usageString: /jails set <jail>
     oneLineDescription: Creates a jail.
+    essentialsEquivalents:
+    - setjail
+    - createjail
     permissionbase: nucleus.jail.set
     simpleUsage: /jails set <jail>
     commandName: jails set
@@ -2083,6 +2351,7 @@
         permission: nucleus.jail.set.base
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: tp
@@ -2090,7 +2359,7 @@
     module: jail
     defaultLevel: MOD
     usageString: /jails tp <jail>
-    oneLineDescription: ''
+    oneLineDescription: Warp to a jail.
     permissionbase: nucleus.jail.list
     simpleUsage: /jails tp <jail>
     commandName: jails tp
@@ -2105,10 +2374,15 @@
     subcommands: ''
 -   aliases: jump, j, jmp
     cost: true
+    isExactEssEquiv: true
     module: jump
     defaultLevel: ADMIN
     usageString: '/jump '
     oneLineDescription: Perform a short range "jump" to the block they are looking at.
+    essentialsEquivalents:
+    - jump
+    - j
+    - jumpto
     permissionbase: nucleus.jump
     simpleUsage: '/jump '
     commandName: jump
@@ -2131,6 +2405,7 @@
         permission: nucleus.jump.exempt.warmup
     cooldown: true
     requiresMixin: false
+    essNotes: ''
     warmup: true
     subcommands: ''
 -   aliases: thru, through
@@ -2165,10 +2440,13 @@
     subcommands: ''
 -   aliases: top, tosurface, totop
     cost: true
+    isExactEssEquiv: true
     module: jump
     defaultLevel: ADMIN
     usageString: /top [-f <f>] [<subject>]
     oneLineDescription: Teleports the user (or target player) to the surface.
+    essentialsEquivalents:
+    - top
     permissionbase: nucleus.top
     simpleUsage: /top [-f <f>] [<subject>]
     commandName: top
@@ -2196,14 +2474,18 @@
     cooldown: true
     requiresMixin: false
     extendedDescription: By default, /top will not teleport a player into an unsafe situation. This might result in moving slightly in the x or z directions, or not teleport the player at all. To teleport without regard for player safety, add "-f" to the command.
+    essNotes: ''
     warmup: true
     subcommands: ''
 -   aliases: kick
     cost: false
+    isExactEssEquiv: true
     module: kick
     defaultLevel: MOD
     usageString: /kick <subject> [<reason…>]
     oneLineDescription: Kicks a player
+    essentialsEquivalents:
+    - kick
     permissionbase: nucleus.kick
     simpleUsage: /kick <subject> [<reason…>]
     commandName: kick
@@ -2222,14 +2504,18 @@
         permission: nucleus.kick.notify
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: kickall
     cost: false
+    isExactEssEquiv: true
     module: kick
     defaultLevel: MOD
     usageString: /kickall [-w|-f <w>]  [<reason…>]
     oneLineDescription: Kicks all players, optionally turning the whitelist on.
+    essentialsEquivalents:
+    - kickall
     permissionbase: nucleus.kickall
     simpleUsage: /kickall [-w|-f <w>]  [<reason…>]
     commandName: kickall
@@ -2245,6 +2531,7 @@
     cooldown: false
     requiresMixin: false
     extendedDescription: If the command is executed by a player on the server, the executing player will not be kicked. To turn the whitelist on when kicking everyone, use the "-w" flag.
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: firstjoinkit, starterkit, joinkit, firstkit
@@ -2343,10 +2630,13 @@
     subcommands: ''
 -   aliases: kit
     cost: false
+    isExactEssEquiv: false
     module: kit
     defaultLevel: ADMIN
     usageString: /kit add|give|set|cost|edit|setcooldown|list|remove|create|resetusage|onetime|<kit>
     oneLineDescription: Redeems a kit.
+    essentialsEquivalents:
+    - kit, kits
     permissionbase: nucleus.kit
     simpleUsage: /kit <kit>
     commandName: kit
@@ -2373,8 +2663,9 @@
         permission: nucleus.kits
     cooldown: false
     requiresMixin: false
+    essNotes: '''/kit'' redeems, ''/kits'' lists.'
     warmup: true
-    subcommands: give, remove, add, edit, list, resetusage, set, onetime, cost, setcooldown, create
+    subcommands: give, remove, edit, add, resetusage, list, set, onetime, cost, create, setcooldown
 -   aliases: add, createFromInventory
     cost: false
     module: kit
@@ -2603,12 +2894,16 @@
     extendedDescription: The cooldown must be specified in the form 1w1d1h1m1s, where 1 hour 5 minutes would be "1h5m".
     warmup: false
     subcommands: ''
--   aliases: mail
+-   aliases: mail, email
     cost: false
+    isExactEssEquiv: true
     module: mail
     defaultLevel: USER
     usageString: /mail other|clear|send|[<filters>*]
     oneLineDescription: Retrieves mail that has been sent to you.
+    essentialsEquivalents:
+    - mail
+    - email
     permissionbase: nucleus.mail
     simpleUsage: /mail [<filters>*]
     commandName: mail
@@ -2619,6 +2914,7 @@
         permission: nucleus.mail.base
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: send, clear, other
 -   aliases: clear
@@ -2689,10 +2985,15 @@
     subcommands: ''
 -   aliases: helpop
     cost: true
+    isExactEssEquiv: true
     module: message
     defaultLevel: USER
     usageString: /helpop <message…>
     oneLineDescription: Send a message to all available staff
+    essentialsEquivalents:
+    - helpop
+    - amsg
+    - ac
     permissionbase: nucleus.helpop
     simpleUsage: /helpop <message…>
     commandName: helpop
@@ -2719,15 +3020,23 @@
         permission: nucleus.helpop.base
     cooldown: true
     requiresMixin: false
+    essNotes: ''
     warmup: true
     subcommands: ''
 -   aliases: message, m, msg, whisper, w, t
     cost: true
+    isExactEssEquiv: true
     rootAliases: tell
     module: message
     defaultLevel: USER
     usageString: /message <to> <message…>
     oneLineDescription: Send a message to a player, or the console with "-".
+    essentialsEquivalents:
+    - msg
+    - tell
+    - m
+    - t
+    - whisper
     permissionbase: nucleus.message
     simpleUsage: /message <to> <message…>
     commandName: message
@@ -2770,14 +3079,19 @@
         permission: nucleus.message.exempt.cooldown
     cooldown: true
     requiresMixin: false
+    essNotes: ''
     warmup: true
     subcommands: ''
 -   aliases: reply, r
     cost: true
+    isExactEssEquiv: true
     module: message
     defaultLevel: USER
     usageString: /reply <message…>
     oneLineDescription: Send a message to the last player that sent you a message.
+    essentialsEquivalents:
+    - r
+    - reply
     permissionbase: nucleus.message
     simpleUsage: /reply <message…>
     commandName: reply
@@ -2800,14 +3114,18 @@
         permission: nucleus.message.exempt.cooldown
     cooldown: true
     requiresMixin: false
+    essNotes: ''
     warmup: true
     subcommands: ''
 -   aliases: socialspy
     cost: false
+    isExactEssEquiv: true
     module: message
     defaultLevel: MOD
     usageString: /socialspy [<Social Spy>]
     oneLineDescription: See all private messages sent to other players.
+    essentialsEquivalents:
+    - socialspy
     permissionbase: nucleus.socialspy
     simpleUsage: /socialspy [<Social Spy>]
     commandName: socialspy
@@ -2822,6 +3140,7 @@
         permission: nucleus.socialspy.force
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: blockinfo
@@ -2892,12 +3211,16 @@
     requiresMixin: false
     warmup: true
     subcommands: ''
--   aliases: feed
+-   aliases: feed, eat
     cost: true
+    isExactEssEquiv: true
     module: misc
     defaultLevel: ADMIN
     usageString: /feed [<player>]
     oneLineDescription: Set specified player's hunger to full.
+    essentialsEquivalents:
+    - feed
+    - eat
     permissionbase: nucleus.feed
     simpleUsage: /feed [<player>]
     commandName: feed
@@ -2924,14 +3247,20 @@
         permission: nucleus.feed.exempt.warmup
     cooldown: true
     requiresMixin: false
+    essNotes: ''
     warmup: true
     subcommands: ''
 -   aliases: god, invuln, invulnerability
     cost: false
+    isExactEssEquiv: true
     module: misc
     defaultLevel: ADMIN
     usageString: /god [<subject>] [<invuln>]
     oneLineDescription: Set specified player's invulnerability status.
+    essentialsEquivalents:
+    - god
+    - godmode
+    - tgm
     permissionbase: nucleus.god
     simpleUsage: /god [<subject>] [<invuln>]
     commandName: god
@@ -2946,14 +3275,18 @@
         permission: nucleus.god.others
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: heal
     cost: true
+    isExactEssEquiv: true
     module: misc
     defaultLevel: ADMIN
     usageString: /heal [<player>]
     oneLineDescription: Fully heal the specified player.
+    essentialsEquivalents:
+    - heal
     permissionbase: nucleus.heal
     simpleUsage: /heal [<player>]
     commandName: heal
@@ -2980,14 +3313,21 @@
         permission: nucleus.heal.exempt.warmup
     cooldown: true
     requiresMixin: false
+    essNotes: ''
     warmup: true
     subcommands: ''
 -   aliases: iteminfo, itemdb
     cost: true
+    isExactEssEquiv: false
     module: misc
     defaultLevel: ADMIN
     usageString: /iteminfo [-e|-extended <e>] [<key>]
     oneLineDescription: Get information about the item you are currently holding.
+    essentialsEquivalents:
+    - itemdb
+    - itemno
+    - durability
+    - dura
     permissionbase: nucleus.iteminfo
     simpleUsage: /iteminfo [-e|-extended <e>] [<key>]
     commandName: iteminfo
@@ -3014,44 +3354,20 @@
         permission: nucleus.iteminfo.exempt.cost
     cooldown: true
     requiresMixin: false
-    warmup: true
-    subcommands: ''
--   aliases: kill
-    cost: true
-    module: misc
-    defaultLevel: ADMIN
-    usageString: /kill <subject>
-    oneLineDescription: Kill the specified player.
-    permissionbase: nucleus.kill
-    simpleUsage: /kill <subject>
-    commandName: kill
-    permissions:
-    -   module: misc
-        defaultLevel: ADMIN
-        description: Allows the user to bypass the cooldown for /kill
-        permission: nucleus.kill.exempt.cooldown
-    -   module: misc
-        defaultLevel: ADMIN
-        description: Allows the user to bypass the warmup for /kill
-        permission: nucleus.kill.exempt.warmup
-    -   module: misc
-        defaultLevel: ADMIN
-        description: Allows the user to bypass the cost for /kill
-        permission: nucleus.kill.exempt.cost
-    -   module: misc
-        defaultLevel: ADMIN
-        description: Allows the user to run the command /kill
-        permission: nucleus.kill.base
-    cooldown: true
-    requiresMixin: false
+    essNotes: Nucleus tries to provide much more info!
     warmup: true
     subcommands: ''
 -   aliases: ping
     cost: false
+    isExactEssEquiv: false
     module: misc
     defaultLevel: ADMIN
     usageString: /ping [<player>]
     oneLineDescription: Displays the current latency for the target player.
+    essentialsEquivalents:
+    - ping
+    - pong
+    - echo
     permissionbase: nucleus.ping
     simpleUsage: /ping [<player>]
     commandName: ping
@@ -3066,14 +3382,24 @@
         permission: nucleus.ping.others
     cooldown: false
     requiresMixin: false
+    essNotes: Returns your latency, not your message.
     warmup: false
     subcommands: ''
 -   aliases: serverstat, gc, uptime
     cost: false
+    isExactEssEquiv: true
     module: misc
     defaultLevel: ADMIN
     usageString: '/serverstat '
     oneLineDescription: Displays server runtime statistics.
+    essentialsEquivalents:
+    - gc
+    - lag
+    - mem
+    - memory
+    - uptime
+    - tps
+    - entities
     permissionbase: nucleus.serverstat
     simpleUsage: '/serverstat '
     commandName: serverstat
@@ -3085,14 +3411,22 @@
     cooldown: false
     requiresMixin: false
     extendedDescription: This command displays information about the server, the JVM, and each world.
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: speed
     cost: true
+    isExactEssEquiv: false
     module: misc
     defaultLevel: ADMIN
     usageString: /speed [<player>] [<fly|f|flying|w|walk>] [<speed>]
     oneLineDescription: Set the specified player's walking or flying speed, where "1" is normal walking speed.
+    essentialsEquivalents:
+    - speed
+    - flyspeed
+    - walkspeed
+    - fspeed
+    - wspeed
     permissionbase: nucleus.speed
     simpleUsage: /speed [<player>] [<fly|f|flying|w|walk>] [<speed>]
     commandName: speed
@@ -3123,14 +3457,18 @@
         permission: nucleus.speed.exempt.cooldown
     cooldown: true
     requiresMixin: false
+    essNotes: This command either uses your current state or a specified argument to determine whether to alter fly or walk speed.
     warmup: true
     subcommands: ''
 -   aliases: suicide
     cost: true
+    isExactEssEquiv: true
     module: misc
     defaultLevel: USER
     usageString: '/suicide '
     oneLineDescription: Kill your player, displaying the Game Over screen.
+    essentialsEquivalents:
+    - suicide
     permissionbase: nucleus.suicide
     simpleUsage: '/suicide '
     commandName: suicide
@@ -3153,14 +3491,19 @@
         permission: nucleus.suicide.exempt.cooldown
     cooldown: true
     requiresMixin: false
+    essNotes: ''
     warmup: true
     subcommands: ''
 -   aliases: spawnmob, spawnentity, mobspawn
     cost: true
+    isExactEssEquiv: true
     module: mob
     defaultLevel: ADMIN
     usageString: /spawnmob [<player>] <mob> [<amount>]
     oneLineDescription: Spawns in mobs at the specified player's location.
+    essentialsEquivalents:
+    - spawnmob
+    - mob
     permissionbase: nucleus.spawnmob
     simpleUsage: /spawnmob [<player>] <mob> [<amount>]
     commandName: spawnmob
@@ -3196,6 +3539,7 @@
         permission: nucleus.spawnmob.others
     cooldown: true
     requiresMixin: false
+    essNotes: ''
     warmup: true
     subcommands: ''
 -   aliases: checkmute
@@ -3237,10 +3581,14 @@
     subcommands: ''
 -   aliases: mute, unmute
     cost: false
+    isExactEssEquiv: true
     module: mute
     defaultLevel: MOD
     usageString: /mute <subject> [<time>] [<reason…>]
     oneLineDescription: Mutes the specified player.
+    essentialsEquivalents:
+    - mute
+    - silence
     permissionbase: nucleus.mute
     simpleUsage: /mute <subject> [<time>] [<reason…>]
     commandName: mute
@@ -3267,6 +3615,7 @@
         permission: nucleus.mute.exempt.length
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: voice
@@ -3365,10 +3714,14 @@
     subcommands: ''
 -   aliases: nick, nickname
     cost: true
+    isExactEssEquiv: false
     module: nickname
     defaultLevel: ADMIN
     usageString: /nick [<subject>] <nickname>
     oneLineDescription: Sets your nickname/display name
+    essentialsEquivalents:
+    - nick
+    - nickname
     permissionbase: nucleus.nick
     simpleUsage: /nick [<subject>] <nickname>
     commandName: nick
@@ -3559,14 +3912,18 @@
         permission: nucleus.nick.colour.yellow
     cooldown: true
     requiresMixin: false
+    essNotes: To remove a nickname, use '/delnick'
     warmup: true
     subcommands: ''
 -   aliases: realname
     cost: true
+    isExactEssEquiv: true
     module: nickname
     defaultLevel: USER
     usageString: /realname <name>
     oneLineDescription: Gets the player's realname from the provided nickname.
+    essentialsEquivalents:
+    - realname
     permissionbase: nucleus.realname
     simpleUsage: /realname <name>
     commandName: realname
@@ -3589,6 +3946,7 @@
         permission: nucleus.realname.base
     cooldown: true
     requiresMixin: false
+    essNotes: ''
     warmup: true
     subcommands: ''
 -   aliases: checknotes, notes
@@ -3667,12 +4025,20 @@
     requiresMixin: false
     warmup: false
     subcommands: ''
--   aliases: getpos
+-   aliases: getpos, coords, position, whereami, getlocation, getloc
     cost: true
+    isExactEssEquiv: true
     module: playerinfo
-    defaultLevel: MOD
+    defaultLevel: USER
     usageString: /getpos [<player>]
     oneLineDescription: Gets the location of the executing or target player.
+    essentialsEquivalents:
+    - getpos
+    - coords
+    - position
+    - whereami
+    - getlocation
+    - getloc
     permissionbase: nucleus.getpos
     simpleUsage: /getpos [<player>]
     commandName: getpos
@@ -3686,7 +4052,7 @@
         description: Allows the user to bypass the cost for /getpos
         permission: nucleus.getpos.exempt.cost
     -   module: playerinfo
-        defaultLevel: MOD
+        defaultLevel: USER
         description: Allows the user to run the command /getpos
         permission: nucleus.getpos.base
     -   module: playerinfo
@@ -3699,14 +4065,22 @@
         permission: nucleus.getpos.exempt.warmup
     cooldown: true
     requiresMixin: false
+    essNotes: ''
     warmup: true
     subcommands: ''
 -   aliases: list, listplayers, ls
     cost: true
+    isExactEssEquiv: true
     module: playerinfo
     defaultLevel: USER
     usageString: '/list '
     oneLineDescription: Lists the players on the server.
+    essentialsEquivalents:
+    - list
+    - who
+    - playerlist
+    - online
+    - plist
     permissionbase: nucleus.list
     simpleUsage: '/list '
     commandName: list
@@ -3733,14 +4107,18 @@
         permission: nucleus.list.exempt.cost
     cooldown: true
     requiresMixin: false
+    essNotes: ''
     warmup: true
     subcommands: ''
 -   aliases: seen, seenplayer, lookup
     cost: true
+    isExactEssEquiv: true
     module: playerinfo
     defaultLevel: ADMIN
     usageString: /seen <uuid>|<subject>
     oneLineDescription: Gets information about the specified player.
+    essentialsEquivalents:
+    - seen
     permissionbase: nucleus.seen
     simpleUsage: /seen <uuid>|<subject>
     commandName: seen
@@ -3767,14 +4145,19 @@
         permission: nucleus.seen.exempt.cooldown
     cooldown: true
     requiresMixin: false
+    essNotes: ''
     warmup: true
     subcommands: ''
 -   aliases: powertool, pt
     cost: false
+    isExactEssEquiv: true
     module: powertool
     defaultLevel: ADMIN
     usageString: /powertool toggle|list|delete|[<command…>]
     oneLineDescription: Binds the item in hand to the specified command.
+    essentialsEquivalents:
+    - powertool
+    - pt
     permissionbase: nucleus.powertool
     simpleUsage: /powertool [<command…>]
     commandName: powertool
@@ -3785,6 +4168,7 @@
         permission: nucleus.powertool.base
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: delete, list, toggle
 -   aliases: delete, del, rm, remove
@@ -3825,10 +4209,15 @@
     subcommands: ''
 -   aliases: toggle
     cost: false
+    isExactEssEquiv: true
     module: powertool
     defaultLevel: ADMIN
     usageString: /powertool toggle [<toggle>]
     oneLineDescription: Toggles whether powertools activate.
+    essentialsEquivalents:
+    - powertooltoggle
+    - ptt
+    - pttoggle
     permissionbase: nucleus.powertool
     simpleUsage: /powertool toggle [<toggle>]
     commandName: powertool toggle
@@ -3839,6 +4228,7 @@
         permission: nucleus.powertool.base
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: rtp, randomteleport, rteleport
@@ -3877,10 +4267,13 @@
     subcommands: ''
 -   aliases: rules
     cost: false
+    isExactEssEquiv: true
     module: rules
     defaultLevel: USER
     usageString: /rules add|remove|
     oneLineDescription: Read the server rules.
+    essentialsEquivalents:
+    - rules
     permissionbase: nucleus.rules
     simpleUsage: '/rules '
     commandName: rules
@@ -3891,6 +4284,7 @@
         permission: nucleus.rules.base
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: remove, add
 -   aliases: add, a, +
@@ -3931,10 +4325,13 @@
     subcommands: ''
 -   aliases: itembuy, buy
     cost: false
+    isExactEssEquiv: true
     module: server-shop
     defaultLevel: USER
     usageString: /itembuy [-y|-f|-a|-yes|-auto <y>] <item> <amount>
     oneLineDescription: Allows the user to buy an item from the server for a set price.
+    essentialsEquivalents:
+    - buy
     permissionbase: nucleus.itembuy
     simpleUsage: /itembuy [-y|-f|-a|-yes|-auto <y>] <item> <amount>
     commandName: itembuy
@@ -3945,14 +4342,18 @@
         permission: nucleus.itembuy.base
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: itemsell, sell
     cost: false
+    isExactEssEquiv: true
     module: server-shop
     defaultLevel: USER
     usageString: '/itemsell '
     oneLineDescription: Allows the user to sell an item in their main hand to the server for a set price.
+    essentialsEquivalents:
+    - sell
     permissionbase: nucleus.itemsell
     simpleUsage: '/itemsell '
     commandName: itemsell
@@ -3963,6 +4364,7 @@
         permission: nucleus.itemsell.base
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: itemsellall, sellall
@@ -3985,10 +4387,13 @@
     subcommands: ''
 -   aliases: setworth, setitemworth
     cost: false
+    isExactEssEquiv: true
     module: server-shop
     defaultLevel: ADMIN
     usageString: /setworth [<item>] <buy|sell> <cost>
     oneLineDescription: Allows the user to set the buy or sell price of an item.
+    essentialsEquivalents:
+    - 'setworth '
     permissionbase: nucleus.setworth
     simpleUsage: /setworth [<item>] <buy|sell> <cost>
     commandName: setworth
@@ -3999,14 +4404,19 @@
         permission: nucleus.setworth.base
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: worth
     cost: true
+    isExactEssEquiv: true
     module: server-shop
     defaultLevel: USER
     usageString: /worth [<item>]
     oneLineDescription: Allows the user to display the server buy and sell prices for an item.
+    essentialsEquivalents:
+    - worth
+    - price
     permissionbase: nucleus.worth
     simpleUsage: /worth [<item>]
     commandName: worth
@@ -4030,6 +4440,7 @@
     cooldown: true
     requiresMixin: false
     extendedDescription: If no item ID or alias is provided, this command will get the buy/sell prices for the item in the main hand.
+    essNotes: ''
     warmup: true
     subcommands: ''
 -   aliases: firstspawn
@@ -4100,10 +4511,13 @@
     subcommands: ''
 -   aliases: setspawn
     cost: false
+    isExactEssEquiv: true
     module: spawn
     defaultLevel: ADMIN
     usageString: '/setspawn '
     oneLineDescription: Sets the current world spawn point.
+    essentialsEquivalents:
+    - setspawn
     permissionbase: nucleus.setspawn
     simpleUsage: '/setspawn '
     commandName: setspawn
@@ -4114,14 +4528,18 @@
         permission: nucleus.setspawn.base
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: spawn
     cost: true
+    isExactEssEquiv: true
     module: spawn
     defaultLevel: USER
     usageString: /spawn other|[<world>]
     oneLineDescription: Warp to a world spawn point.
+    essentialsEquivalents:
+    - spawn
     permissionbase: nucleus.spawn
     simpleUsage: /spawn [<world>]
     commandName: spawn
@@ -4153,6 +4571,7 @@
     cooldown: true
     requiresMixin: false
     extendedDescription: If the global spawn world is set in the configuration, then calling /spawn without a world argument will send the calling player to the global spawn point, otherwise, the player will warp to the current world spawn point.
+    essNotes: ''
     warmup: true
     subcommands: other
 -   aliases: other
@@ -4198,11 +4617,18 @@
     subcommands: ''
 -   aliases: teleport
     cost: true
+    isExactEssEquiv: false
     rootAliases: tp
     module: teleport
     defaultLevel: MOD
     usageString: /teleport [-q <quiet>] [-f <f>]  <playerFrom>|<subject>
     oneLineDescription: Teleports one player to another's location.
+    essentialsEquivalents:
+    - tp
+    - tele
+    - tp2p
+    - teleport
+    - tpo
     permissionbase: nucleus.teleport.teleport
     simpleUsage: /teleport [-q <quiet>] [-f <f>]  <playerFrom>|<subject>
     commandName: teleport
@@ -4233,6 +4659,7 @@
         permission: nucleus.teleport.teleport.exempt.cost
     cooldown: true
     requiresMixin: false
+    essNotes: If you have permission, this will override '/tptoggle' automatically.
     warmup: true
     subcommands: ''
 -   aliases: teleportnative, tpnative, tpn
@@ -4249,12 +4676,17 @@
     requiresMixin: false
     warmup: false
     subcommands: ''
--   aliases: tpa, teleportask
+-   aliases: tpa, teleportask, call, tpask
     cost: true
+    isExactEssEquiv: true
     module: teleport
     defaultLevel: USER
     usageString: '/tpa <subject> [-f <f>] '
     oneLineDescription: Send a request to a player to ask for you to teleport to them.
+    essentialsEquivalents:
+    - tpa
+    - call
+    - tpask
     permissionbase: nucleus.teleport.tpa
     simpleUsage: '/tpa <subject> [-f <f>] '
     commandName: tpa
@@ -4281,14 +4713,18 @@
         permission: nucleus.teleport.tpa.base
     cooldown: true
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: tpaall, tpaskall
     cost: false
+    isExactEssEquiv: true
     module: teleport
     defaultLevel: ADMIN
     usageString: '/tpaall [-f <f>] '
     oneLineDescription: Request all players on the server to teleport to your location.
+    essentialsEquivalents:
+    - tpaall
     permissionbase: nucleus.teleport.tpaall
     simpleUsage: '/tpaall [-f <f>] '
     commandName: tpaall
@@ -4299,14 +4735,19 @@
         permission: nucleus.teleport.tpaall.base
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
--   aliases: tpaccept, teleportaccept
+-   aliases: tpaccept, teleportaccept, tpyes
     cost: false
+    isExactEssEquiv: true
     module: teleport
     defaultLevel: USER
     usageString: '/tpaccept '
     oneLineDescription: Accept a pending teleport request.
+    essentialsEquivalents:
+    - tpaccept
+    - tpyes
     permissionbase: nucleus.teleport.tpaccept
     simpleUsage: '/tpaccept '
     commandName: tpaccept
@@ -4317,14 +4758,18 @@
         permission: nucleus.teleport.tpaccept.base
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: tpahere, tpaskhere, teleportaskhere
     cost: true
+    isExactEssEquiv: true
     module: teleport
     defaultLevel: MOD
     usageString: '/tpahere <subject> [-f <f>] '
     oneLineDescription: Send a request to a player to ask them to teleport to you.
+    essentialsEquivalents:
+    - tpahere
     permissionbase: nucleus.teleport.tpahere
     simpleUsage: '/tpahere <subject> [-f <f>] '
     commandName: tpahere
@@ -4351,14 +4796,18 @@
         permission: nucleus.teleport.tpahere.base
     cooldown: true
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: tpall, tpallhere
     cost: false
+    isExactEssEquiv: true
     module: teleport
     defaultLevel: ADMIN
     usageString: '/tpall [-f <f>] '
     oneLineDescription: Forcefully teleport all players on the server to your location.
+    essentialsEquivalents:
+    - tpall
     permissionbase: nucleus.teleport.tpall
     simpleUsage: '/tpall [-f <f>] '
     commandName: tpall
@@ -4369,14 +4818,19 @@
         permission: nucleus.teleport.tpall.base
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
--   aliases: tpdeny, teleportdeny
+-   aliases: tpdeny, teleportdeny, tpno
     cost: false
+    isExactEssEquiv: true
     module: teleport
     defaultLevel: USER
     usageString: '/tpdeny '
     oneLineDescription: Deny a pending teleport request.
+    essentialsEquivalents:
+    - tpdeny
+    - tpno
     permissionbase: nucleus.teleport.tpdeny
     simpleUsage: '/tpdeny '
     commandName: tpdeny
@@ -4387,14 +4841,20 @@
         permission: nucleus.teleport.tpdeny.base
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: tphere, tph
     cost: false
+    isExactEssEquiv: false
     module: teleport
     defaultLevel: ADMIN
     usageString: /tphere <subject>
     oneLineDescription: Teleports a player to your location.
+    essentialsEquivalents:
+    - tphere
+    - s
+    - tpohere
     permissionbase: nucleus.teleport.tphere
     simpleUsage: /tphere <subject>
     commandName: tphere
@@ -4405,14 +4865,18 @@
         permission: nucleus.teleport.tphere.base
     cooldown: false
     requiresMixin: false
+    essNotes: If you have permission, this will override '/tptoggle' automatically.
     warmup: false
     subcommands: ''
 -   aliases: tppos
     cost: false
+    isExactEssEquiv: true
     module: teleport
     defaultLevel: ADMIN
     usageString: /tppos [-f] [--force] [-c] [--chunk]   [<subject>] [<world>] x(-2147483648 to 2147483647) y(0 to 255) z(-2147483648 to 2147483647)
     oneLineDescription: Teleport to the specified location.
+    essentialsEquivalents:
+    - tppos
     permissionbase: nucleus.teleport.tppos
     simpleUsage: /tppos [-f] [--force] [-c] [--chunk]   [<subject>] [<world>] x(-2147483648 to 2147483647) y(0 to 255) z(-2147483648 to 2147483647)
     commandName: tppos
@@ -4432,14 +4896,18 @@
         you.|br|* -c/--chunk: indicates that the input co-ordinates are chunk co-ordiantes
         rather than world co-ordinates. Nucleus tries to put you in the centre of
         the chunk, and scans the whole chunk for a safe location.'
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: tptoggle
     cost: false
+    isExactEssEquiv: true
     module: teleport
     defaultLevel: USER
     usageString: /tptoggle [<toggle>]
     oneLineDescription: Toggle whether teleport requests are received.
+    essentialsEquivalents:
+    - tptoggle
     permissionbase: nucleus.teleport.tptoggle
     simpleUsage: /tptoggle [<toggle>]
     commandName: tptoggle
@@ -4454,14 +4922,19 @@
         permission: nucleus.teleport.tptoggle.exempt
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: vanish, v
     cost: false
+    isExactEssEquiv: true
     module: vanish
     defaultLevel: ADMIN
     usageString: /vanish [<player>] [<toggle>]
     oneLineDescription: Toggles whether you are invisible on the server.
+    essentialsEquivalents:
+    - vanish
+    - v
     permissionbase: nucleus.vanish
     simpleUsage: /vanish [<player>] [<toggle>]
     commandName: vanish
@@ -4484,6 +4957,7 @@
         permission: nucleus.vanish.others
     cooldown: false
     requiresMixin: false
+    essNotes: ''
     warmup: false
     subcommands: ''
 -   aliases: checkwarnings, checkwarn, warnings
@@ -4572,10 +5046,14 @@
     subcommands: ''
 -   aliases: warp
     cost: false
+    isExactEssEquiv: false
     module: warp
     defaultLevel: USER
-    usageString: /warp set|cost|setcategory|list|category|delete|setdescription|[[-y|-a|-accept <y>] [-f|-force <f>] ] [<subject>] <Warp Name>
+    usageString: /warp set|cost|setcategory|category|list|delete|setdescription|[[-y|-a|-accept <y>] [-f|-force <f>] ] [<subject>] <Warp Name>
     oneLineDescription: Teleport to the specified warp.
+    essentialsEquivalents:
+    - warp
+    - warps
     permissionbase: nucleus.warp
     simpleUsage: /warp [[-y|-a|-accept <y>] [-f|-force <f>] ] [<subject>] <Warp Name>
     commandName: warp
@@ -4602,8 +5080,9 @@
         permission: nucleus.warp.base
     cooldown: true
     requiresMixin: false
+    essNotes: Use '/warp' for warping, '/warps' to list warps.
     warmup: true
-    subcommands: set, setcategory, delete, cost, setdescription, list, category
+    subcommands: set, setcategory, delete, cost, setdescription, category, list
 -   aliases: category
     cost: true
     module: warp
@@ -4744,10 +5223,15 @@
     subcommands: ''
 -   aliases: delete, del
     cost: true
+    isExactEssEquiv: true
     module: warp
     defaultLevel: ADMIN
     usageString: /warp delete <Warp Name>
     oneLineDescription: Deletes the specified warp.
+    essentialsEquivalents:
+    - delwarp
+    - remwarp
+    - rmwarp
     permissionbase: nucleus.warp.delete
     simpleUsage: /warp delete <Warp Name>
     commandName: warp delete
@@ -4770,6 +5254,7 @@
         permission: nucleus.warp.delete.base
     cooldown: true
     requiresMixin: false
+    essNotes: ''
     warmup: true
     subcommands: ''
 -   aliases: list
@@ -4805,10 +5290,14 @@
     subcommands: ''
 -   aliases: set
     cost: true
+    isExactEssEquiv: true
     module: warp
     defaultLevel: ADMIN
     usageString: /warp set <Warp Name>
     oneLineDescription: Sets a warp.
+    essentialsEquivalents:
+    - setwarp
+    - createwarp
     permissionbase: nucleus.warp.set
     simpleUsage: /warp set <Warp Name>
     commandName: warp set
@@ -4831,6 +5320,7 @@
         permission: nucleus.warp.set.exempt.cost
     cooldown: true
     requiresMixin: false
+    essNotes: ''
     warmup: true
     subcommands: ''
 -   aliases: setcategory
@@ -4906,7 +5396,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
-    subcommands: teleport, disable, setloadonstartup, setkeepspawnloaded, border, enable, list, delete, sethardcore, setdifficulty, setspawn, spawn, load, gamerule, setgamemode, unload, info, create, setpvpenabled
+    subcommands: disable, teleport, setloadonstartup, border, setkeepspawnloaded, enable, list, delete, sethardcore, setdifficulty, setspawn, spawn, load, gamerule, setgamemode, unload, info, create, setpvpenabled
 -   aliases: border
     cost: true
     module: world
@@ -5454,10 +5944,13 @@
     subcommands: ''
 -   aliases: teleport, tp
     cost: true
+    isExactEssEquiv: true
     module: world
     defaultLevel: ADMIN
     usageString: /world teleport <world> [<subject>]
     oneLineDescription: Teleports you, or another player, to the specified world.
+    essentialsEquivalents:
+    - world
     permissionbase: nucleus.world.teleport
     simpleUsage: /world teleport <world> [<subject>]
     commandName: world teleport
@@ -5485,6 +5978,7 @@
     cooldown: true
     requiresMixin: false
     extendedDescription: This command will teleport the target player to the target world provided it is enabled. It will not enable a disabled world.
+    essNotes: The world command in Essentials was just a warp command.
     warmup: true
     subcommands: ''
 -   aliases: unload
