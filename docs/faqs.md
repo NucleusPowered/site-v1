@@ -10,7 +10,7 @@ h2 > a, h3 > a, h4 > a {
 }
 </style>
 
-## FAQ contents
+## Table of Contents
 
 * TOC
 {:toc}
