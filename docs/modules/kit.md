@@ -24,10 +24,10 @@ or are one time kits that have been used, appear struck out.
 
 ## Creating and Managing Kits
 
-To create a kit:
+To create a kit you can either:
 
-* Change your inventory to be the contents of the kit.
-* Run `/kit add [name]`, where the `name` is the name of the kit you want to create. This will create the kit with the
+* Run `/kit create [name]`. This will open an inventory window that allows you to add items to the kit like you would add items to a chest.
+* Change your inventory to be the contents of the kit and run `/kit add [name]`, where the `name` is the name of the kit you want to create. This will create the kit with the
  contents of your inventory.
 
 To set the cooldown on the kit, run `/kit setcooldown [name] [time]`, where the time interval is the format of the [Timespan Argument](../arguments.html#timespan),
@@ -38,22 +38,34 @@ To set a kit as "one use only", run `/kit onetime [kit] [true|false]`.
 To set a cost for using the kit, run `/kit cost [name] [cost]`. Set the cost to 0 to remove the cost. The requires the use
 of an economy plugin.
 
-To change the contents of a kit, update your inventory to reflect what you want the contents of the kit to be, then run
-`/kit set [name]`.
+To change the contents of a kit, you can either:
+
+* Run `/kit edit [name]` and edit your kit using an inventory GUI.
+* Update your inventory to reflect what you want the contents of the kit to be, then run `/kit set [name]`.
 
 To delete a kit, run `/kit remove [name]`
 
 If a player has used a kit and you wish to remove the cooldown or one-time use so they can use it again immediately, run
 `/kit resetusage [player] [kit]`.
 
+## Adding personalised items to kits
+
+You can put tokens like `{{name}}` and `{{displayname}}` on your item's display names and lore and put them into a kit. 
+When redeemed, the tokens can be replaced - personalising the items (for example, a wooden stick with the item display name 
+`{{name}}'s stick` can be put into a kit, which will become `dualspiral's stick` if `dualspiral` redeemed it).
+
+You must, however, set `kit.process-tokens-in-lore` to `true` in `main.conf`, as this might cause a slight performance hit.
+
 ## First Join Kits (Initial Inventory)
 
 Nucleus supports giving players items when they first join your server. The command `/firstjoinkit set` sets the contents
-of a player's initial inventory to whatever is in your inventory at the time you run that command. This kit is not visible
-on `/kit list`.
+of a player's initial inventory to whatever is in your inventory at the time you run that command, and the command `/firstjoinkit edit`
+allows you to modify the kit using a standard inventory window. 
 
-To change the contents of the initial inventory, run `/firstjoinkit set` again. To clear it, `/firstjoinkit clear`. You can
-see what is in the kit by running `/firstjoinkit`.
+To change the contents of the initial inventory, run `/firstjoinkit set` or `/firstjoinkit edit` again. 
+To clear it, `/firstjoinkit clear`. You can see what is in the kit by running `/firstjoinkit`. 
+
+This kit is not visible on `/kit list`.
 
 ## Per-Kit Permissions
 
