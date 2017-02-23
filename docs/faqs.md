@@ -213,6 +213,23 @@ _For a user_:
 _For a group_:
 {% include permissionblock.html cmdtype="groupPrefix,groupOption" user="[group]" option="prefix" value="[prefix]" %}
 
+<a class="anchor" id="home-count"></a>
+
+### [How can I set the number of homes a player can have?](#home-count)
+
+This is implemented as the permission option/meta `home-count`, rather than a specific permission for performance reasons.
+Consult your permission plugin on how to set this option, but for reference, commands for popular permission managers are shown below:
+
+<em>For users:</em>
+
+{% include permissionblock.html cmdtype="userOption" user="[user]" option="home-count" value="[number]" %}
+
+<em>For groups:</em>
+
+{% include permissionblock.html cmdtype="groupOption" user="[user]" option="home-count" value="[number]" %}
+
+[You can read more about the home module here.](modules/home.html)
+
 <a class="anchor" id="troubleshooting"></a>
 
 ## [Troubleshooting problems in game](#troubleshooting)
