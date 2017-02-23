@@ -41,6 +41,7 @@ The Nucleus Project is lead by **dualspiral**, and he has some support from **Ha
 
 * Nucleus: the main plugin. Most functionality is located in this plugin.
 * Nucleus Mixins: an optional plugin for Minecraft 1.10.2 servers that fixes `/invsee` and enables enhanced pre-generation of the world.
+    * [See this page for more information on Nucleus Mixins.](configuration/mixins.html)
 * Nucleus Gluon: an optional plugin for Nucleus 0.24.0 and above, and PlaceholderAPI 3.6 and above, that allows for chat placeholders from both
 plugins to be used in... well, both plugins!
 
@@ -247,7 +248,7 @@ This probably means you're running Minecraft 1.10.2, and you're not using Nucleu
 recommended) plugin that changes Minecraft's internals to allow you to use `/invsee` from further than 8 blocks away from your target. Minecraft 1.11.2
 users don't need this plugin, a better fix is in Sponge API 6 for 1.11.2.
 
-[You can download Nucleus Mixins from Ore here.](https://ore.spongepowered.org/Nucleus/Nucleus-Mixins)
+You can [find out more about Nucleus Mixins here](configuration/mixins.html), and [download Nucleus Mixins from Ore here.](https://ore.spongepowered.org/Nucleus/Nucleus-Mixins)
 
 <a class="anchor" id="back-warp"></a>
 
@@ -294,7 +295,10 @@ Chunk generation is slow. A general recommendation by most of the community is t
 chunks in your world before they are needed, so when someone _does_ reach that chunk, it just has to be loaded, rather than generated first.
 This, in general, offers a moderate performance gain, however, do be careful to not pregenerate a large world!
 
-Nucleus offers a way to do this in the `world` module. The command `/world border gen [-a] [--save <time>] [world]` allows you to pre generate
+Nucleus offers a way to do this in the `world` module. If you're running a 1.10.2 server, we recommend installing the 
+[Nucleus Mixins](configuration/mixins.html) plugin before attempting this, as this can provide moderate speedup of pre-generation.
+
+The command `/world border gen [-a] [--save <time>] [world]` allows you to pre generate
 up to your world border. We recommend setting your world border to be about a 4000 block diameter around your spawn point (using the command
 `/world border set 4000` when stood at the centre), and then running `/world border gen`. This will generate your world, using 80% of the tick
 time and save every 20 seconds.
