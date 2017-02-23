@@ -39,3 +39,9 @@ behaviour:
 * Use `/tpn`, which is an alias for the original Minecraft `/tp` command.
 * In `commands.conf`, set `teleport.use-tp-command` to `false`. `/tp` will return to the Vanilla version, while `/teleport` will
 still be the Nucleus version.
+
+## Using `/tppos` to teleport to chunk co-ordinates
+
+`/tppos` has a `-c` flag, which, if specified, will let you teleport to a specified _chunk_. 
+Note that the `y` co-ordinate is still required - all `-c` really does is multiply your co-ordinates by 16, as per the Minecraft
+chunk spec. 

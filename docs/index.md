@@ -15,6 +15,7 @@ header: Documentation Centre
 * [Migrating from EssentialCmds](configuration/migration.html)
 * [Setting up suggested permissions](configuration/permissions.html)
 * [Command Management (Warmups, Cooldowns and Costs)](configuration/commands.html)
+* [Using Nucleus Mixins for 1.10.2 based servers](configuration/mixins.html)
 
 ## Module Reference
 
