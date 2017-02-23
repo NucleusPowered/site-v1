@@ -38,6 +38,7 @@ header: Documentation Centre
 * [Inventory](modules/inventory.html) - Provides the ability to look into a player's inventories.
 * [Item](modules/item.html) - Item manipulation related commands
 * [Jail](modules/jail.html) - Player jails for minor punishments
+* [Kick](modules/kick.html) - Kicking players from the server.
 * [Kit](modules/kit.html) - Management of sets of items that players can redeem
 * [Message](modules/message.html) - Private messages and "social spy".
 * [Mob](modules/mob.html) - Mobs and mob spawners

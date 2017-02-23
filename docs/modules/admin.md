@@ -18,6 +18,22 @@ Not all administrative commands are contained in the admin module, some have the
 
 ## Configuration
 
-Only Broadcasts currently has configuration, to customise how the broadcast is displayed. The message is prefixed and suffixed by the
-message templates defined at `broadcast-message-template.prefix` and `broadcast-message-template.suffix`. They work the same way as
-the chat module templates do, please see the [Chat Module](chat.html) documentation for more information on creating the templates.
+### `/broadcast` customisation
+
+The `/broadcast` message is prefixed and suffixed by the message templates defined at `broadcast-message-template.prefix` and `broadcast-message-template.suffix`. 
+They work the same way as the chat module templates do, please see the [Chat Module](chat.html) documentation for more information on creating the templates.
+
+`/plainbroadcast` does not use these prefixes/suffixes.
+
+### `/gamemode` configuration
+
+The setting `separate-gamemode-permissions` can be set to `true` to tell the `/gm` command requires an extra permission to change to the target gamemode - 
+the permission is of the form `nucleus.gamemode.modes.<gamemode>`.
+
+## Tokens in `/broadcast`s and `/plainbroadcast`s.
+
+Adding a token (such as `{{displayname}}` or `{{name}}` to the message will now show each player a personalised message - the tokens will be parsed based on each player rather than the sender. The sender's name is accessible through the `{{sender}}` token.
+
+![Console and Player](https://i.gyazo.com/19b6bf177b7573fadb7714f0ae75c2c7.png)
+
+This does not affect how the tokens for the prefix/suffix work - they will still be based on the sender.
