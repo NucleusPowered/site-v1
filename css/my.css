@@ -277,6 +277,7 @@ a.anchor {
 
 div.command > .command-description {
     font-size: large;
+    font-weight: 600;
 }
 
 div.command > .command-head > .command-module {
