@@ -50,9 +50,11 @@ If a player has used a kit and you wish to remove the cooldown or one-time use s
 
 ## Adding personalised items to kits
 
+{% raw %}
 You can put tokens like `{{name}}` and `{{displayname}}` on your item's display names and lore and put them into a kit. 
 When redeemed, the tokens can be replaced - personalising the items (for example, a wooden stick with the item display name 
 `{{name}}'s stick` can be put into a kit, which will become `dualspiral's stick` if `dualspiral` redeemed it).
+{% endraw %}
 
 You must, however, set `kit.process-tokens-in-lore` to `true` in `main.conf`, as this might cause a slight performance hit.
 
@@ -74,15 +76,17 @@ Permission: `kit.command.base`
 
 ### Adding a command
 
+{% raw %}
 The command to add a command to a kit is `/kit command add <kit> <command>`, where the command should not start with a `/`, and anywhere you want to substitute the player's name, you should add `{{player}}`. 
 
 So, to broadcast a player's name, you could write: `{{player}} just opened a kit`, and this would broadcast `dualspiral just opened a kit` if I opened the kit. Similarly, if I wanted to smite someone who opened a kit, then I'd use `smite {{player}}`, etc.
+{% endraw %}
 
 Permission: `kit.command.add.base`
 
 ### Removing and clearing commands
 
-To remove commands: `/kit command remove|- <kit> <command|index from list>`
+To remove commands: `/kit command remove <kit> <command|index from list>`
 To remove all commands: `/kit command clear`
 
 We would normally recommend using the list to remove commands, but you can also type the full command to remove or use the (one-based) index from the `/kit command` list.
