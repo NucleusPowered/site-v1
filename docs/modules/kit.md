@@ -72,7 +72,7 @@ Nucleus 0.25.0 introduced adding commands to kits. This does not apply to first 
 
 ![List](https://i.gyazo.com/06d99dd309b4643c86fb934aac3eb348.png)
 
-Permission: `kit.command.base`
+Permission: `nucleus.kit.command.base`
 
 ### Adding a command
 
@@ -82,7 +82,7 @@ The command to add a command to a kit is `/kit command add <kit> <command>`, whe
 So, to broadcast a player's name, you could write: `{{player}} just opened a kit`, and this would broadcast `dualspiral just opened a kit` if dualspiral opened the kit. Similarly, if you wanted to smite someone who opened a kit, then you'd use `smite {{player}}`, etc.
 {% endraw %}
 
-Permission: `kit.command.add.base`
+Permission: `nucleus.kit.command.add.base`
 
 ### Removing and clearing commands
 
@@ -91,13 +91,13 @@ To remove all commands: `/kit command clear`
 
 We would normally recommend using the list to remove commands, but you can also type the full command to remove or use the (one-based) index from the `/kit command` list.
 
-Permission: `kit.command.remove.base`
+Permission: `nucleus.kit.command.remove.base`
 
 ### Edit GUI
 
 There is an **experiemental** "edit" command which opens up an Inventory with books containing the commands that can be taken out, and replaced with new books. These books must only contain one command each, but can span multiple pages as long as no newlines exist.
 
-You can try it with `/kit command edit <kit>`, with the permission `kit.command.edit.base`. Same caveats apply as with the add command.
+You can try it with `/kit command edit <kit>`, with the permission `nucleus.kit.command.edit.base`. Same caveats apply as with the add command.
 
 ## First Join Kits (Initial Inventory)
 
