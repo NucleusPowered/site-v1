@@ -79,7 +79,7 @@ Permission: `kit.command.base`
 {% raw %}
 The command to add a command to a kit is `/kit command add <kit> <command>`, where the command should not start with a `/`, and anywhere you want to substitute the player's name, you should add `{{player}}`. 
 
-So, to broadcast a player's name, you could write: `{{player}} just opened a kit`, and this would broadcast `dualspiral just opened a kit` if I opened the kit. Similarly, if I wanted to smite someone who opened a kit, then I'd use `smite {{player}}`, etc.
+So, to broadcast a player's name, you could write: `{{player}} just opened a kit`, and this would broadcast `dualspiral just opened a kit` if dualspiral opened the kit. Similarly, if you wanted to smite someone who opened a kit, then you'd use `smite {{player}}`, etc.
 {% endraw %}
 
 Permission: `kit.command.add.base`
