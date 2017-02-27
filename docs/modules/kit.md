@@ -56,6 +56,45 @@ When redeemed, the tokens can be replaced - personalising the items (for example
 
 You must, however, set `kit.process-tokens-in-lore` to `true` in `main.conf`, as this might cause a slight performance hit.
 
+Command Kits are here! Perhaps one of the more requested features for Nucleus is the ability to add commands to kits, and they are kitted out with them now!
+
+It's _very_ important to note that any command will be run by the console, _so only give the ability to add commands to kits to **highly** trusted players._ As a result, the kit command add permission, `kit.command.add.base` is in the `NONE` group for permissions to try to protect against rouge admins.
+
+## Commands in Kits
+
+Nucleus 0.25.0 introduced adding commands to kits. This does not apply to first join kits.
+
+### Viewing the commands in a kit
+
+`/kit command <kit>` lists the commands, and if you have permission to remove commands, they can be removed from this list too.
+
+![List](https://i.gyazo.com/06d99dd309b4643c86fb934aac3eb348.png)
+
+Permission: `kit.command.base`
+
+### Adding a command
+
+The command to add a command to a kit is `/kit command add <kit> <command>`, where the command should not start with a `/`, and anywhere you want to substitute the player's name, you should add `{{player}}`. 
+
+So, to broadcast a player's name, you could write: `{{player}} just opened a kit`, and this would broadcast `dualspiral just opened a kit` if I opened the kit. Similarly, if I wanted to smite someone who opened a kit, then I'd use `smite {{player}}`, etc.
+
+Permission: `kit.command.add.base`
+
+### Removing and clearing commands
+
+To remove commands: `/kit command remove|- <kit> <command|index from list>`
+To remove all commands: `/kit command clear`
+
+We would normally recommend using the list to remove commands, but you can also type the full command to remove or use the (one-based) index from the `/kit command` list.
+
+Permission: `kit.command.remove.base`
+
+### Edit GUI
+
+There is an **experiemental** "edit" command which opens up an Inventory with books containing the commands that can be taken out, and replaced with new books. These books must only contain one command each, but can span multiple pages as long as no newlines exist.
+
+You can try it with `/kit command edit <kit>`, with the permission `kit.command.edit.base`. Same caveats apply as with the add command.
+
 ## First Join Kits (Initial Inventory)
 
 Nucleus supports giving players items when they first join your server. The command `/firstjoinkit set` sets the contents
