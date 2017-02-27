@@ -1,5 +1,6 @@
 -   essentialsCommands:
-    - afk, away
+    - afk
+    - away
     notes: ''
     isExact: true
     nucleusEquiv:

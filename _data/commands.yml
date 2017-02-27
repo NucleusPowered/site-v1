@@ -78,7 +78,7 @@
     requiresMixin: false
     essNotes: ''
     warmup: false
-    subcommands: take, give, set
+    subcommands: take, set, give
 -   aliases: give
     cost: false
     module: admin
@@ -318,7 +318,8 @@
     usageString: '/afk '
     oneLineDescription: Toggles the player's AFK state.
     essentialsEquivalents:
-    - afk, away
+    - afk
+    - away
     permissionbase: nucleus.afk
     simpleUsage: '/afk '
     commandName: afk
@@ -831,7 +832,7 @@
         permission: nucleus.getuser.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: Occasionally, the Minecraft username cache gets out of sync with the rest of the system, and some commands that require a user fail. This command allows you to request updated information about a user from Mojangs server (via either a UUID or a current user name) and adds them to the cache.
+    extendedDescription: Occasionally, the Minecraft username cache gets out of sync with the rest of the system, and some commands that require a user fail. This command allows you to request updated information about a user from Mojang's server (via either a UUID or a current user name) and adds them to the cache.
     warmup: false
     subcommands: ''
 -   aliases: info
@@ -2633,7 +2634,7 @@
     isExactEssEquiv: false
     module: kit
     defaultLevel: ADMIN
-    usageString: /kit add|give|set|cost|edit|setcooldown|list|remove|create|resetusage|onetime|<kit>
+    usageString: /kit remove|create|add|give|set|cost|edit|setcooldown|list|command|resetusage|onetime|<kit>
     oneLineDescription: Redeems a kit.
     essentialsEquivalents:
     - kit, kits
@@ -2665,7 +2666,7 @@
     requiresMixin: false
     essNotes: '''/kit'' redeems, ''/kits'' lists.'
     warmup: true
-    subcommands: give, remove, edit, add, resetusage, list, set, onetime, cost, create, setcooldown
+    subcommands: give, remove, add, edit, resetusage, list, set, setcooldown, command, onetime, cost, create
 -   aliases: add, createFromInventory
     cost: false
     module: kit
@@ -2683,6 +2684,99 @@
     cooldown: false
     requiresMixin: false
     extendedDescription: This command takes a snapshot of your inventory (excluding your armor) and creates the named kit with it.|br||br|The kit can be updated using the /kit edit or /kit set commands, depending on whether you want to use a GUI to edit the kit, or replace the kit with a new copy of your inventory.|br||br|See also /kit create if you want to create a kit via a GUI.
+    warmup: false
+    subcommands: ''
+-   aliases: command, commands
+    cost: false
+    module: kit
+    defaultLevel: ADMIN
+    usageString: /kit command add|edit|clear|remove|<kit>
+    oneLineDescription: Lists the commands associated with a kit.
+    permissionbase: nucleus.kit.command
+    simpleUsage: /kit command <kit>
+    commandName: kit command
+    permissions:
+    -   module: kit
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /kit command
+        permission: nucleus.kit.command.base
+    cooldown: false
+    requiresMixin: false
+    extendedDescription: Commands are executed as the SERVER. This could allow players that get access to this command to cause serious havoc. Please only give edit and add commands to TRUSTED players.
+    warmup: false
+    subcommands: edit, add, clear, remove
+-   aliases: add, +
+    cost: false
+    module: kit
+    defaultLevel: NONE
+    usageString: /kit command add <kit> <command>
+    oneLineDescription: Adds a command to the specified kit.
+    permissionbase: nucleus.kit.command.add
+    simpleUsage: /kit command add <kit> <command>
+    commandName: kit command add
+    permissions:
+    -   module: kit
+        defaultLevel: NONE
+        description: Allows the user to run the command /command add
+        permission: nucleus.kit.command.add.base
+    cooldown: false
+    requiresMixin: false
+    warmup: false
+    subcommands: ''
+-   aliases: clear
+    cost: false
+    module: kit
+    defaultLevel: NONE
+    usageString: /kit command clear <kit>
+    oneLineDescription: Removes all commands from the specified kit.
+    permissionbase: nucleus.kit.command.remove
+    simpleUsage: /kit command clear <kit>
+    commandName: kit command clear
+    permissions:
+    -   module: kit
+        defaultLevel: NONE
+        description: Allows the user to run the command /command clear
+        permission: nucleus.kit.command.remove.base
+    cooldown: false
+    requiresMixin: false
+    warmup: false
+    subcommands: ''
+-   aliases: edit
+    cost: false
+    module: kit
+    defaultLevel: NONE
+    usageString: /kit command edit <kit>
+    oneLineDescription: Opens an in game GUI that lists all commands in the kit as books.
+    permissionbase: nucleus.kit.command.edit
+    simpleUsage: /kit command edit <kit>
+    commandName: kit command edit
+    permissions:
+    -   module: kit
+        defaultLevel: NONE
+        description: Allows the user to run the command /command edit
+        permission: nucleus.kit.command.edit.base
+    cooldown: false
+    requiresMixin: false
+    extendedDescription: This also allows you to add/remove commands by adding/removing signed and unsigned books.
+    warmup: false
+    subcommands: ''
+-   aliases: remove, del, -
+    cost: false
+    module: kit
+    defaultLevel: NONE
+    usageString: /kit command remove <kit> <index>|<command>
+    oneLineDescription: Removes a command from the specified kit.
+    permissionbase: nucleus.kit.command.remove
+    simpleUsage: /kit command remove <kit> <index>|<command>
+    commandName: kit command remove
+    permissions:
+    -   module: kit
+        defaultLevel: NONE
+        description: Allows the user to run the command /command remove
+        permission: nucleus.kit.command.remove.base
+    cooldown: false
+    requiresMixin: false
+    extendedDescription: There are two ways to specify which command to remove:|br||br|* via. index, where the index is the number displayed in "/kit command <kit>"|br|* via. command, where you can specify the entire command to remove.|br||br|If you are playing on the server, it might be easier to use the click interface in "/kit command" or "/kit command edit"
     warmup: false
     subcommands: ''
 -   aliases: cost, setcost
@@ -4270,7 +4364,7 @@
     isExactEssEquiv: true
     module: rules
     defaultLevel: USER
-    usageString: /rules add|remove|
+    usageString: '/rules '
     oneLineDescription: Read the server rules.
     essentialsEquivalents:
     - rules
@@ -4285,42 +4379,6 @@
     cooldown: false
     requiresMixin: false
     essNotes: ''
-    warmup: false
-    subcommands: remove, add
--   aliases: add, a, +
-    cost: false
-    module: rules
-    defaultLevel: ADMIN
-    usageString: /rules add [<position>] <rule…>
-    oneLineDescription: Add a server rule.
-    permissionbase: nucleus.rules.add
-    simpleUsage: /rules add [<position>] <rule…>
-    commandName: rules add
-    permissions:
-    -   module: rules
-        defaultLevel: ADMIN
-        description: Allows the user to run the command /rules add
-        permission: nucleus.rules.add.base
-    cooldown: false
-    requiresMixin: false
-    warmup: false
-    subcommands: ''
--   aliases: remove, delete, del, -
-    cost: false
-    module: rules
-    defaultLevel: ADMIN
-    usageString: '/rules remove <rule> [-f <f>] '
-    oneLineDescription: Remove a server rule.
-    permissionbase: nucleus.rules.remove
-    simpleUsage: '/rules remove <rule> [-f <f>] '
-    commandName: rules remove
-    permissions:
-    -   module: rules
-        defaultLevel: ADMIN
-        description: Allows the user to run the command /rules remove
-        permission: nucleus.rules.remove.base
-    cooldown: false
-    requiresMixin: false
     warmup: false
     subcommands: ''
 -   aliases: itembuy, buy
@@ -5396,7 +5454,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
-    subcommands: disable, teleport, setloadonstartup, border, setkeepspawnloaded, enable, list, delete, sethardcore, setdifficulty, setspawn, spawn, load, gamerule, setgamemode, unload, info, create, setpvpenabled
+    subcommands: teleport, disable, setloadonstartup, setkeepspawnloaded, border, enable, list, delete, sethardcore, setdifficulty, setspawn, spawn, gamerule, load, setgamemode, unload, info, create, setpvpenabled
 -   aliases: border
     cost: true
     module: world
