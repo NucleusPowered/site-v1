@@ -2776,7 +2776,7 @@
         permission: nucleus.kit.command.remove.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: There are two ways to specify which command to remove:|br||br|* via. index, where the index is the number displayed in "/kit command <kit>"|br|* via. command, where you can specify the entire command to remove.|br||br|If you are playing on the server, it might be easier to use the click interface in "/kit command" or "/kit command edit"
+    extendedDescription: There are two ways to specify which command to remove:|br||br|* via. index, where the index is the number displayed in &quot;/kit command <kit>&quot;|br|* via. command, where you can specify the entire command to remove.|br||br|If you are playing on the server, it might be easier to use the click interface in &quot;/kit command&quot; or &quot;/kit command edit&quot;
     warmup: false
     subcommands: ''
 -   aliases: cost, setcost
