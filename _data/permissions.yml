@@ -595,6 +595,10 @@
     description: Allows the user to bypass the warmup for /nucleus printperms
     permission: nucleus.nucleus.printperms.exempt.warmup
 -   module: core
+    defaultLevel: NONE
+    description: Allows the user to run the command /nucleus rebuildusercache
+    permission: nucleus.nucleus.rebuildusercache.base
+-   module: core
     defaultLevel: ADMIN
     description: Allows the user to run the command /nucleus reload
     permission: nucleus.nucleus.reload.base
@@ -662,6 +666,10 @@
     defaultLevel: ADMIN
     description: Allows the user to bypass the cost for /weather
     permission: nucleus.weather.exempt.cost
+-   module: environment
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the maximum weather length.
+    permission: nucleus.weather.exempt.length
 -   module: environment
     defaultLevel: ADMIN
     description: Allows the user to bypass the warmup for /weather
@@ -1032,10 +1040,6 @@
     permission: nucleus.lore.exempt.warmup
 -   module: item
     defaultLevel: ADMIN
-    description: Allows the user to run the command /lore add
-    permission: nucleus.lore.set.base
--   module: item
-    defaultLevel: ADMIN
     description: Allows the user to run the command /lore set
     permission: nucleus.lore.set.base
 -   module: item
@@ -1044,8 +1048,8 @@
     permission: nucleus.lore.set.base
 -   module: item
     defaultLevel: ADMIN
-    description: Allows the user to bypass the cooldown for /lore add
-    permission: nucleus.lore.set.exempt.cooldown
+    description: Allows the user to run the command /lore add
+    permission: nucleus.lore.set.base
 -   module: item
     defaultLevel: ADMIN
     description: Allows the user to bypass the cooldown for /lore set
@@ -1056,8 +1060,8 @@
     permission: nucleus.lore.set.exempt.cooldown
 -   module: item
     defaultLevel: ADMIN
-    description: Allows the user to bypass the cost for /lore add
-    permission: nucleus.lore.set.exempt.cost
+    description: Allows the user to bypass the cooldown for /lore add
+    permission: nucleus.lore.set.exempt.cooldown
 -   module: item
     defaultLevel: ADMIN
     description: Allows the user to bypass the cost for /lore set
@@ -1068,8 +1072,8 @@
     permission: nucleus.lore.set.exempt.cost
 -   module: item
     defaultLevel: ADMIN
-    description: Allows the user to bypass the warmup for /lore add
-    permission: nucleus.lore.set.exempt.warmup
+    description: Allows the user to bypass the cost for /lore add
+    permission: nucleus.lore.set.exempt.cost
 -   module: item
     defaultLevel: ADMIN
     description: Allows the user to bypass the warmup for /lore set
@@ -1077,6 +1081,10 @@
 -   module: item
     defaultLevel: ADMIN
     description: Allows the user to bypass the warmup for /lore clear
+    permission: nucleus.lore.set.exempt.warmup
+-   module: item
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the warmup for /lore add
     permission: nucleus.lore.set.exempt.warmup
 -   module: item
     defaultLevel: ADMIN
@@ -1135,6 +1143,10 @@
     description: Allows the user to target other players using the command "skull".
     permission: nucleus.skull.others
 -   module: jail
+    defaultLevel: ADMIN
+    description: Allows the user to run the command /checkjailed
+    permission: nucleus.checkjailed.base
+-   module: jail
     defaultLevel: MOD
     description: Allows the user to run the command /jail
     permission: nucleus.jail.base
@@ -1146,6 +1158,10 @@
     defaultLevel: ADMIN
     description: Allows the user to run the command /jails delete
     permission: nucleus.jail.delete.base
+-   module: jail
+    defaultLevel: ADMIN
+    description: Exempts the user from being jailed.
+    permission: nucleus.jail.exempt.target
 -   module: jail
     defaultLevel: MOD
     description: Allows the user to run the command /jails tp
@@ -1288,11 +1304,11 @@
     permission: nucleus.kit.command.edit.base
 -   module: kit
     defaultLevel: NONE
-    description: Allows the user to run the command /command remove
+    description: Allows the user to run the command /command clear
     permission: nucleus.kit.command.remove.base
 -   module: kit
     defaultLevel: NONE
-    description: Allows the user to run the command /command clear
+    description: Allows the user to run the command /command remove
     permission: nucleus.kit.command.remove.base
 -   module: kit
     defaultLevel: ADMIN
@@ -1669,6 +1685,10 @@
     permission: nucleus.checkmute.base
 -   module: mute
     defaultLevel: ADMIN
+    description: Allows the user to run the command /checkmuted
+    permission: nucleus.checkmuted.base
+-   module: mute
+    defaultLevel: ADMIN
     description: Allows the user to run the command /globalmute
     permission: nucleus.globalmute.base
 -   module: mute
@@ -1713,11 +1733,11 @@
     permission: nucleus.nameban.unban.base
 -   module: nickname
     defaultLevel: ADMIN
-    description: Allows the user to run the command /delnick
+    description: Allows the user to run the command /nick
     permission: nucleus.nick.base
 -   module: nickname
     defaultLevel: ADMIN
-    description: Allows the user to run the command /nick
+    description: Allows the user to run the command /delnick
     permission: nucleus.nick.base
 -   module: nickname
     defaultLevel: ADMIN
@@ -1857,27 +1877,27 @@
     permission: nucleus.nick.colour.yellow
 -   module: nickname
     defaultLevel: ADMIN
-    description: Allows the user to bypass the cooldown for /delnick
-    permission: nucleus.nick.exempt.cooldown
--   module: nickname
-    defaultLevel: ADMIN
     description: Allows the user to bypass the cooldown for /nick
     permission: nucleus.nick.exempt.cooldown
 -   module: nickname
     defaultLevel: ADMIN
-    description: Allows the user to bypass the cost for /delnick
-    permission: nucleus.nick.exempt.cost
+    description: Allows the user to bypass the cooldown for /delnick
+    permission: nucleus.nick.exempt.cooldown
 -   module: nickname
     defaultLevel: ADMIN
     description: Allows the user to bypass the cost for /nick
     permission: nucleus.nick.exempt.cost
 -   module: nickname
     defaultLevel: ADMIN
-    description: Allows the user to bypass the warmup for /delnick
-    permission: nucleus.nick.exempt.warmup
+    description: Allows the user to bypass the cost for /delnick
+    permission: nucleus.nick.exempt.cost
 -   module: nickname
     defaultLevel: ADMIN
     description: Allows the user to bypass the warmup for /nick
+    permission: nucleus.nick.exempt.warmup
+-   module: nickname
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the warmup for /delnick
     permission: nucleus.nick.exempt.warmup
 -   module: nickname
     defaultLevel: ADMIN
@@ -1952,6 +1972,22 @@
     description: Allows the user to run the command /removenote
     permission: nucleus.removenote.base
 -   module: playerinfo
+    defaultLevel: ADMIN
+    description: Allows the user to run the command /getfromip
+    permission: nucleus.getfromip.base
+-   module: playerinfo
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the cooldown for /getfromip
+    permission: nucleus.getfromip.exempt.cooldown
+-   module: playerinfo
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the cost for /getfromip
+    permission: nucleus.getfromip.exempt.cost
+-   module: playerinfo
+    defaultLevel: ADMIN
+    description: Allows the user to bypass the warmup for /getfromip
+    permission: nucleus.getfromip.exempt.warmup
+-   module: playerinfo
     defaultLevel: USER
     description: Allows the user to run the command /getpos
     permission: nucleus.getpos.base
@@ -2017,11 +2053,11 @@
     permission: nucleus.powertool.base
 -   module: powertool
     defaultLevel: ADMIN
-    description: Allows the user to run the command /powertool list
+    description: Allows the user to run the command /powertool toggle
     permission: nucleus.powertool.base
 -   module: powertool
     defaultLevel: ADMIN
-    description: Allows the user to run the command /powertool toggle
+    description: Allows the user to run the command /powertool list
     permission: nucleus.powertool.base
 -   module: powertool
     defaultLevel: ADMIN
@@ -2321,11 +2357,11 @@
     permission: nucleus.warp.category.description.base
 -   module: warp
     defaultLevel: ADMIN
-    description: Allows the user to run the command /category setdisplayname
+    description: Allows the user to run the command /category removedisplayname
     permission: nucleus.warp.category.displayname.base
 -   module: warp
     defaultLevel: ADMIN
-    description: Allows the user to run the command /category removedisplayname
+    description: Allows the user to run the command /category setdisplayname
     permission: nucleus.warp.category.displayname.base
 -   module: warp
     defaultLevel: ADMIN
@@ -2441,11 +2477,11 @@
     permission: nucleus.world.border.exempt.warmup
 -   module: world
     defaultLevel: ADMIN
-    description: Allows the user to run the command /border gen
+    description: Allows the user to run the command /border cancelgen
     permission: nucleus.world.border.gen.base
 -   module: world
     defaultLevel: ADMIN
-    description: Allows the user to run the command /border cancelgen
+    description: Allows the user to run the command /border gen
     permission: nucleus.world.border.gen.base
 -   module: world
     defaultLevel: ADMIN

@@ -61,7 +61,7 @@
     isExactEssEquiv: true
     module: admin
     defaultLevel: ADMIN
-    usageString: /exp take|give|set|<subject>
+    usageString: /exp give|take|set|<subject>
     oneLineDescription: Displays the specified player's current experience.
     essentialsEquivalents:
     - exp
@@ -78,7 +78,7 @@
     requiresMixin: false
     essNotes: ''
     warmup: false
-    subcommands: take, set, give
+    subcommands: give, set, take
 -   aliases: give
     cost: false
     module: admin
@@ -95,7 +95,7 @@
         permission: nucleus.exp.give.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: If you want to add raw experience, just add the number as an argument. If you want to add a specific number of levels, the argument can be of the form "L30" or "30L" (assuming you want to give 30 levels).
+    extendedDescription: If you want to add raw experience, just add the number as an argument. If you want to add a specific number of levels, the argument can be of the form &quot;L30&quot; or &quot;30L&quot; (assuming you want to give 30 levels).
     warmup: false
     subcommands: ''
 -   aliases: set
@@ -114,7 +114,7 @@
         permission: nucleus.exp.set.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: If you want to set experience points, just add the number as an argument. If you want to set a specific number of levels, the argument can be of the form "L30" or "30L" (assuming you want to set at 30 levels).
+    extendedDescription: If you want to set experience points, just add the number as an argument. If you want to set a specific number of levels, the argument can be of the form &quot;L30&quot; or &quot;30L&quot; (assuming you want to set at 30 levels).
     warmup: false
     subcommands: ''
 -   aliases: take
@@ -133,7 +133,7 @@
         permission: nucleus.exp.take.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: If you want to remove raw experience, just add the number as an argument. If you want to add a specific number of levels, the argument can be of the form "L30" or "30L" (assuming you want to take 30 levels).|br||br|Trying to take more experience than the player has will just zero their experience.
+    extendedDescription: If you want to remove raw experience, just add the number as an argument. If you want to add a specific number of levels, the argument can be of the form &quot;L30&quot; or &quot;30L&quot; (assuming you want to take 30 levels).|br||br|Trying to take more experience than the player has will just zero their experience.
     warmup: false
     subcommands: ''
 -   aliases: gamemode, gm
@@ -621,14 +621,14 @@
     cooldown: true
     requiresMixin: false
     extendedDescription: 'This command allows you to specify if an item should be
-        "blacklisted", and if so how. Blacklisting an item prevents items from being
-        used in certain ways. By default, this command will globally set or unset
-        the blacklist options, but by using the -t flag (potentially multiple times),
-        the following types of blacklist behaviour can be set independently:|br||br|*
-        "environment": breaking or placing blocks.|br|* "possess": whether the item
-        is allowed in a player''s inventory.|br|* "use": whether the item can be consumed
-        by a player.|br||br|This command replaces /blacklist add and /blacklist remove
-        from previous releases.'
+        &quot;blacklisted&quot;, and if so how. Blacklisting an item prevents items
+        from being used in certain ways. By default, this command will globally set
+        or unset the blacklist options, but by using the -t flag (potentially multiple
+        times), the following types of blacklist behaviour can be set independently:|br||br|*
+        &quot;environment&quot;: breaking or placing blocks.|br|* &quot;possess&quot;:
+        whether the item is allowed in a player''s inventory.|br|* &quot;use&quot;:
+        whether the item can be consumed by a player.|br||br|This command replaces
+        /blacklist add and /blacklist remove from previous releases.'
     warmup: true
     subcommands: ''
 -   aliases: me, action
@@ -705,7 +705,7 @@
     cost: false
     module: core
     defaultLevel: ADMIN
-    usageString: /nucleus debug|itemalias|save|setupperms|reload|clearcache|update-messages|getuser|resetuser|docgen|printperms|info|migrate|
+    usageString: /nucleus debug|itemalias|save|setupperms|reload|clearcache|update-messages|getuser|resetuser|docgen|printperms|rebuildusercache|info|migrate|
     oneLineDescription: Displays Nucleus version and module information.
     permissionbase: nucleus.nucleus
     simpleUsage: '/nucleus '
@@ -719,7 +719,7 @@
     requiresMixin: false
     extendedDescription: The Nucleus command allows access to sub commands that administer the entire plugin.
     warmup: false
-    subcommands: docgen, debug, save, update-messages, itemalias, reload, getuser, clearcache, resetuser, printperms, setupperms, info, migrate
+    subcommands: docgen, debug, save, update-messages, itemalias, reload, getuser, clearcache, resetuser, rebuildusercache, printperms, setupperms, info, migrate
 -   aliases: clearcache
     cost: false
     module: core
@@ -1003,6 +1003,25 @@
     requiresMixin: false
     warmup: true
     subcommands: ''
+-   aliases: rebuildusercache
+    cost: false
+    module: core
+    defaultLevel: NONE
+    usageString: '/nucleus rebuildusercache '
+    oneLineDescription: Rebuild the Nucleus user cache.
+    permissionbase: nucleus.nucleus.rebuildusercache
+    simpleUsage: '/nucleus rebuildusercache '
+    commandName: nucleus rebuildusercache
+    permissions:
+    -   module: core
+        defaultLevel: NONE
+        description: Allows the user to run the command /nucleus rebuildusercache
+        permission: nucleus.nucleus.rebuildusercache.base
+    cooldown: false
+    requiresMixin: false
+    extendedDescription: Some operations that we might want to do might want to look at offline and online players, but unfortunately, as we store things as separate user files, it would take a lot of processing to get some simple data. The cache copies this all into one place. However, there is a chance it'll go stale, this command asks Nucleus to rebuild the cache.
+    warmup: false
+    subcommands: ''
 -   aliases: reload
     cost: false
     module: core
@@ -1038,7 +1057,7 @@
         permission: nucleus.nucleus.resetuser.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: This can be useful to clear out everything Nucleus knows about a player. However, if you want to delete Minecraft data, pass the "-a" flag. |br||br|This will not delete data stored by other plugins about this player.
+    extendedDescription: This can be useful to clear out everything Nucleus knows about a player. However, if you want to delete Minecraft data, pass the &quot;-a&quot; flag. |br||br|This will not delete data stored by other plugins about this player.
     warmup: false
     subcommands: ''
 -   aliases: save
@@ -1188,7 +1207,7 @@
     isExactEssEquiv: true
     module: environment
     defaultLevel: ADMIN
-    usageString: /weather [<world>] <weather> [<duration>]|[<timespan>]
+    usageString: /weather [<world>] <weather> [<duration>]
     oneLineDescription: Sets the weather on the specified world.
     essentialsEquivalents:
     - thunder
@@ -1198,9 +1217,13 @@
     - storm
     - rain
     permissionbase: nucleus.weather
-    simpleUsage: /weather [<world>] <weather> [<duration>]|[<timespan>]
+    simpleUsage: /weather [<world>] <weather> [<duration>]
     commandName: weather
     permissions:
+    -   module: environment
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the maximum weather length.
+        permission: nucleus.weather.exempt.length
     -   module: environment
         defaultLevel: ADMIN
         description: Allows the user to bypass the cost for /weather
@@ -1264,10 +1287,10 @@
     cost: true
     module: freeze-subject
     defaultLevel: ADMIN
-    usageString: /freezeplayer [<subject>]
+    usageString: /freezeplayer [<subject>] [<true|false>]
     oneLineDescription: Freezes a player in place.
     permissionbase: nucleus.freezeplayer
-    simpleUsage: /freezeplayer [<subject>]
+    simpleUsage: /freezeplayer [<subject>] [<true|false>]
     commandName: freezeplayer
     permissions:
     -   module: freeze-subject
@@ -1563,7 +1586,7 @@
         permission: nucleus.home.exempt.cost
     cooldown: true
     requiresMixin: false
-    extendedDescription: A home is a personal warp. They can be set using the /homeset command. If no home name is specified, the default of "home" is used.
+    extendedDescription: A home is a personal warp. They can be set using the /homeset command. If no home name is specified, the default of &quot;home&quot; is used.
     essNotes: '''/homes'' will list homes, ''/home'' will teleport like Essentials
         did.'
     warmup: true
@@ -1638,7 +1661,7 @@
         permission: nucleus.home.set.exempt.cooldown
     cooldown: true
     requiresMixin: false
-    extendedDescription: This command allows players to specify a "personal warp", which is termed a "home". By default, all players get one home, which can be controlled by assigning a number to the permission option "home-count", of being giving the permission "nucleus.home.set.unlimited" for unlimited homes.|br||br|If no home name is specified, the default of "home" is used. If you try to set a home with a name that is already in use, the command will fail, unless the "-o" flag is specified.
+    extendedDescription: This command allows players to specify a &quot;personal warp&quot;, which is termed a &quot;home&quot;. By default, all players get one home, which can be controlled by assigning a number to the permission option &quot;home-count&quot;, of being giving the permission &quot;nucleus.home.set.unlimited&quot; for unlimited homes.|br||br|If no home name is specified, the default of &quot;home&quot; is used. If you try to set a home with a name that is already in use, the command will fail, unless the &quot;-o&quot; flag is specified.
     essNotes: ''
     warmup: true
     subcommands: ''
@@ -1788,7 +1811,7 @@
     cooldown: true
     requiresMixin: false
     minecraftVersion: 1.10.2
-    extendedDescription: Opens an Inventory GUI with the target player's ender chest displayed. Players wishing to inspect a different player's ender chest must have the "nucleus.enderchest.others" permission, and they must not have the "nucleus.enderchest.exempt.target" permission.
+    extendedDescription: Opens an Inventory GUI with the target player's ender chest displayed. Players wishing to inspect a different player's ender chest must have the &quot;nucleus.enderchest.others&quot; permission, and they must not have the &quot;nucleus.enderchest.exempt.target&quot; permission.
     essNotes: ''
     warmup: true
     subcommands: ''
@@ -1830,7 +1853,7 @@
     cooldown: false
     requiresMixin: false
     minecraftVersion: 1.10.2
-    extendedDescription: Opens an Inventory GUI with the target player's inventory displayed, if they do not have the "nucleus.invsee.exempt.target" permission.
+    extendedDescription: Opens an Inventory GUI with the target player's inventory displayed, if they do not have the &quot;nucleus.invsee.exempt.target&quot; permission.
     essNotes: ''
     warmup: false
     subcommands: ''
@@ -2231,16 +2254,34 @@
     cost: false
     module: jail
     defaultLevel: MOD
-    usageString: /checkjail <subject>
+    usageString: /checkjail <user/UUID>|<user/UUID>
     oneLineDescription: Checks if a player is jailed.
     permissionbase: nucleus.jail.checkjail
-    simpleUsage: /checkjail <subject>
+    simpleUsage: /checkjail <user/UUID>|<user/UUID>
     commandName: checkjail
     permissions:
     -   module: jail
         defaultLevel: MOD
         description: Allows the user to run the command /checkjail
         permission: nucleus.jail.checkjail.base
+    cooldown: false
+    requiresMixin: false
+    warmup: false
+    subcommands: ''
+-   aliases: checkjailed
+    cost: false
+    module: jail
+    defaultLevel: ADMIN
+    usageString: /checkjailed [<jail name>]
+    oneLineDescription: Checks the user cache for jailed players, optionally in the specified jail.
+    permissionbase: nucleus.checkjailed
+    simpleUsage: /checkjailed [<jail name>]
+    commandName: checkjailed
+    permissions:
+    -   module: jail
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /checkjailed
+        permission: nucleus.checkjailed.base
     cooldown: false
     requiresMixin: false
     warmup: false
@@ -2281,6 +2322,10 @@
         defaultLevel: MOD
         description: Notifies the user about jails when they occur.
         permission: nucleus.jail.notify
+    -   module: jail
+        defaultLevel: ADMIN
+        description: Exempts the user from being jailed.
+        permission: nucleus.jail.exempt.target
     cooldown: false
     requiresMixin: false
     essNotes: ''
@@ -2474,7 +2519,7 @@
         permission: nucleus.top.exempt.cost
     cooldown: true
     requiresMixin: false
-    extendedDescription: By default, /top will not teleport a player into an unsafe situation. This might result in moving slightly in the x or z directions, or not teleport the player at all. To teleport without regard for player safety, add "-f" to the command.
+    extendedDescription: By default, /top will not teleport a player into an unsafe situation. This might result in moving slightly in the x or z directions, or not teleport the player at all. To teleport without regard for player safety, add &quot;-f&quot; to the command.
     essNotes: ''
     warmup: true
     subcommands: ''
@@ -2531,7 +2576,7 @@
         permission: nucleus.kickall.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: If the command is executed by a player on the server, the executing player will not be kicked. To turn the whitelist on when kicking everyone, use the "-w" flag.
+    extendedDescription: If the command is executed by a player on the server, the executing player will not be kicked. To turn the whitelist on when kicking everyone, use the &quot;-w&quot; flag.
     essNotes: ''
     warmup: false
     subcommands: ''
@@ -2597,10 +2642,10 @@
     cost: false
     module: kit
     defaultLevel: ADMIN
-    usageString: '/firstjoinkit redeem '
+    usageString: /firstjoinkit redeem [<player>]
     oneLineDescription: Redeems the first join kit.
     permissionbase: nucleus.firstjoinkit.redeem
-    simpleUsage: '/firstjoinkit redeem '
+    simpleUsage: /firstjoinkit redeem [<player>]
     commandName: firstjoinkit redeem
     permissions:
     -   module: kit
@@ -2666,7 +2711,7 @@
     requiresMixin: false
     essNotes: '''/kit'' redeems, ''/kits'' lists.'
     warmup: true
-    subcommands: give, remove, add, edit, resetusage, list, set, setcooldown, command, onetime, cost, create
+    subcommands: give, remove, add, edit, list, resetusage, set, setcooldown, command, onetime, cost, create
 -   aliases: add, createFromInventory
     cost: false
     module: kit
@@ -2873,7 +2918,7 @@
         permission: nucleus.kit.give.exempt.cost
     cooldown: true
     requiresMixin: false
-    extendedDescription: Allows you to redeem the contents of a kit on another player. By default, this command will normally NOT redeem a kit on a player would not normally be able to redeem the kit. It will also  mark the kit as redeemed on the target player - however, it will never charge them.|br||br|This behaviour can be overridden using the "-i" flag, which will ignore all cooldowns, and will not mark that the kit has been redeemed.
+    extendedDescription: Allows you to redeem the contents of a kit on another player. By default, this command will normally NOT redeem a kit on a player would not normally be able to redeem the kit. It will also  mark the kit as redeemed on the target player - however, it will never charge them.|br||br|This behaviour can be overridden using the &quot;-i&quot; flag, which will ignore all cooldowns, and will not mark that the kit has been redeemed.
     warmup: true
     subcommands: ''
 -   aliases: list, ls
@@ -2911,7 +2956,7 @@
         permission: nucleus.kit.onetime.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: A one time use kit is exactly that, a kit that may be used only once. If you wish to give a kit to a player upon joining for the first time, consider using "/firstjoinkit" instead.
+    extendedDescription: A one time use kit is exactly that, a kit that may be used only once. If you wish to give a kit to a player upon joining for the first time, consider using &quot;/firstjoinkit&quot; instead.
     warmup: false
     subcommands: ''
 -   aliases: remove, del, delete
@@ -2985,7 +3030,7 @@
         permission: nucleus.kit.setcooldown.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: The cooldown must be specified in the form 1w1d1h1m1s, where 1 hour 5 minutes would be "1h5m".
+    extendedDescription: The cooldown must be specified in the form 1w1d1h1m1s, where 1 hour 5 minutes would be &quot;1h5m&quot;.
     warmup: false
     subcommands: ''
 -   aliases: mail, email
@@ -3123,7 +3168,7 @@
     rootAliases: tell
     module: message
     defaultLevel: USER
-    usageString: /message <to> <message…>
+    usageString: /message <to>|<to> <message…>
     oneLineDescription: Send a message to a player, or the console with "-".
     essentialsEquivalents:
     - msg
@@ -3132,7 +3177,7 @@
     - t
     - whisper
     permissionbase: nucleus.message
-    simpleUsage: /message <to> <message…>
+    simpleUsage: /message <to>|<to> <message…>
     commandName: message
     permissions:
     -   module: message
@@ -3640,16 +3685,34 @@
     cost: false
     module: mute
     defaultLevel: MOD
-    usageString: /checkmute <subject>
+    usageString: /checkmute <user/UUID>|<user/UUID>
     oneLineDescription: Checks whether the specified player is muted.
     permissionbase: nucleus.checkmute
-    simpleUsage: /checkmute <subject>
+    simpleUsage: /checkmute <user/UUID>|<user/UUID>
     commandName: checkmute
     permissions:
     -   module: mute
         defaultLevel: MOD
         description: Allows the user to run the command /checkmute
         permission: nucleus.checkmute.base
+    cooldown: false
+    requiresMixin: false
+    warmup: false
+    subcommands: ''
+-   aliases: checkmuted
+    cost: false
+    module: mute
+    defaultLevel: ADMIN
+    usageString: '/checkmuted '
+    oneLineDescription: Checks the user cache for muted players.
+    permissionbase: nucleus.checkmuted
+    simpleUsage: '/checkmuted '
+    commandName: checkmuted
+    permissions:
+    -   module: mute
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /checkmuted
+        permission: nucleus.checkmuted.base
     cooldown: false
     requiresMixin: false
     warmup: false
@@ -3670,7 +3733,7 @@
         permission: nucleus.globalmute.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: Global muting is useful for times where you want to have an announcement or you need to defuse a server wide solution. Global mutes do not change a user's mute status, and do not persist across server restarts. All players with voice (apart from those with permission) are de-voiced when the global mute is turned on. |br||br|If you wish to allow someone to talk during a global mute period, you can grant them "/voice".
+    extendedDescription: Global muting is useful for times where you want to have an announcement or you need to defuse a server wide solution. Global mutes do not change a user's mute status, and do not persist across server restarts. All players with voice (apart from those with permission) are de-voiced when the global mute is turned on. |br||br|If you wish to allow someone to talk during a global mute period, you can grant them &quot;/voice&quot;.
     warmup: false
     subcommands: ''
 -   aliases: mute, unmute
@@ -3736,7 +3799,7 @@
         permission: nucleus.globalmute.voice.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: If a server is globally muted, a player can be given the right to speak using the "/voice" command. This will allow messages being sent by the user too. This status may also be revoked if granted by running the "/voice" command again.
+    extendedDescription: If a server is globally muted, a player can be given the right to speak using the &quot;/voice&quot; command. This will allow messages being sent by the user too. This status may also be revoked if granted by running the &quot;/voice&quot; command again.
     warmup: false
     subcommands: ''
 -   aliases: nameban
@@ -4119,12 +4182,42 @@
     requiresMixin: false
     warmup: false
     subcommands: ''
+-   aliases: getfromip
+    cost: true
+    module: playerinfo
+    defaultLevel: ADMIN
+    usageString: /getfromip <IP Address>
+    oneLineDescription: Gets all users last seen on the specified IP.
+    permissionbase: nucleus.getfromip
+    simpleUsage: /getfromip <IP Address>
+    commandName: getfromip
+    permissions:
+    -   module: playerinfo
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the warmup for /getfromip
+        permission: nucleus.getfromip.exempt.warmup
+    -   module: playerinfo
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cost for /getfromip
+        permission: nucleus.getfromip.exempt.cost
+    -   module: playerinfo
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /getfromip
+        permission: nucleus.getfromip.base
+    -   module: playerinfo
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cooldown for /getfromip
+        permission: nucleus.getfromip.exempt.cooldown
+    cooldown: true
+    requiresMixin: false
+    warmup: true
+    subcommands: ''
 -   aliases: getpos, coords, position, whereami, getlocation, getloc
     cost: true
     isExactEssEquiv: true
     module: playerinfo
     defaultLevel: USER
-    usageString: /getpos [<player>]
+    usageString: /getpos [<subject>]
     oneLineDescription: Gets the location of the executing or target player.
     essentialsEquivalents:
     - getpos
@@ -4134,7 +4227,7 @@
     - getlocation
     - getloc
     permissionbase: nucleus.getpos
-    simpleUsage: /getpos [<player>]
+    simpleUsage: /getpos [<subject>]
     commandName: getpos
     permissions:
     -   module: playerinfo
@@ -5107,7 +5200,7 @@
     isExactEssEquiv: false
     module: warp
     defaultLevel: USER
-    usageString: /warp set|cost|setcategory|category|list|delete|setdescription|[[-y|-a|-accept <y>] [-f|-force <f>] ] [<subject>] <Warp Name>
+    usageString: /warp set|cost|setcategory|list|category|delete|setdescription|[[-y|-a|-accept <y>] [-f|-force <f>] ] [<subject>] <Warp Name>
     oneLineDescription: Teleport to the specified warp.
     essentialsEquivalents:
     - warp
@@ -5140,7 +5233,7 @@
     requiresMixin: false
     essNotes: Use '/warp' for warping, '/warps' to list warps.
     warmup: true
-    subcommands: set, setcategory, delete, cost, setdescription, category, list
+    subcommands: set, setcategory, delete, cost, setdescription, list, category
 -   aliases: category
     cost: true
     module: warp
@@ -5403,7 +5496,7 @@
         let you create a category if you specify this flag. This is to ensure that
         if a category does exist but with a different case, this may catch it.|br|*
         -r/--remove: Remove the category on the warp, move it back to the default
-        "Uncategorised" group.'
+        &quot;Uncategorised&quot; group.'
     warmup: false
     subcommands: ''
 -   aliases: setdescription
@@ -5507,10 +5600,10 @@
     cost: true
     module: world
     defaultLevel: ADMIN
-    usageString: /world border gen [-a <a>] [-s <s>] [-save <time between saves>] [<world>]
+    usageString: /world border gen [-a <a>] [-s <s>] [-t|-tickpercent tickPercent(0 to 100)] [-save <time between saves>] [<world>]
     oneLineDescription: Generates chunks up to the world border.
     permissionbase: nucleus.world.border.gen
-    simpleUsage: /world border gen [-a <a>] [-s <s>] [-save <time between saves>] [<world>]
+    simpleUsage: /world border gen [-a <a>] [-s <s>] [-t|-tickpercent tickPercent(0 to 100)] [-save <time between saves>] [<world>]
     commandName: world border gen
     permissions:
     -   module: world
@@ -5726,7 +5819,7 @@
         permission: nucleus.world.list.exempt.cost
     cooldown: true
     requiresMixin: false
-    extendedDescription: This is otherwise identical to "/world list".
+    extendedDescription: This is otherwise identical to &quot;/world list&quot;.
     warmup: true
     subcommands: ''
 -   aliases: list, ls
@@ -5762,7 +5855,7 @@
         permission: nucleus.world.list.seed
     cooldown: true
     requiresMixin: false
-    extendedDescription: Displays all worlds and information about them, including their seed, if the viewer in question has the "nucleus.world.list.seed" permission.
+    extendedDescription: Displays all worlds and information about them, including their seed, if the viewer in question has the &quot;nucleus.world.list.seed&quot; permission.
     warmup: true
     subcommands: ''
 -   aliases: load
@@ -5781,7 +5874,7 @@
         permission: nucleus.world.load.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: The command will refuse to load a disabled world unless the "-e" flag is specified and you have permission to run the "/world enable" command.
+    extendedDescription: The command will refuse to load a disabled world unless the &quot;-e&quot; flag is specified and you have permission to run the &quot;/world enable&quot; command.
     warmup: false
     subcommands: ''
 -   aliases: setdifficulty, difficulty
@@ -6055,6 +6148,6 @@
         permission: nucleus.world.unload.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: Unloads the specified world, and optionally disables it. Simply unloading a world does not make is inaccessible, as it will remain enabled, which will cause the world to load when someone tries to connect to it. To disable the world at the same time as unloading it, add the "-d" flag to the command.
+    extendedDescription: Unloads the specified world, and optionally disables it. Simply unloading a world does not make is inaccessible, as it will remain enabled, which will cause the world to load when someone tries to connect to it. To disable the world at the same time as unloading it, add the &quot;-d&quot; flag to the command.
     warmup: false
     subcommands: ''
