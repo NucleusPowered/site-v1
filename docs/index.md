@@ -50,7 +50,7 @@ There are extensive topics on how to use and configure Nucleus to each server's 
 * [Staff Chat](modules/staff-chat.html) - A chat channel for staff members
 * [Teleport](modules/teleport.html) - Teleportation of players to other players and arbitary spots
 * [Vanish](modules/vanish.html) - Makes players vanish from view
-* [Warning](modules/warning.html) - Allows warnings to be applied to players, optionally executing a command when a threshold is reached.
+* [Warning](modules/warn.html) - Allows warnings to be applied to players, optionally executing a command when a threshold is reached.
 * [Warp](modules/warp.html) - Server defined warps
 * [World](modules/world.html) - Manages worlds and their borders on the server
 

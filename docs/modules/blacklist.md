@@ -49,6 +49,3 @@ Once completed, use `/nucleus reload` to reload the file.
 
 In game, execute the `/blacklist set [-t <environment|possession|use>] [item ID] <true|false>` command. The `-t` flag is optional, if
  omitted, will affect all types of blacklisting. If no Item ID is provided, the item in your main hand is used instead.
- 
-As of Nucleus 0.14.0, `/blacklist add` and `/blacklist remove` have been removed, use `/blacklist set [item] true` or
-`/blacklist set [item] false` instead.

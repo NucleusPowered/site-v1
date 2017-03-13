@@ -36,7 +36,14 @@ For example: if you want to mute `Notch` for 3 hours, 45 minutes, the command wo
 /mute Notch 3h45m Muted by example!
 ```
 
-If a timed mute is given to a player who is not currently logged on, their mute will _start_ when they next log in.
+If a timed mute is given to a player who is not currently logged on, their mute will _start_ when they next log in. By default,
+time towards a mute will include both time where the player is online AND offline, unless `mute-time-counts-online-only` is 
+set to `true` in `main.conf`.
+
+## Checking player/server mutes
+
+The command `/checkmute [player]` allows you to check a player's mute status. To see everyone currently muted on the server
+in question, run `/checkmuted`.
 
 ## A Note on Reasons
 
@@ -65,3 +72,4 @@ the mute command can mute players permanently.
 try to chat, but are currently muted.
 * `muted-chat-tag` is the tag that is placed at the start of any cancelled message that those with the `nucleus.mute.seemutedchat`
 can see.
+* `mute-time-counts-online-only`, if `true`, will only count time a player spends online as time served towards the mute.
