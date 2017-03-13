@@ -37,3 +37,5 @@ Adding a token (such as `{{displayname}}` or `{{name}}` to the message will now 
 ![Console and Player](https://i.gyazo.com/19b6bf177b7573fadb7714f0ae75c2c7.png)
 
 This does not affect how the tokens for the prefix/suffix work - they will still be based on the sender.
+
+For the list of tokens available for use by default, [please see this page](../configuration/links-and-tokens.html)

@@ -57,6 +57,7 @@ There are extensive topics on how to use and configure Nucleus to each server's 
 ## Reference
 
 * [Argument Type Reference](arguments.html)
+* [Links and Placeholder Tokens Reference](configuration/links-and-tokens.html)
 * [Command Reference (Searchable)](commands2.html)
 * [Command Reference (Table)](commands.html)
 * [Permissions Reference](permissions.html)
