@@ -4,7 +4,7 @@ title: Documentation Centre
 header: Kit Module
 moduleid: kit
 modulename: Kit
-lastupdate: 0.3
+lastupdate: 0.26
 ---
 
 ## Introduction

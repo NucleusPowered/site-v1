@@ -1,10 +1,22 @@
 {% include header.html %}
-{% include title.html %}
+<div class="head-n">
+    {% include pre-release.html %}
+</div>
 <div class="bg-colour" style="margin-top: 20px;">
     <div class="container">
+        {% if page.nolink == null %}
         <div class="row">
             <div class="col-xs-12" style="padding-top: 10px;">
-                    <div class="alert alert-warning" role="alert"><strong>Pre-release documentation.</strong> Things are likely to change before final release.</div>
+                <a href="{{ base }}/docs">&laquo; Return to Documentation Home Page</a>
+            </div>
+        </div>
+        {% endif %}
+        <div class="row">
+            <div class="col-xs-12">
+                {% if page.header %}
+                <h1 class="nomargin">{{ page.header }}</h1>
+                {% endif %}
+
                 {{content}}
             </div>
         </div>

@@ -10,6 +10,8 @@ h2 > a, h3 > a, h4 > a {
 }
 </style>
 
+This page lists some of the more frequently asked questions about the Nucleus Project, specifically the Essentials like plugin that we publish for Sponge servers.
+
 ## Table of Contents
 
 * TOC
@@ -33,7 +35,8 @@ If you want more information on Sponge, see their [website](https://spongepowere
 
 ### [Who is behind the Nucleus Project?](#who-is)
 
-The Nucleus Project is lead by **dualspiral**, and he has some support from **HassanS6000**, the lead of EssentialCmds.
+The Nucleus Project is lead by **dualspiral**. There is support from **HassanS6000**, the lead of EssentialCmds on the main Nucleus plugin, and
+from Mohron, RysingDragon and TimeTheCat on Nucleus Phonon.
 
 <a class="anchor" id="what-do-they-publish"></a>
 
@@ -44,6 +47,7 @@ The Nucleus Project is lead by **dualspiral**, and he has some support from **Ha
     * [See this page for more information on Nucleus Mixins.](configuration/mixins.html)
 * Nucleus Gluon: an optional plugin for Nucleus 0.24.0 and above, and PlaceholderAPI 3.6 and above, that allows for chat placeholders from both
 plugins to be used in... well, both plugins!
+* Nucleus Phonon: a modular take on Discord bots
 
 <a class="anchor" id="realtime-help"></a>
 
@@ -54,7 +58,7 @@ But please, take the time to read the rest of this FAQ too.
 
 <a class="anchor" id="general-setup"></a>
 
-## [General Setup](#general-setup)
+## [Nucleus: General Setup](#general-setup)
 
 <a class="anchor" id="esscmds"></a>
 

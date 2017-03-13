@@ -1,27 +1,44 @@
 {% include header.html %}
-{% include title.html %}
+<div class="head-n">
+    {% include pre-release.html %}
+</div>
 <div class="bg-colour" style="margin-top: 20px;">
     <div class="container">
         <div class="row">
             <div class="col-xs-12" style="padding-top: 10px;">
                 <a href="../">&laquo; Return to Documentation Home Page</a>
-                <div class="alert alert-warning" style="margin-top: 5px;" role="alert"><strong>Pre-release documentation.</strong> Things are likely to change before final release.</div>
-                <h2>Module Information</h2>
-                <strong>Module ID: </strong><em>{{ page.moduleid }}</em><br />
-                <strong>Module name: </strong><em>{{ page.modulename }}</em>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 modspec">
+                <h1>Module: {{ page.modulename }} <small>- Module ID: {{ page.moduleid }}</small></h1>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12">
-                {{content}}
 
-                <h2>Commands</h2>
+                <div style="margin-top: 10px;">
 
-                {% include modulecommands.html %}
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#info" aria-controls="home" role="tab" data-toggle="tab">Module Information</a></li>
+                        <li role="presentation"><a href="#commands" aria-controls="profile" role="tab" data-toggle="tab">Commands</a></li>
+                        <li role="presentation"><a href="#permissions" aria-controls="messages" role="tab" data-toggle="tab">Permissions</a></li>
+                    </ul>
 
-                <h2>Permissions</h2>
-
-                {% include modulepermissions.html %}
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="info">
+                            {{content}}
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="commands" style="margin-top: 10px;">
+                            {% include modulecommands2.html %}
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="permissions">
+                            {% include modulepermissions.html %}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

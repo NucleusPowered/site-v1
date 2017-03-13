@@ -2,15 +2,14 @@
 layout: standardheadmd
 title: Documentation Centre
 header: Documentation Centre
+nolink: true
 ---
 
-**Please note that the documentation is not yet complete.** This will be done in time for Nucleus 1.0.
-
-[You might find that reading the Nucleus FAQs is a good first step!](faqs.html)
+There are extensive topics on how to use and configure Nucleus to each server's liking. [You might find that reading the Nucleus FAQs is a good first step!](faqs.html)
 
 ## Installation and Configuration
 
-* [Configuring Nucleus](configuration/)
+* [Installing and Configuring Nucleus](configuration/)
 * [Essentials Command Equivalence](essentials.html)
 * [Migrating from EssentialCmds](configuration/migration.html)
 * [Setting up suggested permissions](configuration/permissions.html)

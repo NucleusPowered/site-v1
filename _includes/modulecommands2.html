@@ -1,0 +1,95 @@
+{% if page.moduleid != null %}
+{% assign com = site.data.commands | where: "module", page.moduleid | sort: 'commandName' %}
+{% else %}
+{% assign com = site.data.commands | sort: 'commandName' %}
+{% endif %}
+{% for cmds in com %}
+<div class="command" data-command="{{ cmds.commandName | downcase }}" data-module="{{ cmds.module | downcase }}"
+     data-description="{{ cmds.oneLineDescription | downcase }}" data-extdescription="{{ cmds.extendedDescription | downcase }}"
+     data-aliases="{{ cmds.aliases | downcase | replace: ',', '' }}">
+    <a class="anchor" id="{{ cmds.commandName | replace: ' ', '-' }}"></a>
+    <div class="command-head">
+        <a href="#{{ cmds.commandName | replace: ' ', '-' }}" class="keepblack">/{{ cmds.commandName }}</a>
+        <div class="command-module">
+            <strong>Module:</strong> {{ cmds.module }}
+        </div>
+    </div>
+    {% if cmds.oneLineDescription %}
+    <div class="command-description">
+        {{ cmds.oneLineDescription | replace: '<', '&lt;' | replace: '>', '&gt;' }}
+    </div>
+    {% endif %}
+    <div class="command-ext-description">
+        {% if cmds.extendedDescription %}
+        <p>
+            {{ cmds.extendedDescription | replace: '<', '&lt;' | replace: '>', '&gt;' | replace: '|br|', '<br />' }}
+        </p>
+        {% endif %}
+    </div>
+    <div class="command-usage">
+        {% assign al = (cmds.aliases | split: ', ') %}
+        {% if al | size > 1 %}
+        {% assign sizeName = cmds.commandName | split: ' ' | size | minus: 1 %}
+        <p>
+            <strong>Aliases: </strong>
+            {% if sizeName == 0 %}
+            {% for a in al %} <code>{{ a }}</code>{% endfor %}
+            {% else %}
+            {% assign cmdBase = (cmds.commandName | truncatewords: sizeName, '') %}
+            {% for a in al %} <code>{{ cmdBase }} {{ a }}</code>{% endfor %}
+            {% endif %}
+        </p>
+        {% endif %}
+        {% assign rootal = (cmds.rootAliases | split: ', ') %}
+        {% assign rsize = (rootal | size) %}
+        {% if rsize > 0 %}
+        <p>
+            <strong>Root command aliases: </strong>
+            {% for a in rootal %} <code>/{{ a }}</code>{% endfor %}
+        </p>
+        {% endif %}
+        <p>
+            <strong>Usage: </strong> <code>{{ cmds.simpleUsage | replace: '<', '&lt;' | replace: '>', '&gt;' }}</code>
+        </p>
+        {% if cmds.subcommands != nil and cmds.subcommands != "" %}
+        <p>
+            <strong>Available subcommands: </strong> <code>{{ cmds.subcommands | replace: '<', '&lt;' | replace: '>', '&gt;' }}</code>
+        </p>
+        {% endif %}
+        {% if cmds.permissionbase != nil and cmds.permissionbase != "" %}
+        <p>
+            <strong>Default Role: </strong> {{ cmds.defaultLevel }}
+        </p>
+        <p>
+            <strong>Basic Command Permission: </strong> <code>{{ cmds.permissionbase }}.base</code>
+        </p>
+        {% if cmds.permissions | size != 0 %}
+        <p><strong>Permissions</strong></p>
+        <ul>
+            {% for perms in cmds.permissions %}
+            <li>
+                <code>{{ perms.permission }}</code> - Default Role: {{ perms.defaultLevel }} <br />
+                {{ perms.description }}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endif %}
+
+        {% if cmds.essentialsEquivalents != nil and cmds.essentialsEquivalents | size > 0 %}
+        <p>
+            {% if cmds.isExactEssEquiv %}
+            <strong>This command is an equivalent to the following command(s) in Essentials: </strong>
+            {% else %}
+            <strong>This command is similar to the following command(s) found in Essentials: </strong>
+            {% endif %}<code>/{{ cmds.essentialsEquivalents | join: '</code>, <code>/' }} </code>
+        </p>
+        <p>
+            {% if cmds.essNotes != nil and cmds.essNotes != "" %}
+            <strong>Essentials Migration Notes: </strong>{{ cmds.essNotes }}
+            {% endif %}
+        </p>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
