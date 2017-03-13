@@ -58,13 +58,11 @@ When redeemed, the tokens can be replaced - personalising the items (for example
 
 You must, however, set `kit.process-tokens-in-lore` to `true` in `main.conf`, as this might cause a slight performance hit.
 
-Command Kits are here! Perhaps one of the more requested features for Nucleus is the ability to add commands to kits, and they are kitted out with them now!
-
-It's _very_ important to note that any command will be run by the console, _so only give the ability to add commands to kits to **highly** trusted players._ As a result, the kit command add permission, `kit.command.add.base` is in the `NONE` group for permissions to try to protect against rouge admins.
-
 ## Commands in Kits
 
 Nucleus 0.25.0 introduced adding commands to kits. This does not apply to first join kits.
+
+It's _very_ important to note that any command will be run by the console, _so only give the ability to add commands to kits to **highly** trusted players._ As a result, the kit command add permission, `kit.command.add.base` is in the `NONE` group for permissions to try to protect against rogue admins.
 
 ### Viewing the commands in a kit
 
@@ -79,7 +77,7 @@ Permission: `nucleus.kit.command.base`
 {% raw %}
 The command to add a command to a kit is `/kit command add <kit> <command>`, where the command should not start with a `/`, and anywhere you want to substitute the player's name, you should add `{{player}}`. 
 
-So, to broadcast a player's name, you could write: `{{player}} just opened a kit`, and this would broadcast `dualspiral just opened a kit` if dualspiral opened the kit. Similarly, if you wanted to smite someone who opened a kit, then you'd use `smite {{player}}`, etc.
+So, to broadcast a player's name, you could write: `broadcast {{player}} just opened a kit`, and this would broadcast `dualspiral just opened a kit` if dualspiral opened the kit. Similarly, if you wanted to smite someone who opened a kit, then you'd use `smite {{player}}`, etc.
 {% endraw %}
 
 Permission: `nucleus.kit.command.add.base`
