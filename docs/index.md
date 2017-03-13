@@ -25,8 +25,8 @@ There are extensive topics on how to use and configure Nucleus to each server's 
 * [Blacklist](modules/blacklist.html) - Management of items that players are not allowed to possess or use
 * [Chat](modules/chat.html) - Management of the server chat
 * [Core](modules/core.html) - Core Nucleus functions, such as migration and permission setup
-* [Command Logger](modules/commandlogger.html) - Logs commands in the console
-* [Connection Messages](modules/connectionmessages.html) - Alters the messages when players login or out
+* [Command Logger](modules/command-logger.html) - Logs commands in the console
+* [Connection Messages](modules/connection-messages.html) - Alters the messages when players login or out
 * [Environment](modules/environment.html) - Manages the world environment
 * [Fly](modules/fly.html) - Manages allowing players to fly
 * [Fun](modules/fun.html) - "Fun" commands

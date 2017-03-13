@@ -207,7 +207,7 @@ our page on this for more information.](configuration/commands.html)
 
 ### [Can we change/remove the join/leave messages?](#connection-messages)
 
-Yes, you can. This is described in the [Connection Messages module documentation](modules/connectionmessages.md).
+Yes, you can. This is described in the [Connection Messages module documentation](modules/connection-messages.md).
 
 <a class="anchor" id="prefix-suffix"></a>
 
