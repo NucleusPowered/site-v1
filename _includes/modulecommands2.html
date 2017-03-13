@@ -3,7 +3,7 @@
 {% else %}
 {% assign com = site.data.commands | sort: 'commandName' %}
 {% endif %}
-{% if com | size == 0 %}
+{% if com.size == 0 %}
 <p>
     <em>There are no commands for this module.</em>
 </p>
