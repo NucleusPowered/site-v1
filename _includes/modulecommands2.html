@@ -3,6 +3,11 @@
 {% else %}
 {% assign com = site.data.commands | sort: 'commandName' %}
 {% endif %}
+{% if com | size == 0 %}
+<p>
+    <em>There are no commands for this module.</em>
+</p>
+{% endif %}
 {% for cmds in com %}
 <div class="command" data-command="{{ cmds.commandName | downcase }}" data-module="{{ cmds.module | downcase }}"
      data-description="{{ cmds.oneLineDescription | downcase }}" data-extdescription="{{ cmds.extendedDescription | downcase }}"
