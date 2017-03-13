@@ -48,7 +48,9 @@ For example: if you want to jail `Notch` in the `grief` jail for 3 hours, 45 min
 /jail Notch grief 3h45m Jailed by example!
 ```
 
-If a timed jail is given to a player who is not currently logged on, their time in jail will _start_ when they next log in.
+If a timed jail is given to a player who is not currently logged on, their time in jail will _start_ when they next log in. By default,
+time towards their jail sentence will include both time where the player is online AND offline, unless `jail-time-counts-online-only` is 
+set to `true` in `main.conf`.
 
 ## Unjailing Players
 
@@ -63,6 +65,7 @@ red, prefix it with a `&c`.
 
 The `jail` module has several entries in `main.conf`:
 
-* `allowed-commands` (`allowedCommands` before 0.11) specifies the commands that players are allowed to run whilst in jail. By default, the 
+* `allowed-commands` specifies the commands that players are allowed to run whilst in jail. By default, the 
 commands are primarily chat and message based commands.
 * `mute-when-jailed`, if set to `true`, will also mute players (in global chat only) that are in jail. This defaults to `false`.
+* `jail-time-counts-online-only`, if `true`, a player's time in jail will only be counted when they are online.
