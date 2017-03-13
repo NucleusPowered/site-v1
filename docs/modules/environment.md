@@ -25,7 +25,8 @@ The weather may be one of:
 * `rain`, `r` for rain/snow
 * `storm`, `thunder`, `t` for a thunderstorm (as well as rain/snow)
 
-The duration may be a number, which will be taken to be in seconds, or of the form of a [timespan](../arguments.html#timespan)
+The duration may be a number, which will be taken to be in seconds, or of the form of a [timespan](../arguments.html#timespan). This timespan can
+be limited in `main.conf`, under `environment.maximum-weather-timespan`, which can be bypassed using the `nucleus.weather.exempt.length` permission.
 
 ### Locking the weather
 
