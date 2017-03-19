@@ -45,10 +45,17 @@ set to `true` in `main.conf`.
 The command `/checkmute [player]` allows you to check a player's mute status. To see everyone currently muted on the server
 in question, run `/checkmuted`.
 
-## A Note on Reasons
+## Permission Contexts
 
-All reasons support Minecraft Colour codes, prefixed by an `&`. So, for example, to make a message show up in light
-red, prefix it with a `&c`.
+When players are mute, Nucleus adds a permission context to the player permission set, so that you can change a player's
+permissions when they are muted. This is useful to be able to prevent the player from performing additional tasks, though
+Nucleus automatically blocks most chat commands and actions.
+
+Nucleus applies one context:
+
+* `nucleus_muted` will simply have the value "true" if the player is muted.
+
+Refer to your permission plugin documentation on how to set permissions on contexts.
 
 ## Global Mute
 

@@ -56,10 +56,18 @@ set to `true` in `main.conf`.
 
 To unjail a player, simply run `/jail <player>`.
 
-## A Note on Reasons
+## Permission Contexts
 
-All reasons support Minecraft Colour codes, prefixed by an `&`. So, for example, to make a message show up in light
-red, prefix it with a `&c`.
+When players are jailed, Nucleus adds permission contexts to the player permission set, so that you can change a player's
+permissions when they are jailed. This is useful to be able to prevent the player from performing additional tasks, though
+Nucleus automatically blocks most commands and actions anyway.
+
+Nucleus applies two contexts:
+
+* `nucleus_jailed` will simply have the value "true" if the player is jailed.
+* `nucleus_jail` will contain the name of the jail the player is jailed in.
+
+Refer to your permission plugin documentation on how to set permissions on contexts.
 
 ## Configuration
 
