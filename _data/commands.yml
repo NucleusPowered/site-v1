@@ -3,7 +3,7 @@
     isExactEssEquiv: false
     module: admin
     defaultLevel: ADMIN
-    usageString: /blockzap <location>
+    usageString: /blockzap ?|<location>
     oneLineDescription: Sets the target block to air.
     essentialsEquivalents:
     - break
@@ -38,7 +38,7 @@
     isExactEssEquiv: true
     module: admin
     defaultLevel: ADMIN
-    usageString: /broadcast <message>
+    usageString: /broadcast ?|<message>
     oneLineDescription: Broadcasts a message to the entire server.
     essentialsEquivalents:
     - broadcast
@@ -61,7 +61,7 @@
     isExactEssEquiv: true
     module: admin
     defaultLevel: ADMIN
-    usageString: /exp give|take|set|<subject>
+    usageString: /exp take|give|set|?|<subject>
     oneLineDescription: Displays the specified player's current experience.
     essentialsEquivalents:
     - exp
@@ -78,12 +78,12 @@
     requiresMixin: false
     essNotes: ''
     warmup: false
-    subcommands: give, set, take
+    subcommands: take, give, set
 -   aliases: give
     cost: false
     module: admin
     defaultLevel: ADMIN
-    usageString: /exp give [<subject>] <level>|<experience>
+    usageString: /exp give ?|[<subject>] <level>|<experience>
     oneLineDescription: Gives experience to the specified player.
     permissionbase: nucleus.exp.give
     simpleUsage: /exp give [<subject>] <level>|<experience>
@@ -102,7 +102,7 @@
     cost: false
     module: admin
     defaultLevel: ADMIN
-    usageString: /exp set [<subject>] <level>|<experience>
+    usageString: /exp set ?|[<subject>] <level>|<experience>
     oneLineDescription: Sets the specified player's experience.
     permissionbase: nucleus.exp.set
     simpleUsage: /exp set [<subject>] <level>|<experience>
@@ -121,7 +121,7 @@
     cost: false
     module: admin
     defaultLevel: ADMIN
-    usageString: /exp take [<subject>] <level>|<experience>
+    usageString: /exp take ?|[<subject>] <level>|<experience>
     oneLineDescription: Removes experience from the specified player.
     permissionbase: nucleus.exp.take
     simpleUsage: /exp take [<subject>] <level>|<experience>
@@ -141,7 +141,7 @@
     isExactEssEquiv: false
     module: admin
     defaultLevel: ADMIN
-    usageString: /gamemode <gamemode>|<user> <gamemode>
+    usageString: /gamemode ?|<gamemode>|<user> <gamemode>
     oneLineDescription: Sets a player's game mode.
     essentialsEquivalents:
     - gamemode
@@ -203,7 +203,7 @@
     isExactEssEquiv: false
     module: admin
     defaultLevel: ADMIN
-    usageString: /kill <subject>
+    usageString: /kill ?|<subject>
     oneLineDescription: Kill the specified player.
     essentialsEquivalents:
     - kill
@@ -240,7 +240,7 @@
     cost: false
     module: admin
     defaultLevel: NONE
-    usageString: /plainbroadcast <message…>
+    usageString: /plainbroadcast ?|<message…>
     oneLineDescription: Allows the user to send a broadcast without prefixes or suffixes.
     permissionbase: nucleus.plainbroadcast
     simpleUsage: /plainbroadcast <message…>
@@ -258,7 +258,7 @@
     cost: false
     module: admin
     defaultLevel: ADMIN
-    usageString: /stop [<message…>]
+    usageString: /stop ?|[<message…>]
     oneLineDescription: Stops the server.
     permissionbase: nucleus.stop
     simpleUsage: /stop [<message…>]
@@ -277,7 +277,7 @@
     isExactEssEquiv: true
     module: admin
     defaultLevel: ADMIN
-    usageString: /sudo <subject> <command…>
+    usageString: /sudo ?|<subject> <command…>
     oneLineDescription: Forces a player to run a command.
     essentialsEquivalents:
     - sudo
@@ -315,7 +315,7 @@
     isExactEssEquiv: true
     module: afk
     defaultLevel: USER
-    usageString: '/afk '
+    usageString: /afk ?|
     oneLineDescription: Toggles the player's AFK state.
     essentialsEquivalents:
     - afk
@@ -349,7 +349,7 @@
     cost: true
     module: afk
     defaultLevel: ADMIN
-    usageString: '/afkrefresh '
+    usageString: /afkrefresh ?|
     oneLineDescription: Invalidates the AFK permission cache.
     permissionbase: nucleus.afkrefresh
     simpleUsage: '/afkrefresh '
@@ -381,7 +381,7 @@
     isExactEssEquiv: true
     module: back
     defaultLevel: ADMIN
-    usageString: '/back '
+    usageString: /back ?|
     oneLineDescription: Allows a user to return to their last place before death or warp.
     essentialsEquivalents:
     - back
@@ -428,7 +428,7 @@
     isExactEssEquiv: true
     module: ban
     defaultLevel: MOD
-    usageString: /ban <uuid>|<user>|<name> [<reason…>]
+    usageString: /ban ?|<uuid>|<user>|<name> [<reason…>]
     oneLineDescription: Bans a player.
     essentialsEquivalents:
     - ban
@@ -461,7 +461,7 @@
     cost: false
     module: ban
     defaultLevel: MOD
-    usageString: /checkban <uuid>|<user>
+    usageString: /checkban ?|<uuid>|<user>
     oneLineDescription: Checks the ban status for a player.
     permissionbase: nucleus.checkban
     simpleUsage: /checkban <uuid>|<user>
@@ -480,7 +480,7 @@
     isExactEssEquiv: true
     module: ban
     defaultLevel: MOD
-    usageString: /tempban <user> <duration> [<reasonKey…>]
+    usageString: /tempban ?|<user> <duration> [<reasonKey…>]
     oneLineDescription: Temporarily bans a player.
     essentialsEquivalents:
     - tempban
@@ -514,7 +514,7 @@
     isExactEssEquiv: true
     module: ban
     defaultLevel: MOD
-    usageString: /unban <uuid>|<user>
+    usageString: /unban ?|<uuid>|<user>
     oneLineDescription: Unbans a player.
     essentialsEquivalents:
     - unban
@@ -536,7 +536,7 @@
     cost: true
     module: blacklist
     defaultLevel: ADMIN
-    usageString: /blacklist [set|list|?]
+    usageString: /blacklist set|list|?|
     oneLineDescription: Parent command for all other blacklist commands.
     permissionbase: nucleus.blacklist
     simpleUsage: '/blacklist '
@@ -566,7 +566,7 @@
     cost: true
     module: blacklist
     defaultLevel: ADMIN
-    usageString: '/blacklist list '
+    usageString: /blacklist list ?|
     oneLineDescription: Lists all blacklisted items.
     permissionbase: nucleus.blacklist.list
     simpleUsage: '/blacklist list '
@@ -596,7 +596,7 @@
     cost: true
     module: blacklist
     defaultLevel: ADMIN
-    usageString: /blacklist set [-t|-type <action to block>] [<item>] <blacklist>
+    usageString: /blacklist set ?|[-t|-type <action to block>] [<item>] <blacklist>
     oneLineDescription: Sets an item's blacklist status.
     permissionbase: nucleus.blacklist.set
     simpleUsage: /blacklist set [-t|-type <action to block>] [<item>] <blacklist>
@@ -636,7 +636,7 @@
     isExactEssEquiv: true
     module: chat
     defaultLevel: USER
-    usageString: /me <message>
+    usageString: /me ?|<message>
     oneLineDescription: Formats the next chat message as an action, using the format set by the server.
     essentialsEquivalents:
     - me
@@ -671,7 +671,7 @@
     cost: true
     module: command-spy
     defaultLevel: ADMIN
-    usageString: /commandspy [<true/false>]
+    usageString: /commandspy ?|[<true/false>]
     oneLineDescription: Enables or disables seeing commands that others have run.
     permissionbase: nucleus.commandspy
     simpleUsage: /commandspy [<true/false>]
@@ -705,7 +705,7 @@
     cost: false
     module: core
     defaultLevel: ADMIN
-    usageString: /nucleus debug|itemalias|save|setupperms|reload|clearcache|update-messages|getuser|resetuser|docgen|printperms|rebuildusercache|info|migrate|
+    usageString: /nucleus debug|itemalias|save|setupperms|reload|clearcache|update-messages|getuser|resetuser|docgen|printperms|?|rebuildusercache|migrate|info|
     oneLineDescription: Displays Nucleus version and module information.
     permissionbase: nucleus.nucleus
     simpleUsage: '/nucleus '
@@ -719,12 +719,12 @@
     requiresMixin: false
     extendedDescription: The Nucleus command allows access to sub commands that administer the entire plugin.
     warmup: false
-    subcommands: docgen, debug, save, update-messages, itemalias, reload, getuser, clearcache, resetuser, rebuildusercache, printperms, setupperms, info, migrate
+    subcommands: debug, itemalias, save, setupperms, reload, clearcache, update-messages, getuser, resetuser, docgen, printperms, rebuildusercache, migrate, info
 -   aliases: clearcache
     cost: false
     module: core
     defaultLevel: ADMIN
-    usageString: '/nucleus clearcache [-f <f>] '
+    usageString: '/nucleus clearcache ?|[-f <f>] '
     oneLineDescription: Clears the in-memory cache of users who have logged on in the past session, forcing Nucleus to read the data files on their next login.
     permissionbase: nucleus.nucleus.clearcache
     simpleUsage: '/nucleus clearcache [-f <f>] '
@@ -742,7 +742,7 @@
     cost: true
     module: core
     defaultLevel: ADMIN
-    usageString: /nucleus debug [getuuids|refreshuniquevisitors|?]
+    usageString: /nucleus debug getuuids|refreshuniquevisitors|?|
     oneLineDescription: Utilities to support debugging server issues.
     permissionbase: nucleus.nucleus.debug
     simpleUsage: '/nucleus debug '
@@ -772,7 +772,7 @@
     cost: true
     module: core
     defaultLevel: ADMIN
-    usageString: /nucleus debug getuuids <user>
+    usageString: /nucleus debug getuuids ?|<user>
     oneLineDescription: Gets all UUIDs that appear to be registered to a username.
     permissionbase: nucleus.nucleus.debug.getuuids
     simpleUsage: /nucleus debug getuuids <user>
@@ -802,7 +802,7 @@
     cost: false
     module: core
     defaultLevel: ADMIN
-    usageString: '/nucleus debug refreshuniquevisitors '
+    usageString: /nucleus debug refreshuniquevisitors ?|
     oneLineDescription: Refreshes the {{uniquecount}} token, in case it's out of sync.
     permissionbase: nucleus.nucleus.debug.refreshuniquevisitors
     simpleUsage: '/nucleus debug refreshuniquevisitors '
@@ -820,7 +820,7 @@
     cost: false
     module: core
     defaultLevel: NONE
-    usageString: /nucleus getuser <UUID>|<name>
+    usageString: /nucleus getuser ?|<UUID>|<name>
     oneLineDescription: Gets or refreshes a user's entry in the username cache.
     permissionbase: nucleus.getuser
     simpleUsage: /nucleus getuser <UUID>|<name>
@@ -839,7 +839,7 @@
     cost: false
     module: core
     defaultLevel: NONE
-    usageString: '/nucleus info '
+    usageString: /nucleus info ?|
     oneLineDescription: Creates a file in the server root directory containing information about the server and Nucleus environment.
     permissionbase: nucleus.nucleus.info
     simpleUsage: '/nucleus info '
@@ -857,7 +857,7 @@
     cost: true
     module: core
     defaultLevel: ADMIN
-    usageString: /nucleus itemalias [set|clear|remove|?]
+    usageString: /nucleus itemalias set|clear|remove|?|
     oneLineDescription: Manages item aliases.
     permissionbase: nucleus.nucleus.itemalias
     simpleUsage: '/nucleus itemalias '
@@ -887,7 +887,7 @@
     cost: false
     module: core
     defaultLevel: ADMIN
-    usageString: /nucleus itemalias clear <item>
+    usageString: /nucleus itemalias clear ?|<item>
     oneLineDescription: Removes all aliases from an item.
     permissionbase: nucleus.nucleus.itemalias.clear
     simpleUsage: /nucleus itemalias clear <item>
@@ -905,7 +905,7 @@
     cost: false
     module: core
     defaultLevel: ADMIN
-    usageString: /nucleus itemalias remove <alias>
+    usageString: /nucleus itemalias remove ?|<alias>
     oneLineDescription: Removes an alias from an item.
     permissionbase: nucleus.nucleus.itemalias.remove
     simpleUsage: /nucleus itemalias remove <alias>
@@ -923,7 +923,7 @@
     cost: false
     module: core
     defaultLevel: ADMIN
-    usageString: /nucleus itemalias set [<item>] <alias>
+    usageString: /nucleus itemalias set ?|[<item>] <alias>
     oneLineDescription: Sets an alias to an item.
     permissionbase: nucleus.nucleus.itemalias.set
     simpleUsage: /nucleus itemalias set [<item>] <alias>
@@ -941,7 +941,7 @@
     cost: false
     module: core
     defaultLevel: ADMIN
-    usageString: /nucleus migrate [esscmds|?]
+    usageString: /nucleus migrate esscmds|?|
     oneLineDescription: Migrates data from other plugins.
     permissionbase: nucleus.nucleus.migrate
     simpleUsage: '/nucleus migrate '
@@ -959,7 +959,7 @@
     cost: false
     module: core
     defaultLevel: ADMIN
-    usageString: '/nucleus migrate esscmds '
+    usageString: /nucleus migrate esscmds ?|
     oneLineDescription: Migrates data from EssentialCmds.
     permissionbase: nucleus.nucleus.migrate.esscmds
     simpleUsage: '/nucleus migrate esscmds '
@@ -977,7 +977,7 @@
     cost: true
     module: core
     defaultLevel: ADMIN
-    usageString: '/nucleus printperms '
+    usageString: /nucleus printperms ?|
     oneLineDescription: Prints all permissions registered in Nucleus.
     permissionbase: nucleus.nucleus.printperms
     simpleUsage: '/nucleus printperms '
@@ -1007,7 +1007,7 @@
     cost: false
     module: core
     defaultLevel: NONE
-    usageString: '/nucleus rebuildusercache '
+    usageString: /nucleus rebuildusercache ?|
     oneLineDescription: Rebuild the Nucleus user cache.
     permissionbase: nucleus.nucleus.rebuildusercache
     simpleUsage: '/nucleus rebuildusercache '
@@ -1026,7 +1026,7 @@
     cost: false
     module: core
     defaultLevel: ADMIN
-    usageString: '/nucleus reload '
+    usageString: /nucleus reload ?|
     oneLineDescription: Reloads Nucleus' configuration files.
     permissionbase: nucleus.nucleus.reload
     simpleUsage: '/nucleus reload '
@@ -1045,7 +1045,7 @@
     cost: false
     module: core
     defaultLevel: NONE
-    usageString: /nucleus resetuser [-a|-all <a>] <user>|<UUID>
+    usageString: /nucleus resetuser ?|[-a|-all <a>] <user>|<UUID>
     oneLineDescription: Deletes all data in Nucleus, and optionally, Minecraft, for a player.
     permissionbase: nucleus.nucleus.resetuser
     simpleUsage: /nucleus resetuser [-a|-all <a>] <user>|<UUID>
@@ -1064,7 +1064,7 @@
     cost: false
     module: core
     defaultLevel: ADMIN
-    usageString: '/nucleus save '
+    usageString: /nucleus save ?|
     oneLineDescription: Saves all files.
     permissionbase: nucleus.nucleus.save
     simpleUsage: '/nucleus save '
@@ -1082,7 +1082,7 @@
     cost: false
     module: core
     defaultLevel: NONE
-    usageString: /nucleus setupperms <Nucleus Role> <Permission Group>
+    usageString: /nucleus setupperms ?|<Nucleus Role> <Permission Group>
     oneLineDescription: Allows the user to add the recommended permissions for either USER, MOD or ADMIN roles to a specified group.
     permissionbase: nucleus.nucleus.setupperms
     simpleUsage: /nucleus setupperms <Nucleus Role> <Permission Group>
@@ -1100,7 +1100,7 @@
     cost: false
     module: core
     defaultLevel: NONE
-    usageString: '/nucleus update-messages [-y <y>] '
+    usageString: '/nucleus update-messages ?|[-y <y>] '
     oneLineDescription: Scans the messages file for keys that might not include all the required tokens and replaces them with the standard translation.
     permissionbase: nucleus.nucleus.update-messages
     simpleUsage: '/nucleus update-messages [-y <y>] '
@@ -1118,7 +1118,7 @@
     cost: false
     module: environment
     defaultLevel: ADMIN
-    usageString: /lockweather [<world>] [<toggle>]
+    usageString: /lockweather ?|[<world>] [<toggle>]
     oneLineDescription: Locks the weather on the specified world.
     permissionbase: nucleus.lockweather
     simpleUsage: /lockweather [<world>] [<toggle>]
@@ -1137,7 +1137,7 @@
     isExactEssEquiv: false
     module: environment
     defaultLevel: USER
-    usageString: /time set|[<world>]
+    usageString: /time set|?|[<world>]
     oneLineDescription: Gets the time for the specified world.
     essentialsEquivalents:
     - time
@@ -1171,7 +1171,7 @@
     isExactEssEquiv: false
     module: environment
     defaultLevel: ADMIN
-    usageString: /time set [<world>] <time>
+    usageString: /time set ?|[<world>] <time>
     oneLineDescription: Sets the time for the specified world.
     essentialsEquivalents:
     - time
@@ -1207,7 +1207,7 @@
     isExactEssEquiv: true
     module: environment
     defaultLevel: ADMIN
-    usageString: /weather [<world>] <weather> [<duration>]
+    usageString: /weather ?|[<world>] <weather> [<duration>]
     oneLineDescription: Sets the weather on the specified world.
     essentialsEquivalents:
     - thunder
@@ -1250,7 +1250,7 @@
     isExactEssEquiv: true
     module: fly
     defaultLevel: ADMIN
-    usageString: /fly [<player>] [<toggle>]
+    usageString: /fly ?|[<player>] [<toggle>]
     oneLineDescription: Set specified player's fly mode.
     essentialsEquivalents:
     - fly
@@ -1287,7 +1287,7 @@
     cost: true
     module: freeze-subject
     defaultLevel: ADMIN
-    usageString: /freezeplayer [<subject>] [<true|false>]
+    usageString: /freezeplayer ?|[<subject>] [<true|false>]
     oneLineDescription: Freezes a player in place.
     permissionbase: nucleus.freezeplayer
     simpleUsage: /freezeplayer [<subject>] [<true|false>]
@@ -1322,7 +1322,7 @@
     isExactEssEquiv: true
     module: fun
     defaultLevel: ADMIN
-    usageString: /hat [<player>]
+    usageString: /hat ?|[<player>]
     oneLineDescription: Puts the item in the player's hand on their head as a helmet.
     essentialsEquivalents:
     - hat
@@ -1349,7 +1349,7 @@
     isExactEssEquiv: true
     module: fun
     defaultLevel: ADMIN
-    usageString: /ignite [<player>] <ticks>
+    usageString: /ignite ?|[<player>] <ticks>
     oneLineDescription: Sets the specified player on fire.
     essentialsEquivalents:
     - burn
@@ -1386,7 +1386,7 @@
     cost: true
     module: fun
     defaultLevel: ADMIN
-    usageString: /kittycannon [-f|-fire <f>] [-d|-damageentities <d>] [-b|-breakblocks <b>] [<subject>]
+    usageString: /kittycannon ?|[-f|-fire <f>] [-d|-damageentities <d>] [-b|-breakblocks <b>] [<subject>]
     oneLineDescription: Fire exploding cats from your person.
     permissionbase: nucleus.kittycannon
     simpleUsage: /kittycannon [-f|-fire <f>] [-d|-damageentities <d>] [-b|-breakblocks <b>] [<subject>]
@@ -1434,7 +1434,7 @@
     isExactEssEquiv: false
     module: fun
     defaultLevel: ADMIN
-    usageString: /lightning [<subject>]
+    usageString: /lightning ?|[<subject>]
     oneLineDescription: Strikes a position or player with a lightning bolt.
     essentialsEquivalents:
     - lightning
@@ -1475,7 +1475,7 @@
     cost: false
     module: geo-ip
     defaultLevel: ADMIN
-    usageString: /geoip update|<subject>
+    usageString: /geoip update|?|<subject>
     oneLineDescription: Get the country a player has connected via.
     permissionbase: nucleus.geoip
     simpleUsage: /geoip <subject>
@@ -1497,7 +1497,7 @@
     cost: false
     module: geo-ip
     defaultLevel: ADMIN
-    usageString: '/geoip update '
+    usageString: /geoip update ?|
     oneLineDescription: Update the GeoIP database. It is recommended that you do this no more than once a month.
     permissionbase: nucleus.geoip.update
     simpleUsage: '/geoip update '
@@ -1516,7 +1516,7 @@
     isExactEssEquiv: true
     module: home
     defaultLevel: USER
-    usageString: /deletehome <home>
+    usageString: /deletehome ?|<home>
     oneLineDescription: Deletes a home.
     essentialsEquivalents:
     - delhome
@@ -1540,7 +1540,7 @@
     cost: false
     module: home
     defaultLevel: ADMIN
-    usageString: /deletehomeother <user> <home>
+    usageString: /deletehomeother ?|<user> <home>
     oneLineDescription: Deletes another player's home.
     permissionbase: nucleus.home.deleteother
     simpleUsage: /deletehomeother <user> <home>
@@ -1559,7 +1559,7 @@
     isExactEssEquiv: true
     module: home
     defaultLevel: USER
-    usageString: /home [<home>]
+    usageString: /home ?|[<home>]
     oneLineDescription: Teleports to home.
     essentialsEquivalents:
     - home
@@ -1595,7 +1595,7 @@
     cost: true
     module: home
     defaultLevel: MOD
-    usageString: /homeother <user> <home>
+    usageString: /homeother ?|<user> <home>
     oneLineDescription: Teleports to another player's home.
     permissionbase: nucleus.home.other
     simpleUsage: /homeother <user> <home>
@@ -1630,7 +1630,7 @@
     isExactEssEquiv: true
     module: home
     defaultLevel: USER
-    usageString: /homeset [-o|-overwrite <o>] [<home>]
+    usageString: /homeset ?|[-o|-overwrite <o>] [<home>]
     oneLineDescription: Sets a home with the specified name.
     essentialsEquivalents:
     - sethome
@@ -1669,7 +1669,7 @@
     cost: false
     module: home
     defaultLevel: USER
-    usageString: /listhomes [<subject>]
+    usageString: /listhomes ?|[<subject>]
     oneLineDescription: Lists homes.
     permissionbase: nucleus.home.list
     simpleUsage: /listhomes [<subject>]
@@ -1693,7 +1693,7 @@
     isExactEssEquiv: true
     module: ignore
     defaultLevel: USER
-    usageString: /ignore <user> [<toggle>]
+    usageString: /ignore ?|<user> [<toggle>]
     oneLineDescription: Toggles ignoring of all chat messages.
     essentialsEquivalents:
     - ignore
@@ -1719,7 +1719,7 @@
     isExactEssEquiv: true
     module: info
     defaultLevel: USER
-    usageString: /info [-l|-list <l>] [<section>]
+    usageString: /info ?|[-l|-list <l>] [<section>]
     oneLineDescription: Get server information.
     essentialsEquivalents:
     - info
@@ -1749,7 +1749,7 @@
     isExactEssEquiv: true
     module: info
     defaultLevel: USER
-    usageString: '/motd '
+    usageString: /motd ?|
     oneLineDescription: Allows the user to view the server MOTD, as defined in the "motd.txt" file.
     essentialsEquivalents:
     - motd
@@ -1766,13 +1766,42 @@
     essNotes: ''
     warmup: false
     subcommands: ''
+-   aliases: clear, clearinv, clearinventory, ci, clearinvent
+    cost: false
+    isExactEssEquiv: true
+    module: inventory
+    defaultLevel: ADMIN
+    usageString: /clear ?|[<subject>]
+    oneLineDescription: Clears a player's inventory.
+    essentialsEquivalents:
+    - clearinventory
+    - ci
+    - clean
+    - clearinvent
+    permissionbase: nucleus.clear
+    simpleUsage: /clear [<subject>]
+    commandName: clear
+    permissions:
+    -   module: inventory
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /clear
+        permission: nucleus.clear.base
+    -   module: inventory
+        defaultLevel: ADMIN
+        description: Allows the user to target other players using the command "clear".
+        permission: nucleus.clear.others
+    cooldown: false
+    requiresMixin: false
+    essNotes: ''
+    warmup: false
+    subcommands: ''
 -   aliases: enderchest, ec, echest
     cost: true
     isExactEssEquiv: true
     module: inventory
     spongeVersion: 5.0.0
     defaultLevel: ADMIN
-    usageString: /enderchest [<subject>]
+    usageString: /enderchest ?|[<subject>]
     oneLineDescription: Allows the user to inspect their (or another player's) ender chest.
     essentialsEquivalents:
     - enderchest
@@ -1821,7 +1850,7 @@
     module: inventory
     spongeVersion: 5.0.0
     defaultLevel: ADMIN
-    usageString: /invsee <subject>
+    usageString: /invsee ?|<subject>
     oneLineDescription: Allows the user to inspect a target's inventory.
     essentialsEquivalents:
     - invsee
@@ -1857,41 +1886,12 @@
     essNotes: ''
     warmup: false
     subcommands: ''
--   aliases: clear, clearinv, clearinventory, ci, clearinvent
-    cost: false
-    isExactEssEquiv: true
-    module: item
-    defaultLevel: ADMIN
-    usageString: /clear [<player>]
-    oneLineDescription: Clears a player's inventory.
-    essentialsEquivalents:
-    - clearinventory
-    - ci
-    - clean
-    - clearinvent
-    permissionbase: nucleus.clear
-    simpleUsage: /clear [<player>]
-    commandName: clear
-    permissions:
-    -   module: item
-        defaultLevel: ADMIN
-        description: Allows the user to run the command /clear
-        permission: nucleus.clear.base
-    -   module: item
-        defaultLevel: ADMIN
-        description: Allows the user to target other players using the command "clear".
-        permission: nucleus.clear.others
-    cooldown: false
-    requiresMixin: false
-    essNotes: ''
-    warmup: false
-    subcommands: ''
 -   aliases: enchant
     cost: true
     isExactEssEquiv: true
     module: item
     defaultLevel: ADMIN
-    usageString: '/enchant <enchantment> level(1 to 32767) [-u|-unsafe <u>] [-o|-overwrite
+    usageString: '/enchant ?|<enchantment> level(1 to 32767) [-u|-unsafe <u>] [-o|-overwrite
         <o>] '
     oneLineDescription: Allows the user to enchant items.
     essentialsEquivalents:
@@ -1931,7 +1931,7 @@
     cost: true
     module: item
     defaultLevel: ADMIN
-    usageString: /itemname [set|clear|?]
+    usageString: /itemname set|clear|?|
     oneLineDescription: Base command for Item Name related actions.
     permissionbase: nucleus.itemname
     simpleUsage: '/itemname '
@@ -1961,7 +1961,7 @@
     cost: true
     module: item
     defaultLevel: ADMIN
-    usageString: '/itemname clear '
+    usageString: /itemname clear ?|
     oneLineDescription: Clears the name assigned to the item currently in the player's hand.
     permissionbase: nucleus.itemname.clear
     simpleUsage: '/itemname clear '
@@ -1991,7 +1991,7 @@
     cost: true
     module: item
     defaultLevel: ADMIN
-    usageString: /itemname set <name…>
+    usageString: /itemname set ?|<name…>
     oneLineDescription: Sets the user facing name for the item currently in the player's hand.
     permissionbase: nucleus.itemname.set
     simpleUsage: /itemname set <name…>
@@ -2021,7 +2021,7 @@
     cost: true
     module: item
     defaultLevel: ADMIN
-    usageString: /lore [add|set|clear|?]
+    usageString: /lore add|set|edit|clear|insert|delete|?|
     oneLineDescription: Base command for Lore related actions.
     permissionbase: nucleus.lore
     simpleUsage: '/lore '
@@ -2046,12 +2046,12 @@
     cooldown: true
     requiresMixin: false
     warmup: true
-    subcommands: set, add, clear
+    subcommands: add, set, edit, clear, insert, delete
 -   aliases: add
     cost: true
     module: item
     defaultLevel: ADMIN
-    usageString: /lore add <lore…>
+    usageString: /lore add ?|<lore…>
     oneLineDescription: Adds a new line to the lore on the current item in the hand.
     permissionbase: nucleus.lore.set
     simpleUsage: /lore add <lore…>
@@ -2081,7 +2081,7 @@
     cost: true
     module: item
     defaultLevel: ADMIN
-    usageString: '/lore clear '
+    usageString: /lore clear ?|
     oneLineDescription: Clears the lore on the current item in the hand.
     permissionbase: nucleus.lore.set
     simpleUsage: '/lore clear '
@@ -2107,11 +2107,101 @@
     requiresMixin: false
     warmup: true
     subcommands: ''
+-   aliases: delete
+    cost: true
+    module: item
+    defaultLevel: ADMIN
+    usageString: /lore delete ?|<line>
+    oneLineDescription: Deletes a line of the lore on the current item in the hand at a specific line.
+    permissionbase: nucleus.lore.set
+    simpleUsage: /lore delete <line>
+    commandName: lore delete
+    permissions:
+    -   module: item
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the warmup for /lore delete
+        permission: nucleus.lore.set.exempt.warmup
+    -   module: item
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /lore delete
+        permission: nucleus.lore.set.base
+    -   module: item
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cooldown for /lore delete
+        permission: nucleus.lore.set.exempt.cooldown
+    -   module: item
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cost for /lore delete
+        permission: nucleus.lore.set.exempt.cost
+    cooldown: true
+    requiresMixin: false
+    warmup: true
+    subcommands: ''
+-   aliases: edit
+    cost: true
+    module: item
+    defaultLevel: ADMIN
+    usageString: /lore edit ?|<line> <lore…>
+    oneLineDescription: Edits the lore on the current item in the hand at a specific line.
+    permissionbase: nucleus.lore.set
+    simpleUsage: /lore edit <line> <lore…>
+    commandName: lore edit
+    permissions:
+    -   module: item
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the warmup for /lore edit
+        permission: nucleus.lore.set.exempt.warmup
+    -   module: item
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /lore edit
+        permission: nucleus.lore.set.base
+    -   module: item
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cooldown for /lore edit
+        permission: nucleus.lore.set.exempt.cooldown
+    -   module: item
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cost for /lore edit
+        permission: nucleus.lore.set.exempt.cost
+    cooldown: true
+    requiresMixin: false
+    warmup: true
+    subcommands: ''
+-   aliases: insert
+    cost: true
+    module: item
+    defaultLevel: ADMIN
+    usageString: /lore insert ?|<line> <lore…>
+    oneLineDescription: Inserts a new line to the lore on the current item in the hand at a specific line.
+    permissionbase: nucleus.lore.set
+    simpleUsage: /lore insert <line> <lore…>
+    commandName: lore insert
+    permissions:
+    -   module: item
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the warmup for /lore insert
+        permission: nucleus.lore.set.exempt.warmup
+    -   module: item
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /lore insert
+        permission: nucleus.lore.set.base
+    -   module: item
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cooldown for /lore insert
+        permission: nucleus.lore.set.exempt.cooldown
+    -   module: item
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cost for /lore insert
+        permission: nucleus.lore.set.exempt.cost
+    cooldown: true
+    requiresMixin: false
+    warmup: true
+    subcommands: ''
 -   aliases: set
     cost: true
     module: item
     defaultLevel: ADMIN
-    usageString: /lore set <lore…>
+    usageString: /lore set ?|<lore…>
     oneLineDescription: Sets the lore on the current item in the hand. The current lore is replaced.
     permissionbase: nucleus.lore.set
     simpleUsage: /lore set <lore…>
@@ -2142,7 +2232,7 @@
     isExactEssEquiv: true
     module: item
     defaultLevel: ADMIN
-    usageString: '/more '
+    usageString: /more ?|
     oneLineDescription: Sets item in hand to a full stack.
     essentialsEquivalents:
     - more
@@ -2176,7 +2266,7 @@
     isExactEssEquiv: true
     module: item
     defaultLevel: ADMIN
-    usageString: /repair [<player>]
+    usageString: /repair ?|[<player>]
     oneLineDescription: Repairs item in hand.
     essentialsEquivalents:
     - repair
@@ -2215,7 +2305,7 @@
     isExactEssEquiv: true
     module: item
     defaultLevel: ADMIN
-    usageString: /skull [<subject>] [<amount>]
+    usageString: /skull ?|[<subject>] [<amount>]
     oneLineDescription: Spawns in copies of the specified player's skull (or your own, if no player is specified) into your inventory.
     essentialsEquivalents:
     - skull
@@ -2254,7 +2344,7 @@
     cost: false
     module: jail
     defaultLevel: MOD
-    usageString: /checkjail <user/UUID>|<user/UUID>
+    usageString: /checkjail ?|<user/UUID>|<user/UUID>
     oneLineDescription: Checks if a player is jailed.
     permissionbase: nucleus.jail.checkjail
     simpleUsage: /checkjail <user/UUID>|<user/UUID>
@@ -2272,7 +2362,7 @@
     cost: false
     module: jail
     defaultLevel: ADMIN
-    usageString: /checkjailed [<jail name>]
+    usageString: /checkjailed ?|[<jail name>]
     oneLineDescription: Checks the user cache for jailed players, optionally in the specified jail.
     permissionbase: nucleus.checkjailed
     simpleUsage: /checkjailed [<jail name>]
@@ -2291,7 +2381,7 @@
     isExactEssEquiv: true
     module: jail
     defaultLevel: MOD
-    usageString: /jail <subject> [<jail>] [<duration>] [<reason…>]
+    usageString: /jail ?|<subject> [<jail>] [<duration>] [<reason…>]
     oneLineDescription: Toggles the jailing of a player.
     essentialsEquivalents:
     - togglejail
@@ -2336,7 +2426,7 @@
     isExactEssEquiv: true
     module: jail
     defaultLevel: MOD
-    usageString: /jails set|tp|delete|
+    usageString: /jails set|tp|delete|?|
     oneLineDescription: Lists all jails.
     essentialsEquivalents:
     - jails
@@ -2352,13 +2442,13 @@
     requiresMixin: false
     essNotes: ''
     warmup: false
-    subcommands: set, delete, tp
+    subcommands: set, tp, delete
 -   aliases: delete, del, remove
     cost: false
     isExactEssEquiv: true
     module: jail
     defaultLevel: ADMIN
-    usageString: /jails delete <jail>
+    usageString: /jails delete ?|<jail>
     oneLineDescription: Deletes a jail.
     essentialsEquivalents:
     - deljail
@@ -2382,7 +2472,7 @@
     isExactEssEquiv: true
     module: jail
     defaultLevel: ADMIN
-    usageString: /jails set <jail>
+    usageString: /jails set ?|<jail>
     oneLineDescription: Creates a jail.
     essentialsEquivalents:
     - setjail
@@ -2404,7 +2494,7 @@
     cost: false
     module: jail
     defaultLevel: MOD
-    usageString: /jails tp <jail>
+    usageString: /jails tp ?|<jail>
     oneLineDescription: Warp to a jail.
     permissionbase: nucleus.jail.list
     simpleUsage: /jails tp <jail>
@@ -2423,7 +2513,7 @@
     isExactEssEquiv: true
     module: jump
     defaultLevel: ADMIN
-    usageString: '/jump '
+    usageString: /jump ?|
     oneLineDescription: Perform a short range "jump" to the block they are looking at.
     essentialsEquivalents:
     - jump
@@ -2458,7 +2548,7 @@
     cost: true
     module: jump
     defaultLevel: ADMIN
-    usageString: '/thru '
+    usageString: /thru ?|
     oneLineDescription: Teleport to the other side of a wall.
     permissionbase: nucleus.thru
     simpleUsage: '/thru '
@@ -2489,7 +2579,7 @@
     isExactEssEquiv: true
     module: jump
     defaultLevel: ADMIN
-    usageString: /top [-f <f>] [<subject>]
+    usageString: /top ?|[-f <f>] [<subject>]
     oneLineDescription: Teleports the user (or target player) to the surface.
     essentialsEquivalents:
     - top
@@ -2528,7 +2618,7 @@
     isExactEssEquiv: true
     module: kick
     defaultLevel: MOD
-    usageString: /kick <subject> [<reason…>]
+    usageString: /kick ?|<subject> [<reason…>]
     oneLineDescription: Kicks a player
     essentialsEquivalents:
     - kick
@@ -2558,7 +2648,7 @@
     isExactEssEquiv: true
     module: kick
     defaultLevel: MOD
-    usageString: /kickall [-w|-f <w>]  [<reason…>]
+    usageString: /kickall ?|[-w|-f <w>]  [<reason…>]
     oneLineDescription: Kicks all players, optionally turning the whitelist on.
     essentialsEquivalents:
     - kickall
@@ -2584,7 +2674,7 @@
     cost: false
     module: kit
     defaultLevel: ADMIN
-    usageString: /firstjoinkit set|edit|clear|redeem|
+    usageString: /firstjoinkit set|edit|clear|redeem|?|
     oneLineDescription: Displays the items given to new players when they first join the server.
     permissionbase: nucleus.firstjoinkit
     simpleUsage: '/firstjoinkit '
@@ -2597,12 +2687,12 @@
     cooldown: false
     requiresMixin: false
     warmup: false
-    subcommands: clear, edit, set, redeem
+    subcommands: set, edit, clear, redeem
 -   aliases: clear, remove
     cost: false
     module: kit
     defaultLevel: ADMIN
-    usageString: '/firstjoinkit clear '
+    usageString: /firstjoinkit clear ?|
     oneLineDescription: Stops items being given to new players on first join.
     permissionbase: nucleus.firstjoinkit.clear
     simpleUsage: '/firstjoinkit clear '
@@ -2621,7 +2711,7 @@
     module: kit
     spongeVersion: '5.0'
     defaultLevel: ADMIN
-    usageString: '/firstjoinkit edit '
+    usageString: /firstjoinkit edit ?|
     oneLineDescription: Opens a GUI for editing the first join kit contents.
     permissionbase: nucleus.firstjoinkit.edit
     simpleUsage: '/firstjoinkit edit '
@@ -2642,7 +2732,7 @@
     cost: false
     module: kit
     defaultLevel: ADMIN
-    usageString: /firstjoinkit redeem [<player>]
+    usageString: /firstjoinkit redeem ?|[<player>]
     oneLineDescription: Redeems the first join kit.
     permissionbase: nucleus.firstjoinkit.redeem
     simpleUsage: /firstjoinkit redeem [<player>]
@@ -2660,7 +2750,7 @@
     cost: false
     module: kit
     defaultLevel: ADMIN
-    usageString: '/firstjoinkit set '
+    usageString: /firstjoinkit set ?|
     oneLineDescription: Sets the items given to new players when they first join the server.
     permissionbase: nucleus.firstjoinkit.set
     simpleUsage: '/firstjoinkit set '
@@ -2679,7 +2769,7 @@
     isExactEssEquiv: false
     module: kit
     defaultLevel: ADMIN
-    usageString: /kit remove|create|add|give|set|cost|edit|setcooldown|list|command|resetusage|onetime|<kit>
+    usageString: /kit add|give|set|cost|edit|setcooldown|list|remove|command|autoredeem|create|resetusage|onetime|?|<kit>
     oneLineDescription: Redeems a kit.
     essentialsEquivalents:
     - kit, kits
@@ -2711,12 +2801,12 @@
     requiresMixin: false
     essNotes: '''/kit'' redeems, ''/kits'' lists.'
     warmup: true
-    subcommands: give, remove, add, edit, list, resetusage, set, setcooldown, command, onetime, cost, create
+    subcommands: add, give, set, cost, edit, setcooldown, list, remove, command, autoredeem, create, resetusage, onetime
 -   aliases: add, createFromInventory
     cost: false
     module: kit
     defaultLevel: ADMIN
-    usageString: /kit add <name>
+    usageString: /kit add ?|<name>
     oneLineDescription: Creates a kit with the specified name and current inventory.
     permissionbase: nucleus.kit.add
     simpleUsage: /kit add <name>
@@ -2731,11 +2821,30 @@
     extendedDescription: This command takes a snapshot of your inventory (excluding your armor) and creates the named kit with it.|br||br|The kit can be updated using the /kit edit or /kit set commands, depending on whether you want to use a GUI to edit the kit, or replace the kit with a new copy of your inventory.|br||br|See also /kit create if you want to create a kit via a GUI.
     warmup: false
     subcommands: ''
+-   aliases: autoredeem
+    cost: false
+    module: kit
+    defaultLevel: ADMIN
+    usageString: /kit autoredeem ?|<kit> <autoRedeemToggle>
+    oneLineDescription: Sets or unsets a kit to auto redeem on login.
+    permissionbase: nucleus.kit.autoredeem
+    simpleUsage: /kit autoredeem <kit> <autoRedeemToggle>
+    commandName: kit autoredeem
+    permissions:
+    -   module: kit
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /kit autoredeem
+        permission: nucleus.kit.autoredeem.base
+    cooldown: false
+    requiresMixin: false
+    extendedDescription: A kit set to automatically redeem will be given to a player when they login if they are currently eligible to redeem the kit using &quot;/kit name&quot;.
+    warmup: false
+    subcommands: ''
 -   aliases: command, commands
     cost: false
     module: kit
     defaultLevel: ADMIN
-    usageString: /kit command add|edit|clear|remove|<kit>
+    usageString: /kit command add|edit|clear|remove|?|<kit>
     oneLineDescription: Lists the commands associated with a kit.
     permissionbase: nucleus.kit.command
     simpleUsage: /kit command <kit>
@@ -2749,12 +2858,12 @@
     requiresMixin: false
     extendedDescription: Commands are executed as the SERVER. This could allow players that get access to this command to cause serious havoc. Please only give edit and add commands to TRUSTED players.
     warmup: false
-    subcommands: edit, add, clear, remove
+    subcommands: add, edit, clear, remove
 -   aliases: add, +
     cost: false
     module: kit
     defaultLevel: NONE
-    usageString: /kit command add <kit> <command>
+    usageString: /kit command add ?|<kit> <command>
     oneLineDescription: Adds a command to the specified kit.
     permissionbase: nucleus.kit.command.add
     simpleUsage: /kit command add <kit> <command>
@@ -2772,7 +2881,7 @@
     cost: false
     module: kit
     defaultLevel: NONE
-    usageString: /kit command clear <kit>
+    usageString: /kit command clear ?|<kit>
     oneLineDescription: Removes all commands from the specified kit.
     permissionbase: nucleus.kit.command.remove
     simpleUsage: /kit command clear <kit>
@@ -2790,7 +2899,7 @@
     cost: false
     module: kit
     defaultLevel: NONE
-    usageString: /kit command edit <kit>
+    usageString: /kit command edit ?|<kit>
     oneLineDescription: Opens an in game GUI that lists all commands in the kit as books.
     permissionbase: nucleus.kit.command.edit
     simpleUsage: /kit command edit <kit>
@@ -2809,7 +2918,7 @@
     cost: false
     module: kit
     defaultLevel: NONE
-    usageString: /kit command remove <kit> <index>|<command>
+    usageString: /kit command remove ?|<kit> <index>|<command>
     oneLineDescription: Removes a command from the specified kit.
     permissionbase: nucleus.kit.command.remove
     simpleUsage: /kit command remove <kit> <index>|<command>
@@ -2828,7 +2937,7 @@
     cost: false
     module: kit
     defaultLevel: ADMIN
-    usageString: /kit cost <kit> <cost>
+    usageString: /kit cost ?|<kit> <cost>
     oneLineDescription: Sets the cost for a kit.
     permissionbase: nucleus.kit.cost
     simpleUsage: /kit cost <kit> <cost>
@@ -2847,7 +2956,7 @@
     module: kit
     spongeVersion: '5.0'
     defaultLevel: ADMIN
-    usageString: /kit create <name>
+    usageString: /kit create ?|<name>
     oneLineDescription: Opens a chest window and lets you create a kit through the Minecraft inventory interface.
     permissionbase: nucleus.kit.create
     simpleUsage: /kit create <name>
@@ -2869,7 +2978,7 @@
     module: kit
     spongeVersion: '5.0'
     defaultLevel: ADMIN
-    usageString: /kit edit <kit>
+    usageString: /kit edit ?|<kit>
     oneLineDescription: Opens a GUI for editing kit contents.
     permissionbase: nucleus.kit.edit
     simpleUsage: /kit edit <kit>
@@ -2890,7 +2999,7 @@
     cost: true
     module: kit
     defaultLevel: ADMIN
-    usageString: /kit give [-i|-ignore <i>]  <subject> <kit>
+    usageString: /kit give ?|[-i|-ignore <i>]  <subject> <kit>
     oneLineDescription: Redeems a kit on the specified player.
     permissionbase: nucleus.kit.give
     simpleUsage: /kit give [-i|-ignore <i>]  <subject> <kit>
@@ -2926,7 +3035,7 @@
     rootAliases: kits
     module: kit
     defaultLevel: ADMIN
-    usageString: '/kit list '
+    usageString: /kit list ?|
     oneLineDescription: Lists the kits that are available.
     permissionbase: nucleus.kit.list
     simpleUsage: '/kit list '
@@ -2944,7 +3053,7 @@
     cost: false
     module: kit
     defaultLevel: ADMIN
-    usageString: /kit onetime <kit> <oneTimeToggle>
+    usageString: /kit onetime ?|<kit> <oneTimeToggle>
     oneLineDescription: Sets or unsets a kit as a one time use kit.
     permissionbase: nucleus.kit.onetime
     simpleUsage: /kit onetime <kit> <oneTimeToggle>
@@ -2963,7 +3072,7 @@
     cost: false
     module: kit
     defaultLevel: ADMIN
-    usageString: /kit remove <kit>
+    usageString: /kit remove ?|<kit>
     oneLineDescription: Deletes a kit.
     permissionbase: nucleus.kit.remove
     simpleUsage: /kit remove <kit>
@@ -2981,7 +3090,7 @@
     cost: false
     module: kit
     defaultLevel: ADMIN
-    usageString: /kit resetusage <subject> <kit>
+    usageString: /kit resetusage ?|<subject> <kit>
     oneLineDescription: Resets a player's usage of a kit, allowing them to redeem the kit again immediately.
     permissionbase: nucleus.kit.resetusage
     simpleUsage: /kit resetusage <subject> <kit>
@@ -2999,7 +3108,7 @@
     cost: false
     module: kit
     defaultLevel: ADMIN
-    usageString: /kit set <kit>
+    usageString: /kit set ?|<kit>
     oneLineDescription: Sets the items in a kit to your current inventory.
     permissionbase: nucleus.kit.set
     simpleUsage: /kit set <kit>
@@ -3018,7 +3127,7 @@
     cost: false
     module: kit
     defaultLevel: ADMIN
-    usageString: /kit setcooldown <kit> <duration>
+    usageString: /kit setcooldown ?|<kit> <duration>
     oneLineDescription: Sets the cooldown on a kit.
     permissionbase: nucleus.kit.setcooldown
     simpleUsage: /kit setcooldown <kit> <duration>
@@ -3038,7 +3147,7 @@
     isExactEssEquiv: true
     module: mail
     defaultLevel: USER
-    usageString: /mail other|clear|send|[<filters>*]
+    usageString: /mail other|clear|send|?|[<filters>*]
     oneLineDescription: Retrieves mail that has been sent to you.
     essentialsEquivalents:
     - mail
@@ -3055,12 +3164,12 @@
     requiresMixin: false
     essNotes: ''
     warmup: false
-    subcommands: send, clear, other
+    subcommands: other, clear, send
 -   aliases: clear
     cost: false
     module: mail
     defaultLevel: USER
-    usageString: '/mail clear '
+    usageString: /mail clear ?|
     oneLineDescription: Clears all mail in your inbox.
     permissionbase: nucleus.mail
     simpleUsage: '/mail clear '
@@ -3078,7 +3187,7 @@
     cost: false
     module: mail
     defaultLevel: ADMIN
-    usageString: /mail other <user> [<filters>*]
+    usageString: /mail other ?|<user> [<filters>*]
     oneLineDescription: Read others' mail.
     permissionbase: nucleus.mail.other
     simpleUsage: /mail other <user> [<filters>*]
@@ -3096,7 +3205,7 @@
     cost: true
     module: mail
     defaultLevel: USER
-    usageString: /mail send <subject> <message…>
+    usageString: /mail send ?|<subject> <message…>
     oneLineDescription: Sends a mail to the specified player.
     permissionbase: nucleus.mail.send
     simpleUsage: /mail send <subject> <message…>
@@ -3127,7 +3236,7 @@
     isExactEssEquiv: true
     module: message
     defaultLevel: USER
-    usageString: /helpop <message…>
+    usageString: /helpop ?|<message…>
     oneLineDescription: Send a message to all available staff
     essentialsEquivalents:
     - helpop
@@ -3168,7 +3277,7 @@
     rootAliases: tell
     module: message
     defaultLevel: USER
-    usageString: /message <to>|<to> <message…>
+    usageString: /message ?|<to>|<to> <message…>
     oneLineDescription: Send a message to a player, or the console with "-".
     essentialsEquivalents:
     - msg
@@ -3261,7 +3370,7 @@
     isExactEssEquiv: true
     module: message
     defaultLevel: MOD
-    usageString: /socialspy [<Social Spy>]
+    usageString: /socialspy ?|[<Social Spy>]
     oneLineDescription: See all private messages sent to other players.
     essentialsEquivalents:
     - socialspy
@@ -3286,7 +3395,7 @@
     cost: true
     module: misc
     defaultLevel: ADMIN
-    usageString: '/blockinfo [-e|-extended <e>] '
+    usageString: '/blockinfo ?|[-e|-extended <e>] '
     oneLineDescription: Get information about the block you are currently facing.
     permissionbase: nucleus.blockinfo
     simpleUsage: '/blockinfo [-e|-extended <e>] '
@@ -3320,7 +3429,7 @@
     cost: true
     module: misc
     defaultLevel: ADMIN
-    usageString: '/entityinfo [-e|-extended <e>] '
+    usageString: '/entityinfo ?|[-e|-extended <e>] '
     oneLineDescription: Get information about the entity you are currently facing.
     permissionbase: nucleus.entityinfo
     simpleUsage: '/entityinfo [-e|-extended <e>] '
@@ -3355,7 +3464,7 @@
     isExactEssEquiv: true
     module: misc
     defaultLevel: ADMIN
-    usageString: /feed [<player>]
+    usageString: /feed ?|[<player>]
     oneLineDescription: Set specified player's hunger to full.
     essentialsEquivalents:
     - feed
@@ -3394,7 +3503,7 @@
     isExactEssEquiv: true
     module: misc
     defaultLevel: ADMIN
-    usageString: /god [<subject>] [<invuln>]
+    usageString: /god ?|[<subject>] [<invuln>]
     oneLineDescription: Set specified player's invulnerability status.
     essentialsEquivalents:
     - god
@@ -3422,7 +3531,7 @@
     isExactEssEquiv: true
     module: misc
     defaultLevel: ADMIN
-    usageString: /heal [<player>]
+    usageString: /heal ?|[<player>]
     oneLineDescription: Fully heal the specified player.
     essentialsEquivalents:
     - heal
@@ -3460,7 +3569,7 @@
     isExactEssEquiv: false
     module: misc
     defaultLevel: ADMIN
-    usageString: /iteminfo [-e|-extended <e>] [<key>]
+    usageString: /iteminfo ?|[-e|-extended <e>] [<key>]
     oneLineDescription: Get information about the item you are currently holding.
     essentialsEquivalents:
     - itemdb
@@ -3501,7 +3610,7 @@
     isExactEssEquiv: false
     module: misc
     defaultLevel: ADMIN
-    usageString: /ping [<player>]
+    usageString: /ping ?|[<player>]
     oneLineDescription: Displays the current latency for the target player.
     essentialsEquivalents:
     - ping
@@ -3529,7 +3638,7 @@
     isExactEssEquiv: true
     module: misc
     defaultLevel: ADMIN
-    usageString: '/serverstat '
+    usageString: /serverstat ?|
     oneLineDescription: Displays server runtime statistics.
     essentialsEquivalents:
     - gc
@@ -3558,7 +3667,7 @@
     isExactEssEquiv: false
     module: misc
     defaultLevel: ADMIN
-    usageString: /speed [<player>] [<fly|f|flying|w|walk>] [<speed>]
+    usageString: /speed ?|[<player>] [<fly|f|flying|w|walk>] [<speed>]
     oneLineDescription: Set the specified player's walking or flying speed, where "1" is normal walking speed.
     essentialsEquivalents:
     - speed
@@ -3604,7 +3713,7 @@
     isExactEssEquiv: true
     module: misc
     defaultLevel: USER
-    usageString: '/suicide '
+    usageString: /suicide ?|
     oneLineDescription: Kill your player, displaying the Game Over screen.
     essentialsEquivalents:
     - suicide
@@ -3638,7 +3747,7 @@
     isExactEssEquiv: true
     module: mob
     defaultLevel: ADMIN
-    usageString: /spawnmob [<player>] <mob> [<amount>]
+    usageString: /spawnmob ?|[<player>] <mob> [<amount>]
     oneLineDescription: Spawns in mobs at the specified player's location.
     essentialsEquivalents:
     - spawnmob
@@ -3685,7 +3794,7 @@
     cost: false
     module: mute
     defaultLevel: MOD
-    usageString: /checkmute <user/UUID>|<user/UUID>
+    usageString: /checkmute ?|<user/UUID>|<user/UUID>
     oneLineDescription: Checks whether the specified player is muted.
     permissionbase: nucleus.checkmute
     simpleUsage: /checkmute <user/UUID>|<user/UUID>
@@ -3703,7 +3812,7 @@
     cost: false
     module: mute
     defaultLevel: ADMIN
-    usageString: '/checkmuted '
+    usageString: /checkmuted ?|
     oneLineDescription: Checks the user cache for muted players.
     permissionbase: nucleus.checkmuted
     simpleUsage: '/checkmuted '
@@ -3721,7 +3830,7 @@
     cost: false
     module: mute
     defaultLevel: ADMIN
-    usageString: /globalmute [<turn on>]
+    usageString: /globalmute ?|[<turn on>]
     oneLineDescription: Enable or disable a server wide mute. Anyone that has the permission "nucleus.globalmute.voice.auto" will always have voice.
     permissionbase: nucleus.globalmute
     simpleUsage: /globalmute [<turn on>]
@@ -3741,7 +3850,7 @@
     isExactEssEquiv: true
     module: mute
     defaultLevel: MOD
-    usageString: /mute <subject> [<time>] [<reason…>]
+    usageString: /mute ?|<subject> [<time>] [<reason…>]
     oneLineDescription: Mutes the specified player.
     essentialsEquivalents:
     - mute
@@ -3779,7 +3888,7 @@
     cost: false
     module: mute
     defaultLevel: ADMIN
-    usageString: /voice <subject> [<turn on>]
+    usageString: /voice ?|<subject> [<turn on>]
     oneLineDescription: Allows a user to speak when a global mute is in effect.
     permissionbase: nucleus.globalmute.voice
     simpleUsage: /voice <subject> [<turn on>]
@@ -3806,7 +3915,7 @@
     cost: false
     module: nameban
     defaultLevel: ADMIN
-    usageString: /nameban <name> [<reason…>]
+    usageString: /nameban ?|<name> [<reason…>]
     oneLineDescription: Bans a specific IGN (rather than specific player) from joining the server.
     permissionbase: nucleus.nameban
     simpleUsage: /nameban <name> [<reason…>]
@@ -3825,7 +3934,7 @@
     cost: false
     module: nameban
     defaultLevel: ADMIN
-    usageString: /nameunban <name>
+    usageString: /nameunban ?|<name>
     oneLineDescription: Allows a specific IGN (rather than specific player) to join the server again.
     permissionbase: nucleus.nameban.unban
     simpleUsage: /nameunban <name>
@@ -3843,7 +3952,7 @@
     cost: true
     module: nickname
     defaultLevel: ADMIN
-    usageString: /delnick [<subject>]
+    usageString: /delnick ?|[<subject>]
     oneLineDescription: Deletes your current nickname
     permissionbase: nucleus.nick
     simpleUsage: /delnick [<subject>]
@@ -3874,7 +3983,7 @@
     isExactEssEquiv: false
     module: nickname
     defaultLevel: ADMIN
-    usageString: /nick [<subject>] <nickname>
+    usageString: /nick ?|[<subject>] <nickname>
     oneLineDescription: Sets your nickname/display name
     essentialsEquivalents:
     - nick
@@ -4077,7 +4186,7 @@
     isExactEssEquiv: true
     module: nickname
     defaultLevel: USER
-    usageString: /realname <name>
+    usageString: /realname ?|<name>
     oneLineDescription: Gets the player's realname from the provided nickname.
     essentialsEquivalents:
     - realname
@@ -4110,7 +4219,7 @@
     cost: false
     module: note
     defaultLevel: MOD
-    usageString: /checknotes <subject>
+    usageString: /checknotes ?|<subject>
     oneLineDescription: Allows the user to check a player's notes.
     permissionbase: nucleus.checknotes
     simpleUsage: /checknotes <subject>
@@ -4128,7 +4237,7 @@
     cost: false
     module: note
     defaultLevel: ADMIN
-    usageString: /clearnotes <subject>
+    usageString: /clearnotes ?|<subject>
     oneLineDescription: Allows the user to clear a player's notes.
     permissionbase: nucleus.clearnotes
     simpleUsage: /clearnotes <subject>
@@ -4146,7 +4255,7 @@
     cost: false
     module: note
     defaultLevel: MOD
-    usageString: /note <subject> <note…>
+    usageString: /note ?|<subject> <note…>
     oneLineDescription: Allows the user to add a note to a player.
     permissionbase: nucleus.note
     simpleUsage: /note <subject> <note…>
@@ -4168,7 +4277,7 @@
     cost: false
     module: note
     defaultLevel: ADMIN
-    usageString: /removenote <user> <ID>
+    usageString: /removenote ?|<user> <ID>
     oneLineDescription: Allows the user to delete a specific note attached to a player.
     permissionbase: nucleus.removenote
     simpleUsage: /removenote <user> <ID>
@@ -4186,7 +4295,7 @@
     cost: true
     module: playerinfo
     defaultLevel: ADMIN
-    usageString: /getfromip <IP Address>
+    usageString: /getfromip ?|<IP Address>
     oneLineDescription: Gets all users last seen on the specified IP.
     permissionbase: nucleus.getfromip
     simpleUsage: /getfromip <IP Address>
@@ -4217,7 +4326,7 @@
     isExactEssEquiv: true
     module: playerinfo
     defaultLevel: USER
-    usageString: /getpos [<subject>]
+    usageString: /getpos ?|[<subject>]
     oneLineDescription: Gets the location of the executing or target player.
     essentialsEquivalents:
     - getpos
@@ -4260,7 +4369,7 @@
     isExactEssEquiv: true
     module: playerinfo
     defaultLevel: USER
-    usageString: '/list '
+    usageString: /list ?|
     oneLineDescription: Lists the players on the server.
     essentialsEquivalents:
     - list
@@ -4302,7 +4411,7 @@
     isExactEssEquiv: true
     module: playerinfo
     defaultLevel: ADMIN
-    usageString: /seen <uuid>|<subject>
+    usageString: /seen ?|<uuid>|<subject>
     oneLineDescription: Gets information about the specified player.
     essentialsEquivalents:
     - seen
@@ -4340,7 +4449,7 @@
     isExactEssEquiv: true
     module: powertool
     defaultLevel: ADMIN
-    usageString: /powertool toggle|list|delete|[<command…>]
+    usageString: /powertool toggle|list|delete|?|[<command…>]
     oneLineDescription: Binds the item in hand to the specified command.
     essentialsEquivalents:
     - powertool
@@ -4357,12 +4466,12 @@
     requiresMixin: false
     essNotes: ''
     warmup: false
-    subcommands: delete, list, toggle
+    subcommands: toggle, list, delete
 -   aliases: delete, del, rm, remove
     cost: false
     module: powertool
     defaultLevel: ADMIN
-    usageString: '/powertool delete '
+    usageString: /powertool delete ?|
     oneLineDescription: Removes any powertool bindings to the item in hand.
     permissionbase: nucleus.powertool
     simpleUsage: '/powertool delete '
@@ -4380,7 +4489,7 @@
     cost: false
     module: powertool
     defaultLevel: ADMIN
-    usageString: '/powertool list '
+    usageString: /powertool list ?|
     oneLineDescription: Lists all current powertools that the user has.
     permissionbase: nucleus.powertool
     simpleUsage: '/powertool list '
@@ -4399,7 +4508,7 @@
     isExactEssEquiv: true
     module: powertool
     defaultLevel: ADMIN
-    usageString: /powertool toggle [<toggle>]
+    usageString: /powertool toggle ?|[<toggle>]
     oneLineDescription: Toggles whether powertools activate.
     essentialsEquivalents:
     - powertooltoggle
@@ -4422,12 +4531,16 @@
     cost: true
     module: rtp
     defaultLevel: ADMIN
-    usageString: /rtp [<player>]
+    usageString: /rtp ?|[<player>] [<world>]
     oneLineDescription: Allows the user to teleport to a random destination within the world border.
     permissionbase: nucleus.rtp
-    simpleUsage: /rtp [<player>]
+    simpleUsage: /rtp [<player>] [<world>]
     commandName: rtp
     permissions:
+    -   module: rtp
+        defaultLevel: ADMIN
+        description: The base permission for per-world permission, if allowed in the config. This permission can be suffixed with ".worldname" (in lowercase) to allow for per-world rtp permissions.
+        permission: nucleus.rtp.worlds
     -   module: rtp
         defaultLevel: ADMIN
         description: Allows the user to bypass the cost for /rtp
@@ -4457,7 +4570,7 @@
     isExactEssEquiv: true
     module: rules
     defaultLevel: USER
-    usageString: '/rules '
+    usageString: /rules ?|
     oneLineDescription: Read the server rules.
     essentialsEquivalents:
     - rules
@@ -4479,7 +4592,7 @@
     isExactEssEquiv: true
     module: server-shop
     defaultLevel: USER
-    usageString: /itembuy [-y|-f|-a|-yes|-auto <y>] <item> <amount>
+    usageString: /itembuy ?|[-y|-f|-a|-yes|-auto <y>] <item> <amount>
     oneLineDescription: Allows the user to buy an item from the server for a set price.
     essentialsEquivalents:
     - buy
@@ -4501,7 +4614,7 @@
     isExactEssEquiv: true
     module: server-shop
     defaultLevel: USER
-    usageString: '/itemsell '
+    usageString: /itemsell ?|
     oneLineDescription: Allows the user to sell an item in their main hand to the server for a set price.
     essentialsEquivalents:
     - sell
@@ -4522,7 +4635,7 @@
     cost: false
     module: server-shop
     defaultLevel: USER
-    usageString: /itemsellall [-a|-accept <a>]  [<item>]
+    usageString: /itemsellall ?|[-a|-accept <a>]  [<item>]
     oneLineDescription: Allows the user to sell all items of a set type in their inventory to the server for a set price.
     permissionbase: nucleus.itemsellall
     simpleUsage: /itemsellall [-a|-accept <a>]  [<item>]
@@ -4541,7 +4654,7 @@
     isExactEssEquiv: true
     module: server-shop
     defaultLevel: ADMIN
-    usageString: /setworth [<item>] <buy|sell> <cost>
+    usageString: /setworth ?|[<item>] <buy|sell> <cost>
     oneLineDescription: Allows the user to set the buy or sell price of an item.
     essentialsEquivalents:
     - 'setworth '
@@ -4563,7 +4676,7 @@
     isExactEssEquiv: true
     module: server-shop
     defaultLevel: USER
-    usageString: /worth [<item>]
+    usageString: /worth ?|[<item>]
     oneLineDescription: Allows the user to display the server buy and sell prices for an item.
     essentialsEquivalents:
     - worth
@@ -4598,7 +4711,7 @@
     cost: true
     module: spawn
     defaultLevel: USER
-    usageString: '/firstspawn '
+    usageString: /firstspawn ?|
     oneLineDescription: If set, warp to the new player spawn point.
     permissionbase: nucleus.firstspawn
     simpleUsage: '/firstspawn '
@@ -4628,7 +4741,7 @@
     cost: false
     module: spawn
     defaultLevel: ADMIN
-    usageString: /setfirstspawn del|
+    usageString: /setfirstspawn del|?|
     oneLineDescription: Sets the new player spawn point.
     permissionbase: nucleus.firstspawn.set
     simpleUsage: '/setfirstspawn '
@@ -4646,7 +4759,7 @@
     cost: false
     module: spawn
     defaultLevel: ADMIN
-    usageString: '/setfirstspawn del '
+    usageString: /setfirstspawn del ?|
     oneLineDescription: Removes the new player spawn point.
     permissionbase: nucleus.firstspawn.remove
     simpleUsage: '/setfirstspawn del '
@@ -4665,7 +4778,7 @@
     isExactEssEquiv: true
     module: spawn
     defaultLevel: ADMIN
-    usageString: '/setspawn '
+    usageString: /setspawn ?|
     oneLineDescription: Sets the current world spawn point.
     essentialsEquivalents:
     - setspawn
@@ -4687,7 +4800,7 @@
     isExactEssEquiv: true
     module: spawn
     defaultLevel: USER
-    usageString: /spawn other|[<world>]
+    usageString: /spawn other|?|[<world>]
     oneLineDescription: Warp to a world spawn point.
     essentialsEquivalents:
     - spawn
@@ -4729,7 +4842,7 @@
     cost: false
     module: spawn
     defaultLevel: ADMIN
-    usageString: /spawn other <subject> [<world>]
+    usageString: /spawn other ?|<subject> [<world>]
     oneLineDescription: Warp another player to a world spawn point.
     permissionbase: nucleus.spawn.other
     simpleUsage: /spawn other <subject> [<world>]
@@ -4752,7 +4865,7 @@
     cost: false
     module: staff-chat
     defaultLevel: MOD
-    usageString: /staffchat [<message>]
+    usageString: /staffchat ?|[<message>]
     oneLineDescription: Allows the user to chat in the staff chat channel.
     permissionbase: nucleus.staffchat
     simpleUsage: /staffchat [<message>]
@@ -4772,7 +4885,7 @@
     rootAliases: tp
     module: teleport
     defaultLevel: MOD
-    usageString: /teleport [-q <quiet>] [-f <f>]  <playerFrom>|<subject>
+    usageString: /teleport ?|[-q <quiet>] [-f <f>]  <playerFrom>|<subject>
     oneLineDescription: Teleports one player to another's location.
     essentialsEquivalents:
     - tp
@@ -4798,12 +4911,16 @@
         permission: nucleus.teleport.teleport.exempt.cooldown
     -   module: teleport
         defaultLevel: ADMIN
-        description: Allows the user to teleport other players.
+        description: Allows the user to target other players using the command "teleport".
         permission: nucleus.teleport.teleport.others
     -   module: teleport
         defaultLevel: ADMIN
         description: Allows the user to use the "-q" flag to override whether to tell the target player if a teleport is being performed.
         permission: nucleus.teleport.teleport.quiet
+    -   module: teleport
+        defaultLevel: ADMIN
+        description: Allows the user to teleport to the location of players who are offline.
+        permission: nucleus.teleport.teleport.offline
     -   module: teleport
         defaultLevel: ADMIN
         description: Allows the user to bypass the cost for /teleport
@@ -4817,7 +4934,7 @@
     cost: false
     module: teleport
     defaultLevel: USER
-    usageString: /teleportnative <args…>
+    usageString: /teleportnative ?|<args…>
     oneLineDescription: Alias for /minecraft:tp.
     permissionbase: ''
     simpleUsage: /teleportnative <args…>
@@ -4832,7 +4949,7 @@
     isExactEssEquiv: true
     module: teleport
     defaultLevel: USER
-    usageString: '/tpa <subject> [-f <f>] '
+    usageString: '/tpa ?|<subject> [-f <f>] '
     oneLineDescription: Send a request to a player to ask for you to teleport to them.
     essentialsEquivalents:
     - tpa
@@ -4872,7 +4989,7 @@
     isExactEssEquiv: true
     module: teleport
     defaultLevel: ADMIN
-    usageString: '/tpaall [-f <f>] '
+    usageString: '/tpaall ?|[-f <f>] '
     oneLineDescription: Request all players on the server to teleport to your location.
     essentialsEquivalents:
     - tpaall
@@ -4894,7 +5011,7 @@
     isExactEssEquiv: true
     module: teleport
     defaultLevel: USER
-    usageString: '/tpaccept '
+    usageString: /tpaccept ?|
     oneLineDescription: Accept a pending teleport request.
     essentialsEquivalents:
     - tpaccept
@@ -4917,7 +5034,7 @@
     isExactEssEquiv: true
     module: teleport
     defaultLevel: MOD
-    usageString: '/tpahere <subject> [-f <f>] '
+    usageString: '/tpahere ?|<subject> [-f <f>] '
     oneLineDescription: Send a request to a player to ask them to teleport to you.
     essentialsEquivalents:
     - tpahere
@@ -4955,7 +5072,7 @@
     isExactEssEquiv: true
     module: teleport
     defaultLevel: ADMIN
-    usageString: '/tpall [-f <f>] '
+    usageString: '/tpall ?|[-f <f>] '
     oneLineDescription: Forcefully teleport all players on the server to your location.
     essentialsEquivalents:
     - tpall
@@ -4977,7 +5094,7 @@
     isExactEssEquiv: true
     module: teleport
     defaultLevel: USER
-    usageString: '/tpdeny '
+    usageString: /tpdeny ?|
     oneLineDescription: Deny a pending teleport request.
     essentialsEquivalents:
     - tpdeny
@@ -5000,7 +5117,7 @@
     isExactEssEquiv: false
     module: teleport
     defaultLevel: ADMIN
-    usageString: /tphere <subject>
+    usageString: /tphere ?|<subject>
     oneLineDescription: Teleports a player to your location.
     essentialsEquivalents:
     - tphere
@@ -5014,6 +5131,10 @@
         defaultLevel: ADMIN
         description: Allows the user to run the command /tphere
         permission: nucleus.teleport.tphere.base
+    -   module: teleport
+        defaultLevel: ADMIN
+        description: Allows the user to teleport to the location of players who are offline.
+        permission: nucleus.teleport.tphere.offline
     cooldown: false
     requiresMixin: false
     essNotes: If you have permission, this will override '/tptoggle' automatically.
@@ -5024,7 +5145,7 @@
     isExactEssEquiv: true
     module: teleport
     defaultLevel: ADMIN
-    usageString: /tppos [-f] [--force] [-c] [--chunk]   [<subject>] [<world>] x(-2147483648 to 2147483647) y(0 to 255) z(-2147483648 to 2147483647)
+    usageString: /tppos ?|[-f] [--force] [-c] [--chunk]   [<subject>] [<world>] x(-2147483648 to 2147483647) y(0 to 255) z(-2147483648 to 2147483647)
     oneLineDescription: Teleport to the specified location.
     essentialsEquivalents:
     - tppos
@@ -5055,7 +5176,7 @@
     isExactEssEquiv: true
     module: teleport
     defaultLevel: USER
-    usageString: /tptoggle [<toggle>]
+    usageString: /tptoggle ?|[<toggle>]
     oneLineDescription: Toggle whether teleport requests are received.
     essentialsEquivalents:
     - tptoggle
@@ -5081,7 +5202,7 @@
     isExactEssEquiv: true
     module: vanish
     defaultLevel: ADMIN
-    usageString: /vanish [<player>] [<toggle>]
+    usageString: /vanish ?|[<player>] [<toggle>]
     oneLineDescription: Toggles whether you are invisible on the server.
     essentialsEquivalents:
     - vanish
@@ -5115,7 +5236,7 @@
     cost: false
     module: warn
     defaultLevel: MOD
-    usageString: /checkwarnings [-all|-a <all>] [-expired|-e <expired>] <subject>
+    usageString: /checkwarnings ?|[-all|-a <all>] [-expired|-e <expired>] <subject>
     oneLineDescription: Allows the user to check a player's warnings.
     permissionbase: nucleus.checkwarnings
     simpleUsage: /checkwarnings [-all|-a <all>] [-expired|-e <expired>] <subject>
@@ -5133,7 +5254,7 @@
     cost: false
     module: warn
     defaultLevel: ADMIN
-    usageString: /clearwarnings [-remove|-r <remove>] [-all|-a <all>] [-expired|-e <expired>] <subject>
+    usageString: /clearwarnings ?|[-remove|-r <remove>] [-all|-a <all>] [-expired|-e <expired>] <subject>
     oneLineDescription: Allows the user to clear a player's warnings.
     permissionbase: nucleus.clearwarnings
     simpleUsage: /clearwarnings [-remove|-r <remove>] [-all|-a <all>] [-expired|-e <expired>] <subject>
@@ -5151,7 +5272,7 @@
     cost: false
     module: warn
     defaultLevel: ADMIN
-    usageString: /removewarning [-remove|-r <remove>] <user> <ID>
+    usageString: /removewarning ?|[-remove|-r <remove>] <user> <ID>
     oneLineDescription: Allows the user to delete a specific warning attached to a player.
     permissionbase: nucleus.removewarning
     simpleUsage: /removewarning [-remove|-r <remove>] <user> <ID>
@@ -5169,7 +5290,7 @@
     cost: false
     module: warn
     defaultLevel: MOD
-    usageString: /warn <subject> [<duration>] <reason…>
+    usageString: /warn ?|<subject> [<duration>] <reason…>
     oneLineDescription: Allows the user to add a warning to a player.
     permissionbase: nucleus.warn
     simpleUsage: /warn <subject> [<duration>] <reason…>
@@ -5200,7 +5321,7 @@
     isExactEssEquiv: false
     module: warp
     defaultLevel: USER
-    usageString: /warp set|cost|setcategory|list|category|delete|setdescription|[[-y|-a|-accept <y>] [-f|-force <f>] ] [<subject>] <Warp Name>
+    usageString: /warp set|cost|setcategory|list|category|delete|setdescription|?|[[-y|-a|-accept <y>] [-f|-force <f>] ] [<subject>] <Warp Name>
     oneLineDescription: Teleport to the specified warp.
     essentialsEquivalents:
     - warp
@@ -5233,12 +5354,12 @@
     requiresMixin: false
     essNotes: Use '/warp' for warping, '/warps' to list warps.
     warmup: true
-    subcommands: set, setcategory, delete, cost, setdescription, list, category
+    subcommands: set, cost, setcategory, list, category, delete, setdescription
 -   aliases: category
     cost: true
     module: warp
     defaultLevel: ADMIN
-    usageString: /warp category [removedescription|removedisplayname|setdisplayname|list|setdescription|?]
+    usageString: /warp category removedescription|removedisplayname|setdisplayname|list|setdescription|?|
     oneLineDescription: Base command for category management.
     permissionbase: nucleus.warp.category
     simpleUsage: '/warp category '
@@ -5263,12 +5384,12 @@
     cooldown: true
     requiresMixin: false
     warmup: true
-    subcommands: removedisplayname, setdisplayname, setdescription, list, removedescription
+    subcommands: removedescription, removedisplayname, setdisplayname, list, setdescription
 -   aliases: list
     cost: false
     module: warp
     defaultLevel: ADMIN
-    usageString: '/warp category list '
+    usageString: /warp category list ?|
     oneLineDescription: Lists all the warp categories in use on the server.
     permissionbase: nucleus.warp.category.list
     simpleUsage: '/warp category list '
@@ -5286,7 +5407,7 @@
     cost: false
     module: warp
     defaultLevel: ADMIN
-    usageString: /warp category removedescription <category>
+    usageString: /warp category removedescription ?|<category>
     oneLineDescription: Removes the description for a category.
     permissionbase: nucleus.warp.category.description
     simpleUsage: /warp category removedescription <category>
@@ -5304,7 +5425,7 @@
     cost: false
     module: warp
     defaultLevel: ADMIN
-    usageString: /warp category removedisplayname <category>
+    usageString: /warp category removedisplayname ?|<category>
     oneLineDescription: Removes the display name for a category.
     permissionbase: nucleus.warp.category.displayname
     simpleUsage: /warp category removedisplayname <category>
@@ -5322,7 +5443,7 @@
     cost: false
     module: warp
     defaultLevel: ADMIN
-    usageString: /warp category setdescription <category> <displayname>
+    usageString: /warp category setdescription ?|<category> <displayname>
     oneLineDescription: Sets the description for a category.
     permissionbase: nucleus.warp.category.description
     simpleUsage: /warp category setdescription <category> <displayname>
@@ -5340,7 +5461,7 @@
     cost: false
     module: warp
     defaultLevel: ADMIN
-    usageString: /warp category setdisplayname <category> <displayname>
+    usageString: /warp category setdisplayname ?|<category> <displayname>
     oneLineDescription: Sets a display name for a category.
     permissionbase: nucleus.warp.category.displayname
     simpleUsage: /warp category setdisplayname <category> <displayname>
@@ -5358,7 +5479,7 @@
     cost: false
     module: warp
     defaultLevel: ADMIN
-    usageString: /warp cost <warp> <cost>
+    usageString: /warp cost ?|<warp> <cost>
     oneLineDescription: Set the cost of the specified warp.
     permissionbase: nucleus.warp.cost
     simpleUsage: /warp cost <warp> <cost>
@@ -5377,7 +5498,7 @@
     isExactEssEquiv: true
     module: warp
     defaultLevel: ADMIN
-    usageString: /warp delete <Warp Name>
+    usageString: /warp delete ?|<Warp Name>
     oneLineDescription: Deletes the specified warp.
     essentialsEquivalents:
     - delwarp
@@ -5413,7 +5534,7 @@
     rootAliases: warps
     module: warp
     defaultLevel: USER
-    usageString: '/warp list [-u <u>] '
+    usageString: '/warp list ?|[-u <u>] '
     oneLineDescription: Lists all warps on the server.
     permissionbase: nucleus.warp.list
     simpleUsage: '/warp list [-u <u>] '
@@ -5444,7 +5565,7 @@
     isExactEssEquiv: true
     module: warp
     defaultLevel: ADMIN
-    usageString: /warp set <Warp Name>
+    usageString: /warp set ?|<Warp Name>
     oneLineDescription: Sets a warp.
     essentialsEquivalents:
     - setwarp
@@ -5478,7 +5599,7 @@
     cost: false
     module: warp
     defaultLevel: ADMIN
-    usageString: /warp setcategory [-n|-new <n>] [-r|-remove|-delete <r>] <warp> [<category>]
+    usageString: /warp setcategory ?|[-n|-new <n>] [-r|-remove|-delete <r>] <warp> [<category>]
     oneLineDescription: Sets the category of a warp for display in /warp list.
     permissionbase: nucleus.warp.setcategory
     simpleUsage: /warp setcategory [-n|-new <n>] [-r|-remove|-delete <r>] <warp> [<category>]
@@ -5503,7 +5624,7 @@
     cost: false
     module: warp
     defaultLevel: ADMIN
-    usageString: /warp setdescription [-r|-remove|-delete <r>] <warp> [<description>]
+    usageString: /warp setdescription ?|[-r|-remove|-delete <r>] <warp> [<description>]
     oneLineDescription: Sets or removes (with -r) the description for the warp.
     permissionbase: nucleus.warp.setdescription
     simpleUsage: /warp setdescription [-r|-remove|-delete <r>] <warp> [<description>]
@@ -5522,7 +5643,7 @@
     rootAliases: nworld, nucleusworld
     module: world
     defaultLevel: ADMIN
-    usageString: /world [setdifficulty|setkeepspawnloaded|teleport|sethardcore|delete|load|enable|unload|create|info|border|setloadonstartup|setgamemode|setpvpenabled|list|setspawn|spawn|gamerule|disable|?]
+    usageString: /world border|setdifficulty|setloadonstartup|setkeepspawnloaded|teleport|setgamemode|sethardcore|setpvpenabled|list|delete|setspawn|spawn|load|gamerule|disable|enable|unload|create|info|?|
     oneLineDescription: Parent command for all other world commands.
     permissionbase: nucleus.world
     simpleUsage: '/world '
@@ -5547,12 +5668,12 @@
     cooldown: true
     requiresMixin: false
     warmup: true
-    subcommands: teleport, disable, setloadonstartup, setkeepspawnloaded, border, enable, list, delete, sethardcore, setdifficulty, setspawn, spawn, gamerule, load, setgamemode, unload, info, create, setpvpenabled
+    subcommands: border, setdifficulty, setloadonstartup, setkeepspawnloaded, teleport, setgamemode, sethardcore, setpvpenabled, list, delete, setspawn, spawn, load, gamerule, disable, enable, unload, create, info
 -   aliases: border
     cost: true
     module: world
     defaultLevel: ADMIN
-    usageString: /world border gen|set|cancelgen|[<world>]
+    usageString: /world border gen|set|cancelgen|?|[<world>]
     oneLineDescription: Parent command for world border commands.
     permissionbase: nucleus.world.border
     simpleUsage: /world border [<world>]
@@ -5577,12 +5698,12 @@
     cooldown: true
     requiresMixin: false
     warmup: true
-    subcommands: set, gen, cancelgen
+    subcommands: gen, set, cancelgen
 -   aliases: cancelgen
     cost: false
     module: world
     defaultLevel: ADMIN
-    usageString: /world border cancelgen [<world>]
+    usageString: /world border cancelgen ?|[<world>]
     oneLineDescription: Cancels any current world border generation.
     permissionbase: nucleus.world.border.gen
     simpleUsage: /world border cancelgen [<world>]
@@ -5600,7 +5721,7 @@
     cost: true
     module: world
     defaultLevel: ADMIN
-    usageString: /world border gen [-a <a>] [-s <s>] [-t|-tickpercent tickPercent(0 to 100)] [-save <time between saves>] [<world>]
+    usageString: /world border gen ?|[-a <a>] [-s <s>] [-t|-tickpercent tickPercent(0 to 100)] [-save <time between saves>] [<world>]
     oneLineDescription: Generates chunks up to the world border.
     permissionbase: nucleus.world.border.gen
     simpleUsage: /world border gen [-a <a>] [-s <s>] [-t|-tickpercent tickPercent(0 to 100)] [-save <time between saves>] [<world>]
@@ -5635,7 +5756,7 @@
     cost: false
     module: world
     defaultLevel: ADMIN
-    usageString: /world border set [<world>] <x> <z> <diameter> [<delay>]|<diameter> [<delay>]
+    usageString: /world border set ?|[<world>] <x> <z> <diameter> [<delay>]|<diameter> [<delay>]
     oneLineDescription: Sets the world border.
     permissionbase: nucleus.world.border.set
     simpleUsage: /world border set [<world>] <x> <z> <diameter> [<delay>]|<diameter> [<delay>]
@@ -5653,7 +5774,7 @@
     cost: true
     module: world
     defaultLevel: ADMIN
-    usageString: /world create [-p|-preset <preset>] [-b|-bonuschest <b>] [-i <i>] [-gm|-gamemode <gamemode>] [-s|-seed <seed>] [-k|-keepspawnloaded <k>] [-n|-nostructures <n>] [-l|-loadonstartup <l>] [-g|-generator <generator>] [-d|-dimension <dimension>] [-di|-difficulty <difficulty>] [-m|-modifier <modifier>] [-c|-allowcommands <c>] <name>
+    usageString: /world create ?|[-p|-preset <preset>] [-b|-bonuschest <b>] [-i <i>] [-gm|-gamemode <gamemode>] [-s|-seed <seed>] [-k|-keepspawnloaded <k>] [-n|-nostructures <n>] [-l|-loadonstartup <l>] [-g|-generator <generator>] [-d|-dimension <dimension>] [-di|-difficulty <difficulty>] [-m|-modifier <modifier>] [-c|-allowcommands <c>] <name>
     oneLineDescription: Creates a world with the specified name and options.
     permissionbase: nucleus.world.create
     simpleUsage: /world create [-p|-preset <preset>] [-b|-bonuschest <b>] [-i <i>] [-gm|-gamemode <gamemode>] [-s|-seed <seed>] [-k|-keepspawnloaded <k>] [-n|-nostructures <n>] [-l|-loadonstartup <l>] [-g|-generator <generator>] [-d|-dimension <dimension>] [-di|-difficulty <difficulty>] [-m|-modifier <modifier>] [-c|-allowcommands <c>] <name>
@@ -5703,7 +5824,7 @@
     cost: false
     module: world
     defaultLevel: NONE
-    usageString: /world delete <world>
+    usageString: /world delete ?|<world>
     oneLineDescription: Deletes a world from the disc.
     permissionbase: nucleus.world.delete
     simpleUsage: /world delete <world>
@@ -5722,7 +5843,7 @@
     cost: false
     module: world
     defaultLevel: ADMIN
-    usageString: /world disable <world>
+    usageString: /world disable ?|<world>
     oneLineDescription: Disables a world that is unloaded, preventing it from being loaded in future.
     permissionbase: nucleus.world.disable
     simpleUsage: /world disable <world>
@@ -5741,7 +5862,7 @@
     cost: false
     module: world
     defaultLevel: ADMIN
-    usageString: /world enable <world>
+    usageString: /world enable ?|<world>
     oneLineDescription: Enables a world, allowing it to be loaded on demand.
     permissionbase: nucleus.world.enable
     simpleUsage: /world enable <world>
@@ -5759,7 +5880,7 @@
     cost: false
     module: world
     defaultLevel: ADMIN
-    usageString: /world gamerule set|[<world>]
+    usageString: /world gamerule set|?|[<world>]
     oneLineDescription: Displays a world's game rules.
     permissionbase: nucleus.world.gamerule
     simpleUsage: /world gamerule [<world>]
@@ -5777,7 +5898,7 @@
     cost: false
     module: world
     defaultLevel: ADMIN
-    usageString: /world gamerule set [<world>] <gamerule> <value>
+    usageString: /world gamerule set ?|[<world>] <gamerule> <value>
     oneLineDescription: Sets the specified world's game rule.
     permissionbase: nucleus.world.gamerule.set
     simpleUsage: /world gamerule set [<world>] <gamerule> <value>
@@ -5795,7 +5916,7 @@
     cost: true
     module: world
     defaultLevel: ADMIN
-    usageString: /world info <world>
+    usageString: /world info ?|<world>
     oneLineDescription: Displays information about one world.
     permissionbase: nucleus.world.list
     simpleUsage: /world info <world>
@@ -5827,7 +5948,7 @@
     rootAliases: worlds
     module: world
     defaultLevel: ADMIN
-    usageString: '/world list '
+    usageString: /world list ?|
     oneLineDescription: Lists all worlds.
     permissionbase: nucleus.world.list
     simpleUsage: '/world list '
@@ -5862,7 +5983,7 @@
     cost: false
     module: world
     defaultLevel: ADMIN
-    usageString: /world load [-e|-enable <e>] <world>
+    usageString: /world load ?|[-e|-enable <e>] <world>
     oneLineDescription: Loads a world that is currently unloaded.
     permissionbase: nucleus.world.load
     simpleUsage: /world load [-e|-enable <e>] <world>
@@ -5881,7 +6002,7 @@
     cost: false
     module: world
     defaultLevel: ADMIN
-    usageString: /world setdifficulty <difficulty> [<world>]
+    usageString: /world setdifficulty ?|<difficulty> [<world>]
     oneLineDescription: Sets the difficulty of a world.
     permissionbase: nucleus.world.setdifficulty
     simpleUsage: /world setdifficulty <difficulty> [<world>]
@@ -5899,7 +6020,7 @@
     cost: false
     module: world
     defaultLevel: ADMIN
-    usageString: /world setgamemode <gamemode> [<world>]
+    usageString: /world setgamemode ?|<gamemode> [<world>]
     oneLineDescription: Sets the gamemode of a world.
     permissionbase: nucleus.world.setgamemode
     simpleUsage: /world setgamemode <gamemode> [<world>]
@@ -5917,7 +6038,7 @@
     cost: true
     module: world
     defaultLevel: ADMIN
-    usageString: /world sethardcore [<world>] <true|false>
+    usageString: /world sethardcore ?|[<world>] <true|false>
     oneLineDescription: Sets whether a world has hardcore mode enabled.
     permissionbase: nucleus.world.sethardcore
     simpleUsage: /world sethardcore [<world>] <true|false>
@@ -5947,7 +6068,7 @@
     cost: true
     module: world
     defaultLevel: ADMIN
-    usageString: /world setkeepspawnloaded [<world>] <true|false>
+    usageString: /world setkeepspawnloaded ?|[<world>] <true|false>
     oneLineDescription: Sets whether a world will keep the chunks around it's spawn point loaded.
     permissionbase: nucleus.world.setkeepspawnloaded
     simpleUsage: /world setkeepspawnloaded [<world>] <true|false>
@@ -5977,7 +6098,7 @@
     cost: true
     module: world
     defaultLevel: ADMIN
-    usageString: /world setloadonstartup [<world>] <true|false>
+    usageString: /world setloadonstartup ?|[<world>] <true|false>
     oneLineDescription: Sets whether a world will load on startup.
     permissionbase: nucleus.world.setloadonstartup
     simpleUsage: /world setloadonstartup [<world>] <true|false>
@@ -6007,7 +6128,7 @@
     cost: true
     module: world
     defaultLevel: ADMIN
-    usageString: /world setpvpenabled [<world>] <true|false>
+    usageString: /world setpvpenabled ?|[<world>] <true|false>
     oneLineDescription: Sets whether a world has PVP enabled.
     permissionbase: nucleus.world.setpvpenabled
     simpleUsage: /world setpvpenabled [<world>] <true|false>
@@ -6037,7 +6158,7 @@
     cost: true
     module: world
     defaultLevel: ADMIN
-    usageString: '/world setspawn '
+    usageString: /world setspawn ?|
     oneLineDescription: Sets the spawn point of a world.
     permissionbase: nucleus.world.setspawn
     simpleUsage: '/world setspawn '
@@ -6067,7 +6188,7 @@
     cost: true
     module: world
     defaultLevel: ADMIN
-    usageString: '/world spawn '
+    usageString: /world spawn ?|
     oneLineDescription: Teleports to world spawn.
     permissionbase: nucleus.world.spawn
     simpleUsage: '/world spawn '
@@ -6098,7 +6219,7 @@
     isExactEssEquiv: true
     module: world
     defaultLevel: ADMIN
-    usageString: /world teleport <world> [<subject>]
+    usageString: /world teleport ?|<world> [<subject>]
     oneLineDescription: Teleports you, or another player, to the specified world.
     essentialsEquivalents:
     - world
@@ -6136,7 +6257,7 @@
     cost: false
     module: world
     defaultLevel: ADMIN
-    usageString: /world unload [-t|-transfer <transferWorld>] [-d|-disable <d>] <world>
+    usageString: /world unload ?|[-t|-transfer <transferWorld>] [-d|-disable <d>] <world>
     oneLineDescription: Unloads a world that is currently loaded.
     permissionbase: nucleus.world.unload
     simpleUsage: /world unload [-t|-transfer <transferWorld>] [-d|-disable <d>] <world>
