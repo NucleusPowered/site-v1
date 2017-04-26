@@ -1,6 +1,7 @@
 -   aliases: blockzap, zapblock
     cost: true
     isExactEssEquiv: false
+    rootAliases: nblockzap
     module: admin
     defaultLevel: ADMIN
     usageString: /blockzap ?|<location>
@@ -36,6 +37,7 @@
 -   aliases: broadcast, bcast, bc
     cost: false
     isExactEssEquiv: true
+    rootAliases: nbroadcast
     module: admin
     defaultLevel: ADMIN
     usageString: /broadcast ?|<message>
@@ -59,9 +61,10 @@
 -   aliases: exp, experience, xp
     cost: false
     isExactEssEquiv: true
+    rootAliases: nexp
     module: admin
     defaultLevel: ADMIN
-    usageString: /exp take|give|set|?|<subject>
+    usageString: /exp give|take|set|?|<subject>
     oneLineDescription: Displays the specified player's current experience.
     essentialsEquivalents:
     - exp
@@ -78,7 +81,7 @@
     requiresMixin: false
     essNotes: ''
     warmup: false
-    subcommands: take, give, set
+    subcommands: give, take, set
 -   aliases: give
     cost: false
     module: admin
@@ -139,6 +142,7 @@
 -   aliases: gamemode, gm
     cost: true
     isExactEssEquiv: false
+    rootAliases: ngamemode
     module: admin
     defaultLevel: ADMIN
     usageString: /gamemode ?|<gamemode>|<user> <gamemode>
@@ -201,6 +205,7 @@
 -   aliases: kill
     cost: true
     isExactEssEquiv: false
+    rootAliases: nkill
     module: admin
     defaultLevel: ADMIN
     usageString: /kill ?|<subject>
@@ -238,6 +243,7 @@
     subcommands: ''
 -   aliases: plainbroadcast, pbcast, pbc
     cost: false
+    rootAliases: nplainbroadcast
     module: admin
     defaultLevel: NONE
     usageString: /plainbroadcast ?|<message…>
@@ -256,6 +262,7 @@
     subcommands: ''
 -   aliases: stop
     cost: false
+    rootAliases: nstop
     module: admin
     defaultLevel: ADMIN
     usageString: /stop ?|[<message…>]
@@ -275,6 +282,7 @@
 -   aliases: sudo
     cost: true
     isExactEssEquiv: true
+    rootAliases: nsudo
     module: admin
     defaultLevel: ADMIN
     usageString: /sudo ?|<subject> <command…>
@@ -313,6 +321,7 @@
 -   aliases: afk, away
     cost: false
     isExactEssEquiv: true
+    rootAliases: nafk
     module: afk
     defaultLevel: USER
     usageString: /afk ?|
@@ -347,6 +356,7 @@
     subcommands: ''
 -   aliases: afkrefresh
     cost: true
+    rootAliases: nafkrefresh
     module: afk
     defaultLevel: ADMIN
     usageString: /afkrefresh ?|
@@ -379,6 +389,7 @@
 -   aliases: back, return
     cost: true
     isExactEssEquiv: true
+    rootAliases: nback
     module: back
     defaultLevel: ADMIN
     usageString: /back ?|
@@ -426,6 +437,7 @@
 -   aliases: ban
     cost: false
     isExactEssEquiv: true
+    rootAliases: nban
     module: ban
     defaultLevel: MOD
     usageString: /ban ?|<uuid>|<user>|<name> [<reason…>]
@@ -459,6 +471,7 @@
     subcommands: ''
 -   aliases: checkban
     cost: false
+    rootAliases: ncheckban
     module: ban
     defaultLevel: MOD
     usageString: /checkban ?|<uuid>|<user>
@@ -478,6 +491,7 @@
 -   aliases: tempban
     cost: false
     isExactEssEquiv: true
+    rootAliases: ntempban
     module: ban
     defaultLevel: MOD
     usageString: /tempban ?|<user> <duration> [<reasonKey…>]
@@ -512,6 +526,7 @@
 -   aliases: unban, pardon
     cost: false
     isExactEssEquiv: true
+    rootAliases: nunban
     module: ban
     defaultLevel: MOD
     usageString: /unban ?|<uuid>|<user>
@@ -534,6 +549,7 @@
     subcommands: ''
 -   aliases: blacklist
     cost: true
+    rootAliases: nblacklist
     module: blacklist
     defaultLevel: ADMIN
     usageString: /blacklist set|list|?|
@@ -634,6 +650,7 @@
 -   aliases: me, action
     cost: true
     isExactEssEquiv: true
+    rootAliases: nme
     module: chat
     defaultLevel: USER
     usageString: /me ?|<message>
@@ -669,6 +686,7 @@
     subcommands: ''
 -   aliases: commandspy
     cost: true
+    rootAliases: ncommandspy
     module: command-spy
     defaultLevel: ADMIN
     usageString: /commandspy ?|[<true/false>]
@@ -705,7 +723,7 @@
     cost: false
     module: core
     defaultLevel: ADMIN
-    usageString: /nucleus debug|itemalias|save|setupperms|reload|clearcache|update-messages|getuser|resetuser|docgen|printperms|?|rebuildusercache|migrate|info|
+    usageString: /nucleus debug|itemalias|save|setupperms|reload|clearcache|resetuser|getuser|update-messages|docgen|printperms|?|rebuildusercache|migrate|info|
     oneLineDescription: Displays Nucleus version and module information.
     permissionbase: nucleus.nucleus
     simpleUsage: '/nucleus '
@@ -719,7 +737,7 @@
     requiresMixin: false
     extendedDescription: The Nucleus command allows access to sub commands that administer the entire plugin.
     warmup: false
-    subcommands: debug, itemalias, save, setupperms, reload, clearcache, update-messages, getuser, resetuser, docgen, printperms, rebuildusercache, migrate, info
+    subcommands: debug, itemalias, save, setupperms, reload, clearcache, resetuser, getuser, update-messages, docgen, printperms, rebuildusercache, migrate, info
 -   aliases: clearcache
     cost: false
     module: core
@@ -1116,6 +1134,7 @@
     subcommands: ''
 -   aliases: lockweather, killweather
     cost: false
+    rootAliases: nlockweather
     module: environment
     defaultLevel: ADMIN
     usageString: /lockweather ?|[<world>] [<toggle>]
@@ -1135,6 +1154,7 @@
 -   aliases: time
     cost: true
     isExactEssEquiv: false
+    rootAliases: ntime
     module: environment
     defaultLevel: USER
     usageString: /time set|?|[<world>]
@@ -1205,6 +1225,7 @@
 -   aliases: weather
     cost: true
     isExactEssEquiv: true
+    rootAliases: nweather
     module: environment
     defaultLevel: ADMIN
     usageString: /weather ?|[<world>] <weather> [<duration>]
@@ -1248,6 +1269,7 @@
 -   aliases: fly
     cost: true
     isExactEssEquiv: true
+    rootAliases: nfly
     module: fly
     defaultLevel: ADMIN
     usageString: /fly ?|[<player>] [<toggle>]
@@ -1285,6 +1307,7 @@
     subcommands: ''
 -   aliases: freezeplayer, freeze
     cost: true
+    rootAliases: nfreezeplayer
     module: freeze-subject
     defaultLevel: ADMIN
     usageString: /freezeplayer ?|[<subject>] [<true|false>]
@@ -1320,6 +1343,7 @@
 -   aliases: hat, head
     cost: false
     isExactEssEquiv: true
+    rootAliases: nhat
     module: fun
     defaultLevel: ADMIN
     usageString: /hat ?|[<player>]
@@ -1347,6 +1371,7 @@
 -   aliases: ignite, burn
     cost: true
     isExactEssEquiv: true
+    rootAliases: nignite
     module: fun
     defaultLevel: ADMIN
     usageString: /ignite ?|[<player>] <ticks>
@@ -1384,6 +1409,7 @@
     subcommands: ''
 -   aliases: kittycannon, kc
     cost: true
+    rootAliases: nkittycannon
     module: fun
     defaultLevel: ADMIN
     usageString: /kittycannon ?|[-f|-fire <f>] [-d|-damageentities <d>] [-b|-breakblocks <b>] [<subject>]
@@ -1432,6 +1458,7 @@
 -   aliases: lightning, strike, smite, thor, shock
     cost: true
     isExactEssEquiv: false
+    rootAliases: nlightning
     module: fun
     defaultLevel: ADMIN
     usageString: /lightning ?|[<subject>]
@@ -1471,49 +1498,10 @@
     essNotes: Selectors can be used, entities can be struck.
     warmup: true
     subcommands: ''
--   aliases: geoip
-    cost: false
-    module: geo-ip
-    defaultLevel: ADMIN
-    usageString: /geoip update|?|<subject>
-    oneLineDescription: Get the country a player has connected via.
-    permissionbase: nucleus.geoip
-    simpleUsage: /geoip <subject>
-    commandName: geoip
-    permissions:
-    -   module: geo-ip
-        defaultLevel: ADMIN
-        description: Allows the user to run the command /geoip
-        permission: nucleus.geoip.base
-    -   module: geo-ip
-        defaultLevel: ADMIN
-        description: Displays player country on login, if enabled in the configuration.
-        permission: nucleus.geoip.login
-    cooldown: false
-    requiresMixin: false
-    warmup: false
-    subcommands: update
--   aliases: update
-    cost: false
-    module: geo-ip
-    defaultLevel: ADMIN
-    usageString: /geoip update ?|
-    oneLineDescription: Update the GeoIP database. It is recommended that you do this no more than once a month.
-    permissionbase: nucleus.geoip.update
-    simpleUsage: '/geoip update '
-    commandName: geoip update
-    permissions:
-    -   module: geo-ip
-        defaultLevel: ADMIN
-        description: Allows the user to run the command /geoip update
-        permission: nucleus.geoip.update.base
-    cooldown: false
-    requiresMixin: false
-    warmup: false
-    subcommands: ''
 -   aliases: deletehome, delhome
     cost: false
     isExactEssEquiv: true
+    rootAliases: ndeletehome
     module: home
     defaultLevel: USER
     usageString: /deletehome ?|<home>
@@ -1538,6 +1526,7 @@
     subcommands: ''
 -   aliases: deletehomeother, delhomeother
     cost: false
+    rootAliases: ndeletehomeother
     module: home
     defaultLevel: ADMIN
     usageString: /deletehomeother ?|<user> <home>
@@ -1557,6 +1546,7 @@
 -   aliases: home
     cost: true
     isExactEssEquiv: true
+    rootAliases: nhome
     module: home
     defaultLevel: USER
     usageString: /home ?|[<home>]
@@ -1593,6 +1583,7 @@
     subcommands: ''
 -   aliases: homeother
     cost: true
+    rootAliases: nhomeother
     module: home
     defaultLevel: MOD
     usageString: /homeother ?|<user> <home>
@@ -1628,6 +1619,7 @@
 -   aliases: homeset, sethome
     cost: true
     isExactEssEquiv: true
+    rootAliases: nhomeset
     module: home
     defaultLevel: USER
     usageString: /homeset ?|[-o|-overwrite <o>] [<home>]
@@ -1667,6 +1659,7 @@
     subcommands: ''
 -   aliases: listhomes, homes
     cost: false
+    rootAliases: nlisthomes
     module: home
     defaultLevel: USER
     usageString: /listhomes ?|[<subject>]
@@ -1691,6 +1684,7 @@
 -   aliases: ignore
     cost: false
     isExactEssEquiv: true
+    rootAliases: nignore
     module: ignore
     defaultLevel: USER
     usageString: /ignore ?|<user> [<toggle>]
@@ -1717,6 +1711,7 @@
 -   aliases: info, einfo
     cost: false
     isExactEssEquiv: true
+    rootAliases: ninfo
     module: info
     defaultLevel: USER
     usageString: /info ?|[-l|-list <l>] [<section>]
@@ -1747,6 +1742,7 @@
 -   aliases: motd
     cost: false
     isExactEssEquiv: true
+    rootAliases: nmotd
     module: info
     defaultLevel: USER
     usageString: /motd ?|
@@ -1769,6 +1765,7 @@
 -   aliases: clear, clearinv, clearinventory, ci, clearinvent
     cost: false
     isExactEssEquiv: true
+    rootAliases: nclear
     module: inventory
     defaultLevel: ADMIN
     usageString: /clear ?|[<subject>]
@@ -1798,6 +1795,7 @@
 -   aliases: enderchest, ec, echest
     cost: true
     isExactEssEquiv: true
+    rootAliases: nenderchest
     module: inventory
     spongeVersion: 5.0.0
     defaultLevel: ADMIN
@@ -1847,6 +1845,7 @@
 -   aliases: invsee
     cost: false
     isExactEssEquiv: true
+    rootAliases: ninvsee
     module: inventory
     spongeVersion: 5.0.0
     defaultLevel: ADMIN
@@ -1889,6 +1888,7 @@
 -   aliases: enchant
     cost: true
     isExactEssEquiv: true
+    rootAliases: nenchant
     module: item
     defaultLevel: ADMIN
     usageString: '/enchant ?|<enchantment> level(1 to 32767) [-u|-unsafe <u>] [-o|-overwrite
@@ -1929,6 +1929,7 @@
     subcommands: ''
 -   aliases: itemname
     cost: true
+    rootAliases: nitemname
     module: item
     defaultLevel: ADMIN
     usageString: /itemname set|clear|?|
@@ -2019,6 +2020,7 @@
     subcommands: ''
 -   aliases: lore
     cost: true
+    rootAliases: nlore
     module: item
     defaultLevel: ADMIN
     usageString: /lore add|set|edit|clear|insert|delete|?|
@@ -2230,6 +2232,7 @@
 -   aliases: more, stack
     cost: true
     isExactEssEquiv: true
+    rootAliases: nmore
     module: item
     defaultLevel: ADMIN
     usageString: /more ?|
@@ -2264,6 +2267,7 @@
 -   aliases: repair, mend
     cost: true
     isExactEssEquiv: true
+    rootAliases: nrepair
     module: item
     defaultLevel: ADMIN
     usageString: /repair ?|[<player>]
@@ -2303,6 +2307,7 @@
 -   aliases: skull
     cost: true
     isExactEssEquiv: true
+    rootAliases: nskull
     module: item
     defaultLevel: ADMIN
     usageString: /skull ?|[<subject>] [<amount>]
@@ -2342,6 +2347,7 @@
     subcommands: ''
 -   aliases: checkjail
     cost: false
+    rootAliases: ncheckjail
     module: jail
     defaultLevel: MOD
     usageString: /checkjail ?|<user/UUID>|<user/UUID>
@@ -2360,6 +2366,7 @@
     subcommands: ''
 -   aliases: checkjailed
     cost: false
+    rootAliases: ncheckjailed
     module: jail
     defaultLevel: ADMIN
     usageString: /checkjailed ?|[<jail name>]
@@ -2379,6 +2386,7 @@
 -   aliases: jail, unjail, togglejail
     cost: false
     isExactEssEquiv: true
+    rootAliases: njail
     module: jail
     defaultLevel: MOD
     usageString: /jail ?|<subject> [<jail>] [<duration>] [<reason…>]
@@ -2424,6 +2432,7 @@
 -   aliases: jails
     cost: false
     isExactEssEquiv: true
+    rootAliases: njails
     module: jail
     defaultLevel: MOD
     usageString: /jails set|tp|delete|?|
@@ -2511,6 +2520,7 @@
 -   aliases: jump, j, jmp
     cost: true
     isExactEssEquiv: true
+    rootAliases: njump
     module: jump
     defaultLevel: ADMIN
     usageString: /jump ?|
@@ -2546,6 +2556,7 @@
     subcommands: ''
 -   aliases: thru, through
     cost: true
+    rootAliases: nthru
     module: jump
     defaultLevel: ADMIN
     usageString: /thru ?|
@@ -2577,6 +2588,7 @@
 -   aliases: top, tosurface, totop
     cost: true
     isExactEssEquiv: true
+    rootAliases: ntop
     module: jump
     defaultLevel: ADMIN
     usageString: /top ?|[-f <f>] [<subject>]
@@ -2616,6 +2628,7 @@
 -   aliases: kick
     cost: false
     isExactEssEquiv: true
+    rootAliases: nkick
     module: kick
     defaultLevel: MOD
     usageString: /kick ?|<subject> [<reason…>]
@@ -2646,6 +2659,7 @@
 -   aliases: kickall
     cost: false
     isExactEssEquiv: true
+    rootAliases: nkickall
     module: kick
     defaultLevel: MOD
     usageString: /kickall ?|[-w|-f <w>]  [<reason…>]
@@ -2672,6 +2686,7 @@
     subcommands: ''
 -   aliases: firstjoinkit, starterkit, joinkit, firstkit
     cost: false
+    rootAliases: nfirstjoinkit
     module: kit
     defaultLevel: ADMIN
     usageString: /firstjoinkit set|edit|clear|redeem|?|
@@ -2767,9 +2782,10 @@
 -   aliases: kit
     cost: false
     isExactEssEquiv: false
+    rootAliases: nkit
     module: kit
     defaultLevel: ADMIN
-    usageString: /kit add|give|set|cost|edit|setcooldown|list|remove|command|autoredeem|create|resetusage|onetime|?|<kit>
+    usageString: /kit add|give|set|cost|edit|setcooldown|list|remove|command|toggleredeemmessage|autoredeem|create|resetusage|onetime|?|<kit>
     oneLineDescription: Redeems a kit.
     essentialsEquivalents:
     - kit, kits
@@ -2801,7 +2817,7 @@
     requiresMixin: false
     essNotes: '''/kit'' redeems, ''/kits'' lists.'
     warmup: true
-    subcommands: add, give, set, cost, edit, setcooldown, list, remove, command, autoredeem, create, resetusage, onetime
+    subcommands: add, give, set, cost, edit, setcooldown, list, remove, command, toggleredeemmessage, autoredeem, create, resetusage, onetime
 -   aliases: add, createFromInventory
     cost: false
     module: kit
@@ -3142,9 +3158,28 @@
     extendedDescription: The cooldown must be specified in the form 1w1d1h1m1s, where 1 hour 5 minutes would be &quot;1h5m&quot;.
     warmup: false
     subcommands: ''
+-   aliases: toggleredeemmessage, togglemessage
+    cost: false
+    module: kit
+    defaultLevel: ADMIN
+    usageString: /kit toggleredeemmessage ?|<kit> <displayMessageToggle>
+    oneLineDescription: Sets or unsets whether redeeming a kit will notify the target user.
+    permissionbase: nucleus.kit.toggleredeemmessage
+    simpleUsage: /kit toggleredeemmessage <kit> <displayMessageToggle>
+    commandName: kit toggleredeemmessage
+    permissions:
+    -   module: kit
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /kit toggleredeemmessage
+        permission: nucleus.kit.toggleredeemmessage.base
+    cooldown: false
+    requiresMixin: false
+    warmup: false
+    subcommands: ''
 -   aliases: mail, email
     cost: false
     isExactEssEquiv: true
+    rootAliases: nmail
     module: mail
     defaultLevel: USER
     usageString: /mail other|clear|send|?|[<filters>*]
@@ -3234,6 +3269,7 @@
 -   aliases: helpop
     cost: true
     isExactEssEquiv: true
+    rootAliases: nhelpop
     module: message
     defaultLevel: USER
     usageString: /helpop ?|<message…>
@@ -3274,7 +3310,7 @@
 -   aliases: message, m, msg, whisper, w, t
     cost: true
     isExactEssEquiv: true
-    rootAliases: tell
+    rootAliases: tell, nmessage
     module: message
     defaultLevel: USER
     usageString: /message ?|<to>|<to> <message…>
@@ -3333,6 +3369,7 @@
 -   aliases: reply, r
     cost: true
     isExactEssEquiv: true
+    rootAliases: nreply
     module: message
     defaultLevel: USER
     usageString: /reply <message…>
@@ -3368,6 +3405,7 @@
 -   aliases: socialspy
     cost: false
     isExactEssEquiv: true
+    rootAliases: nsocialspy
     module: message
     defaultLevel: MOD
     usageString: /socialspy ?|[<Social Spy>]
@@ -3393,6 +3431,7 @@
     subcommands: ''
 -   aliases: blockinfo
     cost: true
+    rootAliases: nblockinfo
     module: misc
     defaultLevel: ADMIN
     usageString: '/blockinfo ?|[-e|-extended <e>] '
@@ -3427,6 +3466,7 @@
     subcommands: ''
 -   aliases: entityinfo
     cost: true
+    rootAliases: nentityinfo
     module: misc
     defaultLevel: ADMIN
     usageString: '/entityinfo ?|[-e|-extended <e>] '
@@ -3462,6 +3502,7 @@
 -   aliases: feed, eat
     cost: true
     isExactEssEquiv: true
+    rootAliases: nfeed
     module: misc
     defaultLevel: ADMIN
     usageString: /feed ?|[<player>]
@@ -3501,6 +3542,7 @@
 -   aliases: god, invuln, invulnerability
     cost: false
     isExactEssEquiv: true
+    rootAliases: ngod
     module: misc
     defaultLevel: ADMIN
     usageString: /god ?|[<subject>] [<invuln>]
@@ -3529,6 +3571,7 @@
 -   aliases: heal
     cost: true
     isExactEssEquiv: true
+    rootAliases: nheal
     module: misc
     defaultLevel: ADMIN
     usageString: /heal ?|[<player>]
@@ -3567,6 +3610,7 @@
 -   aliases: iteminfo, itemdb
     cost: true
     isExactEssEquiv: false
+    rootAliases: niteminfo
     module: misc
     defaultLevel: ADMIN
     usageString: /iteminfo ?|[-e|-extended <e>] [<key>]
@@ -3608,6 +3652,7 @@
 -   aliases: ping
     cost: false
     isExactEssEquiv: false
+    rootAliases: nping
     module: misc
     defaultLevel: ADMIN
     usageString: /ping ?|[<player>]
@@ -3636,6 +3681,7 @@
 -   aliases: serverstat, gc, uptime
     cost: false
     isExactEssEquiv: true
+    rootAliases: nserverstat
     module: misc
     defaultLevel: ADMIN
     usageString: /serverstat ?|
@@ -3665,6 +3711,7 @@
 -   aliases: speed
     cost: true
     isExactEssEquiv: false
+    rootAliases: nspeed
     module: misc
     defaultLevel: ADMIN
     usageString: /speed ?|[<player>] [<fly|f|flying|w|walk>] [<speed>]
@@ -3711,6 +3758,7 @@
 -   aliases: suicide
     cost: true
     isExactEssEquiv: true
+    rootAliases: nsuicide
     module: misc
     defaultLevel: USER
     usageString: /suicide ?|
@@ -3745,6 +3793,7 @@
 -   aliases: spawnmob, spawnentity, mobspawn
     cost: true
     isExactEssEquiv: true
+    rootAliases: nspawnmob
     module: mob
     defaultLevel: ADMIN
     usageString: /spawnmob ?|[<player>] <mob> [<amount>]
@@ -3792,6 +3841,7 @@
     subcommands: ''
 -   aliases: checkmute
     cost: false
+    rootAliases: ncheckmute
     module: mute
     defaultLevel: MOD
     usageString: /checkmute ?|<user/UUID>|<user/UUID>
@@ -3810,6 +3860,7 @@
     subcommands: ''
 -   aliases: checkmuted
     cost: false
+    rootAliases: ncheckmuted
     module: mute
     defaultLevel: ADMIN
     usageString: /checkmuted ?|
@@ -3828,6 +3879,7 @@
     subcommands: ''
 -   aliases: globalmute
     cost: false
+    rootAliases: nglobalmute
     module: mute
     defaultLevel: ADMIN
     usageString: /globalmute ?|[<turn on>]
@@ -3848,6 +3900,7 @@
 -   aliases: mute, unmute
     cost: false
     isExactEssEquiv: true
+    rootAliases: nmute
     module: mute
     defaultLevel: MOD
     usageString: /mute ?|<subject> [<time>] [<reason…>]
@@ -3886,6 +3939,7 @@
     subcommands: ''
 -   aliases: voice
     cost: false
+    rootAliases: nvoice
     module: mute
     defaultLevel: ADMIN
     usageString: /voice ?|<subject> [<turn on>]
@@ -3913,6 +3967,7 @@
     subcommands: ''
 -   aliases: nameban
     cost: false
+    rootAliases: nnameban
     module: nameban
     defaultLevel: ADMIN
     usageString: /nameban ?|<name> [<reason…>]
@@ -3932,6 +3987,7 @@
     subcommands: ''
 -   aliases: nameunban, namepardon
     cost: false
+    rootAliases: nnameunban
     module: nameban
     defaultLevel: ADMIN
     usageString: /nameunban ?|<name>
@@ -3950,6 +4006,7 @@
     subcommands: ''
 -   aliases: delnick, delnickname, deletenick
     cost: true
+    rootAliases: ndelnick
     module: nickname
     defaultLevel: ADMIN
     usageString: /delnick ?|[<subject>]
@@ -3981,6 +4038,7 @@
 -   aliases: nick, nickname
     cost: true
     isExactEssEquiv: false
+    rootAliases: nnick
     module: nickname
     defaultLevel: ADMIN
     usageString: /nick ?|[<subject>] <nickname>
@@ -4184,6 +4242,7 @@
 -   aliases: realname
     cost: true
     isExactEssEquiv: true
+    rootAliases: nrealname
     module: nickname
     defaultLevel: USER
     usageString: /realname ?|<name>
@@ -4217,6 +4276,7 @@
     subcommands: ''
 -   aliases: checknotes, notes
     cost: false
+    rootAliases: nchecknotes
     module: note
     defaultLevel: MOD
     usageString: /checknotes ?|<subject>
@@ -4235,6 +4295,7 @@
     subcommands: ''
 -   aliases: clearnotes, removeallnotes
     cost: false
+    rootAliases: nclearnotes
     module: note
     defaultLevel: ADMIN
     usageString: /clearnotes ?|<subject>
@@ -4253,6 +4314,7 @@
     subcommands: ''
 -   aliases: note, addnote
     cost: false
+    rootAliases: nnote
     module: note
     defaultLevel: MOD
     usageString: /note ?|<subject> <note…>
@@ -4275,6 +4337,7 @@
     subcommands: ''
 -   aliases: removenote, deletenote, delnote
     cost: false
+    rootAliases: nremovenote
     module: note
     defaultLevel: ADMIN
     usageString: /removenote ?|<user> <ID>
@@ -4293,6 +4356,7 @@
     subcommands: ''
 -   aliases: getfromip
     cost: true
+    rootAliases: ngetfromip
     module: playerinfo
     defaultLevel: ADMIN
     usageString: /getfromip ?|<IP Address>
@@ -4324,6 +4388,7 @@
 -   aliases: getpos, coords, position, whereami, getlocation, getloc
     cost: true
     isExactEssEquiv: true
+    rootAliases: ngetpos
     module: playerinfo
     defaultLevel: USER
     usageString: /getpos ?|[<subject>]
@@ -4367,6 +4432,7 @@
 -   aliases: list, listplayers, ls
     cost: true
     isExactEssEquiv: true
+    rootAliases: nlist
     module: playerinfo
     defaultLevel: USER
     usageString: /list ?|
@@ -4409,6 +4475,7 @@
 -   aliases: seen, seenplayer, lookup
     cost: true
     isExactEssEquiv: true
+    rootAliases: nseen
     module: playerinfo
     defaultLevel: ADMIN
     usageString: /seen ?|<uuid>|<subject>
@@ -4447,6 +4514,7 @@
 -   aliases: powertool, pt
     cost: false
     isExactEssEquiv: true
+    rootAliases: npowertool
     module: powertool
     defaultLevel: ADMIN
     usageString: /powertool toggle|list|delete|?|[<command…>]
@@ -4529,6 +4597,7 @@
     subcommands: ''
 -   aliases: rtp, randomteleport, rteleport
     cost: true
+    rootAliases: nrtp
     module: rtp
     defaultLevel: ADMIN
     usageString: /rtp ?|[<player>] [<world>]
@@ -4568,6 +4637,7 @@
 -   aliases: rules
     cost: false
     isExactEssEquiv: true
+    rootAliases: nrules
     module: rules
     defaultLevel: USER
     usageString: /rules ?|
@@ -4587,9 +4657,59 @@
     essNotes: ''
     warmup: false
     subcommands: ''
+-   aliases: serverlist, sl
+    cost: false
+    rootAliases: nserverlist
+    module: server-list
+    defaultLevel: ADMIN
+    usageString: '/serverlist message|?|[-m|-messages <m>] [-w|-whitelist <w>] '
+    oneLineDescription: Provides functions for modifying the server list.
+    permissionbase: nucleus.serverlist
+    simpleUsage: '/serverlist [-m|-messages <m>] [-w|-whitelist <w>] '
+    commandName: serverlist
+    permissions:
+    -   module: server-list
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /serverlist
+        permission: nucleus.serverlist.base
+    cooldown: false
+    requiresMixin: false
+    warmup: false
+    subcommands: message
+-   aliases: message, m
+    cost: true
+    module: server-list
+    defaultLevel: ADMIN
+    usageString: /serverlist message ?|[-r|-remove <r>] [-l|-line line(1 to 2)] [-t|-time <time to display>] [<message…>]
+    oneLineDescription: Allows for temporary modification of the server list MOTD, on a timed basis.
+    permissionbase: nucleus.message
+    simpleUsage: /serverlist message [-r|-remove <r>] [-l|-line line(1 to 2)] [-t|-time <time to display>] [<message…>]
+    commandName: serverlist message
+    permissions:
+    -   module: server-list
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the warmup for /serverlist message
+        permission: nucleus.message.exempt.warmup
+    -   module: server-list
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cost for /serverlist message
+        permission: nucleus.message.exempt.cost
+    -   module: server-list
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /serverlist message
+        permission: nucleus.message.base
+    -   module: server-list
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cooldown for /serverlist message
+        permission: nucleus.message.exempt.cooldown
+    cooldown: true
+    requiresMixin: false
+    warmup: true
+    subcommands: ''
 -   aliases: itembuy, buy
     cost: false
     isExactEssEquiv: true
+    rootAliases: nitembuy
     module: server-shop
     defaultLevel: USER
     usageString: /itembuy ?|[-y|-f|-a|-yes|-auto <y>] <item> <amount>
@@ -4612,6 +4732,7 @@
 -   aliases: itemsell, sell
     cost: false
     isExactEssEquiv: true
+    rootAliases: nitemsell
     module: server-shop
     defaultLevel: USER
     usageString: /itemsell ?|
@@ -4633,6 +4754,7 @@
     subcommands: ''
 -   aliases: itemsellall, sellall
     cost: false
+    rootAliases: nitemsellall
     module: server-shop
     defaultLevel: USER
     usageString: /itemsellall ?|[-a|-accept <a>]  [<item>]
@@ -4652,6 +4774,7 @@
 -   aliases: setworth, setitemworth
     cost: false
     isExactEssEquiv: true
+    rootAliases: nsetworth
     module: server-shop
     defaultLevel: ADMIN
     usageString: /setworth ?|[<item>] <buy|sell> <cost>
@@ -4674,6 +4797,7 @@
 -   aliases: worth
     cost: true
     isExactEssEquiv: true
+    rootAliases: nworth
     module: server-shop
     defaultLevel: USER
     usageString: /worth ?|[<item>]
@@ -4709,6 +4833,7 @@
     subcommands: ''
 -   aliases: firstspawn
     cost: true
+    rootAliases: nfirstspawn
     module: spawn
     defaultLevel: USER
     usageString: /firstspawn ?|
@@ -4739,6 +4864,7 @@
     subcommands: ''
 -   aliases: setfirstspawn
     cost: false
+    rootAliases: nsetfirstspawn
     module: spawn
     defaultLevel: ADMIN
     usageString: /setfirstspawn del|?|
@@ -4776,6 +4902,7 @@
 -   aliases: setspawn
     cost: false
     isExactEssEquiv: true
+    rootAliases: nsetspawn
     module: spawn
     defaultLevel: ADMIN
     usageString: /setspawn ?|
@@ -4798,6 +4925,7 @@
 -   aliases: spawn
     cost: true
     isExactEssEquiv: true
+    rootAliases: nspawn
     module: spawn
     defaultLevel: USER
     usageString: /spawn other|?|[<world>]
@@ -4863,6 +4991,7 @@
     subcommands: ''
 -   aliases: staffchat, sc, a
     cost: false
+    rootAliases: nstaffchat
     module: staff-chat
     defaultLevel: MOD
     usageString: /staffchat ?|[<message>]
@@ -4882,10 +5011,10 @@
 -   aliases: teleport
     cost: true
     isExactEssEquiv: false
-    rootAliases: tp
+    rootAliases: tp, nteleport
     module: teleport
     defaultLevel: MOD
-    usageString: /teleport ?|[-q <quiet>] [-f <f>]  <playerFrom>|<subject>
+    usageString: /teleport ?|[-q <quiet>] [-f <f>]  <player to warp to>|<player to warp> <player to warp to>|<offline player to warp to>
     oneLineDescription: Teleports one player to another's location.
     essentialsEquivalents:
     - tp
@@ -4894,7 +5023,7 @@
     - teleport
     - tpo
     permissionbase: nucleus.teleport.teleport
-    simpleUsage: /teleport [-q <quiet>] [-f <f>]  <playerFrom>|<subject>
+    simpleUsage: /teleport [-q <quiet>] [-f <f>]  <player to warp to>|<player to warp> <player to warp to>|<offline player to warp to>
     commandName: teleport
     permissions:
     -   module: teleport
@@ -4932,6 +5061,7 @@
     subcommands: ''
 -   aliases: teleportnative, tpnative, tpn
     cost: false
+    rootAliases: nteleportnative
     module: teleport
     defaultLevel: USER
     usageString: /teleportnative ?|<args…>
@@ -4947,6 +5077,7 @@
 -   aliases: tpa, teleportask, call, tpask
     cost: true
     isExactEssEquiv: true
+    rootAliases: ntpa
     module: teleport
     defaultLevel: USER
     usageString: '/tpa ?|<subject> [-f <f>] '
@@ -4987,6 +5118,7 @@
 -   aliases: tpaall, tpaskall
     cost: false
     isExactEssEquiv: true
+    rootAliases: ntpaall
     module: teleport
     defaultLevel: ADMIN
     usageString: '/tpaall ?|[-f <f>] '
@@ -5009,6 +5141,7 @@
 -   aliases: tpaccept, teleportaccept, tpyes
     cost: false
     isExactEssEquiv: true
+    rootAliases: ntpaccept
     module: teleport
     defaultLevel: USER
     usageString: /tpaccept ?|
@@ -5032,6 +5165,7 @@
 -   aliases: tpahere, tpaskhere, teleportaskhere
     cost: true
     isExactEssEquiv: true
+    rootAliases: ntpahere
     module: teleport
     defaultLevel: MOD
     usageString: '/tpahere ?|<subject> [-f <f>] '
@@ -5070,6 +5204,7 @@
 -   aliases: tpall, tpallhere
     cost: false
     isExactEssEquiv: true
+    rootAliases: ntpall
     module: teleport
     defaultLevel: ADMIN
     usageString: '/tpall ?|[-f <f>] '
@@ -5092,6 +5227,7 @@
 -   aliases: tpdeny, teleportdeny, tpno
     cost: false
     isExactEssEquiv: true
+    rootAliases: ntpdeny
     module: teleport
     defaultLevel: USER
     usageString: /tpdeny ?|
@@ -5115,6 +5251,7 @@
 -   aliases: tphere, tph
     cost: false
     isExactEssEquiv: false
+    rootAliases: ntphere
     module: teleport
     defaultLevel: ADMIN
     usageString: /tphere ?|<subject>
@@ -5143,6 +5280,7 @@
 -   aliases: tppos
     cost: false
     isExactEssEquiv: true
+    rootAliases: ntppos
     module: teleport
     defaultLevel: ADMIN
     usageString: /tppos ?|[-f] [--force] [-c] [--chunk]   [<subject>] [<world>] x(-2147483648 to 2147483647) y(0 to 255) z(-2147483648 to 2147483647)
@@ -5174,6 +5312,7 @@
 -   aliases: tptoggle
     cost: false
     isExactEssEquiv: true
+    rootAliases: ntptoggle
     module: teleport
     defaultLevel: USER
     usageString: /tptoggle ?|[<toggle>]
@@ -5200,6 +5339,7 @@
 -   aliases: vanish, v
     cost: false
     isExactEssEquiv: true
+    rootAliases: nvanish
     module: vanish
     defaultLevel: ADMIN
     usageString: /vanish ?|[<player>] [<toggle>]
@@ -5234,6 +5374,7 @@
     subcommands: ''
 -   aliases: checkwarnings, checkwarn, warnings
     cost: false
+    rootAliases: ncheckwarnings
     module: warn
     defaultLevel: MOD
     usageString: /checkwarnings ?|[-all|-a <all>] [-expired|-e <expired>] <subject>
@@ -5252,6 +5393,7 @@
     subcommands: ''
 -   aliases: clearwarnings, removeallwarnings
     cost: false
+    rootAliases: nclearwarnings
     module: warn
     defaultLevel: ADMIN
     usageString: /clearwarnings ?|[-remove|-r <remove>] [-all|-a <all>] [-expired|-e <expired>] <subject>
@@ -5270,6 +5412,7 @@
     subcommands: ''
 -   aliases: removewarning, deletewarning, delwarn
     cost: false
+    rootAliases: nremovewarning
     module: warn
     defaultLevel: ADMIN
     usageString: /removewarning ?|[-remove|-r <remove>] <user> <ID>
@@ -5288,6 +5431,7 @@
     subcommands: ''
 -   aliases: warn, warning, addwarning
     cost: false
+    rootAliases: nwarn
     module: warn
     defaultLevel: MOD
     usageString: /warn ?|<subject> [<duration>] <reason…>
@@ -5319,9 +5463,10 @@
 -   aliases: warp
     cost: false
     isExactEssEquiv: false
+    rootAliases: nwarp
     module: warp
     defaultLevel: USER
-    usageString: /warp set|cost|setcategory|list|category|delete|setdescription|?|[[-y|-a|-accept <y>] [-f|-force <f>] ] [<subject>] <Warp Name>
+    usageString: /warp cost|set|setcategory|list|category|delete|setdescription|?|[[-y|-a|-accept <y>] [-f|-force <f>] ] [<subject>] <Warp Name>
     oneLineDescription: Teleport to the specified warp.
     essentialsEquivalents:
     - warp
@@ -5354,7 +5499,7 @@
     requiresMixin: false
     essNotes: Use '/warp' for warping, '/warps' to list warps.
     warmup: true
-    subcommands: set, cost, setcategory, list, category, delete, setdescription
+    subcommands: cost, set, setcategory, list, category, delete, setdescription
 -   aliases: category
     cost: true
     module: warp
@@ -5643,7 +5788,7 @@
     rootAliases: nworld, nucleusworld
     module: world
     defaultLevel: ADMIN
-    usageString: /world border|setdifficulty|setloadonstartup|setkeepspawnloaded|teleport|setgamemode|sethardcore|setpvpenabled|list|delete|setspawn|spawn|load|gamerule|disable|enable|unload|create|info|?|
+    usageString: /world border|setdifficulty|setloadonstartup|setkeepspawnloaded|teleport|setgamemode|setpvpenabled|sethardcore|list|delete|setspawn|spawn|load|gamerule|disable|enable|unload|create|info|?|
     oneLineDescription: Parent command for all other world commands.
     permissionbase: nucleus.world
     simpleUsage: '/world '
@@ -5668,12 +5813,12 @@
     cooldown: true
     requiresMixin: false
     warmup: true
-    subcommands: border, setdifficulty, setloadonstartup, setkeepspawnloaded, teleport, setgamemode, sethardcore, setpvpenabled, list, delete, setspawn, spawn, load, gamerule, disable, enable, unload, create, info
+    subcommands: border, setdifficulty, setloadonstartup, setkeepspawnloaded, teleport, setgamemode, setpvpenabled, sethardcore, list, delete, setspawn, spawn, load, gamerule, disable, enable, unload, create, info
 -   aliases: border
     cost: true
     module: world
     defaultLevel: ADMIN
-    usageString: /world border gen|set|cancelgen|?|[<world>]
+    usageString: /world border gen|set|reset|cancelgen|?|[<world>]
     oneLineDescription: Parent command for world border commands.
     permissionbase: nucleus.world.border
     simpleUsage: /world border [<world>]
@@ -5698,7 +5843,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
-    subcommands: gen, set, cancelgen
+    subcommands: gen, set, reset, cancelgen
 -   aliases: cancelgen
     cost: false
     module: world
@@ -5751,6 +5896,24 @@
     requiresMixin: false
     extendedDescription: When invoked, Nucleus will start generating chunks up to the world border. During this time, the server will be susceptible to reduced performance.|br||br|If Nucleus Mixins are loaded on this server, Nucleus will use a custom routine that provides greater information to server admins, and will not attempt to generate any chunks that have been deemed to be loaded already, though enhancement of the Sponge routines.|br||br|If Nucleus Mixins are not available, or the -s flag is specified, Nucleus will fall back to the standard Sponge pre-gen routines.
     warmup: true
+    subcommands: ''
+-   aliases: reset
+    cost: false
+    module: world
+    defaultLevel: ADMIN
+    usageString: /world border reset ?|[<world>]
+    oneLineDescription: Resets the world border to the default width.
+    permissionbase: nucleus.world.border.set
+    simpleUsage: /world border reset [<world>]
+    commandName: world border reset
+    permissions:
+    -   module: world
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /border reset
+        permission: nucleus.world.border.set.base
+    cooldown: false
+    requiresMixin: false
+    warmup: false
     subcommands: ''
 -   aliases: set
     cost: false

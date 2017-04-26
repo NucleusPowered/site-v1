@@ -6,6 +6,7 @@
     nucleusEquiv:
     - afk
     - away
+    - nafk
 -   essentialsCommands:
     - back
     - return
@@ -14,12 +15,14 @@
     nucleusEquiv:
     - back
     - return
+    - nback
 -   essentialsCommands:
     - ban
     notes: ''
     isExact: true
     nucleusEquiv:
     - ban
+    - nban
 -   essentialsCommands:
     - break
     notes: Requires co-ordinates, whereas Essentials required you to look at the block.
@@ -27,6 +30,7 @@
     nucleusEquiv:
     - blockzap
     - zapblock
+    - nblockzap
 -   essentialsCommands:
     - broadcast
     - bcast
@@ -36,6 +40,7 @@
     - broadcast
     - bcast
     - bc
+    - nbroadcast
 -   essentialsCommands:
     - burn
     notes: ''
@@ -43,6 +48,7 @@
     nucleusEquiv:
     - ignite
     - burn
+    - nignite
 -   essentialsCommands:
     - buy
     notes: ''
@@ -50,6 +56,7 @@
     nucleusEquiv:
     - itembuy
     - buy
+    - nitembuy
 -   essentialsCommands:
     - clearinventory
     - ci
@@ -63,6 +70,7 @@
     - clearinventory
     - ci
     - clearinvent
+    - nclear
 -   essentialsCommands:
     - delhome
     - remhome
@@ -72,6 +80,7 @@
     nucleusEquiv:
     - deletehome
     - delhome
+    - ndeletehome
 -   essentialsCommands:
     - deljail
     - remjail
@@ -98,6 +107,7 @@
     isExact: true
     nucleusEquiv:
     - enchant
+    - nenchant
 -   essentialsCommands:
     - enderchest
     - echest
@@ -109,6 +119,7 @@
     - enderchest
     - ec
     - echest
+    - nenderchest
 -   essentialsCommands:
     - exp
     - xp
@@ -118,6 +129,7 @@
     - exp
     - experience
     - xp
+    - nexp
 -   essentialsCommands:
     - feed
     - eat
@@ -126,12 +138,14 @@
     nucleusEquiv:
     - feed
     - eat
+    - nfeed
 -   essentialsCommands:
     - fly
     notes: ''
     isExact: true
     nucleusEquiv:
     - fly
+    - nfly
 -   essentialsCommands:
     - gamemode
     - gm
@@ -147,6 +161,7 @@
     nucleusEquiv:
     - gamemode
     - gm
+    - ngamemode
 -   essentialsCommands:
     - gc
     - lag
@@ -161,6 +176,7 @@
     - serverstat
     - gc
     - uptime
+    - nserverstat
 -   essentialsCommands:
     - getpos
     - coords
@@ -177,6 +193,7 @@
     - whereami
     - getlocation
     - getloc
+    - ngetpos
 -   essentialsCommands:
     - god
     - godmode
@@ -187,6 +204,7 @@
     - god
     - invuln
     - invulnerability
+    - ngod
 -   essentialsCommands:
     - hat
     - head
@@ -195,12 +213,14 @@
     nucleusEquiv:
     - hat
     - head
+    - nhat
 -   essentialsCommands:
     - heal
     notes: ''
     isExact: true
     nucleusEquiv:
     - heal
+    - nheal
 -   essentialsCommands:
     - helpop
     - amsg
@@ -209,6 +229,7 @@
     isExact: true
     nucleusEquiv:
     - helpop
+    - nhelpop
 -   essentialsCommands:
     - home
     - homes
@@ -216,12 +237,14 @@
     isExact: true
     nucleusEquiv:
     - home
+    - nhome
 -   essentialsCommands:
     - ignore
     notes: ''
     isExact: true
     nucleusEquiv:
     - ignore
+    - nignore
 -   essentialsCommands:
     - info
     - ifo
@@ -233,12 +256,14 @@
     nucleusEquiv:
     - info
     - einfo
+    - ninfo
 -   essentialsCommands:
     - invsee
     notes: ''
     isExact: true
     nucleusEquiv:
     - invsee
+    - ninvsee
 -   essentialsCommands:
     - itemdb
     - itemno
@@ -249,12 +274,14 @@
     nucleusEquiv:
     - iteminfo
     - itemdb
+    - niteminfo
 -   essentialsCommands:
     - jails
     notes: ''
     isExact: true
     nucleusEquiv:
     - jails
+    - njails
 -   essentialsCommands:
     - jump
     - j
@@ -265,18 +292,21 @@
     - jump
     - j
     - jmp
+    - njump
 -   essentialsCommands:
     - kick
     notes: ''
     isExact: true
     nucleusEquiv:
     - kick
+    - nkick
 -   essentialsCommands:
     - kickall
     notes: ''
     isExact: true
     nucleusEquiv:
     - kickall
+    - nkickall
 -   essentialsCommands:
     - kill
     - remove
@@ -287,12 +317,14 @@
     isExact: false
     nucleusEquiv:
     - kill
+    - nkill
 -   essentialsCommands:
     - kit, kits
     notes: '''/kit'' redeems, ''/kits'' lists.'
     isExact: false
     nucleusEquiv:
     - kit
+    - nkit
 -   essentialsCommands:
     - lightning
     - strike
@@ -307,6 +339,7 @@
     - smite
     - thor
     - shock
+    - nlightning
 -   essentialsCommands:
     - list
     - who
@@ -319,6 +352,7 @@
     - list
     - listplayers
     - ls
+    - nlist
 -   essentialsCommands:
     - mail
     - email
@@ -327,6 +361,7 @@
     nucleusEquiv:
     - mail
     - email
+    - nmail
 -   essentialsCommands:
     - me
     - action
@@ -336,6 +371,7 @@
     nucleusEquiv:
     - me
     - action
+    - nme
 -   essentialsCommands:
     - more
     notes: ''
@@ -343,12 +379,14 @@
     nucleusEquiv:
     - more
     - stack
+    - nmore
 -   essentialsCommands:
     - motd
     notes: ''
     isExact: true
     nucleusEquiv:
     - motd
+    - nmotd
 -   essentialsCommands:
     - msg
     - tell
@@ -365,6 +403,7 @@
     - w
     - t
     - tell
+    - nmessage
 -   essentialsCommands:
     - mute
     - silence
@@ -373,6 +412,7 @@
     nucleusEquiv:
     - mute
     - unmute
+    - nmute
 -   essentialsCommands:
     - nick
     - nickname
@@ -381,6 +421,7 @@
     nucleusEquiv:
     - nick
     - nickname
+    - nnick
 -   essentialsCommands:
     - ping
     - pong
@@ -389,6 +430,7 @@
     isExact: false
     nucleusEquiv:
     - ping
+    - nping
 -   essentialsCommands:
     - powertool
     - pt
@@ -397,6 +439,7 @@
     nucleusEquiv:
     - powertool
     - pt
+    - npowertool
 -   essentialsCommands:
     - powertooltoggle
     - ptt
@@ -413,12 +456,14 @@
     nucleusEquiv:
     - reply
     - r
+    - nreply
 -   essentialsCommands:
     - realname
     notes: ''
     isExact: true
     nucleusEquiv:
     - realname
+    - nrealname
 -   essentialsCommands:
     - repair
     - fix
@@ -427,12 +472,14 @@
     nucleusEquiv:
     - repair
     - mend
+    - nrepair
 -   essentialsCommands:
     - rules
     notes: ''
     isExact: true
     nucleusEquiv:
     - rules
+    - nrules
 -   essentialsCommands:
     - seen
     notes: ''
@@ -441,6 +488,7 @@
     - seen
     - seenplayer
     - lookup
+    - nseen
 -   essentialsCommands:
     - sell
     notes: ''
@@ -448,6 +496,7 @@
     nucleusEquiv:
     - itemsell
     - sell
+    - nitemsell
 -   essentialsCommands:
     - sethome
     - createhome
@@ -456,6 +505,7 @@
     nucleusEquiv:
     - homeset
     - sethome
+    - nhomeset
 -   essentialsCommands:
     - setjail
     - createjail
@@ -469,6 +519,7 @@
     isExact: true
     nucleusEquiv:
     - setspawn
+    - nsetspawn
 -   essentialsCommands:
     - setwarp
     - createwarp
@@ -483,6 +534,7 @@
     nucleusEquiv:
     - setworth
     - setitemworth
+    - nsetworth
 -   essentialsCommands:
     - skull
     - playerskull
@@ -491,18 +543,21 @@
     isExact: true
     nucleusEquiv:
     - skull
+    - nskull
 -   essentialsCommands:
     - socialspy
     notes: ''
     isExact: true
     nucleusEquiv:
     - socialspy
+    - nsocialspy
 -   essentialsCommands:
     - spawn
     notes: ''
     isExact: true
     nucleusEquiv:
     - spawn
+    - nspawn
 -   essentialsCommands:
     - spawnmob
     - mob
@@ -512,6 +567,7 @@
     - spawnmob
     - spawnentity
     - mobspawn
+    - nspawnmob
 -   essentialsCommands:
     - speed
     - flyspeed
@@ -522,24 +578,28 @@
     isExact: false
     nucleusEquiv:
     - speed
+    - nspeed
 -   essentialsCommands:
     - sudo
     notes: ''
     isExact: true
     nucleusEquiv:
     - sudo
+    - nsudo
 -   essentialsCommands:
     - suicide
     notes: ''
     isExact: true
     nucleusEquiv:
     - suicide
+    - nsuicide
 -   essentialsCommands:
     - tempban
     notes: ''
     isExact: true
     nucleusEquiv:
     - tempban
+    - ntempban
 -   essentialsCommands:
     - thunder
     - sun
@@ -551,6 +611,7 @@
     isExact: true
     nucleusEquiv:
     - weather
+    - nweather
 -   essentialsCommands:
     - time
     - day
@@ -565,6 +626,7 @@
     isExact: false
     nucleusEquiv:
     - time
+    - ntime
 -   essentialsCommands:
     - togglejail
     - tjail
@@ -576,6 +638,7 @@
     - jail
     - unjail
     - togglejail
+    - njail
 -   essentialsCommands:
     - top
     notes: ''
@@ -584,6 +647,7 @@
     - top
     - tosurface
     - totop
+    - ntop
 -   essentialsCommands:
     - tp
     - tele
@@ -595,6 +659,7 @@
     nucleusEquiv:
     - teleport
     - tp
+    - nteleport
 -   essentialsCommands:
     - tpa
     - call
@@ -606,6 +671,7 @@
     - teleportask
     - call
     - tpask
+    - ntpa
 -   essentialsCommands:
     - tpaall
     notes: ''
@@ -613,6 +679,7 @@
     nucleusEquiv:
     - tpaall
     - tpaskall
+    - ntpaall
 -   essentialsCommands:
     - tpaccept
     - tpyes
@@ -622,6 +689,7 @@
     - tpaccept
     - teleportaccept
     - tpyes
+    - ntpaccept
 -   essentialsCommands:
     - tpahere
     notes: ''
@@ -630,6 +698,7 @@
     - tpahere
     - tpaskhere
     - teleportaskhere
+    - ntpahere
 -   essentialsCommands:
     - tpall
     notes: ''
@@ -637,6 +706,7 @@
     nucleusEquiv:
     - tpall
     - tpallhere
+    - ntpall
 -   essentialsCommands:
     - tpdeny
     - tpno
@@ -646,6 +716,7 @@
     - tpdeny
     - teleportdeny
     - tpno
+    - ntpdeny
 -   essentialsCommands:
     - tphere
     - s
@@ -655,18 +726,21 @@
     nucleusEquiv:
     - tphere
     - tph
+    - ntphere
 -   essentialsCommands:
     - tppos
     notes: ''
     isExact: true
     nucleusEquiv:
     - tppos
+    - ntppos
 -   essentialsCommands:
     - tptoggle
     notes: ''
     isExact: true
     nucleusEquiv:
     - tptoggle
+    - ntptoggle
 -   essentialsCommands:
     - unban
     - pardon
@@ -675,6 +749,7 @@
     nucleusEquiv:
     - unban
     - pardon
+    - nunban
 -   essentialsCommands:
     - vanish
     - v
@@ -683,6 +758,7 @@
     nucleusEquiv:
     - vanish
     - v
+    - nvanish
 -   essentialsCommands:
     - warp
     - warps
@@ -690,6 +766,7 @@
     isExact: false
     nucleusEquiv:
     - warp
+    - nwarp
 -   essentialsCommands:
     - world
     notes: The world command in Essentials was just a warp command.
@@ -704,3 +781,4 @@
     isExact: true
     nucleusEquiv:
     - worth
+    - nworth
