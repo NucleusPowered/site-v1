@@ -218,7 +218,7 @@ This is entirely dependent on your Permissions plugin. While Nucleus has a lot m
  Therefore, you just need the to set the prefix options in your prefix options, select commands for sample permission plugins are provided here.
 
 _For a user_:
-{% include permissionblock.html cmdtype="userPrefix,userOption" user="[group]" option="prefix" value="[prefix]" %}
+{% include permissionblock.html cmdtype="userPrefix,userOption" user="[user]" option="prefix" value="[prefix]" %}
 
 _For a group_:
 {% include permissionblock.html cmdtype="groupPrefix,groupOption" user="[group]" option="prefix" value="[prefix]" %}
@@ -236,7 +236,7 @@ Consult your permission plugin on how to set this option, but for reference, com
 
 <em>For groups:</em>
 
-{% include permissionblock.html cmdtype="groupOption" user="[user]" option="home-count" value="[number]" %}
+{% include permissionblock.html cmdtype="groupOption" user="[group]" option="home-count" value="[number]" %}
 
 [You can read more about the home module here.](modules/home.html)
 
