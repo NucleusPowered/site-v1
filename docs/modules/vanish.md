@@ -17,11 +17,9 @@ Don't be deceived when looking at the configuration options in your `main.conf`f
 * [AFK Module](afk.html)
 * [Server-List Module](serverlist.html)
 
-The one configuration you can adjust is:
-`# If true, players who leave or join the server under vanish will not have a login or logout message broadcast.`
-Set this to true to have your vanished players to not show a disconnection message. This will also hide the login message as long as you have the vanish.persist assigned. 
+The one configuration you can adjust currently is to hide your connection and disconnection messages while in vanish. Set this to true to have your vanished players not show a disconnection message. This will also hide the login message as long as you have the vanish.persist assigned to said player or group. 
 
 ## Vanish Status on Logout
 
-While Nucleus doesn't have a way to forcibly log players in as vanished while joining, it does remember what your vanish status was when you logged out. To enable this function you need to assign the `nucleus.vanish.persist` permission.  
+While Nucleus doesn't have a way to forcibly log players in as vanished while joining, it does remember what your vanish status was when you logged out. To enable this function you need to assign the `nucleus.vanish.persist` permission to the user or group.  
 
