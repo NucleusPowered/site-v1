@@ -25,7 +25,7 @@ to have.
 
 <em>For groups:</em>
 
-{% include permissionblock.html cmdtype="groupOption" user="[user]" option="home-count" value="[number]" %}
+{% include permissionblock.html cmdtype="groupOption" user="[group]" option="home-count" value="[number]" %}
 
 Consult the permissions plugin's documentation for more information on how to do this. If you wish a player to have an
 unlimited number of homes, set the permission `nucleus.home.set.unlimited`.
