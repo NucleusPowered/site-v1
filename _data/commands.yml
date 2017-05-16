@@ -552,8 +552,8 @@
     rootAliases: nblacklist
     module: blacklist
     defaultLevel: ADMIN
-    usageString: /blacklist set|list|?|
-    oneLineDescription: Parent command for all other blacklist commands.
+    usageString: /blacklist set|list|?|migrate|
+    oneLineDescription: Parent command for all other blacklist commands. The blacklist module will be removed in the next release.
     permissionbase: nucleus.blacklist
     simpleUsage: '/blacklist '
     commandName: blacklist
@@ -577,13 +577,22 @@
     cooldown: true
     requiresMixin: false
     warmup: true
-    subcommands: set, list
+    subcommands: set, list, migrate
 -   aliases: list, ls
     cost: true
     module: blacklist
     defaultLevel: ADMIN
     usageString: /blacklist list ?|
-    oneLineDescription: Lists all blacklisted items.
+    oneLineDescription: |-
+        Lists all blacklisted items.
+
+        If you wish to migrate your data to another protection plugin:
+
+
+         * ProtectionPerms migration can be run using "/blacklist migrate pp"
+         * GriefPrevention migration will be available in a later update to Nucleus and GP.
+
+         Other migration will need to be done manually or by the plugin in question.
     permissionbase: nucleus.blacklist.list
     simpleUsage: '/blacklist list '
     commandName: blacklist list
@@ -604,6 +613,96 @@
         defaultLevel: ADMIN
         description: Allows the user to bypass the cost for /blacklist list
         permission: nucleus.blacklist.list.exempt.cost
+    cooldown: true
+    requiresMixin: false
+    warmup: true
+    subcommands: ''
+-   aliases: migrate
+    cost: true
+    module: blacklist
+    defaultLevel: ADMIN
+    usageString: /blacklist migrate griefprevention|protectionperms|?|
+    oneLineDescription: Available migrations are subcommands to this command.
+    permissionbase: nucleus.blacklist.migrate
+    simpleUsage: '/blacklist migrate '
+    commandName: blacklist migrate
+    permissions:
+    -   module: blacklist
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the warmup for /blacklist migrate
+        permission: nucleus.blacklist.migrate.exempt.warmup
+    -   module: blacklist
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cooldown for /blacklist migrate
+        permission: nucleus.blacklist.migrate.exempt.cooldown
+    -   module: blacklist
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /blacklist migrate
+        permission: nucleus.blacklist.migrate.base
+    -   module: blacklist
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cost for /blacklist migrate
+        permission: nucleus.blacklist.migrate.exempt.cost
+    cooldown: true
+    requiresMixin: false
+    warmup: true
+    subcommands: griefprevention, protectionperms
+-   aliases: griefprevention, gp
+    cost: true
+    module: blacklist
+    defaultLevel: ADMIN
+    usageString: /blacklist migrate griefprevention ?|
+    oneLineDescription: Attempt to migrate blacklist data to GriefPrevention.
+    permissionbase: nucleus.blacklist.migrate
+    simpleUsage: '/blacklist migrate griefprevention '
+    commandName: blacklist migrate griefprevention
+    permissions:
+    -   module: blacklist
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the warmup for /migrate griefprevention
+        permission: nucleus.blacklist.migrate.exempt.warmup
+    -   module: blacklist
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cooldown for /migrate griefprevention
+        permission: nucleus.blacklist.migrate.exempt.cooldown
+    -   module: blacklist
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /migrate griefprevention
+        permission: nucleus.blacklist.migrate.base
+    -   module: blacklist
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cost for /migrate griefprevention
+        permission: nucleus.blacklist.migrate.exempt.cost
+    cooldown: true
+    requiresMixin: false
+    warmup: true
+    subcommands: ''
+-   aliases: protectionperms, pp
+    cost: true
+    module: blacklist
+    defaultLevel: ADMIN
+    usageString: /blacklist migrate protectionperms ?|
+    oneLineDescription: Attempt to set the correct permissions for ProtectionPerms based on the current blacklist.
+    permissionbase: nucleus.blacklist.migrate
+    simpleUsage: '/blacklist migrate protectionperms '
+    commandName: blacklist migrate protectionperms
+    permissions:
+    -   module: blacklist
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the warmup for /migrate protectionperms
+        permission: nucleus.blacklist.migrate.exempt.warmup
+    -   module: blacklist
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cooldown for /migrate protectionperms
+        permission: nucleus.blacklist.migrate.exempt.cooldown
+    -   module: blacklist
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /migrate protectionperms
+        permission: nucleus.blacklist.migrate.base
+    -   module: blacklist
+        defaultLevel: ADMIN
+        description: Allows the user to bypass the cost for /migrate protectionperms
+        permission: nucleus.blacklist.migrate.exempt.cost
     cooldown: true
     requiresMixin: false
     warmup: true
@@ -723,7 +822,7 @@
     cost: false
     module: core
     defaultLevel: ADMIN
-    usageString: /nucleus debug|itemalias|save|setupperms|reload|clearcache|resetuser|getuser|update-messages|docgen|printperms|?|rebuildusercache|migrate|info|
+    usageString: /nucleus debug|itemalias|save|setupperms|reload|clearcache|getuser|resetuser|update-messages|docgen|printperms|?|info|migrate|rebuildusercache|
     oneLineDescription: Displays Nucleus version and module information.
     permissionbase: nucleus.nucleus
     simpleUsage: '/nucleus '
@@ -737,7 +836,7 @@
     requiresMixin: false
     extendedDescription: The Nucleus command allows access to sub commands that administer the entire plugin.
     warmup: false
-    subcommands: debug, itemalias, save, setupperms, reload, clearcache, resetuser, getuser, update-messages, docgen, printperms, rebuildusercache, migrate, info
+    subcommands: debug, itemalias, save, setupperms, reload, clearcache, getuser, resetuser, update-messages, docgen, printperms, info, migrate, rebuildusercache
 -   aliases: clearcache
     cost: false
     module: core
@@ -1616,10 +1715,10 @@
     requiresMixin: false
     warmup: true
     subcommands: ''
--   aliases: homeset, sethome
+-   aliases: homeset
     cost: true
     isExactEssEquiv: true
-    rootAliases: nhomeset
+    rootAliases: sethome, nhomeset
     module: home
     defaultLevel: USER
     usageString: /homeset ?|[-o|-overwrite <o>] [<home>]
@@ -2689,8 +2788,8 @@
     rootAliases: nfirstjoinkit
     module: kit
     defaultLevel: ADMIN
-    usageString: /firstjoinkit set|edit|clear|redeem|?|
-    oneLineDescription: Displays the items given to new players when they first join the server.
+    usageString: /firstjoinkit ?|
+    oneLineDescription: First join kits are now regular kits that are autoredeemed for new players.
     permissionbase: nucleus.firstjoinkit
     simpleUsage: '/firstjoinkit '
     commandName: firstjoinkit
@@ -2701,82 +2800,7 @@
         permission: nucleus.firstjoinkit.base
     cooldown: false
     requiresMixin: false
-    warmup: false
-    subcommands: set, edit, clear, redeem
--   aliases: clear, remove
-    cost: false
-    module: kit
-    defaultLevel: ADMIN
-    usageString: /firstjoinkit clear ?|
-    oneLineDescription: Stops items being given to new players on first join.
-    permissionbase: nucleus.firstjoinkit.clear
-    simpleUsage: '/firstjoinkit clear '
-    commandName: firstjoinkit clear
-    permissions:
-    -   module: kit
-        defaultLevel: ADMIN
-        description: Allows the user to run the command /firstjoinkit clear
-        permission: nucleus.firstjoinkit.clear.base
-    cooldown: false
-    requiresMixin: false
-    warmup: false
-    subcommands: ''
--   aliases: edit, ed
-    cost: false
-    module: kit
-    spongeVersion: '5.0'
-    defaultLevel: ADMIN
-    usageString: /firstjoinkit edit ?|
-    oneLineDescription: Opens a GUI for editing the first join kit contents.
-    permissionbase: nucleus.firstjoinkit.edit
-    simpleUsage: '/firstjoinkit edit '
-    commandName: firstjoinkit edit
-    permissions:
-    -   module: kit
-        defaultLevel: ADMIN
-        description: Allows the user to run the command /firstjoinkit edit
-        permission: nucleus.firstjoinkit.edit.base
-    nucleusVersion: '0.13'
-    cooldown: false
-    requiresMixin: false
-    minecraftVersion: 1.10.2
-    extendedDescription: This command opens a GUI and allows you to use the standard Minecraft inventory GUI to edit the first join kit. |br||br|See /firstjoinkit set if you want to update the kit by taking a snapshot of your inventory. See /kit edit if you want edit another kit.
-    warmup: false
-    subcommands: ''
--   aliases: redeem
-    cost: false
-    module: kit
-    defaultLevel: ADMIN
-    usageString: /firstjoinkit redeem ?|[<player>]
-    oneLineDescription: Redeems the first join kit.
-    permissionbase: nucleus.firstjoinkit.redeem
-    simpleUsage: /firstjoinkit redeem [<player>]
-    commandName: firstjoinkit redeem
-    permissions:
-    -   module: kit
-        defaultLevel: ADMIN
-        description: Allows the user to run the command /firstjoinkit redeem
-        permission: nucleus.firstjoinkit.redeem.base
-    cooldown: false
-    requiresMixin: false
-    warmup: false
-    subcommands: ''
--   aliases: set, updateFromInventory
-    cost: false
-    module: kit
-    defaultLevel: ADMIN
-    usageString: /firstjoinkit set ?|
-    oneLineDescription: Sets the items given to new players when they first join the server.
-    permissionbase: nucleus.firstjoinkit.set
-    simpleUsage: '/firstjoinkit set '
-    commandName: firstjoinkit set
-    permissions:
-    -   module: kit
-        defaultLevel: ADMIN
-        description: Allows the user to run the command /firstjoinkit set
-        permission: nucleus.firstjoinkit.set.base
-    cooldown: false
-    requiresMixin: false
+    extendedDescription: Create a normal kit, then use `/kit setfirstjoin <kit> true`. This will make a kit a first join kit.|br||br|If you had a first join kit before, it is now the kit &quot;firstjoinkit&quot;.
     warmup: false
     subcommands: ''
 -   aliases: kit
@@ -2785,7 +2809,7 @@
     rootAliases: nkit
     module: kit
     defaultLevel: ADMIN
-    usageString: /kit add|give|set|cost|edit|setcooldown|list|remove|command|toggleredeemmessage|autoredeem|create|resetusage|onetime|?|<kit>
+    usageString: /kit add|give|set|cost|hidden|edit|setcooldown|list|remove|command|toggleredeemmessage|autoredeem|permissionbypass|create|resetusage|onetime|setfirstjoin|?|<kit>
     oneLineDescription: Redeems a kit.
     essentialsEquivalents:
     - kit, kits
@@ -2797,6 +2821,10 @@
         defaultLevel: ADMIN
         description: Allows the user to bypass kit cooldowns.
         permission: nucleus.kit.exempt.cooldown
+    -   module: kit
+        defaultLevel: ADMIN
+        description: Shows the user hidden kits in /kits
+        permission: nucleus.kit.showhidden
     -   module: kit
         defaultLevel: ADMIN
         description: Allows the user to bypass the warmup for /kit
@@ -2817,7 +2845,7 @@
     requiresMixin: false
     essNotes: '''/kit'' redeems, ''/kits'' lists.'
     warmup: true
-    subcommands: add, give, set, cost, edit, setcooldown, list, remove, command, toggleredeemmessage, autoredeem, create, resetusage, onetime
+    subcommands: add, give, set, cost, hidden, edit, setcooldown, list, remove, command, toggleredeemmessage, autoredeem, permissionbypass, create, resetusage, onetime, setfirstjoin
 -   aliases: add, createFromInventory
     cost: false
     module: kit
@@ -3046,6 +3074,24 @@
     extendedDescription: Allows you to redeem the contents of a kit on another player. By default, this command will normally NOT redeem a kit on a player would not normally be able to redeem the kit. It will also  mark the kit as redeemed on the target player - however, it will never charge them.|br||br|This behaviour can be overridden using the &quot;-i&quot; flag, which will ignore all cooldowns, and will not mark that the kit has been redeemed.
     warmup: true
     subcommands: ''
+-   aliases: hidden
+    cost: false
+    module: kit
+    defaultLevel: ADMIN
+    usageString: /kit hidden ?|<kit> <hidden toggle>
+    oneLineDescription: Sets whether a kit is displayed in the kit list.
+    permissionbase: nucleus.kit.hidden
+    simpleUsage: /kit hidden <kit> <hidden toggle>
+    commandName: kit hidden
+    permissions:
+    -   module: kit
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /kit hidden
+        permission: nucleus.kit.hidden.base
+    cooldown: false
+    requiresMixin: false
+    warmup: false
+    subcommands: ''
 -   aliases: list, ls
     cost: false
     rootAliases: kits
@@ -3082,6 +3128,24 @@
     cooldown: false
     requiresMixin: false
     extendedDescription: A one time use kit is exactly that, a kit that may be used only once. If you wish to give a kit to a player upon joining for the first time, consider using &quot;/firstjoinkit&quot; instead.
+    warmup: false
+    subcommands: ''
+-   aliases: permissionbypass
+    cost: false
+    module: kit
+    defaultLevel: ADMIN
+    usageString: /kit permissionbypass ?|<kit> <permission bypass toggle>
+    oneLineDescription: Sets whether a separate permission is required to redeem a kit, if separate permissions is enabled in the config.
+    permissionbase: nucleus.kit.permissionbypass
+    simpleUsage: /kit permissionbypass <kit> <permission bypass toggle>
+    commandName: kit permissionbypass
+    permissions:
+    -   module: kit
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /kit permissionbypass
+        permission: nucleus.kit.permissionbypass.base
+    cooldown: false
+    requiresMixin: false
     warmup: false
     subcommands: ''
 -   aliases: remove, del, delete
@@ -3156,6 +3220,24 @@
     cooldown: false
     requiresMixin: false
     extendedDescription: The cooldown must be specified in the form 1w1d1h1m1s, where 1 hour 5 minutes would be &quot;1h5m&quot;.
+    warmup: false
+    subcommands: ''
+-   aliases: setfirstjoin, firstjoin
+    cost: false
+    module: kit
+    defaultLevel: ADMIN
+    usageString: /kit setfirstjoin ?|<kit>
+    oneLineDescription: Sets up a kit so it gets redeemed for every new player that joins the server.
+    permissionbase: nucleus.kit.setfirstjoin
+    simpleUsage: /kit setfirstjoin <kit>
+    commandName: kit setfirstjoin
+    permissions:
+    -   module: kit
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /kit setfirstjoin
+        permission: nucleus.kit.setfirstjoin.base
+    cooldown: false
+    requiresMixin: false
     warmup: false
     subcommands: ''
 -   aliases: toggleredeemmessage, togglemessage
@@ -3706,6 +3788,25 @@
     requiresMixin: false
     extendedDescription: This command displays information about the server, the JVM, and each world.
     essNotes: ''
+    warmup: false
+    subcommands: ''
+-   aliases: servertime, realtime
+    cost: false
+    rootAliases: nservertime
+    module: misc
+    defaultLevel: ADMIN
+    usageString: /servertime ?|
+    oneLineDescription: Displays the current server time.
+    permissionbase: nucleus.servertime
+    simpleUsage: '/servertime '
+    commandName: servertime
+    permissions:
+    -   module: misc
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /servertime
+        permission: nucleus.servertime.base
+    cooldown: false
+    requiresMixin: false
     warmup: false
     subcommands: ''
 -   aliases: speed
@@ -5270,7 +5371,7 @@
         permission: nucleus.teleport.tphere.base
     -   module: teleport
         defaultLevel: ADMIN
-        description: Allows the user to teleport to the location of players who are offline.
+        description: Allows the user to teleport players who are offline to their current location on next login.
         permission: nucleus.teleport.tphere.offline
     cooldown: false
     requiresMixin: false
@@ -5466,7 +5567,7 @@
     rootAliases: nwarp
     module: warp
     defaultLevel: USER
-    usageString: /warp cost|set|setcategory|list|category|delete|setdescription|?|[[-y|-a|-accept <y>] [-f|-force <f>] ] [<subject>] <Warp Name>
+    usageString: /warp set|cost|setcategory|list|category|delete|setdescription|?|[[-y|-a|-accept <y>] [-f|-force <f>] ] [<subject>] <Warp Name>
     oneLineDescription: Teleport to the specified warp.
     essentialsEquivalents:
     - warp
@@ -5499,7 +5600,7 @@
     requiresMixin: false
     essNotes: Use '/warp' for warping, '/warps' to list warps.
     warmup: true
-    subcommands: cost, set, setcategory, list, category, delete, setdescription
+    subcommands: set, cost, setcategory, list, category, delete, setdescription
 -   aliases: category
     cost: true
     module: warp
@@ -5788,7 +5889,7 @@
     rootAliases: nworld, nucleusworld
     module: world
     defaultLevel: ADMIN
-    usageString: /world border|setdifficulty|setloadonstartup|setkeepspawnloaded|teleport|setgamemode|setpvpenabled|sethardcore|list|delete|setspawn|spawn|load|gamerule|disable|enable|unload|create|info|?|
+    usageString: /world border|setdifficulty|setloadonstartup|setkeepspawnloaded|teleport|setgamemode|sethardcore|setpvpenabled|list|delete|setspawn|spawn|load|gamerule|disable|enable|unload|create|info|?|
     oneLineDescription: Parent command for all other world commands.
     permissionbase: nucleus.world
     simpleUsage: '/world '
@@ -5813,7 +5914,7 @@
     cooldown: true
     requiresMixin: false
     warmup: true
-    subcommands: border, setdifficulty, setloadonstartup, setkeepspawnloaded, teleport, setgamemode, setpvpenabled, sethardcore, list, delete, setspawn, spawn, load, gamerule, disable, enable, unload, create, info
+    subcommands: border, setdifficulty, setloadonstartup, setkeepspawnloaded, teleport, setgamemode, sethardcore, setpvpenabled, list, delete, setspawn, spawn, load, gamerule, disable, enable, unload, create, info
 -   aliases: border
     cost: true
     module: world
@@ -5866,10 +5967,10 @@
     cost: true
     module: world
     defaultLevel: ADMIN
-    usageString: /world border gen ?|[-a <a>] [-s <s>] [-t|-tickpercent tickPercent(0 to 100)] [-save <time between saves>] [<world>]
+    usageString: /world border gen ?|[-a <a>] [-t|-tickpercent tickPercent(0 to 100)] [-save <time between saves>] [<world>]
     oneLineDescription: Generates chunks up to the world border.
     permissionbase: nucleus.world.border.gen
-    simpleUsage: /world border gen [-a <a>] [-s <s>] [-t|-tickpercent tickPercent(0 to 100)] [-save <time between saves>] [<world>]
+    simpleUsage: /world border gen [-a <a>] [-t|-tickpercent tickPercent(0 to 100)] [-save <time between saves>] [<world>]
     commandName: world border gen
     permissions:
     -   module: world
