@@ -16,6 +16,11 @@ There are extensive topics on how to use and configure Nucleus to each server's 
 * [Command Management (Warmups, Cooldowns and Costs)](configuration/commands.html)
 * [Using Nucleus Mixins for 1.10.2 based servers](configuration/mixins.html)
 
+## Developers
+
+* [Developing for Nucleus](developers/api)
+* [Contributing to Nucleus Development](developers/contributing)
+
 ## Module Reference
 
 * [Admin](modules/admin.html) - Administrative commands, such as `/broadcast`, `/exp` and `/sudo`
