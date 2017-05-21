@@ -6,7 +6,7 @@ header: Message Tokens
 
 ## Introduction
 
-Nucleus exposes many methods to work with it's Text parser, including being able to use and create your own custom tokens.
+Nucleus exposes many methods to work with its Text parser, including being able to use and create your own custom tokens.
 In both cases, you will need to get the `NucleusMessageTokenService`, which is always available when Nucleus is installed.
 
 ## Obtaining the service
@@ -26,8 +26,8 @@ required `Text`.
 ## Creating your own message tokens
 
 {% raw %}
-If you are developing a plugin and you would like to be able to display information in Nucleus' text, such as info files or the
-MOTD, Nucleus provides a way to do so on a per plugin basis.
+If you are developing a plugin and you would like to be able to display dynamic information in Nucleus' text, such as 
+info files or the MOTD, Nucleus provides a way to do so on a per plugin basis.
 
 In order to avoid conflicts, Nucleus provides each plugin a token template based on their plugin ID, 
 `{{pl:[pluginid]:<identifier>}}`. Plugins will be passed the `identifier` string of any token, which the plugin can
