@@ -37,7 +37,7 @@ To do this, a plugin must register a `NucleusMessageTokenService.TokenParser` ob
 interface that simply tells Nucleus how to work with a message token that is designed for your plugin. You register your 
 plugin with the `TokenParser` using the function `NucleusMessageTokenService.register(PluginContainer, TokenParser)` method.
 
-As an example, if your are registering a token from your plugin class, you could run the following:
+As an example, if you are registering a token from your plugin class, you could run the following:
 
 ```java
 PluginContainer pluginContainer = Sponge.getPluginManager().fromInstance(this); // example, let's say the plugin id is "eggs"
