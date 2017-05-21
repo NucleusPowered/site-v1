@@ -115,7 +115,7 @@ try {
             return Text.of("bacon ", source.getName());
         }
 
-        if (tokenInput.starts("spam") {
+        if (tokenInput.startsWith("spam") {
             return Text.of("lovely ", tokenInput, " ", source.getName());
         }
 
