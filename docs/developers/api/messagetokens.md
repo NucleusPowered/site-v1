@@ -68,7 +68,7 @@ results:
 |`{{pl:eggs:bacon}}`|bacon spamalot|
 |`{{pl:eggs:bacon2}}`|_Empty Optional_|
 |`{{pl:eggs:spam}}`|lovely spam spamalot|
-|`{{pl:eggs:spamspam}}`|lovelyspamspam spamalot|
+|`{{pl:eggs:spamspam}}`|lovely spamspam spamalot|
 |`{{pl:eggs:somethingelse}}`|_Empty Optional_|
 {:.table .table-striped}
 
