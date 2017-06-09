@@ -90,6 +90,6 @@ The command for common permission plugins to set these options are:
 
 <em>For groups:</em>
 
-{% include permissionblock.html cmdtype="groupOption" user="[user]" option="nucleus.[cmd].(warmup|cooldown|cost)" value="[number]" %}
+{% include permissionblock.html cmdtype="groupOption" user="[group]" option="nucleus.[cmd].(warmup|cooldown|cost)" value="[number]" %}
 
 Exemption permission will bypass options.
