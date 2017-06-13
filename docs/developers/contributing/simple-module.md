@@ -20,7 +20,7 @@ import org.slf4j.Logger;
 import uk.co.drnaylor.quickstart.annotations.ModuleData;
 
 @ModuleData(id = "test", name = "Test Module")
-public class CoolModule extends StandardModule {
+public class TestModule extends StandardModule {
 
   @Override public void onEnable() {
         super.onEnable();
