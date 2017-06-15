@@ -6,9 +6,8 @@ header: Creating a Simple module
 
 ## Explanation
 A simple module is a module which does not have any configuration whatsoever. You can add commands, listeners, and tasks to a module. In 
-order to begin creating a module you must first locate the src/main/java/io/github/nucleuspowered/nucleus/modules package. Next a new
-package must be created which will contain the new module. To finish with creating a very basic module all that needs doing is creating a 
-new class in the package and adding the @ModuleData annotation including a String id and name for the module.
+order to begin creating a module you must first locate the `io/github/nucleuspowered/nucleus/modules` package. Next a new
+package must be created which will contain the new module. The package should be named the same or similar to the module ID. To finish with creating a very basic module all that needs doing is creating a new class in the package that extends `StandardModule`. Next the `@ModuleData` annotation must be added including a String id and name for the module. The `plugin` variable is automatically available for use in the module class.
 
 ## Example
 
