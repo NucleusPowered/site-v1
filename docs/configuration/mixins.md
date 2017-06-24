@@ -10,10 +10,6 @@ internals. [You can get Nucleus Mixins from Ore.](https://ore.spongepowered.org/
 
 Unforatunately, due to the nature of core mods, Nucleus Mixins may not work with heavily modded servers.
 
-### Improve `/invsee`
-
-Without mixins, you have to be standing less than 8 blocks away from the target player to use `/invsee`. Mixins removes this restriction.
- 
 ### Improve world pre-generation
 
 Mixins adds calls into the main Minecraft codebase to allow world pregeneration to operate more smoothly. These improvements have been
