@@ -528,7 +528,7 @@
     nucleusEquiv:
     - warp set
 -   essentialsCommands:
-    - 'setworth '
+    - setworth
     notes: ''
     isExact: true
     nucleusEquiv:
