@@ -8,44 +8,11 @@ modulename: Blacklist
 
 ## Introduction
 
-The Blacklist module is intended as a lightweight protection system from players using and possessing certain items in the game
-world.
+**The blacklist module has been removed from Nucleus.** Consider an alternative plugin, some popular plugins are provided
+below:
 
-Blacklist is **not** intended to be a wide ranging blocking system, but a quick solution for servers who only need to prevent
-certain items on the server. Consider disabling the blacklist module if you have an alternative protection plugin.
+* [GriefPrevention](https://forums.spongepowered.org/t/griefprevention-official-thread-1-8-9-1-10-2-1-11/1123)
+* [ProtectionPerms](https://forums.spongepowered.org/t/protectionperms-a-simple-player-protection-and-control-plugin/16556)
+* [MMCRestrict](https://forums.spongepowered.org/t/mmcrestrict-a-simple-item-restriction-plugin/18437)
 
-## Configuration
-
-There are two entries in the `main.conf` file in the `blacklist` section:
-
-* `useReplacement`: if true, confiscated items will be replaced by the item specified in `replacement`.
-
-Actions to block are now determined by item, rather than globally.
-
-## Blacklisting items in `items.conf`
-
-The item blacklist is stored as part of the `items.conf` file, and can be edited by hand. The blacklist section of any
-item id looks like the following:
-
-```
-"minecraft:emerald_block" {
-    # A set of aliases that Nucleus recognises for this item. They all must be lowercase, and contain only letters, numbers, hyphens or underscores.
-    ...
-    blacklist {
-        # Prevents the mining or placing of an item in the world.
-        block-environment=true
-        # Prevents the item being possesed.
-        block-possesion=true
-        # Prevents the item being used.
-        block-use=true
-    }
-    ...
-}
-```
-
-Once completed, use `/nucleus reload` to reload the file.
-
-## Updating the blacklist via commands
-
-In game, execute the `/blacklist set [-t <environment|possession|use>] [item ID] <true|false>` command. The `-t` flag is optional, if
- omitted, will affect all types of blacklisting. If no Item ID is provided, the item in your main hand is used instead.
+The Nucleus team provides these links as a courtesy, and does not endorse any particular plugin.
