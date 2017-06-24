@@ -24,6 +24,7 @@
                         <li role="presentation" class="active"><a href="#info" aria-controls="home" role="tab" data-toggle="tab">Module Information</a></li>
                         <li role="presentation"><a href="#commands" aria-controls="profile" role="tab" data-toggle="tab">Commands</a></li>
                         <li role="presentation"><a href="#permissions" aria-controls="messages" role="tab" data-toggle="tab">Permissions</a></li>
+                        <li role="presentation"><a href="#conf" aria-controls="config" role="tab" data-toggle="tab">Configuration</a></li>
                     </ul>
 
                     <!-- Tab panes -->
@@ -36,6 +37,16 @@
                         </div>
                         <div role="tabpanel" class="tab-pane" id="permissions">
                             {% include modulepermissions.html %}
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="conf" style="margin-top: 10px;">
+                            {% if site.data.conf[page.moduleid] %}
+                            <em>The following configuration is the default for this module:</em>
+                            <pre>
+{{ site.data.conf[page.moduleid] | replace: '<', '&lt;' | replace: '>', '&gt;' | replace: '\n', '<br />' }}
+                            </pre>
+                            {% else %}
+                            <em>There is no configuration for this module.</em>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

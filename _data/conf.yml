@@ -1,0 +1,444 @@
+mob: "# The maximum number of mobs that can be spawned using /spawnmob.\nmax-mobs-to-spawn=20\n\
+    # If true, Nucleus will make an additional permission check to check whether a\
+    \ player can spawn a mob.\n# The permission is \"nucleus.spawnmob.mobs.<mobid>\"\
+    , where the mobid has any \":\" (colons) replaced with \".\" (period). So, the\
+    \ permission to spawn a creeper would be \n# \"nucleus.spawnmob.mobs.minecraft.creeper\"\
+    . This allows server owners to allow all vanilla mobs with the permission \"nucleus.spawnmob.mobs.minecraft\"\
+    .\nseparate-mob-spawning-permissions=false\n# Controls the mobs that cannot be\
+    \ spawned. Each section is world specific, with the key being the world name in\
+    \ question, which is case sensitive.\nspawning-blocks {\n    DIM-1 {\n       \
+    \ # The full IDs of the mobs to block. Minecraft mobs have an id starting with\
+    \ \"minecraft:\"\n        block-mobs-with-ids=[]\n        # If true, all vanilla\
+    \ mobs will be blocked in this world.\n        block-vanilla-mobs=false\n    }\n\
+    \    DIM1 {\n        # The full IDs of the mobs to block. Minecraft mobs have\
+    \ an id starting with \"minecraft:\"\n        block-mobs-with-ids=[]\n       \
+    \ # If true, all vanilla mobs will be blocked in this world.\n        block-vanilla-mobs=false\n\
+    \    }\n    world {\n        # The full IDs of the mobs to block. Minecraft mobs\
+    \ have an id starting with \"minecraft:\"\n        block-mobs-with-ids=[]\n  \
+    \      # If true, all vanilla mobs will be blocked in this world.\n        block-vanilla-mobs=false\n\
+    \    }\n}\n"
+note: |
+    # If true, users with the permission nucleus.note.showonlogin will be shown a users notes when they login. If false, they will not.
+    show-login=true
+nameban: |
+    default-reason="Your Minecraft username is not appropriate for this server. Please change it before attempting to access this server."
+server-shop: |
+    # The maximum amount a player can buy in one transaction.
+    max-purchasable-at-once=64
+teleport: |
+    # If true, by default, a target player will not be informed that they have been /teleport ed to. Override using "-q false"
+    default-quiet=true
+    # If true, teleporting tries to find a safe place for players.
+    use-safe-teleportation=true
+admin: |
+    # The prefix and suffix when sending a broadcast message. Accepts chat tokens such as {{displayname}}, {{name}}, etc.
+    broadcast-message-template {}
+back: |
+    # Log player's location on death.
+    on-death=true
+    # Log player's last location after travelling through a portal.
+    on-portal=false
+    # Log player's last location on warp.
+    on-teleport=true
+rules: |
+    # The rules page title.
+    rules-title="&6Server Rules"
+protection: |
+    # Disables crop trampling.
+    disable-crop-trample {
+        mobs=false
+        players=false
+    }
+    # If true, Nucleus will attempt to prevent Player-Player collisions.
+    disable-player-collisions=false
+    mob-griefing {
+        # If true, mob griefing will be disabled except for the entities listed in the whitelist (which should be done by mob ID).
+        enable-protection=false
+        whitelist=[]
+    }
+command-logger: |
+    # A comma separated list of commands in the blacklist or whitelist (see whitelist option). Only one alias per command is required.
+    command-filter=[]
+    # If any option is true, log commands from the source.
+    log-command-source {
+        command-block=false
+        console=true
+        other-source=false
+        subject=true
+    }
+    # If true, will log commands to files at /logs/nucleus/commands
+    log-to-file=false
+    # If true, the "command-filter" containing the list of commands to be logged is a whitelist (command must be specfied to be logged), not a blacklist.
+    whitelist=false
+inventory: |4+
+
+ban: |
+    # The maximum length a temporary ban may last for (in seconds) unless the user handing the mute has a bypass permission. Set to -1 for no maximum.
+    maximum-tempban-length=604800
+connection-messages: |
+    # If true, those with the "nucleus.connectionmessages.disable" permission will not trigger login/logout messages.
+    disable-with-permission=false
+    # If true, will inform players on the server when a player logs on and a name change has been detected.
+    display-name-change-if-changed=true
+    # Enables changing the login message.
+    modify-login-message=false
+    # Enables changing the logout message.
+    modify-logout-message=false
+    # Enables the first time login message.
+    show-first-login-message=true
+world: |
+    # If positive, any new worlds that are created using "/world create" (or "/nworld create") will automatically get a world border that has this diameter (that is, from border to border). Set to 0 or a negative number to disable.
+    default-world-border-diameter=0
+    # If true and using NucleusMixins, world generation will warn players on the server that a pre-generation is in progress periodically.
+    display-generation-warning=true
+kit: |
+    # If true, any items that couldn't be placed in the player's inventory will be dropped on the floor around them.
+    drop-items-if-inventory-full=false
+    # If this is true, "drop-items-if-inventory-full" will be ignored, and the kit will only be consumed if everything can be consumed.
+    must-get-all-items=false
+    # If true, any tokens such as {{name}} and {{displayname}} will be translated on item names and lore, if they exist, when kits are redeemed.
+    process-tokens-in-lore=false
+    # If this is set to true, each kit has its own permission node - nucleus.kits.<name>.
+    separate-permissions=false
+nickname: |
+    # The maximum number of visible characters that the nickname can be.
+    max-nickname-length=20
+    # The minimum number of visible characters that the nickname can be.
+    min-nickname-length=3
+    # A regular expression that limits what form the nickname can take. If Nucleus fails to read the regex here, the default of "[a-zA-Z0-9_]+" (the same restriction as Minecraft usernames) will be used. To allow all characters, use ".+".
+    pattern="[a-zA-Z0-9_]+"
+    # A prefix to any nickname that is displayed in chat.
+    prefix="&b~"
+connection: |
+    # The maximum number of reserved slots that can be used. Set to -1 for unlimited.
+    reserved-slots=-1
+    # If this is not empty, the message to send to players when the server is whitelisted.
+    whitelist-message=""
+vanish: |
+    # If true, players who leave or join the server under vanish will not have a login or logout message broadcast.
+    hide-connection-messages-on-vanish=false
+info: "info {\n    # If \"use-default-info-section\" is true, this section is displayed\
+    \ when a player runs \"/info\", not the section list.\n    default-info-section=info\n\
+    \    # If true, when a player runs \"/info\", the section specified in \"default-info-section\"\
+    \ will be used, that is, /info will work the same as /info <default-section>.\
+    \ \n    # The list of sections can still be viewed by running \"/info -l\", if\
+    \ the user has the \"nucleus.info.list\" permission. If false, or the section\
+    \ does not exist, this list is shown, regardless of this permission.\n    use-default-info-section=false\n\
+    }\nmotd {\n    # The amount of time to wait (in seconds) before sending the MOTD\
+    \ to a player who has just logged in.\n    motd-login-delay=0.5\n    # The title\
+    \ to show at the top of each MOTD page. Colour codes are supported. If blank,\
+    \ this hides the title completely.\n    motd-title=\"&6MOTD\"\n    # If true,\
+    \ show players the MOTD as defined in \"motd.txt\" when they log onto the server.\n\
+    \    show-motd-on-join=true\n    # If false, this disables the pagination system\
+    \ for the MOTD. Set this to false if you have one page, do not want a title, and\
+    \ do not want the << >> marks to appear, otherwise, it is recommended to set this\
+    \ to true.\n    use-pagination=true\n}\n"
+jump: |
+    # The maximum distance a player can move using the /jump command. Negative values mean infinite - use with care.
+    max-jump-distance=350
+    # The maximum distance a player can move using the /thru command. Negative values mean infinite - use with care.
+    max-thru-distance=25
+misc: |
+    # Sets the maximum speed that a player can set via the /speed command.
+    max-speed=5
+    # If true, in order to keep invulnerability on login, the permission for the god command (nucleus.god.base) is required. If false, a player without access to the /god will not be invulnerable on login.
+    require-god-permission-on-login=false
+staff-chat: |
+    # If true, Nucleus will include all the normal chat tags in the message, in addition to the prefix.
+    "include-standard-chat-formatting"=false
+    # A Minecraft colour code the denotes the colour to display Staff Chat channel messages in.
+    message-colour=b
+item: |
+    skull {
+        # If true, Nucleus will simply treat /skull as an alias to "/give [player] skull [number] 3 {SkullOwner:[skullplayer]}"
+        use-minecraft-command=false
+    }
+afk: |
+    # If true, the server will announce when players go AFK, even when vanished. If false, only non-vanished players can go AFK.
+    afk-when-vanished=false
+    # The amount of time, in seconds, of inactivity before the player will be marked as AFK. Set to 0 to disable, or use the permission "nucleus.afk.exempt.toggle".
+    afktime=300
+    # The amount of time, in seconds, of inactivity before the player will be kicked. Set to 0 to disable, or use the permission "nucleus.afk.exempt.kick".
+    afktimetokick=0
+    # If true, any player that tries to use a command that might require the target to do something will be told if the target is AFK.
+    alert-on-command-send=true
+    # If true, the server will be informed when a player is kicked for inactivity, else, just those with the nucleus.afk.notify permissions
+    broadcast-to-all-on-kick=true
+    # If any of the messages tht would be broadcast to the server are blank, they will not be sent.
+    messages {}
+chat-logger: |
+    # Whether to actually perform any logging.
+    enable-logging=false
+    # Log chat messages to the log file.
+    log-chat=true
+    # Log mail messages to the log file.
+    log-mail=false
+    # Log private messages to the log file.
+    log-messages=true
+mute: |
+    # Commands to block when muted. This is in addition to chat and /m already being blocked.
+    blocked-commands=[
+        "minecraft:me",
+        say
+    ]
+    # The maximum length a mute may last for (in seconds) unless the user handing the mute has a bypass permission. Set to -1 for no maximum.
+    maximum-mute-length=604800
+    # If true, mute time will only tick down when players are online.
+    mute-time-counts-online-only=false
+    # The tag to prepend any cancelled/muted messages with.
+    muted-chat-tag="&c[cancelled] "
+    # If true, those with the "nucleus.mute.seemutedchat" permission will see chat from those who are muted.
+    see-muted-chat=false
+jail: |
+    # The commands that players are allowed to execute in jail. Do not include the slash.
+    allowed-commands=[
+        m,
+        msg,
+        r,
+        mail,
+        rules,
+        info
+    ]
+    # If true, jail time will only tick down when players are online.
+    jail-time-counts-online-only=false
+    # If true, the player will be muted when in jail.
+    mute-when-jailed=false
+message: "socialspy {\n    # If true, Nucleus will check the \"nucleus.socialspy.force\"\
+    \ permission on the subject to disallow disabling Social Spy.\n    allow-forced=false\n\
+    \    # The tag to show at the beginning of a Social Spy message when a player\
+    \ is muted (or otherwise has the message cancelled).\n    cancelled-messages-tag=\"\
+    &c[cancelled] \"\n    # Sets the social spy level of the server and any custom\
+    \ message targets.\n    levels {\n        # The social spy level of any custom\
+    \ target that has been registered through the API.\n        custom-targets=2147483647\n\
+    \        # The server's social spy level.\n        server=2147483647\n    }\n\
+    \    # If true, and \"use-levels\" is true, players with social spy will also\
+    \ see messages from players at their own level.\n    same-levels-can-see-each-other=true\n\
+    \    # Controls the types of *sender* that can be spied on.\n    senders-to-spy-on\
+    \ {\n        custom-target=true\n        player=true\n        server=true\n  \
+    \  }\n    # If true, show messages that players try to send and are cancelled\
+    \ (usually due to being muted).\n    show-cancelled-messages=false\n    # If true,\
+    \ Nucleus will check the \"nucleus.socialspy.level\" option on the subject for\
+    \ an integer level. A level can see their messages from and to players with levels\
+    \ below their own, \n    # unless \"same-levels-can-see-each-other\" is set to\
+    \ true, in which case, social spies can see messages from their own level. Players\
+    \ have a default level of 0.\n    use-levels=false\n}\n"
+server-list: "# If true, the player count will not be displayed.\nhide-player-count=false\n\
+    # If true, any player that is vanished on the server will not appear in the online\
+    \ player list on the server list.\nhide-vanished-players=false\n# If true, when\
+    \ a prospective player pings the server on the multiplayer server list, one of\
+    \ the messages in the list below will be sent to the player.\nmodify-server-list-messages=false\n\
+    # Potential messages that could be sent to the player when the server is whitelisted.\
+    \ To split over two lines, include \\n where you want the line break to appear.\n\
+    # \n# If no entries are here, the MOTD will use the `server-list-messages` list.\n\
+    whitelist-server-list-messages=[]\n"
+death-message: "# If \"false\", death messages will be turned off when someone dies.\n\
+    enable-death-messages=true\n# If \"true\", Nucleus will try to make sure that\
+    \ everyone sees death messages. \nforce-show-all-death-messages=true\n"
+command-spy: |
+    # If true, only display commands from the whitelist. If false, show all commands to all command spies.
+    use-whitelist=true
+    # The whitelist of commands to spy on.
+    whitelisted-commands-to-spy-on=[]
+home: |
+    # If true, on respawn, a player will spawn back at their default home (named "home") if it exists.
+    respawn-at-home=false
+    # If true, Nucleus will attempt to ensure that users do not get warped into an unsafe situation (for example, if someone breaks blocks around a home).
+    use-safe-warp=true
+rtp: "# The number of times to try to find a safe teleport spot when using /rtp before\
+    \ failing. Setting this too low may cause a high rate of failures.\nattempts=10\n\
+    # If this is set, and the world name here matches one of your worlds (case-sensitive!),\
+    \ then `/rtp` will default to use the world specified here. Otherwise, the player's\
+    \ current world will be used.\ndefault-world=\"\"\n# The maximum Y value that\
+    \ can be teleported to.\nmaximum-y=255\n# The minimum Y value that can be teleported\
+    \ to.\nminimum-y=0\n# If true, Nucleus will check the permission \"nucleus.rtp.world.<worldname>\"\
+    \ (where worldname is in lower case) before allowing an RTP attempt to go through.\n\
+    per-world-permissions=false\n# The radius from the centre of the world/world border\
+    \ where /rtp can warp to. This will not override the world border radius.\nradius=30000\n\
+    # If true, /rtp will only try to teleport players to the surface, and not into\
+    \ caves.\nsurface-only=false\n# If a world is listed below with a valid config\
+    \ section, it will take precedence over the global section. World names should\
+    \ be lower case (so, standard nether should be \"dim-1\".\n# \n# Copy the example\
+    \ block and paste it below, with the correct world name, to set the per-world\
+    \ options.\nworld-overrides {\n    example {\n        maximum-y=255\n        minimum-y=0\n\
+    \        radius=30000\n        surface-only=false\n    }\n}\n"
+warn: |
+    # The command to execute when a player has a specific number of warnings.
+    action-command="tempban {{name}} 1d Exceeding the active warning threshold"
+    # The default length a warning is set to if no length is provided (in seconds). Set to -1 for no maximum.
+    default-length=-1
+    # If true, a record of players warnings will be kept as 'expired warnings'. If false, they will not.
+    expire-warnings=true
+    # The maximum length a warning may last for (in seconds). Set to -1 for no maximum.
+    maximum-warn-length=-1
+    # The minimum length a warning will last before expiring (in seconds). Set to -1 for no minimum.
+    minimum-warn-length=-1
+    # If true, players will be shown all their warnings when they login. If false, they will not.
+    show-login=true
+    # The number of active warnings a player must accumulate before the action command is executed. Set to -1 to disable.
+    warnings-before-action=-1
+core: |
+    # If set, this command will be suggested if a player clicks on the user name in chat in templated messages. Use {{player}} to indicate the player name.
+    command-on-name-click="/msg {{subject}}"
+    # If true, commands executed by the console can affect players that normally have an exempt permission against the command.
+    console-overrides-exemptions=true
+    # Enables debug mode, which will cause stack traces from commands to be printed to the console.
+    debug-mode=false
+    enable-doc-gen=true
+    kick-on-stop {
+        # If true, Nucleus will kick all users just prior to the server stopping.
+        enabled=false
+        # The message to display to players when restarting the server. Overridden when using the /stop [reason] command.
+        message="Server closed"
+    }
+    # These parameters define how far out to check from a specific point when performing a warp. Larger numbers mean that a wider area is checked, but large numbers will cause server lag. The defaults are sufficient in most cases.
+    safe-teleport-check {
+        height=3
+        width=9
+    }
+    # If true, a "messages.conf" file will be generated and used to define custom messages.
+    use-custom-message-file=false
+    # If true, cancel a user's warmup on...
+    warmup-canceling {
+        # running a command
+        cancel-on-command=true
+        # movement
+        cancel-on-move=true
+    }
+environment: |
+    # The maximum amount of time that the weather can be set to last, in seconds. Set to -1 for no restriction.
+    maximum-weather-timespan=-1
+fly: |
+    # If true, and the player isn't flying and the player is in the air, Nucleus will try to find a safe location to place the player.
+    find-safe-location-on-login=true
+    # If true, in order to keep fly state on login, the permission for the fly command (nucleus.fly.base) is required. If false, a player without access to the /fly command will fall to the ground on login if they are in the air.
+    require-fly-permission-on-login=false
+    # If true, if a player is flying when they disconnect, this state is remembered. If false, this information is only retained between player disconnects if /fly was used.
+    save-all-flystate-on-quit=true
+spawn: |
+    # If true, then Nucleus will attempt to force players joining for the first time to spawn at the *direct point* that first spawn has been set.
+    # Only set this if you want Nucleus to override all other plugins on first spawn.
+    force-first-spawn=false
+    # This section controls whether respawning and /spawn work on a per world or global server basis
+    global-spawn {
+        # If "spawn-on-login" is on and this is true, sends the player to the world specified in "target-spawn-world" when they log in.
+        on-login=false
+        # If true, respawning (like from death) sends the player to the world specified in "target-spawn-world", if false, sends them to the world spawn.
+        on-respawn=false
+        # If true, running /spawn sends the player to the world specified in "target-spawn-world", if false, sends them to the world spawn.
+        on-spawn-command=false
+        # The name of the world to use as the server spawn. If this is invalid, the default world is used instead.
+        target-spawn-world=world
+    }
+    # If true, players require the permission "nucleus.spawn.worlds.<worldname>" to spawn in a specific world, where worldname is the name of the world in lowercase.
+    per-world-permissions=false
+    # If true, players will be sent to the default world spawn on login, unless they are sent to the first login spawn, or they have the "nucleus.spawn.exempt.onjoin" permission.
+    spawn-on-login=false
+    # If true, using /spawn will attempt to find a safe place. If false, the teleportation will always directly send the player to the location with no safety checks.
+    use-safe-spawn=true
+chat: "# Some mods and plugins move the Minecraft player prefix to the main message\
+    \ body. If this is the case, turn this on, and Nucleus \n# will try to remove\
+    \ it.\ncheck-body-for-minecraft-prefix=false\n# If \"true\", Nucleus will attempt\
+    \ to modify the chat\nmodify-chat=true\n# If true, Nucleus will take the message\
+    \ and try to apply it's own transforms to it. This may overwrite other plugins\
+    \ who do processing super early, so turn this off if you are having problems.\n\
+    modify-main-message=true\n# If false, Nucleus will prepend it's prefixes/headers\
+    \ with those already set buy other plugins. If true, it will overwrite them.\n\
+    overwrite-early-prefixes=false\n# If false, Nucleus will prepend it's suffixes/footers\
+    \ with those already set buy other plugins. If true, it will overwrite them.\n\
+    overwrite-early-suffixes=false\n# If true, Nucleus will try to remove any text\
+    \ formatted in blue and underlined that Minecraft has tried to turn into a link.\n\
+    remove-link-underlines=true\ntemplates {\n    # The default chat template if no\
+    \ group templates apply.\n    default {\n        # The default colour for a player's\
+    \ chat if the \"chatcolour\" permission option isn't set on the player or group.\
+    \ Takes the same input as the \"namecolour\" option set to \"\" to retain default\
+    \ behaviour (no change of colour). Do not include the \"&\" character.\n     \
+    \   default-chatcolour=\"\"\n        # The default styles for a player's chat\
+    \ if the \"chatstyle\" permission option isn't set on the player or group. Takes\
+    \ the same input as the \"chatstyle\" option set to \"\" to retain default behaviour\
+    \ (no style). Do not include the \"&\" character. Multiple styles must be separated\
+    \ by commas.\n        default-chatstyle=\"\"\n        # The default colour for\
+    \ a player's name if the \"namecolour\" permission option isn't set on the player\
+    \ or group. Takes the same input as the \"chatcolour\" option set to \"\" to retain\
+    \ default behaviour (no change of colour). Do not include the \"&\" character.\n\
+    \        default-namecolour=\"\"\n        # The default styles for a player's\
+    \ name if the \"namestyle\" permission option isn't set on the player or group.\
+    \ Takes the same input as the \"namestyle\" option, set to \"\" to retain default\
+    \ behaviour (no style). Do not include the \"&\" character. Multiple styles must\
+    \ be separated by commas.\n        default-namestyle=\"\"\n        # Sets the\
+    \ suffix to a message. {{prefix}} - prefix (set as an option in a permission plugin),\
+    \ {{suffix}} - suffix (set as an option in a permission plugin), {{name}} - real\
+    \ name, {{displayname}} - display name\n        suffix=\"\"\n    }\n    # Group\
+    \ templates override the default chat template based on the users group. Note\
+    \ that the group name is case sensitive.\n    # Weight matters, the player will\
+    \ use the highest weighted template in this list that matches a group they are\
+    \ in, including inherited groups. If the same weight is used on two or more entries,\
+    \ the group with the most parents will be used.\n    group-templates {\n     \
+    \   DefaultTemplate {\n            # The default colour for a player's chat if\
+    \ the \"chatcolour\" permission option isn't set on the player or group. Takes\
+    \ the same input as the \"namecolour\" option set to \"\" to retain default behaviour\
+    \ (no change of colour). Do not include the \"&\" character.\n            default-chatcolour=\"\
+    \"\n            # The default styles for a player's chat if the \"chatstyle\"\
+    \ permission option isn't set on the player or group. Takes the same input as\
+    \ the \"chatstyle\" option set to \"\" to retain default behaviour (no style).\
+    \ Do not include the \"&\" character. Multiple styles must be separated by commas.\n\
+    \            default-chatstyle=\"\"\n            # The default colour for a player's\
+    \ name if the \"namecolour\" permission option isn't set on the player or group.\
+    \ Takes the same input as the \"chatcolour\" option set to \"\" to retain default\
+    \ behaviour (no change of colour). Do not include the \"&\" character.\n     \
+    \       default-namecolour=\"\"\n            # The default styles for a player's\
+    \ name if the \"namestyle\" permission option isn't set on the player or group.\
+    \ Takes the same input as the \"namestyle\" option, set to \"\" to retain default\
+    \ behaviour (no style). Do not include the \"&\" character. Multiple styles must\
+    \ be separated by commas.\n            default-namestyle=\"\"\n            # Sets\
+    \ the prefix to a message. {{prefix}} - prefix (set as an option in a permission\
+    \ plugin), {{suffix}} - suffix (set as an option in a permission plugin), {{name}}\
+    \ - real name, {{displayname}} - display name\n            prefix=null\n     \
+    \       # Sets the suffix to a message. {{prefix}} - prefix (set as an option\
+    \ in a permission plugin), {{suffix}} - suffix (set as an option in a permission\
+    \ plugin), {{name}} - real name, {{displayname}} - display name\n            suffix=\"\
+    \"\n            # The weight of the template. A higher number will take priority\
+    \ over lower numbers when two templates could apply to the same player because\
+    \ they are in the both groups.\n            weight=1\n        }\n    }\n}\n# If\
+    \ \"true\", then Nucleus will select the most appropriate group template for a\
+    \ player when they send a chat message. If it's false \n# the default template\
+    \ will always be used, but there will be a performance gain because a player's\
+    \ groups not not have to be retrieved from the permission plugin. \n# Turn this\
+    \ off if you are getting severe performance problems when someone chats, it's\
+    \ usually due to a misbehaving permissions plugin.\nuse-group-templates=true\n"
+playerinfo: |
+    list {
+        list-grouping-by-permission {
+            # If listing by groups is enabled, the group name to display when a player is not in a group.
+            default-group-name=Default
+            # If enabled, list players by their groups.
+            enabled=false
+            # If listing by groups is enabled, then any group listed here (on the left side of an equals sign) will be given the display name on the right hand side.
+            # Multiple groups can be given the same alias, they will be grouped together.
+            group-aliases {
+                example-default-group="Default Group"
+                example-default-group-2="Default Group"
+            }
+            # Any group aliases in this list will be listed in this order, above all other groups, which will be displayed in alphabetical order below.
+            group-order=[]
+            # If true, if an alias hasn't been defined for a group in the `group-aliases` section, it's considered as part of the `default` group.
+            use-aliases-only=false
+        }
+        # Enable this if you are using Multicraft. This will run /minecraft:list when /list is run on the console.
+        multicraft-compatibility=false
+    }
+    seen {
+        # If true, the permission "nucleus.seen.extended" is required for all information that comes from modules. If false, information will be displayed based on the command permissions a player has (so, a player with check ban rights can see banning information).
+        require-extended-permission-for-module-info=false
+    }
+warp: |
+    default-category-name=Uncategorised
+    # The default cost for a warp. Can be overriden using /warp setcost <warp> <cost>
+    default-warp-cost=0.0
+    # If true, warps will be displayed by category in /warp list.
+    list-warps-by-category=false
+    # If this is set to true, each warp has its own permission node - nucleus.warps.<name>.
+    separate-permissions=false
+    # If true, the warp description will be shown in /warp list, and the co-ords will be shown in the tooltip on hover.
+    show-warp-description-in-list=false
+    # If true, using /warp will attempt to find a safe place. If false, the teleportation will always directly send the player to the location with no safety checks.
+    use-safe-warp=true
