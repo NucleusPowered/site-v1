@@ -73,7 +73,7 @@
         <ul>
             {% for perms in cmds.permissions %}
             <li>
-                <code>{{ perms.permission }}</code> - Default Role: {{ perms.defaultLevel }} <br />
+                <code>{{ perms.permission | replace: '<', '&lt;' | replace: '>', '&gt;' }}</code> - Default Role: {{ perms.defaultLevel }} <br />
                 {{ perms.description }}
             </li>
             {% endfor %}
