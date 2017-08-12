@@ -49,8 +49,6 @@ protection: |
         mobs=false
         players=false
     }
-    # If true, Nucleus will attempt to prevent Player-Player collisions.
-    disable-player-collisions=false
     mob-griefing {
         # If true, mob griefing will be disabled except for the entities listed in the whitelist (which should be done by mob ID).
         enable-protection=false
@@ -70,8 +68,7 @@ command-logger: |
     log-to-file=false
     # If true, the "command-filter" containing the list of commands to be logged is a whitelist (command must be specfied to be logged), not a blacklist.
     whitelist=false
-inventory: |4+
-
+inventory: "\r\n"
 ban: |
     # The maximum length a temporary ban may last for (in seconds) unless the user handing the mute has a bypass permission. Set to -1 for no maximum.
     maximum-tempban-length=604800
@@ -80,6 +77,8 @@ connection-messages: |
     disable-with-permission=false
     # If true, will inform players on the server when a player logs on and a name change has been detected.
     display-name-change-if-changed=true
+    # If "true", Nucleus will try to make sure that everyone sees connection messages. Note that plugins can potentially override this.
+    force-show-all-connection-messages=true
     # Enables changing the login message.
     modify-login-message=false
     # Enables changing the logout message.
@@ -112,6 +111,8 @@ nickname: |
 connection: |
     # The maximum number of reserved slots that can be used. Set to -1 for unlimited.
     reserved-slots=-1
+    # If this is not empty, the message to send to players when the server is full.
+    server-full-message=""
     # If this is not empty, the message to send to players when the server is whitelisted.
     whitelist-message=""
 vanish: |
@@ -153,6 +154,13 @@ item: |
         # If true, Nucleus will simply treat /skull as an alias to "/give [player] skull [number] 3 {SkullOwner:[skullplayer]}"
         use-minecraft-command=false
     }
+geo-ip: "# By setting this to true, you agree to the licences for the MaxMind GeoLite\
+    \ 2 databases, and the information as displayed at http://nucleuspowered.org/thirdparty/geoip.html\
+    \ \n# or in the geoip.txt file in the plugin JAR (you can open the Nucleus JAR\
+    \ with any zip program)\naccept-licences=false\n# If true, Nucleus will tell players\
+    \ with the \"nucleus.geoip.login\" permission the country the player is connecting\
+    \ via. Please be considerate with this permission, do not give it to everyone.\n\
+    alert-on-login=false\n"
 afk: |
     # If true, the server will announce when players go AFK, even when vanished. If false, only non-vanished players can go AFK.
     afk-when-vanished=false
@@ -166,6 +174,19 @@ afk: |
     broadcast-to-all-on-kick=true
     # If any of the messages tht would be broadcast to the server are blank, they will not be sent.
     messages {}
+    # Determines what actions determines if a player is active.
+    triggers {
+        # Marks a player as active if they chat
+        on-chat=true
+        # Marks a player as active if they run a command
+        on-command=true
+        # Marks a player as active if they interact
+        on-interact=true
+        # Marks a player as active if they move
+        on-movement=true
+        # Marks a player as active if they rotate (that is, look around)
+        on-rotation=true
+    }
 chat-logger: |
     # Whether to actually perform any logging.
     enable-logging=false
@@ -187,6 +208,8 @@ mute: |
     mute-time-counts-online-only=false
     # The tag to prepend any cancelled/muted messages with.
     muted-chat-tag="&c[cancelled] "
+    # If true, then the permission "nucleus.mute.unmute" is required to unmute players.
+    require-separate-unmute-permission=false
     # If true, those with the "nucleus.mute.seemutedchat" permission will see chat from those who are muted.
     see-muted-chat=false
 jail: |
@@ -203,6 +226,8 @@ jail: |
     jail-time-counts-online-only=false
     # If true, the player will be muted when in jail.
     mute-when-jailed=false
+    # If true, then the permission "nucleus.jail.unjail" is required to unjail players.
+    require-separate-unjail-permission=false
 message: "socialspy {\n    # If true, Nucleus will check the \"nucleus.socialspy.force\"\
     \ permission on the subject to disallow disabling Social Spy.\n    allow-forced=false\n\
     \    # The tag to show at the beginning of a Social Spy message when a player\
@@ -211,8 +236,11 @@ message: "socialspy {\n    # If true, Nucleus will check the \"nucleus.socialspy
     \ message targets.\n    levels {\n        # The social spy level of any custom\
     \ target that has been registered through the API.\n        custom-targets=2147483647\n\
     \        # The server's social spy level.\n        server=2147483647\n    }\n\
-    \    # If true, and \"use-levels\" is true, players with social spy will also\
-    \ see messages from players at their own level.\n    same-levels-can-see-each-other=true\n\
+    \    # The tag to show at the beginning of a Social Spy message when a player\
+    \ cannot send a message to a player who hasused /msgtoggle (blocking messages\
+    \ from all players).\n    msgtoggle-blocked-messages-tag=\"&c[blocked] \"\n  \
+    \  # If true, and \"use-levels\" is true, players with social spy will also see\
+    \ messages from players at their own level.\n    same-levels-can-see-each-other=true\n\
     \    # Controls the types of *sender* that can be spied on.\n    senders-to-spy-on\
     \ {\n        custom-target=true\n        player=true\n        server=true\n  \
     \  }\n    # If true, show messages that players try to send and are cancelled\
@@ -224,9 +252,10 @@ message: "socialspy {\n    # If true, Nucleus will check the \"nucleus.socialspy
     \ have a default level of 0.\n    use-levels=false\n}\n"
 server-list: "# If true, the player count will not be displayed.\nhide-player-count=false\n\
     # If true, any player that is vanished on the server will not appear in the online\
-    \ player list on the server list.\nhide-vanished-players=false\n# If true, when\
-    \ a prospective player pings the server on the multiplayer server list, one of\
-    \ the messages in the list below will be sent to the player.\nmodify-server-list-messages=false\n\
+    \ player list on the server list.\nhide-vanished-players=false\n# If \"true\"\
+    , when a prospective player pings the server on the multiplayer server list, one\
+    \ of the messages in the list below will be sent to the player. If \"whitelist\"\
+    , this module will only act when the whitelist is enabled.\nmodify-server-list-messages=FALSE\n\
     # Potential messages that could be sent to the player when the server is whitelisted.\
     \ To split over two lines, include \\n where you want the line break to appear.\n\
     # \n# If no entries are here, the MOTD will use the `server-list-messages` list.\n\
