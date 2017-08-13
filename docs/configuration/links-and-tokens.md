@@ -27,3 +27,16 @@ The following tokens can be used in both the `motd` and `info` files, and will b
 {% for token in com %}* `{% raw %}{{{% endraw %}{{ token.name }}{% raw %}}}{% endraw %}` - {{ token.description }}
 {% endfor %}
 
+## Token Modifiers
+
+Tokens support modifiers that control whether a space should be appended or prepended to the token output if the token
+exists.
+
+The modifiers are:
+
+* `p` to prepend a space
+* `s` to append a space
+
+To add a modifier to the end of a token, simply add ":[modifier]" at the end of the token (before {% raw %}}}{% endraw %}).
+So, if you want your token (say, `name`) to have a space after it if it exists, the token would be 
+`{% raw %}{{name:s}}{% endraw %}`. Similarly, if you wanted a space before and after, specify `{% raw %}{{name:sp}}{% endraw %}`. 
