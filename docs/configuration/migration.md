@@ -4,12 +4,15 @@ title: Documentation Centre
 header: Migrating from EssentialCmds
 ---
 
+**Warning: EssentialCmds migration was removed in version 1.1+. Use Version 1.0 if you wish to migrate _first_, then
+update Nucleus from there.**
+
 Nucleus allows for users to migrate their server data from EssentialCmds to Nucleus using one command.
 
 ## Pre-requisites
 
 * A Sponge server
-* EssentialCmds and Nucleus installed at the same time
+* EssentialCmds and Nucleus 1.0.1 LTS installed at the same time
 * The permission node `nucleus.nucleus.migrate.esscmds.base`
 
 ## What Does Nucleus Migrate?

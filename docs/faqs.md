@@ -64,7 +64,7 @@ But please, take the time to read the rest of this FAQ too.
 
 ### [I've come from EssentialCmds, can I migrate my data?](#esscmds)
 
-[Yes, please see our migration pages.](configuration/migration.html)
+Support was removed for this in 1.1. If you really need to migrate, make sure you're running Nucleus 1.0.1, then [please see our migration pages.](configuration/migration.html)
 
 <a class="anchor" id="essentials"></a>
 
