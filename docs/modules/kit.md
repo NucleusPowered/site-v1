@@ -99,14 +99,10 @@ You can try it with `/kit command edit <kit>`, with the permission `nucleus.kit.
 
 ## First Join Kits (Initial Inventory)
 
-Nucleus supports giving players items when they first join your server. The command `/firstjoinkit set` sets the contents
-of a player's initial inventory to whatever is in your inventory at the time you run that command, and the command `/firstjoinkit edit`
-allows you to modify the kit using a standard inventory window. 
+Nucleus supports giving players items when they first join your server. Simply create a kit that contains the inventory
+you want to give the players when they first join, then run `/kit setfirstjoin [kitname] true`.
 
-To change the contents of the initial inventory, run `/firstjoinkit set` or `/firstjoinkit edit` again. 
-To clear it, `/firstjoinkit clear`. You can see what is in the kit by running `/firstjoinkit`. 
-
-This kit is not visible on `/kit list`.
+This kit is not visible on `/kit list`, is not redeemable more than once and does not have a cost by default.
 
 ## Per-Kit Permissions
 
