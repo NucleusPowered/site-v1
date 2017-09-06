@@ -30,8 +30,10 @@
         permission: nucleus.blockzap.exempt.cooldown
     cooldown: true
     requiresMixin: false
-    extendedDescription: Intended as an admin command to turn a problematic block to air.
-    essNotes: Requires co-ordinates, whereas Essentials required you to look at the block.
+    extendedDescription: Intended as an admin command to turn a problematic block
+        to air.
+    essNotes: Requires co-ordinates, whereas Essentials required you to look at the
+        block.
     warmup: true
     subcommands: ''
 -   aliases: broadcast, bcast, bc
@@ -64,7 +66,7 @@
     rootAliases: nexp
     module: admin
     defaultLevel: ADMIN
-    usageString: /exp give|take|set|?|<subject>
+    usageString: /exp take|give|set|?|<subject>
     oneLineDescription: Displays the specified player's current experience.
     essentialsEquivalents:
     - exp
@@ -81,7 +83,7 @@
     requiresMixin: false
     essNotes: ''
     warmup: false
-    subcommands: give, take, set
+    subcommands: take, give, set
 -   aliases: give
     cost: false
     module: admin
@@ -98,7 +100,10 @@
         permission: nucleus.exp.give.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: If you want to add raw experience, just add the number as an argument. If you want to add a specific number of levels, the argument can be of the form &quot;L30&quot; or &quot;30L&quot; (assuming you want to give 30 levels).
+    extendedDescription: If you want to add raw experience, just add the number as
+        an argument. If you want to add a specific number of levels, the argument
+        can be of the form &quot;L30&quot; or &quot;30L&quot; (assuming you want to
+        give 30 levels).
     warmup: false
     subcommands: ''
 -   aliases: set
@@ -117,7 +122,10 @@
         permission: nucleus.exp.set.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: If you want to set experience points, just add the number as an argument. If you want to set a specific number of levels, the argument can be of the form &quot;L30&quot; or &quot;30L&quot; (assuming you want to set at 30 levels).
+    extendedDescription: If you want to set experience points, just add the number
+        as an argument. If you want to set a specific number of levels, the argument
+        can be of the form &quot;L30&quot; or &quot;30L&quot; (assuming you want to
+        set at 30 levels).
     warmup: false
     subcommands: ''
 -   aliases: take
@@ -136,7 +144,11 @@
         permission: nucleus.exp.take.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: If you want to remove raw experience, just add the number as an argument. If you want to add a specific number of levels, the argument can be of the form &quot;L30&quot; or &quot;30L&quot; (assuming you want to take 30 levels).|br||br|Trying to take more experience than the player has will just zero their experience.
+    extendedDescription: If you want to remove raw experience, just add the number
+        as an argument. If you want to add a specific number of levels, the argument
+        can be of the form &quot;L30&quot; or &quot;30L&quot; (assuming you want to
+        take 30 levels).|br||br|Trying to take more experience than the player has
+        will just zero their experience.
     warmup: false
     subcommands: ''
 -   aliases: gamemode, gm
@@ -167,11 +179,13 @@
         permission: nucleus.gamemode.base
     -   module: admin
         defaultLevel: ADMIN
-        description: If "admin.separate-gamemode-permissions" is set in the config, allows the user to change a target's gamemode to spectator.
+        description: If "admin.separate-gamemode-permissions" is set in the config,
+            allows the user to change a target's gamemode to spectator.
         permission: nucleus.gamemode.modes.spectator
     -   module: admin
         defaultLevel: ADMIN
-        description: If "admin.separate-gamemode-permissions" is set in the config, allows the user to change a target's gamemode to survival.
+        description: If "admin.separate-gamemode-permissions" is set in the config,
+            allows the user to change a target's gamemode to survival.
         permission: nucleus.gamemode.modes.survival
     -   module: admin
         defaultLevel: ADMIN
@@ -183,7 +197,8 @@
         permission: nucleus.gamemode.exempt.cost
     -   module: admin
         defaultLevel: ADMIN
-        description: If "admin.separate-gamemode-permissions" is set in the config, allows the user to change a target's gamemode to creative.
+        description: If "admin.separate-gamemode-permissions" is set in the config,
+            allows the user to change a target's gamemode to creative.
         permission: nucleus.gamemode.modes.creative
     -   module: admin
         defaultLevel: ADMIN
@@ -195,11 +210,13 @@
         permission: nucleus.gamemode.others
     -   module: admin
         defaultLevel: ADMIN
-        description: If "admin.separate-gamemode-permissions" is set in the config, allows the user to change a target's gamemode to adventure.
+        description: If "admin.separate-gamemode-permissions" is set in the config,
+            allows the user to change a target's gamemode to adventure.
         permission: nucleus.gamemode.modes.adventure
     cooldown: true
     requiresMixin: false
-    essNotes: Currently no way to simply give '/creative' or '/gmc', for example, with no arguments, gamemode is required.
+    essNotes: Currently no way to simply give '/creative' or '/gmc', for example,
+        with no arguments, gamemode is required.
     warmup: true
     subcommands: ''
 -   aliases: kill
@@ -270,7 +287,11 @@
         permission: nucleus.killentity.exempt.warmup
     cooldown: true
     requiresMixin: false
-    extendedDescription: The entities that can be killed are:|br||br|- &quot;armorstand&quot;|br|- &quot;monster&quot;/&quot;hostile&quot;|br|- &quot;passive&quot;/&quot;animal&quot;|br|- &quot;player&quot;|br|- &quot;item&quot;|br||br|Multiple types can be selected at once. A world can be specified using -w, *or* a radius can be specified using -r. Both are optional.
+    extendedDescription: The entities that can be killed are:|br||br|- &quot;armorstand&quot;|br|-
+        &quot;monster&quot;/&quot;hostile&quot;|br|- &quot;passive&quot;/&quot;animal&quot;|br|-
+        &quot;player&quot;|br|- &quot;item&quot;|br||br|Multiple types can be selected
+        at once. A world can be specified using -w, *or* a radius can be specified
+        using -r. Both are optional.
     warmup: true
     subcommands: ''
 -   aliases: plainbroadcast, pbcast, pbc
@@ -344,7 +365,8 @@
     module: admin
     defaultLevel: ADMIN
     usageString: /tellplain ?|<target> <message…>
-    oneLineDescription: Allows the user to send a message to a player without prefixes or suffixes.
+    oneLineDescription: Allows the user to send a message to a player without prefixes
+        or suffixes.
     permissionbase: nucleus.tellplain
     simpleUsage: /tellplain <target> <message…>
     commandName: tellplain
@@ -355,7 +377,8 @@
         permission: nucleus.tellplain.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: This command is similar to Minecrafts /tellraw, but allows for Nucleus tokens and ampersand formatting.
+    extendedDescription: This command is similar to Minecrafts /tellraw, but allows
+        for Nucleus tokens and ampersand formatting.
     warmup: false
     subcommands: ''
 -   aliases: afk, away
@@ -375,7 +398,8 @@
     permissions:
     -   module: afk
         defaultLevel: ADMIN
-        description: If kick notifications are not sent to the server, players with this permission will still get these notifications.
+        description: If kick notifications are not sent to the server, players with
+            this permission will still get these notifications.
         permission: nucleus.afk.notify
     -   module: afk
         defaultLevel: USER
@@ -423,7 +447,8 @@
         permission: nucleus.afkrefresh.exempt.cost
     cooldown: true
     requiresMixin: false
-    extendedDescription: This asks Nucleus to invalidate the AFK permission cache, use this if you alter an online player's permissions.
+    extendedDescription: This asks Nucleus to invalidate the AFK permission cache,
+        use this if you alter an online player's permissions.
     warmup: true
     subcommands: ''
 -   aliases: back, return
@@ -433,7 +458,8 @@
     module: back
     defaultLevel: ADMIN
     usageString: /back ?|[-f]
-    oneLineDescription: Allows a user to return to their last place before death or warp.
+    oneLineDescription: Allows a user to return to their last place before death or
+        warp.
     essentialsEquivalents:
     - back
     - return
@@ -594,7 +620,8 @@
     module: chat
     defaultLevel: USER
     usageString: /me ?|<message>
-    oneLineDescription: Formats the next chat message as an action, using the format set by the server.
+    oneLineDescription: Formats the next chat message as an action, using the format
+        set by the server.
     essentialsEquivalents:
     - me
     - action
@@ -641,7 +668,8 @@
         permission: nucleus.commandspy.exempt.warmup
     -   module: command-spy
         defaultLevel: ADMIN
-        description: If granted, prevents commands from this player being sent to other command spies.
+        description: If granted, prevents commands from this player being sent to
+            other command spies.
         permission: nucleus.commandspy.exempt.target
     -   module: command-spy
         defaultLevel: ADMIN
@@ -663,7 +691,7 @@
     cost: false
     module: core
     defaultLevel: ADMIN
-    usageString: /nucleus debug|itemalias|save|setupperms|reload|clearcache|getuser|resetuser|update-messages|docgen|printperms|?|rebuildusercache|info|
+    usageString: /nucleus debug|itemalias|save|setupperms|reload|clearcache|getuser|update-messages|resetuser|docgen|printperms|?|rebuildusercache|info|
     oneLineDescription: Displays Nucleus version and module information.
     permissionbase: nucleus.nucleus
     simpleUsage: '/nucleus '
@@ -675,15 +703,18 @@
         permission: nucleus.nucleus.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: The Nucleus command allows access to sub commands that administer the entire plugin.
+    extendedDescription: The Nucleus command allows access to sub commands that administer
+        the entire plugin.
     warmup: false
-    subcommands: debug, itemalias, save, setupperms, reload, clearcache, getuser, resetuser, update-messages, docgen, printperms, rebuildusercache, info
+    subcommands: debug, itemalias, save, setupperms, reload, clearcache, getuser,
+        update-messages, resetuser, docgen, printperms, rebuildusercache, info
 -   aliases: clearcache
     cost: false
     module: core
     defaultLevel: ADMIN
     usageString: '/nucleus clearcache ?|[-f <f>] '
-    oneLineDescription: Clears the in-memory cache of users who have logged on in the past session, forcing Nucleus to read the data files on their next login.
+    oneLineDescription: Clears the in-memory cache of users who have logged on in
+        the past session, forcing Nucleus to read the data files on their next login.
     permissionbase: nucleus.nucleus.clearcache
     simpleUsage: '/nucleus clearcache [-f <f>] '
     commandName: nucleus clearcache
@@ -767,7 +798,8 @@
     module: core
     defaultLevel: ADMIN
     usageString: /nucleus debug setsession ?|[<true|false>]
-    oneLineDescription: Turns debug mode on or off for this session. The configuration file overrides this if debug mode is set to true.
+    oneLineDescription: Turns debug mode on or off for this session. The configuration
+        file overrides this if debug mode is set to true.
     permissionbase: nucleus.nucleus.debug.setsession
     simpleUsage: /nucleus debug setsession [<true|false>]
     commandName: nucleus debug setsession
@@ -808,7 +840,10 @@
         permission: nucleus.getuser.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: Occasionally, the Minecraft username cache gets out of sync with the rest of the system, and some commands that require a user fail. This command allows you to request updated information about a user from Mojang's server (via either a UUID or a current user name) and adds them to the cache.
+    extendedDescription: Occasionally, the Minecraft username cache gets out of sync
+        with the rest of the system, and some commands that require a user fail. This
+        command allows you to request updated information about a user from Mojang's
+        server (via either a UUID or a current user name) and adds them to the cache.
     warmup: false
     subcommands: ''
 -   aliases: info
@@ -816,7 +851,8 @@
     module: core
     defaultLevel: NONE
     usageString: /nucleus info ?|
-    oneLineDescription: Creates a file in the server root directory containing information about the server and Nucleus environment.
+    oneLineDescription: Creates a file in the server root directory containing information
+        about the server and Nucleus environment.
     permissionbase: nucleus.nucleus.info
     simpleUsage: '/nucleus info '
     commandName: nucleus info
@@ -935,7 +971,11 @@
         permission: nucleus.nucleus.rebuildusercache.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: Some operations that we might want to do might want to look at offline and online players, but unfortunately, as we store things as separate user files, it would take a lot of processing to get some simple data. The cache copies this all into one place. However, there is a chance it'll go stale, this command asks Nucleus to rebuild the cache.
+    extendedDescription: Some operations that we might want to do might want to look
+        at offline and online players, but unfortunately, as we store things as separate
+        user files, it would take a lot of processing to get some simple data. The
+        cache copies this all into one place. However, there is a chance it'll go
+        stale, this command asks Nucleus to rebuild the cache.
     warmup: false
     subcommands: ''
 -   aliases: reload
@@ -954,7 +994,9 @@
         permission: nucleus.nucleus.reload.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: This command will reload everything EXCEPT whether modules and/or commands are enabled.|br|A restart of the entire server is required for these two actions to take effect.
+    extendedDescription: This command will reload everything EXCEPT whether modules
+        and/or commands are enabled.|br|A restart of the entire server is required
+        for these two actions to take effect.
     warmup: false
     subcommands: ''
 -   aliases: resetuser
@@ -962,7 +1004,8 @@
     module: core
     defaultLevel: NONE
     usageString: /nucleus resetuser ?|[-a|-all <a>] <user>|<UUID>
-    oneLineDescription: Deletes all data in Nucleus, and optionally, Minecraft, for a player.
+    oneLineDescription: Deletes all data in Nucleus, and optionally, Minecraft, for
+        a player.
     permissionbase: nucleus.nucleus.resetuser
     simpleUsage: /nucleus resetuser [-a|-all <a>] <user>|<UUID>
     commandName: nucleus resetuser
@@ -973,7 +1016,10 @@
         permission: nucleus.nucleus.resetuser.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: This can be useful to clear out everything Nucleus knows about a player. However, if you want to delete Minecraft data, pass the &quot;-a&quot; flag. |br||br|This will not delete data stored by other plugins about this player.
+    extendedDescription: This can be useful to clear out everything Nucleus knows
+        about a player. However, if you want to delete Minecraft data, pass the &quot;-a&quot;
+        flag. |br||br|This will not delete data stored by other plugins about this
+        player.
     warmup: false
     subcommands: ''
 -   aliases: save
@@ -999,7 +1045,8 @@
     module: core
     defaultLevel: NONE
     usageString: /nucleus setupperms ?|<Nucleus Role> <Permission Group>
-    oneLineDescription: Allows the user to add the recommended permissions for either USER, MOD or ADMIN roles to a specified group.
+    oneLineDescription: Allows the user to add the recommended permissions for either
+        USER, MOD or ADMIN roles to a specified group.
     permissionbase: nucleus.nucleus.setupperms
     simpleUsage: /nucleus setupperms <Nucleus Role> <Permission Group>
     commandName: nucleus setupperms
@@ -1017,7 +1064,8 @@
     module: core
     defaultLevel: NONE
     usageString: '/nucleus update-messages ?|[-y <y>] '
-    oneLineDescription: Scans the messages file for keys that might not include all the required tokens and replaces them with the standard translation.
+    oneLineDescription: Scans the messages file for keys that might not include all
+        the required tokens and replaces them with the standard translation.
     permissionbase: nucleus.nucleus.update-messages
     simpleUsage: '/nucleus update-messages [-y <y>] '
     commandName: nucleus update-messages
@@ -1087,6 +1135,7 @@
 -   aliases: set
     cost: true
     isExactEssEquiv: false
+    rootAliases: settime, timeset
     module: environment
     defaultLevel: ADMIN
     usageString: /time set ?|[<world>] <time>
@@ -1310,15 +1359,18 @@
     rootAliases: nkittycannon
     module: fun
     defaultLevel: ADMIN
-    usageString: /kittycannon ?|[-f|-fire <f>] [-d|-damageentities <d>] [-b|-breakblocks <b>] [<subject>]
+    usageString: /kittycannon ?|[-f|-fire <f>] [-d|-damageentities <d>] [-b|-breakblocks
+        <b>] [<subject>]
     oneLineDescription: Fire exploding cats from your person.
     permissionbase: nucleus.kittycannon
-    simpleUsage: /kittycannon [-f|-fire <f>] [-d|-damageentities <d>] [-b|-breakblocks <b>] [<subject>]
+    simpleUsage: /kittycannon [-f|-fire <f>] [-d|-damageentities <d>] [-b|-breakblocks
+        <b>] [<subject>]
     commandName: kittycannon
     permissions:
     -   module: fun
         defaultLevel: ADMIN
-        description: If granted, the user can use the -f flag to cause fires with exploding ocelots.
+        description: If granted, the user can use the -f flag to cause fires with
+            exploding ocelots.
         permission: nucleus.kittycannon.fire
     -   module: fun
         defaultLevel: ADMIN
@@ -1330,7 +1382,8 @@
         permission: nucleus.kittycannon.base
     -   module: fun
         defaultLevel: ADMIN
-        description: If granted, the user can use the -b flag to break blocks with exploding ocelots.
+        description: If granted, the user can use the -b flag to break blocks with
+            exploding ocelots.
         permission: nucleus.kittycannon.break
     -   module: fun
         defaultLevel: ADMIN
@@ -1346,11 +1399,18 @@
         permission: nucleus.kittycannon.exempt.warmup
     -   module: fun
         defaultLevel: ADMIN
-        description: If granted, the user can use the -d flag to damage entities with exploding ocelots.
+        description: If granted, the user can use the -d flag to damage entities with
+            exploding ocelots.
         permission: nucleus.kittycannon.damage
     cooldown: true
     requiresMixin: false
-    extendedDescription: Ocelots will be fired from the target person, which explode within a short amount of time. The following flags are available (subject to permission):|br||br|* -d, --damage - damage entities that get caught in the explosion.|br|* -f, --fire - potentially set fire to blocks in the area of the explosion.|br|* -b, --break - break blocks in the vicinity of the explosion.|br||br|Any break or fire that might occur due to the exploding cat will be tracked as by being caused by the calling player by protection plugins.
+    extendedDescription: Ocelots will be fired from the target person, which explode
+        within a short amount of time. The following flags are available (subject
+        to permission):|br||br|* -d, --damage - damage entities that get caught in
+        the explosion.|br|* -f, --fire - potentially set fire to blocks in the area
+        of the explosion.|br|* -b, --break - break blocks in the vicinity of the explosion.|br||br|Any
+        break or fire that might occur due to the exploding cat will be tracked as
+        by being caused by the calling player by protection plugins.
     warmup: true
     subcommands: ''
 -   aliases: lightning, strike, smite, thor, shock
@@ -1424,7 +1484,8 @@
     module: geo-ip
     defaultLevel: ADMIN
     usageString: /geoip update ?|
-    oneLineDescription: Update the GeoIP database. It is recommended that you do this no more than once a month.
+    oneLineDescription: Update the GeoIP database. It is recommended that you do this
+        no more than once a month.
     permissionbase: nucleus.geoip.update
     simpleUsage: '/geoip update '
     commandName: geoip update
@@ -1455,7 +1516,8 @@
     permissions:
     -   module: home
         defaultLevel: USER
-        description: Allows the user to run the command /deletehome, Allows the user to run the command /home
+        description: Allows the user to run the command /home, Allows the user to
+            run the command /deletehome
         permission: nucleus.home.base
     cooldown: false
     requiresMixin: false
@@ -1503,7 +1565,8 @@
         permission: nucleus.home.exempt.cooldown
     -   module: home
         defaultLevel: USER
-        description: Allows the user to run the command /deletehome, Allows the user to run the command /home
+        description: Allows the user to run the command /home, Allows the user to
+            run the command /deletehome
         permission: nucleus.home.base
     -   module: home
         defaultLevel: ADMIN
@@ -1515,7 +1578,9 @@
         permission: nucleus.home.exempt.cost
     cooldown: true
     requiresMixin: false
-    extendedDescription: A home is a personal warp. They can be set using the /homeset command. If no home name is specified, the default of &quot;home&quot; is used.
+    extendedDescription: A home is a personal warp. They can be set using the /homeset
+        command. If no home name is specified, the default of &quot;home&quot; is
+        used.
     essNotes: '''/homes'' will list homes, ''/home'' will teleport like Essentials
         did.'
     warmup: true
@@ -1592,7 +1657,13 @@
         permission: nucleus.home.set.exempt.cooldown
     cooldown: true
     requiresMixin: false
-    extendedDescription: This command allows players to specify a &quot;personal warp&quot;, which is termed a &quot;home&quot;. By default, all players get one home, which can be controlled by assigning a number to the permission option &quot;home-count&quot;, of being giving the permission &quot;nucleus.home.set.unlimited&quot; for unlimited homes.|br||br|If no home name is specified, the default of &quot;home&quot; is used. If you try to set a home with a name that is already in use, the command will fail, unless the &quot;-o&quot; flag is specified.
+    extendedDescription: This command allows players to specify a &quot;personal warp&quot;,
+        which is termed a &quot;home&quot;. By default, all players get one home,
+        which can be controlled by assigning a number to the permission option &quot;home-count&quot;,
+        of being giving the permission &quot;nucleus.home.set.unlimited&quot; for
+        unlimited homes.|br||br|If no home name is specified, the default of &quot;home&quot;
+        is used. If you try to set a home with a name that is already in use, the
+        command will fail, unless the &quot;-o&quot; flag is specified.
     essNotes: ''
     warmup: true
     subcommands: ''
@@ -1671,7 +1742,8 @@
         permission: nucleus.info.base
     -   module: info
         defaultLevel: ADMIN
-        description: If granted, the player can run /info -l to see all the available info sections.
+        description: If granted, the player can run /info -l to see all the available
+            info sections.
         permission: nucleus.info.list
     cooldown: false
     requiresMixin: false
@@ -1685,7 +1757,8 @@
     module: info
     defaultLevel: USER
     usageString: /motd ?|
-    oneLineDescription: Allows the user to view the server MOTD, as defined in the "motd.txt" file.
+    oneLineDescription: Allows the user to view the server MOTD, as defined in the
+        "motd.txt" file.
     essentialsEquivalents:
     - motd
     permissionbase: nucleus.motd
@@ -1739,7 +1812,8 @@
     spongeVersion: 5.0.0
     defaultLevel: ADMIN
     usageString: /enderchest ?|[<subject>]
-    oneLineDescription: Allows the user to inspect their (or another player's) ender chest.
+    oneLineDescription: Allows the user to inspect their (or another player's) ender
+        chest.
     essentialsEquivalents:
     - enderchest
     - echest
@@ -1775,7 +1849,8 @@
         permission: nucleus.enderchest.exempt.cooldown
     -   module: inventory
         defaultLevel: ADMIN
-        description: Prevents the player from having their ender chest modified by others.
+        description: Prevents the player from having their ender chest modified by
+            others.
         permission: nucleus.enderchest.exempt.interact
     -   module: inventory
         defaultLevel: ADMIN
@@ -1783,13 +1858,17 @@
         permission: nucleus.enderchest.exempt.cost
     -   module: inventory
         defaultLevel: ADMIN
-        description: Prevents the player from having their ender chest modified by others.
+        description: Prevents the player from having their ender chest modified by
+            others.
         permission: nucleus.enderchest.exempt.modify
     nucleusVersion: 0.13.0
     cooldown: true
     requiresMixin: false
     minecraftVersion: 1.10.2
-    extendedDescription: Opens an Inventory GUI with the target player's ender chest displayed. Players wishing to inspect a different player's ender chest must have the &quot;nucleus.enderchest.others&quot; permission, and they must not have the &quot;nucleus.enderchest.exempt.target&quot; permission.
+    extendedDescription: Opens an Inventory GUI with the target player's ender chest
+        displayed. Players wishing to inspect a different player's ender chest must
+        have the &quot;nucleus.enderchest.others&quot; permission, and they must not
+        have the &quot;nucleus.enderchest.exempt.target&quot; permission.
     essNotes: ''
     warmup: true
     subcommands: ''
@@ -1832,7 +1911,9 @@
     cooldown: false
     requiresMixin: false
     minecraftVersion: 1.10.2
-    extendedDescription: Opens an Inventory GUI with the target player's inventory displayed, if they do not have the &quot;nucleus.invsee.exempt.target&quot; permission.
+    extendedDescription: Opens an Inventory GUI with the target player's inventory
+        displayed, if they do not have the &quot;nucleus.invsee.exempt.target&quot;
+        permission.
     essNotes: ''
     warmup: false
     subcommands: ''
@@ -1867,7 +1948,8 @@
         permission: nucleus.enchant.base
     -   module: item
         defaultLevel: ADMIN
-        description: Allows setting enchantments and levels that are not ordinarily available to the held item.
+        description: Allows setting enchantments and levels that are not ordinarily
+            available to the held item.
         permission: nucleus.enchant.unsafe
     -   module: item
         defaultLevel: ADMIN
@@ -1914,7 +1996,8 @@
     module: item
     defaultLevel: ADMIN
     usageString: /itemname clear ?|
-    oneLineDescription: Clears the name assigned to the item currently in the player's hand.
+    oneLineDescription: Clears the name assigned to the item currently in the player's
+        hand.
     permissionbase: nucleus.itemname.clear
     simpleUsage: '/itemname clear '
     commandName: itemname clear
@@ -1944,7 +2027,8 @@
     module: item
     defaultLevel: ADMIN
     usageString: /itemname set ?|<name…>
-    oneLineDescription: Sets the user facing name for the item currently in the player's hand.
+    oneLineDescription: Sets the user facing name for the item currently in the player's
+        hand.
     permissionbase: nucleus.itemname.set
     simpleUsage: /itemname set <name…>
     commandName: itemname set
@@ -2012,19 +2096,35 @@
     permissions:
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the warmup for /lore delete, Allows the user to bypass the warmup for /lore add, Allows the user to bypass the warmup for /lore clear, Allows the user to bypass the warmup for /lore set, Allows the user to bypass the warmup for /lore edit, Allows the user to bypass the warmup for /lore insert
+        description: Allows the user to bypass the warmup for /lore set, Allows the
+            user to bypass the warmup for /lore edit, Allows the user to bypass the
+            warmup for /lore insert, Allows the user to bypass the warmup for /lore
+            clear, Allows the user to bypass the warmup for /lore delete, Allows the
+            user to bypass the warmup for /lore add
         permission: nucleus.lore.set.exempt.warmup
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to run the command /lore delete, Allows the user to run the command /lore add, Allows the user to run the command /lore clear, Allows the user to run the command /lore set, Allows the user to run the command /lore edit, Allows the user to run the command /lore insert
+        description: Allows the user to run the command /lore set, Allows the user
+            to run the command /lore edit, Allows the user to run the command /lore
+            insert, Allows the user to run the command /lore clear, Allows the user
+            to run the command /lore delete, Allows the user to run the command /lore
+            add
         permission: nucleus.lore.set.base
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cooldown for /lore delete, Allows the user to bypass the cooldown for /lore add, Allows the user to bypass the cooldown for /lore clear, Allows the user to bypass the cooldown for /lore set, Allows the user to bypass the cooldown for /lore edit, Allows the user to bypass the cooldown for /lore insert
+        description: Allows the user to bypass the cooldown for /lore set, Allows
+            the user to bypass the cooldown for /lore edit, Allows the user to bypass
+            the cooldown for /lore insert, Allows the user to bypass the cooldown
+            for /lore clear, Allows the user to bypass the cooldown for /lore delete,
+            Allows the user to bypass the cooldown for /lore add
         permission: nucleus.lore.set.exempt.cooldown
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cost for /lore delete, Allows the user to bypass the cost for /lore add, Allows the user to bypass the cost for /lore clear, Allows the user to bypass the cost for /lore set, Allows the user to bypass the cost for /lore edit, Allows the user to bypass the cost for /lore insert
+        description: Allows the user to bypass the cost for /lore set, Allows the
+            user to bypass the cost for /lore edit, Allows the user to bypass the
+            cost for /lore insert, Allows the user to bypass the cost for /lore clear,
+            Allows the user to bypass the cost for /lore delete, Allows the user to
+            bypass the cost for /lore add
         permission: nucleus.lore.set.exempt.cost
     cooldown: true
     requiresMixin: false
@@ -2042,19 +2142,35 @@
     permissions:
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the warmup for /lore delete, Allows the user to bypass the warmup for /lore add, Allows the user to bypass the warmup for /lore clear, Allows the user to bypass the warmup for /lore set, Allows the user to bypass the warmup for /lore edit, Allows the user to bypass the warmup for /lore insert
+        description: Allows the user to bypass the warmup for /lore set, Allows the
+            user to bypass the warmup for /lore edit, Allows the user to bypass the
+            warmup for /lore insert, Allows the user to bypass the warmup for /lore
+            clear, Allows the user to bypass the warmup for /lore delete, Allows the
+            user to bypass the warmup for /lore add
         permission: nucleus.lore.set.exempt.warmup
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to run the command /lore delete, Allows the user to run the command /lore add, Allows the user to run the command /lore clear, Allows the user to run the command /lore set, Allows the user to run the command /lore edit, Allows the user to run the command /lore insert
+        description: Allows the user to run the command /lore set, Allows the user
+            to run the command /lore edit, Allows the user to run the command /lore
+            insert, Allows the user to run the command /lore clear, Allows the user
+            to run the command /lore delete, Allows the user to run the command /lore
+            add
         permission: nucleus.lore.set.base
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cooldown for /lore delete, Allows the user to bypass the cooldown for /lore add, Allows the user to bypass the cooldown for /lore clear, Allows the user to bypass the cooldown for /lore set, Allows the user to bypass the cooldown for /lore edit, Allows the user to bypass the cooldown for /lore insert
+        description: Allows the user to bypass the cooldown for /lore set, Allows
+            the user to bypass the cooldown for /lore edit, Allows the user to bypass
+            the cooldown for /lore insert, Allows the user to bypass the cooldown
+            for /lore clear, Allows the user to bypass the cooldown for /lore delete,
+            Allows the user to bypass the cooldown for /lore add
         permission: nucleus.lore.set.exempt.cooldown
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cost for /lore delete, Allows the user to bypass the cost for /lore add, Allows the user to bypass the cost for /lore clear, Allows the user to bypass the cost for /lore set, Allows the user to bypass the cost for /lore edit, Allows the user to bypass the cost for /lore insert
+        description: Allows the user to bypass the cost for /lore set, Allows the
+            user to bypass the cost for /lore edit, Allows the user to bypass the
+            cost for /lore insert, Allows the user to bypass the cost for /lore clear,
+            Allows the user to bypass the cost for /lore delete, Allows the user to
+            bypass the cost for /lore add
         permission: nucleus.lore.set.exempt.cost
     cooldown: true
     requiresMixin: false
@@ -2065,26 +2181,43 @@
     module: item
     defaultLevel: ADMIN
     usageString: /lore delete ?|<line>
-    oneLineDescription: Deletes a line of the lore on the current item in the hand at a specific line.
+    oneLineDescription: Deletes a line of the lore on the current item in the hand
+        at a specific line.
     permissionbase: nucleus.lore.set
     simpleUsage: /lore delete <line>
     commandName: lore delete
     permissions:
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the warmup for /lore delete, Allows the user to bypass the warmup for /lore add, Allows the user to bypass the warmup for /lore clear, Allows the user to bypass the warmup for /lore set, Allows the user to bypass the warmup for /lore edit, Allows the user to bypass the warmup for /lore insert
+        description: Allows the user to bypass the warmup for /lore set, Allows the
+            user to bypass the warmup for /lore edit, Allows the user to bypass the
+            warmup for /lore insert, Allows the user to bypass the warmup for /lore
+            clear, Allows the user to bypass the warmup for /lore delete, Allows the
+            user to bypass the warmup for /lore add
         permission: nucleus.lore.set.exempt.warmup
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to run the command /lore delete, Allows the user to run the command /lore add, Allows the user to run the command /lore clear, Allows the user to run the command /lore set, Allows the user to run the command /lore edit, Allows the user to run the command /lore insert
+        description: Allows the user to run the command /lore set, Allows the user
+            to run the command /lore edit, Allows the user to run the command /lore
+            insert, Allows the user to run the command /lore clear, Allows the user
+            to run the command /lore delete, Allows the user to run the command /lore
+            add
         permission: nucleus.lore.set.base
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cooldown for /lore delete, Allows the user to bypass the cooldown for /lore add, Allows the user to bypass the cooldown for /lore clear, Allows the user to bypass the cooldown for /lore set, Allows the user to bypass the cooldown for /lore edit, Allows the user to bypass the cooldown for /lore insert
+        description: Allows the user to bypass the cooldown for /lore set, Allows
+            the user to bypass the cooldown for /lore edit, Allows the user to bypass
+            the cooldown for /lore insert, Allows the user to bypass the cooldown
+            for /lore clear, Allows the user to bypass the cooldown for /lore delete,
+            Allows the user to bypass the cooldown for /lore add
         permission: nucleus.lore.set.exempt.cooldown
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cost for /lore delete, Allows the user to bypass the cost for /lore add, Allows the user to bypass the cost for /lore clear, Allows the user to bypass the cost for /lore set, Allows the user to bypass the cost for /lore edit, Allows the user to bypass the cost for /lore insert
+        description: Allows the user to bypass the cost for /lore set, Allows the
+            user to bypass the cost for /lore edit, Allows the user to bypass the
+            cost for /lore insert, Allows the user to bypass the cost for /lore clear,
+            Allows the user to bypass the cost for /lore delete, Allows the user to
+            bypass the cost for /lore add
         permission: nucleus.lore.set.exempt.cost
     cooldown: true
     requiresMixin: false
@@ -2095,26 +2228,43 @@
     module: item
     defaultLevel: ADMIN
     usageString: /lore edit ?|<line> <lore…>
-    oneLineDescription: Edits the lore on the current item in the hand at a specific line.
+    oneLineDescription: Edits the lore on the current item in the hand at a specific
+        line.
     permissionbase: nucleus.lore.set
     simpleUsage: /lore edit <line> <lore…>
     commandName: lore edit
     permissions:
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the warmup for /lore delete, Allows the user to bypass the warmup for /lore add, Allows the user to bypass the warmup for /lore clear, Allows the user to bypass the warmup for /lore set, Allows the user to bypass the warmup for /lore edit, Allows the user to bypass the warmup for /lore insert
+        description: Allows the user to bypass the warmup for /lore set, Allows the
+            user to bypass the warmup for /lore edit, Allows the user to bypass the
+            warmup for /lore insert, Allows the user to bypass the warmup for /lore
+            clear, Allows the user to bypass the warmup for /lore delete, Allows the
+            user to bypass the warmup for /lore add
         permission: nucleus.lore.set.exempt.warmup
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to run the command /lore delete, Allows the user to run the command /lore add, Allows the user to run the command /lore clear, Allows the user to run the command /lore set, Allows the user to run the command /lore edit, Allows the user to run the command /lore insert
+        description: Allows the user to run the command /lore set, Allows the user
+            to run the command /lore edit, Allows the user to run the command /lore
+            insert, Allows the user to run the command /lore clear, Allows the user
+            to run the command /lore delete, Allows the user to run the command /lore
+            add
         permission: nucleus.lore.set.base
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cooldown for /lore delete, Allows the user to bypass the cooldown for /lore add, Allows the user to bypass the cooldown for /lore clear, Allows the user to bypass the cooldown for /lore set, Allows the user to bypass the cooldown for /lore edit, Allows the user to bypass the cooldown for /lore insert
+        description: Allows the user to bypass the cooldown for /lore set, Allows
+            the user to bypass the cooldown for /lore edit, Allows the user to bypass
+            the cooldown for /lore insert, Allows the user to bypass the cooldown
+            for /lore clear, Allows the user to bypass the cooldown for /lore delete,
+            Allows the user to bypass the cooldown for /lore add
         permission: nucleus.lore.set.exempt.cooldown
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cost for /lore delete, Allows the user to bypass the cost for /lore add, Allows the user to bypass the cost for /lore clear, Allows the user to bypass the cost for /lore set, Allows the user to bypass the cost for /lore edit, Allows the user to bypass the cost for /lore insert
+        description: Allows the user to bypass the cost for /lore set, Allows the
+            user to bypass the cost for /lore edit, Allows the user to bypass the
+            cost for /lore insert, Allows the user to bypass the cost for /lore clear,
+            Allows the user to bypass the cost for /lore delete, Allows the user to
+            bypass the cost for /lore add
         permission: nucleus.lore.set.exempt.cost
     cooldown: true
     requiresMixin: false
@@ -2125,26 +2275,43 @@
     module: item
     defaultLevel: ADMIN
     usageString: /lore insert ?|<line> <lore…>
-    oneLineDescription: Inserts a new line to the lore on the current item in the hand at a specific line.
+    oneLineDescription: Inserts a new line to the lore on the current item in the
+        hand at a specific line.
     permissionbase: nucleus.lore.set
     simpleUsage: /lore insert <line> <lore…>
     commandName: lore insert
     permissions:
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the warmup for /lore delete, Allows the user to bypass the warmup for /lore add, Allows the user to bypass the warmup for /lore clear, Allows the user to bypass the warmup for /lore set, Allows the user to bypass the warmup for /lore edit, Allows the user to bypass the warmup for /lore insert
+        description: Allows the user to bypass the warmup for /lore set, Allows the
+            user to bypass the warmup for /lore edit, Allows the user to bypass the
+            warmup for /lore insert, Allows the user to bypass the warmup for /lore
+            clear, Allows the user to bypass the warmup for /lore delete, Allows the
+            user to bypass the warmup for /lore add
         permission: nucleus.lore.set.exempt.warmup
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to run the command /lore delete, Allows the user to run the command /lore add, Allows the user to run the command /lore clear, Allows the user to run the command /lore set, Allows the user to run the command /lore edit, Allows the user to run the command /lore insert
+        description: Allows the user to run the command /lore set, Allows the user
+            to run the command /lore edit, Allows the user to run the command /lore
+            insert, Allows the user to run the command /lore clear, Allows the user
+            to run the command /lore delete, Allows the user to run the command /lore
+            add
         permission: nucleus.lore.set.base
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cooldown for /lore delete, Allows the user to bypass the cooldown for /lore add, Allows the user to bypass the cooldown for /lore clear, Allows the user to bypass the cooldown for /lore set, Allows the user to bypass the cooldown for /lore edit, Allows the user to bypass the cooldown for /lore insert
+        description: Allows the user to bypass the cooldown for /lore set, Allows
+            the user to bypass the cooldown for /lore edit, Allows the user to bypass
+            the cooldown for /lore insert, Allows the user to bypass the cooldown
+            for /lore clear, Allows the user to bypass the cooldown for /lore delete,
+            Allows the user to bypass the cooldown for /lore add
         permission: nucleus.lore.set.exempt.cooldown
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cost for /lore delete, Allows the user to bypass the cost for /lore add, Allows the user to bypass the cost for /lore clear, Allows the user to bypass the cost for /lore set, Allows the user to bypass the cost for /lore edit, Allows the user to bypass the cost for /lore insert
+        description: Allows the user to bypass the cost for /lore set, Allows the
+            user to bypass the cost for /lore edit, Allows the user to bypass the
+            cost for /lore insert, Allows the user to bypass the cost for /lore clear,
+            Allows the user to bypass the cost for /lore delete, Allows the user to
+            bypass the cost for /lore add
         permission: nucleus.lore.set.exempt.cost
     cooldown: true
     requiresMixin: false
@@ -2155,26 +2322,43 @@
     module: item
     defaultLevel: ADMIN
     usageString: /lore set ?|<lore…>
-    oneLineDescription: Sets the lore on the current item in the hand. The current lore is replaced.
+    oneLineDescription: Sets the lore on the current item in the hand. The current
+        lore is replaced.
     permissionbase: nucleus.lore.set
     simpleUsage: /lore set <lore…>
     commandName: lore set
     permissions:
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the warmup for /lore delete, Allows the user to bypass the warmup for /lore add, Allows the user to bypass the warmup for /lore clear, Allows the user to bypass the warmup for /lore set, Allows the user to bypass the warmup for /lore edit, Allows the user to bypass the warmup for /lore insert
+        description: Allows the user to bypass the warmup for /lore set, Allows the
+            user to bypass the warmup for /lore edit, Allows the user to bypass the
+            warmup for /lore insert, Allows the user to bypass the warmup for /lore
+            clear, Allows the user to bypass the warmup for /lore delete, Allows the
+            user to bypass the warmup for /lore add
         permission: nucleus.lore.set.exempt.warmup
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to run the command /lore delete, Allows the user to run the command /lore add, Allows the user to run the command /lore clear, Allows the user to run the command /lore set, Allows the user to run the command /lore edit, Allows the user to run the command /lore insert
+        description: Allows the user to run the command /lore set, Allows the user
+            to run the command /lore edit, Allows the user to run the command /lore
+            insert, Allows the user to run the command /lore clear, Allows the user
+            to run the command /lore delete, Allows the user to run the command /lore
+            add
         permission: nucleus.lore.set.base
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cooldown for /lore delete, Allows the user to bypass the cooldown for /lore add, Allows the user to bypass the cooldown for /lore clear, Allows the user to bypass the cooldown for /lore set, Allows the user to bypass the cooldown for /lore edit, Allows the user to bypass the cooldown for /lore insert
+        description: Allows the user to bypass the cooldown for /lore set, Allows
+            the user to bypass the cooldown for /lore edit, Allows the user to bypass
+            the cooldown for /lore insert, Allows the user to bypass the cooldown
+            for /lore clear, Allows the user to bypass the cooldown for /lore delete,
+            Allows the user to bypass the cooldown for /lore add
         permission: nucleus.lore.set.exempt.cooldown
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cost for /lore delete, Allows the user to bypass the cost for /lore add, Allows the user to bypass the cost for /lore clear, Allows the user to bypass the cost for /lore set, Allows the user to bypass the cost for /lore edit, Allows the user to bypass the cost for /lore insert
+        description: Allows the user to bypass the cost for /lore set, Allows the
+            user to bypass the cost for /lore edit, Allows the user to bypass the
+            cost for /lore insert, Allows the user to bypass the cost for /lore clear,
+            Allows the user to bypass the cost for /lore delete, Allows the user to
+            bypass the cost for /lore add
         permission: nucleus.lore.set.exempt.cost
     cooldown: true
     requiresMixin: false
@@ -2293,7 +2477,8 @@
     module: item
     defaultLevel: ADMIN
     usageString: /skull ?|[<subject>] [<amount>]
-    oneLineDescription: Spawns in copies of the specified player's skull (or your own, if no player is specified) into your inventory.
+    oneLineDescription: Spawns in copies of the specified player's skull (or your
+        own, if no player is specified) into your inventory.
     essentialsEquivalents:
     - skull
     - playerskull
@@ -2352,7 +2537,8 @@
     module: jail
     defaultLevel: ADMIN
     usageString: /checkjailed ?|[<jail name>]
-    oneLineDescription: Checks the user cache for jailed players, optionally in the specified jail.
+    oneLineDescription: Checks the user cache for jailed players, optionally in the
+        specified jail.
     permissionbase: nucleus.checkjailed
     simpleUsage: /checkjailed [<jail name>]
     commandName: checkjailed
@@ -2510,7 +2696,8 @@
     module: jump
     defaultLevel: ADMIN
     usageString: /jump ?|
-    oneLineDescription: Perform a short range "jump" to the block they are looking at.
+    oneLineDescription: Perform a short range "jump" to the block they are looking
+        at.
     essentialsEquivalents:
     - jump
     - j
@@ -2607,7 +2794,10 @@
         permission: nucleus.top.exempt.cost
     cooldown: true
     requiresMixin: false
-    extendedDescription: By default, /top will not teleport a player into an unsafe situation. This might result in moving slightly in the x or z directions, or not teleport the player at all. To teleport without regard for player safety, add &quot;-f&quot; to the command.
+    extendedDescription: By default, /top will not teleport a player into an unsafe
+        situation. This might result in moving slightly in the x or z directions,
+        or not teleport the player at all. To teleport without regard for player safety,
+        add &quot;-f&quot; to the command.
     essNotes: ''
     warmup: true
     subcommands: ''
@@ -2617,7 +2807,8 @@
     module: jump
     defaultLevel: ADMIN
     usageString: /unstuck ?|
-    oneLineDescription: Attempts to nudge players by one block to unstick them, if possible.
+    oneLineDescription: Attempts to nudge players by one block to unstick them, if
+        possible.
     permissionbase: nucleus.unstuck
     simpleUsage: '/unstuck '
     commandName: unstuck
@@ -2697,7 +2888,9 @@
         permission: nucleus.kickall.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: If the command is executed by a player on the server, the executing player will not be kicked. To turn the whitelist on when kicking everyone, use the &quot;-w&quot; flag.
+    extendedDescription: If the command is executed by a player on the server, the
+        executing player will not be kicked. To turn the whitelist on when kicking
+        everyone, use the &quot;-w&quot; flag.
     essNotes: ''
     warmup: false
     subcommands: ''
@@ -2707,7 +2900,8 @@
     module: kit
     defaultLevel: ADMIN
     usageString: /firstjoinkit ?|
-    oneLineDescription: First join kits are now regular kits that are autoredeemed for new players.
+    oneLineDescription: First join kits are now regular kits that are autoredeemed
+        for new players.
     permissionbase: nucleus.firstjoinkit
     simpleUsage: '/firstjoinkit '
     commandName: firstjoinkit
@@ -2718,7 +2912,9 @@
         permission: nucleus.firstjoinkit.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: Create a normal kit, then use `/kit setfirstjoin <kit> true`. This will make a kit a first join kit.|br||br|If you had a first join kit before, it is now the kit &quot;firstjoinkit&quot;.
+    extendedDescription: Create a normal kit, then use `/kit setfirstjoin <kit> true`.
+        This will make a kit a first join kit.|br||br|If you had a first join kit
+        before, it is now the kit &quot;firstjoinkit&quot;.
     warmup: false
     subcommands: ''
 -   aliases: kit
@@ -2727,7 +2923,7 @@
     rootAliases: nkit
     module: kit
     defaultLevel: ADMIN
-    usageString: /kit add|give|set|cost|hidden|edit|setcooldown|list|remove|command|toggleredeemmessage|autoredeem|permissionbypass|create|resetusage|onetime|setfirstjoin|?|<kit>
+    usageString: /kit add|give|set|cost|hidden|edit|setcooldown|list|remove|command|toggleredeemmessage|view|autoredeem|permissionbypass|create|resetusage|onetime|setfirstjoin|info|?|<kit>
     oneLineDescription: Redeems a kit.
     essentialsEquivalents:
     - kit, kits
@@ -2763,7 +2959,9 @@
     requiresMixin: false
     essNotes: '''/kit'' redeems, ''/kits'' lists.'
     warmup: true
-    subcommands: add, give, set, cost, hidden, edit, setcooldown, list, remove, command, toggleredeemmessage, autoredeem, permissionbypass, create, resetusage, onetime, setfirstjoin
+    subcommands: add, give, set, cost, hidden, edit, setcooldown, list, remove, command,
+        toggleredeemmessage, view, autoredeem, permissionbypass, create, resetusage,
+        onetime, setfirstjoin, info
 -   aliases: add, createFromInventory
     cost: false
     module: kit
@@ -2780,7 +2978,11 @@
         permission: nucleus.kit.add.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: This command takes a snapshot of your inventory (excluding your armor) and creates the named kit with it.|br||br|The kit can be updated using the /kit edit or /kit set commands, depending on whether you want to use a GUI to edit the kit, or replace the kit with a new copy of your inventory.|br||br|See also /kit create if you want to create a kit via a GUI.
+    extendedDescription: This command takes a snapshot of your inventory (excluding
+        your armor) and creates the named kit with it.|br||br|The kit can be updated
+        using the /kit edit or /kit set commands, depending on whether you want to
+        use a GUI to edit the kit, or replace the kit with a new copy of your inventory.|br||br|See
+        also /kit create if you want to create a kit via a GUI.
     warmup: false
     subcommands: ''
 -   aliases: autoredeem
@@ -2799,7 +3001,9 @@
         permission: nucleus.kit.autoredeem.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: A kit set to automatically redeem will be given to a player when they login if they are currently eligible to redeem the kit using &quot;/kit name&quot;.
+    extendedDescription: A kit set to automatically redeem will be given to a player
+        when they login if they are currently eligible to redeem the kit using &quot;/kit
+        name&quot;.
     warmup: false
     subcommands: ''
 -   aliases: command, commands
@@ -2818,7 +3022,9 @@
         permission: nucleus.kit.command.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: Commands are executed as the SERVER. This could allow players that get access to this command to cause serious havoc. Please only give edit and add commands to TRUSTED players.
+    extendedDescription: Commands are executed as the SERVER. This could allow players
+        that get access to this command to cause serious havoc. Please only give edit
+        and add commands to TRUSTED players.
     warmup: false
     subcommands: add, edit, clear, remove
 -   aliases: add, +
@@ -2851,7 +3057,8 @@
     permissions:
     -   module: kit
         defaultLevel: NONE
-        description: Allows the user to run the command /command clear, Allows the user to run the command /command remove
+        description: Allows the user to run the command /command remove, Allows the
+            user to run the command /command clear
         permission: nucleus.kit.command.remove.base
     cooldown: false
     requiresMixin: false
@@ -2862,7 +3069,8 @@
     module: kit
     defaultLevel: NONE
     usageString: /kit command edit ?|<kit>
-    oneLineDescription: Opens an in game GUI that lists all commands in the kit as books.
+    oneLineDescription: Opens an in game GUI that lists all commands in the kit as
+        books.
     permissionbase: nucleus.kit.command.edit
     simpleUsage: /kit command edit <kit>
     commandName: kit command edit
@@ -2873,7 +3081,8 @@
         permission: nucleus.kit.command.edit.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: This also allows you to add/remove commands by adding/removing signed and unsigned books.
+    extendedDescription: This also allows you to add/remove commands by adding/removing
+        signed and unsigned books.
     warmup: false
     subcommands: ''
 -   aliases: remove, del, -
@@ -2888,11 +3097,16 @@
     permissions:
     -   module: kit
         defaultLevel: NONE
-        description: Allows the user to run the command /command clear, Allows the user to run the command /command remove
+        description: Allows the user to run the command /command remove, Allows the
+            user to run the command /command clear
         permission: nucleus.kit.command.remove.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: There are two ways to specify which command to remove:|br||br|* via. index, where the index is the number displayed in &quot;/kit command <kit>&quot;|br|* via. command, where you can specify the entire command to remove.|br||br|If you are playing on the server, it might be easier to use the click interface in &quot;/kit command&quot; or &quot;/kit command edit&quot;
+    extendedDescription: There are two ways to specify which command to remove:|br||br|*
+        via. index, where the index is the number displayed in &quot;/kit command
+        <kit>&quot;|br|* via. command, where you can specify the entire command to
+        remove.|br||br|If you are playing on the server, it might be easier to use
+        the click interface in &quot;/kit command&quot; or &quot;/kit command edit&quot;
     warmup: false
     subcommands: ''
 -   aliases: cost, setcost
@@ -2919,7 +3133,8 @@
     spongeVersion: '5.0'
     defaultLevel: ADMIN
     usageString: /kit create ?|<name>
-    oneLineDescription: Opens a chest window and lets you create a kit through the Minecraft inventory interface.
+    oneLineDescription: Opens a chest window and lets you create a kit through the
+        Minecraft inventory interface.
     permissionbase: nucleus.kit.create
     simpleUsage: /kit create <name>
     commandName: kit create
@@ -2932,7 +3147,13 @@
     cooldown: false
     requiresMixin: false
     minecraftVersion: 1.10.2
-    extendedDescription: This command opens a GUI and allows you to use the standard Minecraft inventory GUI to create the named kit. Any items placed in the kit will be returned to you when you close the GUI, and the kit will be created.|br||br|The kit can be updated using the /kit edit or /kit set commands, depending on whether you want to use a GUI to edit the kit, or replace the kit with a new copy of your inventory.|br||br|See also /kit add if you want to create a kit by taking a snapshot of your inventory.
+    extendedDescription: This command opens a GUI and allows you to use the standard
+        Minecraft inventory GUI to create the named kit. Any items placed in the kit
+        will be returned to you when you close the GUI, and the kit will be created.|br||br|The
+        kit can be updated using the /kit edit or /kit set commands, depending on
+        whether you want to use a GUI to edit the kit, or replace the kit with a new
+        copy of your inventory.|br||br|See also /kit add if you want to create a kit
+        by taking a snapshot of your inventory.
     warmup: false
     subcommands: ''
 -   aliases: edit, ed
@@ -2954,7 +3175,10 @@
     cooldown: false
     requiresMixin: false
     minecraftVersion: 1.10.2
-    extendedDescription: This command opens a GUI and allows you to use the standard Minecraft inventory GUI to edit the named kit. |br||br|See /kit set if you want to update the kit by taking a snapshot of your inventory. See /firstjoinkit edit if you want edit the initial inventory of new players.
+    extendedDescription: This command opens a GUI and allows you to use the standard
+        Minecraft inventory GUI to edit the named kit. |br||br|See /kit set if you
+        want to update the kit by taking a snapshot of your inventory. See /firstjoinkit
+        edit if you want edit the initial inventory of new players.
     warmup: false
     subcommands: ''
 -   aliases: give
@@ -2973,7 +3197,8 @@
         permission: nucleus.kit.give.exempt.warmup
     -   module: kit
         defaultLevel: ADMIN
-        description: Allows the user to grant kits to those who would not ordinarily be able to obtain a kit using the -i flag.
+        description: Allows the user to grant kits to those who would not ordinarily
+            be able to obtain a kit using the -i flag.
         permission: nucleus.kit.give.overridecheck
     -   module: kit
         defaultLevel: ADMIN
@@ -2989,7 +3214,12 @@
         permission: nucleus.kit.give.exempt.cost
     cooldown: true
     requiresMixin: false
-    extendedDescription: Allows you to redeem the contents of a kit on another player. By default, this command will normally NOT redeem a kit on a player would not normally be able to redeem the kit. It will also  mark the kit as redeemed on the target player - however, it will never charge them.|br||br|This behaviour can be overridden using the &quot;-i&quot; flag, which will ignore all cooldowns, and will not mark that the kit has been redeemed.
+    extendedDescription: Allows you to redeem the contents of a kit on another player.
+        By default, this command will normally NOT redeem a kit on a player would
+        not normally be able to redeem the kit. It will also  mark the kit as redeemed
+        on the target player - however, it will never charge them.|br||br|This behaviour
+        can be overridden using the &quot;-i&quot; flag, which will ignore all cooldowns,
+        and will not mark that the kit has been redeemed.
     warmup: true
     subcommands: ''
 -   aliases: hidden
@@ -3008,6 +3238,27 @@
         permission: nucleus.kit.hidden.base
     cooldown: false
     requiresMixin: false
+    warmup: false
+    subcommands: ''
+-   aliases: info
+    cost: false
+    module: kit
+    spongeVersion: '7.0'
+    defaultLevel: ADMIN
+    usageString: /kit info ?|<kit>
+    oneLineDescription: Lists information about the kit.
+    permissionbase: nucleus.kit.info
+    simpleUsage: /kit info <kit>
+    commandName: kit info
+    permissions:
+    -   module: kit
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /kit info
+        permission: nucleus.kit.info.base
+    nucleusVersion: '1.2'
+    cooldown: false
+    requiresMixin: false
+    minecraftVersion: 1.12.1
     warmup: false
     subcommands: ''
 -   aliases: list, ls
@@ -3045,7 +3296,9 @@
         permission: nucleus.kit.onetime.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: A one time use kit is exactly that, a kit that may be used only once. If you wish to give a kit to a player upon joining for the first time, consider using &quot;/firstjoinkit&quot; instead.
+    extendedDescription: A one time use kit is exactly that, a kit that may be used
+        only once. If you wish to give a kit to a player upon joining for the first
+        time, consider using &quot;/firstjoinkit&quot; instead.
     warmup: false
     subcommands: ''
 -   aliases: permissionbypass
@@ -3053,7 +3306,8 @@
     module: kit
     defaultLevel: ADMIN
     usageString: /kit permissionbypass ?|<kit> <true|false>
-    oneLineDescription: Sets whether a separate permission is required to redeem a kit, if separate permissions is enabled in the config.
+    oneLineDescription: Sets whether a separate permission is required to redeem a
+        kit, if separate permissions is enabled in the config.
     permissionbase: nucleus.kit.permissionbypass
     simpleUsage: /kit permissionbypass <kit> <true|false>
     commandName: kit permissionbypass
@@ -3089,7 +3343,8 @@
     module: kit
     defaultLevel: ADMIN
     usageString: /kit resetusage ?|<subject> <kit>
-    oneLineDescription: Resets a player's usage of a kit, allowing them to redeem the kit again immediately.
+    oneLineDescription: Resets a player's usage of a kit, allowing them to redeem
+        the kit again immediately.
     permissionbase: nucleus.kit.resetusage
     simpleUsage: /kit resetusage <subject> <kit>
     commandName: kit resetusage
@@ -3118,7 +3373,9 @@
         permission: nucleus.kit.set.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: This command takes a snapshot of your inventory (excluding your armor) and updates the contents of the named kit with it.|br||br|See also /kit edit if you want to edit a kit via a GUI.
+    extendedDescription: This command takes a snapshot of your inventory (excluding
+        your armor) and updates the contents of the named kit with it.|br||br|See
+        also /kit edit if you want to edit a kit via a GUI.
     warmup: false
     subcommands: ''
 -   aliases: setcooldown, setinterval
@@ -3137,7 +3394,8 @@
         permission: nucleus.kit.setcooldown.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: The cooldown must be specified in the form 1w1d1h1m1s, where 1 hour 5 minutes would be &quot;1h5m&quot;.
+    extendedDescription: The cooldown must be specified in the form 1w1d1h1m1s, where
+        1 hour 5 minutes would be &quot;1h5m&quot;.
     warmup: false
     subcommands: ''
 -   aliases: setfirstjoin, firstjoin
@@ -3145,7 +3403,8 @@
     module: kit
     defaultLevel: ADMIN
     usageString: /kit setfirstjoin ?|<kit> <true|false>
-    oneLineDescription: Sets up a kit so it gets redeemed for every new player that joins the server.
+    oneLineDescription: Sets up a kit so it gets redeemed for every new player that
+        joins the server.
     permissionbase: nucleus.kit.setfirstjoin
     simpleUsage: /kit setfirstjoin <kit> <true|false>
     commandName: kit setfirstjoin
@@ -3163,7 +3422,8 @@
     module: kit
     defaultLevel: ADMIN
     usageString: /kit toggleredeemmessage ?|<kit> <displayMessageToggle>
-    oneLineDescription: Sets or unsets whether redeeming a kit will notify the target user.
+    oneLineDescription: Sets or unsets whether redeeming a kit will notify the target
+        user.
     permissionbase: nucleus.kit.toggleredeemmessage
     simpleUsage: /kit toggleredeemmessage <kit> <displayMessageToggle>
     commandName: kit toggleredeemmessage
@@ -3174,6 +3434,27 @@
         permission: nucleus.kit.toggleredeemmessage.base
     cooldown: false
     requiresMixin: false
+    warmup: false
+    subcommands: ''
+-   aliases: view
+    cost: false
+    module: kit
+    spongeVersion: '7.0'
+    defaultLevel: ADMIN
+    usageString: /kit view ?|<kit>
+    oneLineDescription: View the contents of a kit.
+    permissionbase: nucleus.kit.view
+    simpleUsage: /kit view <kit>
+    commandName: kit view
+    permissions:
+    -   module: kit
+        defaultLevel: ADMIN
+        description: Allows the user to run the command /kit view
+        permission: nucleus.kit.view.base
+    nucleusVersion: '1.2'
+    cooldown: false
+    requiresMixin: false
+    minecraftVersion: 1.12.1
     warmup: false
     subcommands: ''
 -   aliases: mail, email
@@ -3327,11 +3608,13 @@
     permissions:
     -   module: message
         defaultLevel: ADMIN
-        description: Allows the user to bypass the warmup for /reply, Allows the user to bypass the warmup for /message
+        description: Allows the user to bypass the warmup for /reply, Allows the user
+            to bypass the warmup for /message
         permission: nucleus.message.exempt.warmup
     -   module: message
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cost for /reply, Allows the user to bypass the cost for /message
+        description: Allows the user to bypass the cost for /reply, Allows the user
+            to bypass the cost for /message
         permission: nucleus.message.exempt.cost
     -   module: message
         defaultLevel: ADMIN
@@ -3347,7 +3630,8 @@
         permission: nucleus.message.color
     -   module: message
         defaultLevel: USER
-        description: Allows the user to run the command /reply, Allows the user to run the command /message
+        description: Allows the user to run the command /reply, Allows the user to
+            run the command /message
         permission: nucleus.message.base
     -   module: message
         defaultLevel: ADMIN
@@ -3359,7 +3643,8 @@
         permission: nucleus.message.url
     -   module: message
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cooldown for /reply, Allows the user to bypass the cooldown for /message
+        description: Allows the user to bypass the cooldown for /reply, Allows the
+            user to bypass the cooldown for /message
         permission: nucleus.message.exempt.cooldown
     cooldown: true
     requiresMixin: false
@@ -3379,7 +3664,8 @@
     permissions:
     -   module: message
         defaultLevel: ADMIN
-        description: Allows the user to send a message to players that have set "/msgtoggle" to false.
+        description: Allows the user to send a message to players that have set "/msgtoggle"
+            to false.
         permission: nucleus.msgtoggle.bypass
     -   module: message
         defaultLevel: ADMIN
@@ -3387,7 +3673,8 @@
         permission: nucleus.msgtoggle.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: If you have this toggled to false, players with the &quot;nucleus.msgtoggle.bypass&quot; permission can still message you.
+    extendedDescription: If you have this toggled to false, players with the &quot;nucleus.msgtoggle.bypass&quot;
+        permission can still message you.
     warmup: false
     subcommands: ''
 -   aliases: reply, r
@@ -3407,19 +3694,23 @@
     permissions:
     -   module: message
         defaultLevel: ADMIN
-        description: Allows the user to bypass the warmup for /reply, Allows the user to bypass the warmup for /message
+        description: Allows the user to bypass the warmup for /reply, Allows the user
+            to bypass the warmup for /message
         permission: nucleus.message.exempt.warmup
     -   module: message
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cost for /reply, Allows the user to bypass the cost for /message
+        description: Allows the user to bypass the cost for /reply, Allows the user
+            to bypass the cost for /message
         permission: nucleus.message.exempt.cost
     -   module: message
         defaultLevel: USER
-        description: Allows the user to run the command /reply, Allows the user to run the command /message
+        description: Allows the user to run the command /reply, Allows the user to
+            run the command /message
         permission: nucleus.message.base
     -   module: message
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cooldown for /reply, Allows the user to bypass the cooldown for /message
+        description: Allows the user to bypass the cooldown for /reply, Allows the
+            user to bypass the cooldown for /message
         permission: nucleus.message.exempt.cooldown
     cooldown: true
     requiresMixin: false
@@ -3446,7 +3737,8 @@
         permission: nucleus.socialspy.base
     -   module: message
         defaultLevel: NONE
-        description: If granted, along with the "nucleus.socialspy.base" permission, the target player cannot turn social spy off.
+        description: If granted, along with the "nucleus.socialspy.base" permission,
+            the target player cannot turn social spy off.
         permission: nucleus.socialspy.force
     cooldown: false
     requiresMixin: false
@@ -3728,7 +4020,8 @@
         permission: nucleus.serverstat.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: This command displays information about the server, the JVM, and each world.
+    extendedDescription: This command displays information about the server, the JVM,
+        and each world.
     essNotes: ''
     warmup: false
     subcommands: ''
@@ -3758,7 +4051,8 @@
     module: misc
     defaultLevel: ADMIN
     usageString: /speed ?|[<player>] [<fly|f|flying|w|walk>] [<speed>]
-    oneLineDescription: Set the specified player's walking or flying speed, where "1" is normal walking speed.
+    oneLineDescription: Set the specified player's walking or flying speed, where
+        "1" is normal walking speed.
     essentialsEquivalents:
     - speed
     - flyspeed
@@ -3775,7 +4069,8 @@
         permission: nucleus.speed.others
     -   module: misc
         defaultLevel: NONE
-        description: Allows the user to specified a speed greater than the max speed set in the config file.
+        description: Allows the user to specified a speed greater than the max speed
+            set in the config file.
         permission: nucleus.speed.exempt.max
     -   module: misc
         defaultLevel: ADMIN
@@ -3795,7 +4090,8 @@
         permission: nucleus.speed.exempt.cooldown
     cooldown: true
     requiresMixin: false
-    essNotes: This command either uses your current state or a specified argument to determine whether to alter fly or walk speed.
+    essNotes: This command either uses your current state or a specified argument
+        to determine whether to alter fly or walk speed.
     warmup: true
     subcommands: ''
 -   aliases: suicide
@@ -3926,7 +4222,8 @@
     module: mute
     defaultLevel: ADMIN
     usageString: /globalmute ?|[<turn on>]
-    oneLineDescription: Enable or disable a server wide mute. Anyone that has the permission "nucleus.globalmute.voice.auto" will always have voice.
+    oneLineDescription: Enable or disable a server wide mute. Anyone that has the
+        permission "nucleus.globalmute.voice.auto" will always have voice.
     permissionbase: nucleus.globalmute
     simpleUsage: /globalmute [<turn on>]
     commandName: globalmute
@@ -3937,7 +4234,12 @@
         permission: nucleus.globalmute.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: Global muting is useful for times where you want to have an announcement or you need to defuse a server wide solution. Global mutes do not change a user's mute status, and do not persist across server restarts. All players with voice (apart from those with permission) are de-voiced when the global mute is turned on. |br||br|If you wish to allow someone to talk during a global mute period, you can grant them &quot;/voice&quot;.
+    extendedDescription: Global muting is useful for times where you want to have
+        an announcement or you need to defuse a server wide solution. Global mutes
+        do not change a user's mute status, and do not persist across server restarts.
+        All players with voice (apart from those with permission) are de-voiced when
+        the global mute is turned on. |br||br|If you wish to allow someone to talk
+        during a global mute period, you can grant them &quot;/voice&quot;.
     warmup: false
     subcommands: ''
 -   aliases: mute, unmute
@@ -3969,7 +4271,8 @@
         permission: nucleus.mute.base
     -   module: mute
         defaultLevel: ADMIN
-        description: If true and enabled in the config, players with this permission will see chat from muted players.
+        description: If true and enabled in the config, players with this permission
+            will see chat from muted players.
         permission: nucleus.mute.seemutedchat
     -   module: mute
         defaultLevel: ADMIN
@@ -4001,7 +4304,8 @@
         permission: nucleus.globalmute.voice.auto
     -   module: mute
         defaultLevel: ADMIN
-        description: If granted, this user is told when a player's voice status is changed.
+        description: If granted, this user is told when a player's voice status is
+            changed.
         permission: nucleus.globalmute.voice.notify
     -   module: mute
         defaultLevel: ADMIN
@@ -4009,7 +4313,10 @@
         permission: nucleus.globalmute.voice.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: If a server is globally muted, a player can be given the right to speak using the &quot;/voice&quot; command. This will allow messages being sent by the user too. This status may also be revoked if granted by running the &quot;/voice&quot; command again.
+    extendedDescription: If a server is globally muted, a player can be given the
+        right to speak using the &quot;/voice&quot; command. This will allow messages
+        being sent by the user too. This status may also be revoked if granted by
+        running the &quot;/voice&quot; command again.
     warmup: false
     subcommands: ''
 -   aliases: nameban
@@ -4018,7 +4325,8 @@
     module: nameban
     defaultLevel: ADMIN
     usageString: /nameban ?|<name> [<reason…>]
-    oneLineDescription: Bans a specific IGN (rather than specific player) from joining the server.
+    oneLineDescription: Bans a specific IGN (rather than specific player) from joining
+        the server.
     permissionbase: nucleus.nameban
     simpleUsage: /nameban <name> [<reason…>]
     commandName: nameban
@@ -4029,7 +4337,12 @@
         permission: nucleus.nameban.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: Using /nameban, instead of /ban, prevents any player with a specific username from joining the server - allowing them to join if they subsequently change their name. This does not affect server level nicknames, this is their Mojang registered nicknames. |br||br|A reason can be given for banning a specific name. This is intended to prevent the use of offensive usernames on servers.
+    extendedDescription: Using /nameban, instead of /ban, prevents any player with
+        a specific username from joining the server - allowing them to join if they
+        subsequently change their name. This does not affect server level nicknames,
+        this is their Mojang registered nicknames. |br||br|A reason can be given for
+        banning a specific name. This is intended to prevent the use of offensive
+        usernames on servers.
     warmup: false
     subcommands: ''
 -   aliases: nameunban, namepardon
@@ -4038,7 +4351,8 @@
     module: nameban
     defaultLevel: ADMIN
     usageString: /nameunban ?|<name>
-    oneLineDescription: Allows a specific IGN (rather than specific player) to join the server again.
+    oneLineDescription: Allows a specific IGN (rather than specific player) to join
+        the server again.
     permissionbase: nucleus.nameban.unban
     simpleUsage: /nameunban <name>
     commandName: nameunban
@@ -4064,19 +4378,23 @@
     permissions:
     -   module: nickname
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cooldown for /delnick, Allows the user to bypass the cooldown for /nick
+        description: Allows the user to bypass the cooldown for /nick, Allows the
+            user to bypass the cooldown for /delnick
         permission: nucleus.nick.exempt.cooldown
     -   module: nickname
         defaultLevel: ADMIN
-        description: Allows the user to bypass the warmup for /delnick, Allows the user to bypass the warmup for /nick
+        description: Allows the user to bypass the warmup for /nick, Allows the user
+            to bypass the warmup for /delnick
         permission: nucleus.nick.exempt.warmup
     -   module: nickname
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cost for /delnick, Allows the user to bypass the cost for /nick
+        description: Allows the user to bypass the cost for /nick, Allows the user
+            to bypass the cost for /delnick
         permission: nucleus.nick.exempt.cost
     -   module: nickname
         defaultLevel: ADMIN
-        description: Allows the user to run the command /delnick, Allows the user to run the command /nick
+        description: Allows the user to run the command /nick, Allows the user to
+            run the command /delnick
         permission: nucleus.nick.base
     cooldown: true
     requiresMixin: false
@@ -4123,7 +4441,8 @@
         permission: nucleus.nick.color.white
     -   module: nickname
         defaultLevel: ADMIN
-        description: Allows the user to bypass the warmup for /delnick, Allows the user to bypass the warmup for /nick
+        description: Allows the user to bypass the warmup for /nick, Allows the user
+            to bypass the warmup for /delnick
         permission: nucleus.nick.exempt.warmup
     -   module: nickname
         defaultLevel: ADMIN
@@ -4131,7 +4450,8 @@
         permission: nucleus.nick.colour.dark_gray
     -   module: nickname
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cost for /delnick, Allows the user to bypass the cost for /nick
+        description: Allows the user to bypass the cost for /nick, Allows the user
+            to bypass the cost for /delnick
         permission: nucleus.nick.exempt.cost
     -   module: nickname
         defaultLevel: ADMIN
@@ -4171,7 +4491,8 @@
         permission: nucleus.nick.color.dark_red
     -   module: nickname
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cooldown for /delnick, Allows the user to bypass the cooldown for /nick
+        description: Allows the user to bypass the cooldown for /nick, Allows the
+            user to bypass the cooldown for /delnick
         permission: nucleus.nick.exempt.cooldown
     -   module: nickname
         defaultLevel: ADMIN
@@ -4179,7 +4500,8 @@
         permission: nucleus.nick.color.aqua
     -   module: nickname
         defaultLevel: ADMIN
-        description: Allows the user to run the command /delnick, Allows the user to run the command /nick
+        description: Allows the user to run the command /nick, Allows the user to
+            run the command /delnick
         permission: nucleus.nick.base
     -   module: nickname
         defaultLevel: ADMIN
@@ -4555,7 +4877,8 @@
         permission: nucleus.seen.exempt.warmup
     -   module: playerinfo
         defaultLevel: ADMIN
-        description: Allows the user to see extended information about a player in /seen.
+        description: Allows the user to see extended information about a player in
+            /seen.
         permission: nucleus.seen.extended
     -   module: playerinfo
         defaultLevel: ADMIN
@@ -4583,7 +4906,9 @@
     permissions:
     -   module: powertool
         defaultLevel: ADMIN
-        description: Allows the user to run the command /powertool list, Allows the user to run the command /powertool delete, Allows the user to run the command /powertool toggle
+        description: Allows the user to run the command /powertool toggle, Allows
+            the user to run the command /powertool delete, Allows the user to run
+            the command /powertool list
         permission: nucleus.powertool.base
     cooldown: false
     requiresMixin: false
@@ -4602,7 +4927,9 @@
     permissions:
     -   module: powertool
         defaultLevel: ADMIN
-        description: Allows the user to run the command /powertool list, Allows the user to run the command /powertool delete, Allows the user to run the command /powertool toggle
+        description: Allows the user to run the command /powertool toggle, Allows
+            the user to run the command /powertool delete, Allows the user to run
+            the command /powertool list
         permission: nucleus.powertool.base
     cooldown: false
     requiresMixin: false
@@ -4620,7 +4947,9 @@
     permissions:
     -   module: powertool
         defaultLevel: ADMIN
-        description: Allows the user to run the command /powertool list, Allows the user to run the command /powertool delete, Allows the user to run the command /powertool toggle
+        description: Allows the user to run the command /powertool toggle, Allows
+            the user to run the command /powertool delete, Allows the user to run
+            the command /powertool list
         permission: nucleus.powertool.base
     cooldown: false
     requiresMixin: false
@@ -4643,7 +4972,9 @@
     permissions:
     -   module: powertool
         defaultLevel: ADMIN
-        description: Allows the user to run the command /powertool list, Allows the user to run the command /powertool delete, Allows the user to run the command /powertool toggle
+        description: Allows the user to run the command /powertool toggle, Allows
+            the user to run the command /powertool delete, Allows the user to run
+            the command /powertool list
         permission: nucleus.powertool.base
     cooldown: false
     requiresMixin: false
@@ -4656,14 +4987,17 @@
     module: rtp
     defaultLevel: ADMIN
     usageString: /rtp ?|[<player>] [<world>]
-    oneLineDescription: Allows the user to teleport to a random destination within the world border.
+    oneLineDescription: Allows the user to teleport to a random destination within
+        the world border.
     permissionbase: nucleus.rtp
     simpleUsage: /rtp [<player>] [<world>]
     commandName: rtp
     permissions:
     -   module: rtp
         defaultLevel: ADMIN
-        description: The base permission for per-world permission, if allowed in the config. This permission can be suffixed with ".worldname" (in lowercase) to allow for per-world rtp permissions.
+        description: The base permission for per-world permission, if allowed in the
+            config. This permission can be suffixed with ".worldname" (in lowercase)
+            to allow for per-world rtp permissions.
         permission: nucleus.rtp.worlds
     -   module: rtp
         defaultLevel: ADMIN
@@ -4735,10 +5069,13 @@
     cost: true
     module: server-list
     defaultLevel: ADMIN
-    usageString: /serverlist message ?|[-r|-remove <r>] [-l|-line line(1 to 2)] [-t|-time <time to display>] [<message…>]
-    oneLineDescription: Allows for temporary modification of the server list MOTD, on a timed basis.
+    usageString: /serverlist message ?|[-r|-remove <r>] [-l|-line line(1 to 2)] [-t|-time
+        <time to display>] [<message…>]
+    oneLineDescription: Allows for temporary modification of the server list MOTD,
+        on a timed basis.
     permissionbase: nucleus.serverlist.message
-    simpleUsage: /serverlist message [-r|-remove <r>] [-l|-line line(1 to 2)] [-t|-time <time to display>] [<message…>]
+    simpleUsage: /serverlist message [-r|-remove <r>] [-l|-line line(1 to 2)] [-t|-time
+        <time to display>] [<message…>]
     commandName: serverlist message
     permissions:
     -   module: server-list
@@ -4791,7 +5128,8 @@
     module: server-shop
     defaultLevel: USER
     usageString: /itemsell ?|
-    oneLineDescription: Allows the user to sell an item in their main hand to the server for a set price.
+    oneLineDescription: Allows the user to sell an item in their main hand to the
+        server for a set price.
     essentialsEquivalents:
     - sell
     permissionbase: nucleus.itemsell
@@ -4813,7 +5151,8 @@
     module: server-shop
     defaultLevel: USER
     usageString: /itemsellall ?|[-a|-accept <a>]  [<item>]
-    oneLineDescription: Allows the user to sell all items of a set type in their inventory to the server for a set price.
+    oneLineDescription: Allows the user to sell all items of a set type in their inventory
+        to the server for a set price.
     permissionbase: nucleus.itemsellall
     simpleUsage: /itemsellall [-a|-accept <a>]  [<item>]
     commandName: itemsellall
@@ -4856,7 +5195,8 @@
     module: server-shop
     defaultLevel: USER
     usageString: /worth ?|[<item>]
-    oneLineDescription: Allows the user to display the server buy and sell prices for an item.
+    oneLineDescription: Allows the user to display the server buy and sell prices
+        for an item.
     essentialsEquivalents:
     - worth
     - price
@@ -4882,7 +5222,8 @@
         permission: nucleus.worth.exempt.cooldown
     cooldown: true
     requiresMixin: false
-    extendedDescription: If no item ID or alias is provided, this command will get the buy/sell prices for the item in the main hand.
+    extendedDescription: If no item ID or alias is provided, this command will get
+        the buy/sell prices for the item in the main hand.
     essNotes: ''
     warmup: true
     subcommands: ''
@@ -4997,7 +5338,10 @@
         permission: nucleus.spawn.exempt.cost
     -   module: spawn
         defaultLevel: ADMIN
-        description: If set in the main config, this permission will give players access to spawn in all worlds. Adding the name of the lowercase name world as a child of this permission will grant permission for that world only (that is, ending with "worlds.world" for the world "world").
+        description: If set in the main config, this permission will give players
+            access to spawn in all worlds. Adding the name of the lowercase name world
+            as a child of this permission will grant permission for that world only
+            (that is, ending with "worlds.world" for the world "world").
         permission: nucleus.spawn.worlds
     -   module: spawn
         defaultLevel: ADMIN
@@ -5017,7 +5361,10 @@
         permission: nucleus.spawn.exempt.warmup
     cooldown: true
     requiresMixin: false
-    extendedDescription: If the global spawn world is set in the configuration, then calling /spawn without a world argument will send the calling player to the global spawn point, otherwise, the player will warp to the current world spawn point.
+    extendedDescription: If the global spawn world is set in the configuration, then
+        calling /spawn without a world argument will send the calling player to the
+        global spawn point, otherwise, the player will warp to the current world spawn
+        point.
     essNotes: ''
     warmup: true
     subcommands: other
@@ -5041,7 +5388,10 @@
         permission: nucleus.spawn.other.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: This works in a similar way to the /spawn command, though the command may be used against offline players if the calling entity has permission. If the player is offline, the system will warp them prior to joining the world on next login.
+    extendedDescription: This works in a similar way to the /spawn command, though
+        the command may be used against offline players if the calling entity has
+        permission. If the player is offline, the system will warp them prior to joining
+        the world on next login.
     warmup: false
     subcommands: ''
 -   aliases: staffchat, sc, a
@@ -5069,7 +5419,8 @@
     rootAliases: tp, nteleport
     module: teleport
     defaultLevel: MOD
-    usageString: /teleport ?|[-q <quiet>] [-f <f>]  <player to warp to>|<player to warp> <player to warp to>|<offline player to warp to>
+    usageString: /teleport ?|[-q <quiet>] [-f <f>]  <player to warp to>|<player to
+        warp> <player to warp to>|<offline player to warp to>
     oneLineDescription: Teleports one player to another's location.
     essentialsEquivalents:
     - tp
@@ -5078,7 +5429,8 @@
     - teleport
     - tpo
     permissionbase: nucleus.teleport.teleport
-    simpleUsage: /teleport [-q <quiet>] [-f <f>]  <player to warp to>|<player to warp> <player to warp to>|<offline player to warp to>
+    simpleUsage: /teleport [-q <quiet>] [-f <f>]  <player to warp to>|<player to warp>
+        <player to warp to>|<offline player to warp to>
     commandName: teleport
     permissions:
     -   module: teleport
@@ -5099,11 +5451,13 @@
         permission: nucleus.teleport.teleport.others
     -   module: teleport
         defaultLevel: ADMIN
-        description: Allows the user to use the "-q" flag to override whether to tell the target player if a teleport is being performed.
+        description: Allows the user to use the "-q" flag to override whether to tell
+            the target player if a teleport is being performed.
         permission: nucleus.teleport.teleport.quiet
     -   module: teleport
         defaultLevel: ADMIN
-        description: Allows the user to teleport to the location of players who are offline.
+        description: Allows the user to teleport to the location of players who are
+            offline.
         permission: nucleus.teleport.teleport.offline
     -   module: teleport
         defaultLevel: ADMIN
@@ -5147,7 +5501,8 @@
     permissions:
     -   module: teleport
         defaultLevel: ADMIN
-        description: Allows the user to "force" teleport to a point, regardless of whether it is safe to do so.
+        description: Allows the user to "force" teleport to a point, regardless of
+            whether it is safe to do so.
         permission: nucleus.teleport.tpa.force
     -   module: teleport
         defaultLevel: ADMIN
@@ -5245,7 +5600,8 @@
         permission: nucleus.teleport.tpahere.exempt.cost
     -   module: teleport
         defaultLevel: ADMIN
-        description: Allows the user to "force" teleport to a point, regardless of whether it is safe to do so.
+        description: Allows the user to "force" teleport to a point, regardless of
+            whether it is safe to do so.
         permission: nucleus.teleport.tpahere.force
     -   module: teleport
         defaultLevel: MOD
@@ -5325,7 +5681,8 @@
         permission: nucleus.teleport.tphere.base
     -   module: teleport
         defaultLevel: ADMIN
-        description: Allows the user to teleport players who are offline to their current location on next login.
+        description: Allows the user to teleport players who are offline to their
+            current location on next login.
         permission: nucleus.teleport.tphere.offline
     cooldown: false
     requiresMixin: false
@@ -5338,17 +5695,20 @@
     rootAliases: ntppos
     module: teleport
     defaultLevel: ADMIN
-    usageString: /tppos ?|[-f|-force <f>] [-b|-border <b>] [-c|-chunk <c>] [<subject>] [<world>] x(-2147483648 to 2147483647) y(0 to 255) z(-2147483648 to 2147483647)
+    usageString: /tppos ?|[-f|-force <f>] [-b|-border <b>] [-c|-chunk <c>] [<subject>]
+        [<world>] x(-2147483648 to 2147483647) y(0 to 255) z(-2147483648 to 2147483647)
     oneLineDescription: Teleport to the specified location.
     essentialsEquivalents:
     - tppos
     permissionbase: nucleus.teleport.tppos
-    simpleUsage: /tppos [-f|-force <f>] [-b|-border <b>] [-c|-chunk <c>] [<subject>] [<world>] x(-2147483648 to 2147483647) y(0 to 255) z(-2147483648 to 2147483647)
+    simpleUsage: /tppos [-f|-force <f>] [-b|-border <b>] [-c|-chunk <c>] [<subject>]
+        [<world>] x(-2147483648 to 2147483647) y(0 to 255) z(-2147483648 to 2147483647)
     commandName: tppos
     permissions:
     -   module: teleport
         defaultLevel: ADMIN
-        description: If granted, allows the user to the use "-b" flag to attempt to warp outside of the border.
+        description: If granted, allows the user to the use "-b" flag to attempt to
+            warp outside of the border.
         permission: nucleus.teleport.tppos.exempt.bordercheck
     -   module: teleport
         defaultLevel: ADMIN
@@ -5390,7 +5750,8 @@
         permission: nucleus.teleport.tptoggle.base
     -   module: teleport
         defaultLevel: ADMIN
-        description: Allows the user to teleport to anyone, regardless of whether they have turned on /tptoggle protection.
+        description: Allows the user to teleport to anyone, regardless of whether
+            they have turned on /tptoggle protection.
         permission: nucleus.teleport.tptoggle.exempt
     cooldown: false
     requiresMixin: false
@@ -5414,11 +5775,13 @@
     permissions:
     -   module: vanish
         defaultLevel: ADMIN
-        description: If granted, the player is able to retain their vanish status upon logout and login.
+        description: If granted, the player is able to retain their vanish status
+            upon logout and login.
         permission: nucleus.vanish.persist
     -   module: vanish
         defaultLevel: ADMIN
-        description: If granted, and the version of Sponge/Nucleus supports this, allows players to see other vanished players and tab their names in commands.
+        description: If granted, and the version of Sponge/Nucleus supports this,
+            allows players to see other vanished players and tab their names in commands.
         permission: nucleus.vanish.see
     -   module: vanish
         defaultLevel: ADMIN
@@ -5457,10 +5820,12 @@
     rootAliases: nclearwarnings
     module: warn
     defaultLevel: ADMIN
-    usageString: /clearwarnings ?|[-remove|-r <remove>] [-all|-a <all>] [-expired|-e <expired>] <subject>
+    usageString: /clearwarnings ?|[-remove|-r <remove>] [-all|-a <all>] [-expired|-e
+        <expired>] <subject>
     oneLineDescription: Allows the user to clear a player's warnings.
     permissionbase: nucleus.clearwarnings
-    simpleUsage: /clearwarnings [-remove|-r <remove>] [-all|-a <all>] [-expired|-e <expired>] <subject>
+    simpleUsage: /clearwarnings [-remove|-r <remove>] [-all|-a <all>] [-expired|-e
+        <expired>] <subject>
     commandName: clearwarnings
     permissions:
     -   module: warn
@@ -5477,7 +5842,8 @@
     module: warn
     defaultLevel: ADMIN
     usageString: /removewarning ?|[-remove|-r <remove>] <user> <ID>
-    oneLineDescription: Allows the user to delete a specific warning attached to a player.
+    oneLineDescription: Allows the user to delete a specific warning attached to a
+        player.
     permissionbase: nucleus.removewarning
     simpleUsage: /removewarning [-remove|-r <remove>] <user> <ID>
     commandName: removewarning
@@ -5527,7 +5893,8 @@
     rootAliases: nwarp
     module: warp
     defaultLevel: USER
-    usageString: /warp set|cost|setcategory|category|list|delete|setdescription|?|[[-y|-a|-accept <y>] [-f|-force <f>] ] [<subject>] <Warp Name>
+    usageString: /warp set|cost|setcategory|list|category|delete|setdescription|?|[[-y|-a|-accept
+        <y>] [-f|-force <f>] ] [<subject>] <Warp Name>
     oneLineDescription: Teleport to the specified warp.
     essentialsEquivalents:
     - warp
@@ -5550,7 +5917,8 @@
         permission: nucleus.warp.exempt.warmup
     -   module: warp
         defaultLevel: ADMIN
-        description: Allows the user to access all warps if per-warp permissions is turned on.
+        description: Allows the user to access all warps if per-warp permissions is
+            turned on.
         permission: nucleus.warps
     -   module: warp
         defaultLevel: USER
@@ -5560,7 +5928,7 @@
     requiresMixin: false
     essNotes: Use '/warp' for warping, '/warps' to list warps.
     warmup: true
-    subcommands: set, cost, setcategory, category, list, delete, setdescription
+    subcommands: set, cost, setcategory, list, category, delete, setdescription
 -   aliases: category
     cost: true
     module: warp
@@ -5621,7 +5989,8 @@
     permissions:
     -   module: warp
         defaultLevel: ADMIN
-        description: Allows the user to run the command /category removedescription, Allows the user to run the command /category setdescription
+        description: Allows the user to run the command /category setdescription,
+            Allows the user to run the command /category removedescription
         permission: nucleus.warp.category.description.base
     cooldown: false
     requiresMixin: false
@@ -5639,7 +6008,8 @@
     permissions:
     -   module: warp
         defaultLevel: ADMIN
-        description: Allows the user to run the command /category setdisplayname, Allows the user to run the command /category removedisplayname
+        description: Allows the user to run the command /category removedisplayname,
+            Allows the user to run the command /category setdisplayname
         permission: nucleus.warp.category.displayname.base
     cooldown: false
     requiresMixin: false
@@ -5657,7 +6027,8 @@
     permissions:
     -   module: warp
         defaultLevel: ADMIN
-        description: Allows the user to run the command /category removedescription, Allows the user to run the command /category setdescription
+        description: Allows the user to run the command /category setdescription,
+            Allows the user to run the command /category removedescription
         permission: nucleus.warp.category.description.base
     cooldown: false
     requiresMixin: false
@@ -5675,7 +6046,8 @@
     permissions:
     -   module: warp
         defaultLevel: ADMIN
-        description: Allows the user to run the command /category setdisplayname, Allows the user to run the command /category removedisplayname
+        description: Allows the user to run the command /category removedisplayname,
+            Allows the user to run the command /category setdisplayname
         permission: nucleus.warp.category.displayname.base
     cooldown: false
     requiresMixin: false
@@ -5769,6 +6141,7 @@
 -   aliases: set
     cost: true
     isExactEssEquiv: true
+    rootAliases: setwarp, warpset
     module: warp
     defaultLevel: ADMIN
     usageString: /warp set ?|<Warp Name>
@@ -5805,7 +6178,8 @@
     cost: false
     module: warp
     defaultLevel: ADMIN
-    usageString: /warp setcategory ?|[-n|-new <n>] [-r|-remove|-delete <r>] <warp> [<category>]
+    usageString: /warp setcategory ?|[-n|-new <n>] [-r|-remove|-delete <r>] <warp>
+        [<category>]
     oneLineDescription: Sets the category of a warp for display in /warp list.
     permissionbase: nucleus.warp.setcategory
     simpleUsage: /warp setcategory [-n|-new <n>] [-r|-remove|-delete <r>] <warp> [<category>]
@@ -5849,7 +6223,7 @@
     rootAliases: nworld, nucleusworld
     module: world
     defaultLevel: ADMIN
-    usageString: /world border|setdifficulty|setloadonstartup|setkeepspawnloaded|teleport|setgamemode|sethardcore|setpvpenabled|list|modifiers|delete|setspawn|presets|spawn|load|gamerule|disable|enable|unload|generators|create|info|?|
+    usageString: /world border|setdifficulty|setloadonstartup|setkeepspawnloaded|teleport|setgamemode|setpvpenabled|sethardcore|list|modifiers|delete|setspawn|presets|spawn|load|gamerule|disable|enable|unload|generators|create|info|?|
     oneLineDescription: Parent command for all other world commands.
     permissionbase: nucleus.world
     simpleUsage: '/world '
@@ -5874,7 +6248,10 @@
     cooldown: true
     requiresMixin: false
     warmup: true
-    subcommands: border, setdifficulty, setloadonstartup, setkeepspawnloaded, teleport, setgamemode, sethardcore, setpvpenabled, list, modifiers, delete, setspawn, presets, spawn, load, gamerule, disable, enable, unload, generators, create, info
+    subcommands: border, setdifficulty, setloadonstartup, setkeepspawnloaded, teleport,
+        setgamemode, setpvpenabled, sethardcore, list, modifiers, delete, setspawn,
+        presets, spawn, load, gamerule, disable, enable, unload, generators, create,
+        info
 -   aliases: border
     cost: true
     module: world
@@ -5917,7 +6294,8 @@
     permissions:
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to run the command /border cancelgen, Allows the user to run the command /border gen
+        description: Allows the user to run the command /border gen, Allows the user
+            to run the command /border cancelgen
         permission: nucleus.world.border.gen.base
     cooldown: false
     requiresMixin: false
@@ -5927,10 +6305,12 @@
     cost: true
     module: world
     defaultLevel: ADMIN
-    usageString: /world border gen ?|[-a <a>] [-s <s>] [-t|-tickpercent tickPercent(0 to 100)] [-save <time between saves>] [<world>]
+    usageString: /world border gen ?|[-a <a>] [-t|-tickpercent tickPercent(0 to 100)]
+        [-save <time between saves>] [<world>]
     oneLineDescription: Generates chunks up to the world border.
     permissionbase: nucleus.world.border.gen
-    simpleUsage: /world border gen [-a <a>] [-s <s>] [-t|-tickpercent tickPercent(0 to 100)] [-save <time between saves>] [<world>]
+    simpleUsage: /world border gen [-a <a>] [-t|-tickpercent tickPercent(0 to 100)]
+        [-save <time between saves>] [<world>]
     commandName: world border gen
     permissions:
     -   module: world
@@ -5939,7 +6319,8 @@
         permission: nucleus.world.border.gen.exempt.warmup
     -   module: world
         defaultLevel: ADMIN
-        description: If granted and enhanced generation is being used, these players are notified of progress to the generation.
+        description: If granted and enhanced generation is being used, these players
+            are notified of progress to the generation.
         permission: nucleus.world.border.gen.notify
     -   module: world
         defaultLevel: ADMIN
@@ -5947,7 +6328,8 @@
         permission: nucleus.world.border.gen.exempt.cost
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to run the command /border cancelgen, Allows the user to run the command /border gen
+        description: Allows the user to run the command /border gen, Allows the user
+            to run the command /border cancelgen
         permission: nucleus.world.border.gen.base
     -   module: world
         defaultLevel: ADMIN
@@ -5955,7 +6337,14 @@
         permission: nucleus.world.border.gen.exempt.cooldown
     cooldown: true
     requiresMixin: false
-    extendedDescription: When invoked, Nucleus will start generating chunks up to the world border. During this time, the server will be susceptible to reduced performance.|br||br|If Nucleus Mixins are loaded on this server, Nucleus will use a custom routine that provides greater information to server admins, and will not attempt to generate any chunks that have been deemed to be loaded already, though enhancement of the Sponge routines.|br||br|If Nucleus Mixins are not available, or the -s flag is specified, Nucleus will fall back to the standard Sponge pre-gen routines.
+    extendedDescription: When invoked, Nucleus will start generating chunks up to
+        the world border. During this time, the server will be susceptible to reduced
+        performance.|br||br|If Nucleus Mixins are loaded on this server, Nucleus will
+        use a custom routine that provides greater information to server admins, and
+        will not attempt to generate any chunks that have been deemed to be loaded
+        already, though enhancement of the Sponge routines.|br||br|If Nucleus Mixins
+        are not available, or the -s flag is specified, Nucleus will fall back to
+        the standard Sponge pre-gen routines.
     warmup: true
     subcommands: ''
 -   aliases: reset
@@ -5970,7 +6359,8 @@
     permissions:
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to run the command /border set, Allows the user to run the command /border reset
+        description: Allows the user to run the command /border set, Allows the user
+            to run the command /border reset
         permission: nucleus.world.border.set.base
     cooldown: false
     requiresMixin: false
@@ -5980,15 +6370,18 @@
     cost: false
     module: world
     defaultLevel: ADMIN
-    usageString: /world border set ?|[<world>] <x> <z> <diameter> [<delay>]|<diameter> [<delay>]
+    usageString: /world border set ?|[<world>] <x> <z> <diameter> [<delay>]|<diameter>
+        [<delay>]
     oneLineDescription: Sets the world border.
     permissionbase: nucleus.world.border.set
-    simpleUsage: /world border set [<world>] <x> <z> <diameter> [<delay>]|<diameter> [<delay>]
+    simpleUsage: /world border set [<world>] <x> <z> <diameter> [<delay>]|<diameter>
+        [<delay>]
     commandName: world border set
     permissions:
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to run the command /border set, Allows the user to run the command /border reset
+        description: Allows the user to run the command /border set, Allows the user
+            to run the command /border reset
         permission: nucleus.world.border.set.base
     cooldown: false
     requiresMixin: false
@@ -5998,10 +6391,18 @@
     cost: true
     module: world
     defaultLevel: ADMIN
-    usageString: /world create ?|[-p|-preset <preset>] [-b|-bonuschest <b>] [-i <i>] [-gm|-gamemode <gamemode>] [-s|-seed <seed>] [-k|-keepspawnloaded <k>] [-n|-nostructures <n>] [-l|-loadonstartup <l>] [-g|-generator <generator>] [-d|-dimension <dimension>] [-di|-difficulty <difficulty>] [-m|-modifier <modifier>] [-c|-allowcommands <c>] <name>
+    usageString: /world create ?|[-p|-preset <preset>] [-b|-bonuschest <b>] [-i <i>]
+        [-gm|-gamemode <gamemode>] [-s|-seed <seed>] [-k|-keepspawnloaded <k>] [-n|-nostructures
+        <n>] [-l|-loadonstartup <l>] [-g|-generator <generator>] [-d|-dimension <dimension>]
+        [-di|-difficulty <difficulty>] [-m|-modifier <modifier>] [-c|-allowcommands
+        <c>] <name>
     oneLineDescription: Creates a world with the specified name and options.
     permissionbase: nucleus.world.create
-    simpleUsage: /world create [-p|-preset <preset>] [-b|-bonuschest <b>] [-i <i>] [-gm|-gamemode <gamemode>] [-s|-seed <seed>] [-k|-keepspawnloaded <k>] [-n|-nostructures <n>] [-l|-loadonstartup <l>] [-g|-generator <generator>] [-d|-dimension <dimension>] [-di|-difficulty <difficulty>] [-m|-modifier <modifier>] [-c|-allowcommands <c>] <name>
+    simpleUsage: /world create [-p|-preset <preset>] [-b|-bonuschest <b>] [-i <i>]
+        [-gm|-gamemode <gamemode>] [-s|-seed <seed>] [-k|-keepspawnloaded <k>] [-n|-nostructures
+        <n>] [-l|-loadonstartup <l>] [-g|-generator <generator>] [-d|-dimension <dimension>]
+        [-di|-difficulty <difficulty>] [-m|-modifier <modifier>] [-c|-allowcommands
+        <c>] <name>
     commandName: world create
     permissions:
     -   module: world
@@ -6018,7 +6419,9 @@
         permission: nucleus.world.create.exempt.cost
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to run the command /world create, Allows the user to run the command /world modifiers, Allows the user to run the command /world presets, Allows the user to run the command /world generators
+        description: Allows the user to run the command /world create, Allows the
+            user to run the command /world modifiers, Allows the user to run the command
+            /world presets, Allows the user to run the command /world generators
         permission: nucleus.world.create.base
     cooldown: true
     requiresMixin: false
@@ -6062,7 +6465,10 @@
         permission: nucleus.world.delete.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: This command irreversibly removes a world that has been unloaded and disabled from the disc. Before removal, the file path will be shown to be checked before the removal is confirmed and completed.|br|It is vitally important to note that once the world is deleted, it cannot be recovered.
+    extendedDescription: This command irreversibly removes a world that has been unloaded
+        and disabled from the disc. Before removal, the file path will be shown to
+        be checked before the removal is confirmed and completed.|br|It is vitally
+        important to note that once the world is deleted, it cannot be recovered.
     warmup: false
     subcommands: ''
 -   aliases: disable, dis
@@ -6070,7 +6476,8 @@
     module: world
     defaultLevel: ADMIN
     usageString: /world disable ?|<world>
-    oneLineDescription: Disables a world that is unloaded, preventing it from being loaded in future.
+    oneLineDescription: Disables a world that is unloaded, preventing it from being
+        loaded in future.
     permissionbase: nucleus.world.disable
     simpleUsage: /world disable <world>
     commandName: world disable
@@ -6081,7 +6488,9 @@
         permission: nucleus.world.disable.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: Disabling a world prevents a world from being loaded, however, if a world is currently loaded, it will not be unloaded, and so will not be fully disabled until it is unloaded.
+    extendedDescription: Disabling a world prevents a world from being loaded, however,
+        if a world is currently loaded, it will not be unloaded, and so will not be
+        fully disabled until it is unloaded.
     warmup: false
     subcommands: ''
 -   aliases: enable, en
@@ -6150,7 +6559,9 @@
     permissions:
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to run the command /world create, Allows the user to run the command /world modifiers, Allows the user to run the command /world presets, Allows the user to run the command /world generators
+        description: Allows the user to run the command /world create, Allows the
+            user to run the command /world modifiers, Allows the user to run the command
+            /world presets, Allows the user to run the command /world generators
         permission: nucleus.world.create.base
     cooldown: false
     requiresMixin: false
@@ -6168,19 +6579,23 @@
     permissions:
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cooldown for /world list, Allows the user to bypass the cooldown for /world info
+        description: Allows the user to bypass the cooldown for /world info, Allows
+            the user to bypass the cooldown for /world list
         permission: nucleus.world.list.exempt.cooldown
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to run the command /world list, Allows the user to run the command /world info
+        description: Allows the user to run the command /world info, Allows the user
+            to run the command /world list
         permission: nucleus.world.list.base
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to bypass the warmup for /world list, Allows the user to bypass the warmup for /world info
+        description: Allows the user to bypass the warmup for /world info, Allows
+            the user to bypass the warmup for /world list
         permission: nucleus.world.list.exempt.warmup
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cost for /world list, Allows the user to bypass the cost for /world info
+        description: Allows the user to bypass the cost for /world info, Allows the
+            user to bypass the cost for /world list
         permission: nucleus.world.list.exempt.cost
     cooldown: true
     requiresMixin: false
@@ -6200,19 +6615,23 @@
     permissions:
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cooldown for /world list, Allows the user to bypass the cooldown for /world info
+        description: Allows the user to bypass the cooldown for /world info, Allows
+            the user to bypass the cooldown for /world list
         permission: nucleus.world.list.exempt.cooldown
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to run the command /world list, Allows the user to run the command /world info
+        description: Allows the user to run the command /world info, Allows the user
+            to run the command /world list
         permission: nucleus.world.list.base
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to bypass the warmup for /world list, Allows the user to bypass the warmup for /world info
+        description: Allows the user to bypass the warmup for /world info, Allows
+            the user to bypass the warmup for /world list
         permission: nucleus.world.list.exempt.warmup
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cost for /world list, Allows the user to bypass the cost for /world info
+        description: Allows the user to bypass the cost for /world info, Allows the
+            user to bypass the cost for /world list
         permission: nucleus.world.list.exempt.cost
     -   module: world
         defaultLevel: ADMIN
@@ -6220,7 +6639,9 @@
         permission: nucleus.world.list.seed
     cooldown: true
     requiresMixin: false
-    extendedDescription: Displays all worlds and information about them, including their seed, if the viewer in question has the &quot;nucleus.world.list.seed&quot; permission.
+    extendedDescription: Displays all worlds and information about them, including
+        their seed, if the viewer in question has the &quot;nucleus.world.list.seed&quot;
+        permission.
     warmup: true
     subcommands: ''
 -   aliases: load
@@ -6239,7 +6660,9 @@
         permission: nucleus.world.load.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: The command will refuse to load a disabled world unless the &quot;-e&quot; flag is specified and you have permission to run the &quot;/world enable&quot; command.
+    extendedDescription: The command will refuse to load a disabled world unless the
+        &quot;-e&quot; flag is specified and you have permission to run the &quot;/world
+        enable&quot; command.
     warmup: false
     subcommands: ''
 -   aliases: modifiers, listmodifiers
@@ -6254,7 +6677,9 @@
     permissions:
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to run the command /world create, Allows the user to run the command /world modifiers, Allows the user to run the command /world presets, Allows the user to run the command /world generators
+        description: Allows the user to run the command /world create, Allows the
+            user to run the command /world modifiers, Allows the user to run the command
+            /world presets, Allows the user to run the command /world generators
         permission: nucleus.world.create.base
     cooldown: false
     requiresMixin: false
@@ -6272,7 +6697,9 @@
     permissions:
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to run the command /world create, Allows the user to run the command /world modifiers, Allows the user to run the command /world presets, Allows the user to run the command /world generators
+        description: Allows the user to run the command /world create, Allows the
+            user to run the command /world modifiers, Allows the user to run the command
+            /world presets, Allows the user to run the command /world generators
         permission: nucleus.world.create.base
     cooldown: false
     requiresMixin: false
@@ -6349,7 +6776,8 @@
     module: world
     defaultLevel: ADMIN
     usageString: /world setkeepspawnloaded ?|[<world>] <true|false>
-    oneLineDescription: Sets whether a world will keep the chunks around it's spawn point loaded.
+    oneLineDescription: Sets whether a world will keep the chunks around it's spawn
+        point loaded.
     permissionbase: nucleus.world.setkeepspawnloaded
     simpleUsage: /world setkeepspawnloaded [<world>] <true|false>
     commandName: world setkeepspawnloaded
@@ -6529,7 +6957,8 @@
         permission: nucleus.world.teleport.exempt.cost
     cooldown: true
     requiresMixin: false
-    extendedDescription: This command will teleport the target player to the target world provided it is enabled. It will not enable a disabled world.
+    extendedDescription: This command will teleport the target player to the target
+        world provided it is enabled. It will not enable a disabled world.
     essNotes: The world command in Essentials was just a warp command.
     warmup: true
     subcommands: ''
@@ -6537,7 +6966,8 @@
     cost: false
     module: world
     defaultLevel: ADMIN
-    usageString: /world unload ?|[-t|-transfer <transferWorld>] [-d|-disable <d>] <world>
+    usageString: /world unload ?|[-t|-transfer <transferWorld>] [-d|-disable <d>]
+        <world>
     oneLineDescription: Unloads a world that is currently loaded.
     permissionbase: nucleus.world.unload
     simpleUsage: /world unload [-t|-transfer <transferWorld>] [-d|-disable <d>] <world>
@@ -6549,6 +6979,10 @@
         permission: nucleus.world.unload.base
     cooldown: false
     requiresMixin: false
-    extendedDescription: Unloads the specified world, and optionally disables it. Simply unloading a world does not make is inaccessible, as it will remain enabled, which will cause the world to load when someone tries to connect to it. To disable the world at the same time as unloading it, add the &quot;-d&quot; flag to the command.
+    extendedDescription: Unloads the specified world, and optionally disables it.
+        Simply unloading a world does not make is inaccessible, as it will remain
+        enabled, which will cause the world to load when someone tries to connect
+        to it. To disable the world at the same time as unloading it, add the &quot;-d&quot;
+        flag to the command.
     warmup: false
     subcommands: ''

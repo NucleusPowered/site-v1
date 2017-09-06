@@ -90,6 +90,8 @@ world: |
     default-world-border-diameter=0
     # If true and using NucleusMixins, world generation will warn players on the server that a pre-generation is in progress periodically.
     display-generation-warning=true
+    # If true, changing worlds requires permission to access the target world - "nucleus.worlds.<worldname>"
+    separate-permissions=false
 kit: |
     # If true, any items that couldn't be placed in the player's inventory will be dropped on the floor around them.
     drop-items-if-inventory-full=false
@@ -139,6 +141,12 @@ jump: |
     max-jump-distance=350
     # The maximum distance a player can move using the /thru command. Negative values mean infinite - use with care.
     max-thru-distance=25
+    unstuck-distances {
+        # The maximum distance vertically /unstuck can send you.
+        height=1
+        # The maximum distance horizontally /unstuck can send you.
+        horizontal-radius=1
+    }
 misc: |
     # Sets the maximum speed that a player can set via the /speed command.
     max-speed=5
@@ -269,6 +277,8 @@ command-spy: |
     # The whitelist of commands to spy on.
     whitelisted-commands-to-spy-on=[]
 home: |
+    # If true, if a player has more homes than the permission option "home-count" allows, then players will not be able to use any homes until they delete homes to be at the limit again.
+    prevent-home-count-overhang=true
     # If true, on respawn, a player will spawn back at their default home (named "home") if it exists.
     respawn-at-home=false
     # If true, Nucleus will attempt to ensure that users do not get warped into an unsafe situation (for example, if someone breaks blocks around a home).

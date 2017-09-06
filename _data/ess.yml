@@ -156,7 +156,8 @@
     - gma
     - gms
     - gmt
-    notes: Currently no way to simply give '/creative' or '/gmc', for example, with no arguments, gamemode is required.
+    notes: Currently no way to simply give '/creative' or '/gmc', for example, with
+        no arguments, gamemode is required.
     isExact: false
     nucleusEquiv:
     - gamemode
@@ -527,6 +528,8 @@
     isExact: true
     nucleusEquiv:
     - warp set
+    - setwarp
+    - warpset
 -   essentialsCommands:
     - setworth
     notes: ''
@@ -574,7 +577,8 @@
     - walkspeed
     - fspeed
     - wspeed
-    notes: This command either uses your current state or a specified argument to determine whether to alter fly or walk speed.
+    notes: This command either uses your current state or a specified argument to
+        determine whether to alter fly or walk speed.
     isExact: false
     nucleusEquiv:
     - speed
@@ -620,6 +624,8 @@
     isExact: false
     nucleusEquiv:
     - time set
+    - settime
+    - timeset
 -   essentialsCommands:
     - time
     notes: This just displays the time. Use '/time set' to set the time.
