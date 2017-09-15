@@ -79,3 +79,11 @@ Restarting the server will also cancel the pre-generation.
 If you want to try to run the pre-generation faster, you can change the same interval to be much higher, and run in "aggressive" mode. Adding
 `-a` to the command indicates aggresive mode, where 90% of tick time is dedicated to the generation routines, and memory checks are turned off.
 To change the save interval, add `--save <time>` to your command, where `<time>` is a [Timespan Argument](../arguments.html#timespan).
+
+## World Access Permissions
+
+If you wish to prevent access to certain worlds, settings separate-permissions in the Nucleus Worlds configuration will enable the ability to use permissions to restrict access to worlds.
+
+Consideration has been taking for end portal teleporting, and will teleport the player to a near safe location if they would be in danger.
+
+The permission format is nucleus.worlds.<worldname>
