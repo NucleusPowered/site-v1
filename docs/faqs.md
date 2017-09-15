@@ -43,7 +43,7 @@ from Mohron, RysingDragon and TimeTheCat on Nucleus Phonon.
 ### [What does the Nucleus Project publish?](#what-do-they-publish)
 
 * Nucleus: the main plugin. Most functionality is located in this plugin.
-* Nucleus Mixins: an optional plugin for Minecraft 1.10.2 servers that fixes `/invsee` and enables enhanced pre-generation of the world.
+* Nucleus Mixins: an optional plugin for Minecraft 1.10.2 servers that enables enhanced pre-generation of the world.
     * [See this page for more information on Nucleus Mixins.](configuration/mixins.html)
 * Nucleus Gluon: an optional plugin for Nucleus 0.24.0 and above, and PlaceholderAPI 3.6 and above, that allows for chat placeholders from both
 plugins to be used in... well, both plugins!
@@ -243,16 +243,6 @@ Consult your permission plugin on how to set this option, but for reference, com
 <a class="anchor" id="troubleshooting"></a>
 
 ## [Troubleshooting problems in game](#troubleshooting)
-
-<a class="anchor" id="invsee"></a>
-
-### [I'm using `/invsee`, but the window keeps disappearing!](#invsee)
-
-This probably means you're running Minecraft 1.10.2, and you're not using Nucleus Mixins as well. This is an optional (but
-recommended) plugin that changes Minecraft's internals to allow you to use `/invsee` from further than 8 blocks away from your target. Minecraft 1.11.2
-users don't need this plugin, a better fix is in Sponge API 6 for 1.11.2.
-
-You can [find out more about Nucleus Mixins here](configuration/mixins.html), and [download Nucleus Mixins from Ore here.](https://ore.spongepowered.org/Nucleus/Nucleus-Mixins)
 
 <a class="anchor" id="back-warp"></a>
 
