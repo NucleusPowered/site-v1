@@ -86,4 +86,4 @@ If you wish to prevent access to certain worlds, settings separate-permissions i
 
 Consideration has been taking for end portal teleporting, and will teleport the player to a near safe location if they would be in danger.
 
-The permission format is nucleus.worlds.<worldname>
+The permission format is `nucleus.worlds.[world name]`
