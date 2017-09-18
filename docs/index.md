@@ -37,7 +37,7 @@ There are extensive topics on how to use and configure Nucleus to each server's 
 * [Death Messages](modules/death-message.html) - Controls whether death messages are sent
 * [Environment](modules/environment.html) - Manages the world environment
 * [Fly](modules/fly.html) - Manages allowing players to fly
-* [Freeze Player](modules/freeze-player.html) - Adds ability to freeze players to a particular spot
+* [Freeze Subject](modules/freeze-subject.html) - Adds ability to freeze players to a particular spot
 * [Fun](modules/fun.html) - "Fun" commands
 * [GeoIP](modules/geo-ip.html) - Getting player country information based on their IP address
 * [Home](modules/home.html) - Manages personal warps for users

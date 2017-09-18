@@ -1,9 +1,9 @@
 ---
 layout: modulespec
 title: Documentation Centre
-header: Freeze Player Module
-moduleid: freeze-player
-modulename: Freeze Player
+header: Freeze Subject Module
+moduleid: freeze-subject
+modulename: Freeze Subject
 ---
 
 ## Introduction
