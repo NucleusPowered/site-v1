@@ -10,6 +10,7 @@ There are extensive topics on how to use and configure Nucleus to each server's 
 ## Installation and Configuration
 
 * [Installing and Configuring Nucleus](configuration/)
+* [What Nucleus Isn't: Permissions and Economy](permsecon.html)
 * [Essentials Command Equivalence](essentials.html)
 * [Migrating from EssentialCmds](configuration/migration.html)
 * [Setting up suggested permissions](configuration/permissions.html)
