@@ -16,7 +16,8 @@ As a convenience, we suggest some plugins that you could use that, to the best o
 Bear in mind that we do not _recommend_ any plugin, and we are not liable for your use of them. _There may be other plugins available._
 
 If you want to suggest a plugin for inclusion here, or want to report that a plugin is broken or no longer maintained, you can
-[add an issue](https://github.com/NucleusPowered/nucleuspowered.github.io/issues) or [make a pull request on this page](https://github.com/NucleusPowered/nucleuspowered.github.io/tree/master/docs/permsecon.md). 
+[add an issue](https://github.com/NucleusPowered/nucleuspowered.github.io/issues) or 
+[make a pull request on this page](https://github.com/NucleusPowered/nucleuspowered.github.io/tree/master/docs/permsecon.md). 
 
 ## Suggested Permission Plugins
 

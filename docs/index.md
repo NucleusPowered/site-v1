@@ -28,7 +28,6 @@ There are extensive topics on how to use and configure Nucleus to each server's 
 * [AFK](modules/afk.html) - Management of players that go idle
 * [Back](modules/back.html) - Provides `/back`, allowing users to return to a previous spot after warping or death
 * [Ban](modules/ban.html) - Ban management functions
-* [Blacklist](modules/blacklist.html) - **Only contains migrators. No longer used.**
 * [Chat](modules/chat.html) - Management of the server chat
 * [Chat Logger](modules/chat-logger.html) - Logging of server chat to a separate file
 * [Core](modules/core.html) - Core Nucleus functions, such as migration and permission setup
