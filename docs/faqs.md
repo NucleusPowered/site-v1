@@ -35,8 +35,7 @@ If you want more information on Sponge, see their [website](https://spongepowere
 
 ### [Who is behind the Nucleus Project?](#who-is)
 
-The Nucleus Project is lead by **dualspiral**. There is support from **HassanS6000**, the lead of EssentialCmds on the main Nucleus plugin, and
-from Mohron, RysingDragon and TimeTheCat on Nucleus Phonon.
+The Nucleus Project is lead by **dualspiral**, with Mohron, RysingDragon and TimeTheCat on Nucleus Phonon.
 
 <a class="anchor" id="what-do-they-publish"></a>
 
@@ -97,6 +96,7 @@ If you do so, the following things will happen:
 
 * You will not be able to go AFK (permission: `nucleus.afk.exempt.toggle`)
 * Logging in/out of your server will never generate a connection message (permission: `nucleus.connectionmessages.disable`)
+* From 1.2 - logging in to the server will cause you to vanish (permission: `nucleus.vanish.onlogin`)
 
 Other plugins may also not function as intended, a good example is **GriefPrevention**. **So, please, don't use the wildcard.**
 
@@ -263,11 +263,7 @@ Minecraft has a special spawn logic for new players:
 * The location they log in will always be on the surface, and always a grass block
 * The location will be _around_ spawn, to provide a random-ish start point.
  
-Nucleus can employ some tricks to force players to start at your spawn point if you use the
-`spawn` module. Use the command `/setfirstspawn` at the location you want new players to spawn
-at (which can be the same as the normal spawn point), and set `spawn.force-first-spawn` to `true`.
-Then, use `/nucleus reload` if your server is running. Players will now spawn _exactly_ on the first
-spawn point that you set.
+You can fix this by running `/gamerule spawnRadius 0` (shoutout to Karaga for discovering this!)
 
 <a class="anchor" id="chat-messed-up"></a>
 
