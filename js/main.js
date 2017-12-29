@@ -1,10 +1,10 @@
 var d = (function() {
 
-    var preferredPermission = "PermissionsEx";
+    var preferredPermission = "LuckPerms";
 
     // Permission command data
     var permissions = {
-        PermissionsEx: {
+     /*   PermissionsEx: {
             url: "https://forums.spongepowered.org/t/permissionsex-v2-0-api-5/6198",
             docs: "https://github.com/PEXPlugins/PermissionsEx/tree/master/doc",
             github: "https://github.com/PEXPlugins/PermissionsEx",
@@ -21,7 +21,7 @@ var d = (function() {
             group: "/pm groups %user% permission %perm%",
             userOption: "/pm users %user% set option %option% %value%",
             groupOption: "/pm groups %user% set option %option% %value%"
-        },
+        }, */
         LuckPerms: {
             url: "https://forums.spongepowered.org/t/luckperms-an-advanced-permissions-system/14274",
             docs: "https://github.com/lucko/LuckPerms/wiki",
@@ -71,7 +71,7 @@ var d = (function() {
             var arrayLength = types.length;
             var cmd = null;
             for (var i = 0; i < arrayLength; i++) {
-                if (objectToUse[types[i]] != undefined || objectToUse[types[i]] != null) {
+                if (objectToUse[types[i]] !== undefined || objectToUse[types[i]] != null) {
                     cmd = objectToUse[types[i]];
                     break;
                 }
@@ -118,7 +118,11 @@ var d = (function() {
 
     var initPerm = function() {
         var perm = getPermissionCookie();
-        onPermChangeClick(permissions[perm], perm);
+        var p = permissions[perm];
+        if (p === undefined) {
+            p = permissions[preferredPermission];
+        }
+        onPermChangeClick(p, perm);
 
         var string = "";
         var keys = getKeys(permissions);
