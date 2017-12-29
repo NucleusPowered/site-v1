@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+{% if page.moduleid %}
+<html data-module-id="{{ page.moduleid }}" data-module-name="{{ page.modulename }}">
+{% else %}
 <html>
+{% endif %}
 <head>
-    {% if page.moduleid %}
-    <!-- N:MS id="{{ page.moduleid }}" name="{{ page.modulename }}" -->
-    {% endif %}
     <title>Nucleus {{ page.title }}</title>
     <link rel="stylesheet" href="{{ base }}/css/bootstrap.min.css" />
     <link rel="stylesheet" href="{{ base }}/css/bootstrap-theme.min.css" />
