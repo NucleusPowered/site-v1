@@ -8,14 +8,12 @@ Nucleus is designed to be easy to hook into for developers wishing to use some o
 Maven or Gradle? You can use one of the following repository sets: 
 
 Repository: `http://repo.drnaylor.co.uk/artifactory/list/minecraft`<br />
-Dependency (1.10.2): `io.github.nucleuspowered:nucleus-api:<version>-S5.1`<br />
-Dependency (1.11.2): `io.github.nucleuspowered:nucleus-api:<version>-S6.0`
+Dependency (1.12.2): `io.github.nucleuspowered:nucleus-api:<version>-S7.0`
 
 or JitPack
 
 Repository: `https://jitpack.io`<br />
-Dependency (1.10.2): `com.github.NucleusPowered.Nucleus:nucleus-api:<version>`<br />
-Dependency (1.11.2): `com.github.NucleusPowered.Nucleus:nucleus-api:<version>-6.0`
+Dependency (1.12.2): `com.github.NucleusPowered.Nucleus:nucleus-api:<version>`
 
 ## JavaDocs
 

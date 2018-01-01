@@ -88,10 +88,19 @@ connection-messages: |
 world: |
     # If positive, any new worlds that are created using "/world create" (or "/nworld create") will automatically get a world border that has this diameter (that is, from border to border). Set to 0 or a negative number to disable.
     default-world-border-diameter=0
-    # If true and using NucleusMixins, world generation will warn players on the server that a pre-generation is in progress periodically.
-    display-generation-warning=true
+    pre-generation {
+        # If true, then players with the "nucleus.world.border.gen.notify" permission will get an update on progress after each generation. Recommended to be off, because it can be VERY spammy.
+        display-after-each-gen=false
+        # If true world generation will warn players on the server that a pre-generation is in progress periodically.
+        display-generation-warning=true
+        # Time, in seconds, between notifications in chat warning players a pre-gen is in progress.
+        notification-interval=20
+    }
     # If true, changing worlds requires permission to access the target world - "nucleus.worlds.<worldname>"
     separate-permissions=false
+invulnerability: |
+    # If true, in order to keep invulnerability on login, the permission for the god command (nucleus.god.base) is required. If false, a player without access to the /god will not be invulnerable on login.
+    require-god-permission-on-login=false
 kit: |
     # If true, any items that couldn't be placed in the player's inventory will be dropped on the floor around them.
     drop-items-if-inventory-full=false
@@ -101,15 +110,6 @@ kit: |
     process-tokens-in-lore=false
     # If this is set to true, each kit has its own permission node - nucleus.kits.<name>.
     separate-permissions=false
-nickname: |
-    # The maximum number of visible characters that the nickname can be.
-    max-nickname-length=20
-    # The minimum number of visible characters that the nickname can be.
-    min-nickname-length=3
-    # A regular expression that limits what form the nickname can take. If Nucleus fails to read the regex here, the default of "[a-zA-Z0-9_]+" (the same restriction as Minecraft usernames) will be used. To allow all characters, use ".+".
-    pattern="[a-zA-Z0-9_]+"
-    # A prefix to any nickname that is displayed in chat.
-    prefix="&b~"
 connection: |
     # The maximum number of reserved slots that can be used. Set to -1 for unlimited.
     reserved-slots=-1
@@ -118,6 +118,8 @@ connection: |
     # If this is not empty, the message to send to players when the server is whitelisted.
     whitelist-message=""
 vanish: |
+    # If true, Nucleus will try to alter the tab list when a player vanishes.
+    alter-tab-list=true
     # If true, players who leave or join the server under vanish will not have a login or logout message broadcast.
     hide-connection-messages-on-vanish=false
 info: "info {\n    # If \"use-default-info-section\" is true, this section is displayed\
@@ -150,14 +152,18 @@ jump: |
 misc: |
     # Sets the maximum speed that a player can set via the /speed command.
     max-speed=5
-    # If true, in order to keep invulnerability on login, the permission for the god command (nucleus.god.base) is required. If false, a player without access to the /god will not be invulnerable on login.
-    require-god-permission-on-login=false
 staff-chat: |
     # If true, Nucleus will include all the normal chat tags in the message, in addition to the prefix.
     "include-standard-chat-formatting"=false
     # A Minecraft colour code the denotes the colour to display Staff Chat channel messages in.
     message-colour=b
 item: |
+    repair {
+        # The list of item types to prevent (or allow if whitelist is true) repairing using /repair
+        restrictions=[]
+        # If true, the restriction list will be used as a whitelist vs a blacklist.
+        use-whitelist=false
+    }
     skull {
         # If true, Nucleus will simply treat /skull as an alias to "/give [player] skull [number] 3 {SkullOwner:[skullplayer]}"
         use-minecraft-command=false
@@ -272,10 +278,10 @@ death-message: "# If \"false\", death messages will be turned off when someone d
     enable-death-messages=true\n# If \"true\", Nucleus will try to make sure that\
     \ everyone sees death messages. \nforce-show-all-death-messages=true\n"
 command-spy: |
-    # If true, only display commands from the whitelist. If false, show all commands to all command spies.
-    use-whitelist=true
-    # The whitelist of commands to spy on.
-    whitelisted-commands-to-spy-on=[]
+    # The blacklist (or whitelist if filter-is-whitelist is true) to use when determining which commands to spy on.
+    command-filter=[]
+    # If true, command-filter acts as a whitelist of commands to spy on, else, it functions as a blacklist.
+    filter-is-whitelist=true
 home: |
     # If true, if a player has more homes than the permission option "home-count" allows, then players will not be able to use any homes until they delete homes to be at the limit again.
     prevent-home-count-overhang=true
@@ -285,21 +291,26 @@ home: |
     use-safe-warp=true
 rtp: "# The number of times to try to find a safe teleport spot when using /rtp before\
     \ failing. Setting this too low may cause a high rate of failures.\nattempts=10\n\
+    # If true, the rtp will based around the player, not the world centre\ncenter-on-player=false\n\
     # If this is set, and the world name here matches one of your worlds (case-sensitive!),\
     \ then `/rtp` will default to use the world specified here. Otherwise, the player's\
     \ current world will be used.\ndefault-world=\"\"\n# The maximum Y value that\
-    \ can be teleported to.\nmaximum-y=255\n# The minimum Y value that can be teleported\
-    \ to.\nminimum-y=0\n# If true, Nucleus will check the permission \"nucleus.rtp.world.<worldname>\"\
-    \ (where worldname is in lower case) before allowing an RTP attempt to go through.\n\
-    per-world-permissions=false\n# The radius from the centre of the world/world border\
-    \ where /rtp can warp to. This will not override the world border radius.\nradius=30000\n\
-    # If true, /rtp will only try to teleport players to the surface, and not into\
-    \ caves.\nsurface-only=false\n# If a world is listed below with a valid config\
-    \ section, it will take precedence over the global section. World names should\
-    \ be lower case (so, standard nether should be \"dim-1\".\n# \n# Copy the example\
-    \ block and paste it below, with the correct world name, to set the per-world\
-    \ options.\nworld-overrides {\n    example {\n        maximum-y=255\n        minimum-y=0\n\
-    \        radius=30000\n        surface-only=false\n    }\n}\n"
+    \ can be teleported to.\nmaximum-y=255\n# The minimum radius from the centre of\
+    \ the world/world border where /rtp will warp to.\nmin-radius=0\n# The minimum\
+    \ Y value that can be teleported to.\nminimum-y=0\n# If true, Nucleus will check\
+    \ the permission \"nucleus.rtp.world.<worldname>\" (where worldname is in lower\
+    \ case) before allowing an RTP attempt to go through.\nper-world-permissions=false\n\
+    # The maximum radius from the centre of the world/world border where /rtp can\
+    \ warp to. This will not override the world border radius.\nradius=30000\n# If\
+    \ true, /rtp will only try to teleport players to the surface, and not into caves.\n\
+    surface-only=false\n# If a world is listed below with a valid config section,\
+    \ it will take precedence over the global section. World names should be lower\
+    \ case (so, standard nether should be \"dim-1\".\n# \n# Copy the example block\
+    \ and paste it below, with the correct world name, to set the per-world options.\n\
+    world-overrides {\n    example {\n        # If true, the rtp will based around\
+    \ the player, not the world centre\n        center-on-player=false\n        maximum-y=255\n\
+    \        min-radius=30000\n        minimum-y=0\n        radius=30000\n       \
+    \ surface-only=false\n    }\n}\n"
 warn: |
     # The command to execute when a player has a specific number of warnings.
     action-command="tempban {{name}} 1d Exceeding the active warning threshold"
@@ -326,14 +337,16 @@ core: |
     kick-on-stop {
         # If true, Nucleus will kick all users just prior to the server stopping.
         enabled=false
-        # The message to display to players when restarting the server. Overridden when using the /stop [reason] command.
-        message="Server closed"
     }
+    # Prints to console when a Nucleus save is occurring.
+    print-on-autosave=false
     # These parameters define how far out to check from a specific point when performing a warp. Larger numbers mean that a wider area is checked, but large numbers will cause server lag. The defaults are sufficient in most cases.
     safe-teleport-check {
         height=3
         width=9
     }
+    # If true, if the server detects that a world UUID might have changed, Nucleus will whitelist the server and offer the chance to revert the UUID change, if it detects methods that allow it to do so. You may to turn this off if you are deleting and recreating worlds.
+    track-world-uuids=true
     # If true, a "messages.conf" file will be generated and used to define custom messages.
     use-custom-message-file=false
     # If true, cancel a user's warmup on...

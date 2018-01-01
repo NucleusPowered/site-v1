@@ -14,7 +14,6 @@ There are extensive topics on how to use and configure Nucleus to each server's 
 * [Installing and Configuring Nucleus](configuration/)
 * [What Nucleus Isn't: Permissions and Economy](permsecon.html)
 * [Essentials Command Equivalence](essentials.html)
-* [Migrating from EssentialCmds](configuration/migration.html)
 * [Setting up suggested permissions](configuration/permissions.html)
 * [Command Management (Warmups, Cooldowns and Costs)](configuration/commands.html)
 * [Using Nucleus Mixins for 1.10.2 based servers](configuration/mixins.html)
@@ -46,6 +45,7 @@ There are extensive topics on how to use and configure Nucleus to each server's 
 * [Ignore](modules/ignore.html) - Allows users to ignore others in chat
 * [Info](modules/info.html) - Provides for an MOTD and other server info pages
 * [Inventory](modules/inventory.html) - Provides the ability to look into a player's inventories
+* [Invulnerability](modules/invulnerability.html) - Provides the ability make someone invulnerable
 * [Item](modules/item.html) - Item manipulation related commands
 * [Jail](modules/jail.html) - Player jails for minor punishments
 * [Jump](modules/jump.html) - Short range teleportation

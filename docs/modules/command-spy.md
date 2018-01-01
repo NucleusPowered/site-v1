@@ -9,4 +9,4 @@ modulename: Command Spy
 ## Introduction
 
 The Command Spy module allows trusted staff members to see what other players are running from ingame, subject to a
- configurable whitelist.
+ configurable blacklist or whitelist.
