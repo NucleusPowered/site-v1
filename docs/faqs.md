@@ -42,8 +42,6 @@ The Nucleus Project is lead by **dualspiral**, with Mohron, RysingDragon and Tim
 ### [What does the Nucleus Project publish?](#what-do-they-publish)
 
 * Nucleus: the main plugin. Most functionality is located in this plugin.
-* Nucleus Mixins: an optional plugin for Minecraft 1.10.2 servers that enables enhanced pre-generation of the world.
-    * [See this page for more information on Nucleus Mixins.](configuration/mixins.html)
 * Nucleus Gluon: an optional plugin for Nucleus 0.24.0 and above, and PlaceholderAPI 3.6 and above, that allows for chat placeholders from both
 plugins to be used in... well, both plugins!
 * Nucleus Phonon: a modular take on Discord bots
@@ -73,7 +71,7 @@ Not yet, but it's something we're looking into. But as you're coming from Bukkit
 
 <a class="anchor" id="plugin-incompatibilities"></a>
 
-### [Are there any known plugin incompatibilities with Nucleus?](#incompatibilities)
+### [Are there any known plugin or mod incompatibilities with Nucleus?](#incompatibilities)
 
 Unfortunately so. Here are some plugins that are known to clash with Nucleus:
  
@@ -84,8 +82,21 @@ but if you decide you wish to use PJW and want to get to the Nucleus world comma
 you would rather use Nucleus' versions. Never versions of PJP have these modules disabled.
 * **SimpleChat** and **SimpleTags**: These plugins have been known to hijack Nucleus' chat formatting - if you want chat channels, other plugins with Nucleus
 integration exist.
+* **FTB Utilities** tends to duplicate a player's name in the chat when a message is sent
 
 As we find more, we'll update this list.
+
+<a class="anchor" id="ftbu"></a>
+
+### [I'm using FTB and having issues with chat - names are being duplicated](#ftbu)
+
+If you are using FTB, FTB Utilities also tries to format the chat, with the result that player names appear twice. If you wish to use Nucleus' chat formatting, 
+you should turn off FTB Utilities handling. The config file is in the `local` directory, and you want to set the following options under "ranks":
+
+* `B:override_chat=false`
+* `B:override_commands=false`
+
+Then reload the FTB Utilities plugin or restart your server.
 
 <a class="anchor" id="lots-of-permissions"></a>
 

@@ -7,8 +7,6 @@ nolink: true
 
 There are extensive topics on how to use and configure Nucleus to each server's liking. [You might find that reading the Nucleus FAQs is a good first step!](faqs.html)
 
-**Note: these docs are for 1.1.x: 1.2.x documentation will appear shortly after Nucleus 1.2 is released.**
-
 ## Installation and Configuration
 
 * [Installing and Configuring Nucleus](configuration/)
@@ -16,7 +14,6 @@ There are extensive topics on how to use and configure Nucleus to each server's 
 * [Essentials Command Equivalence](essentials.html)
 * [Setting up suggested permissions](configuration/permissions.html)
 * [Command Management (Warmups, Cooldowns and Costs)](configuration/commands.html)
-* [Using Nucleus Mixins for 1.10.2 based servers](configuration/mixins.html)
 
 ## Developers
 
