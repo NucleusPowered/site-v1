@@ -61,7 +61,7 @@ But please, take the time to read the rest of this FAQ too.
 
 ### [I've come from EssentialCmds, can I migrate my data?](#esscmds)
 
-Support was removed for this in 1.1. If you really need to migrate, make sure you're running Nucleus 1.0.1, then [please see our migration pages.](configuration/migration.html)
+Support was removed for this in 1.1. As EssCmds does not work on 1.12.2, migration is no longer possible.
 
 <a class="anchor" id="essentials"></a>
 
