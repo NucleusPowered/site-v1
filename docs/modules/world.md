@@ -39,6 +39,12 @@ you can now run `/world create -p the_void <name>`, and to create a skylands wor
 /world create -p the_skylands <name>`. Other presets might be available - depending on other plugins that might supply
 `WorldArchetypes`.
 
+### Importing Worlds
+
+To import an existing world, place a copy of the world, with the directory name that reflects the name of the world you want to import
+within the server `world/` directory (or whatever your default/primary world name is, as set in `server.properties`). Then, run the command
+`/world create -i [world name]`, and the import process should start for you.
+
 ## Enabling, disabling, loading and unloading worlds.
 
 Nucleus provides commands that allows admins to manage whether a world is loaded or not, or whether it can even be accessed. A world can be in one of the following states:
