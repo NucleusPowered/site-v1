@@ -99,6 +99,8 @@ world: |
     # If true, changing worlds requires permission to access the target world - "nucleus.worlds.<worldname>"
     separate-permissions=false
 invulnerability: |
+    # If true, players that are invulnerable will not be able to attack other players or entities without the nucleus.god.pvp.override permission
+    disable-pvp-on-god=false
     # If true, in order to keep invulnerability on login, the permission for the god command (nucleus.god.base) is required. If false, a player without access to the /god will not be invulnerable on login.
     require-god-permission-on-login=false
 kit: |
@@ -117,11 +119,10 @@ connection: |
     server-full-message=""
     # If this is not empty, the message to send to players when the server is whitelisted.
     whitelist-message=""
-vanish: |
-    # If true, Nucleus will try to alter the tab list when a player vanishes.
-    alter-tab-list=true
-    # If true, players who leave or join the server under vanish will not have a login or logout message broadcast.
-    hide-connection-messages-on-vanish=false
+vanish: "# Optional[ If true, Nucleus will try to alter the tab list when a player\
+    \ vanishes.]\r\n# This config option is currently ignored.\nalter-tab-list=true\n\
+    # If true, players who leave or join the server under vanish will not have a login\
+    \ or logout message broadcast.\nhide-connection-messages-on-vanish=false\n"
 info: "info {\n    # If \"use-default-info-section\" is true, this section is displayed\
     \ when a player runs \"/info\", not the section list.\n    default-info-section=info\n\
     \    # If true, when a player runs \"/info\", the section specified in \"default-info-section\"\

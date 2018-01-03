@@ -691,7 +691,7 @@
     cost: false
     module: core
     defaultLevel: ADMIN
-    usageString: /nucleus debug|itemalias|save|setupperms|reload|clearcache|resetuser|update-messages|getuser|docgen|printperms|?|info|rebuildusercache|
+    usageString: /nucleus debug|itemalias|save|setupperms|reload|clearcache|update-messages|getuser|resetuser|docgen|printperms|?|info|rebuildusercache|
     oneLineDescription: Displays Nucleus version and module information.
     permissionbase: nucleus.nucleus
     simpleUsage: '/nucleus '
@@ -706,8 +706,8 @@
     extendedDescription: The Nucleus command allows access to sub commands that administer
         the entire plugin.
     warmup: false
-    subcommands: debug, itemalias, save, setupperms, reload, clearcache, resetuser,
-        update-messages, getuser, docgen, printperms, info, rebuildusercache
+    subcommands: debug, itemalias, save, setupperms, reload, clearcache, update-messages,
+        getuser, resetuser, docgen, printperms, info, rebuildusercache
 -   aliases: clearcache
     cost: false
     module: core
@@ -2077,6 +2077,11 @@
         permission: nucleus.god.base
     -   module: invulnerability
         defaultLevel: ADMIN
+        description: Allows the user to attack players when invulnerable, if the PvP
+            disable on invulnerability feature is set.
+        permission: nucleus.god.pvp.override
+    -   module: invulnerability
+        defaultLevel: ADMIN
         description: Allows the user to target other players using the command "god".
         permission: nucleus.god.others
     cooldown: false
@@ -2261,35 +2266,34 @@
     permissions:
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the warmup for /lore delete, Allows
-            the user to bypass the warmup for /lore insert, Allows the user to bypass
-            the warmup for /lore add, Allows the user to bypass the warmup for /lore
-            set, Allows the user to bypass the warmup for /lore clear, Allows the
-            user to bypass the warmup for /lore edit
+        description: Allows the user to bypass the warmup for /lore insert, Allows
+            the user to bypass the warmup for /lore edit, Allows the user to bypass
+            the warmup for /lore set, Allows the user to bypass the warmup for /lore
+            clear, Allows the user to bypass the warmup for /lore add, Allows the
+            user to bypass the warmup for /lore delete
         permission: nucleus.lore.set.exempt.warmup
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to run the command /lore delete, Allows the user
-            to run the command /lore insert, Allows the user to run the command /lore
-            add, Allows the user to run the command /lore set, Allows the user to
-            run the command /lore clear, Allows the user to run the command /lore
-            edit
+        description: Allows the user to run the command /lore insert, Allows the user
+            to run the command /lore edit, Allows the user to run the command /lore
+            set, Allows the user to run the command /lore clear, Allows the user to
+            run the command /lore add, Allows the user to run the command /lore delete
         permission: nucleus.lore.set.base
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cooldown for /lore delete, Allows
-            the user to bypass the cooldown for /lore insert, Allows the user to bypass
-            the cooldown for /lore add, Allows the user to bypass the cooldown for
-            /lore set, Allows the user to bypass the cooldown for /lore clear, Allows
-            the user to bypass the cooldown for /lore edit
+        description: Allows the user to bypass the cooldown for /lore insert, Allows
+            the user to bypass the cooldown for /lore edit, Allows the user to bypass
+            the cooldown for /lore set, Allows the user to bypass the cooldown for
+            /lore clear, Allows the user to bypass the cooldown for /lore add, Allows
+            the user to bypass the cooldown for /lore delete
         permission: nucleus.lore.set.exempt.cooldown
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cost for /lore delete, Allows the
-            user to bypass the cost for /lore insert, Allows the user to bypass the
-            cost for /lore add, Allows the user to bypass the cost for /lore set,
-            Allows the user to bypass the cost for /lore clear, Allows the user to
-            bypass the cost for /lore edit
+        description: Allows the user to bypass the cost for /lore insert, Allows the
+            user to bypass the cost for /lore edit, Allows the user to bypass the
+            cost for /lore set, Allows the user to bypass the cost for /lore clear,
+            Allows the user to bypass the cost for /lore add, Allows the user to bypass
+            the cost for /lore delete
         permission: nucleus.lore.set.exempt.cost
     cooldown: true
     requiresMixin: false
@@ -2307,35 +2311,34 @@
     permissions:
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the warmup for /lore delete, Allows
-            the user to bypass the warmup for /lore insert, Allows the user to bypass
-            the warmup for /lore add, Allows the user to bypass the warmup for /lore
-            set, Allows the user to bypass the warmup for /lore clear, Allows the
-            user to bypass the warmup for /lore edit
+        description: Allows the user to bypass the warmup for /lore insert, Allows
+            the user to bypass the warmup for /lore edit, Allows the user to bypass
+            the warmup for /lore set, Allows the user to bypass the warmup for /lore
+            clear, Allows the user to bypass the warmup for /lore add, Allows the
+            user to bypass the warmup for /lore delete
         permission: nucleus.lore.set.exempt.warmup
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to run the command /lore delete, Allows the user
-            to run the command /lore insert, Allows the user to run the command /lore
-            add, Allows the user to run the command /lore set, Allows the user to
-            run the command /lore clear, Allows the user to run the command /lore
-            edit
+        description: Allows the user to run the command /lore insert, Allows the user
+            to run the command /lore edit, Allows the user to run the command /lore
+            set, Allows the user to run the command /lore clear, Allows the user to
+            run the command /lore add, Allows the user to run the command /lore delete
         permission: nucleus.lore.set.base
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cooldown for /lore delete, Allows
-            the user to bypass the cooldown for /lore insert, Allows the user to bypass
-            the cooldown for /lore add, Allows the user to bypass the cooldown for
-            /lore set, Allows the user to bypass the cooldown for /lore clear, Allows
-            the user to bypass the cooldown for /lore edit
+        description: Allows the user to bypass the cooldown for /lore insert, Allows
+            the user to bypass the cooldown for /lore edit, Allows the user to bypass
+            the cooldown for /lore set, Allows the user to bypass the cooldown for
+            /lore clear, Allows the user to bypass the cooldown for /lore add, Allows
+            the user to bypass the cooldown for /lore delete
         permission: nucleus.lore.set.exempt.cooldown
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cost for /lore delete, Allows the
-            user to bypass the cost for /lore insert, Allows the user to bypass the
-            cost for /lore add, Allows the user to bypass the cost for /lore set,
-            Allows the user to bypass the cost for /lore clear, Allows the user to
-            bypass the cost for /lore edit
+        description: Allows the user to bypass the cost for /lore insert, Allows the
+            user to bypass the cost for /lore edit, Allows the user to bypass the
+            cost for /lore set, Allows the user to bypass the cost for /lore clear,
+            Allows the user to bypass the cost for /lore add, Allows the user to bypass
+            the cost for /lore delete
         permission: nucleus.lore.set.exempt.cost
     cooldown: true
     requiresMixin: false
@@ -2354,35 +2357,34 @@
     permissions:
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the warmup for /lore delete, Allows
-            the user to bypass the warmup for /lore insert, Allows the user to bypass
-            the warmup for /lore add, Allows the user to bypass the warmup for /lore
-            set, Allows the user to bypass the warmup for /lore clear, Allows the
-            user to bypass the warmup for /lore edit
+        description: Allows the user to bypass the warmup for /lore insert, Allows
+            the user to bypass the warmup for /lore edit, Allows the user to bypass
+            the warmup for /lore set, Allows the user to bypass the warmup for /lore
+            clear, Allows the user to bypass the warmup for /lore add, Allows the
+            user to bypass the warmup for /lore delete
         permission: nucleus.lore.set.exempt.warmup
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to run the command /lore delete, Allows the user
-            to run the command /lore insert, Allows the user to run the command /lore
-            add, Allows the user to run the command /lore set, Allows the user to
-            run the command /lore clear, Allows the user to run the command /lore
-            edit
+        description: Allows the user to run the command /lore insert, Allows the user
+            to run the command /lore edit, Allows the user to run the command /lore
+            set, Allows the user to run the command /lore clear, Allows the user to
+            run the command /lore add, Allows the user to run the command /lore delete
         permission: nucleus.lore.set.base
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cooldown for /lore delete, Allows
-            the user to bypass the cooldown for /lore insert, Allows the user to bypass
-            the cooldown for /lore add, Allows the user to bypass the cooldown for
-            /lore set, Allows the user to bypass the cooldown for /lore clear, Allows
-            the user to bypass the cooldown for /lore edit
+        description: Allows the user to bypass the cooldown for /lore insert, Allows
+            the user to bypass the cooldown for /lore edit, Allows the user to bypass
+            the cooldown for /lore set, Allows the user to bypass the cooldown for
+            /lore clear, Allows the user to bypass the cooldown for /lore add, Allows
+            the user to bypass the cooldown for /lore delete
         permission: nucleus.lore.set.exempt.cooldown
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cost for /lore delete, Allows the
-            user to bypass the cost for /lore insert, Allows the user to bypass the
-            cost for /lore add, Allows the user to bypass the cost for /lore set,
-            Allows the user to bypass the cost for /lore clear, Allows the user to
-            bypass the cost for /lore edit
+        description: Allows the user to bypass the cost for /lore insert, Allows the
+            user to bypass the cost for /lore edit, Allows the user to bypass the
+            cost for /lore set, Allows the user to bypass the cost for /lore clear,
+            Allows the user to bypass the cost for /lore add, Allows the user to bypass
+            the cost for /lore delete
         permission: nucleus.lore.set.exempt.cost
     cooldown: true
     requiresMixin: false
@@ -2401,35 +2403,34 @@
     permissions:
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the warmup for /lore delete, Allows
-            the user to bypass the warmup for /lore insert, Allows the user to bypass
-            the warmup for /lore add, Allows the user to bypass the warmup for /lore
-            set, Allows the user to bypass the warmup for /lore clear, Allows the
-            user to bypass the warmup for /lore edit
+        description: Allows the user to bypass the warmup for /lore insert, Allows
+            the user to bypass the warmup for /lore edit, Allows the user to bypass
+            the warmup for /lore set, Allows the user to bypass the warmup for /lore
+            clear, Allows the user to bypass the warmup for /lore add, Allows the
+            user to bypass the warmup for /lore delete
         permission: nucleus.lore.set.exempt.warmup
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to run the command /lore delete, Allows the user
-            to run the command /lore insert, Allows the user to run the command /lore
-            add, Allows the user to run the command /lore set, Allows the user to
-            run the command /lore clear, Allows the user to run the command /lore
-            edit
+        description: Allows the user to run the command /lore insert, Allows the user
+            to run the command /lore edit, Allows the user to run the command /lore
+            set, Allows the user to run the command /lore clear, Allows the user to
+            run the command /lore add, Allows the user to run the command /lore delete
         permission: nucleus.lore.set.base
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cooldown for /lore delete, Allows
-            the user to bypass the cooldown for /lore insert, Allows the user to bypass
-            the cooldown for /lore add, Allows the user to bypass the cooldown for
-            /lore set, Allows the user to bypass the cooldown for /lore clear, Allows
-            the user to bypass the cooldown for /lore edit
+        description: Allows the user to bypass the cooldown for /lore insert, Allows
+            the user to bypass the cooldown for /lore edit, Allows the user to bypass
+            the cooldown for /lore set, Allows the user to bypass the cooldown for
+            /lore clear, Allows the user to bypass the cooldown for /lore add, Allows
+            the user to bypass the cooldown for /lore delete
         permission: nucleus.lore.set.exempt.cooldown
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cost for /lore delete, Allows the
-            user to bypass the cost for /lore insert, Allows the user to bypass the
-            cost for /lore add, Allows the user to bypass the cost for /lore set,
-            Allows the user to bypass the cost for /lore clear, Allows the user to
-            bypass the cost for /lore edit
+        description: Allows the user to bypass the cost for /lore insert, Allows the
+            user to bypass the cost for /lore edit, Allows the user to bypass the
+            cost for /lore set, Allows the user to bypass the cost for /lore clear,
+            Allows the user to bypass the cost for /lore add, Allows the user to bypass
+            the cost for /lore delete
         permission: nucleus.lore.set.exempt.cost
     cooldown: true
     requiresMixin: false
@@ -2448,35 +2449,34 @@
     permissions:
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the warmup for /lore delete, Allows
-            the user to bypass the warmup for /lore insert, Allows the user to bypass
-            the warmup for /lore add, Allows the user to bypass the warmup for /lore
-            set, Allows the user to bypass the warmup for /lore clear, Allows the
-            user to bypass the warmup for /lore edit
+        description: Allows the user to bypass the warmup for /lore insert, Allows
+            the user to bypass the warmup for /lore edit, Allows the user to bypass
+            the warmup for /lore set, Allows the user to bypass the warmup for /lore
+            clear, Allows the user to bypass the warmup for /lore add, Allows the
+            user to bypass the warmup for /lore delete
         permission: nucleus.lore.set.exempt.warmup
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to run the command /lore delete, Allows the user
-            to run the command /lore insert, Allows the user to run the command /lore
-            add, Allows the user to run the command /lore set, Allows the user to
-            run the command /lore clear, Allows the user to run the command /lore
-            edit
+        description: Allows the user to run the command /lore insert, Allows the user
+            to run the command /lore edit, Allows the user to run the command /lore
+            set, Allows the user to run the command /lore clear, Allows the user to
+            run the command /lore add, Allows the user to run the command /lore delete
         permission: nucleus.lore.set.base
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cooldown for /lore delete, Allows
-            the user to bypass the cooldown for /lore insert, Allows the user to bypass
-            the cooldown for /lore add, Allows the user to bypass the cooldown for
-            /lore set, Allows the user to bypass the cooldown for /lore clear, Allows
-            the user to bypass the cooldown for /lore edit
+        description: Allows the user to bypass the cooldown for /lore insert, Allows
+            the user to bypass the cooldown for /lore edit, Allows the user to bypass
+            the cooldown for /lore set, Allows the user to bypass the cooldown for
+            /lore clear, Allows the user to bypass the cooldown for /lore add, Allows
+            the user to bypass the cooldown for /lore delete
         permission: nucleus.lore.set.exempt.cooldown
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cost for /lore delete, Allows the
-            user to bypass the cost for /lore insert, Allows the user to bypass the
-            cost for /lore add, Allows the user to bypass the cost for /lore set,
-            Allows the user to bypass the cost for /lore clear, Allows the user to
-            bypass the cost for /lore edit
+        description: Allows the user to bypass the cost for /lore insert, Allows the
+            user to bypass the cost for /lore edit, Allows the user to bypass the
+            cost for /lore set, Allows the user to bypass the cost for /lore clear,
+            Allows the user to bypass the cost for /lore add, Allows the user to bypass
+            the cost for /lore delete
         permission: nucleus.lore.set.exempt.cost
     cooldown: true
     requiresMixin: false
@@ -2495,35 +2495,34 @@
     permissions:
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the warmup for /lore delete, Allows
-            the user to bypass the warmup for /lore insert, Allows the user to bypass
-            the warmup for /lore add, Allows the user to bypass the warmup for /lore
-            set, Allows the user to bypass the warmup for /lore clear, Allows the
-            user to bypass the warmup for /lore edit
+        description: Allows the user to bypass the warmup for /lore insert, Allows
+            the user to bypass the warmup for /lore edit, Allows the user to bypass
+            the warmup for /lore set, Allows the user to bypass the warmup for /lore
+            clear, Allows the user to bypass the warmup for /lore add, Allows the
+            user to bypass the warmup for /lore delete
         permission: nucleus.lore.set.exempt.warmup
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to run the command /lore delete, Allows the user
-            to run the command /lore insert, Allows the user to run the command /lore
-            add, Allows the user to run the command /lore set, Allows the user to
-            run the command /lore clear, Allows the user to run the command /lore
-            edit
+        description: Allows the user to run the command /lore insert, Allows the user
+            to run the command /lore edit, Allows the user to run the command /lore
+            set, Allows the user to run the command /lore clear, Allows the user to
+            run the command /lore add, Allows the user to run the command /lore delete
         permission: nucleus.lore.set.base
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cooldown for /lore delete, Allows
-            the user to bypass the cooldown for /lore insert, Allows the user to bypass
-            the cooldown for /lore add, Allows the user to bypass the cooldown for
-            /lore set, Allows the user to bypass the cooldown for /lore clear, Allows
-            the user to bypass the cooldown for /lore edit
+        description: Allows the user to bypass the cooldown for /lore insert, Allows
+            the user to bypass the cooldown for /lore edit, Allows the user to bypass
+            the cooldown for /lore set, Allows the user to bypass the cooldown for
+            /lore clear, Allows the user to bypass the cooldown for /lore add, Allows
+            the user to bypass the cooldown for /lore delete
         permission: nucleus.lore.set.exempt.cooldown
     -   module: item
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cost for /lore delete, Allows the
-            user to bypass the cost for /lore insert, Allows the user to bypass the
-            cost for /lore add, Allows the user to bypass the cost for /lore set,
-            Allows the user to bypass the cost for /lore clear, Allows the user to
-            bypass the cost for /lore edit
+        description: Allows the user to bypass the cost for /lore insert, Allows the
+            user to bypass the cost for /lore edit, Allows the user to bypass the
+            cost for /lore set, Allows the user to bypass the cost for /lore clear,
+            Allows the user to bypass the cost for /lore add, Allows the user to bypass
+            the cost for /lore delete
         permission: nucleus.lore.set.exempt.cost
     cooldown: true
     requiresMixin: false
@@ -3256,8 +3255,8 @@
     permissions:
     -   module: kit
         defaultLevel: NONE
-        description: Allows the user to run the command /command clear, Allows the
-            user to run the command /command remove
+        description: Allows the user to run the command /command remove, Allows the
+            user to run the command /command clear
         permission: nucleus.kit.command.remove.base
     cooldown: false
     requiresMixin: false
@@ -3296,8 +3295,8 @@
     permissions:
     -   module: kit
         defaultLevel: NONE
-        description: Allows the user to run the command /command clear, Allows the
-            user to run the command /command remove
+        description: Allows the user to run the command /command remove, Allows the
+            user to run the command /command clear
         permission: nucleus.kit.command.remove.base
     cooldown: false
     requiresMixin: false
@@ -3807,13 +3806,13 @@
     permissions:
     -   module: message
         defaultLevel: ADMIN
-        description: Allows the user to bypass the warmup for /message, Allows the
-            user to bypass the warmup for /reply
+        description: Allows the user to bypass the warmup for /reply, Allows the user
+            to bypass the warmup for /message
         permission: nucleus.message.exempt.warmup
     -   module: message
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cost for /message, Allows the user
-            to bypass the cost for /reply
+        description: Allows the user to bypass the cost for /reply, Allows the user
+            to bypass the cost for /message
         permission: nucleus.message.exempt.cost
     -   module: message
         defaultLevel: ADMIN
@@ -3829,8 +3828,8 @@
         permission: nucleus.message.color
     -   module: message
         defaultLevel: USER
-        description: Allows the user to run the command /message, Allows the user
-            to run the command /reply
+        description: Allows the user to run the command /reply, Allows the user to
+            run the command /message
         permission: nucleus.message.base
     -   module: message
         defaultLevel: ADMIN
@@ -3842,8 +3841,8 @@
         permission: nucleus.message.url
     -   module: message
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cooldown for /message, Allows the
-            user to bypass the cooldown for /reply
+        description: Allows the user to bypass the cooldown for /reply, Allows the
+            user to bypass the cooldown for /message
         permission: nucleus.message.exempt.cooldown
     cooldown: true
     requiresMixin: false
@@ -3893,23 +3892,23 @@
     permissions:
     -   module: message
         defaultLevel: ADMIN
-        description: Allows the user to bypass the warmup for /message, Allows the
-            user to bypass the warmup for /reply
+        description: Allows the user to bypass the warmup for /reply, Allows the user
+            to bypass the warmup for /message
         permission: nucleus.message.exempt.warmup
     -   module: message
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cost for /message, Allows the user
-            to bypass the cost for /reply
+        description: Allows the user to bypass the cost for /reply, Allows the user
+            to bypass the cost for /message
         permission: nucleus.message.exempt.cost
     -   module: message
         defaultLevel: USER
-        description: Allows the user to run the command /message, Allows the user
-            to run the command /reply
+        description: Allows the user to run the command /reply, Allows the user to
+            run the command /message
         permission: nucleus.message.base
     -   module: message
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cooldown for /message, Allows the
-            user to bypass the cooldown for /reply
+        description: Allows the user to bypass the cooldown for /reply, Allows the
+            user to bypass the cooldown for /message
         permission: nucleus.message.exempt.cooldown
     cooldown: true
     requiresMixin: false
@@ -5076,9 +5075,9 @@
     permissions:
     -   module: powertool
         defaultLevel: ADMIN
-        description: Allows the user to run the command /powertool delete, Allows
-            the user to run the command /powertool toggle, Allows the user to run
-            the command /powertool list
+        description: Allows the user to run the command /powertool toggle, Allows
+            the user to run the command /powertool list, Allows the user to run the
+            command /powertool delete
         permission: nucleus.powertool.base
     cooldown: false
     requiresMixin: false
@@ -5097,9 +5096,9 @@
     permissions:
     -   module: powertool
         defaultLevel: ADMIN
-        description: Allows the user to run the command /powertool delete, Allows
-            the user to run the command /powertool toggle, Allows the user to run
-            the command /powertool list
+        description: Allows the user to run the command /powertool toggle, Allows
+            the user to run the command /powertool list, Allows the user to run the
+            command /powertool delete
         permission: nucleus.powertool.base
     cooldown: false
     requiresMixin: false
@@ -5117,9 +5116,9 @@
     permissions:
     -   module: powertool
         defaultLevel: ADMIN
-        description: Allows the user to run the command /powertool delete, Allows
-            the user to run the command /powertool toggle, Allows the user to run
-            the command /powertool list
+        description: Allows the user to run the command /powertool toggle, Allows
+            the user to run the command /powertool list, Allows the user to run the
+            command /powertool delete
         permission: nucleus.powertool.base
     cooldown: false
     requiresMixin: false
@@ -5142,9 +5141,9 @@
     permissions:
     -   module: powertool
         defaultLevel: ADMIN
-        description: Allows the user to run the command /powertool delete, Allows
-            the user to run the command /powertool toggle, Allows the user to run
-            the command /powertool list
+        description: Allows the user to run the command /powertool toggle, Allows
+            the user to run the command /powertool list, Allows the user to run the
+            command /powertool delete
         permission: nucleus.powertool.base
     cooldown: false
     requiresMixin: false
@@ -6069,7 +6068,7 @@
     rootAliases: nwarp
     module: warp
     defaultLevel: USER
-    usageString: /warp set|cost|setcategory|list|category|delete|setdescription|?|[[-y|-a|--accept]
+    usageString: /warp set|cost|setcategory|category|list|delete|setdescription|?|[[-y|-a|--accept]
         [-f|--force] ] [<subject>] <Warp Name>
     oneLineDescription: Teleport to the specified warp.
     essentialsEquivalents:
@@ -6104,7 +6103,7 @@
     requiresMixin: false
     essNotes: Use '/warp' for warping, '/warps' to list warps.
     warmup: true
-    subcommands: set, cost, setcategory, list, category, delete, setdescription
+    subcommands: set, cost, setcategory, category, list, delete, setdescription
 -   aliases: category
     cost: true
     module: warp
@@ -6184,8 +6183,8 @@
     permissions:
     -   module: warp
         defaultLevel: ADMIN
-        description: Allows the user to run the command /category setdisplayname,
-            Allows the user to run the command /category removedisplayname
+        description: Allows the user to run the command /category removedisplayname,
+            Allows the user to run the command /category setdisplayname
         permission: nucleus.warp.category.displayname.base
     cooldown: false
     requiresMixin: false
@@ -6222,8 +6221,8 @@
     permissions:
     -   module: warp
         defaultLevel: ADMIN
-        description: Allows the user to run the command /category setdisplayname,
-            Allows the user to run the command /category removedisplayname
+        description: Allows the user to run the command /category removedisplayname,
+            Allows the user to run the command /category setdisplayname
         permission: nucleus.warp.category.displayname.base
     cooldown: false
     requiresMixin: false
@@ -6398,7 +6397,7 @@
     rootAliases: nworld, nucleusworld
     module: world
     defaultLevel: ADMIN
-    usageString: /world setdifficulty|setkeepspawnloaded|teleport|sethardcore|modifiers|delete|load|enable|unload|create|info|border|setloadonstartup|setgamemode|setpvpenabled|list|setspawn|spawn|presets|gamerule|rename|disable|clone|generators|?|
+    usageString: /world setdifficulty|setkeepspawnloaded|teleport|sethardcore|modifiers|delete|load|enable|unload|create|info|border|setloadonstartup|setgamemode|setpvpenabled|list|setspawn|presets|spawn|gamerule|rename|disable|clone|generators|?|
     oneLineDescription: Parent command for all other world commands.
     permissionbase: nucleus.world
     simpleUsage: '/world '
@@ -6425,7 +6424,7 @@
     warmup: true
     subcommands: setdifficulty, setkeepspawnloaded, teleport, sethardcore, modifiers,
         delete, load, enable, unload, create, info, border, setloadonstartup, setgamemode,
-        setpvpenabled, list, setspawn, spawn, presets, gamerule, rename, disable,
+        setpvpenabled, list, setspawn, presets, spawn, gamerule, rename, disable,
         clone, generators
 -   aliases: border
     cost: true
@@ -6469,8 +6468,8 @@
     permissions:
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to run the command /border gen, Allows the user
-            to run the command /border cancelgen
+        description: Allows the user to run the command /border cancelgen, Allows
+            the user to run the command /border gen
         permission: nucleus.world.border.gen.base
     cooldown: false
     requiresMixin: false
@@ -6503,8 +6502,8 @@
         permission: nucleus.world.border.gen.exempt.cost
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to run the command /border gen, Allows the user
-            to run the command /border cancelgen
+        description: Allows the user to run the command /border cancelgen, Allows
+            the user to run the command /border gen
         permission: nucleus.world.border.gen.base
     -   module: world
         defaultLevel: ADMIN
@@ -6536,8 +6535,8 @@
     permissions:
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to run the command /border set, Allows the user
-            to run the command /border reset
+        description: Allows the user to run the command /border reset, Allows the
+            user to run the command /border set
         permission: nucleus.world.border.set.base
     cooldown: false
     requiresMixin: false
@@ -6557,8 +6556,8 @@
     permissions:
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to run the command /border set, Allows the user
-            to run the command /border reset
+        description: Allows the user to run the command /border reset, Allows the
+            user to run the command /border set
         permission: nucleus.world.border.set.base
     cooldown: false
     requiresMixin: false
@@ -6614,9 +6613,9 @@
         permission: nucleus.world.create.exempt.cost
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to run the command /world modifiers, Allows the
-            user to run the command /world generators, Allows the user to run the
-            command /world create, Allows the user to run the command /world presets
+        description: Allows the user to run the command /world presets, Allows the
+            user to run the command /world modifiers, Allows the user to run the command
+            /world create, Allows the user to run the command /world generators
         permission: nucleus.world.create.base
     cooldown: true
     requiresMixin: false
@@ -6755,9 +6754,9 @@
     permissions:
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to run the command /world modifiers, Allows the
-            user to run the command /world generators, Allows the user to run the
-            command /world create, Allows the user to run the command /world presets
+        description: Allows the user to run the command /world presets, Allows the
+            user to run the command /world modifiers, Allows the user to run the command
+            /world create, Allows the user to run the command /world generators
         permission: nucleus.world.create.base
     cooldown: false
     requiresMixin: false
@@ -6775,23 +6774,23 @@
     permissions:
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cooldown for /world list, Allows
-            the user to bypass the cooldown for /world info
+        description: Allows the user to bypass the cooldown for /world info, Allows
+            the user to bypass the cooldown for /world list
         permission: nucleus.world.list.exempt.cooldown
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to run the command /world list, Allows the user
-            to run the command /world info
+        description: Allows the user to run the command /world info, Allows the user
+            to run the command /world list
         permission: nucleus.world.list.base
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to bypass the warmup for /world list, Allows
-            the user to bypass the warmup for /world info
+        description: Allows the user to bypass the warmup for /world info, Allows
+            the user to bypass the warmup for /world list
         permission: nucleus.world.list.exempt.warmup
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cost for /world list, Allows the
-            user to bypass the cost for /world info
+        description: Allows the user to bypass the cost for /world info, Allows the
+            user to bypass the cost for /world list
         permission: nucleus.world.list.exempt.cost
     cooldown: true
     requiresMixin: false
@@ -6811,23 +6810,23 @@
     permissions:
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cooldown for /world list, Allows
-            the user to bypass the cooldown for /world info
+        description: Allows the user to bypass the cooldown for /world info, Allows
+            the user to bypass the cooldown for /world list
         permission: nucleus.world.list.exempt.cooldown
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to run the command /world list, Allows the user
-            to run the command /world info
+        description: Allows the user to run the command /world info, Allows the user
+            to run the command /world list
         permission: nucleus.world.list.base
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to bypass the warmup for /world list, Allows
-            the user to bypass the warmup for /world info
+        description: Allows the user to bypass the warmup for /world info, Allows
+            the user to bypass the warmup for /world list
         permission: nucleus.world.list.exempt.warmup
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to bypass the cost for /world list, Allows the
-            user to bypass the cost for /world info
+        description: Allows the user to bypass the cost for /world info, Allows the
+            user to bypass the cost for /world list
         permission: nucleus.world.list.exempt.cost
     -   module: world
         defaultLevel: ADMIN
@@ -6873,9 +6872,9 @@
     permissions:
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to run the command /world modifiers, Allows the
-            user to run the command /world generators, Allows the user to run the
-            command /world create, Allows the user to run the command /world presets
+        description: Allows the user to run the command /world presets, Allows the
+            user to run the command /world modifiers, Allows the user to run the command
+            /world create, Allows the user to run the command /world generators
         permission: nucleus.world.create.base
     cooldown: false
     requiresMixin: false
@@ -6893,9 +6892,9 @@
     permissions:
     -   module: world
         defaultLevel: ADMIN
-        description: Allows the user to run the command /world modifiers, Allows the
-            user to run the command /world generators, Allows the user to run the
-            command /world create, Allows the user to run the command /world presets
+        description: Allows the user to run the command /world presets, Allows the
+            user to run the command /world modifiers, Allows the user to run the command
+            /world create, Allows the user to run the command /world generators
         permission: nucleus.world.create.base
     cooldown: false
     requiresMixin: false
