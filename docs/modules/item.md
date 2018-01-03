@@ -35,7 +35,20 @@ and it would involve removing a current enchantment, add the flag `-o`. If you a
 enchantment level onto an item which is not normally allowed (often referred to as "unsafe"), add the flag `-u`, though
 this requires an extra permission (`nucleus.enchant.unsafe`).
 
+## Repair
+
+Nucleus can be used to repair items in a player's inventory using `/repair`. By default, `/repair` will only target the item held in a player's main hand. By using and combining the available flag arguments, specific inventory locations or the entire inventory can be repaired.
+
+### Flag Arguments
+
+* `/repair -m` repairs the player's main hand (default behaviour).
+* `/repair -a` repairs the player's entire inventory.
+* `/repair -h` repairs the player's hotbar.
+* `/repair -o` repairs the player's off hand.
+* `/repair -e` repairs the player's worn equipment (armour).
+
+Repair also supports a configurable blacklist/whitelist.
+
 ## Other
 
-Nucleus also allows users to repair the item in their hand using `/repair`, and to turn the item in their hand into a
-full stack using `/more`
+Nucleus also allows users to turn the item in their hand into a full stack using `/more`
