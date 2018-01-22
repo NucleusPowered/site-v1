@@ -31,6 +31,7 @@ There are extensive topics on how to use and configure Nucleus to each server's 
 * [Core](modules/core.html) - Core Nucleus functions, such as migration and permission setup
 * [Command Logger](modules/command-logger.html) - Logs commands in the console
 * [Command Spy](modules/command-spy.html) - Allows online players to see commands run by other players
+* [Connection](modules/connection.html) - Allows for servers to allow for reserved slots and configurable whitelist messages 
 * [Connection Messages](modules/connection-messages.html) - Alters the messages when players login or out
 * [Death Messages](modules/death-message.html) - Controls whether death messages are sent
 * [Environment](modules/environment.html) - Manages the world environment
@@ -64,7 +65,7 @@ There are extensive topics on how to use and configure Nucleus to each server's 
 * [Sign](modules/sign.html) - Allows for coloured text on signs
 * [Spawn](modules/spawn.html) - Set spawn and first spawn spots
 * [Staff Chat](modules/staff-chat.html) - A chat channel for staff members
-* [Teleport](modules/teleport.html) - Teleportation of players to other players and arbitary spots
+* [Teleport](modules/teleport.html) - Teleportation of players to other players and arbitrary spots
 * [Vanish](modules/vanish.html) - Makes players vanish from view
 * [Warning](modules/warn.html) - Allows warnings to be applied to players, optionally executing a command when a threshold is reached
 * [Warp](modules/warp.html) - Server defined warps
