@@ -18,10 +18,6 @@ command set are ways to force saving the latest data, reloading the plugin confi
 
 Note that changing module and command enabling statuses will not take effect until the server is restarted.
 
-## Migrating from EssentialCmds
-
-See [our guide here](../configuration/migration.html)
-
 ## Setting up default permissions
 
 See [our guide here](../configuration/permissions.html)
