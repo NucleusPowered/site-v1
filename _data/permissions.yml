@@ -892,6 +892,10 @@
     permission: nucleus.motd.base
 -   module: info
     defaultLevel: USER
+    description: Allows the user to keep their inventory on death.
+    permission: nucleus.inventory.keepondeath
+-   module: inventory
+    defaultLevel: USER
     description: If granted, the user will see the MOTD when joining the server.
     permission: nucleus.motd.login
 -   module: inventory
