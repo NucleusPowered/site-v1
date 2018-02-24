@@ -891,7 +891,7 @@
     description: Allows the user to run the command /motd
     permission: nucleus.motd.base
 -   module: info
-    defaultLevel: USER
+    defaultLevel: ADMIN
     description: Allows the user to keep their inventory on death.
     permission: nucleus.inventory.keepondeath
 -   module: inventory
