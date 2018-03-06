@@ -78,9 +78,10 @@
     notes: ''
     isExact: true
     nucleusEquiv:
+    - home delete
+    - home del
     - deletehome
     - delhome
-    - ndeletehome
 -   essentialsCommands:
     - deljail
     - remjail
@@ -504,9 +505,9 @@
     notes: ''
     isExact: true
     nucleusEquiv:
+    - home set
     - homeset
     - sethome
-    - nhomeset
 -   essentialsCommands:
     - setjail
     - createjail
