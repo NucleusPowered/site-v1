@@ -9,6 +9,10 @@ header: Setting up permissions
 While Nucleus keeps a comprehensive list of [commands](../commands2.html) and [permissions](../permissions.html), we realise
 that there are a lot of them. We've added a way to easily add permissions using your favourite permission plugin.
 
+## WARNING: Don't use the wildcard instead!
+
+If you are tempted by using `*`, please don't. Have a read of our article on why [you shouldn't use *](nowildcard.html)
+
 ## Preparing your Permissions Plugin
 
 To reduce errors, Nucleus will check that the target group exists before trying to setup the permissions. Ensure you have

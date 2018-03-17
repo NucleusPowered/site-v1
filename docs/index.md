@@ -10,10 +10,13 @@ There are extensive topics on how to use and configure Nucleus to each server's 
 ## Installation and Configuration
 
 * [Installing and Configuring Nucleus](configuration/)
+* [Frequently Asked Questions](faqs.html)
 * [What Nucleus Isn't: Permissions and Economy](permsecon.html)
 * [Essentials Command Equivalence](essentials.html)
 * [Setting up suggested permissions](configuration/permissions.html)
 * [Command Management (Warmups, Cooldowns and Costs)](configuration/commands.html)
+
+We also have an article on [the Permissions Wildcard (And Why You Shouldn't Use It)](nowildcard.html)
 
 ## Developers
 

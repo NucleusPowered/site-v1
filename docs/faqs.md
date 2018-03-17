@@ -108,8 +108,11 @@ If you do so, the following things will happen:
 * You will not be able to go AFK (permission: `nucleus.afk.exempt.toggle`)
 * Logging in/out of your server will never generate a connection message (permission: `nucleus.connectionmessages.disable`)
 * From 1.2 - logging in to the server will cause you to vanish (permission: `nucleus.vanish.onlogin`)
+* From 1.3 - you'll give yourself the keep inventory permission (permission: `nucleus.inventory.keepondeath`)
 
 Other plugins may also not function as intended, a good example is **GriefPrevention**. **So, please, don't use the wildcard.**
+
+For more information on why this is bad, read [this article on why you shouldn't use it, including background information on what Bukkit did](nowildcard.html)
 
 Instead, Nucleus offers a way to setup our suggested permission sets, that should get you off the ground. [You can read more about it at this 
  documentation page](configuration/permissions.html), but the gist of it is that you should setup your user, mod and admin groups, then run the
