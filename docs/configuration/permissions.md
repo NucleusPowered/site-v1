@@ -11,7 +11,7 @@ that there are a lot of them. We've added a way to easily add permissions using 
 
 ## WARNING: Don't use the wildcard instead!
 
-If you are tempted by using `*`, please don't. Have a read of our article on why [you shouldn't use *](nowildcard.html)
+If you are tempted by using `*`, please don't. Have a read of our article on why [you shouldn't use *](../nowildcard.html)
 
 ## Preparing your Permissions Plugin
 
