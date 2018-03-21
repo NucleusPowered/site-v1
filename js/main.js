@@ -59,7 +59,10 @@ var d = (function() {
         "Nucleus. No commercials, NO MERCY!", // Anchorman
         "Nucleus: It's one louder, isn't it?", // Spinal Tap
         "Nucleus: It goes up to 11.", // Spinal Tap
-        "The time-traveling is just too dangerous. Better that I devote myself to study the other great mystery of the universe: Nucleus!" // Back to the Future: Part II
+        "The time-traveling is just too dangerous. Better that I devote myself to study the other great mystery of the universe: Nucleus!", // Back to the Future: Part II
+        "PRAISE NUCLEUS", // Guild Wars 2, Path of Fire (everyone seems to praise Joko)
+        "For the glory of Nucleus", // NieR Automata
+        "With-Nucleus-by-my-side" // Final Fantasy X, there is a moment where Tidus says "with Yuna by my side" rather quickly...
     ];
 
     var recalcPermissionBoxes = function(objectToUse) {
