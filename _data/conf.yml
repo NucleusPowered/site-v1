@@ -128,6 +128,8 @@ connection: |
     # If this is not empty, the message to send to players when the server is whitelisted.
     whitelist-message=""
 vanish: |
+    # [EXPERIMENTAL - use with caution] If true, Nucleus will try to alter the tab list when a player vanishes.
+    alter-tab-list=false
     # If true, players who leave or join the server under vanish will not have a login or logout message broadcast.
     hide-connection-messages-on-vanish=false
 info: "info {\n    # If \"use-default-info-section\" is true, this section is displayed\
@@ -306,7 +308,7 @@ rtp: "# The number of times to try to find a safe teleport spot when using /rtp 
     \ can be teleported to.\nmaximum-y=255\n# The minimum radius from the centre of\
     \ the world/world border where /rtp will warp to.\nmin-radius=0\n# The minimum\
     \ Y value that can be teleported to.\nminimum-y=0\n# If true, Nucleus will check\
-    \ the permission \"nucleus.rtp.world.<worldname>\" (where worldname is in lower\
+    \ the permission \"nucleus.rtp.worlds.<worldname>\" (where worldname is in lower\
     \ case) before allowing an RTP attempt to go through.\nper-world-permissions=false\n\
     # The maximum radius from the centre of the world/world border where /rtp can\
     \ warp to. This will not override the world border radius.\nradius=30000\n# If\
@@ -334,36 +336,33 @@ warn: |
     show-login=true
     # The number of active warnings a player must accumulate before the action command is executed. Set to -1 to disable.
     warnings-before-action=-1
-core: |
-    # If set, this command will be suggested if a player clicks on the user name in chat in templated messages. Use {{player}} to indicate the player name.
-    command-on-name-click="/msg {{subject}}"
-    # If true, commands executed by the console can affect players that normally have an exempt permission against the command.
-    console-overrides-exemptions=true
-    # Enables debug mode, which will cause stack traces from commands to be printed to the console.
-    debug-mode=false
-    enable-doc-gen=true
-    kick-on-stop {
-        # If true, Nucleus will kick all users just prior to the server stopping.
-        enabled=false
-    }
-    # Prints to console when a Nucleus save is occurring.
-    print-on-autosave=false
-    # These parameters define how far out to check from a specific point when performing a warp. Larger numbers mean that a wider area is checked, but large numbers will cause server lag. The defaults are sufficient in most cases.
-    safe-teleport-check {
-        height=3
-        width=9
-    }
-    # If true, if the server detects that a world UUID might have changed, Nucleus will whitelist the server and offer the chance to revert the UUID change, if it detects methods that allow it to do so. You may to turn this off if you are deleting and recreating worlds.
-    track-world-uuids=true
-    # If true, a "messages.conf" file will be generated and used to define custom messages.
-    use-custom-message-file=false
-    # If true, cancel a user's warmup on...
-    warmup-canceling {
-        # running a command
-        cancel-on-command=true
-        # movement
-        cancel-on-move=true
-    }
+core: "# If set, this command will be suggested if a player clicks on the user name\
+    \ in chat in templated messages. Use {{player}} to indicate the player name.\n\
+    command-on-name-click=\"/msg {{subject}}\"\n# If true, commands executed by the\
+    \ console can affect players that normally have an exempt permission against the\
+    \ command.\nconsole-overrides-exemptions=true\n# Enables debug mode, which will\
+    \ cause stack traces from commands to be printed to the console.\ndebug-mode=false\n\
+    enable-doc-gen=true\nkick-on-stop {\n    # If true, Nucleus will kick all users\
+    \ just prior to the server stopping.\n    enabled=false\n}\n# Prints to console\
+    \ when a Nucleus save is occurring.\nprint-on-autosave=false\n# These parameters\
+    \ define how far out to check from a specific point when performing a warp. Larger\
+    \ numbers mean that a wider area is checked, but large numbers will cause server\
+    \ lag. The defaults are sufficient in most cases.\nsafe-teleport-check {\n   \
+    \ height=3\n    width=9\n}\n# If true, if the server detects that a world UUID\
+    \ might have changed, Nucleus will whitelist the server and offer the chance to\
+    \ revert the UUID change, if it detects methods that allow it to do so. You may\
+    \ to turn this off if you are deleting and recreating worlds.\ntrack-world-uuids=true\n\
+    # If true, a \"messages.conf\" file will be generated and used to define custom\
+    \ messages.\nuse-custom-message-file=false\n# If true, cancel a user's warmup\
+    \ on...\nwarmup-canceling {\n    # running a command\n    cancel-on-command=true\n\
+    \    # movement\n    cancel-on-move=true\n}\n# If you are having issues because\
+    \ a world UUID changed and you were unable to fix it, this allows you to redirect\
+    \ old UUIDs to new ones (or world names). This is a map of old world UUIDs to\
+    \ new world names or new world UUIDs, the following are both valid:\n# \n# \"\
+    123e4567-e89b-12d3-a456-426655440000\"=\"world\"\n# \n# \"123e4567-e89b-12d3-a456-426655440000\"\
+    =\"1b671a64-40d5-491e-99b0-da01ff1f3341\"\n# \n# Other plugins will be able to\
+    \ check this map to perform their own migrations, support for that is up to those\
+    \ plugins.\nworld-uuid-migration {}\n"
 environment: |
     # The maximum amount of time that the weather can be set to last, in seconds. Set to -1 for no restriction.
     maximum-weather-timespan=-1

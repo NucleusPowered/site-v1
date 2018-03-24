@@ -150,15 +150,7 @@
 -   essentialsCommands:
     - gamemode
     - gm
-    - creative
-    - survival
-    - adventure
-    - gmc
-    - gma
-    - gms
-    - gmt
-    notes: Currently no way to simply give '/creative' or '/gmc', for example, with
-        no arguments, gamemode is required.
+    notes: /gm does not toggle between survival and creative, use /gmt for that
     isExact: false
     nucleusEquiv:
     - gamemode
@@ -196,6 +188,40 @@
     - getlocation
     - getloc
     - ngetpos
+-   essentialsCommands:
+    - gma
+    - adventure
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - gma
+    - adventure
+    - ngma
+-   essentialsCommands:
+    - gmc
+    - creative
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - gmc
+    - creative
+    - ngmc
+-   essentialsCommands:
+    - gms
+    - survival
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - gms
+    - survival
+    - ngms
+-   essentialsCommands:
+    - gmt
+    notes: ''
+    isExact: true
+    nucleusEquiv:
+    - gmt
+    - ngmt
 -   essentialsCommands:
     - god
     - godmode
