@@ -106,10 +106,6 @@ This kit is not visible on `/kit list`, is not redeemable more than once and doe
 
 ## Per-Kit Permissions
 
-It is possible to set per-kit permissions. To do so:
-
-* In Nucleus' configuration file (`main.conf`), set the configuration option `kits.separate-permissions` to `true`.
-* Reload the configuration file if the server is running (`/nucleus reload`)
-
-The permission to use a kit is then `nucleus.kits.[name]`, where `name` is the kit's name. This is in addition to the main
-permission to use a kit, `nucleus.kit.base`.
+Nucleus operates on per kit permissions. The permission to use a kit is then `nucleus.kits.[name]`, where `name` is the kit's name.
+This is in addition to the main permission to use a kit, `nucleus.kit.base`. If you wish to grant permissions for all kits, grant
+`nucleus.kits`.
