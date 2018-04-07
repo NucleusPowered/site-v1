@@ -32,7 +32,10 @@ teleport: |
     use-safe-teleportation=true
 admin: |
     # The prefix and suffix when sending a broadcast message. Accepts chat tokens such as {{displayname}}, {{name}}, etc.
-    broadcast-message-template {}
+    broadcast-message-template {
+        prefix="&a[Broadcast] "
+        suffix=""
+    }
 back: |
     # Log player's location on death.
     on-death=true
@@ -68,18 +71,25 @@ command-logger: |
     log-to-file=false
     # If true, the "command-filter" containing the list of commands to be logged is a whitelist (command must be specfied to be logged), not a blacklist.
     whitelist=false
-inventory: |4+
-
+inventory: "\r\n"
 ban: |
     # The maximum length a temporary ban may last for (in seconds) unless the user handing the mute has a bypass permission. Set to -1 for no maximum.
     maximum-tempban-length=604800
 connection-messages: |
+    # The message to display to players if a name change has been detected. Use {{previousname}} as the token for the player's previous name.
+    changed-name-message="&f{{name}} &ewas previously known by a different name - they were known as &f{{previousname}}"
     # If true, those with the "nucleus.connectionmessages.disable" permission will not trigger login/logout messages.
     disable-with-permission=false
     # If true, will inform players on the server when a player logs on and a name change has been detected.
     display-name-change-if-changed=true
+    # This message uses all the standard Minecraft colour codes, prefixed by "&". Use "{{name}}" for the new player's name.
+    first-login-message="&dWelcome &f{{name}} &dto the server!"
     # If "true", Nucleus will try to make sure that everyone sees connection messages. Note that plugins can potentially override this.
     force-show-all-connection-messages=true
+    # Shown when a user logs in. This message uses all the standard Minecraft colour codes, prefixed by "&". Use "{{name}}" for the player's name.
+    login-message="&8[&a+&8] &f{{name}}"
+    # Shown when a user logs out. This message uses all the standard Minecraft colour codes, prefixed by "&". Use "{{name}}" for the player's name.
+    logout-message="&8[&c-&8] &f{{name}}"
     # Enables changing the login message.
     modify-login-message=false
     # Enables changing the logout message.
@@ -89,6 +99,8 @@ connection-messages: |
 world: |
     # If positive, any new worlds that are created using "/world create" (or "/nworld create") will automatically get a world border that has this diameter (that is, from border to border). Set to 0 or a negative number to disable.
     default-world-border-diameter=0
+    # If true, joining or changing worlds will change the gamemode of a player unless they have the Minecraft permission "nucleus.world.force-gamemode.override"
+    enforce-gamemode-on-world-change=false
     pre-generation {
         # If true, then players with the "nucleus.world.border.gen.notify" permission will get an update on progress after each generation. Recommended to be off, because it can be VERY spammy.
         display-after-each-gen=false
@@ -167,6 +179,9 @@ staff-chat: |
     "include-standard-chat-formatting"=false
     # A Minecraft colour code the denotes the colour to display Staff Chat channel messages in.
     message-colour=b
+    # The prefix to the staff chat message. Use the following tokens: {{prefix}} - prefix (set as an option in a permission plugin), {{suffix}} - suffix (set as an option in a permission plugin), {{name}} - real name, {{displayname}} - display name.
+    # If "include-standard-chat-formatting" is set to "true", the formatting will be appended to this prefix.
+    message-template="&b[STAFF] &r{{displayname}}&b: "
 item: |
     repair {
         # The list of item types to prevent (or allow if whitelist is true) repairing using /repair
@@ -197,7 +212,15 @@ afk: |
     # If true, the server will be informed when a player is kicked for inactivity, else, just those with the nucleus.afk.notify permissions
     broadcast-to-all-on-kick=true
     # If any of the messages tht would be broadcast to the server are blank, they will not be sent.
-    messages {}
+    messages {
+        # The message sent to a player when kicked for inactivity.
+        kick-message-to-subject="You have been kicked for being AFK for too long."
+        on-afk="&7*&f{{displayname}} &7has gone AFK."
+        on-command="&f{{displayname}} &7is currently AFK and may not respond quickly."
+        # If empty, no message will be sent.
+        on-kick="&f{{displayname}} &7has been kicked for being AFK too long."
+        on-return="&7*&f{{displayname}} &7is no longer AFK."
+    }
     # Determines what actions determines if a player is active.
     triggers {
         # Marks a player as active if they chat
@@ -252,7 +275,14 @@ jail: |
     mute-when-jailed=false
     # If true, then the permission "nucleus.jail.unjail" is required to unjail players.
     require-separate-unjail-permission=false
-message: "socialspy {\n    # If true, Nucleus will check the \"nucleus.socialspy.force\"\
+message: "# The prefix to any message received via /helpop.\nhelpop-prefix=\"&7HelpOp:\
+    \ {{name}} &7> &r\"\n# The prefix for received messages. This is displayed to\
+    \ the receiever. Use {{from}} and {{to}} for the message sender/receiver, {{fromDisplay}}\
+    \ or {{toDisplay}} for the display names.\nmsg-receiver-prefix=\"&7[{{fromDisplay}}&7\
+    \ -> me]: &r\"\n# The prefix for sent messages. This is displayed to the sender.\
+    \ Use {{from}} and {{to}} for the message sender/receiver, {{fromDisplay}} or\
+    \ {{toDisplay}} for the display names.\nmsg-sender-prefix=\"&7[me -> {{toDisplay}}&7]:\
+    \ &r\"\nsocialspy {\n    # If true, Nucleus will check the \"nucleus.socialspy.force\"\
     \ permission on the subject to disallow disabling Social Spy.\n    allow-forced=false\n\
     \    # The tag to show at the beginning of a Social Spy message when a player\
     \ is muted (or otherwise has the message cancelled).\n    cancelled-messages-tag=\"\
@@ -260,11 +290,15 @@ message: "socialspy {\n    # If true, Nucleus will check the \"nucleus.socialspy
     \ message targets.\n    levels {\n        # The social spy level of any custom\
     \ target that has been registered through the API.\n        custom-targets=2147483647\n\
     \        # The server's social spy level.\n        server=2147483647\n    }\n\
-    \    # The tag to show at the beginning of a Social Spy message when a player\
-    \ cannot send a message to a player who hasused /msgtoggle (blocking messages\
-    \ from all players).\n    msgtoggle-blocked-messages-tag=\"&c[blocked] \"\n  \
-    \  # If true, and \"use-levels\" is true, players with social spy will also see\
-    \ messages from players at their own level.\n    same-levels-can-see-each-other=true\n\
+    \    # The prefix and format for messages sent to social spies. Use {{from}} and\
+    \ {{to}} for the message sender/receiver, {{fromDisplay}} or {{toDisplay}} for\
+    \ the display names. The colours and style at the end of the prefix will be carried\
+    \ over into the message.\n    msg-prefix=\"&7[SocialSpy] [{{fromDisplay}}&7 ->\
+    \ {{toDisplay}}&7]: &r\"\n    # The tag to show at the beginning of a Social Spy\
+    \ message when a player cannot send a message to a player who hasused /msgtoggle\
+    \ (blocking messages from all players).\n    msgtoggle-blocked-messages-tag=\"\
+    &c[blocked] \"\n    # If true, and \"use-levels\" is true, players with social\
+    \ spy will also see messages from players at their own level.\n    same-levels-can-see-each-other=true\n\
     \    # Controls the types of *sender* that can be spied on.\n    senders-to-spy-on\
     \ {\n        custom-target=true\n        player=true\n        server=true\n  \
     \  }\n    # If true, show messages that players try to send and are cancelled\
@@ -280,18 +314,24 @@ server-list: "# If true, the player count will not be displayed.\nhide-player-co
     , when a prospective player pings the server on the multiplayer server list, one\
     \ of the messages in the list below will be sent to the player. If \"whitelist\"\
     , this module will only act when the whitelist is enabled.\nmodify-server-list-messages=FALSE\n\
+    # Potential messages that could be sent to the player. To split over two lines,\
+    \ include \\n where you want the line break to appear.\nserver-list-messages=null\n\
     # Potential messages that could be sent to the player when the server is whitelisted.\
     \ To split over two lines, include \\n where you want the line break to appear.\n\
     # \n# If no entries are here, the MOTD will use the `server-list-messages` list.\n\
     whitelist-server-list-messages=[]\n"
-death-message: "# If \"false\", death messages will be turned off when someone dies.\n\
-    enable-death-messages=true\n# If \"true\", Nucleus will try to make sure that\
-    \ everyone sees death messages. \nforce-show-all-death-messages=true\n"
+death-message: |
+    # If "false", death messages will be turned off when someone dies.
+    enable-death-messages=true
+    # If "true", Nucleus will try to make sure that everyone sees death messages.
+    force-show-all-death-messages=true
 command-spy: |
     # The blacklist (or whitelist if filter-is-whitelist is true) to use when determining which commands to spy on.
     command-filter=[]
     # If true, command-filter acts as a whitelist of commands to spy on, else, it functions as a blacklist.
     filter-is-whitelist=true
+    # The prefix to use when displaying the player's command.
+    prefix="&7[CS: {{name}}]: "
 home: |
     # If true, if a player has more homes than the permission option "home-count" allows, then players will not be able to use any homes until they delete homes to be at the limit again.
     prevent-home-count-overhang=true
@@ -336,14 +376,18 @@ warn: |
     show-login=true
     # The number of active warnings a player must accumulate before the action command is executed. Set to -1 to disable.
     warnings-before-action=-1
-core: "# If set, this command will be suggested if a player clicks on the user name\
-    \ in chat in templated messages. Use {{player}} to indicate the player name.\n\
-    command-on-name-click=\"/msg {{subject}}\"\n# If true, commands executed by the\
-    \ console can affect players that normally have an exempt permission against the\
-    \ command.\nconsole-overrides-exemptions=true\n# Enables debug mode, which will\
-    \ cause stack traces from commands to be printed to the console.\ndebug-mode=false\n\
-    enable-doc-gen=true\nkick-on-stop {\n    # If true, Nucleus will kick all users\
-    \ just prior to the server stopping.\n    enabled=false\n}\n# Prints to console\
+core: "# If true, if you log in and have the \"wildcard\" permission (either * or\
+    \ nucleus), you will be warned of the potential issues caused by the wildcard.\
+    \ If you use the wildcard and are happy with this, set this to false.\ncheck-for-wildcard=true\n\
+    # If set, this command will be suggested if a player clicks on the user name in\
+    \ chat in templated messages. Use {{player}} to indicate the player name.\ncommand-on-name-click=\"\
+    /msg {{subject}}\"\n# If true, commands executed by the console can affect players\
+    \ that normally have an exempt permission against the command.\nconsole-overrides-exemptions=true\n\
+    # Enables debug mode, which will cause stack traces from commands to be printed\
+    \ to the console.\ndebug-mode=false\nkick-on-stop {\n    # If true, Nucleus will\
+    \ kick all users just prior to the server stopping.\n    enabled=false\n    #\
+    \ The message to display to players when restarting the server. Overridden when\
+    \ using the /stop [reason] command.\n    message=null\n}\n# Prints to console\
     \ when a Nucleus save is occurring.\nprint-on-autosave=false\n# These parameters\
     \ define how far out to check from a specific point when performing a warp. Larger\
     \ numbers mean that a wider area is checked, but large numbers will cause server\
@@ -398,10 +442,11 @@ spawn: |
     use-safe-spawn=true
 chat: "# Some mods and plugins move the Minecraft player prefix to the main message\
     \ body. If this is the case, turn this on, and Nucleus \n# will try to remove\
-    \ it.\ncheck-body-for-minecraft-prefix=false\n# If \"true\", Nucleus will attempt\
-    \ to modify the chat\nmodify-chat=true\n# If true, Nucleus will take the message\
-    \ and try to apply it's own transforms to it. This may overwrite other plugins\
-    \ who do processing super early, so turn this off if you are having problems.\n\
+    \ it.\ncheck-body-for-minecraft-prefix=false\n# The prefix to use when someone\
+    \ uses \"/me\".\nme-prefix=\"&7* {{displayName}} \"\n# If \"true\", Nucleus will\
+    \ attempt to modify the chat\nmodify-chat=true\n# If true, Nucleus will take the\
+    \ message and try to apply it's own transforms to it. This may overwrite other\
+    \ plugins who do processing super early, so turn this off if you are having problems.\n\
     modify-main-message=true\n# If false, Nucleus will prepend it's prefixes/headers\
     \ with those already set buy other plugins. If true, it will overwrite them.\n\
     overwrite-early-prefixes=false\n# If false, Nucleus will prepend it's suffixes/footers\
@@ -435,47 +480,51 @@ chat: "# Some mods and plugins move the Minecraft player prefix to the main mess
     \ player or group. Takes the same input as the \"namestyle\" option, set to \"\
     \" to retain default behaviour (no style). Do not include the \"&\" character.\
     \ Multiple styles must be separated by commas.\n        default-namestyle=\"\"\
-    \n        # Sets the suffix to a message. {{prefix}} - prefix (set as an option\
+    \n        # Sets the prefix to a message. {{prefix}} - prefix (set as an option\
     \ in a permission plugin), {{suffix}} - suffix (set as an option in a permission\
-    \ plugin), {{name}} - real name, {{displayname}} - display name\n        suffix=\"\
-    \"\n    }\n    # Group templates override the default chat template based on the\
-    \ users group. Note that the group name is case sensitive.\n    # Weight matters,\
-    \ the player will use the highest weighted template in this list that matches\
-    \ a group they are in, including inherited groups. If the same weight is used\
-    \ on two or more entries, the group with the most parents will be used.\n    group-templates\
-    \ {\n        DefaultTemplate {\n            # The default colour for a player's\
-    \ chat if the \"chatcolour\" permission option isn't set on the player or group.\
-    \ Takes the same input as the \"namecolour\" option set to \"\" to retain default\
-    \ behaviour (no change of colour). Do not include the \"&\" character.\n     \
-    \       default-chatcolour=\"\"\n            # The default styles for a player's\
-    \ chat if the \"chatstyle\" permission option isn't set on the player or group.\
-    \ Takes the same input as the \"chatstyle\" option set to \"\" to retain default\
-    \ behaviour (no style). Do not include the \"&\" character. Multiple styles must\
-    \ be separated by commas.\n            default-chatstyle=\"\"\n            # The\
-    \ default colour for a player's name if the \"namecolour\" permission option isn't\
-    \ set on the player or group. Takes the same input as the \"chatcolour\" option\
-    \ set to \"\" to retain default behaviour (no change of colour). Do not include\
-    \ the \"&\" character.\n            default-namecolour=\"\"\n            # The\
-    \ default styles for a player's name if the \"namestyle\" permission option isn't\
-    \ set on the player or group. Takes the same input as the \"namestyle\" option,\
-    \ set to \"\" to retain default behaviour (no style). Do not include the \"&\"\
-    \ character. Multiple styles must be separated by commas.\n            default-namestyle=\"\
-    \"\n            # Sets the prefix to a message. {{prefix}} - prefix (set as an\
-    \ option in a permission plugin), {{suffix}} - suffix (set as an option in a permission\
-    \ plugin), {{name}} - real name, {{displayname}} - display name\n            prefix=null\n\
-    \            # Sets the suffix to a message. {{prefix}} - prefix (set as an option\
-    \ in a permission plugin), {{suffix}} - suffix (set as an option in a permission\
-    \ plugin), {{name}} - real name, {{displayname}} - display name\n            suffix=\"\
-    \"\n            # The weight of the template. A higher number will take priority\
-    \ over lower numbers when two templates could apply to the same player because\
-    \ they are in the both groups.\n            weight=1\n        }\n    }\n    #\
-    \ If \"true\", then Nucleus will select the most appropriate group template for\
-    \ a player when they send a chat message. If it's false \n    # the default template\
-    \ will always be used, but there will be a performance gain because a player's\
-    \ groups not not have to be retrieved from the permission plugin. \n    # Turn\
-    \ this off if you are getting severe performance problems when someone chats,\
-    \ it's usually due to a misbehaving permissions plugin.\n    use-group-templates=true\n\
-    }\n"
+    \ plugin), {{name}} - real name, {{displayname}} - display name\n        prefix=\"\
+    {{prefix}} {{displayname}}{{suffix}}&f: \"\n        # Sets the suffix to a message.\
+    \ {{prefix}} - prefix (set as an option in a permission plugin), {{suffix}} -\
+    \ suffix (set as an option in a permission plugin), {{name}} - real name, {{displayname}}\
+    \ - display name\n        suffix=\"\"\n    }\n    # Group templates override the\
+    \ default chat template based on the users group. Note that the group name is\
+    \ case sensitive.\n    # Weight matters, the player will use the highest weighted\
+    \ template in this list that matches a group they are in, including inherited\
+    \ groups. If the same weight is used on two or more entries, the group with the\
+    \ most parents will be used.\n    group-templates {\n        DefaultTemplate {\n\
+    \            # The default colour for a player's chat if the \"chatcolour\" permission\
+    \ option isn't set on the player or group. Takes the same input as the \"namecolour\"\
+    \ option set to \"\" to retain default behaviour (no change of colour). Do not\
+    \ include the \"&\" character.\n            default-chatcolour=\"\"\n        \
+    \    # The default styles for a player's chat if the \"chatstyle\" permission\
+    \ option isn't set on the player or group. Takes the same input as the \"chatstyle\"\
+    \ option set to \"\" to retain default behaviour (no style). Do not include the\
+    \ \"&\" character. Multiple styles must be separated by commas.\n            default-chatstyle=\"\
+    \"\n            # The default colour for a player's name if the \"namecolour\"\
+    \ permission option isn't set on the player or group. Takes the same input as\
+    \ the \"chatcolour\" option set to \"\" to retain default behaviour (no change\
+    \ of colour). Do not include the \"&\" character.\n            default-namecolour=\"\
+    \"\n            # The default styles for a player's name if the \"namestyle\"\
+    \ permission option isn't set on the player or group. Takes the same input as\
+    \ the \"namestyle\" option, set to \"\" to retain default behaviour (no style).\
+    \ Do not include the \"&\" character. Multiple styles must be separated by commas.\n\
+    \            default-namestyle=\"\"\n            # Sets the prefix to a message.\
+    \ {{prefix}} - prefix (set as an option in a permission plugin), {{suffix}} -\
+    \ suffix (set as an option in a permission plugin), {{name}} - real name, {{displayname}}\
+    \ - display name\n            prefix=\"{{prefix}} {{displayname}}{{suffix}}&f:\
+    \ \"\n            # Sets the suffix to a message. {{prefix}} - prefix (set as\
+    \ an option in a permission plugin), {{suffix}} - suffix (set as an option in\
+    \ a permission plugin), {{name}} - real name, {{displayname}} - display name\n\
+    \            suffix=\"\"\n            # The weight of the template. A higher number\
+    \ will take priority over lower numbers when two templates could apply to the\
+    \ same player because they are in the both groups.\n            weight=1\n   \
+    \     }\n    }\n    # If \"true\", then Nucleus will select the most appropriate\
+    \ group template for a player when they send a chat message. If it's false \n\
+    \    # the default template will always be used, but there will be a performance\
+    \ gain because a player's groups not not have to be retrieved from the permission\
+    \ plugin. \n    # Turn this off if you are getting severe performance problems\
+    \ when someone chats, it's usually due to a misbehaving permissions plugin.\n\
+    \    use-group-templates=true\n}\n"
 playerinfo: |
     list {
         list-grouping-by-permission {
