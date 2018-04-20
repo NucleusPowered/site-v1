@@ -57,6 +57,7 @@ We also have an article on [the Permissions Wildcard (And Why You Shouldn't Use 
 * [Mob](modules/mob.html) - Mobs and mob spawners
 * [Mute](modules/mute.html) - Player and server mutes, preventing players from chatting on the server
 * [Name Ban](modules/nameban.html) - Allows servers to ban names, rather than accounts, from a server
+* [Nickname](modules/nickname.html) - Allows players to have a different display name than their Minecraft IGN
 * [Note](modules/note.html) - Allows notes to be added to players for easy reference on the server
 * [Player Info](modules/playerinfo.html) - Display info about players on the server
 * [Powertool](modules/powertool.html) - Personal binding of commands to items
