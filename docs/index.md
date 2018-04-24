@@ -52,6 +52,7 @@ We also have an article on [the Permissions Wildcard (And Why You Shouldn't Use 
 * [Jump](modules/jump.html) - Short range teleportation
 * [Kick](modules/kick.html) - Kicking players from the server
 * [Kit](modules/kit.html) - Management of sets of items that players can redeem
+* [Mail](modules/mail.html) - Allows players to send messages to an inbox, useful for messages for offline players
 * [Message](modules/message.html) - Private messages and "social spy"
 * [Miscellaneous](modules/misc.html) - Odd functions that don't (yet) fit in another module
 * [Mob](modules/mob.html) - Mobs and mob spawners
