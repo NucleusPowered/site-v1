@@ -1,0 +1,47 @@
+---
+layout: minify
+---
+{
+{% for cmds in site.data.commands %}
+    "{{ cmds.commandName }}": {
+        "name": "{{ cmds.commandName }}",
+        {% if cmds.oneLineDescription %}"summary": "{{ cmds.oneLineDescription | replace: '"' | '\\"' }}", {% endif %}
+        {% if cmds.extendedDescription %}"extendeddesc": "{{ cmds.extendedDescription | replace: '|br|', '\\n' }}", {% endif %}
+        {% assign al = (cmds.aliases | split: ', ') %}
+        {% if al | size > 1 %}
+        {% assign sizeName = cmds.commandName | split: ' ' | size | minus: 1 %}
+            {% assign aarray = '' | split: '' %}
+            {% if sizeName == 0 %}
+            {% for a in al %} {% assign aarray = aarray | push: a %}{% endfor %}
+            {% else %}
+            {% assign cmdBase = (cmds.commandName | truncatewords: sizeName, '') %}
+            {% for a in al %} {% assign new_var = cmdBase | append: ' ' | append: a %}{% assign aarray = aarray | push: new_var %}{% endfor %}
+            {% endif %}
+            "aliases": {{ aarray | jsonify }},
+        {% endif %}
+        {% assign rootal = (cmds.rootAliases | split: ', ') %}
+        {% assign rsize = (rootal | size) %}
+        {% if rsize > 0 %}
+        {% assign aarray = '' | split: '' %}
+        {% for a in rootal %}{% assign aarray = (aarray | push: a) %}{% endfor %}
+        "rootaliases": {{ aarray | jsonify }},
+        {% endif %}
+        "usage": "{{ cmds.simpleUsage}}",
+        {% if cmds.subcommands != nil and cmds.subcommands != "" %}
+        "subcommands": {{ cmds.subcommands | split: ', ' | jsonify }},
+        {% endif %}
+        {% if cmds.permissions | size != 0 %}
+        "permissions": {
+            {% assign aarray = '' | split: '' %}
+            {% for perms in cmds.permissions %}
+            "{{ perms.permission }}": {
+                "default-role": "{{ perms.defaultLevel }}",
+                "description": "{{ perms.description | strip_newlines | replace: '"', '\\"' }}"
+            }{% if forloop.last %}{% else %},{% endif %}
+            {% endfor %}
+        },
+        {% endif %}
+        "module": "{{ cmds.module }}"
+    }{% if forloop.last %}{% else %},{% endif %}
+{% endfor %}
+}
