@@ -16,7 +16,7 @@ clear them.
 Mail can be sent to another player using the `/mail send` command,
 
 ```
-/mail send &lt;user&gt; &lt;message&gt;
+/mail send <user> <message>
 ```
 
 The receiving player will receive a notification that they have a mail ready for them. They can read it using (filters will be explained below)
@@ -36,7 +36,7 @@ The player can clear their mail using the command
 If there is a need to investigate someone else's mail, the command is
 
 ```
-/mail other &lt;user&gt; [filter]
+/mail other <user> [filter]
 ```
 
 ## Mail Filters
