@@ -71,7 +71,8 @@ command-logger: |
     log-to-file=false
     # If true, the "command-filter" containing the list of commands to be logged is a whitelist (command must be specfied to be logged), not a blacklist.
     whitelist=false
-inventory: "\r\n"
+inventory: |4+
+
 ban: |
     # The maximum length a temporary ban may last for (in seconds) unless the user handing the mute has a bypass permission. Set to -1 for no maximum.
     maximum-tempban-length=604800
@@ -483,7 +484,7 @@ chat: "# Some mods and plugins move the Minecraft player prefix to the main mess
     \n        # Sets the prefix to a message. {{prefix}} - prefix (set as an option\
     \ in a permission plugin), {{suffix}} - suffix (set as an option in a permission\
     \ plugin), {{name}} - real name, {{displayname}} - display name\n        prefix=\"\
-    {{prefix}} {{displayname}}{{suffix}}&f: \"\n        # Sets the suffix to a message.\
+    {{prefix:s}}{{displayname}}{{suffix}}&f: \"\n        # Sets the suffix to a message.\
     \ {{prefix}} - prefix (set as an option in a permission plugin), {{suffix}} -\
     \ suffix (set as an option in a permission plugin), {{name}} - real name, {{displayname}}\
     \ - display name\n        suffix=\"\"\n    }\n    # Group templates override the\
@@ -511,7 +512,7 @@ chat: "# Some mods and plugins move the Minecraft player prefix to the main mess
     \            default-namestyle=\"\"\n            # Sets the prefix to a message.\
     \ {{prefix}} - prefix (set as an option in a permission plugin), {{suffix}} -\
     \ suffix (set as an option in a permission plugin), {{name}} - real name, {{displayname}}\
-    \ - display name\n            prefix=\"{{prefix}} {{displayname}}{{suffix}}&f:\
+    \ - display name\n            prefix=\"{{prefix:s}}{{displayname}}{{suffix}}&f:\
     \ \"\n            # Sets the suffix to a message. {{prefix}} - prefix (set as\
     \ an option in a permission plugin), {{suffix}} - suffix (set as an option in\
     \ a permission plugin), {{name}} - real name, {{displayname}} - display name\n\
