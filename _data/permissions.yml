@@ -894,6 +894,10 @@
     description: Allows the user to run the command /motd
     permission: nucleus.motd.base
 -   module: info
+    defaultLevel: ADMIN
+    description: Allows the user to keep their inventory on death.
+    permission: nucleus.inventory.keepondeath
+-   module: inventory
     defaultLevel: USER
     description: If granted, the user will see the MOTD when joining the server.
     permission: nucleus.motd.login
