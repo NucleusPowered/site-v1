@@ -92,6 +92,9 @@
     - jails delete
     - jails del
     - jails remove
+    - deljail
+    - rmjail
+    - deletejail
 -   essentialsCommands:
     - delwarp
     - remwarp
@@ -541,6 +544,8 @@
     isExact: true
     nucleusEquiv:
     - jails set
+    - setjail
+    - createjail
 -   essentialsCommands:
     - setspawn
     notes: ''
