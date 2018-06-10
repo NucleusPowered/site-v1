@@ -32,7 +32,9 @@ the permission is of the form `nucleus.gamemode.modes.<gamemode>`.
 
 ## Tokens in `/broadcast`s and `/plainbroadcast`s.
 
+{% raw %}
 Adding a token (such as `{{displayname}}` or `{{name}}` to the message will now show each player a personalised message - the tokens will be parsed based on each player rather than the sender. The sender's name is accessible through the `{{sender}}` token.
+{% endraw %}
 
 ![Console and Player](https://i.gyazo.com/19b6bf177b7573fadb7714f0ae75c2c7.png)
 
