@@ -25,8 +25,8 @@ To setup the permissions, ensure you are either on the console, or on a user wit
 * The permission `nucleus.nucleus.setupperms.base`
 * Permissions to add permissions using your permissions plugin
 
-Simply run the command `/nucleus setupperms [USER|MOD|ADMIN|NONE] <group>`, where `USER` is our suggested permissions
-for users, `MOD` for moderators and `ADMIN` for admin staff. `NONE` permissions are not normally suggested (for example,
+Simply run the command `/nucleus setupperms [USER|MOD|ADMIN|OWNER|NONE] <group>`, where `USER` is our suggested permissions
+for users, `MOD` for moderators, `ADMIN` for admin staff and `OWNER` for owners. `NONE` permissions are not normally suggested (for example,
 it contains things like AFK exemption), but are in their own role.
 
 For the list of permissions, look at our [permission reference](../permissions.html).

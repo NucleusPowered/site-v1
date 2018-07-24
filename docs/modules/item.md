@@ -15,7 +15,7 @@ The Item module allows you to manipulate items.
 ### Setting Item Names
 
 The `/itemname` command affects the item currently in your hand, and has two subcommands, `set` and `clear`. Using
-`/itemname set [name]`, a name can be applied to the item, which supports miencraft colour codes prefixed with an
+`/itemname set [name]`, a name can be applied to the item, which supports minecraft colour codes prefixed with an
 ampersand (`&`). This name can be removed using `/itemname clear`.
 
 ### Setting Lore
