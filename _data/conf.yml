@@ -201,40 +201,34 @@ geo-ip: "# By setting this to true, you agree to the licences for the MaxMind Ge
     \ with the \"nucleus.geoip.login\" permission the country the player is connecting\
     \ via. Please be considerate with this permission, do not give it to everyone.\n\
     alert-on-login=false\n"
-afk: |
-    # If true, the server will announce when players go AFK, even when vanished. If false, only non-vanished players can go AFK.
-    afk-when-vanished=false
-    # The amount of time, in seconds, of inactivity before the player will be marked as AFK. Set to 0 to disable, or use the permission "nucleus.afk.exempt.toggle".
-    afktime=300
-    # The amount of time, in seconds, of inactivity before the player will be kicked. Set to 0 to disable, or use the permission "nucleus.afk.exempt.kick".
-    afktimetokick=0
-    # If true, any player that tries to use a command that might require the target to do something will be told if the target is AFK.
-    alert-on-command-send=true
-    # If true, the server will be informed when a player is kicked for inactivity, else, just those with the nucleus.afk.notify permissions
-    broadcast-to-all-on-kick=true
-    # If any of the messages tht would be broadcast to the server are blank, they will not be sent.
-    messages {
-        # The message sent to a player when kicked for inactivity.
-        kick-message-to-subject="You have been kicked for being AFK for too long."
-        on-afk="&7*&f{{displayname}} &7has gone AFK."
-        on-command="&f{{displayname}} &7is currently AFK and may not respond quickly."
-        # If empty, no message will be sent.
-        on-kick="&f{{displayname}} &7has been kicked for being AFK too long."
-        on-return="&7*&f{{displayname}} &7is no longer AFK."
-    }
-    # Determines what actions determines if a player is active.
-    triggers {
-        # Marks a player as active if they chat
-        on-chat=true
-        # Marks a player as active if they run a command
-        on-command=true
-        # Marks a player as active if they interact
-        on-interact=true
-        # Marks a player as active if they move
-        on-movement=true
-        # Marks a player as active if they rotate (that is, look around)
-        on-rotation=true
-    }
+afk: "# If true, the server will announce when players go AFK, even when vanished.\
+    \ If false, only non-vanished players can go AFK.\nafk-when-vanished=false\n#\
+    \ The amount of time, in seconds, of inactivity before the player will be marked\
+    \ as AFK. Set to 0 to disable, or use the permission \"nucleus.afk.exempt.toggle\"\
+    .\nafktime=300\n# The amount of time, in seconds, of inactivity before the player\
+    \ will be kicked. Set to 0 to disable, or use the permission \"nucleus.afk.exempt.kick\"\
+    .\n# \n# Note that this is not time since going AFK, but time since last activity.\
+    \ Setting this to the same value as \"afktime\" will cause someone who goesAFK\
+    \ to be kicked instantly.\nafktimetokick=0\n# If true, any player that tries to\
+    \ use a command that might require the target to do something will be told if\
+    \ the target is AFK.\nalert-on-command-send=true\n# If true, the server will be\
+    \ informed when a player is kicked for inactivity, else, just those with the nucleus.afk.notify\
+    \ permissions\nbroadcast-to-all-on-kick=true\n# If true, a player in spectator\
+    \ mode will not have their status broadcasted to players, nor will they be kicked\
+    \ for going AFK. Those with the notify permission will still see the AFK messages.\n\
+    disable-in-spectator-mode=false\n# If any of the messages tht would be broadcast\
+    \ to the server are blank, they will not be sent.\nmessages {\n    # The message\
+    \ sent to a player when kicked for inactivity.\n    kick-message-to-subject=\"\
+    You have been kicked for being AFK for too long.\"\n    on-afk=\"&7*&f{{displayname}}\
+    \ &7has gone AFK.\"\n    on-command=\"&f{{displayname}} &7is currently AFK and\
+    \ may not respond quickly.\"\n    # If empty, no message will be sent.\n    on-kick=\"\
+    &f{{displayname}} &7has been kicked for being AFK too long.\"\n    on-return=\"\
+    &7*&f{{displayname}} &7is no longer AFK.\"\n}\n# Determines what actions determines\
+    \ if a player is active.\ntriggers {\n    # Marks a player as active if they chat\n\
+    \    on-chat=true\n    # Marks a player as active if they run a command\n    on-command=true\n\
+    \    # Marks a player as active if they interact\n    on-interact=true\n    #\
+    \ Marks a player as active if they move\n    on-movement=true\n    # Marks a player\
+    \ as active if they rotate (that is, look around)\n    on-rotation=true\n}\n"
 chat-logger: |
     # Whether to actually perform any logging.
     enable-logging=false
@@ -342,26 +336,44 @@ home: |
     use-safe-warp=true
 rtp: "# The number of times to try to find a safe teleport spot when using /rtp before\
     \ failing. Setting this too low may cause a high rate of failures.\nattempts=10\n\
-    # If true, the rtp will based around the player, not the world centre\ncenter-on-player=false\n\
-    # If this is set, and the world name here matches one of your worlds (case-sensitive!),\
-    \ then `/rtp` will default to use the world specified here. Otherwise, the player's\
-    \ current world will be used.\ndefault-world=\"\"\n# The maximum Y value that\
-    \ can be teleported to.\nmaximum-y=255\n# The minimum radius from the centre of\
-    \ the world/world border where /rtp will warp to.\nmin-radius=0\n# The minimum\
-    \ Y value that can be teleported to.\nminimum-y=0\n# If true, Nucleus will check\
-    \ the permission \"nucleus.rtp.worlds.<worldname>\" (where worldname is in lower\
-    \ case) before allowing an RTP attempt to go through.\nper-world-permissions=false\n\
-    # The maximum radius from the centre of the world/world border where /rtp can\
-    \ warp to. This will not override the world border radius.\nradius=30000\n# If\
-    \ true, /rtp will only try to teleport players to the surface, and not into caves.\n\
-    surface-only=false\n# If a world is listed below with a valid config section,\
-    \ it will take precedence over the global section. World names should be lower\
-    \ case (so, standard nether should be \"dim-1\".\n# \n# Copy the example block\
-    \ and paste it below, with the correct world name, to set the per-world options.\n\
-    world-overrides {\n    example {\n        # If true, the rtp will based around\
-    \ the player, not the world centre\n        center-on-player=false\n        maximum-y=255\n\
-    \        min-radius=30000\n        minimum-y=0\n        radius=30000\n       \
-    \ surface-only=false\n    }\n}\n"
+    # The default RTP kernel to use with /rtp. The default options are:\n# \n# * \"\
+    nucleus:default\": standard RTP, with the min/max radius centred around the spawn\
+    \ point\n# * \"nucleus:surface_only\": RTP which will attempt to only pick a surface\
+    \ (must see sky) location, with the min/max radius centred around the spawn point\n\
+    # * \"nucleus:around_player\": RTP which is like default, but the random position\
+    \ will depend on the player's current position, not the spawn point\n# * \"nucleus:around_player_surface\"\
+    : RTP which is like surface only, but the random position will depend on the player's\
+    \ current position, not the spawn point\n# \n# Other plugins might add their own\
+    \ kernels, in which case they will give you an ID to use here.\ndefault-method=\"\
+    nucleus:default\"\n# If this is set, and the world name here matches one of your\
+    \ worlds (case-sensitive!), then `/rtp` will default to use the world specified\
+    \ here. Otherwise, the player's current world will be used.\ndefault-world=\"\"\
+    \n# The maximum Y value that can be teleported to.\nmaximum-y=255\n# The minimum\
+    \ radius from the centre of the world/world border where /rtp will warp to.\n\
+    min-radius=0\n# The minimum Y value that can be teleported to.\nminimum-y=0\n\
+    # If true, Nucleus will check the permission \"nucleus.rtp.worlds.<worldname>\"\
+    \ (where worldname is in lower case) before allowing an RTP attempt to go through.\n\
+    per-world-permissions=false\n# A list of biomes that RTP should not attempt to\
+    \ teleport into.\nprohibited-biomes=[\n    \"minecraft:ocean\",\n    \"minecraft:deep_ocean\"\
+    ,\n    \"minecraft:frozen_ocean\"\n]\n# The maximum radius from the centre of\
+    \ the world/world border where /rtp can warp to. This will not override the world\
+    \ border radius.\nradius=30000\n# If a world is listed below with a valid config\
+    \ section, it will take precedence over the global section. World names should\
+    \ be lower case (so, standard nether should be \"dim-1\".\n# \n# Copy the example\
+    \ block and paste it below, with the correct world name, to set the per-world\
+    \ options.\nworld-overrides {\n    example {\n        # The default RTP kernel\
+    \ to use with /rtp. The default options are:\n        # \n        # * \"nucleus:default\"\
+    : standard RTP, with the min/max radius centred around the spawn point\n     \
+    \   # * \"nucleus:surface_only\": RTP which will attempt to only pick a surface\
+    \ (must see sky) location, with the min/max radius centred around the spawn point\n\
+    \        # * \"nucleus:around_player\": RTP which is like default, but the random\
+    \ position will depend on the player's current position, not the spawn point\n\
+    \        # * \"nucleus:around_player_surface\": RTP which is like surface only,\
+    \ but the random position will depend on the player's current position, not the\
+    \ spawn point\n        # \n        # Other plugins might add their own kernels,\
+    \ in which case they will give you an ID to use here.\n        default-method=\"\
+    nucleus:default\"\n        maximum-y=255\n        min-radius=30000\n        minimum-y=0\n\
+    \        radius=30000\n    }\n}\n"
 warn: |
     # The command to execute when a player has a specific number of warnings.
     action-command="tempban {{name}} 1d Exceeding the active warning threshold"
@@ -384,6 +396,18 @@ core: "# If true, if you log in and have the \"wildcard\" permission (either * o
     \ chat in templated messages. Use {{player}} to indicate the player name.\ncommand-on-name-click=\"\
     /msg {{subject}}\"\n# If true, commands executed by the console can affect players\
     \ that normally have an exempt permission against the command.\nconsole-overrides-exemptions=true\n\
+    # Specifies the path to save nucleus data files in. By default, files are saved\
+    \ at the root. Paths can be relative or absolute.\n# \n# BE AWARE. Changing this\
+    \ location has the following caveats:\n# * This will only take effect after a\
+    \ restart.\n# * Files are NOT moved from the old location, you must do this yourself.\n\
+    # * Files will be in a \"nucleus\" subdireectory of your selected location.\n\
+    # * If the path indicated cannot be found, this will be ignored. It **must** exist\
+    \ beforehand.\n# * Minecraft data (as opposed to Nucleus data) is unaffected.\n\
+    # \n# Common areas that you might want to put the data directory in are (using\
+    \ UNIX paths):\n# * \"config/nucleus\" for data in the Nucleus config data directory\n\
+    # * \"world\" for storing data in the primary world directory.\n# \n# DO NOT CHANGE\
+    \ THIS UNLESS YOU ARE SURE YOU KNOW WHAT YOU ARE DOING. Most admins do not need\
+    \ to move the data directory and should leave this option as \"default\".\ndata-file-location=default\n\
     # Enables debug mode, which will cause stack traces from commands to be printed\
     \ to the console.\ndebug-mode=false\nkick-on-stop {\n    # If true, Nucleus will\
     \ kick all users just prior to the server stopping.\n    enabled=false\n    #\
@@ -392,31 +416,29 @@ core: "# If true, if you log in and have the \"wildcard\" permission (either * o
     \ the number of visitors, having this enabled will include visitors before Nucleus\
     \ was installed, but may cause incompatibilities with other plugins that do not\
     \ register data keys during startup. For compatibility, this should be false,\
-    \ for accuracy, this can be true.\nmore-accurate-visitor-count=false\n# If set\
-    \ to \"default\", uses the default system language if it exists in Nucleus. If\
-    \ set to a language code, Nucleus will try to use that as the default language.\
-    \ Nucleus is primarily written in \"en-GB\".\n# \n# Community translation support\
-    \ is being explored. Please visit us on Discord to ask how you can help translate\
-    \ Nucleus into your own language.\noverride-language=default\n# Prints to console\
-    \ when a Nucleus save is occurring.\nprint-on-autosave=false\n# These parameters\
-    \ define how far out to check from a specific point when performing a warp. Larger\
-    \ numbers mean that a wider area is checked, but large numbers will cause server\
-    \ lag. The defaults are sufficient in most cases.\nsafe-teleport-check {\n   \
-    \ height=3\n    width=9\n}\n# If true and no economy or permission plugin is detected,\
-    \ Nucleus will print a warning on startup. Set this to false if you dont have\
-    \ one of these types of plugins and youre OK with that.\nshow-warning-on-startup=true\n\
-    # If true, if the server detects that a world UUID might have changed, Nucleus\
-    \ will whitelist the server and offer the chance to revert the UUID change, if\
-    \ it detects methods that allow it to do so. You may to turn this off if you are\
-    \ deleting and recreating worlds.\ntrack-world-uuids=true\n# If true, a \"messages.conf\"\
-    \ file will be generated and used to define custom messages.\nuse-custom-message-file=false\n\
-    # If true, cancel a user's warmup on...\nwarmup-canceling {\n    # running a command\n\
-    \    cancel-on-command=true\n    # movement\n    cancel-on-move=true\n}\n# If\
-    \ you are having issues because a world UUID changed and you were unable to fix\
-    \ it, this allows you to redirect old UUIDs to new ones (or world names). This\
-    \ is a map of old world UUIDs to new world names or new world UUIDs, the following\
-    \ are both valid:\n# \n# \"123e4567-e89b-12d3-a456-426655440000\"=\"world\"\n\
-    # \n# \"123e4567-e89b-12d3-a456-426655440000\"=\"1b671a64-40d5-491e-99b0-da01ff1f3341\"\
+    \ for accuracy, this can be true.\nmore-accurate-visitor-count=false\n# Determines\
+    \ the maximum number of offline user entries that are returned for Nucleus commands\
+    \ that allow offline user targeting.\noffline-user-tab-limit=20\n# If set to \"\
+    default\", uses the default system language if it exists in Nucleus. If set to\
+    \ a language code, Nucleus will try to use that as the default language. Nucleus\
+    \ is primarily written in \"en-GB\".\n# \n# Community translation support is being\
+    \ explored. Please visit us on Discord to ask how you can help translate Nucleus\
+    \ into your own language.\noverride-language=default\n# Prints to console when\
+    \ a Nucleus save is occurring.\nprint-on-autosave=false\n# These parameters define\
+    \ how far out to check from a specific point when performing a warp. Larger numbers\
+    \ mean that a wider area is checked, but large numbers will cause server lag.\
+    \ The defaults are sufficient in most cases.\nsafe-teleport-check {\n    height=3\n\
+    \    width=9\n}\n# If true and no economy or permission plugin is detected, Nucleus\
+    \ will print a warning on startup. Set this to false if you dont have one of these\
+    \ types of plugins and youre OK with that.\nshow-warning-on-startup=true\n# If\
+    \ true, a \"messages.conf\" file will be generated and used to define custom messages.\n\
+    use-custom-message-file=false\n# If true, cancel a user's warmup on...\nwarmup-canceling\
+    \ {\n    # running a command\n    cancel-on-command=true\n    # movement\n   \
+    \ cancel-on-move=true\n}\n# If you are having issues because a world UUID changed\
+    \ and you were unable to fix it, this allows you to redirect old UUIDs to new\
+    \ ones (or world names). This is a map of old world UUIDs to new world names or\
+    \ new world UUIDs, the following are both valid:\n# \n# \"123e4567-e89b-12d3-a456-426655440000\"\
+    =\"world\"\n# \n# \"123e4567-e89b-12d3-a456-426655440000\"=\"1b671a64-40d5-491e-99b0-da01ff1f3341\"\
     \n# \n# Other plugins will be able to check this map to perform their own migrations,\
     \ support for that is up to those plugins.\nworld-uuid-migration {}\n"
 environment: |
@@ -429,29 +451,31 @@ fly: |
     require-fly-permission-on-login=false
     # If true, if a player is flying when they disconnect, this state is remembered. If false, this information is only retained between player disconnects if /fly was used.
     save-all-flystate-on-quit=true
-spawn: |
-    # If true, if a respawn would be back to a bed, Nucleus will override that, if false, Nucleus will ignore bed spawns.
-    affect-bed-spawn=true
-    # If true, then Nucleus will attempt to force players joining for the first time to spawn at the *direct point* that first spawn has been set.
-    # Only set this if you want Nucleus to override all other plugins on first spawn.
-    force-first-spawn=false
-    # This section controls whether respawning and /spawn work on a per world or global server basis
-    global-spawn {
-        # If "spawn-on-login" is on and this is true, sends the player to the world specified in "target-spawn-world" when they log in.
-        on-login=false
-        # If true, respawning (like from death) sends the player to the world specified in "target-spawn-world", if false, sends them to the world spawn.
-        on-respawn=false
-        # If true, running /spawn sends the player to the world specified in "target-spawn-world", if false, sends them to the world spawn.
-        on-spawn-command=false
-        # The name of the world to use as the server spawn. If this is invalid, the default world is used instead.
-        target-spawn-world=world
-    }
-    # If true, players require the permission "nucleus.spawn.worlds.<worldname>" to spawn in a specific world, where worldname is the name of the world in lowercase.
-    per-world-permissions=false
-    # If true, players will be sent to the default world spawn on login, unless they are sent to the first login spawn, or they have the "nucleus.spawn.exempt.onjoin" permission.
-    spawn-on-login=false
-    # If true, using /spawn will attempt to find a safe place. If false, the teleportation will always directly send the player to the location with no safety checks.
-    use-safe-spawn=true
+spawn: "# If true, if a respawn would be back to a bed, Nucleus will override that,\
+    \ if false, Nucleus will ignore bed spawns.\naffect-bed-spawn=true\n# If true,\
+    \ then Nucleus will attempt to force players joining for the first time to spawn\
+    \ at the *direct point* that first spawn has been set.\n# Only set this if you\
+    \ want Nucleus to override all other plugins on first spawn.\nforce-first-spawn=false\n\
+    # This section controls whether respawning and /spawn work on a per world or global\
+    \ server basis\nglobal-spawn {\n    # If \"spawn-on-login\" is on and this is\
+    \ true, sends the player to the world specified in \"target-spawn-world\" when\
+    \ they log in.\n    on-login=false\n    # If true, respawning (like from death)\
+    \ sends the player to the world specified in \"target-spawn-world\", if false,\
+    \ sends them to the world spawn.\n    on-respawn=false\n    # If true, running\
+    \ /spawn sends the player to the world specified in \"target-spawn-world\", if\
+    \ false, sends them to the world spawn.\n    on-spawn-command=false\n    # The\
+    \ name of the world to use as the server spawn. If this is invalid, the default\
+    \ world is used instead.\n    target-spawn-world=world\n}\n# If true, players\
+    \ require the permission \"nucleus.spawn.worlds.<worldname>\" to spawn in a specific\
+    \ world, where worldname is the name of the world in lowercase.\nper-world-permissions=false\n\
+    # If true, players will be sent to the default world spawn on login, unless they\
+    \ are sent to the first login spawn, or they have the \"nucleus.spawn.exempt.login\"\
+    \ permission.\nspawn-on-login=false\n# If \"spawn-on-login\" is true, if a player\
+    \ logs in and is on any of the worlds listed here, they will NOT be redirected\
+    \ to the spawn point.\n# \n# This supports both world names and world UUIDs.\n\
+    spawn-on-login-exempt-worlds=[]\n# If true, using /spawn will attempt to find\
+    \ a safe place. If false, the teleportation will always directly send the player\
+    \ to the location with no safety checks.\nuse-safe-spawn=true\n"
 chat: "# Some mods and plugins move the Minecraft player prefix to the main message\
     \ body. If this is the case, turn this on, and Nucleus \n# will try to remove\
     \ it.\ncheck-body-for-minecraft-prefix=false\n# The prefix to use when someone\
@@ -557,6 +581,8 @@ playerinfo: |
         }
         # Enable this if you are using a server panel, such as Multicraft or PterodactylPanel. This will run /minecraft:list when /list is run on the console.
         server-panel-compatibility=false
+        # The template to use to display a player's name. Uses the same tokens as chat. Defaults to "{{displayname}}".
+        template="{{displayname}}"
     }
     seen {
         # If true, the permission "nucleus.seen.extended" is required for all information that comes from modules. If false, information will be displayed based on the command permissions a player has (so, a player with check ban rights can see banning information).
