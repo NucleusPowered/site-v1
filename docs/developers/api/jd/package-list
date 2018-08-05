@@ -4,5 +4,7 @@ io.github.nucleuspowered.nucleus.api.chat
 io.github.nucleuspowered.nucleus.api.events
 io.github.nucleuspowered.nucleus.api.exceptions
 io.github.nucleuspowered.nucleus.api.nucleusdata
+io.github.nucleuspowered.nucleus.api.rtp
 io.github.nucleuspowered.nucleus.api.service
 io.github.nucleuspowered.nucleus.api.text
+io.github.nucleuspowered.nucleus.api.util
