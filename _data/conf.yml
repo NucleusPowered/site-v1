@@ -194,13 +194,6 @@ item: |
         # If true, Nucleus will simply treat /skull as an alias to "/give [player] skull [number] 3 {SkullOwner:[skullplayer]}"
         use-minecraft-command=false
     }
-geo-ip: "# By setting this to true, you agree to the licences for the MaxMind GeoLite\
-    \ 2 databases, and the information as displayed at http://nucleuspowered.org/thirdparty/geoip.html\
-    \ \n# or in the geoip.txt file in the plugin JAR (you can open the Nucleus JAR\
-    \ with any zip program)\naccept-licences=false\n# If true, Nucleus will tell players\
-    \ with the \"nucleus.geoip.login\" permission the country the player is connecting\
-    \ via. Please be considerate with this permission, do not give it to everyone.\n\
-    alert-on-login=false\n"
 afk: "# If true, the server will announce when players go AFK, even when vanished.\
     \ If false, only non-vanished players can go AFK.\nafk-when-vanished=false\n#\
     \ The amount of time, in seconds, of inactivity before the player will be marked\
@@ -409,38 +402,48 @@ core: "# If true, if you log in and have the \"wildcard\" permission (either * o
     \ THIS UNLESS YOU ARE SURE YOU KNOW WHAT YOU ARE DOING. Most admins do not need\
     \ to move the data directory and should leave this option as \"default\".\ndata-file-location=default\n\
     # Enables debug mode, which will cause stack traces from commands to be printed\
-    \ to the console.\ndebug-mode=false\nkick-on-stop {\n    # If true, Nucleus will\
-    \ kick all users just prior to the server stopping.\n    enabled=false\n    #\
-    \ The message to display to players when restarting the server. Overridden when\
-    \ using the /stop [reason] command.\n    message=null\n}\n# When trying to calculate\
-    \ the number of visitors, having this enabled will include visitors before Nucleus\
-    \ was installed, but may cause incompatibilities with other plugins that do not\
-    \ register data keys during startup. For compatibility, this should be false,\
-    \ for accuracy, this can be true.\nmore-accurate-visitor-count=false\n# Determines\
-    \ the maximum number of offline user entries that are returned for Nucleus commands\
-    \ that allow offline user targeting.\noffline-user-tab-limit=20\n# If set to \"\
-    default\", uses the default system language if it exists in Nucleus. If set to\
-    \ a language code, Nucleus will try to use that as the default language. Nucleus\
-    \ is primarily written in \"en-GB\".\n# \n# Community translation support is being\
-    \ explored. Please visit us on Discord to ask how you can help translate Nucleus\
-    \ into your own language.\noverride-language=default\n# Prints to console when\
-    \ a Nucleus save is occurring.\nprint-on-autosave=false\n# These parameters define\
-    \ how far out to check from a specific point when performing a warp. Larger numbers\
-    \ mean that a wider area is checked, but large numbers will cause server lag.\
-    \ The defaults are sufficient in most cases.\nsafe-teleport-check {\n    height=3\n\
-    \    width=9\n}\n# If true and no economy or permission plugin is detected, Nucleus\
-    \ will print a warning on startup. Set this to false if you dont have one of these\
-    \ types of plugins and youre OK with that.\nshow-warning-on-startup=true\n# If\
-    \ true, a \"messages.conf\" file will be generated and used to define custom messages.\n\
-    use-custom-message-file=false\n# If true, cancel a user's warmup on...\nwarmup-canceling\
-    \ {\n    # running a command\n    cancel-on-command=true\n    # movement\n   \
-    \ cancel-on-move=true\n}\n# If you are having issues because a world UUID changed\
-    \ and you were unable to fix it, this allows you to redirect old UUIDs to new\
-    \ ones (or world names). This is a map of old world UUIDs to new world names or\
-    \ new world UUIDs, the following are both valid:\n# \n# \"123e4567-e89b-12d3-a456-426655440000\"\
-    =\"world\"\n# \n# \"123e4567-e89b-12d3-a456-426655440000\"=\"1b671a64-40d5-491e-99b0-da01ff1f3341\"\
-    \n# \n# Other plugins will be able to check this map to perform their own migrations,\
-    \ support for that is up to those plugins.\nworld-uuid-migration {}\n"
+    \ to the console.\ndebug-mode=false\n# If true, then the permissions \"nucleus.owner\"\
+    , \"nucleus.admin\", \"nucleus.mod\" and \"nucleus.user\" can be used as permissionsto\
+    \ grant all suggested permissions for these levels. Note that:\n# \n# * /nucleus\
+    \ setupperms will exist, but will be unnecessary for those using this permission\
+    \ structure\n# * Any specific permissions WILL override these permissions (so,\
+    \ setting `nucleus.home.base` to `false` should override `nucleus.user` being\
+    \ true for that specific permission.\n# \n# These permissions are designed to\
+    \ avoid the use of the wildcard. Some permissions are not given with these catch-alls,\
+    \ this is by design - the permission to vanish on login (for example) must ALWAYS\
+    \ be given separately.\nenable-parent-perms=true\nkick-on-stop {\n    # If true,\
+    \ Nucleus will kick all users just prior to the server stopping.\n    enabled=false\n\
+    \    # The message to display to players when restarting the server. Overridden\
+    \ when using the /stop [reason] command.\n    message=null\n}\n# When trying to\
+    \ calculate the number of visitors, having this enabled will include visitors\
+    \ before Nucleus was installed, but may cause incompatibilities with other plugins\
+    \ that do not register data keys during startup. For compatibility, this should\
+    \ be false, for accuracy, this can be true.\nmore-accurate-visitor-count=false\n\
+    # Determines the maximum number of offline user entries that are returned for\
+    \ Nucleus commands that allow offline user targeting.\noffline-user-tab-limit=20\n\
+    # If set to \"default\", uses the default system language if it exists in Nucleus.\
+    \ If set to a language code, Nucleus will try to use that as the default language.\
+    \ Nucleus is primarily written in \"en-GB\".\n# \n# Community translation support\
+    \ is being explored. Please visit us on Discord to ask how you can help translate\
+    \ Nucleus into your own language.\noverride-language=default\n# Prints to console\
+    \ when a Nucleus save is occurring.\nprint-on-autosave=false\n# These parameters\
+    \ define how far out to check from a specific point when performing a warp. Larger\
+    \ numbers mean that a wider area is checked, but large numbers will cause server\
+    \ lag. The defaults are sufficient in most cases.\nsafe-teleport-check {\n   \
+    \ height=3\n    width=9\n}\n# If true and no economy or permission plugin is detected,\
+    \ Nucleus will print a warning on startup. Set this to false if you dont have\
+    \ one of these types of plugins and youre OK with that.\nshow-warning-on-startup=true\n\
+    # If true, a \"messages.conf\" file will be generated and used to define custom\
+    \ messages.\nuse-custom-message-file=false\n# If true, cancel a user's warmup\
+    \ on...\nwarmup-canceling {\n    # running a command\n    cancel-on-command=true\n\
+    \    # movement\n    cancel-on-move=true\n}\n# If you are having issues because\
+    \ a world UUID changed and you were unable to fix it, this allows you to redirect\
+    \ old UUIDs to new ones (or world names). This is a map of old world UUIDs to\
+    \ new world names or new world UUIDs, the following are both valid:\n# \n# \"\
+    123e4567-e89b-12d3-a456-426655440000\"=\"world\"\n# \n# \"123e4567-e89b-12d3-a456-426655440000\"\
+    =\"1b671a64-40d5-491e-99b0-da01ff1f3341\"\n# \n# Other plugins will be able to\
+    \ check this map to perform their own migrations, support for that is up to those\
+    \ plugins.\nworld-uuid-migration {}\n"
 environment: |
     # The maximum amount of time that the weather can be set to last, in seconds. Set to -1 for no restriction.
     maximum-weather-timespan=-1
