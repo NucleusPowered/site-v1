@@ -91,12 +91,6 @@ We would normally recommend using the list to remove commands, but you can also 
 
 Permission: `nucleus.kit.command.remove.base`
 
-### Edit GUI
-
-There is an **experiemental** "edit" command which opens up an Inventory with books containing the commands that can be taken out, and replaced with new books. These books must only contain one command each, but can span multiple pages as long as no newlines exist.
-
-You can try it with `/kit command edit <kit>`, with the permission `nucleus.kit.command.edit.base`. Same caveats apply as with the add command.
-
 ## First Join Kits (Initial Inventory)
 
 Nucleus supports giving players items when they first join your server. Simply create a kit that contains the inventory
