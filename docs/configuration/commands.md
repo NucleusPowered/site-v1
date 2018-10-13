@@ -71,6 +71,7 @@ message {
 
 The aliases can be turned on or off in the `<command>.aliases.<cmd>` config path, but will require a server restart to take effect.
 
+<a class="anchor" id="perplayer"></a>
 ## Per player/group command warmup/cooldown/cost
 
 If you use a compatible permission plugin, you can use options/meta to set the warmups, cooldowns and costs. Options override the `commands.conf` file.
@@ -84,11 +85,11 @@ In this case, `<command>` is the same as the config key in `commands.conf`, so t
 
 The command for common permission plugins to set these options are:
 
-<em>For users:</em>
+### For users:
 
 {% include permissionblock.html cmdtype="userOption" user="[user]" option="nucleus.[cmd].(warmup|cooldown|cost)" value="[number]" %}
 
-<em>For groups:</em>
+### For groups:
 
 {% include permissionblock.html cmdtype="groupOption" user="[group]" option="nucleus.[cmd].(warmup|cooldown|cost)" value="[number]" %}
 
