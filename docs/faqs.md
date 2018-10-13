@@ -44,7 +44,7 @@ The Nucleus Project is lead by **dualspiral**, with Mohron, RysingDragon and Tim
 * Nucleus: the main plugin. Most functionality is located in this plugin.
 * Nucleus Gluon: an optional plugin for Nucleus 0.24.0 and above, and PlaceholderAPI 3.6 and above, that allows for chat placeholders from both
 plugins to be used in... well, both plugins!
-* Nucleus Phonon: a modular take on Discord bots
+* Nucleus Heisenberg: think Essentials GeoIP
 
 <a class="anchor" id="realtime-help"></a>
 
@@ -56,12 +56,6 @@ But please, take the time to read the rest of this FAQ too.
 <a class="anchor" id="general-setup"></a>
 
 ## [Nucleus: General Setup](#general-setup)
-
-<a class="anchor" id="esscmds"></a>
-
-### [I've come from EssentialCmds, can I migrate my data?](#esscmds)
-
-Support was removed for this in 1.1. As EssCmds does not work on 1.12.2, migration is no longer possible.
 
 <a class="anchor" id="essentials"></a>
 
@@ -204,7 +198,8 @@ If you want to turn off Nucleus' command completely without turning off the whol
 A BungeeCord plugin is probably taking over the command. The only thing you can do in this case is disable the command on your proxy,
 which might involve disabling the whole plugin.
 
-In these scenarios, you can still use `/nucleus:command`, or if it has an alias, the alias.
+In these scenarios, you can still use `/nucleus:[command]`, `/n[command]` (replacing `[command]` with the name of the command),
+ or if it has an alias, the alias.
 
 <a class="anchor" id="customisation"></a>
 
@@ -216,6 +211,9 @@ In these scenarios, you can still use `/nucleus:command`, or if it has an alias,
 
 Most of Nucleus' commands support warmups, cooldowns or costs. All the settings are in the `/config/nucleus/commands.conf` file, [see
 our page on this for more information.](configuration/commands.html) 
+
+Note that you can either do this on a global basis by changing the `commands.conf` file, [or on a per
+player/group basis using permission options](configuration/commands.html#perplayer).
 
 <a class="anchor" id="connection-messages"></a>
 
@@ -348,7 +346,7 @@ That's it! The developers may ask for more information, they will direct you on 
 
 ### [Can I integrate with Nucleus?](#can-i-integrate)
 
-Absolutely, we'd love to have you on board. [We have JavaDocs for our API](http://jd.nucleuspowered.org/), but if the API you want doesn't 
+Absolutely, we'd love to have you on board. [We have JavaDocs for our API](developers/api/jd/), but if the API you want doesn't 
 exist, or you want help with the integration, the developers are frequently on Discord.
  
 <a class="anchor" id="maven"></a>
@@ -357,7 +355,7 @@ exist, or you want help with the integration, the developers are frequently on D
 
 We certainly do! This information is posted on all feature release notes where the API will have changed.
 
-The repo is available at `http://repo.drnaylor.co.uk/artifactory/minecraft/`, you want the `nucleus-api` artifact, which contains the API
+The repo is available at `https://repo.drnaylor.co.uk/artifactory/minecraft/`, you want the `nucleus-api` artifact, which contains the API
 interfaces we will keep stable.
 
 [You can also use JitPack](https://jitpack.io/#NucleusPowered/Nucleus) as your repo too, be sure to select the `nucleus-api` artifact.

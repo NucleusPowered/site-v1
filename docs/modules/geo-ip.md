@@ -6,6 +6,11 @@ moduleid: geo-ip
 modulename: Geo IP
 ---
 
+## Module Deprecated - Scheduled for Removal
+
+The GeoIP module will be removed in favour of a separate plugin, Nucleus Heisenberg. The information on this page is only relevant until 
+Nucleus 1.7 is released.
+
 ## Introduction
 
 The GeoIP module allows server admins to view the country that a player's connection originates in. **GeoIP is DISABLED by default**.
