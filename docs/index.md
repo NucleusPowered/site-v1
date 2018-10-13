@@ -41,7 +41,7 @@ We also have an article on [the Permissions Wildcard (And Why You Shouldn't Use 
 * [Fly](modules/fly.html) - Manages allowing players to fly
 * [Freeze Subject](modules/freeze-subject.html) - Adds ability to freeze players to a particular spot
 * [Fun](modules/fun.html) - "Fun" commands
-* [GeoIP](modules/geo-ip.html) - Getting player country information based on their IP address
+* [GeoIP](modules/geo-ip.html) - **Scheduled for Removal** - Getting player country information based on their IP address
 * [Home](modules/home.html) - Manages personal warps for users
 * [Ignore](modules/ignore.html) - Allows users to ignore others in chat
 * [Info](modules/info.html) - Provides for an MOTD and other server info pages
