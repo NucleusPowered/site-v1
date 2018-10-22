@@ -360,7 +360,13 @@ interfaces we will keep stable.
 
 [You can also use JitPack](https://jitpack.io/#NucleusPowered/Nucleus) as your repo too, be sure to select the `nucleus-api` artifact.
 
+## [Translators](#translators)
 
+<a class="anchor" id="translation"></a>
+
+### [Can I help translate Nucleus into my own language?](#translation)
+
+You sure can! [Read this page more for information](translating.html)
 <!-- 
 - Where Is This Stored chart - eg, where to find the data manipulated by Nucleus. Always helpful when corruption, or when you need to retrieve information that was wiped and needs backup-restoring.
 - As documentation grows, it would be neat to have config templates for troublesome sections (blacklist, list, chat module, etc)

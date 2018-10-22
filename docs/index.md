@@ -18,10 +18,11 @@ There are extensive topics on how to use and configure Nucleus to each server's 
 
 We also have an article on [the Permissions Wildcard (And Why You Shouldn't Use It)](nowildcard.html)
 
-## Developers
+## Developers & Translators
 
 * [Developing for Nucleus](developers/api)
 * [Contributing to Nucleus Development](developers/contributing)
+* [Translating Nucleus](translating.html)
 
 ## Module Reference
 

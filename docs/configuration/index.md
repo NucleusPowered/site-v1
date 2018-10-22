@@ -42,6 +42,9 @@ Updates will not remove this file, but it will be added to.
 Numbers that are wrapped in curly brackets (like `{0}`) are replaced when the plugin sends a message. They should not be
 removed.
 
+[If you want to translate Nucleus into your own language for the greater community, why not get involved in our translation
+effort?](../translating.html)
+
 ### Module specific configuration
 
 Each configuration option should be generated with a comment explaining its function.
