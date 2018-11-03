@@ -324,3 +324,7 @@ h1, h2, h3, h4 {
 .nav-tabs > li > a {
     background-color: #e0e0e0;
 }
+
+.bg-colour img {
+    max-width: 100%;
+}
