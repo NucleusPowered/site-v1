@@ -22,7 +22,8 @@ We also have an article on [the Permissions Wildcard (And Why You Shouldn't Use 
 
 * [Developing for Nucleus](developers/api)
 * [Contributing to Nucleus Development](developers/contributing)
-* [Translating Nucleus](translating.html)
+* [Translating Nucleus](translation)
+* [Translating Nucleus](translation/using.html)
 
 ## Module Reference
 
