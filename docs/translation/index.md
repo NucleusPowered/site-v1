@@ -12,7 +12,7 @@ Your e-mail address, as provided by Github, will be stored on my system. If, at 
 
 OK with that? You can head over to https://translate.nucleuspowered.org/ and start translating! I'll put updates before releases, which may cause incomplete translations I guess, but will show the progress!
 
-[There is a guide on how to use the system to translate here.](translation/using.html)
+[There is a guide on how to use the system to translate here.](using.html)
 
 ## OK, so what is translated?
 
