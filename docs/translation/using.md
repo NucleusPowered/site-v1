@@ -3,14 +3,13 @@ layout: standardheadmd
 title: Documentation Centre
 header: Using the Nucleus Translation Server
 ---
-<a href="index.html">&laquo; Return to Documentation Home Page</a>
 
-# Before you begin
+## Before you begin
 
 Note that Nucleus Translation requires you to have a GitHub account. By using this service, your public name
 as it is on GitHub and e-mail address is stored in the system. We may enable e-mail notifications at a later date.
 
-# Translating Nucleus
+## Translating Nucleus
 
 There are two components to translate, the Commands file and the Messages file.
 
@@ -33,7 +32,7 @@ You should be presented with a page that looks like the following:
 
 ![strings to check](../../img/translate1.png)
 
-## Translating text
+### Translating text
 
 In general, you will want to select "Strings needing action" under "Strings to Check". You'll end up in the
 translation interface:
@@ -48,7 +47,7 @@ you may click "Copy" and make the edits that you need.
 If you are unsure as to whether a translation you are contributing is correct, either mark it with "Needs Edit"
 (if you just need a minor tweak) or "Suggest" (if you aren't sure and want someone to confirm it).
 
-## Searching for specific text
+### Searching for specific text
 
 If you are looking for a specific text to translate, you can search for the specific text by selecting "Search"
 at the top of the page. You'll be presented with the following interface:

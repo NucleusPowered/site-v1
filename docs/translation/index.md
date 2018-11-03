@@ -4,11 +4,6 @@ title: Documentation Centre
 header: Translating Nucleus
 ---
 
-<a href="index.html">&laquo; Return to Documentation Home Page</a>
-
-
-# Translating Nucleus
-
 Nucleus now has a translation server for translating almost everything in Nucleus. All you need is a github account to log into the server.
 
 First, the nitty gritty. By logging into the translation server, you agree to use the system for translating Nucleus only. Please don't put profanities on there or anything of the sort, please don't add your own names into the strings. I have created a credits file on the main repo to add translators to who wish to be credited (which you should be!)
