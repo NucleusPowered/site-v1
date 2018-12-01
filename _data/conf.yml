@@ -77,19 +77,19 @@ ban: |
     # The maximum length a temporary ban may last for (in seconds) unless the user handing the mute has a bypass permission. Set to -1 for no maximum.
     maximum-tempban-length=604800
 connection-messages: |
-    # The message to display to players if a name change has been detected. Use {{previousname}} as the token for the player's previous name.
+    # The message to display to players if a name change has been detected. 'Use {{previousname}} as the token for the player's previous name.'
     changed-name-message="&f{{name}} &ewas previously known by a different name - they were known as &f{{previousname}}"
     # If true, those with the "nucleus.connectionmessages.disable" permission will not trigger login/logout messages.
     disable-with-permission=false
     # If true, will inform players on the server when a player logs on and a name change has been detected.
     display-name-change-if-changed=true
-    # This message uses all the standard Minecraft colour codes, prefixed by "&". Use "{{name}}" for the new player's name.
+    # This message uses all the standard Minecraft colour codes, prefixed by "&". Use '"{{name}}"' for the new player's name.
     first-login-message="&dWelcome &f{{name}} &dto the server!"
     # If "true", Nucleus will try to make sure that everyone sees connection messages. Note that plugins can potentially override this.
     force-show-all-connection-messages=true
-    # Shown when a user logs in. This message uses all the standard Minecraft colour codes, prefixed by "&". Use "{{name}}" for the player's name.
+    # Shown when a user logs in. This message uses all the standard Minecraft colour codes, prefixed by "&". Use '"{{name}}"' for the player's name.
     login-message="&8[&a+&8] &f{{name}}"
-    # Shown when a user logs out. This message uses all the standard Minecraft colour codes, prefixed by "&". Use "{{name}}" for the player's name.
+    # Shown when a user logs out. This message uses all the standard Minecraft colour codes, prefixed by "&". Use '"{{name}}"' for the player's name.
     logout-message="&8[&c-&8] &f{{name}}"
     # Enables changing the login message.
     modify-login-message=false
@@ -180,7 +180,7 @@ staff-chat: |
     "include-standard-chat-formatting"=false
     # A Minecraft colour code the denotes the colour to display Staff Chat channel messages in.
     message-colour=b
-    # The prefix to the staff chat message. Use the following tokens: {{prefix}} - prefix (set as an option in a permission plugin), {{suffix}} - suffix (set as an option in a permission plugin), {{name}} - real name, {{displayname}} - display name.
+    # 'The prefix to the staff chat message. Use the following tokens: {{prefix}} - prefix (set as an option in a permission plugin), {{suffix}} - suffix (set as an option in a permission plugin), {{name}} - real name, {{displayname}} - display name.'
     # If "include-standard-chat-formatting" is set to "true", the formatting will be appended to this prefix.
     message-template="&b[STAFF] &r{{displayname}}&b: "
 item: |
@@ -278,12 +278,12 @@ message: "# The prefix to any message received via /helpop.\nhelpop-prefix=\"&7H
     \ message targets.\n    levels {\n        # The social spy level of any custom\
     \ target that has been registered through the API.\n        custom-targets=2147483647\n\
     \        # The server's social spy level.\n        server=2147483647\n    }\n\
-    \    # The prefix and format for messages sent to social spies. Use {{from}} and\
-    \ {{to}} for the message sender/receiver, {{fromDisplay}} or {{toDisplay}} for\
-    \ the display names. The colours and style at the end of the prefix will be carried\
-    \ over into the message.\n    msg-prefix=\"&7[SocialSpy] [{{fromDisplay}}&7 ->\
-    \ {{toDisplay}}&7]: &r\"\n    # The tag to show at the beginning of a Social Spy\
-    \ message when a player cannot send a message to a player who hasused /msgtoggle\
+    \    # 'The prefix and format for messages sent to social spies. Use {{from}}\
+    \ and {{to}} for the message sender/receiver, {{fromDisplay}} or {{toDisplay}}\
+    \ for the display names. The colours and style at the end of the prefix will be\
+    \ carried over into the message.'\n    msg-prefix=\"&7[SocialSpy] [{{fromDisplay}}&7\
+    \ -> {{toDisplay}}&7]: &r\"\n    # The tag to show at the beginning of a Social\
+    \ Spy message when a player cannot send a message to a player who hasused /msgtoggle\
     \ (blocking messages from all players).\n    msgtoggle-blocked-messages-tag=\"\
     &c[blocked] \"\n    # If true, and \"use-levels\" is true, players with social\
     \ spy will also see messages from players at their own level.\n    same-levels-can-see-each-other=true\n\
@@ -302,11 +302,11 @@ server-list: "# If true, the player count will not be displayed.\nhide-player-co
     , when a prospective player pings the server on the multiplayer server list, one\
     \ of the messages in the list below will be sent to the player. If \"whitelist\"\
     , this module will only act when the whitelist is enabled.\nmodify-server-list-messages=FALSE\n\
-    # Potential messages that could be sent to the player. To split over two lines,\
-    \ include \\n where you want the line break to appear.\nserver-list-messages=null\n\
-    # Potential messages that could be sent to the player when the server is whitelisted.\
+    # 'Potential messages that could be sent to the player. To split over two lines,\
+    \ include \\n where you want the line break to appear.'\nserver-list-messages=null\n\
+    # 'Potential messages that could be sent to the player when the server is whitelisted.\
     \ To split over two lines, include \\n where you want the line break to appear.\n\
-    # \n# If no entries are here, the MOTD will use the `server-list-messages` list.\n\
+    # \n# If no entries are here, the MOTD will use the `server-list-messages` list.'\n\
     whitelist-server-list-messages=[]\n"
 death-message: |
     # If "false", death messages will be turned off when someone dies.
@@ -383,7 +383,7 @@ warn: |
     # The number of active warnings a player must accumulate before the action command is executed. Set to -1 to disable.
     warnings-before-action=-1
 core: "# If true, if you log in and have the \"wildcard\" permission (either * or\
-    \ nucleus), you will be warned of the potential issues caused by the wildcard.\
+    \ 'nucleus'), you will be warned of the potential issues caused by the wildcard.\
     \ If you use the wildcard and are happy with this, set this to false.\ncheck-for-wildcard=true\n\
     # If set, this command will be suggested if a player clicks on the user name in\
     \ chat in templated messages. Use {{player}} to indicate the player name.\ncommand-on-name-click=\"\
@@ -393,8 +393,8 @@ core: "# If true, if you log in and have the \"wildcard\" permission (either * o
     \ at the root. Paths can be relative or absolute.\n# \n# BE AWARE. Changing this\
     \ location has the following caveats:\n# * This will only take effect after a\
     \ restart.\n# * Files are NOT moved from the old location, you must do this yourself.\n\
-    # * Files will be in a \"nucleus\" subdireectory of your selected location.\n\
-    # * If the path indicated cannot be found, this will be ignored. It **must** exist\
+    # * Files will be in a \"nucleus\" subdirectory of your selected location.\n#\
+    \ * If the path indicated cannot be found, this will be ignored. It **must** exist\
     \ beforehand.\n# * Minecraft data (as opposed to Nucleus data) is unaffected.\n\
     # \n# Common areas that you might want to put the data directory in are (using\
     \ UNIX paths):\n# * \"config/nucleus\" for data in the Nucleus config data directory\n\
@@ -431,8 +431,8 @@ core: "# If true, if you log in and have the \"wildcard\" permission (either * o
     \ numbers mean that a wider area is checked, but large numbers will cause server\
     \ lag. The defaults are sufficient in most cases.\nsafe-teleport-check {\n   \
     \ height=3\n    width=9\n}\n# If true and no economy or permission plugin is detected,\
-    \ Nucleus will print a warning on startup. Set this to false if you dont have\
-    \ one of these types of plugins and youre OK with that.\nshow-warning-on-startup=true\n\
+    \ Nucleus will print a warning on startup. Set this to false if you don't have\
+    \ one of these types of plugins and you're OK with that.\nshow-warning-on-startup=true\n\
     # If true, a \"messages.conf\" file will be generated and used to define custom\
     \ messages.\nuse-custom-message-file=false\n# If true, cancel a user's warmup\
     \ on...\nwarmup-canceling {\n    # running a command\n    cancel-on-command=true\n\
