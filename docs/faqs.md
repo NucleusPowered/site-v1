@@ -366,4 +366,4 @@ interfaces we will keep stable.
 
 ### [Can I help translate Nucleus into my own language?](#translation)
 
-You sure can! [Read this page more for information](translation)
+We don't have an automated system for this at the moment, but you can send in pull requests to the main repo.
