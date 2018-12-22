@@ -71,8 +71,7 @@ command-logger: |
     log-to-file=false
     # If true, the "command-filter" containing the list of commands to be logged is a whitelist (command must be specfied to be logged), not a blacklist.
     whitelist=false
-inventory: |4+
-
+inventory: "\r\n"
 ban: |
     # The maximum length a temporary ban may last for (in seconds) unless the user handing the mute has a bypass permission. Set to -1 for no maximum.
     maximum-tempban-length=604800
@@ -563,7 +562,8 @@ chat: "# Some mods and plugins move the Minecraft player prefix to the main mess
     \ gain because a player's groups not not have to be retrieved from the permission\
     \ plugin. \n    # Turn this off if you are getting severe performance problems\
     \ when someone chats, it's usually due to a misbehaving permissions plugin.\n\
-    \    use-group-templates=true\n}\n"
+    \    use-group-templates=true\n}\n# If true, Nucleus tries harder to remove the\
+    \ minecraft name prefix (<name>).\ntry-harder-to-remove-minecraft-prefix=true\n"
 playerinfo: |
     list {
         list-grouping-by-permission {
