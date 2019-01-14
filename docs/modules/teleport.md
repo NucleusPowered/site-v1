@@ -36,8 +36,9 @@ links, or by using the commands `/tpaccept` or `/tpdeny`. If the request is acce
 By default, Nucleus overrides the `/tp` command with its own implementation, but provides ways to easily get the vanilla
 behaviour:
 
+* Use `minecraft:tp`
 * Use `/tpn`, which is an alias for the original Minecraft `/tp` command.
-* In `commands.conf`, set `teleport.use-tp-command` to `false`. `/tp` will return to the Vanilla version, while `/teleport` will
+* In `commands.conf`, set `teleport.aliases.tp` to `false`. `/tp` will return to the Vanilla version, while `/teleport` will
 still be the Nucleus version.
 
 ## Using `/tppos` to teleport to chunk co-ordinates
