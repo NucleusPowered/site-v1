@@ -28,6 +28,9 @@ server-shop: |
 teleport: |
     # If true, by default, a target player will not be informed that they have been /teleport ed to. Override using "-q false"
     default-quiet=true
+    # If true, any player that has a /tpa request denied (or times out) will have any charge for the command refunded.
+    # If set to false, Nucleus will consider that the command has a cost, rather than the teleport action and will not refund on any teleport denials.
+    refund-on-deny=true
     # If true, teleporting tries to find a safe place for players.
     use-safe-teleportation=true
 admin: |
@@ -71,7 +74,8 @@ command-logger: |
     log-to-file=false
     # If true, the "command-filter" containing the list of commands to be logged is a whitelist (command must be specfied to be logged), not a blacklist.
     whitelist=false
-inventory: "\r\n"
+inventory: |4+
+
 ban: |
     # The maximum length a temporary ban may last for (in seconds) unless the user handing the mute has a bypass permission. Set to -1 for no maximum.
     maximum-tempban-length=604800
@@ -117,6 +121,12 @@ invulnerability: |
     # If true, in order to keep invulnerability on login, the permission for the god command (nucleus.god.base) is required. If false, a player without access to the /god will not be invulnerable on login.
     require-god-permission-on-login=false
 kit: |
+    auto-redeem {
+        # If true, kit autoredeem will be enabled.
+        enable=false
+        # If true, the console will get messages indicating what was auto-redeemed when a player logs in.
+        log=false
+    }
     # If true, any items that couldn't be placed in the player's inventory will be dropped on the floor around them.
     drop-items-if-inventory-full=false
     # If this is true, "drop-items-if-inventory-full" will be ignored, and the kit will only be consumed if everything can be consumed.
@@ -193,34 +203,35 @@ item: |
         # If true, Nucleus will simply treat /skull as an alias to "/give [player] skull [number] 3 {SkullOwner:[skullplayer]}"
         use-minecraft-command=false
     }
-afk: "# If true, the server will announce when players go AFK, even when vanished.\
-    \ If false, only non-vanished players can go AFK.\nafk-when-vanished=false\n#\
-    \ The amount of time, in seconds, of inactivity before the player will be marked\
+afk: "# The amount of time, in seconds, of inactivity before the player will be marked\
     \ as AFK. Set to 0 to disable, or use the permission \"nucleus.afk.exempt.toggle\"\
-    .\nafktime=300\n# The amount of time, in seconds, of inactivity before the player\
+    .\nafk-time=300\n# The amount of time, in seconds, of inactivity before the player\
     \ will be kicked. Set to 0 to disable, or use the permission \"nucleus.afk.exempt.kick\"\
     .\n# \n# Note that this is not time since going AFK, but time since last activity.\
     \ Setting this to the same value as \"afktime\" will cause someone who goesAFK\
-    \ to be kicked instantly.\nafktimetokick=0\n# If true, any player that tries to\
-    \ use a command that might require the target to do something will be told if\
-    \ the target is AFK.\nalert-on-command-send=true\n# If true, the server will be\
-    \ informed when a player is kicked for inactivity, else, just those with the nucleus.afk.notify\
-    \ permissions\nbroadcast-to-all-on-kick=true\n# If true, a player in spectator\
-    \ mode will not have their status broadcasted to players, nor will they be kicked\
-    \ for going AFK. Those with the notify permission will still see the AFK messages.\n\
-    disable-in-spectator-mode=false\n# If any of the messages tht would be broadcast\
-    \ to the server are blank, they will not be sent.\nmessages {\n    # The message\
-    \ sent to a player when kicked for inactivity.\n    kick-message-to-subject=\"\
-    You have been kicked for being AFK for too long.\"\n    on-afk=\"&7*&f{{displayname}}\
-    \ &7has gone AFK.\"\n    on-command=\"&f{{displayname}} &7is currently AFK and\
-    \ may not respond quickly.\"\n    # If empty, no message will be sent.\n    on-kick=\"\
-    &f{{displayname}} &7has been kicked for being AFK too long.\"\n    on-return=\"\
-    &7*&f{{displayname}} &7is no longer AFK.\"\n}\n# Determines what actions determines\
-    \ if a player is active.\ntriggers {\n    # Marks a player as active if they chat\n\
-    \    on-chat=true\n    # Marks a player as active if they run a command\n    on-command=true\n\
-    \    # Marks a player as active if they interact\n    on-interact=true\n    #\
-    \ Marks a player as active if they move\n    on-movement=true\n    # Marks a player\
-    \ as active if they rotate (that is, look around)\n    on-rotation=true\n}\n"
+    \ to be kicked instantly.\nafk-time-to-kick=0\n# If true, any player that tries\
+    \ to use a command that might require the target to do something will be told\
+    \ if the target is AFK.\nalert-on-command-send=true\n# If true, the server will\
+    \ always announce when players go AFK, even when vanished. If false, players who\
+    \ are vanished and go AFK will not have this status broadcasted.\nbroadcast-afk-when-vanished=false\n\
+    # If true, the server will be informed when a player is kicked for inactivity,\
+    \ else, just those with the nucleus.afk.notify permissions\nbroadcast-to-all-on-kick=true\n\
+    # If true, a player in spectator mode will not have their status broadcasted to\
+    \ players, nor will they be kicked for going AFK. Those with the notify permission\
+    \ will still see the AFK messages.\ndisable-in-spectator-mode=false\n# If any\
+    \ of the messages tht would be broadcast to the server are blank, they will not\
+    \ be sent.\nmessages {\n    # The message sent to a player when kicked for inactivity.\n\
+    \    kick-message-to-subject=\"You have been kicked for being AFK for too long.\"\
+    \n    on-afk=\"&7*&f{{displayname}} &7has gone AFK.\"\n    on-command=\"&f{{displayname}}\
+    \ &7is currently AFK and may not respond quickly.\"\n    # If empty, no message\
+    \ will be sent.\n    on-kick=\"&f{{displayname}} &7has been kicked for being AFK\
+    \ too long.\"\n    on-return=\"&7*&f{{displayname}} &7is no longer AFK.\"\n}\n\
+    # Determines what actions determines if a player is active.\ntriggers {\n    #\
+    \ Marks a player as active if they chat\n    on-chat=true\n    # Marks a player\
+    \ as active if they run a command\n    on-command=true\n    # Marks a player as\
+    \ active if they interact\n    on-interact=true\n    # Marks a player as active\
+    \ if they move\n    on-movement=true\n    # Marks a player as active if they rotate\
+    \ (that is, look around)\n    on-rotation=true\n}\n"
 chat-logger: |
     # Whether to actually perform any logging.
     enable-logging=false
@@ -410,14 +421,16 @@ core: "# If true, if you log in and have the \"wildcard\" permission (either * o
     \ true for that specific permission.\n# \n# These permissions are designed to\
     \ avoid the use of the wildcard. Some permissions are not given with these catch-alls,\
     \ this is by design - the permission to vanish on login (for example) must ALWAYS\
-    \ be given separately.\nenable-parent-perms=true\nkick-on-stop {\n    # If true,\
-    \ Nucleus will kick all users just prior to the server stopping.\n    enabled=false\n\
-    \    # The message to display to players when restarting the server. Overridden\
-    \ when using the /stop [reason] command.\n    message=null\n}\n# When trying to\
-    \ calculate the number of visitors, having this enabled will include visitors\
-    \ before Nucleus was installed, but may cause incompatibilities with other plugins\
-    \ that do not register data keys during startup. For compatibility, this should\
-    \ be false, for accuracy, this can be true.\nmore-accurate-visitor-count=false\n\
+    \ be given separately.\nenable-parent-perms=true\n# If true, any command that\
+    \ takes a player nickname will attempt to partially match the usernames, which\
+    \ may cause a performance drop on larger servers.\nenable-partial-name-matching=true\n\
+    kick-on-stop {\n    # If true, Nucleus will kick all users just prior to the server\
+    \ stopping.\n    enabled=false\n    # The message to display to players when restarting\
+    \ the server. Overridden when using the /stop [reason] command.\n    message=null\n\
+    }\n# When trying to calculate the number of visitors, having this enabled will\
+    \ include visitors before Nucleus was installed, but may cause incompatibilities\
+    \ with other plugins that do not register data keys during startup. For compatibility,\
+    \ this should be false, for accuracy, this can be true.\nmore-accurate-visitor-count=false\n\
     # Determines the maximum number of offline user entries that are returned for\
     \ Nucleus commands that allow offline user targeting.\noffline-user-tab-limit=20\n\
     # If set to \"default\", uses the default system language if it exists in Nucleus.\
@@ -562,10 +575,14 @@ chat: "# Some mods and plugins move the Minecraft player prefix to the main mess
     \ gain because a player's groups not not have to be retrieved from the permission\
     \ plugin. \n    # Turn this off if you are getting severe performance problems\
     \ when someone chats, it's usually due to a misbehaving permissions plugin.\n\
-    \    use-group-templates=true\n}\n# If true, Nucleus tries harder to remove the\
-    \ minecraft name prefix (<name>).\ntry-harder-to-remove-minecraft-prefix=true\n"
+    \    use-group-templates=true\n}\n# If true, Nucleus tries to remove the minecraft\
+    \ name prefix (<name>).\ntry-to-remove-minecraft-prefix=true\n"
 playerinfo: |
     list {
+        # If true, /list will be displayed in a compact form.
+        compact-list=true
+        # If compact /list is enabled, this specifies how many players will be sent in one line. If clients are disconnecting when running list, lower the number.
+        compact-max-players=20
         list-grouping-by-permission {
             # If listing by groups is enabled, the group name to display when a player is not in a group.
             default-group-name=Default

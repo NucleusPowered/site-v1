@@ -550,6 +550,14 @@
     defaultLevel: OWNER
     description: Allows the user to run the command /nucleus update-messages
     permission: nucleus.nucleus.update-messages.base
+-   module: core
+    defaultLevel: USER
+    description: Allows the user to run the command /nuserprefs
+    permission: nucleus.userprefs.base
+-   module: core
+    defaultLevel: ADMIN
+    description: Allows the user to target other players using the command "nuserprefs".
+    permission: nucleus.userprefs.others
 -   module: crafting-gui
     defaultLevel: ADMIN
     description: Allows the user to run the command /anvil
@@ -1078,32 +1086,32 @@
     permission: nucleus.lore.exempt.warmup
 -   module: item
     defaultLevel: ADMIN
-    description: Allows the user to run the command /lore set, Allows the user to
-        run the command /lore edit, Allows the user to run the command /lore insert,
-        Allows the user to run the command /lore add, Allows the user to run the command
+    description: Allows the user to run the command /lore insert, Allows the user
+        to run the command /lore edit, Allows the user to run the command /lore add,
+        Allows the user to run the command /lore set, Allows the user to run the command
         /lore clear, Allows the user to run the command /lore delete
     permission: nucleus.lore.set.base
 -   module: item
     defaultLevel: ADMIN
-    description: Allows the user to bypass the cooldown for /lore set, Allows the
+    description: Allows the user to bypass the cooldown for /lore insert, Allows the
         user to bypass the cooldown for /lore edit, Allows the user to bypass the
-        cooldown for /lore insert, Allows the user to bypass the cooldown for /lore
-        add, Allows the user to bypass the cooldown for /lore clear, Allows the user
-        to bypass the cooldown for /lore delete
+        cooldown for /lore add, Allows the user to bypass the cooldown for /lore set,
+        Allows the user to bypass the cooldown for /lore clear, Allows the user to
+        bypass the cooldown for /lore delete
     permission: nucleus.lore.set.exempt.cooldown
 -   module: item
     defaultLevel: ADMIN
-    description: Allows the user to bypass the cost for /lore set, Allows the user
+    description: Allows the user to bypass the cost for /lore insert, Allows the user
         to bypass the cost for /lore edit, Allows the user to bypass the cost for
-        /lore insert, Allows the user to bypass the cost for /lore add, Allows the
-        user to bypass the cost for /lore clear, Allows the user to bypass the cost
-        for /lore delete
+        /lore add, Allows the user to bypass the cost for /lore set, Allows the user
+        to bypass the cost for /lore clear, Allows the user to bypass the cost for
+        /lore delete
     permission: nucleus.lore.set.exempt.cost
 -   module: item
     defaultLevel: ADMIN
-    description: Allows the user to bypass the warmup for /lore set, Allows the user
-        to bypass the warmup for /lore edit, Allows the user to bypass the warmup
-        for /lore insert, Allows the user to bypass the warmup for /lore add, Allows
+    description: Allows the user to bypass the warmup for /lore insert, Allows the
+        user to bypass the warmup for /lore edit, Allows the user to bypass the warmup
+        for /lore add, Allows the user to bypass the warmup for /lore set, Allows
         the user to bypass the warmup for /lore clear, Allows the user to bypass the
         warmup for /lore delete
     permission: nucleus.lore.set.exempt.warmup
@@ -1389,8 +1397,8 @@
     permission: nucleus.kit.command.base
 -   module: kit
     defaultLevel: OWNER
-    description: Allows the user to run the command /command clear, Allows the user
-        to run the command /command remove
+    description: Allows the user to run the command /command remove, Allows the user
+        to run the command /command clear
     permission: nucleus.kit.command.remove.base
 -   module: kit
     defaultLevel: ADMIN
@@ -1543,8 +1551,8 @@
     permission: nucleus.helpop.receive
 -   module: message
     defaultLevel: USER
-    description: Allows the user to run the command /reply, Allows the user to run
-        the command /message
+    description: Allows the user to run the command /message, Allows the user to run
+        the command /reply
     permission: nucleus.message.base
 -   module: message
     defaultLevel: ADMIN
@@ -1556,18 +1564,18 @@
     permission: nucleus.message.colour
 -   module: message
     defaultLevel: ADMIN
-    description: Allows the user to bypass the cooldown for /reply, Allows the user
-        to bypass the cooldown for /message
+    description: Allows the user to bypass the cooldown for /message, Allows the user
+        to bypass the cooldown for /reply
     permission: nucleus.message.exempt.cooldown
 -   module: message
     defaultLevel: ADMIN
-    description: Allows the user to bypass the cost for /reply, Allows the user to
-        bypass the cost for /message
+    description: Allows the user to bypass the cost for /message, Allows the user
+        to bypass the cost for /reply
     permission: nucleus.message.exempt.cost
 -   module: message
     defaultLevel: ADMIN
-    description: Allows the user to bypass the warmup for /reply, Allows the user
-        to bypass the warmup for /message
+    description: Allows the user to bypass the warmup for /message, Allows the user
+        to bypass the warmup for /reply
     permission: nucleus.message.exempt.warmup
 -   module: message
     defaultLevel: ADMIN
@@ -2513,6 +2521,10 @@
     description: If granted, and the version of Sponge/Nucleus supports this, allows
         players to see other vanished players and tab their names in commands.
     permission: nucleus.vanish.see
+-   module: vanish
+    defaultLevel: ADMIN
+    description: Allows the user to run the command /vanishonlogin
+    permission: nucleus.vanishonlogin.base
 -   module: warn
     defaultLevel: MOD
     description: Allows the user to run the command /checkwarnings
@@ -2709,9 +2721,9 @@
     permission: nucleus.world.clone.base
 -   module: world
     defaultLevel: ADMIN
-    description: Allows the user to run the command /world presets, Allows the user
-        to run the command /world modifiers, Allows the user to run the command /world
-        generators, Allows the user to run the command /world create
+    description: Allows the user to run the command /world generators, Allows the
+        user to run the command /world create, Allows the user to run the command
+        /world modifiers, Allows the user to run the command /world presets
     permission: nucleus.world.create.base
 -   module: world
     defaultLevel: ADMIN
@@ -2764,23 +2776,23 @@
     permission: nucleus.world.gamerule.set.base
 -   module: world
     defaultLevel: ADMIN
-    description: Allows the user to run the command /world list, Allows the user to
-        run the command /world info
+    description: Allows the user to run the command /world info, Allows the user to
+        run the command /world list
     permission: nucleus.world.list.base
 -   module: world
     defaultLevel: ADMIN
-    description: Allows the user to bypass the cooldown for /world list, Allows the
-        user to bypass the cooldown for /world info
+    description: Allows the user to bypass the cooldown for /world info, Allows the
+        user to bypass the cooldown for /world list
     permission: nucleus.world.list.exempt.cooldown
 -   module: world
     defaultLevel: ADMIN
-    description: Allows the user to bypass the cost for /world list, Allows the user
-        to bypass the cost for /world info
+    description: Allows the user to bypass the cost for /world info, Allows the user
+        to bypass the cost for /world list
     permission: nucleus.world.list.exempt.cost
 -   module: world
     defaultLevel: ADMIN
-    description: Allows the user to bypass the warmup for /world list, Allows the
-        user to bypass the warmup for /world info
+    description: Allows the user to bypass the warmup for /world info, Allows the
+        user to bypass the warmup for /world list
     permission: nucleus.world.list.exempt.warmup
 -   module: world
     defaultLevel: ADMIN
