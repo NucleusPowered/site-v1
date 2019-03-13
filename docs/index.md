@@ -15,6 +15,7 @@ There are extensive topics on how to use and configure Nucleus to each server's 
 * [Essentials Command Equivalence](essentials.html)
 * [Setting up suggested permissions](configuration/permissions.html)
 * [Command Management (Warmups, Cooldowns and Costs)](configuration/commands.html)
+* [The User Preference System](core-concepts/userprefs.html)
 
 We also have an article on [the Permissions Wildcard (And Why You Shouldn't Use It)](nowildcard.html)
 
