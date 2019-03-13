@@ -10,6 +10,7 @@ I'll spruce up this page soon!
 
 Right now, we don't have much for you, but please visit our API docs which we hope to flesh out a bit more soon.
 
+[API Javadocs](https://jd.nucleuspowered.org)
 [API Docs](api)
 
 ## I want to contribute to Nucleus
