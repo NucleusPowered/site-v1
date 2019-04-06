@@ -70,7 +70,7 @@ Nucleus uses Minecraft's in built world border support and makes it easy to upda
 
 To display the current world border information, run the command `/world border [world]`. If you omit the world argument, it will default to the world you are currently in.
 
-To set the world border, run the command `/world border set [world] [centre-x] [centre-z] &lt;diameter&gt; [delay]`. Only the diameter is mandatory if you are a player in the world, otherwise
+To set the world border, run the command `/world border set [world] [centre-x] [centre-z] <diameter> [delay]`. Only the diameter is mandatory if you are a player in the world, otherwise
 all arguments are required. `centre-x` and `centre-z` refer to the new centre of the world border, and delay defines, in seconds, how long it will take Minecraft to change to the diameter of the world
 border from the old one.
 
