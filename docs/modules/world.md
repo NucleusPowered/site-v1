@@ -59,8 +59,6 @@ Note that the "default" worlds cannot be disabled as of right now.
 
 ## Deleting worlds
 
-_This is provided as a convenience, and may not work. Please be careful when using this command._
-
 Nucleus can attempt to delete worlds for you. Use the `/world delete [world]` command, and Nucleus will attempt to remove
 all traces of the world from your disc. Be careful, once it's gone, you can't get it back if you haven't backed it up first!
 
@@ -71,8 +69,9 @@ Nucleus uses Minecraft's in built world border support and makes it easy to upda
 To display the current world border information, run the command `/world border [world]`. If you omit the world argument, it will default to the world you are currently in.
 
 To set the world border, run the command `/world border set [world] [centre-x] [centre-z] <diameter> [delay]`. Only the diameter is mandatory if you are a player in the world, otherwise
-all arguments are required. `centre-x` and `centre-z` refer to the new centre of the world border, and delay defines, in seconds, how long it will take Minecraft to change to the diameter of the world
-border from the old one.
+all arguments are required. The `diameter` is the size of the border from edge to edge (twice the distance from the centre to the edge). 
+`centre-x` and `centre-z` refer to the new centre of the world border, and delay defines, in seconds, how long it will take Minecraft to change to the diameter of the world
+border from the old one, defaulting to 0 - instantaneous change.
 
 ## Pre-Generating Chunks
 
@@ -80,7 +79,7 @@ For more information on _why_ you should do this, [see this entry in the FAQs.](
 
 To pre-generate chunks in the world, run the command `/world border gen [world]`, where the world is optional if you are a player in a world. 
 Sponge will start pre-generating chunks. If you wish to stop the pre-generation early, use `/world border cancelgen [world]`. 
-Restarting the server will also cancel the pre-generation.
+Restarting the server will also cancel the pre-generation unless the command was run with the `-r` flag.
 
 If you want to try to run the pre-generation faster, you can change the same interval to be much higher, and run in "aggressive" mode. Adding
 `-a` to the command indicates aggresive mode, where 90% of tick time is dedicated to the generation routines, and memory checks are turned off.
