@@ -17,7 +17,7 @@ Links can be included in various text locations using limited markdown syntax.
 * `http://nucleuspowered.org` - creates a link automatically
 * `[Hello](http://nucleuspowered.org)` - creates a link titled `Hello` to `http://nucleuspowered.org`
 * `[Rules](/rules)` - creates a link titled `Rules` that will run `/rules` when clicked.
-* <!-- {% raw %} --><code>[Blah](/msg {{player}} player</code><!-- {% endraw %} --> - Create a link that sends the message "player" to the player who is clicking the link entitled `Blah`.
+* <!-- {% raw %} --><code>[Blah](/msg {{player}} player)</code><!-- {% endraw %} --> - Create a link that sends the message "player" to the player who is clicking the link entitled `Blah`.
 
 ## Tokens/Variables
 
