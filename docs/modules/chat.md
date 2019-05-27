@@ -120,12 +120,23 @@ display name that colour be default. This can be overridden by players who can u
 This option accepts both names of colours and single character Minecraft colour codes - that is, `black` and `0` will both colour the player's name
 in black.
 
+As an example, if you wanted the default name colour for a player in the "mod" group to be aqua, you could run the following command (varying based on 
+your permission plugin):
+
+{% include permissionblock.html cmdtype="groupOption" user="mod" option="namecolour" value="b" %}
+
+
 ## Default Chat Colours
 
 If you have a compatible permissions plugin installed, setting a player's (or their group's) `chatcolor`/`chatcolour` permission option will colour their
 chat that colour by default. This can be overridden by players who can use colour codes in their chat.
 
 Like `namecolour`, this accepts both named colours and single character colour codes.
+
+As an example, if you wanted the default chat colour for a player in the "mod" group to be aqua, you could run the following command (varying based on 
+your permission plugin):
+
+{% include permissionblock.html cmdtype="groupOption" user="mod" option="chatcolour" value="b" %}
 
 ## Default Chat Styles (from 0.11)
 
