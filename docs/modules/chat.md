@@ -138,10 +138,14 @@ your permission plugin):
 
 {% include permissionblock.html cmdtype="groupOption" user="mod" option="chatcolour" value="b" %}
 
-## Default Chat Styles (from 0.11)
+## Default Chat Styles
 
 If you have a compatible permissions plugin installed, setting a player's (or their group's) `chatstyle` permission option 
 will set the style of their chat automatically. This can be overridden by players who can use colour codes in their chat.
 
 `chatstyle` can accept multiple styles which are comma separated, and both single character and named styles are accepted.
-To set the style as bold and italic, set the `chatstyle` option to `l,o` or `bold,italic`. 
+To set the style as bold and italic, set the `chatstyle` option to `l,o` or `bold,italic`.
+
+If you were to add the italic and bold styles to the mod group, an example command to run would be:
+
+{% include permissionblock.html cmdtype="groupOption" user="mod" option="chatstyle" value="l,o" %}
