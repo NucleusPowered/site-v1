@@ -11,7 +11,11 @@ var modulesJs = (function() {
             var res = $('a[href=\''+hash+'\'][role=\'tab\']');
             if (res.length >= 1) {
                 res.tab('show');
-                window.scrollTo(0, 0);
+                var remove = function(eventObject) {
+                    $(window).off(eventObject, remove);
+                    window.scrollTo(0, 0);
+                };
+                var ev = $(window).scroll(remove);
             } else {
                 // See if there is a parent.
                 var par = $(hash).closest('.tab-content > .tab-pane');
