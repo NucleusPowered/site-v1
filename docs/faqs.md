@@ -31,12 +31,6 @@ with making your server unique with a solid base you can trust!
 
 If you want more information on Sponge, see their [website](https://spongepowered.org) and [documentation](https://docs.spongepowered.org). 
 
-<a class="anchor" id="who-is"></a>
-
-### [Who is behind the Nucleus Project?](#who-is)
-
-The Nucleus Project is lead by **dualspiral**, with Mohron, RysingDragon and TimeTheCat on Nucleus Phonon.
-
 <a class="anchor" id="what-do-they-publish"></a>
 
 ### [What does the Nucleus Project publish?](#what-do-they-publish)
@@ -50,7 +44,7 @@ plugins to be used in... well, both plugins!
 
 ### [So, can I get help in realtime? You said Discord...](#realtime-help)
 
-[You sure can get that help! Come visit us on Discord - click here and you'll be with us in no time!](https://discord.gg/MC2mAuS) 
+[You sure can get that help! Come visit us on Discord - click here and you'll be with us in no time!](https://discord.gg/A9QHG5H) 
 But please, take the time to read the rest of this FAQ too. 
 
 <a class="anchor" id="general-setup"></a>
@@ -61,7 +55,13 @@ But please, take the time to read the rest of this FAQ too.
 
 ### [I've come from Essentials on Bukkit, can I migrate my data?](#essentials)
 
-Not yet, but it's something we're looking into. But as you're coming from Bukkit, [you might be interested in our command equivalency table](essentials.html).
+No.
+
+<a class="anchor" id="datastore"></a>
+
+### [Can I use a database to store data?](#datastore)
+
+Not yet, but it is being worked on.
 
 <a class="anchor" id="plugin-incompatibilities"></a>
 
@@ -85,7 +85,7 @@ As we find more, we'll update this list.
 ### [I'm using FTB and having issues with chat - names are being duplicated](#ftbu)
 
 If you are using FTB, FTB Utilities also tries to format the chat, with the result that player names appear twice. If you wish to use Nucleus' chat formatting, 
-you should turn off FTB Utilities handling. The config file is in the `local` directory, and you want to set the following options under "ranks":
+you should turn off FTB Utilities handling. The ranks config file is in the `local` directory, set the following options to false:
 
 * `B:override_chat=false`
 * `B:override_commands=false`
@@ -168,6 +168,12 @@ ban module! Something else does chat? Turn off the chat module!
 The modularisation of Nucleus allows for exciting plugin combinations
 
 To turn off a module, in `/config/nucleus/main.conf`, scroll to the `modules` section and set the module to `DISABLED`. Then restart your server.
+
+<a class="anchor" id="help-command"></a>
+
+### [I need help with the `/help` command!](#help-command)
+
+Nucleus does not touch the `/help` command. `/help` is a Sponge command - [please see the Sponge Docs for more information (and permissions)](https://docs.spongepowered.org/stable/en/server/spongineer/commands.html#sponge). 
 
 <a class="anchor" id="use-minecraft-command"></a>
 
@@ -346,7 +352,7 @@ That's it! The developers may ask for more information, they will direct you on 
 
 ### [Can I integrate with Nucleus?](#can-i-integrate)
 
-Absolutely, we'd love to have you on board. [We have JavaDocs for our API](developers/api/jd/), but if the API you want doesn't 
+Absolutely, we'd love to have you on board. [We have JavaDocs for our API](https://jd.nucleuspowered.org), but if the API you want doesn't 
 exist, or you want help with the integration, the developers are frequently on Discord.
  
 <a class="anchor" id="maven"></a>
@@ -359,11 +365,3 @@ The repo is available at `https://repo.drnaylor.co.uk/artifactory/minecraft/`, y
 interfaces we will keep stable.
 
 [You can also use JitPack](https://jitpack.io/#NucleusPowered/Nucleus) as your repo too, be sure to select the `nucleus-api` artifact.
-
-## [Translators](#translators)
-
-<a class="anchor" id="translation"></a>
-
-### [Can I help translate Nucleus into my own language?](#translation)
-
-We don't have an automated system for this at the moment, but you can send in pull requests to the main repo.
