@@ -45,11 +45,11 @@ current world.
 
 <a class="anchor" id="bed-spawn"></a>
 
-### Note: Bed spawning
+### Bed spawning
 
 By default, Nucleus overrides respawning such that sleeping in a bed does not change a player's respawn location. If
-you wish to let players sleep in beds to set their own spawn position, set `spawn.affect-bed-spawn` to `false` and 
-reload the config. Nucleus will then ignore any event that respawns the player next to their bed.
+you wish to let players sleep in beds to set their own spawn position, set `spawn.affect-bed-spawn` to `false` in 
+`main.conf` and reload the config. Nucleus will then ignore any event that respawns the player next to their bed.
 
 ## `/spawn` per world permissions
 
