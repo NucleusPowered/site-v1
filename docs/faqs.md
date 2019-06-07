@@ -272,6 +272,15 @@ isn't working, make sure you check the following:
 * The players have the required permissions: `nucleus.back.targets.death`, `nucleus.back.targets.portal`, `nucleus.back.targets.teleport`
 * The options in `main.conf` at `back.*` are set as you expect them to be. 
 
+<a class="anchor" id="bed-spawn"></a>
+
+### [Players don't respawn next to their bed when they die!](#bed-spawn)
+
+By default, Nucleus overrides this behaviour if you have custom spawn rules set. If you want bed spawns to override other
+respawn logic, set `spawn.affect-bed-spawn` to `false` and reload the config.
+
+[See here for more info.](modules/spawn.html#bed-spawn) 
+
 <a class="anchor" id="first-spawn-problems"></a>
 
 ### [Why are players not spawning at the set spawn when they first log in?](#first-spawn-problems)

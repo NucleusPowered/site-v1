@@ -26,7 +26,7 @@ Nucleus provides the concept of a "first spawn" point. This allows server owners
 point for new players. This can be set using the `/setfirstspawn` command, and warped to using `/firstspawn`.
 
 It is **strongly** advised that if you use the first spawn mechanic that you also set the gamemode `spawnRadius` to 
-`0`, that is, run the command `/gamerule spawnRadius 0`.  
+`0`, that is, run the command `/gamerule spawnRadius 0`.
 
 ## Customising player spawning
 
@@ -42,6 +42,14 @@ For those who want `/spawn` to refer to a _single_ spawn point on a specific wor
 offers the concept of a `global-spawn`. By specifying a world in `global-spawn.target-spawn-world`, any of the actions
 in `global-spawn` set to `true`  will warp people to the spawn point specified as the target world, rather than the
 current world. 
+
+<a class="anchor" id="bed-spawn"></a>
+
+### Note: Bed spawning
+
+By default, Nucleus overrides respawning such that sleeping in a bed does not change a player's respawn location. If
+you wish to let players sleep in beds to set their own spawn position, set `spawn.affect-bed-spawn` to `false` and 
+reload the config. Nucleus will then ignore any event that respawns the player next to their bed.
 
 ## `/spawn` per world permissions
 
