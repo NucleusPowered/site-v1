@@ -77,6 +77,8 @@ you would rather use Nucleus' versions. Never versions of PJP have these modules
 * **SimpleChat** and **SimpleTags**: These plugins have been known to hijack Nucleus' chat formatting - if you want chat channels, other plugins with Nucleus
 integration exist.
 * **FTB Utilities** tends to duplicate a player's name in the chat when a message is sent
+* **Topography** may cancel teleportation across worlds in favour of its own system. The `captureTeleports` options in particular cause issues, [see
+this comment on Github as to what happens](https://github.com/NucleusPowered/Nucleus/issues/1344#issuecomment-499848881)
 
 As we find more, we'll update this list.
 
