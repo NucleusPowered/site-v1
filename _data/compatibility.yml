@@ -1,0 +1,39 @@
+# Increment every time this is changed
+version: 1
+messages:
+  -  modid: 'ftbutilities'
+     modules:
+     - 'chat'
+     severity: 2
+     message: 'FTB Utilities also alters the chat and may override the Nucleus configuration.'
+     resolution: 'Disable FTB Utilities chat-override options.'
+  -  modid: 'pjw'
+     modules:
+       - 'world'
+     severity: 0
+     message: 'ProjectWorlds is a world management plugin and takes over the /world command.'
+     resolution: 'Use /nworld for Nucleus management commands.'
+  -  modid: 'pjp'
+     modules:
+       - 'teleport'
+       - 'back'
+       - 'home'
+       - 'warp'
+     severity: 0
+     message: 'ProjectPortals may override some teleport related commands if some of their modules are enabled.'
+     resolution: 'If the commands you wish to use in Nucleus are overriden by PJP, disable the module is PJP or prefix the command with "n", that is, "/back" -> "/nback".'
+  -  modid: 'ultimatecore'
+     modules: [ 'all' ]
+     severity: 1
+     message: 'UltimateCore is another essentials style plugin and may conflict with Nucleus.'
+     resolution: 'Remove either Nucleus or UltimateCore.'
+  -  modid: 'topography'
+     modules:
+       - 'teleport'
+       - 'back'
+       - 'home'
+       - 'warp'
+     severity: 1
+     message: 'Topography may hijack cross-dimension teleports.'
+     resolution: 'Check topography configuration files for any "captureTeleports" options and remove them.'
+
