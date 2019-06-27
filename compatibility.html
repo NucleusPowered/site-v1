@@ -41,38 +41,17 @@ header: Compatibility Assistant
     </div>
 </div>
 
-
-
-<!-- Warnings -->
-<div class="page-header">
-    <h1>Critical issues <small><span id="3-count">x</span> issues</small></h1>
-</div>
-<p>Issues that severely break some Nucleus (or other plugin) functionality by default and no workaround is available.</p>
 {% for w in all.json.messages %}
 {% include issue.html w=w s=3 %}
 {% endfor %}
 
-<div class="page-header">
-    <h1>Major issues <small><span id="2-count">x</span> issues</small></h1>
-</div>
-<p>Issues that severely break some Nucleus (or other plugin) functionality by default,
-    but where a workaround is present.</p>
 {% for w in all.json.messages %}
 {% include issue.html w=w s=2 %}
 {% endfor %}
 
-<div class="page-header">
-    <h1>Minor issues <small><span id="1-count">x</span> issues</small></h1>
-</div>
-<p>Issues that may have a minor unintended side effect, which may be the case by default.</p>
 {% for w in all.json.messages %}
 {% include issue.html w=w s=1 %}
 {% endfor %}
-
-<div class="page-header">
-    <h1>For information <small><span id="0-count">x</span> issues</small></h1>
-</div>
-<p>Issues that <em>might</em> occur but are generally intended or arise from non-default configuration.</p>
 
 {% for w in all.json.messages %}
 {% include issue.html w=w s=0 %}

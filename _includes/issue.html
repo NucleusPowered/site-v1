@@ -3,7 +3,16 @@
 {% assign modules = include.w.modules | join: ', ' %}
 <div class="row" data-mod="{{ include.w.modid }}" data-modules="{{ modules }}">
     <div class="col-xs-12">
-        <div class="panel panel-default">
+        {% case include.s %}
+            {% when 3 %}
+            <div class="panel panel-danger">
+            {% when 2 %}
+            <div class="panel panel-warning">
+            {% when 1 %}
+            <div class="panel panel-default">
+            {% when 0 %}
+            <div class="panel panel-info">
+        {% endcase %}
             <div class="panel-heading">
                 <div>
                     <strong>Mod/Plugin:</strong> {{ mod.name }}. <strong>Modules:</strong> {{ modules | default: "all" }}.
