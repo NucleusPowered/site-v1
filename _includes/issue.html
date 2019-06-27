@@ -1,0 +1,24 @@
+{% if include.s == include.w.severity %}
+{% assign mod = site.data.compatibility.mods | where: "id", include.w.modid | first %}
+{% assign modules = include.w.modules | join: ', ' %}
+<div class="row" data-mod="{{ include.w.modid }}" data-modules="{{ modules }}">
+    <div class="col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div>
+                    <strong>Mod/Plugin:</strong> {{ mod.name }}. <strong>Modules:</strong> {{ modules | default: "all" }}.
+                </div>
+                <h4>{{ include.w.symptom }}</h4>
+            </div>
+            <div class="panel-body">
+                <p>
+                    <strong>Reason: </strong> {{ include.w.message }}
+                </p>
+                <p>
+                    <strong>Resolution: </strong> {{ include.w.resolution }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

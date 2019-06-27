@@ -1,39 +1,81 @@
 # Increment every time this is changed
 version: 1
-messages:
-  -  modid: 'ftbutilities'
-     modules:
-     - 'chat'
-     severity: 2
-     message: 'FTB Utilities also alters the chat and may override the Nucleus configuration.'
-     resolution: 'Disable FTB Utilities chat-override options.'
-  -  modid: 'pjw'
-     modules:
-       - 'world'
-     severity: 0
-     message: 'ProjectWorlds is a world management plugin and takes over the /world command.'
-     resolution: 'Use /nworld for Nucleus management commands.'
-  -  modid: 'pjp'
-     modules:
-       - 'teleport'
-       - 'back'
-       - 'home'
-       - 'warp'
-     severity: 0
-     message: 'ProjectPortals may override some teleport related commands if some of their modules are enabled.'
-     resolution: 'If the commands you wish to use in Nucleus are overriden by PJP, disable the module is PJP or prefix the command with "n", that is, "/back" -> "/nback".'
-  -  modid: 'ultimatecore'
-     modules: [ 'all' ]
-     severity: 1
-     message: 'UltimateCore is another essentials style plugin and may conflict with Nucleus.'
-     resolution: 'Remove either Nucleus or UltimateCore.'
-  -  modid: 'topography'
-     modules:
-       - 'teleport'
-       - 'back'
-       - 'home'
-       - 'warp'
-     severity: 1
-     message: 'Topography may hijack cross-dimension teleports.'
-     resolution: 'Check topography configuration files for any "captureTeleports" options and remove them.'
-
+modules:
+  - 'chat'
+  - 'world'
+  - 'teleport'
+  - 'back'
+  - 'home'
+  - 'warp'
+mods:
+  - id: 'ftbutilities'
+    name: 'FTB Utilities'
+  - id: 'pjw'
+    name: 'ProjectWorlds'
+  - id: 'pjp'
+    name: 'ProjectPortals'
+  - id: 'ultimatecore'
+    name: 'Ultimate Core'
+  - id: 'topography'
+    name: 'Topography'
+  - id: 'simpletags'
+    name: 'Simple Tags'
+json:
+  version: 1
+  messages:
+    -  modid: 'simpletags'
+       modules:
+         - 'chat'
+       severity: 3
+       symptom: 'My chat prefixes are not shown (and I use Simple Tags)'
+       message: 'Simple Tags overrides the "header" section of the chat message on a late priority and will remove anything there, including Nucleus tags.'
+       resolution: 'None known.'
+    -  modid: 'ftbutilities'
+       modules:
+         - 'chat'
+       severity: 2
+       symptom: 'My chat prefixes and formatting are not shown (and I use FTB Utilities)'
+       message: 'FTB Utilities alters the chat and may override the Nucleus configuration.'
+       resolution: 'Disable FTB Utilities chat-override options.'
+    -  modid: 'pjw'
+       modules:
+         - 'teleport'
+         - 'back'
+         - 'home'
+         - 'warp'
+       symptom: "I get a message that a cross world teleport has been canceled because I have no permissions (and I use ProjectWorlds)"
+       severity: 2
+       message: 'ProjectWorlds has world access permissions that can block cross world teleports.'
+       resolution: 'Grant users the ProjectWorlds world access permission.'
+    -  modid: 'pjw'
+       modules:
+         - 'world'
+       symptom: "The /world commands aren't doing what I expect them to do/they don't seem to be Nucleus commands (and I use ProjectWorlds)"
+       severity: 0
+       message: 'ProjectWorlds is a world management plugin and takes over the /world command.'
+       resolution: 'Use /nworld for Nucleus management commands.'
+    -  modid: 'pjp'
+       modules:
+         - 'teleport'
+         - 'back'
+         - 'home'
+         - 'warp'
+       severity: 0
+       symptom: "Some commands, such as '/back' aren't doing what I expect them to do/they don't seem to be Nucleus commands (and I use ProjectPortals)"
+       message: 'ProjectPortals may override some teleport related commands if some of their modules are enabled.'
+       resolution: 'If the commands you wish to use in Nucleus are overriden by PJP, disable the module is PJP or prefix the command with "n", that is, "/back" -> "/nback".'
+    -  modid: 'ultimatecore'
+       severity: 2
+       symptom: "Some commands and features don't seem to work together (and I've got UltimateCore installed)"
+       message: 'UltimateCore is another essentials style plugin and may conflict with Nucleus.'
+       resolution: 'Remove either Nucleus or UltimateCore, or be extra careful and ensure that modules do not conflict.'
+    -  modid: 'topography'
+       modules:
+         - 'teleport'
+         - 'back'
+         - 'home'
+         - 'warp'
+       severity: 1
+       symptom: "I get a message that a cross world teleport has been canceled by a plugin (and I use Topography)"
+       message: 'Topography may hijack cross-dimension teleports in non-standard configurations.'
+       resolution: 'Check topography configuration files for any "captureTeleports" options and remove them.'

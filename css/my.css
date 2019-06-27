@@ -18,6 +18,10 @@ h1.nomargin {
     margin-top: 0;
 }
 
+.page-header > h1 {
+    margin-bottom: 0;
+}
+
 .navbar.navbar-qs {
     background-color: black;
     min-height: 51px;
@@ -327,4 +331,23 @@ h1, h2, h3, h4 {
 
 .bg-colour img {
     max-width: 100%;
+}
+
+.row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+}
+
+.filter {
+    /* border: solid black 1px; */
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.panel-heading > h4 {
+    margin: 0;
 }

@@ -1,0 +1,79 @@
+---
+layout: standardheadmd
+title: Compatibility Assistant
+header: Compatibility Assistant
+---
+
+{% assign all = site.data.compatibility %}
+{% assign modules = all.modules %}
+<div class="row">
+    <div class="col-xs-12">
+        <p>
+            Unfortunately, not all plugins and mods are 100% compatible with Nucleus. This page lists some of the known
+            issues, and what you can do to work around the issues.
+        </p>
+        <p>
+            If you know of another incompatibility, please visit us on Discord and talk to us about it.
+        </p>
+    </div>
+</div>
+
+<div class="row row-eq-height">
+    <div class="col-sm-12 filter">
+        <div class="form-inline">
+            <div class="form-group">
+                <span class="checkbox-inline bold">Modules: </span>
+            {% for mod in modules %}
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="{{ mod }}" value="{{ mod }}" checked="checked"> {{ mod }}
+                </label>
+            {% endfor %}
+            </div>
+            <div class="form-group">
+                <span class="checkbox-inline bold">Mods/Plugins: </span>
+            {% for mod in all.mods %}
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="{{ mod.id }}" value="{{ mod.id }}" checked="checked"> {{ mod.name }}
+                </label>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Warnings -->
+<div class="page-header">
+    <h1>Critical issues <small><span id="3-count">x</span> issues</small></h1>
+</div>
+<p>Issues that severely break some Nucleus (or other plugin) functionality by default and no workaround is available.</p>
+{% for w in all.json.messages %}
+{% include issue.html w=w s=3 %}
+{% endfor %}
+
+<div class="page-header">
+    <h1>Major issues <small><span id="2-count">x</span> issues</small></h1>
+</div>
+<p>Issues that severely break some Nucleus (or other plugin) functionality by default,
+    but where a workaround is present.</p>
+{% for w in all.json.messages %}
+{% include issue.html w=w s=2 %}
+{% endfor %}
+
+<div class="page-header">
+    <h1>Minor issues <small><span id="1-count">x</span> issues</small></h1>
+</div>
+<p>Issues that may have a minor unintended side effect, which may be the case by default.</p>
+{% for w in all.json.messages %}
+{% include issue.html w=w s=1 %}
+{% endfor %}
+
+<div class="page-header">
+    <h1>For information <small><span id="0-count">x</span> issues</small></h1>
+</div>
+<p>Issues that <em>might</em> occur but are generally intended or arise from non-default configuration.</p>
+
+{% for w in all.json.messages %}
+{% include issue.html w=w s=0 %}
+{% endfor %}
