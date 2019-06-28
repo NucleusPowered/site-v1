@@ -66,7 +66,7 @@ json:
        severity: 2
        symptom: "Some commands and features don't work together when using Ultimate Core"
        message: 'UltimateCore is another essentials style plugin and may conflict with Nucleus.'
-       resolution: 'Remove either Nucleus or UltimateCore, or be extra careful and ensure that modules do not conflict.'
+       resolution: 'Remove either UltimateCore, or be extra careful and ensure that modules do not conflict.'
     -  modid: 'topography'
        modules:
          - 'teleport'
