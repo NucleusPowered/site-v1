@@ -340,6 +340,10 @@ h1, h2, h3, h4 {
     display:         flex;
 }
 
+.fill-height {
+    height: 100%;
+}
+
 .filter {
     /* border: solid black 1px; */
 }
@@ -348,10 +352,14 @@ h1, h2, h3, h4 {
     font-weight: bold;
 }
 
-.panel-heading > h4 {
+.panel-heading h4 {
     margin: 0;
 }
 
 .panel-heading {
     color: #000 !important;
+}
+
+.rtext {
+    text-align: right;
 }

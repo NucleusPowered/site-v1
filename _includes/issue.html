@@ -14,10 +14,26 @@
             <div class="panel panel-info">
         {% endcase %}
             <div class="panel-heading">
-                <div>
-                    <strong>Mod/Plugin:</strong> {{ mod.name }}. <strong>Modules:</strong> {{ modules | default: "all" }}.
+                <div class="row row-eq-height">
+                    <div class="col-md-10 col-sm-9 col-xs-8">
+                        <div>
+                            <strong>Mod/Plugin:</strong> {{ mod.name }}. <strong>Modules:</strong> {{ modules | default: "all" }}.
+                        </div>
+                        <h4>{{ include.w.symptom }}</h4>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-4 rtext">
+                        {% case include.s %}
+                        {% when 3 %}
+                        Critical
+                        {% when 2 %}
+                        Major
+                        {% when 1 %}
+                        Minor
+                        {% when 0 %}
+                        Info
+                        {% endcase %}
+                    </div>
                 </div>
-                <h4>{{ include.w.symptom }}</h4>
             </div>
             <div class="panel-body">
                 <p>
