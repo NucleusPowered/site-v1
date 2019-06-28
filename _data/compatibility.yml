@@ -34,7 +34,7 @@ json:
        severity: 2
        symptom: 'Chat prefixes and formatting are not shown when using FTB Utilities'
        message: 'FTB Utilities alters the chat and may override the Nucleus configuration.'
-       resolution: 'Disable FTB Utilities chat-override options.'
+       resolution: 'Disable FTB Utilities chat-override options, specifically the option "B:override_chat".'
     -  modid: 'pjw'
        modules:
          - 'teleport'
