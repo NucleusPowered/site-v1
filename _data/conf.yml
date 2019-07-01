@@ -28,9 +28,15 @@ server-shop: |
 teleport: |
     # If true, by default, a target player will not be informed that they have been /teleport ed to. Override using "-q false"
     default-quiet=true
+    # If true, when a player is in a different dimension than the designated target, then the requesting player will require the
+    # "nucleus.teleport.exempt.samedimension" permission to allow teleportation.
+    only-same-dimension=false
     # If true, any player that has a /tpa request denied (or times out) will have any charge for the command refunded.
     # If set to false, Nucleus will consider that the command has a cost, rather than the teleport action and will not refund on any teleport denials.
     refund-on-deny=true
+    # If true, when running /tpa, a player's cooldown starts immediately. Otherwise, the cooldown will start
+    # if and when the teleport is accepted.
+    start-cooldown-when-asking=false
     # If true, teleporting tries to find a safe place for players.
     use-safe-teleportation=true
 admin: |
@@ -46,6 +52,8 @@ back: |
     on-portal=false
     # Log player's last location on warp.
     on-teleport=true
+    # If true, when a player is in a different dimension than the back target, then this player will require the nucleus.back.exempt.samedimension permission to be able to go back.
+    only-same-dimension=false
 rules: |
     # The rules page title.
     rules-title="&6Server Rules"
@@ -152,6 +160,8 @@ connection: |
 vanish: |
     # [EXPERIMENTAL - use with caution] If true, Nucleus will try to alter the tab list when a player vanishes.
     alter-tab-list=false
+    # If true, Nucleus is more aggressive about setting the vanish state on a player during login. This may interfere with other plugins that use the vanish status.
+    force-nucleus-vanish=true
     # If true, players who leave or join the server under vanish will not have a login or logout message broadcast.
     hide-connection-messages-on-vanish=false
 info: "info {\n    # If \"use-default-info-section\" is true, this section is displayed\
@@ -200,6 +210,8 @@ item: |
         use-whitelist=false
     }
     skull {
+        # Limits the number of skulls that can be spawned using the "/skull" command. Set to -1 to disable the limit.
+        spawn-limit=-1
         # If true, Nucleus will simply treat /skull as an alias to "/give [player] skull [number] 3 {SkullOwner:[skullplayer]}"
         use-minecraft-command=false
     }
@@ -331,6 +343,8 @@ command-spy: |
     # The prefix to use when displaying the player's command.
     prefix="&7[CS: {{name}}]: "
 home: |
+    # If true, when a player is in a different dimension than the designated home, then this player will require the nucleus.home.exempt.samedimension permission to be able to use that home.
+    only-same-dimension=false
     # If true, if a player has more homes than the permission option "home-count" allows, then players will not be able to use any homes until they delete homes to be at the limit again.
     prevent-home-count-overhang=true
     # If true, on respawn, a player will spawn back at their default home (named "home") if it exists.
@@ -437,14 +451,17 @@ core: "# If true, if you log in and have the \"wildcard\" permission (either * o
     \ If set to a language code, Nucleus will try to use that as the default language.\
     \ Nucleus is primarily written in \"en-GB\".\n# \n# Community translation support\
     \ is being explored. Please visit us on Discord to ask how you can help translate\
-    \ Nucleus into your own language.\noverride-language=default\n# Prints to console\
-    \ when a Nucleus save is occurring.\nprint-on-autosave=false\n# These parameters\
-    \ define how far out to check from a specific point when performing a warp. Larger\
-    \ numbers mean that a wider area is checked, but large numbers will cause server\
-    \ lag. The defaults are sufficient in most cases.\nsafe-teleport-check {\n   \
-    \ height=3\n    width=9\n}\n# If true and no economy or permission plugin is detected,\
-    \ Nucleus will print a warning on startup. Set this to false if you don't have\
-    \ one of these types of plugins and you're OK with that.\nshow-warning-on-startup=true\n\
+    \ Nucleus into your own language.\noverride-language=default\n# If true, Nucleus\
+    \ will print a message when a permission is checked that has not been properly\
+    \ registered. This usually indicates a Nucleus issue and should be reported to\
+    \ the Nucleus github.\nprint-message-when-permission-isnt-registered=false\n#\
+    \ Prints to console when a Nucleus save is occurring.\nprint-on-autosave=false\n\
+    # These parameters define how far out to check from a specific point when performing\
+    \ a warp. Larger numbers mean that a wider area is checked, but large numbers\
+    \ will cause server lag. The defaults are sufficient in most cases.\nsafe-teleport-check\
+    \ {\n    height=3\n    width=9\n}\n# If true and no economy or permission plugin\
+    \ is detected, Nucleus will print a warning on startup. Set this to false if you\
+    \ don't have one of these types of plugins and you're OK with that.\nshow-warning-on-startup=true\n\
     # If true, a \"messages.conf\" file will be generated and used to define custom\
     \ messages.\nuse-custom-message-file=false\n# If true, cancel a user's warmup\
     \ on...\nwarmup-canceling {\n    # running a command\n    cancel-on-command=true\n\
