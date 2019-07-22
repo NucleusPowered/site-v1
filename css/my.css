@@ -135,7 +135,8 @@ background-color: #444444;
     margin-top: 10px;
     font-size: 14px;
     border-top: 1px solid black;
-    background: url("../img/bg1.jpg") center bottom fixed;
+    background-color: lightgray;
+   /* background: url("../img/bg1.jpg") center bottom fixed; */
 }
 
 .headername {
