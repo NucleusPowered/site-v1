@@ -70,18 +70,7 @@ header: Nucleus Compatibility
     </div>
 </div>
 
-{% for w in all.json.messages %}
-{% include issue.html w=w s=3 %}
-{% endfor %}
-
-{% for w in all.json.messages %}
-{% include issue.html w=w s=2 %}
-{% endfor %}
-
-{% for w in all.json.messages %}
-{% include issue.html w=w s=1 %}
-{% endfor %}
-
-{% for w in all.json.messages %}
-{% include issue.html w=w s=0 %}
+{% assign m = (all.json.messages | sort: "severity" | reverse) %}
+{% for w in m %}
+{% include issue.html w=w s=w.severity %}
 {% endfor %}

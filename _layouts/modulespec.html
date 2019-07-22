@@ -47,7 +47,7 @@
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active tcmargin" id="info">
-                            {% if cn > 0 %}
+                            {% if sev > 0 %}
                                 {% include issue.html s=sev r=true %}
                                 <div class="demargin">
                                     {{ content }}
@@ -57,14 +57,17 @@
                             {% endif %}
                         </div>
                         <div role="tabpanel" class="tab-pane tcmargin" id="compatibility">
+                            <p>The following are incompatibilities that <em>may</em> occur with this module, along with how to resolve the problem.
+                                For the full mod/plugin incompatibility list, see <a href="{{base}}/docs/compatibility.html">the compatibility page</a>.</p>
                             {% if cn > 0 %}
-                            {% for w in all.json.messages %}
+                            {% assign m = (all.json.messages | sort: "severity" | reverse) %}
+                            {% for w in m %}
                                 {% if w.modules contains page.moduleid %}
                                     {% include issue.html w=w s=w.severity %}
                                 {% endif %}
                             {% endfor %}
                             {% else %}
-                            <em>No plugin incompatibilities have been reported.</em>
+                            <p><em>No plugin incompatibilities have been reported.</em></p>
                             {% endif %}
                         </div>
                         <div role="tabpanel" class="tab-pane tcmargin" id="commands">
