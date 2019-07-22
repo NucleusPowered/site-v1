@@ -18,32 +18,7 @@ header: Nucleus Compatibility
         <p>
             <em>This page was last updated {{ all.json.last-update | date: "%d %B %Y" }}</em>
         </p>
-        <div>
-            <div class="well">
-                <ul>
-                    <li>
-                        <strong>Critical</strong> issues are where some function of Nucleus is seriously affected in a way server owners
-                        are not expecting and have no known workaround, other than removing the plugin in question. It is advised that
-                        server owners remove the plugin in question and find an alternative if they wish to use the Nucleus feature it
-                        affects.
-                    </li>
-                    <li>
-                        <strong>Major</strong> issues are where some function of Nucleus is seriously affected in a way server owners
-                        are not expecting by default but a workaround exists to mitigate or fix the issue.
-                    </li>
-                    <li>
-                        <strong>Minor</strong> issues are where some function of Nucleus can be mildy affected, possibly in an unwanted way,
-                        but is not enabled by default or has little impact on day to day server running and management. A workaround exists
-                        to restore or use the affected Nucleus functionality.
-                    </li>
-                    <li>
-                        <strong>Info</strong> issues are really non-issues. Incompatibilities with this label tend to be wanted (such as
-                        a world management plugin taking over the `/world` command), and are documented here for completeness, along with
-                        how to restore or use Nucleus functions.
-                    </li>
-                </ul>
-            </div>
-        </div>
+        {% include compatmeanings.html show=true %}
     </div>
 </div>
 

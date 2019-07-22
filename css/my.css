@@ -371,3 +371,11 @@ h1, h2, h3, h4 {
 .demargin h2#introduction:first-child {
     margin-top: 0;
 }
+
+a.cola[aria-expanded=true] > span.h {
+    display: none;
+}
+
+a.cola[aria-expanded=false] > span.s {
+    display: none;
+}
