@@ -1,18 +1,45 @@
-{% if include.s == include.w.severity %}
+{% case include.s %}
+{% when 3 %}
+{% assign sev = "panel-danger" %}
+{% assign type = "Critical" %}
+{% when 2 %}
+{% assign sev = "panel-warning" %}
+{% assign type = "Major" %}
+{% when 1 %}
+{% assign sev = "panel-default" %}
+{% assign type = "Minor" %}
+{% when 0 %}
+{% assign sev = "panel-info" %}
+{% assign type = "Info" %}
+{% endcase %}
+
+{% if include.r %}
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel {{ sev }}">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h4>Some mods or plugins may conflict with this module</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                The highest rating comparability issue is rated <strong>{{ type | downcase }}</strong>.
+                See <a data-activate="#compatibility" href="#compatibility">the compatibility tab</a> for more information.
+            </div>
+        </div>
+    </div>
+</div>
+
+{% elsif include.s == include.w.severity %}
 {% assign mod = site.data.compatibility.mods | where: "id", include.w.modid | first %}
 {% assign modules = include.w.modules | join: ', ' %}
+
 <div class="row" data-mod="{{ include.w.modid }}" data-modules="{{ modules }}">
     <div class="col-xs-12">
-        {% case include.s %}
-            {% when 3 %}
-            <div class="panel panel-danger">
-            {% when 2 %}
-            <div class="panel panel-warning">
-            {% when 1 %}
-            <div class="panel panel-default">
-            {% when 0 %}
-            <div class="panel panel-info">
-        {% endcase %}
+        <div class="panel {{ sev }}">
             <div class="panel-heading">
                 <div class="row row-eq-height">
                     <div class="col-md-10 col-sm-9 col-xs-8">
@@ -22,16 +49,7 @@
                         <h4>{{ include.w.symptom }}</h4>
                     </div>
                     <div class="col-md-2 col-sm-3 col-xs-4 rtext">
-                        {% case include.s %}
-                        {% when 3 %}
-                        Critical
-                        {% when 2 %}
-                        Major
-                        {% when 1 %}
-                        Minor
-                        {% when 0 %}
-                        Info
-                        {% endcase %}
+                        {{ type }}
                     </div>
                 </div>
             </div>

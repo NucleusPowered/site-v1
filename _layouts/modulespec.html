@@ -1,4 +1,21 @@
 {% include header.html %}
+{% assign all = site.data.compatibility %}
+{% assign modules = all.modules %}
+{% assign compat = modules contains page.moduleid %}
+{% assign cn = 0 %}
+{% assign sev = -1 %}
+
+{% if compat %}
+
+    {% for w in all.json.messages %}
+        {% if w.modules contains page.moduleid %}
+              {% assign cn = cn | plus: 1 %}
+              {% if w.severity > sev %}
+                   {% assign sev = w.severity %}
+              {% endif %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
 <div class="head-n">
 </div>
 <div class="bg-colour" style="margin-top: 20px;">
@@ -21,6 +38,7 @@
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation" class="active"><a href="#info" aria-controls="home" role="tab" data-toggle="tab">Module Information</a></li>
+                        <li role="presentation"><a href="#compatibility" id="compat-click" aria-controls="profile" role="tab" data-toggle="tab">Compatibility <span class="badge">{{ cn }}</span></a></li>
                         <li role="presentation"><a href="#commands" aria-controls="profile" role="tab" data-toggle="tab">Commands</a></li>
                         <li role="presentation"><a href="#permissions" aria-controls="messages" role="tab" data-toggle="tab">Permissions</a></li>
                         <li role="presentation"><a href="#conf" aria-controls="config" role="tab" data-toggle="tab">Configuration</a></li>
@@ -28,16 +46,34 @@
 
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="info">
-                            {{content}}
+                        <div role="tabpanel" class="tab-pane active tcmargin" id="info">
+                            {% if cn > 0 %}
+                                {% include issue.html s=sev r=true %}
+                                <div class="demargin">
+                                    {{ content }}
+                                </div>
+                            {% else %}
+                                {{content}}
+                            {% endif %}
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="commands" style="margin-top: 10px;">
+                        <div role="tabpanel" class="tab-pane tcmargin" id="compatibility">
+                            {% if cn > 0 %}
+                            {% for w in all.json.messages %}
+                                {% if w.modules contains page.moduleid %}
+                                    {% include issue.html w=w s=w.severity %}
+                                {% endif %}
+                            {% endfor %}
+                            {% else %}
+                            <em>No plugin incompatibilities have been reported.</em>
+                            {% endif %}
+                        </div>
+                        <div role="tabpanel" class="tab-pane tcmargin" id="commands">
                             {% include modulecommands2.html %}
                         </div>
                         <div role="tabpanel" class="tab-pane" id="permissions">
                             {% include modulepermissions.html %}
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="conf" style="margin-top: 10px;">
+                        <div role="tabpanel" class="tab-pane tcmargin" id="conf">
                             {% if site.data.conf[page.moduleid] %}
                             <em>The following configuration is the default for this module:</em>
                             <pre>

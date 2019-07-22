@@ -34,6 +34,9 @@ var modulesJs = (function() {
             $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
                 history.pushState(null, null, e.target.hash);
             });
+            $('a[data-activate]').click(function(e) {
+                $('#compat-click').click();
+            });
         }
     }
 })();
