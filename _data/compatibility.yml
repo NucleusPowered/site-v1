@@ -44,7 +44,7 @@ json:
        symptom: "Cross world teleports might be canceled by ProjectWorlds with a no permissions message"
        severity: 2
        message: 'ProjectWorlds has world access permissions that can block cross world teleports.'
-       resolution: 'Grant users the ProjectWorlds world access permission.'
+       resolution: 'Grant users the ProjectWorlds world access permission, which is "pjw.worlds.<worldname>".'
     -  modid: 'pjw'
        modules:
          - 'world'
