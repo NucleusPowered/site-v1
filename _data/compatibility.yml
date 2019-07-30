@@ -25,9 +25,9 @@ json:
   messages:
     -  modid: 'nucleus-mod'
        severity: 3
-       symptom: 'The Nucleus Forge core mod causes a Duplicate Mod ID error when used with the Nucleus Sponge Plugin'
-       message: 'The Nucleus Mod uses the same mod ID as the Nucleus Sponge plugin. Forge will throw a Duplicate Mod ID error when trying to load this plugin with the Nucleus core mod.'
-       resolution: 'Do not use the Nucleus Core Mod. We will not change the Nucleus Mod ID - it may break plugin compatibility and, honestly, we were first with it!'
+       symptom: 'The Nucleus Forge core mod causes a Duplicate Mod ID error when used with the Nucleus Sponge plugin'
+       message: 'The Nucleus Core Mod uses the same mod ID as the Nucleus Sponge plugin. Forge will throw a Duplicate Mod ID error when trying to load this plugin with the Nucleus core mod.'
+       resolution: 'Do not use the Nucleus Core Mod. We will not change the Nucleus mod ID - it may break plugin compatibility and, honestly, we were first with it!'
     -  modid: 'simpletags'
        modules:
          - 'chat'
