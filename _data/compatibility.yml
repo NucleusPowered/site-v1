@@ -18,9 +18,16 @@ mods:
     name: 'Topography'
   - id: 'simpletags'
     name: 'Simple Tags'
+  - id: 'nucleus-mod' # not the correct ID but, meh.
+    name: 'Nucleus Mod'
 json:
-  last-update: "2019-06-28"
+  last-update: "2019-07-30"
   messages:
+    -  modid: 'nucleus-mod'
+       severity: 3
+       symptom: 'The Nucleus Forge core mod causes a Duplicate Mod ID error when used with the Nucleus Sponge Plugin'
+       message: 'The Nucleus Mod uses the same mod ID as the Nucleus Sponge plugin. Forge will throw a Duplicate Mod ID error when trying to load this plugin with the Nucleus core mod.'
+       resolution: 'Do not use the Nucleus Core Mod. We will not change the Nucleus Mod ID - it may break plugin compatibility and, honestly, we were first with it!'
     -  modid: 'simpletags'
        modules:
          - 'chat'
