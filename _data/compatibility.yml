@@ -48,7 +48,8 @@ json:
          - 'back'
          - 'home'
          - 'warp'
-       symptom: "Cross world teleports might be canceled by ProjectWorlds with a no permissions message"
+         - 'spawn'
+       symptom: "Cross world teleports, such as those via warping or returning to spawn via command, might be canceled by ProjectWorlds with a no permissions message"
        severity: 2
        message: 'ProjectWorlds has world access permissions that can block cross world teleports.'
        resolution: 'Grant users the ProjectWorlds world access permission, which is "pjw.worlds.<worldname>".'
@@ -80,6 +81,7 @@ json:
          - 'back'
          - 'home'
          - 'warp'
+         - 'spawn'
        severity: 1
        symptom: "Topography may block cross-world teleports"
        message: 'Topography has the ability to take control of cross-world teleports in non-standard configurations. SkyFactory 4 has some worlds with this option enabled by default, which blocks the Nucleus teleport commands'
