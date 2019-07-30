@@ -55,10 +55,10 @@
             </div>
             <div class="panel-body">
                 <p>
-                    <strong>Reason: </strong> {{ include.w.message }}
+                    <strong>Reason: </strong> {{ include.w.message | replace: '<', '&lt;' | replace: '>', '&gt;' }}
                 </p>
                 <p>
-                    <strong>Resolution: </strong> {{ include.w.resolution }}
+                    <strong>Resolution: </strong> {{ include.w.resolution | replace: '<', '&lt;' | replace: '>', '&gt;' }}
                 </p>
             </div>
         </div>
