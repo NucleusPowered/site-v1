@@ -4,7 +4,7 @@ var d = (function() {
 
     // Permission command data
     var permissions = {
-     /*   PermissionsEx: {
+        PermissionsEx: {
             url: "https://forums.spongepowered.org/t/permissionsex-v2-0-api-5/6198",
             docs: "https://github.com/PEXPlugins/PermissionsEx/tree/master/doc",
             github: "https://github.com/PEXPlugins/PermissionsEx",
@@ -13,7 +13,7 @@ var d = (function() {
             userOption: "/pex user %user% option %option% %value%",
             groupOption: "/pex group %user% option %option% %value%"
         },
-        PermissionManager: {
+     /*   PermissionManager: {
             url: "https://forums.spongepowered.org/t/key-permissionmanager-v2-5-1-api-6-x-5-x-4-2-0-gb-fr-ru-and-more/12310",
             docs: "https://github.com/djxy/PermissionManager-2.0/wiki",
             github: "https://github.com/djxy/PermissionManager-2.0",
@@ -23,7 +23,7 @@ var d = (function() {
             groupOption: "/pm groups %user% set option %option% %value%"
         }, */
         LuckPerms: {
-            url: "https://forums.spongepowered.org/t/luckperms-an-advanced-permissions-system/14274",
+            url: "https://ore.spongepowered.org/Luck/LuckPerms",
             docs: "https://github.com/lucko/LuckPerms/wiki",
             github: "https://github.com/lucko/LuckPerms",
             user: "/lp user %user% permission set %perm% true",
@@ -149,7 +149,7 @@ var d = (function() {
                 return c.substring("perm-type=".length,c.length);
             }
         }
-        return "PermissionsEx";
+        return preferredPermission;
     };
 
     // http://stackoverflow.com/a/16837352
