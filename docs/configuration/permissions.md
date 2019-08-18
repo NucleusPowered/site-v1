@@ -19,7 +19,7 @@ may provide.
 ## Nucleus is not a permissions management plugin
 
 **Nucleus is not a permissions plugin in its own right.** While it provides commands to interact
-with permissions plugins, Nucleus does manage permissions by itself. If no permissions plugin is
+with permissions plugins, Nucleus does not manage permissions by itself. If no permissions plugin is
 installed, Nucleus will fall back to the Sponge default of OP based permissions. Players will 
 either have all commands (if opped) or no commands (if not opped). We strongly recommend that you
 use a permissions plugin.
