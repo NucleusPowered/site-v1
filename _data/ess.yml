@@ -445,6 +445,13 @@
     isExact: true
     notes: ''
 -   essentialsCommands:
+    - near
+    nucleusEquiv:
+    - near
+    - nnear
+    isExact: true
+    notes: ''
+-   essentialsCommands:
     - nick
     - nickname
     nucleusEquiv:

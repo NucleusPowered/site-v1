@@ -25,20 +25,29 @@ nameban: |
 server-shop: |
     # The maximum amount a player can buy in one transaction.
     max-purchasable-at-once=64
-teleport: |
-    # If true, by default, a target player will not be informed that they have been /teleport ed to. Override using "-q false"
-    default-quiet=true
-    # If true, when a player is in a different dimension than the designated target, then the requesting player will require the
-    # "nucleus.teleport.exempt.samedimension" permission to allow teleportation.
-    only-same-dimension=false
-    # If true, any player that has a /tpa request denied (or times out) will have any charge for the command refunded.
-    # If set to false, Nucleus will consider that the command has a cost, rather than the teleport action and will not refund on any teleport denials.
-    refund-on-deny=true
-    # If true, when running /tpa, a player's cooldown starts immediately. Otherwise, the cooldown will start
-    # if and when the teleport is accepted.
-    start-cooldown-when-asking=false
-    # If true, teleporting tries to find a safe place for players.
-    use-safe-teleportation=true
+teleport: "# If true, by default, a target player will not be informed that they have\
+    \ been /teleport ed to. Override using \"-q false\"\ndefault-quiet=true\n# If\
+    \ true, when a player is in a different dimension than the designated target,\
+    \ then the requesting player will require the\n# \"nucleus.teleport.exempt.samedimension\"\
+    \ permission to allow teleportation.\nonly-same-dimension=false\n# If true, any\
+    \ player that has a /tpa request denied (or times out) will have any charge for\
+    \ the command refunded.\n# If set to false, Nucleus will consider that the command\
+    \ has a cost, rather than the teleport action and will not refund on any teleport\
+    \ denials.\nrefund-on-deny=true\n# If true, Nucleus will show Accept and Deny\
+    \ links when a tpa or tpahere request is made.\nshow-clickable-tpa-accept-deny=true\n\
+    # If true, when running /tpa, a player's cooldown starts immediately. Otherwise,\
+    \ the cooldown will start\n# if and when the teleport is accepted.\nstart-cooldown-when-asking=false\n\
+    # If true, this will force Nucleus to use the /tpaccept and /tpdeny commands explicitly\
+    \ if someone clicks \"Accept\" or \"Deny\" to a tpa/tpahere request. This provides\
+    \ compatibility to some plugins that try to block commands by name rather than\
+    \ by action, but will not work if the commands have been aliased or turned off.\n\
+    # \n# It is recommended that you set this to false wherever possible.\nuse-commands-when-clicking-tpa-accept-deny=false\n\
+    # If true, if a requester makes a /tpa or /tpahere request to a player, the player\
+    \ who is teleporting will teleport to the position the request was made at, rather\
+    \ than the requester's current position. If false, the player will teleport to\
+    \ the requester's current position, regardless of where the request was made.\n\
+    use-request-location-on-tp-requests=false\n# If true, teleporting tries to find\
+    \ a safe place for players.\nuse-safe-teleportation=true\n"
 admin: |
     # The prefix and suffix when sending a broadcast message. Accepts chat tokens such as {{displayname}}, {{name}}, etc.
     broadcast-message-template {
@@ -82,8 +91,7 @@ command-logger: |
     log-to-file=false
     # If true, the "command-filter" containing the list of commands to be logged is a whitelist (command must be specfied to be logged), not a blacklist.
     whitelist=false
-inventory: |4+
-
+inventory: "\r\n"
 ban: |
     # The maximum length a temporary ban may last for (in seconds) unless the user handing the mute has a bypass permission. Set to -1 for no maximum.
     maximum-tempban-length=604800
@@ -164,6 +172,11 @@ vanish: |
     force-nucleus-vanish=true
     # If true, players who leave or join the server under vanish will not have a login or logout message broadcast.
     hide-connection-messages-on-vanish=false
+    # If true, if a player is vanished and another player who does not have see permissions runs /seen, the player will appear tobe offline.
+    try-hide-players-in-seen=true
+    # If true, attempts to work around a Sponge issue where vanish status does not persist over respawns.
+    # See https://github.com/SpongePowered/SpongeCommon/issues/2325.
+    workaround-sponge-vanish-issue=true
 info: "info {\n    # If \"use-default-info-section\" is true, this section is displayed\
     \ when a player runs \"/info\", not the section list.\n    default-info-section=info\n\
     \    # If true, when a player runs \"/info\", the section specified in \"default-info-section\"\
@@ -620,6 +633,10 @@ playerinfo: |
         server-panel-compatibility=false
         # The template to use to display a player's name. Uses the same tokens as chat. Defaults to "{{displayname}}".
         template="{{displayname}}"
+    }
+    near {
+        # The max radius for the /near command, bypassable with  nucleus.near.maxexempt
+        max-radius=200
     }
     seen {
         # If true, the permission "nucleus.seen.extended" is required for all information that comes from modules. If false, information will be displayed based on the command permissions a player has (so, a player with check ban rights can see banning information).
