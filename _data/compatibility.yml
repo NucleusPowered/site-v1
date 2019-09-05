@@ -21,7 +21,7 @@ mods:
   - id: 'nucleus-mod' # not the correct ID but, meh.
     name: 'Nucleus Mod'
 json:
-  last-update: "2019-07-30"
+  last-update: "2019-09-05"
   messages:
     -  modid: 'nucleus-mod'
        severity: 3
@@ -53,6 +53,13 @@ json:
        severity: 2
        message: 'ProjectWorlds has world access permissions that can block cross world teleports.'
        resolution: 'Grant users the ProjectWorlds world access permission, which is "pjw.worlds.<worldname>".'
+    -  modid: 'pjw'
+       modules:
+         - 'spawn'
+       symptom: "Nucleus' First Spawn point may not be honoured for new players when using ProjectWorlds"
+       severity: 2
+       message: "By default, ProjectWorlds will override Nucleus' first spawn mechanics."
+       resolution: 'Update to a ProjectWorlds build after 2nd September 2019, and set "options.first_join.enable" to "false".'
     -  modid: 'pjw'
        modules:
          - 'world'
