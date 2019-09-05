@@ -1,2 +1,6 @@
 encoding: utf-8
-permalink: /news/:title/
+#permalink: /news/:title/
+collections:
+  posts:
+    output: true
+    permalink: /news/:title/
