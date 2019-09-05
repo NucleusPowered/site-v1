@@ -4,7 +4,7 @@ title: "Nucleus v2 - Roadmap"
 date: 2019-09-05
 ---
 
-I have been asked a few time about Nucleus v2, what it is and what it will be. I'm writing this post to try to explain
+I have been asked a few times about Nucleus v2, what it is and what it will be. I'm writing this post to try to explain
 what v2 is, how it affects server owners, plugin developers, and potential contributors. But first, a little history
 lesson.
 
