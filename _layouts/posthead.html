@@ -1,0 +1,17 @@
+{% include header.html %}
+{% include title.html %}
+<div class="container">
+    {% if page.header %}
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>{{ page.header }}</h1>
+        </div>
+    </div>
+    {% endif %}
+    <div class="row">
+        <div class="col-xs-12">
+            {{content}}
+        </div>
+    </div>
+</div>
+{% include footer.html %}

@@ -1,0 +1,22 @@
+---
+layout: standardhead
+title: News
+header: News
+---
+<div class="bg-colour" style="margin-top: 20px;">
+        {% for post in site.posts %}
+        <div class="row">
+            <div class="col-xs-12">
+                <h2 class="notop">
+                    <a href="{{ post.url }}">{{ post.title }}</a> <small> - {{ post.date | date: '%d %B %Y'}}</small>
+                </h2>
+                <p>
+                    {{ post.excerpt }}
+                </p>
+                <p>
+                    <a href="{{ post.url }}">View post &raquo;</a>
+                </p>
+            </div>
+        </div>
+        {% endfor %}
+</div>

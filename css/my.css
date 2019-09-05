@@ -380,3 +380,7 @@ a.cola[aria-expanded=true] > span.h {
 a.cola[aria-expanded=false] > span.s {
     display: none;
 }
+
+h2.notop {
+    margin-top: 0;
+}

@@ -1,0 +1,26 @@
+{% include header.html %}
+<div class="head-n">
+</div>
+<div class="bg-colour" style="margin-top: 20px;">
+    <div class="container">
+        {% if page.nolink == null %}
+        <div class="row">
+            <div class="col-xs-12" style="padding-top: 10px;">
+                <a href="{{ base }}/news">&laquo; Return to News</a>
+            </div>
+        </div>
+        {% endif %}
+        <div class="row">
+            <div class="col-xs-12">
+                <h1 class="nomargin">{{ page.title }}<small> - {{ page.date | date: '%d %B %Y' }}</small></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                {{content}}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include footer.html %}
