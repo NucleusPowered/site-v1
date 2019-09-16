@@ -213,7 +213,7 @@ There are some major differences - let's start with the annotations:
    * If you were writing the command, the one-line description should be added to the translation key `tpa.desc` and
      the extended description should be at `tpa.extended` (javadocs will tell you this part).
 * `@EssentialsEquivalent` remains as is, purely due to documentation
-* The modifiers, such as warmup etc., now have to specified to activate. This way, it's clear what the plugin will 
+* The modifiers, such as warmup etc., now have to be specified to activate. This way, it's clear what the plugin will 
   generate, and what it will use.
 * Permissions are no longer generated, and are stored in static classes as constants. They are now easy to find, and
   you don't have to guess what they are going to be called (for example, `TeleportPermissions.BASE_TPA` is simply a
