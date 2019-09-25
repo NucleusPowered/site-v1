@@ -12,9 +12,10 @@ The warp module allows you to define public facing warps for your players to use
 
 ## Adding permissions to warps
 
-Nucleus can assign a permission for each warp you create if you wish to have that level of control. In `main.conf`, set
-`warp.separate-permissions` to `true` and run `/nucleus reload`. Each warp will be assigned the permission
-`nucleus.warps.[warp name]`, which the player will be required to have before using it.
+Nucleus assigns a permission for each warp you create. Each warp will be assigned the permission
+`nucleus.warps.[warp name]` (where `[warp name]` is replaced with the name of your warp **lowercase**. 
+The player will be required to have before using it. You will also need to ensure they have access to the warp command
+if that it how you want them to use the warps - `nucleus.warp.base`.
 
 ## Adding costs to warps
 
