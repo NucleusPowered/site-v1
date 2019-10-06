@@ -1,0 +1,352 @@
+# A list of block types to their IDs.
+# Block name = block id.
+# ---------------------------------- #
+Acacia Door = minecraft:acacia_door
+Acacia Fence = minecraft:acacia_fence
+Acacia Fence Gate = minecraft:acacia_fence_gate
+Acacia Wood Stairs = minecraft:acacia_stairs
+Activator Rail = minecraft:activator_rail
+Air = minecraft:air
+Anvil = minecraft:anvil
+Barrier = minecraft:barrier
+Beacon = minecraft:beacon
+Bedrock = minecraft:bedrock
+Beetroots = minecraft:beetroots
+Birch Door = minecraft:birch_door
+Birch Fence = minecraft:birch_fence
+Birch Fence Gate = minecraft:birch_fence_gate
+Birch Wood Stairs = minecraft:birch_stairs
+Black Glazed Terracotta = minecraft:black_glazed_terracotta
+Black Shulker Box = minecraft:black_shulker_box
+Block of Coal = minecraft:coal_block
+Block of Diamond = minecraft:diamond_block
+Block of Emerald = minecraft:emerald_block
+Block of Gold = minecraft:gold_block
+Block of Iron = minecraft:iron_block
+Block of Quartz = minecraft:quartz_block[variant=chiseled]
+Block of Quartz = minecraft:quartz_block[variant=default]
+Block of Quartz = minecraft:quartz_block[variant=lines_x]
+Block of Quartz = minecraft:quartz_block[variant=lines_y]
+Block of Quartz = minecraft:quartz_block[variant=lines_z]
+Block of Redstone = minecraft:redstone_block
+Blue Glazed Terracotta = minecraft:blue_glazed_terracotta
+Blue Shulker Box = minecraft:blue_shulker_box
+Bone Block = minecraft:bone_block
+Bookshelf = minecraft:bookshelf
+Brewing Stand = minecraft:brewing_stand
+Brick Stairs = minecraft:brick_stairs
+Bricks = minecraft:brick_block
+Brown Glazed Terracotta = minecraft:brown_glazed_terracotta
+Brown Shulker Box = minecraft:brown_shulker_box
+Button = minecraft:stone_button
+Button = minecraft:wooden_button
+Cactus = minecraft:cactus
+Cake = minecraft:cake
+Carpet = minecraft:carpet
+Carrots = minecraft:carrots
+Cauldron = minecraft:cauldron
+Chain Command Block = minecraft:chain_command_block
+Chest = minecraft:chest
+Chorus Flower = minecraft:chorus_flower
+Chorus Plant = minecraft:chorus_plant
+Clay = minecraft:clay
+Coal Ore = minecraft:coal_ore
+Cobblestone = minecraft:cobblestone
+Cobblestone Stairs = minecraft:stone_stairs
+Cobblestone Wall = minecraft:cobblestone_wall[variant=cobblestone]
+Cobblestone Wall = minecraft:cobblestone_wall[variant=mossy_cobblestone]
+Cobweb = minecraft:web
+Cocoa = minecraft:cocoa
+Command Block = minecraft:command_block
+Crafting Table = minecraft:crafting_table
+Crops = minecraft:wheat
+Cyan Glazed Terracotta = minecraft:cyan_glazed_terracotta
+Cyan Shulker Box = minecraft:cyan_shulker_box
+Dark Oak Door = minecraft:dark_oak_door
+Dark Oak Fence = minecraft:dark_oak_fence
+Dark Oak Fence Gate = minecraft:dark_oak_fence_gate
+Dark Oak Wood Stairs = minecraft:dark_oak_stairs
+Daylight Sensor = minecraft:daylight_detector
+Daylight Sensor = minecraft:daylight_detector_inverted
+Dead Bush = minecraft:deadbush
+Detector Rail = minecraft:detector_rail
+Diamond Ore = minecraft:diamond_ore
+Dirt = minecraft:dirt[variant=coarse_dirt]
+Dirt = minecraft:dirt[variant=dirt]
+Dirt = minecraft:dirt[variant=podzol]
+Dispenser = minecraft:dispenser
+Dragon Egg = minecraft:dragon_egg
+Dropper = minecraft:dropper
+Emerald Ore = minecraft:emerald_ore
+Enchantment Table = minecraft:enchanting_table
+End Portal = minecraft:end_portal_frame
+End Rod = minecraft:end_rod
+End Stone = minecraft:end_stone
+End Stone Bricks = minecraft:end_bricks
+Ender Chest = minecraft:ender_chest
+Farmland = minecraft:farmland
+Fire = minecraft:fire
+Flower = minecraft:red_flower
+Flower = minecraft:yellow_flower
+Flower Pot = minecraft:flower_pot
+Frosted Ice = minecraft:frosted_ice
+Furnace = minecraft:furnace
+Furnace = minecraft:lit_furnace
+Glass = minecraft:glass
+Glass Pane = minecraft:glass_pane
+Glowstone = minecraft:glowstone
+Gold Ore = minecraft:gold_ore
+Grass = minecraft:tallgrass
+Grass Block = minecraft:grass
+Grass Path = minecraft:grass_path
+Gravel = minecraft:gravel
+Gray Glazed Terracotta = minecraft:gray_glazed_terracotta
+Gray Shulker Box = minecraft:gray_shulker_box
+Green Glazed Terracotta = minecraft:green_glazed_terracotta
+Green Shulker Box = minecraft:green_shulker_box
+Hay Bale = minecraft:hay_block
+Hopper = minecraft:hopper
+Ice = minecraft:ice
+Iron Bars = minecraft:iron_bars
+Iron Door = minecraft:iron_door
+Iron Ore = minecraft:iron_ore
+Iron Trapdoor = minecraft:iron_trapdoor
+Jack o'Lantern = minecraft:lit_pumpkin
+Jukebox = minecraft:jukebox
+Jungle Door = minecraft:jungle_door
+Jungle Fence = minecraft:jungle_fence
+Jungle Fence Gate = minecraft:jungle_fence_gate
+Jungle Wood Stairs = minecraft:jungle_stairs
+Ladder = minecraft:ladder
+Lapis Lazuli Block = minecraft:lapis_block
+Lapis Lazuli Ore = minecraft:lapis_ore
+Lava = minecraft:flowing_lava
+Lava = minecraft:lava
+Leaves = minecraft:leaves2[variant=acacia]
+Leaves = minecraft:leaves2[variant=dark_oak]
+Leaves = minecraft:leaves[variant=birch]
+Leaves = minecraft:leaves[variant=jungle]
+Leaves = minecraft:leaves[variant=oak]
+Leaves = minecraft:leaves[variant=spruce]
+Lever = minecraft:lever
+Light Blue Glazed Terracotta = minecraft:light_blue_glazed_terracotta
+Light Blue Shulker Box = minecraft:light_blue_shulker_box
+Light Gray Glazed Terracotta = minecraft:silver_glazed_terracotta
+Light Gray Shulker Box = minecraft:silver_shulker_box
+Lily Pad = minecraft:waterlily
+Lime Glazed Terracotta = minecraft:lime_glazed_terracotta
+Lime Shulker Box = minecraft:lime_shulker_box
+Magenta Glazed Terracotta = minecraft:magenta_glazed_terracotta
+Magenta Shulker Box = minecraft:magenta_shulker_box
+Magma Block = minecraft:magma
+Melon = minecraft:melon_block
+Monster Spawner = minecraft:mob_spawner
+Moss Stone = minecraft:mossy_cobblestone
+Mushroom = minecraft:brown_mushroom
+Mushroom = minecraft:brown_mushroom_block[variant=all_inside]
+Mushroom = minecraft:brown_mushroom_block[variant=all_outside]
+Mushroom = minecraft:brown_mushroom_block[variant=all_stem]
+Mushroom = minecraft:brown_mushroom_block[variant=center]
+Mushroom = minecraft:brown_mushroom_block[variant=east]
+Mushroom = minecraft:brown_mushroom_block[variant=north]
+Mushroom = minecraft:brown_mushroom_block[variant=north_east]
+Mushroom = minecraft:brown_mushroom_block[variant=north_west]
+Mushroom = minecraft:brown_mushroom_block[variant=south]
+Mushroom = minecraft:brown_mushroom_block[variant=south_east]
+Mushroom = minecraft:brown_mushroom_block[variant=south_west]
+Mushroom = minecraft:brown_mushroom_block[variant=stem]
+Mushroom = minecraft:brown_mushroom_block[variant=west]
+Mushroom = minecraft:red_mushroom
+Mushroom = minecraft:red_mushroom_block[variant=all_inside]
+Mushroom = minecraft:red_mushroom_block[variant=all_outside]
+Mushroom = minecraft:red_mushroom_block[variant=all_stem]
+Mushroom = minecraft:red_mushroom_block[variant=center]
+Mushroom = minecraft:red_mushroom_block[variant=east]
+Mushroom = minecraft:red_mushroom_block[variant=north]
+Mushroom = minecraft:red_mushroom_block[variant=north_east]
+Mushroom = minecraft:red_mushroom_block[variant=north_west]
+Mushroom = minecraft:red_mushroom_block[variant=south]
+Mushroom = minecraft:red_mushroom_block[variant=south_east]
+Mushroom = minecraft:red_mushroom_block[variant=south_west]
+Mushroom = minecraft:red_mushroom_block[variant=stem]
+Mushroom = minecraft:red_mushroom_block[variant=west]
+Mycelium = minecraft:mycelium
+Nether Brick = minecraft:nether_brick
+Nether Brick Fence = minecraft:nether_brick_fence
+Nether Brick Stairs = minecraft:nether_brick_stairs
+Nether Quartz Ore = minecraft:quartz_ore
+Nether Wart = minecraft:nether_wart
+Nether Wart Block = minecraft:nether_wart_block
+Netherrack = minecraft:netherrack
+Note Block = minecraft:noteblock
+Oak Door = minecraft:wooden_door
+Oak Fence = minecraft:fence
+Oak Fence Gate = minecraft:fence_gate
+Oak Sapling = minecraft:sapling
+Oak Wood Stairs = minecraft:oak_stairs
+Observer = minecraft:observer
+Obsidian = minecraft:obsidian
+Orange Glazed Terracotta = minecraft:orange_glazed_terracotta
+Orange Shulker Box = minecraft:orange_shulker_box
+Packed Ice = minecraft:packed_ice
+Pink Glazed Terracotta = minecraft:pink_glazed_terracotta
+Pink Shulker Box = minecraft:pink_shulker_box
+Piston = minecraft:piston
+Piston = minecraft:piston_head
+Plant = minecraft:double_plant[variant=double_fern]
+Plant = minecraft:double_plant[variant=double_grass]
+Plant = minecraft:double_plant[variant=double_rose]
+Plant = minecraft:double_plant[variant=paeonia]
+Plant = minecraft:double_plant[variant=sunflower]
+Plant = minecraft:double_plant[variant=syringa]
+Portal = minecraft:portal
+Potatoes = minecraft:potatoes
+Powered Rail = minecraft:golden_rail
+Prismarine = minecraft:prismarine[variant=dark_prismarine]
+Prismarine = minecraft:prismarine[variant=prismarine]
+Prismarine = minecraft:prismarine[variant=prismarine_bricks]
+Pumpkin = minecraft:pumpkin
+Pumpkin Stem = minecraft:melon_stem
+Pumpkin Stem = minecraft:pumpkin_stem
+Purple Glazed Terracotta = minecraft:purple_glazed_terracotta
+Purple Shulker Box = minecraft:purple_shulker_box
+Purpur Block = minecraft:purpur_block
+Purpur Pillar = minecraft:purpur_pillar
+Purpur Slab = minecraft:purpur_double_slab[variant=default]
+Purpur Slab = minecraft:purpur_slab[variant=default]
+Purpur Stairs = minecraft:purpur_stairs
+Quartz Stairs = minecraft:quartz_stairs
+Rail = minecraft:rail
+Red Glazed Terracotta = minecraft:red_glazed_terracotta
+Red Nether Brick = minecraft:red_nether_brick
+Red Sandstone = minecraft:red_sandstone
+Red Sandstone Slab = minecraft:double_stone_slab2[variant=red_sandstone]
+Red Sandstone Slab = minecraft:stone_slab2[variant=red_sandstone]
+Red Sandstone Stairs = minecraft:red_sandstone_stairs
+Red Shulker Box = minecraft:red_shulker_box
+Redstone Comparator = minecraft:powered_comparator
+Redstone Comparator = minecraft:unpowered_comparator
+Redstone Dust = minecraft:redstone_wire
+Redstone Lamp = minecraft:lit_redstone_lamp
+Redstone Lamp = minecraft:redstone_lamp
+Redstone Ore = minecraft:lit_redstone_ore
+Redstone Ore = minecraft:redstone_ore
+Redstone Repeater = minecraft:powered_repeater
+Redstone Repeater = minecraft:unpowered_repeater
+Redstone Torch = minecraft:redstone_torch
+Redstone Torch = minecraft:unlit_redstone_torch
+Repeating Command Block = minecraft:repeating_command_block
+Sand = minecraft:sand[variant=red_sand]
+Sand = minecraft:sand[variant=sand]
+Sandstone = minecraft:sandstone
+Sandstone Stairs = minecraft:sandstone_stairs
+Sea Lantern = minecraft:sea_lantern
+Sign = minecraft:standing_sign
+Sign = minecraft:wall_sign
+Skeleton Skull = minecraft:skull
+Slime Block = minecraft:slime
+Snow = minecraft:snow
+Snow = minecraft:snow_layer
+Soul Sand = minecraft:soul_sand
+Sponge = minecraft:sponge
+Spruce Door = minecraft:spruce_door
+Spruce Fence = minecraft:spruce_fence
+Spruce Fence Gate = minecraft:spruce_fence_gate
+Spruce Wood Stairs = minecraft:spruce_stairs
+Stained Glass = minecraft:stained_glass
+Stained Glass Pane = minecraft:stained_glass_pane
+Sticky Piston = minecraft:sticky_piston
+Stone = minecraft:stone[variant=andesite]
+Stone = minecraft:stone[variant=diorite]
+Stone = minecraft:stone[variant=granite]
+Stone = minecraft:stone[variant=smooth_andesite]
+Stone = minecraft:stone[variant=smooth_diorite]
+Stone = minecraft:stone[variant=smooth_granite]
+Stone = minecraft:stone[variant=stone]
+Stone Brick Stairs = minecraft:stone_brick_stairs
+Stone Bricks = minecraft:stonebrick[variant=chiseled_stonebrick]
+Stone Bricks = minecraft:stonebrick[variant=cracked_stonebrick]
+Stone Bricks = minecraft:stonebrick[variant=mossy_stonebrick]
+Stone Bricks = minecraft:stonebrick[variant=stonebrick]
+Stone Monster Egg = minecraft:monster_egg[variant=chiseled_brick]
+Stone Monster Egg = minecraft:monster_egg[variant=cobblestone]
+Stone Monster Egg = minecraft:monster_egg[variant=cracked_brick]
+Stone Monster Egg = minecraft:monster_egg[variant=mossy_brick]
+Stone Monster Egg = minecraft:monster_egg[variant=stone]
+Stone Monster Egg = minecraft:monster_egg[variant=stone_brick]
+Stone Pressure Plate = minecraft:stone_pressure_plate
+Stone Slab = minecraft:double_stone_slab[variant=brick]
+Stone Slab = minecraft:double_stone_slab[variant=cobblestone]
+Stone Slab = minecraft:double_stone_slab[variant=nether_brick]
+Stone Slab = minecraft:double_stone_slab[variant=quartz]
+Stone Slab = minecraft:double_stone_slab[variant=sandstone]
+Stone Slab = minecraft:double_stone_slab[variant=stone]
+Stone Slab = minecraft:double_stone_slab[variant=stone_brick]
+Stone Slab = minecraft:double_stone_slab[variant=wood_old]
+Stone Slab = minecraft:stone_slab[variant=brick]
+Stone Slab = minecraft:stone_slab[variant=cobblestone]
+Stone Slab = minecraft:stone_slab[variant=nether_brick]
+Stone Slab = minecraft:stone_slab[variant=quartz]
+Stone Slab = minecraft:stone_slab[variant=sandstone]
+Stone Slab = minecraft:stone_slab[variant=stone]
+Stone Slab = minecraft:stone_slab[variant=stone_brick]
+Stone Slab = minecraft:stone_slab[variant=wood_old]
+Structure Block = minecraft:structure_block
+Structure Void = minecraft:structure_void
+Sugar cane = minecraft:reeds
+TNT = minecraft:tnt
+Terracotta = minecraft:hardened_clay
+Torch = minecraft:torch
+Trapped Chest = minecraft:trapped_chest
+Tripwire = minecraft:tripwire
+Tripwire Hook = minecraft:tripwire_hook
+Vines = minecraft:vine
+Water = minecraft:flowing_water
+Water = minecraft:water
+Weighted Pressure Plate (Heavy) = minecraft:heavy_weighted_pressure_plate
+Weighted Pressure Plate (Light) = minecraft:light_weighted_pressure_plate
+White Banner = minecraft:standing_banner
+White Banner = minecraft:wall_banner
+White Bed = minecraft:bed
+White Concrete = minecraft:concrete
+White Concrete Powder = minecraft:concrete_powder
+White Glazed Terracotta = minecraft:white_glazed_terracotta
+White Shulker Box = minecraft:white_shulker_box
+White Terracotta = minecraft:stained_hardened_clay
+White Wool = minecraft:wool
+Wood = minecraft:log2[variant=acacia]
+Wood = minecraft:log2[variant=dark_oak]
+Wood = minecraft:log[variant=birch]
+Wood = minecraft:log[variant=jungle]
+Wood = minecraft:log[variant=oak]
+Wood = minecraft:log[variant=spruce]
+Wood Slab = minecraft:double_wooden_slab[variant=acacia]
+Wood Slab = minecraft:double_wooden_slab[variant=birch]
+Wood Slab = minecraft:double_wooden_slab[variant=dark_oak]
+Wood Slab = minecraft:double_wooden_slab[variant=jungle]
+Wood Slab = minecraft:double_wooden_slab[variant=oak]
+Wood Slab = minecraft:double_wooden_slab[variant=spruce]
+Wood Slab = minecraft:wooden_slab[variant=acacia]
+Wood Slab = minecraft:wooden_slab[variant=birch]
+Wood Slab = minecraft:wooden_slab[variant=dark_oak]
+Wood Slab = minecraft:wooden_slab[variant=jungle]
+Wood Slab = minecraft:wooden_slab[variant=oak]
+Wood Slab = minecraft:wooden_slab[variant=spruce]
+Wooden Planks = minecraft:planks[variant=acacia]
+Wooden Planks = minecraft:planks[variant=birch]
+Wooden Planks = minecraft:planks[variant=dark_oak]
+Wooden Planks = minecraft:planks[variant=jungle]
+Wooden Planks = minecraft:planks[variant=oak]
+Wooden Planks = minecraft:planks[variant=spruce]
+Wooden Pressure Plate = minecraft:wooden_pressure_plate
+Wooden Trapdoor = minecraft:trapdoor
+Yellow Glazed Terracotta = minecraft:yellow_glazed_terracotta
+Yellow Shulker Box = minecraft:yellow_shulker_box
+tile.null.name = minecraft:end_gateway
+tile.null.name = minecraft:end_portal
+tile.null.name = minecraft:piston_extension
+# ---------------------------------- #
+Generated using:
+- SpongeAPI: 7.1.0-20b5f1b
+- SpongeForge: 1.12.2-2838-7.1.7-RC0
+- Minecraft: 1.12.2

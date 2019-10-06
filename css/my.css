@@ -38,6 +38,10 @@ color: white;
 background-color: #444444;
 }
 
+.head-no {
+    padding-top: 75px;
+    box-shadow: 0px 3px 4px 3px #333333;
+}
 
 .head-n {
     padding-top: 50px;
@@ -113,6 +117,11 @@ background-color: #444444;
 
 .ta1 {
     color: white;
+    box-shadow: 0px 3px 4px 3px #333333;
+}
+
+.ta-b {
+    color: black;
     box-shadow: 0px 3px 4px 3px #333333;
 }
 
