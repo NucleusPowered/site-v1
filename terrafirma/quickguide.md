@@ -219,6 +219,8 @@ As an example, if you are using Nucleus, you can create a world with the name "t
 /world create -m terrafirma:test testworld
 ``` 
 
+If all goes well, the world will be generated as you asked!
+
 ## A note on Biomes
 
 Note that the biome is of the "minecraft:void" type. If you set it to a different biome type, there _may_ be other side effects that
