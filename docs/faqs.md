@@ -53,46 +53,27 @@ But please, take the time to read the rest of this FAQ too.
 
 <a class="anchor" id="essentials"></a>
 
-### [I've come from Essentials on Bukkit, can I migrate my data?](#essentials)
+### [I've come from Essentials/EssentialsX on Bukkit, can I migrate my data?](#essentials)
 
-No.
+No, not at this time.
 
 <a class="anchor" id="datastore"></a>
 
 ### [Can I use a database to store data?](#datastore)
 
-Not yet, but it is being worked on.
+Not yet, but it is being worked on - v2 will contain the backbone for this.
 
-<a class="anchor" id="plugin-incompatibilities"></a>
+<a class="anchor" id="incompatibilities"></a>
 
 ### [Are there any known plugin or mod incompatibilities with Nucleus?](#incompatibilities)
 
-Unfortunately so. Here are some plugins that are known to clash with Nucleus:
- 
-* **Any Essentials like** plugin is likely to take over commands that Nucleus would normally use. Avoid running more than one Essentials plugin at a time.
-* **ProjectWorlds** (PJW): PJW takes over the `/world` command, and has a different command setup to Nucleus. Nucleus can do most things that PJW does, 
-but if you decide you wish to use PJW and want to get to the Nucleus world command, you can use `/nworld` instead.
-* **ProjectPortals** (PJP): Older versions of PJP takes over the home, warp, back and teleportation commands. You can turn off these modules in PJP if 
-you would rather use Nucleus' versions. Never versions of PJP have these modules disabled.
-* **SimpleChat** and **SimpleTags**: These plugins have been known to hijack Nucleus' chat formatting - if you want chat channels, other plugins with Nucleus
-integration exist.
-* **FTB Utilities** tends to duplicate a player's name in the chat when a message is sent
-* **Topography** may cancel teleportation across worlds in favour of its own system. The `captureTeleports` options in particular cause issues, [see
-this comment on Github as to what happens](https://github.com/NucleusPowered/Nucleus/issues/1344#issuecomment-499848881)
+Unfortunately so. [See our compatibility page for more details](compatibility.html) - we will update this list as we find more.
 
-As we find more, we'll update this list.
+<a class="anchor" id="manage-permissions"></a>
 
-<a class="anchor" id="ftbu"></a>
+### [Can Nucleus manage my permissions?](#manage-permissions)
 
-### [I'm using FTB and having issues with chat - names are being duplicated](#ftbu)
-
-If you are using FTB, FTB Utilities also tries to format the chat, with the result that player names appear twice. If you wish to use Nucleus' chat formatting, 
-you should turn off FTB Utilities handling. The ranks config file is in the `local` directory, set the following options to false:
-
-* `B:override_chat=false`
-* `B:override_commands=false`
-
-Then reload the FTB Utilities plugin or restart your server.
+No. You will need a separate permissions plugin if you wish to use permissions to manage your server. 
 
 <a class="anchor" id="lots-of-permissions"></a>
 
@@ -159,6 +140,18 @@ recommend you actually grant these unless you are SURE you know what you are doi
   * Use a lot of administrative commands
 
 As the `ADMIN` set spans about 900 permission nodes, please forgive me for not listing it all here!
+
+<a class="anchor" id="ftbu"></a>
+
+### [I'm using FTB and having issues with chat - names are being duplicated](#ftbu)
+
+If you are using FTB, FTB Utilities also tries to format the chat, with the result that player names appear twice. If you wish to use Nucleus' chat formatting, 
+you should turn off FTB Utilities handling. The ranks config file is in the `local` directory, set the following options to false:
+
+* `B:override_chat=false`
+* `B:override_commands=false`
+
+Then reload the FTB Utilities plugin or restart your server.
 
 <a class="anchor" id="disable-modules"></a>
 
