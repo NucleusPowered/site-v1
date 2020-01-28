@@ -37,7 +37,7 @@ json:
        severity: 3
        symptom: 'Chat prefixes are not shown when using Simple Tags'
        message: 'Simple Tags overrides the "header" section of the chat message on a late priority and will remove anything there, including Nucleus tags.'
-       resolution: 'Remove SimpleTags.'
+       resolution: 'Remove SimpleTags (it is no longer under development anyway).'
     -  modid: 'ftbutilities'
        modules:
          - 'chat'
