@@ -5,6 +5,7 @@ modules:
   - 'back'
   - 'home'
   - 'warp'
+  - 'ignore'
 mods:
   - id: 'ftbutilities'
     name: 'FTB Utilities'
@@ -20,8 +21,10 @@ mods:
     name: 'Simple Tags'
   - id: 'nucleus-mod' # not the correct ID but, meh.
     name: 'Nucleus Mod'
+  - id: 'ultimatechat'
+    name: 'UltimateChat'
 json:
-  last-update: "2019-09-05"
+  last-update: "2020-01-28"
   messages:
     -  modid: 'nucleus-mod'
        severity: 3
@@ -93,3 +96,17 @@ json:
        symptom: "Topography may block cross-world teleports"
        message: 'Topography has the ability to take control of cross-world teleports in non-standard configurations. SkyFactory 4 has some worlds with this option enabled by default, which blocks the Nucleus teleport commands'
        resolution: 'Check topography configuration files for any "captureTeleports" options and remove them.'
+    -  modid: 'ultimatechat'
+       modules:
+         - 'ignore'
+       severity: 3
+       symptom: "UltimateChat does not respect player ignore lists"
+       message: 'UltimateChat does not use the Sponge Chat event correctly and ignores the message channel set on the event. As a result, UltimateChat will send messages out to players on the ignore list, rendering Nucleus'' ignore command useless for chat.'
+       resolution: 'None known.'
+    -  modid: 'ultimatechat'
+       modules:
+         - 'chat'
+       severity: 2
+       symptom: "UltimateChat does not use the Nucleus chat formatting by default"
+       message: 'UltimateChat does not use the Nucleus chat formatting by default, but this can be used by adjusting your UltimateChat settings.'
+       resolution: 'Update your UltimateChat configuration to use Nucleus chat formatting.'
