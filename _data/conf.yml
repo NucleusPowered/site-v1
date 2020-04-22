@@ -91,7 +91,8 @@ command-logger: |
     log-to-file=false
     # If true, the "command-filter" containing the list of commands to be logged is a whitelist (command must be specfied to be logged), not a blacklist.
     whitelist=false
-inventory: "\r\n"
+inventory: |4+
+
 ban: |
     # The maximum length a temporary ban may last for (in seconds) unless the user handing the mute has a bypass permission. Set to -1 for no maximum.
     maximum-tempban-length=604800
@@ -402,7 +403,7 @@ rtp: "# The number of times to try to find a safe teleport spot when using /rtp 
     \ but the random position will depend on the player's current position, not the\
     \ spawn point\n        # \n        # Other plugins might add their own kernels,\
     \ in which case they will give you an ID to use here.\n        default-method=\"\
-    nucleus:default\"\n        maximum-y=255\n        min-radius=30000\n        minimum-y=0\n\
+    nucleus:default\"\n        maximum-y=255\n        min-radius=0\n        minimum-y=0\n\
     \        radius=30000\n    }\n}\n"
 warn: |
     # The command to execute when a player has a specific number of warnings.
@@ -419,11 +420,14 @@ warn: |
     show-login=true
     # The number of active warnings a player must accumulate before the action command is executed. Set to -1 to disable.
     warnings-before-action=-1
-core: "# If true, if you log in and have the \"wildcard\" permission (either * or\
-    \ 'nucleus'), you will be warned of the potential issues caused by the wildcard.\
-    \ If you use the wildcard and are happy with this, set this to false.\ncheck-for-wildcard=true\n\
-    # If set, this command will be suggested if a player clicks on the user name in\
-    \ chat in templated messages. Use {{player}} to indicate the player name.\ncommand-on-name-click=\"\
+core: "# If set, Nucleus will attempt to autodetect the appropriate language for your\
+    \ system. If false, if a language packis not available, Nucleus will attempt to\
+    \ use UK English (en_GB).\nattempt-lanugage-autodetect=true\n# If true, if you\
+    \ log in and have the \"wildcard\" permission (either * or 'nucleus'), you will\
+    \ be warned of the potential issues caused by the wildcard. If you use the wildcard\
+    \ and are happy with this, set this to false.\ncheck-for-wildcard=true\n# If set,\
+    \ this command will be suggested if a player clicks on the user name in chat in\
+    \ templated messages. Use {{player}} to indicate the player name.\ncommand-on-name-click=\"\
     /msg {{subject}}\"\n# If true, commands executed by the console can affect players\
     \ that normally have an exempt permission against the command.\nconsole-overrides-exemptions=true\n\
     # Specifies the path to save nucleus data files in. By default, files are saved\
@@ -510,9 +514,12 @@ spawn: "# If true, if a respawn would be back to a bed, Nucleus will override th
     \ /spawn sends the player to the world specified in \"target-spawn-world\", if\
     \ false, sends them to the world spawn.\n    on-spawn-command=false\n    # The\
     \ name of the world to use as the server spawn. If this is invalid, the default\
-    \ world is used instead.\n    target-spawn-world=world\n}\n# If true, players\
-    \ require the permission \"nucleus.spawn.worlds.<worldname>\" to spawn in a specific\
-    \ world, where worldname is the name of the world in lowercase.\nper-world-permissions=false\n\
+    \ world is used instead.\n    target-spawn-world=world\n}\n# If true, Nucleus\
+    \ will intercept respawn logic to ensure a player is warped back to the spawn\
+    \ point when respawning. This may conflict with some mods that do their own processing,\
+    \ if so, set this to false.\nhandle-on-respawn=true\n# If true, players require\
+    \ the permission \"nucleus.spawn.worlds.<worldname>\" to spawn in a specific world,\
+    \ where worldname is the name of the world in lowercase.\nper-world-permissions=false\n\
     # If true, players will be sent to the default world spawn on login, unless they\
     \ are sent to the first login spawn, or they have the \"nucleus.spawn.exempt.login\"\
     \ permission.\nspawn-on-login=false\n# If \"spawn-on-login\" is true, if a player\
@@ -642,15 +649,14 @@ playerinfo: |
         # If true, the permission "nucleus.seen.extended" is required for all information that comes from modules. If false, information will be displayed based on the command permissions a player has (so, a player with check ban rights can see banning information).
         require-extended-permission-for-module-info=false
     }
-warp: |
-    default-category-name=Uncategorised
-    # The default cost for a warp. Can be overriden using /warp setcost <warp> <cost>
-    default-warp-cost=0.0
-    # If true, warps will be displayed by category in /warp list.
-    list-warps-by-category=false
-    # If this is set to true, each warp has its own permission node - nucleus.warps.<name>.
-    separate-permissions=false
-    # If true, the warp description will be shown in /warp list, and the co-ords will be shown in the tooltip on hover.
-    show-warp-description-in-list=false
-    # If true, using /warp will attempt to find a safe place. If false, the teleportation will always directly send the player to the location with no safety checks.
-    use-safe-warp=true
+warp: "default-category-name=Uncategorised\n# The default cost for a warp. Can be\
+    \ overriden using /warp setcost <warp> <cost>\ndefault-warp-cost=0.0\n# If true,\
+    \ warps will be displayed by category in /warp list.\nlist-warps-by-category=false\n\
+    # If this is set to true, each warp has its own permission node - nucleus.warps.<name>.\n\
+    # \n# NOTE: This option will be removed inNucleus v2 and will act as if it's \"\
+    true\". Use the permission node \"nucleus.warps\" to emulate this being \"false\"\
+    .\nseparate-permissions=true\n# If true, the warp description will be shown in\
+    \ /warp list, and the co-ords will be shown in the tooltip on hover.\nshow-warp-description-in-list=false\n\
+    # If true, using /warp will attempt to find a safe place. If false, the teleportation\
+    \ will always directly send the player to the location with no safety checks.\n\
+    use-safe-warp=true\n"
