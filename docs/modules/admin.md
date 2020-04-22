@@ -16,6 +16,28 @@ Not all administrative commands are contained in the admin module, some have the
 * [Jail Module](jail.html)
 * [Kick Module](kick.html)
 
+## Experience Manipulation
+
+**The experience commands and listeners will be moved into an Experience module in Nucleus v2**
+
+### Giving, setting and taking experience
+
+The experience module has the `/exp` command, with the following subcommands:
+
+* `/exp give`: give an amount of experience or levels.
+* `/exp take`: removes an amount of experience or levels.
+* `/exp set`: set~~~~s a player's experience.
+
+These commands can give a specific amount of experience by providing a number, or an integer number of levels by prefxing of suffixing the number with "L" (i.e. L100 or 100L) for 100 levels. 
+
+### Preserving experience across player deaths (Nucleus 1.14+)
+
+The permission `nucleus.exp.keepondeath` will enable players to keep their experience level when they die and respawn.
+
+* If the permission is `true`, XP will be kept across deaths.
+* If the permission is **explicitly** `false`, XP will be reset to zero upon respawn.
+* If the permission is **unset**, Nucl
+
 ## Configuration
 
 ### `/broadcast` customisation
