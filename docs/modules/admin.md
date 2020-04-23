@@ -30,13 +30,13 @@ The experience module has the `/exp` command, with the following subcommands:
 
 These commands can give a specific amount of experience by providing a number, or an integer number of levels by prefxing of suffixing the number with "L" (i.e. L100 or 100L) for 100 levels. 
 
-### Preserving experience across player deaths (Nucleus 1.14+)
+### Preserving experience across player deaths (Nucleus 1.14.4+)
 
 The permission `nucleus.exp.keepondeath` will enable players to keep their experience level when they die and respawn.
 
 * If the permission is `true`, XP will be kept across deaths.
 * If the permission is **explicitly** `false`, XP will be reset to zero upon respawn.
-* If the permission is **unset**, Nucl
+* If the permission is **unset**, Nucleus will not do anything and the current behaviour will hold.
 
 ## Configuration
 
