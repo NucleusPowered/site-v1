@@ -19,8 +19,16 @@ Simply run `/kit [name]`. If you have permissions, the money, and are not in a c
 recieve the items in the kit. Nucleus will warn you if some items were lost, and will not redeem the kit if your inventory
 was full.
 
+Note that each kit requires its own permission to be granted, see "Per-Kit Permissions" below.
+
 You can see all kits you have access to by running `/kit list`. Kits you have permission for, but are currently in cooldown
 or are one time kits that have been used, appear struck out.
+
+## Per-Kit Permissions
+
+Nucleus operates on per kit permissions. The permission to use a kit is then `nucleus.kits.[name]`, where `name` is the kit's name.
+This is in addition to the main permission to use a kit, `nucleus.kit.base`. If you wish to grant permissions for all kits, grant
+`nucleus.kits`.
 
 ## Creating and Managing Kits
 
@@ -97,9 +105,3 @@ Nucleus supports giving players items when they first join your server. Simply c
 you want to give the players when they first join, then run `/kit setfirstjoin [kitname] true`.
 
 This kit is not visible on `/kit list`, is not redeemable more than once and does not have a cost by default.
-
-## Per-Kit Permissions
-
-Nucleus operates on per kit permissions. The permission to use a kit is then `nucleus.kits.[name]`, where `name` is the kit's name.
-This is in addition to the main permission to use a kit, `nucleus.kit.base`. If you wish to grant permissions for all kits, grant
-`nucleus.kits`.
